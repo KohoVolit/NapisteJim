@@ -1,9 +1,12 @@
 <?php
 
-const NAPISTEJIM_ROOT = '/home/shared/napistejim.cz';
-const SMARTY_DIR = '/usr/local/lib/Smarty/';
+const NAPISTEJIM_ROOT = '/var/www/michal/napistejim.cz';
+const SMARTY_DIR = '/usr/local/lib/php/Smarty/';
 error_reporting(E_ALL | E_STRICT);
 date_default_timezone_set('Europe/Prague');
+const LOCALE = 'cs_CZ.UTF8';	//note: must be with capital UTF8, not utf8
+const LOCALE_DIR = "./locale";	//with respect to index.php
+const LOCALIZED_DOMAIN = 'messages';	//name of translation files
 
 set_include_path(NAPISTEJIM_ROOT . PATH_SEPARATOR . get_include_path());
 
