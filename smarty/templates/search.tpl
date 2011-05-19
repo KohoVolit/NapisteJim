@@ -1,9 +1,10 @@
 {extends file="layout.tpl"}
 
 {block name=title}
-Search
+{t}Search{/t}
 {/block}
 
 {block name=body}
-Search form for MPs...
+{t}Search form for MPs{/t}
+{$test}
 {/block}

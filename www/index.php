@@ -2,11 +2,21 @@
 
 require_once '../config/settings.php';
 
+//Language
+// Set language to LOCALE
+putenv('LC_ALL='. LOCALE);
+setlocale(LC_ALL, LOCALE);
+// Specify location of translation tables
+bindtextdomain(LOCALIZED_DOMAIN, LOCALE_DIR);
+// Choose domain
+textdomain(LOCALIZED_DOMAIN);
+
 $page = isset($_GET['page']) ? $_GET['page'] : null;
 switch ($page)
 {
 	case 'about':
 	case 'faq':
+	case 'privacy':
 	case 'contact':
 		static_page($page);
 		break;
@@ -33,6 +43,8 @@ switch ($page)
 function static_page($page)
 {
 	$smarty = new SmartyNapisteJimCz;
+	$test = _('joj');
+	$smarty->assign('test', $test);
 	$smarty->display($page . '.tpl');
 }
 
@@ -63,5 +75,16 @@ function messages_page()
 {
 	// ...
 }
+
+// function declaration
+function do_translation ($params, $content, $smarty, &$repeat, $template)
+	{
+	if (isset($content)) {
+	$lang = $params["lang"];
+	// do some translation with $content
+	return $translation;
+	}
+}
+
 
 ?>
