@@ -43,8 +43,7 @@ switch ($page)
 function static_page($page)
 {
 	$smarty = new SmartyNapisteJimCz;
-	$test = _('joj');
-	$smarty->assign('test', $test);
+	$smarty->assign('locale', LOCALE);
 	$smarty->display($page . '.tpl');
 }
 
