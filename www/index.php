@@ -22,7 +22,7 @@ switch ($page)
 	default:
 		if (isset($_GET['mp']))
 			write_page();
-		else if (isset($_GET['address']) || isset($_GET['constituency']) || isset($_GET['political_group']) || isset($_GET['committee']) || isset($_GET['commission']) || isset($_GET['delegation']))
+		else if (isset($_GET['name']) || isset($_GET['address']) || isset($_GET['constituency']) || isset($_GET['political_group']) || isset($_GET['committee']) || isset($_GET['commission']) || isset($_GET['delegation']))
 			search_results_page();
 		else if (isset($_GET['advanced']))
 			static_page('advanced_search');
