@@ -1,0 +1,105 @@
+/**
+* common
+*/
+
+/* clearField effect */
+.clearFieldBlurred { color: #666; font-style: italic; }
+.clearFieldActive { color: #000; }
+
+/*rest*/
+.rounded-corners {
+     -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -khtml-border-radius: 20px;
+    border-radius: 20px;
+}
+
+
+
+/**
+* search
+*/
+#search-content-wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  margin-top:5em;
+  max-width:600px;
+  width:50%;
+}
+  
+input#geocode-address, input#submit-geocode {
+  font-size: 1.5em;
+}
+
+#geocode-address,#geocode-address-2{
+  width:80%;
+}
+
+#submit-geocode{
+  width:15%;
+}
+
+#search-example{
+  color: #666;
+  font-style: italic;
+  font-size:0.75em;
+}
+
+/**
+* search_results
+*/
+
+/* map */
+#search_results-map_canvas {
+  height:250px;
+  width:250px;
+}
+
+/* boxes */
+.addressee-box{
+  border: 5px dashed #DDD;
+  height:100px;
+  min-width:200px;
+  float:left;
+}
+
+/*jQuery UI */
+.ui-state-active{
+  border: 5px dashed #F00;
+}
+
+.draggable{
+  cursor:move;
+}
+
+.ui-draggable-disabled{
+  cursor:default;
+}
+
+/* toggle */
+.mp-toggle-off{
+  cursor:pointer;
+  background-position: 0 0;
+  width: 20px;
+  height: 20px;
+}
+
+.mp-toggle-on{
+  cursor:default;
+  background-position: 0 -30px;
+  width: 20px;
+  height: 20px;
+}
+
+/* debug geocoding */
+#search_results-message-debug {
+  color: #888; 
+  background-color: #BBB;
+  display: none;
+}
+
+
+/**
+* 
+*/
