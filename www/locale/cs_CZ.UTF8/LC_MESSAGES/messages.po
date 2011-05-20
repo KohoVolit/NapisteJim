@@ -27,7 +27,7 @@ msgstr "hledání"
 
 #: cs_CZ.UTF8/LC_MESSAGES/search.c:8
 msgid "Your address..."
-msgstr "Vaše adresa"
+msgstr "Vaše adresa..."
 
 #: cs_CZ.UTF8/LC_MESSAGES/search.c:11
 msgid "Find representatives"

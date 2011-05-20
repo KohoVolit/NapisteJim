@@ -53,6 +53,16 @@ function search_results_page()
 	// ... perform database search
 	
 	$smarty = new SmartyNapisteJimCz;
+	$smarty->assign('locale', LOCALE);
+	$smarty->assign('lang', SEARCH_LANGUAGE);
+	$smarty->assign('reg', SEARCH_REGION);
+	$smarty->assign('parent_region', SEARCH_PARENT_REGION);
+	$smarty->assign('parent_region_type', SEARCH_PARENT_REGION_TYPE);
+	$smarty->assign('region_check', SEARCH_REGION_CHECK);
+	$smarty->assign('lat',CENTER_LAT);
+	$smarty->assign('lng',CENTER_LNG);
+	$smarty->assign('zoom', ZOOM);
+	$smarty->assign('address',$_GET['address']);
 	$smarty->display('search_results.tpl');
 }
 
@@ -75,15 +85,6 @@ function messages_page()
 	// ...
 }
 
-// function declaration
-function do_translation ($params, $content, $smarty, &$repeat, $template)
-	{
-	if (isset($content)) {
-	$lang = $params["lang"];
-	// do some translation with $content
-	return $translation;
-	}
-}
 
 
 ?>
