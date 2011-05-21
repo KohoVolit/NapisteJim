@@ -8,10 +8,10 @@ class SmartyNapisteJimCz extends Smarty
 	{
 		parent::__construct();
 
-		$this->template_dir = NAPISTEJIM_ROOT . '/smarty/templates';
-		$this->compile_dir  = NAPISTEJIM_ROOT . '/smarty/templates_c';
-		$this->config_dir   = NAPISTEJIM_ROOT . '/smarty/configs';
-		$this->cache_dir    = NAPISTEJIM_ROOT . '/smarty/cache';
+		$this->template_dir = WTT_DIR . '/smarty/templates';
+		$this->compile_dir  = WTT_DIR . '/smarty/templates_c';
+		$this->config_dir   = WTT_DIR . '/smarty/configs';
+		$this->cache_dir    = WTT_DIR . '/smarty/cache';
 
 //		$this->caching = 2;
 	}

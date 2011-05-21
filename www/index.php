@@ -1,6 +1,7 @@
 <?php
 
-require_once '../config/settings.php';
+require '../config/settings.php';
+require '../setup.php';
 
 //Language
 // Set language to LOCALE
@@ -30,6 +31,8 @@ switch ($page)
 		break;
 
 	default:
+		if (!empty($_POST))
+			send_page();
 		if (isset($_GET['mp']))
 			write_page();
 		else if (isset($_GET['name']) || isset($_GET['address']) || isset($_GET['constituency']) || isset($_GET['political_group']) || isset($_GET['committee']) || isset($_GET['commission']) || isset($_GET['delegation']))
@@ -65,12 +68,16 @@ function search_results_page()
 
 function write_page()
 {
-	$ad = new KV\ApiDirect('napistejim');
+	$ad = new ApiDirect('napistejim');
 	$mp_details = $ad->read('MpDetails', array('mp' => $_GET['mp']));
 
 	$smarty = new SmartyNapisteJimCz;
 	$smarty->assign('mp', $mp_details);
 	$smarty->display('write.tpl');
+}
+
+function send_page()
+{
 }
 
 function confirm_page()

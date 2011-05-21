@@ -1,7 +1,5 @@
 <?php
 
-namespace KV;
-
 /**
  * ...
  */
@@ -72,8 +70,9 @@ class ApiDirect
 	 */
 	private function includeApiResourceClass($resource)
 	{
-		require_once  API_ROOT . '/conf/settings.php';
-		@include_once API_ROOT . "/projects/{$this->project}/conf/settings.php";
+		require_once  API_DIR . '/config/settings.php';
+		require_once  API_DIR . '/setup.php';
+		@include_once API_DIR . "/projects/{$this->project}/config/settings.php";
 		$ok = @include_once "projects/{$this->project}/api/$resource.php";
 		if (!$ok)
 			throw new \Exception("There is no API resource <em>$resource</em>.", 404);
