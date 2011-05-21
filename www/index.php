@@ -49,9 +49,6 @@ function static_page($page)
 
 function search_results_page()
 {
-	// ... process search criteria
-	// ... perform database search
-	
 	$smarty = new SmartyNapisteJimCz;
 	$smarty->assign('locale', LOCALE);
 	$smarty->assign('lang', SEARCH_LANGUAGE);
@@ -59,19 +56,20 @@ function search_results_page()
 	$smarty->assign('parent_region', SEARCH_PARENT_REGION);
 	$smarty->assign('parent_region_type', SEARCH_PARENT_REGION_TYPE);
 	$smarty->assign('region_check', SEARCH_REGION_CHECK);
-	$smarty->assign('lat',CENTER_LAT);
-	$smarty->assign('lng',CENTER_LNG);
+	$smarty->assign('lat', CENTER_LAT);
+	$smarty->assign('lng', CENTER_LNG);
 	$smarty->assign('zoom', ZOOM);
-	$smarty->assign('address',$_GET['address']);
+	$smarty->assign('address', $_GET['address']);
 	$smarty->display('search_results.tpl');
 }
 
 function write_page()
 {
-	// ... process given MPs
-	// ... perform database query form details about the MPs
-	
+	$ad = new KV\ApiDirect('napistejim');
+	$mp_details = $ad->read('MpDetails', array('mp' => $_GET['mp']));
+
 	$smarty = new SmartyNapisteJimCz;
+	$smarty->assign('mp', $mp_details);
 	$smarty->display('write.tpl');
 }
 
@@ -84,7 +82,5 @@ function messages_page()
 {
 	// ...
 }
-
-
 
 ?>
