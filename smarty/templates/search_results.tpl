@@ -4,7 +4,7 @@
 
 {block name=head}
 <script type="text/javascript" src="http://maps.google.com/maps/api/js?v=3.2&sensor=false"></script>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/jquery-ui.min.js"></script>
 <script type="text/javascript">
 //define global variables from settings.php
@@ -20,6 +20,7 @@ var zoom = "{$zoom}";
 </script>
 <script type="text/javascript" src="locale/{$locale}/LC_MESSAGES/locale.js"></script>
 <script type="text/javascript" src="js/i18n.js"></script>
+<script type="text/javascript" src="js/jquery.rsv.js"></script>
 <script type="text/javascript" src="js/search_results.js"></script>
 {/block}
 
@@ -39,11 +40,11 @@ var zoom = "{$zoom}";
 	  <div id="search_results-addressee-box-1" class="addressee-box rounded-corners droppable"></div>
 	  <div id="search_results-addressee-box-2" class="addressee-box rounded-corners droppable"></div>
 	  <div id="search_results-addressee-box-3" class="addressee-box rounded-corners droppable"></div>
-	  <form id="search_results-selected-mps" >
-	  <input type="hidden" name="input-1" id="search_results-input-1" />
-	  <input type="hidden" name="input-2" id="search_results-input-2" />
-	  <input type="hidden" name="input-3" id="search_results-input-3" />
-	  <input id="search_results-submit-mps" type="submit" value="{t}Write!{/t}"/>
+	  
+	  <form id="search_results-send" action="" >
+
+	    <input type="hidden" name="mp" id="search_results-input" value="" />
+	    <input id="search_results-submit-mps" type="submit" value="{t}Write!{/t}"/>
 	  </form>
 	</div>
   </div>

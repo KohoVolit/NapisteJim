@@ -1,9 +1,21 @@
 /**
 * js for search_results page
-*
-* warning: do not change names (or at least number of '-') of ids: search_results-
 */
 
+//form validation
+$(document).ready(function() {
+  $("#search_results-input").val('');
+});
+
+$(document).ready(function() {
+  $("#search_results-send").RSV({
+    rules: [
+      "required,mp,"+_("Choose at least one representative please"),
+    ]
+  });
+});
+
+//geocoding + form
 $(document).ready(function() {
  initialize(lat,lng,zoom);
  //set address
@@ -14,7 +26,11 @@ $(document).ready(function() {
 //define global variables
 var geocoder;
 var anticycle = 0;
-var markersArray = [];
+var markersArray = []; //markers on the map
+var box = [];  //values in boxes
+  box[1] = '';
+  box[2] = '';
+  box[3] = '';
 
 //initialize map
 function initialize(lat,lng,zoom) {
@@ -86,9 +102,9 @@ function processAddress(results) {
       anticycle = 0;
       //clear boxes + previous draggable (C+B)
       for (i=1;i<=3;i++) {
-		if ($("#search_results-input-"+i).val() != '') {
+		if (box[i] != '') {
 		  var boxId = i;
-		  var prevId =  $("#search_results-input-"+i).val()
+		  var prevId =  box[i];
 		  //B
 		  deselectAction(prevId);
 		  //C
@@ -202,7 +218,7 @@ $(document).ready(function() {
 			    var thisId = thisIdAr[thisIdAr.length-1];  //id of box, from e.g. search_results-addressee-box-2
 			    var selectedIdAr = ui.draggable.attr('id').split('-');
 			    var selectedId = selectedIdAr[selectedIdAr.length-1]; //id of selected mp
-			    var prevId = $("#search_results-input-"+thisId).val(); //id of previous mp in the box
+			    var prevId = box[thisId]; //id of previous mp in the box
 				//toggle off previous mp		    
 			    deselectAction(prevId);
 			    //disable selected for next selection + get html + insert id into form			
@@ -233,7 +249,7 @@ $(document).ready(function() {
     //is any box free?
     var warn = true;
     for(i=1; i<=3; i++) {
-      if ($("#search_results-input-"+i).val() == '') {
+      if (box[i] == '') {
         var boxId = i;
         var warn = false;
         i=3;
@@ -282,13 +298,15 @@ function selectAction(selectedId,boxId) {
     //get html
 	ajaxMp('ajax/nj2_1mp.php','id='+selectedId,$("#search_results-addressee-box-"+boxId));
 	//insert id into form			
-	$("#search_results-input-"+boxId).val(selectedId);
+	box[boxId] = selectedId;
+	$("#search_results-input").val(setFormValue(box));
 }
 
 //clear box / C
 function clearAction(boxId) {
   $("#search_results-addressee-box-"+boxId).html('');
-  $("#search_results-input-"+boxId).val('');
+  box[boxId] = '';
+  $("#search_results-input").val(setFormValue(box));
 }
 
 //show hide
@@ -307,4 +325,18 @@ function clearOverlays() {
     }
   }
 }
+
+//function to set value of the final form
+function setFormValue(box) {
+  var out = '';
+  for (i=1;i<=3;i++) {
+    if (box[i] != '') {
+      out = out + box[i] + '|';
+    }
+  }
+  if (out != '')
+    out = out.slice(0,-1);
+  return out;
+}
+
 

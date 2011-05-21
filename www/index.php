@@ -72,6 +72,8 @@ function write_page()
 	$mp_details = $ad->read('MpDetails', array('mp' => $_GET['mp']));
 
 	$smarty = new SmartyNapisteJimCz;
+	$smarty->assign('locale', LOCALE);
+	$smarty->assign('mps', $_GET['mp']);
 	$smarty->assign('mp', $mp_details);
 	$smarty->display('write.tpl');
 }
