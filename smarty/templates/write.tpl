@@ -17,15 +17,15 @@
 <br/><br/><br/>!!ODSTRAN TYTO br/ z write.tpl
 <div id="write-form-wrapper">
     <form id="write" class="formular" method="post" action="">
-      <input type="hidden" value="{$mps}" name="write-mps"/>
+      <input type="hidden" value="{$mps}" name="mp"/>
       <div id="write-mps">{block name=mps}{/block}</div>
       <div id="write-personal">
-        {t}Email is{/t}*: <input type="radio" id="write-radio-1" name="write-radio" value="1" class="validate[required] radio" />{t}Public{/t} <input type="radio" id="write-radio-2" name="write-radio" value="0" class="validate[required] radio" />{t}Private{/t} <br/>
-        {t}Name{/t}*: <input type="text" id="write-name" name="write-name" value="" class="validate[required] text-input" /><br/>
-        {t}Email{/t}*: <input type="text"  id="write-email" name="write-email" value="" class="validate[required,custom[email]] text-input" /><br/>
-        {t}Subject{/t}*: <input type="text" id="write-subject" name=write-subject" value=""  class="validate[required] text-input" /><br/>
+        {t}Email is{/t}*: <input type="radio" id="write-radio-1" name="is_public" value="1" class="validate[required] radio" />{t}Public{/t} <input type="radio" id="write-radio-2" name="is_public" value="0" class="validate[required] radio" />{t}Private{/t} <br/>
+        {t}Name{/t}*: <input type="text" id="write-name" name="name" value="" class="validate[required] text-input" /><br/>
+        {t}Email{/t}*: <input type="text"  id="write-email" name="email" value="" class="validate[required,custom[email]] text-input" /><br/>
+        {t}Subject{/t}*: <input type="text" id="write-subject" name="subject" value=""  class="validate[required] text-input" /><br/>
       <div id="write-personal">
-      <textarea id="write-body" rows="15" cols="62" name="write-body">
+      <textarea id="write-body" rows="15" cols="62" name="body">
        {t}Greetings{/t},
        &#010;&#010;&#010;&#010;
        {t}Yours sincerely{/t},&#010;&#010;
