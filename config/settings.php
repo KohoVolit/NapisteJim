@@ -1,12 +1,16 @@
 <?php
 
 // instalation settings
-const WTT_DIR = '/home/shared/napistejim.cz';
-const API_DIR = '/home/shared/api.kohovolit.eu/www';
-const SMARTY_DIR = '/usr/local/lib/php/Smarty/libs/';
+
+const WTT_DIR = '/home/michal/napistejim.cz';
+const API_DIR = '/home/michal/api.kohovolit.eu/www';
+const SMARTY_DIR = '/usr/local/lib/php/Smarty/';
+
 error_reporting(0);
 
 define("WTT_LOGS_DIR", WTT_DIR . '/logs');
+
+const IMG_DIR = "http://localhost/michal/kohovolit/data/images/";
 
 // COUNTRY SPECIFIC SETTINGS
 // locale
@@ -28,9 +32,14 @@ const SEARCH_REGION = "cz";	// usually country, see google maps api documentatio
 const SEARCH_REGION_CHECK = "administrative_area_level_2";	// if this is not part of the address found by google, address entered is not good enough (but still possible to try reverse geocoding)
 
 // ajax address2mps settings
-global $parl_order;
+global $parl_order, $parl_zero_constit;
 $parl_order = array(
 'cz/psp' => array('weight' => -100, 'info' => array('office_town','office_distance')),
 'cz/senat' => array('weight' => -99, 'info' => array()),
 );
+$parl_zero_constit = array( //in case no constituency is found
+  'cz/senat' => true,
+);
+
+
 ?>

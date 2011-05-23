@@ -18,10 +18,10 @@
             <img src="images/1x1.png" class="party-logo party-logo-{$group.friendly_name}" title="{$group.name}" alt="{$group.name}" />
             {foreach $group.mp as $mp}
               <div class="group-mps">
-                <div id="1-{$parliament.code}/{$mp.id}" class="mp-{$mp.id} mp draggable">
+                <div id="1-{$parliament.code}/{$mp.id}" class="mp">
                   <img src="images/1x1.png" id="toggle-{$parliament.code}/{$mp.id}" class="mp-toggle mp-toggle-off mp-toggle-{$mp.id}" alt="" />
                   <span class="mp-name">
-                    <span id="{$parliament.code}/{$mp.id}" class="mp-name-name">{$mp.last_name}</span>
+                    <span id="{$parliament.code}/{$mp.id}" class="mp-name-name mp-{$mp.id} draggable">{$mp.last_name}</span>
                     <span class="mp-name-info dimmed small-text">{$mp.info}</span>
                   </span>
                 </div>
