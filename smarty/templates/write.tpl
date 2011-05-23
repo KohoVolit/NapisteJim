@@ -16,21 +16,37 @@
 {block name=body}
 <br/><br/><br/>!!ODSTRAN TYTO br/ z write.tpl
 <div id="write-form-wrapper">
-    <form id="write" class="formular" method="post" action="">
+
+    <form id="write" class="formular" method="post" action="?">
       <input type="hidden" value="{$mps}" name="write-mps"/>
-      <div id="write-mps">{block name=mps}{/block}</div>
+      
+      <div id="write-mps">
+        {foreach $mp_details as $key=>$mp}
+          <div id="write-mp-{$mp.id}" class="write-mp">
+            <div id="write-mp-photo-{$mp.id}" class="write-mp-photo">
+              <img src="http://localhost/michal/kohovolit/data/images/{$mp.parl_code}/images/mp/{$mp.image}" alt="{$mp.last_name}" title="{$mp.last_name}" />
+            </div>
+            <div id="write-mp-first_name-{$mp.id}" class="write-mp-first_name">{$mp.first_name}</div>
+            <div id="write-mp-last_name-{$mp.id}" class="write-mp-last_name">{$mp.last_name}</div>
+          </div>
+        {/foreach}
+      </div>
+      
       <div id="write-personal">
         {t}Email is{/t}*: <input type="radio" id="write-radio-1" name="write-radio" value="1" class="validate[required] radio" />{t}Public{/t} <input type="radio" id="write-radio-2" name="write-radio" value="0" class="validate[required] radio" />{t}Private{/t} <br/>
         {t}Name{/t}*: <input type="text" id="write-name" name="write-name" value="" class="validate[required] text-input" /><br/>
         {t}Email{/t}*: <input type="text"  id="write-email" name="write-email" value="" class="validate[required,custom[email]] text-input" /><br/>
         {t}Subject{/t}*: <input type="text" id="write-subject" name=write-subject" value=""  class="validate[required] text-input" /><br/>
-      <div id="write-personal">
-      <textarea id="write-body" rows="15" cols="62" name="write-body">
+      </div>
+      
+      <textarea id="write-body" rows="15" cols="62" name="write-body" class="validate[required,minSize[170]] textarea">
        {t}Greetings{/t},
        &#010;&#010;&#010;&#010;
        {t}Yours sincerely{/t},&#010;&#010;
       </textarea>
+      
       <input class="submit" type="submit" value="Send"/>
     </form>
+    
   </div>
 {/block}

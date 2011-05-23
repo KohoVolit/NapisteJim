@@ -12,8 +12,8 @@
                 },
                 "minSize": {
                     "regex": "none",
-                    "alertText": "* Minimálně ",
-                    "alertText2": " znaky"
+                    "alertText": "* Tato zpráva zpráva je moc krátká (min. ",
+                    "alertText2": " znaků)"
                 },
                 "maxSize": {
                     "regex": "none",

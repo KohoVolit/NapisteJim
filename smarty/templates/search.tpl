@@ -15,7 +15,8 @@
 	  <form name="search-search" action="" method="get">
 	    <input id="search-address" name="address" class="clearField" type="text" value="{t}Your address...{/t}" />
 	    <input id="search-submit-geocode" type="submit" value="{t}Find representatives{/t}"/>
-	  </form>
+	    <div id="search-advanced-search" class="small-text dimmed">{t}Advanced search{/t}</div>
+	  </form>	  
 	</div>
 
 	<div id="search-example">

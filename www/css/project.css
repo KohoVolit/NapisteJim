@@ -3,8 +3,20 @@
 */
 
 /* clearField effect */
-.clearFieldBlurred { color: #666; font-style: italic; }
+.clearFieldBlurred { color: #888; font-style: italic; }
 .clearFieldActive { color: #000; }
+
+/* parties' logos sprite */
+.party-logo {
+   background: url(/images/parties.png) no-repeat top left;
+}
+.party-logo-cssd{ background-position: 0 0; width: 50px; height: 30px; } 
+.party-logo-kdu-csl{ background-position: 0 -80px; width: 50px; height: 30px; } 
+.party-logo-kscm{ background-position: 0 -160px; width: 50px; height: 30px; } 
+.party-logo-nezarazeni{ background-position: 0 -240px; width: 50px; height: 30px; } 
+.party-logo-ods{ background-position: 0 -320px; width: 50px; height: 30px; } 
+.party-logo-top09-s{ background-position: 0 -400px; width: 50px; height: 30px; } 
+.party-logo-vv{ background-position: 0 -480px; width: 50px; height: 30px; } 
 
 /*rest*/
 .rounded-corners {
@@ -14,7 +26,13 @@
     border-radius: 20px;
 }
 
-
+/* texts */
+.small-text {
+  font-size:0.75em;
+}
+.dimmed {
+  color: #88F;
+}
 
 /**
 * search
@@ -24,26 +42,28 @@
   margin-right: auto;
   text-align: center;
   margin-top:5em;
-  max-width:600px;
-  width:50%;
+  max-width:750px;
+  width:70%;
 }
   
-input#geocode-address, input#submit-geocode {
+input#search-address, input#search-submit-geocode {
   font-size: 1.5em;
 }
 
-#geocode-address,#geocode-address-2{
-  width:80%;
+#search-address,#geocode-address-2{
+  width:70%;
+  max-width:450px;
 }
 
-#submit-geocode{
-  width:15%;
+#search-advanced-search{
+ display:inline;
 }
 
 #search-example{
   color: #666;
   font-style: italic;
   font-size:0.75em;
+  text-align:left;
 }
 
 /**
@@ -90,6 +110,20 @@ input#geocode-address, input#submit-geocode {
   background-position: 0 -30px;
   width: 20px;
   height: 20px;
+}
+
+/* mps */
+.group-mps {
+  display:inline;
+}
+.mp {
+  display:inline;
+}
+.mp-name-name{
+  color: #006;
+}
+
+.mp-name-info{
 }
 
 /* debug geocoding */

@@ -52,11 +52,11 @@ echo "<div id='parliament-psp/cz' class='parliament'>
 //print groups
 foreach ((array) $groups as $group) {
   echo "<div id='group-{$group['group_friendly']}' class='group'>";
-  echo " <img src='img/1x1.png' class='group-logo-{$group['group_friendly']} group-logo' title='{$group['group']}' alt='{$group['group']}' />";
+  echo " <img src='/images/1x1.png' class='party-logo-{$group['group_friendly']} party-logo' title='{$group['group']}' alt='{$group['group']}' />";
   echo "  <div class='group-mps'>";
   foreach((array) $mp_group[$group['group_friendly']] as $row) {
     echo "<div class='mp-{$row['mp_id']} mp draggable' id='1-{$row['mp_id']}'>";
-    echo "  <img src='1x1.png'  id='1mp-toggle-{$row['mp_id']}'  class='mp-toggle-{$row['mp_id']} mp-toggle mp-toggle-off' />";
+    echo "  <img src='/images/1x1.png'  id='1mp-toggle-{$row['mp_id']}'  class='mp-toggle-{$row['mp_id']} mp-toggle mp-toggle-off' />";
     echo "  <span class='mp-name-{$row['mp_id']} mp-name'>{$row['last_name']} ({$row['town']})</span>";
     echo "</div>";
   }

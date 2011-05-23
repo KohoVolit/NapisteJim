@@ -97,8 +97,10 @@ function processAddress(results) {
       codeLatLng(results[0].geometry.location.lat(),results[0].geometry.location.lng());
     } else {
       found_regions_str += '&formatted_address=' + results[0].formatted_address;
+      found_regions_str += '&latitude=' + results[0].geometry.location.lat();
+      found_regions_str += '&longitude=' + results[0].geometry.location.lng();
 	  show_messages(_("Address found: ") + results[0].formatted_address,"");	
-      ajaxForm('ajax/geocode4.ajax.php',found_regions_str,'#search_results-result');  
+      ajaxForm('ajax/address2mps.php',found_regions_str,'#search_results-result');  
       anticycle = 0;
       //clear boxes + previous draggable (C+B)
       for (i=1;i<=3;i++) {
@@ -311,7 +313,7 @@ function clearAction(boxId) {
 
 //show hide
 $(document).ready(function() {
-  $(".parliament .parliament-head").live('click',function() {
+  $(".parliament-head").live('click',function() {
   $(this).next().toggle('fast');
 		return false;
   });
