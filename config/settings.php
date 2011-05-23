@@ -4,7 +4,9 @@
 const WTT_DIR = '/home/shared/napistejim.cz';
 const API_DIR = '/home/shared/api.kohovolit.eu/www';
 const SMARTY_DIR = '/usr/local/lib/php/Smarty/';
-error_reporting(E_NONE);
+error_reporting(0);
+
+define("LOGS_DIR", WTT_DIR . '/logs');
 
 // COUNTRY SPECIFIC SETTINGS
 // locale
