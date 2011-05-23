@@ -1,12 +1,12 @@
 <?php
 
 // instalation settings
-const WTT_DIR = '/home/michal/napistejim.cz';
-const API_DIR = '/home/michal/api.kohovolit.eu/www';
-const SMARTY_DIR = '/usr/local/lib/php/Smarty/';
+const WTT_DIR = '/home/shared/napistejim.cz';
+const API_DIR = '/home/shared/api.kohovolit.eu/www';
+const SMARTY_DIR = '/usr/local/lib/php/Smarty/libs/';
 error_reporting(0);
 
-define("LOGS_DIR", WTT_DIR . '/logs');
+define("WTT_LOGS_DIR", WTT_DIR . '/logs');
 
 // COUNTRY SPECIFIC SETTINGS
 // locale
