@@ -138,8 +138,8 @@ function send_page()
 	$to = $email;
 	$subject = _('Please confirm that you want to send a message to ') . _((count($unique_mps)) > 1 ? 'your representatives' : 'your representative');
 	$smarty->assign('message', array('subject' => $subject, 'body' => $body, 'is_public' => $is_public, 'reply_code' => $reply_code));
-	$mp_details = $adn->read('MpDetails', array('mp' => $_POST['mp_details']));
-	$smarty->assign('addressee', $mp_details['mp']);
+	$mp_details = $adn->read('MpDetails', array('mp' => $_POST['mp']));
+	$smarty->assign('addressee', $mp_details['mp_details']);
 	$message = $smarty->fetch('email/confirm_sending.tpl');
 	$headers = 'From: NapisteJim.cz <neodpovidejte@napistejim.cz>' . "\r\n" .
 		'Reply-To: NapisteJim.cz <neodpovidejte@napistejim.cz>' . "\r\n" .
