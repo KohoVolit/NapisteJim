@@ -7,6 +7,8 @@ $ad = new ApiDirect('napistejim');
 $res = $ad->read('AddressRepresentatives',$_GET);
 $ad2 = new ApiDirect('kohovolit');
 
+//
+
 //new smarty
 $smarty = new SmartyNapisteJimCz;
 
@@ -71,7 +73,7 @@ foreach ((array)$data as $pkey => $parliament) {
    
     $parliament['constituency'][$ckey] = $constituency;
   }
-  $parliament['description'] = 'jojo';
+  $parliament['description'] = ''; //popis, co parlament dela, jake topics jim lze psat
       
   $data[$pkey] = $parliament;
 }
@@ -92,7 +94,10 @@ function make_mp_info($mp,$array,$one_constit,$ad) {
     if (($item == 'office_distance') and ($item != ''))
       $out .= round($mp[$item],0) . ' km ';
     else
-      $out .= $mp[$item] . ' ';
+      if (is_numeric($mp[$item][strlen($mp[$item])-1]))	//hack for 'Praha 1'
+        $out .= $mp[$item] . ', ';
+      else
+        $out .= $mp[$item] . ' ';
   }
   if (!$one_constit) {
     $date = new DateTime('now');

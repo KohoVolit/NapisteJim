@@ -24,7 +24,7 @@
         {foreach $mp_details as $key=>$mp}
           <div id="write-mp-{$mp.id}" class="write-mp">
             <div id="write-mp-photo-{$mp.id}" class="write-mp-photo">
-              <img src="http://localhost/michal/kohovolit/data/images/{$mp.parl_code}/images/mp/{$mp.image}" alt="{$mp.last_name}" title="{$mp.last_name}" />
+              <img src="http://localhost/michal/kohovolit/data/images/{$mp.parliament_code}/images/mp/{$mp.image}" alt="" title="{$mp.last_name}" />
             </div>
             <div id="write-mp-first_name-{$mp.id}" class="write-mp-first_name">{$mp.first_name}</div>
             <div id="write-mp-last_name-{$mp.id}" class="write-mp-last_name">{$mp.last_name}</div>

@@ -1,8 +1,8 @@
 <?php
 
 // instalation settings
-const WTT_DIR = '/home/shared/napistejim.cz';
-const API_DIR = '/home/shared/api.kohovolit.eu/www';
+const WTT_DIR = '/home/michal/napistejim.cz';
+const API_DIR = '/home/michal/api.kohovolit.eu/www';
 const SMARTY_DIR = '/usr/local/lib/php/Smarty/';
 error_reporting(0);
 
@@ -27,4 +27,10 @@ const SEARCH_LANGUAGE = "cs";
 const SEARCH_REGION = "cz";	// usually country, see google maps api documentation
 const SEARCH_REGION_CHECK = "administrative_area_level_2";	// if this is not part of the address found by google, address entered is not good enough (but still possible to try reverse geocoding)
 
+// ajax address2mps settings
+global $parl_order;
+$parl_order = array(
+'cz/psp' => array('weight' => -100, 'info' => array('office_town','office_distance')),
+'cz/senat' => array('weight' => -99, 'info' => array()),
+);
 ?>

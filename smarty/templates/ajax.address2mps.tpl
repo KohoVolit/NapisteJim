@@ -1,4 +1,3 @@
-
 {foreach $data as $parliament}
   <div class="parliament-head" id="parliament-head-{$parliament.code}" > 
     <div class="parliament-head-name" id="parliament-head-name-{$parliament.code}" >
@@ -19,10 +18,10 @@
             <img src="images/1x1.png" class="party-logo party-logo-{$group.friendly_name}" title="{$group.name}" alt="{$group.name}" />
             {foreach $group.mp as $mp}
               <div class="group-mps">
-                <div id="mp-whole-{$parliament.code}/{$mp.id}" class="mp">
-                  <img src="images/1x1.png" class="mp-toggle mp-toggle-off mp-toggle-{$parliament.code}/{$mp.id}" alt="" />
+                <div id="1-{$parliament.code}/{$mp.id}" class="mp-{$mp.id} mp draggable">
+                  <img src="images/1x1.png" id="toggle-{$parliament.code}/{$mp.id}" class="mp-toggle mp-toggle-off mp-toggle-{$mp.id}" alt="" />
                   <span class="mp-name">
-                    <span id="{$parliament.code}/{$mp.id}" class="mp-name-name draggable mp-{$parliament.code}/{$mp.id}">{$mp.last_name}</span>
+                    <span id="{$parliament.code}/{$mp.id}" class="mp-name-name">{$mp.last_name}</span>
                     <span class="mp-name-info dimmed small-text">{$mp.info}</span>
                   </span>
                 </div>

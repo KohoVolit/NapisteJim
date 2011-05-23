@@ -27,8 +27,8 @@ var zoom = "{$zoom}";
 {block name=body}
   <div id="search_results-content-top-wrapper">
 	<div id="search_results-search-wrapper">
-	  <form name="search_results-search" action="javascript:codeAddress()">
-	    <input id="search_results-geocode-address" type="textbox" value="{$address}" />
+	  <form name="search_results-search" action="">
+	    <input id="search_results-geocode-address" name="address" type="textbox" value="{$address}" />
 	    <input id="search_results-submit-geocode" type="submit" value="{t}Change address{/t}"/>
 	  </form>
 	</div>

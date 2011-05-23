@@ -78,6 +78,11 @@ function write_page()
 	$smarty->assign('locale', LOCALE);
 	$smarty->assign('mps', $_GET['mp']);
 	$smarty->assign('mp', $mp_details);
+	
+	$smarty = new SmartyNapisteJimCz;
+	$smarty->assign('locale', LOCALE);
+	$smarty->assign('mps', $_GET['mp']);
+	$smarty->assign('mp_details', $mp_details['mp_details']);
 	$smarty->display('write.tpl');
 }
 
