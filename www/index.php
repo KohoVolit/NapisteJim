@@ -148,11 +148,11 @@ function send_page()
 	$ok = mail($to, $subject, $message, $headers);
 	if (!$ok)
 	{
-		// write to log and inform admin
-		$log = new Log(LOGS_DIR . '/error.log', 'a');
+		// if sending of the mail failed, write to log and inform admin
+		$log = new Log(WTT_LOGS_DIR . '/error.log', 'a');
 		$log->write("Sending of a confirmation mail failed for letter with id=$letter_id. Mail fields:\n" .
 			print_r(array('to' => $to, 'subject' => $subject, 'message' => $message, 'headers' => $headers), true), Log::ERROR);
-		mail('admin@napistejim.cz', 'Sending of a confirmation mail failed', 'Check ' . LOGS_DIR . '/error.log', $headers);
+		mail('admin@napistejim.cz', 'Sending of a confirmation mail failed', 'Check ' . WTT_LOGS_DIR . '/error.log', $headers);
 	}
 
 	$smarty->clearAllAssign();
@@ -169,7 +169,23 @@ function random_code($length)
 
 function confirm_page()
 {
-	// ...
+	// action: send
+	// check the code
+	// check profanities and send message to a moderator first or
+	// 	send the letter to addressees
+	// 	send a copy to the sender
+	// change letter state
+
+	// action: approve
+	// check the code
+	// send the letter to addressees
+	// send a copy to the sender
+	// change letter state
+
+	// action: refuse
+	// check the code
+	// send explanation to the sender
+	// delete the letter
 }
 
 function messages_page()
