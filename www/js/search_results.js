@@ -231,12 +231,12 @@ $(document).ready(function() {
 
 //deselect on X	(B+C)
 $(document).ready(function() {
-  $(".mp-in-box-deselect").live('click',function() {
+  $(".box-x").live('click',function() {
     //get boxId
     var boxIdAr = $(this).closest(".addressee-box").attr('id').split('-');
     var boxId = boxIdAr[boxIdAr.length-1];  //id of box, from e.g. search_results-addressee-box-2
     //get prevId
-    var prevIdAr = $(this).closest(".mp-in-box").attr('id').split('-');
+    var prevIdAr = $(this).closest(".box-mp").attr('id').split('-');
     var prevId = prevIdAr[prevIdAr.length-1];  //id of prev MP in box
     //B
     deselectAction(prevId);
@@ -284,21 +284,28 @@ function ajaxMp(page,data,result_div){
 //action deselecting previous MP / B
 //prevId : mp_id of prev. MP
 function deselectAction(prevId) {
-	$(".mp-toggle-"+prevId).removeClass('mp-toggle-on');
-	$(".mp-toggle-"+prevId).addClass('mp-toggle-off');
-	$(".mp-"+prevId).draggable({ disabled: false });
+	//we have to deal with jQuery bug, cannot select 'cz/psp/97'
+	var shortPrevIdAr = prevId.split('/');
+    var shortPrevId = shortPrevIdAr[shortPrevIdAr.length-1];
+    //deselect
+	$(".mp-toggle-"+shortPrevId).removeClass('mp-toggle-on');
+	$(".mp-toggle-"+shortPrevId).addClass('mp-toggle-off');
+	$(".mp-"+shortPrevId).draggable({ disabled: false });
 }
 
 //action selecting current MP / A
 //selectedId : mp_id of selected MP
 //boxId: number of box
 function selectAction(selectedId,boxId) {
+	//we have to deal with jQuery bug, cannot select 'cz/psp/97'
+	var shortSelectedIdAr = selectedId.split('/');
+    var shortSelectedId = shortSelectedIdAr[shortSelectedIdAr.length-1];
     //disable selected for next selection
-    $(".mp-toggle-"+selectedId).addClass('mp-toggle-on');
-    $(".mp-toggle-"+selectedId).removeClass('mp-toggle-off');
-    $(".mp-"+selectedId).draggable({ disabled: true });
+    $(".mp-toggle-"+shortSelectedId).addClass('mp-toggle-on');
+    $(".mp-toggle-"+shortSelectedId).removeClass('mp-toggle-off');
+    $(".mp-"+shortSelectedId).draggable({ disabled: true });
     //get html
-	ajaxMp('ajax/nj2_1mp.php','id='+selectedId,$("#search_results-addressee-box-"+boxId));
+	ajaxMp('ajax/id2mp.search_results.php','id='+selectedId,$("#search_results-addressee-box-"+boxId));
 	//insert id into form			
 	box[boxId] = selectedId;
 	$("#search_results-input").val(setFormValue(box));

@@ -4,6 +4,8 @@
 const WTT_DIR = '/home/shared/napistejim.cz';
 const API_DIR = '/home/shared/api.kohovolit.eu/www';
 const SMARTY_DIR = '/usr/local/lib/php/Smarty/libs/';
+const IMG_URL = 'http://kohovolit.eu/data/images/';
+
 error_reporting(0);
 
 define("WTT_LOGS_DIR", WTT_DIR . '/logs');

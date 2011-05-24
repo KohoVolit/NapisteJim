@@ -78,6 +78,7 @@ function write_page()
 	$smarty = new SmartyNapisteJimCz;
 	$smarty->assign('mps', $_GET['mp']);
 	$smarty->assign('mp_details', $mp_details['mp_details']);
+	$smarty->assign('img_dir', IMG_DIR);
 	$smarty->display('write.tpl');
 }
 

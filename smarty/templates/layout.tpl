@@ -10,6 +10,7 @@
 	<div id="links">
 	  <a href="/about">{t}About project{/t}</a>
 	  <a href="/faq">{t}Faq{/t}</a>
+	  <a href="/video">{t}Video{/t}</a>
 	  <a href="http://cs.kohovolit.eu">KohoVolit.eu</a>
 	</div>
 	<div id="licence">
