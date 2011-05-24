@@ -34,6 +34,46 @@
   color: #88F;
 }
 
+/* wrapper */
+body {
+	margin:0;
+	padding:0;
+	height:100%;
+}
+#page-wrapper {
+
+}
+
+
+/* header */
+.logo-wrapper {
+  margin:0;
+  padding:0;
+}
+.logo {
+  display: table-cell;
+  padding: 5px 40px;
+}
+#logo-right {
+  float:right;
+}
+
+/* footer */
+#page-footer {
+}
+#links {
+  padding: 1em;
+  text-align: center;
+}
+#links a{
+  padding:0 .5em;
+}
+#licence {
+  text-align: center;
+  font-size: 0.75em;
+  padding: 1em;
+}
+
 /**
 * search
 */
@@ -41,18 +81,24 @@
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  margin-top:5em;
-  max-width:750px;
-  width:70%;
+  padding-top: 80px;
+  padding-bottom: 3em;
+  max-width:1000px;
+  width:90%;
 }
   
-input#search-address, input#search-submit-geocode {
+input#search-address,input#search-submit-geocode{
   font-size: 1.5em;
 }
 
+#search-right {
+  display:inline;
+}
+
 #search-address,#geocode-address-2{
-  width:70%;
-  max-width:450px;
+  width:65%;
+  max-width:750px;
+  display:inline;
 }
 
 #search-advanced-search{
@@ -63,7 +109,7 @@ input#search-address, input#search-submit-geocode {
   color: #666;
   font-style: italic;
   font-size:0.75em;
-  text-align:left;
+  text-align:center;
 }
 
 /**
