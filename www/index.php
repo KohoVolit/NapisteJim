@@ -153,6 +153,10 @@ function confirm_page()
 	if (empty($letter))
 		return static_page('confirmation_result/wrong_link');
 
+	// check for duplicate confirmations
+	if ($letter['state_'] != 'created')
+		return static_page('confirmation_result/already_confirmed');
+
 	switch ($action)
 	{
 		case 'send':
@@ -206,7 +210,7 @@ function send_letter($letter)
 		$reply_to = ($letter['is_public'] == 'yes') ? $from : $letter['sender_email'];
 		$to = $mp['email'];
 		$subject = $letter['subject'];
-		$smarty->assign('message', array('subject' => $letter['subject'], 'body' => $letter['body_'], 'is_public' => $letter['is_public'], 'reply_to' => "<reply.{$letter['reply_code']}@napistejim.cz>"));
+		$smarty->assign('message', array('subject' => $letter['subject'], 'body' => $letter['body_'], 'is_public' => $letter['is_public'], 'reply_to' => $reply_to));
 		$message = $smarty->fetch('email/message_to_mp.tpl');
 		$to = 'jaroslav_semancik@yahoo.com';	// !!! REMOVE AFTER TESTING !!!
 		send_mail($from, $to, $subject, $message, $reply_to);
