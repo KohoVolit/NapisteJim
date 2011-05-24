@@ -53,7 +53,6 @@ switch ($page)
 function static_page($page)
 {
 	$smarty = new SmartyNapisteJimCz;
-	$smarty->assign('locale', LOCALE);
 	$smarty->setCaching(Smarty::CACHING_LIFETIME_CURRENT);
 	$smarty->display($page . '.tpl');
 }
@@ -156,13 +155,11 @@ function confirm_page()
 	if (empty($letter))
 		return static_page('confirmation_result/wrong_link');
 
-	// check for duplicate confirmations
-	if ($letter['state_'] != 'created')
-		return static_page('confirmation_result/already_confirmed');
-
 	switch ($action)
 	{
 		case 'send':
+			if ($letter['state_'] != 'created')
+				return static_page('confirmation_result/already_confirmed');
 			if (is_profane($letter['subject']) || is_profane($letter['body_']))
 			{
 				if ($letter['is_public'] == 'yes')
