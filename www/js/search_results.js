@@ -237,18 +237,18 @@ $(document).ready(function() {
     var boxIdAr = $(this).closest(".addressee-box").attr('id').split('-');
     var boxId = boxIdAr[boxIdAr.length-1];  //id of box, from e.g. search_results-addressee-box-2
     //get prevId
-    var prevIdAr = $(this).closest(".box-mp").attr('id').split('-');
-    var prevId = prevIdAr[prevIdAr.length-1];  //id of prev MP in box
+    var prevId = box[boxId];  //id of prev MP in box
     //B
+    alert(prevId);
     deselectAction(prevId);
     //C
     clearAction(boxId);
   });
 });
 
-//click on select
+//click on select / A
 $(document).ready(function() {
-  $(".mp-toggle-off").live('click',function() {
+  $(".mp-clicked-off").live('click',function() {
     //is any box free?
     var warn = true;
     for(i=1; i<=3; i++) {
@@ -289,8 +289,8 @@ function deselectAction(prevId) {
 	var shortPrevIdAr = prevId.split('/');
     var shortPrevId = shortPrevIdAr[shortPrevIdAr.length-1];
     //deselect
-	$(".mp-toggle-"+shortPrevId).removeClass('mp-toggle-on');
-	$(".mp-toggle-"+shortPrevId).addClass('mp-toggle-off');
+	$(".mp-clicked-"+shortPrevId).addClass('mp-toggle-off mp-clicked-off');
+	$(".mp-clicked-"+shortPrevId).removeClass('mp-toggle-on mp-clicked-on');
 	$(".mp-"+shortPrevId).draggable({ disabled: false });
 }
 
@@ -302,8 +302,8 @@ function selectAction(selectedId,boxId) {
 	var shortSelectedIdAr = selectedId.split('/');
     var shortSelectedId = shortSelectedIdAr[shortSelectedIdAr.length-1];
     //disable selected for next selection
-    $(".mp-toggle-"+shortSelectedId).addClass('mp-toggle-on');
-    $(".mp-toggle-"+shortSelectedId).removeClass('mp-toggle-off');
+    $(".mp-clicked-"+shortSelectedId).addClass('mp-toggle-on mp-clicked-on');
+    $(".mp-clicked-"+shortSelectedId).removeClass('mp-toggle-off mp-clicked-off');
     $(".mp-"+shortSelectedId).draggable({ disabled: true });
     //get html
 	ajaxMp('ajax/id2mp.search_results.php','id='+selectedId,$("#search_results-addressee-box-"+boxId));
