@@ -8,7 +8,6 @@ $res = $adn->read('AddressRepresentatives',$_GET);
 $adk = new ApiDirect('kohovolit');
 
 //check for known problems in parliaments/areas and correct them
-global $parl_zero_constit;
 $res = parl_zero_constit($adn,$_GET,$res,$parl_zero_constit);
 
 //new smarty
@@ -25,7 +24,6 @@ textdomain(LOCALIZED_DOMAIN);
 
 //reorder parliaments, rule: as set in $parl_order
 $data = $res['parliament'];
-global $parl_order;
 foreach((array) $data as $key => $parl) {
   if (array_key_exists($parl['code'],$parl_order))
     $data[$key]['order'] = $parl_order[$parl['code']]['weight'];

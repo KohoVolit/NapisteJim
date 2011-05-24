@@ -1,6 +1,6 @@
 {extends file="layout.tpl"}
 
-{block name=title}{t}NapišteJim.cz{/t} - {t}Psaní{/t}{/block}
+{block name=title}NapišteJim.cz - Napsat zprávu{/block}
 
 {block name=head}
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"></script>
@@ -24,7 +24,7 @@
         {foreach $mp_details as $key=>$mp}
           <div id="write-mp-{$mp.id}" class="write-mp">
             <div id="write-mp-photo-{$mp.id}" class="write-mp-photo">
-              <img src="{$img_dir}{$mp.image}" alt="" title="{$mp.last_name}" />
+              <img src="{$img_url}{$mp.image}" alt="" title="{$mp.last_name}" />
             </div>
             <div id="write-mp-first_name-{$mp.id}" class="write-mp-first_name">{$mp.first_name}</div>
             <div id="write-mp-last_name-{$mp.id}" class="write-mp-last_name">{$mp.last_name}</div>
@@ -33,19 +33,15 @@
       </div>
       
       <div id="write-personal">
-        {t}Email je{/t}*: <input type="radio" id="write-radio-1" name="is_public" value="1" class="validate[required] radio" />{t}Veřejný{/t} <input type="radio" id="write-radio-2" name="is_public" value="0" class="validate[required] radio" />{t}Soukromý{/t} <br/>
-        {t}Jméno{/t}*: <input type="text" id="write-name" name="name" value="" class="validate[required] text-input" /><br/>
-        {t}Email{/t}*: <input type="text"  id="write-email" name="email" value="" class="validate[required,custom[email]] text-input" /><br/>
-        {t}Předmět{/t}*: <input type="text" id="write-subject" name="subject" value=""  class="validate[required] text-input" /><br/>
+        Zpráva je: <input type="radio" id="write-radio-1" name="is_public" value="yes" class="validate[required] radio" />Veřejná <input type="radio" id="write-radio-2" name="is_public" value="no" class="validate[required] radio" />Soukromá <br/>
+        Vaše jméno: <input type="text" id="write-name" name="name" value="" class="validate[required] text-input" /><br/>
+        E-mail: <input type="text"  id="write-email" name="email" value="" class="validate[required,custom[email]] text-input" /><br/>
+        Předmět: <input type="text" id="write-subject" name="subject" value=""  class="validate[required] text-input" /><br/>
       </div>
-      
       <textarea id="write-body" rows="15" cols="62" name="body" class="validate[required,minSize[90]] textarea">
-       {t}Greetings{/t},
-       &#010;&#010;&#010;&#010;
-       {t}Yours sincerely{/t},&#010;&#010;
-      </textarea><br/>
+	  {include file="email/initial_message.tpl"}</textarea>
       <input type="checkbox" id="write-newsletter" name="newsletter" value="order-newsletter" /> {t}Chci dostávat informace z NapišteJim.cz{/t}<br/>
-      <input class="submit" type="submit" value="Odeslat email"/>
+      <input class="submit" type="submit" value="Odeslat"/>
     </form>
     
   </div>

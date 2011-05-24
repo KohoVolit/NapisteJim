@@ -9,4 +9,15 @@ function wtt_autoload($class_name)
 }
 spl_autoload_register('wtt_autoload');
 
+
+// ajax address2mps settings
+$parl_order = array(
+'cz/psp' => array('weight' => -100, 'info' => array('office_town','office_distance')),
+'cz/senat' => array('weight' => -99, 'info' => array()),
+);
+
+$parl_zero_constit = array( //in case no constituency is found
+  'cz/senat' => true,
+);
+
 ?>
