@@ -39,13 +39,13 @@
         {t}Předmět{/t}*: <input type="text" id="write-subject" name="subject" value=""  class="validate[required] text-input" /><br/>
       </div>
       
-      <textarea id="write-body" rows="15" cols="62" name="body" class="validate[required,minSize[170]] textarea">
+      <textarea id="write-body" rows="15" cols="62" name="body" class="validate[required,minSize[90]] textarea">
        {t}Greetings{/t},
        &#010;&#010;&#010;&#010;
        {t}Yours sincerely{/t},&#010;&#010;
-      </textarea>
-      
-      <input class="submit" type="submit" value="Send"/>
+      </textarea><br/>
+      <input type="checkbox" id="write-newsletter" name="newsletter" value="order-newsletter" /> {t}Chci dostávat informace z NapišteJim.cz{/t}<br/>
+      <input class="submit" type="submit" value="Odeslat email"/>
     </form>
     
   </div>

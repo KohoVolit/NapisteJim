@@ -18,6 +18,7 @@ switch ($page)
 	case 'about':
 	case 'faq':
 	case 'privacy':
+	case 'video':
 	case 'contact':
 		static_page($page);
 		break;
@@ -50,6 +51,7 @@ function static_page($page)
 {
 	$smarty = new SmartyNapisteJimCz;
 	$smarty->assign('locale', LOCALE);
+	$smarty->setCaching(Smarty::CACHING_LIFETIME_CURRENT);
 	$smarty->display($page . '.tpl');
 }
 

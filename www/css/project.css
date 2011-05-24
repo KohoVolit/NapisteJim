@@ -40,8 +40,13 @@ body {
 	padding:0;
 	height:100%;
 }
-#page-wrapper {
+.wrapper {
+  margin:0;
+  padding:0;
+}
 
+.left {
+ float:left;
 }
 
 

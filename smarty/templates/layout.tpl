@@ -4,15 +4,16 @@
 	<title>{block name=title}{/block}</title>
 	<link rel="stylesheet" type="text/css" href="css/project.css" />
 	{block name=head}{/block}
+	<script type="text/javascript" src="js/google_analytics.js"></script>
 </head>
 <body>
   <div id="page-wrapper">
 	<div id="logos-wrapper">
 	  <div id="logo-right" class="logo">
-  	    <a href="http://kohovolit.eu"><img src="images/logo_kohovolit.eu.png" alt="kohovolit.eu" /></a>
+  	    <a href="http://kohovolit.eu"><img src="/images/logo_kohovolit.eu.png" alt="kohovolit.eu" /></a>
   	  </div>
 	  <div id="logo-left" class="logo">
-	    <a href="http://napistejim.cz"><img src="images/logo_napistejim.cz.jpg" alt="napistejim.cz" /></a>
+	    <a href="http://napistejim.cz"><img src="/images/logo_napistejim.cz.jpg" alt="napistejim.cz" /></a>
 	  </div>
 	</div>
 	{block name=body}{/block}

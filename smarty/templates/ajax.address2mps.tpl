@@ -15,18 +15,22 @@
       <div id="constituency-{$constituency.ckey}" class="constituency">
         {foreach $constituency.group as $group}
           <div id="group-{$group.friendly_name}" class="group">
-            <img src="images/1x1.png" class="party-logo party-logo-{$group.friendly_name}" title="{$group.name}" alt="{$group.name}" />
-            {foreach $group.mp as $mp}
-              <div class="group-mps">
-                <div id="1-{$parliament.code}/{$mp.id}" class="mp">
-                  <img src="images/1x1.png" id="toggle-{$parliament.code}/{$mp.id}" class="mp-toggle mp-toggle-off mp-toggle-{$mp.id}" alt="" />
-                  <span class="mp-name">
-                    <span id="{$parliament.code}/{$mp.id}" class="mp-name-name mp-{$mp.id} draggable">{$mp.last_name}</span>
-                    <span class="mp-name-info dimmed small-text">{$mp.info}</span>
-                  </span>
-                </div>
-              </div>
-            {/foreach}
+          	<div class="wrapper">
+          	  	<div class="group-logo left">
+		          <img src="images/1x1.png" class="party-logo party-logo-{$group.friendly_name}" title="{$group.name}" alt="{$group.name}" />
+		        <div>
+		        {foreach $group.mp as $mp}
+		          <div class="group-mps">
+		            <div id="mp-{$parliament.code}/{$mp.id}" class="mp">
+		              <img src="images/1x1.png" id="mp-toggle-{$parliament.code}/{$mp.id}" class="mp-toggle mp-toggle-off mp-clicked-off mp-clicked-{$mp.id}" alt="" />
+		              <span class="mp-name">
+		                <span id="mp-name-name-{$parliament.code}/{$mp.id}" class="mp-name-name mp-clicked-off mp-clicked-{$mp.id} draggable">{$mp.last_name}</span>
+		                <span class="mp-name-info dimmed small-text">{$mp.info}</span>
+		              </span>
+		            </div>
+		          </div>
+		        {/foreach}
+		    <div>
           </div>
         {/foreach}
       </div>
