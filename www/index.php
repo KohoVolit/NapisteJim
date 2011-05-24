@@ -78,7 +78,7 @@ function write_page()
 	$smarty = new SmartyNapisteJimCz;
 	$smarty->assign('mps', $_GET['mp']);
 	$smarty->assign('mp_details', $mp_details['mp_details']);
-	$smarty->assign('img_dir', IMG_DIR);
+	$smarty->assign('img_url', IMG_URL);
 	$smarty->display('write.tpl');
 }
 
@@ -125,7 +125,7 @@ function send_page()
 	// send confirmation mail to the sender
 	$from = 'NapisteJim.cz <neodpovidejte@napistejim.cz>';
 	$to = $email;
-	$subject = 'Potvrďte prosím, že chcete odeslat správu ' . (count($unique_mps)) > 1 ? 'svým zástupcům' : 'svému zástupci';
+	$subject = 'Potvrďte prosím, že chcete odeslat správu ' . ((count($unique_mps) > 1) ? 'svým zástupcům' : 'svému zástupci');
 	$mp_details = $api_napistejim->read('MpDetails', array('mp' => $_POST['mp']));
 	$smarty->assign('addressee', $mp_details['mp_details']);
 	$smarty->assign('message', array('subject' => $subject, 'body' => $body, 'is_public' => $is_public, 'reply_code' => $reply_code));
@@ -156,7 +156,7 @@ function confirm_page()
 	switch ($action)
 	{
 		case 'send':
-			if (is_profane($letter['subject']) || is_profane($letter['body']))
+			if (is_profane($letter['subject']) || is_profane($letter['body_']))
 			{
 				if ($letter['is_public'])
 					send_to_reviewer($letter);
@@ -191,9 +191,10 @@ function confirm_page()
 	}
 }
 
-function send_letter($letter, $template)
+function send_letter($letter)
 {
 	global $api_kohovolit, $api_napistejim;
+	$smarty = new SmartyNapisteJimCz;
 
 	// get information about addressees of the letter
 	$mp_details = addressees_of_letter($letter);
@@ -205,7 +206,7 @@ function send_letter($letter, $template)
 		$reply_to = ($letter['is_public']) ? $from : $letter['sender_email'];
 		$to = $mp['email'];
 		$subject = $letter['subject'];
-		$smarty->assign('message', array('subject' => $subject, 'body' => $body, 'is_public' => $is_public, 'reply_to' => "<reply.{$letter['reply_code']}@napistejim.cz>"));
+		$smarty->assign('message', array('subject' => $letter['subject'], 'body' => $letter['body_'], 'is_public' => $letter['is_public'], 'reply_to' => "<reply.{$letter['reply_code']}@napistejim.cz>"));
 		$message = $smarty->fetch('email/message_to_mp.tpl');
 		$to = 'jaroslav_semancik@yahoo.com';	// !!! REMOVE AFTER TESTING !!!
 		send_mail($from, $to, $subject, $message, $reply_to);
@@ -216,7 +217,7 @@ function send_letter($letter, $template)
 	$to = $letter['sender_email'];
 	$subject = 'Vaše správa byla odeslána';
 	$smarty->assign('addressee', $mp_details);
-	$smarty->assign('message', array('subject' => $subject, 'body' => $body, 'is_public' => $is_public));
+	$smarty->assign('message', array('subject' => $letter['subject'], 'body' => $letter['body_'], 'is_public' => $letter['is_public']));
 	$message = $smarty->fetch('email/message_sent.tpl');
 	send_mail($from, $to, $subject, $message);
 
@@ -227,6 +228,7 @@ function send_letter($letter, $template)
 function send_to_reviewer($letter)
 {
 	global $api_kohovolit;
+	$smarty = new SmartyNapisteJimCz;
 	
 	// generate a random approval code for the message
 	$approval_code = random_code(10);
@@ -234,20 +236,21 @@ function send_to_reviewer($letter)
 	// send the letter to a reviewer to approve
 	$from = 'NapisteJim.cz <neodpovidejte@napistejim.cz>';
 	$to = 'veronika.sumova@kohovolit.eu';
-	$to = 'jaroslav_semancik@yahoo.com';	// !!! REMOVE AFTER TESTING !!!
 	$subject = 'Správa pro politiky potřebuje tvoje schválení';
 	$smarty->assign('addressee', addressees_of_letter($letter));
 	$smarty->assign('message', array('subject' => $subject, 'body' => $body, 'is_public' => $is_public, 'reply_code' => $letter['reply_code'], 'approval_code' => $approval_code));
 	$message = $smarty->fetch('email/request_to_review.tpl');
+	$to = 'jaroslav_semancik@yahoo.com';	// !!! REMOVE AFTER TESTING !!!
 	send_mail($from, $to, $subject, $message);
 
 	// change letter state
 	$api_kohovolit->update('Letter', array('id' => $letter['id']), array('state_' => 'waiting for approval', 'approval_code' => $approval_code));
 }
 
-function refuse_letter($letter, $template)
+function refuse_letter($letter)
 {
 	global $api_kohovolit;
+	$smarty = new SmartyNapisteJimCz;
 
 	// send explanation of the refusal to the sender
 	$from = 'NapisteJim.cz <neodpovidejte@napistejim.cz>';

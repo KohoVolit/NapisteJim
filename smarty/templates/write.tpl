@@ -24,7 +24,7 @@
         {foreach $mp_details as $key=>$mp}
           <div id="write-mp-{$mp.id}" class="write-mp">
             <div id="write-mp-photo-{$mp.id}" class="write-mp-photo">
-              <img src="{$img_dir}{$mp.image}" alt="" title="{$mp.last_name}" />
+              <img src="{$img_url}{$mp.image}" alt="" title="{$mp.last_name}" />
             </div>
             <div id="write-mp-first_name-{$mp.id}" class="write-mp-first_name">{$mp.first_name}</div>
             <div id="write-mp-last_name-{$mp.id}" class="write-mp-last_name">{$mp.last_name}</div>
@@ -40,10 +40,9 @@
       </div>
       
       <textarea id="write-body" rows="15" cols="62" name="body" class="validate[required,minSize[170]] textarea">
-	  {include file="email/initial_message.tpl"}
-	  </textarea>
+	  {include file="email/initial_message.tpl"}</textarea>
       
-      <input class="submit" type="submit" value="Send"/>
+      <input class="submit" type="submit" value="Odeslat"/>
     </form>
     
   </div>
