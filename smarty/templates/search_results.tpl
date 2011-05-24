@@ -32,11 +32,12 @@ var zoom = "{$zoom}";
 	    <input id="search_results-submit-geocode" type="submit" value="{t}Change address{/t}"/>
 	  </form>
 	</div>
+	<div id="search_results-map_canvas"></div>
 	<div id="search_results-formatted-address"></div>
 	<div id="search_results-message"></div>
 	<div id="search_results-message-debug"></div>
 	<div id="search_results-addressee">
-	  <h2>{t}Addressees{/t}</h2><div id="search_results-up-to">(up to 3)</div>
+	  <h2>{t}Addressees{/t}</h2><div id="search_results-up-to">{t}(up to 3){/t}</div>
 	  <div id="search_results-addressee-box-1" class="addressee-box rounded-corners droppable"></div>
 	  <div id="search_results-addressee-box-2" class="addressee-box rounded-corners droppable"></div>
 	  <div id="search_results-addressee-box-3" class="addressee-box rounded-corners droppable"></div>
@@ -48,6 +49,6 @@ var zoom = "{$zoom}";
 	  </form>
 	</div>
   </div>
-	<div id="search_results-map_canvas"></div>
+	
 <div id="search_results-result"></div>
 {/block}

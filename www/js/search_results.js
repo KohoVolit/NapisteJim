@@ -45,6 +45,7 @@ function initialize(lat,lng,zoom) {
 	codeAddress();
 }
 
+
 //geocode address
 function codeAddress() {
   $('#search_results-message-debug').hide();
@@ -99,7 +100,7 @@ function processAddress(results) {
       found_regions_str += '&formatted_address=' + results[0].formatted_address;
       found_regions_str += '&latitude=' + results[0].geometry.location.lat();
       found_regions_str += '&longitude=' + results[0].geometry.location.lng();
-	  show_messages(_("Address found: ") + results[0].formatted_address,"");	
+	  show_messages(_("Address found") + ": " + results[0].formatted_address,"");	
       ajaxForm('ajax/address2mps.php',found_regions_str,'#search_results-result');  
       anticycle = 0;
       //clear boxes + previous draggable (C+B)
