@@ -14,6 +14,14 @@ class SmartyNapisteJimCz extends Smarty
 		$this->cache_dir    = WTT_DIR . '/smarty/cache';
 
 //		$this->caching = 2;
+
+		$this->clearAllAssign();
+	}
+	
+	public function clearAllAssign()
+	{
+		parent::clearAllAssign();
+		$this->assign('locale', LOCALE);
 	}
 }
 
