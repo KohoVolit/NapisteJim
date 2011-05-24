@@ -135,7 +135,7 @@ function send_page()
 	send_mail($from, $to, $subject, $message);
 
 	// order newsletter if requested
-	if ($_POST['order_newsletter'])
+	if ($_POST['order-newsletter'])
 		order_newsletter($email);
 
 	$smarty->display('confirm_sending.tpl');
@@ -191,7 +191,7 @@ function confirm_page()
 			break;
 		
 		default:
-			static_page('search');
+			static_page('confirmation_result/wrong_link');
 	}
 }
 
