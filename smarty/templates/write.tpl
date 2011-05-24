@@ -33,7 +33,7 @@
       </div>
       
       <div id="write-personal">
-        Zpráva je: <input type="radio" id="write-radio-1" name="is_public" value="1" class="validate[required] radio" />Veřejná <input type="radio" id="write-radio-2" name="is_public" value="0" class="validate[required] radio" />Soukromá <br/>
+        Zpráva je: <input type="radio" id="write-radio-1" name="is_public" value="yes" class="validate[required] radio" />Veřejná <input type="radio" id="write-radio-2" name="is_public" value="no" class="validate[required] radio" />Soukromá <br/>
         Vaše jméno: <input type="text" id="write-name" name="name" value="" class="validate[required] text-input" /><br/>
         E-mail: <input type="text"  id="write-email" name="email" value="" class="validate[required,custom[email]] text-input" /><br/>
         Předmět: <input type="text" id="write-subject" name="subject" value=""  class="validate[required] text-input" /><br/>

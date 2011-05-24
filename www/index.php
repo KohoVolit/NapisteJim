@@ -149,7 +149,7 @@ function confirm_page()
 	
 	// find a letter corresponding to the given reply_code
 	$res = $api_kohovolit->read('Letter', array('reply_code' => $reply_code));
-	$letter = $res['letter'];
+	$letter = $res['letter'][0];
 	if (empty($letter))
 		return static_page('confirmation_result/wrong_link');
 
@@ -158,7 +158,7 @@ function confirm_page()
 		case 'send':
 			if (is_profane($letter['subject']) || is_profane($letter['body_']))
 			{
-				if ($letter['is_public'])
+				if ($letter['is_public'] == 'yes')
 					send_to_reviewer($letter);
 				else
 					refuse_letter($letter);
@@ -203,7 +203,7 @@ function send_letter($letter)
 	foreach ($mp_details as $mp)
 	{
 		$from = "{$letter['sender_name']} <reply.{$letter['reply_code']}@napistejim.cz>";
-		$reply_to = ($letter['is_public']) ? $from : $letter['sender_email'];
+		$reply_to = ($letter['is_public'] == 'yes') ? $from : $letter['sender_email'];
 		$to = $mp['email'];
 		$subject = $letter['subject'];
 		$smarty->assign('message', array('subject' => $letter['subject'], 'body' => $letter['body_'], 'is_public' => $letter['is_public'], 'reply_to' => "<reply.{$letter['reply_code']}@napistejim.cz>"));
@@ -238,7 +238,7 @@ function send_to_reviewer($letter)
 	$to = 'veronika.sumova@kohovolit.eu';
 	$subject = 'Správa pro politiky potřebuje tvoje schválení';
 	$smarty->assign('addressee', addressees_of_letter($letter));
-	$smarty->assign('message', array('subject' => $subject, 'body' => $body, 'is_public' => $is_public, 'reply_code' => $letter['reply_code'], 'approval_code' => $approval_code));
+	$smarty->assign('message', array('subject' => $letter['subject'], 'body' => $letter['body'], 'is_public' => $letter['is_public'], 'reply_code' => $letter['reply_code'], 'approval_code' => $approval_code));
 	$message = $smarty->fetch('email/request_to_review.tpl');
 	$to = 'jaroslav_semancik@yahoo.com';	// !!! REMOVE AFTER TESTING !!!
 	send_mail($from, $to, $subject, $message);
@@ -257,7 +257,7 @@ function refuse_letter($letter)
 	$to = $letter['sender_email'];
 	$subject = 'Vaše správa byla vyhodnocena jako nezdvořilá a nebyla odeslána';
 	$smarty->assign('addressee', addressees_of_letter($letter));
-	$smarty->assign('message', array('subject' => $subject, 'body' => $body, 'is_public' => $is_public));
+	$smarty->assign('message', array('subject' => $letter['subject'], 'body' => $letter['body'], 'is_public' => $letter['is_public']));
 	$message = $smarty->fetch('email/message_refused.tpl');
 	send_mail($from, $to, $subject, $message);
 	
@@ -269,7 +269,7 @@ function addressees_of_letter($letter)
 {
 	global $api_kohovolit, $api_napistejim;
 
-	$mps = $api_kohovolit->read('LetterToMp', array('id' => $letter['id']));
+	$mps = $api_kohovolit->read('LetterToMp', array('letter_id' => $letter['id']));
 	$mp_list = '';
 	foreach($mps['letter_to_mp'] as $mp)
 		$mp_list .= $mp['parliament_code'] . '/' . $mp['mp_id'] . '|';
