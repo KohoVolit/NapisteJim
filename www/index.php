@@ -66,12 +66,11 @@ function search_results_advanced_page()
 	$smarty = new SmartyNapisteJimCz;
 	
 	$data = array();
-	if (isset($_GET['groups']))
+	if (isset($_GET['groups']) and ($_GET['groups'] != ''))
 		$data['groups'] = explode('|', $_GET['groups']);
-	if (isset($_GET['constituency']))
+	if (isset($_GET['constituency']) and ($_GET['constituency'] != ''))
 		$data['constituency'] = $_GET['constituency'];
 	$search_mps = $api_napistejim->read('SearchMps', $data);
-	
 	if (isset($_GET['parliament_code']))
 		$smarty->assign('parliament', array('code' => $_GET['parliament_code']));
 	$smarty->assign('mps', $search_mps['search_mps']);

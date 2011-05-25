@@ -297,8 +297,8 @@ function deselectAction(prevId) {
 	var shortPrevIdAr = prevId.split('/');
     var shortPrevId = shortPrevIdAr[shortPrevIdAr.length-1];
     //deselect
-	$(".mp-clicked-"+shortPrevId).addClass('mp-toggle-off mp-clicked-off');
-	$(".mp-clicked-"+shortPrevId).removeClass('mp-toggle-on mp-clicked-on');
+	$(".mp-clicked-"+shortPrevId).addClass('mp-clicked-off');
+	$(".mp-clicked-"+shortPrevId).removeClass('ui-state-highlight mp-clicked-on');
 	$(".mp-"+shortPrevId).draggable({ disabled: false });
 }
 
@@ -310,8 +310,8 @@ function selectAction(selectedId,boxId) {
 	var shortSelectedIdAr = selectedId.split('/');
     var shortSelectedId = shortSelectedIdAr[shortSelectedIdAr.length-1];
     //disable selected for next selection
-    $(".mp-clicked-"+shortSelectedId).addClass('mp-toggle-on mp-clicked-on');
-    $(".mp-clicked-"+shortSelectedId).removeClass('mp-toggle-off mp-clicked-off');
+    $(".mp-clicked-"+shortSelectedId).addClass('ui-state-highlight  mp-clicked-on');
+    $(".mp-clicked-"+shortSelectedId).removeClass('mp-clicked-off');
     $(".mp-"+shortSelectedId).draggable({ disabled: true });
     //get html
 	ajaxMp('ajax/id2mp.search_results.php','id='+selectedId,$("#search_results-addressee-box-"+boxId));

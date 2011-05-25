@@ -12,7 +12,7 @@
 <body>
   <div id="wrapper">
 	{block name=logo}{/block}
-	{block name=body}{/block}
+	{block name=basic_body}{/block}
 	<div id="page-footer">
 		<div id="links">
 		  <a href="/about">{t}O projektu{/t}</a>
