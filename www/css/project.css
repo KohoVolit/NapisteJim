@@ -136,7 +136,7 @@ input#search-address,input#search-submit-geocode{
 }
 
 /*jQuery UI */
-.ui-state-active{
+.ui-state-active-border {
   border: 5px dashed #F00;
 }
 

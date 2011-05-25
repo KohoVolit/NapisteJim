@@ -3,8 +3,6 @@
 {block name=title}NapišteJim.cz - Napsat zprávu{/block}
 
 {block name=head}
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"></script>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/jquery-ui.min.js"></script>
 <script type="text/javascript" src="locale/{$locale}/LC_MESSAGES/locale.js"></script>
 <script type="text/javascript" src="js/i18n.js"></script>
 <script type="text/javascript" src="js/jquery.validationEngine-{$locale}.js"></script>

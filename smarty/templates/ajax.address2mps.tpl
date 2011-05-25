@@ -1,8 +1,11 @@
+<div class='wrapper'>
 {foreach $data as $parliament}
-  <div class="parliament-head" id="parliament-head-{$parliament.code}" > 
-    <div class="parliament-head-name" id="parliament-head-name-{$parliament.code}" >
-      {$parliament.name}
-    </div>
+<div class="parliament ui-widget" id="parliament-{$parliament.code}">
+  <div class="parliament-head ui-accordion ui-accordion-icons ui-helper-reset" id="parliament-head-{$parliament.code}" > 
+    <h3 class="parliament-head-name ui-accordion-header" id="parliament-head-name-{$parliament.code}" >
+      <span class="ui-icon ui-icon-triangle-1-s"></span>
+      <a href="#" class="ui-state-active"> {$parliament.name}</a>
+    </h3>
     <div class="parliament-head-description" id="parliament-head-description-{$parliament.code}">
       {$parliament.description}
     </div>
@@ -12,13 +15,13 @@
       {$parliament.message}
     </div>
     {foreach $parliament.constituency as $ckey => $constituency}
-      <div id="constituency-{$constituency.ckey}" class="constituency">
+      <div id="constituency-{$ckey}" class="constituency">
         {foreach $constituency.group as $group}
           <div id="group-{$group.friendly_name}" class="group">
           	<div class="wrapper">
           	  	<div class="group-logo left">
 		          <img src="images/1x1.png" class="party-logo party-logo-{$group.friendly_name}" title="{$group.name}" alt="{$group.name}" />
-		        <div>
+		        </div>
 		        {foreach $group.mp as $mp}
 		          <div class="group-mps">
 		            <div id="mp-{$parliament.code}/{$mp.id}" class="mp">
@@ -30,10 +33,12 @@
 		            </div>
 		          </div>
 		        {/foreach}
-		    <div>
+		    </div>
           </div>
         {/foreach}
       </div>
     {/foreach}
   </div>
+</div>
 {/foreach}
+</div>

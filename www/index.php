@@ -22,6 +22,7 @@ switch ($page)
 	case 'faq':
 	case 'privacy':
 	case 'video':
+	case 'support':
 	case 'contact':
 		static_page($page);
 		break;
@@ -41,8 +42,10 @@ switch ($page)
 		{
 			if (isset($_GET['mp']))
 				write_page();
-			else if (isset($_GET['address']) || isset($_GET['constituency']) || isset($_GET['groups']))
-				search_results_page();
+			else if (isset($_GET['address']))
+			  	search_results_page();
+			else if (isset($_GET['name']) || isset($_GET['constituency']) || isset($_GET['groups']))
+				search_results_advanced_page();
 			else if (isset($_GET['advanced']))
 				static_page('advanced_search');
 			else
@@ -55,6 +58,24 @@ function static_page($page)
 	$smarty = new SmartyNapisteJimCz;
 	$smarty->setCaching(Smarty::CACHING_LIFETIME_CURRENT);
 	$smarty->display($page . '.tpl');
+}
+
+function search_results_advanced_page()
+{
+	global $api_napistejim;
+	$smarty = new SmartyNapisteJimCz;
+	
+	$data = array();
+	if (isset($_GET['groups']))
+		$data['groups'] = explode('|', $_GET['groups']);
+	if (isset($_GET['constituency']))
+		$data['constituency'] = $_GET['constituency'];
+	$search_mps = $api_napistejim->read('SearchMps', $data);
+	
+	if (isset($_GET['parliament_code']))
+		$smarty->assign('parliament', array('code' => $_GET['parliament_code']));
+	$smarty->assign('mps', $search_mps['search_mps']);
+	$smarty->display('search_results_advanced.tpl');
 }
 
 function search_results_page()

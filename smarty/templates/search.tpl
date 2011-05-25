@@ -1,9 +1,8 @@
 {extends file="layout.tpl"}
 
-{block name=title}{t}NapisteJim.cz{/t} - {t}Search{/t}{/block}
+{block name=title}{t}NapišteJim.cz{/t} - {t}Vyhledání{/t}{/block}
 
 {block name=head}
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"></script>
 <script type="text/javascript" src="js/jquery.clearfield.packed.js"></script>
 <script type="text/javascript" src="js/search.js"></script>
 {/block}

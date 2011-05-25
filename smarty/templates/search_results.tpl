@@ -4,8 +4,6 @@
 
 {block name=head}
 <script type="text/javascript" src="http://maps.google.com/maps/api/js?v=3.2&sensor=false"></script>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/jquery-ui.min.js"></script>
 <script type="text/javascript">
 //define global variables from settings.php
 var parent_region = "{$parent_region}";
@@ -21,6 +19,7 @@ var zoom = "{$zoom}";
 <script type="text/javascript" src="locale/{$locale}/LC_MESSAGES/locale.js"></script>
 <script type="text/javascript" src="js/i18n.js"></script>
 <script type="text/javascript" src="js/jquery.rsv.js"></script>
+<script type="text/javascript" src="js/jquery.ui.highlight.js"></script>
 <script type="text/javascript" src="js/search_results.js"></script>
 {/block}
 
@@ -45,7 +44,7 @@ var zoom = "{$zoom}";
 	  <form id="search_results-send" action="" >
 
 	    <input type="hidden" name="mp" id="search_results-input" value="" />
-	    <input id="search_results-submit-mps" type="submit" value="{t}Write!{/t}"/>
+	    <input id="search_results-submit-mps" type="submit" value="{t}Napište jim!{/t}"/>
 	  </form>
 	</div>
   </div>
