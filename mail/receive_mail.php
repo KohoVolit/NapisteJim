@@ -58,7 +58,7 @@ $to = $message['sender_email'];
 $subject = mime_encode($mp['first_name'] . ' ' . $mp['last_name'] . ' odpověděl' . (($mp['sex'] == 'f') ? 'a' : '') . ' na vaši zprávu');
 $smarty = new SmartyNapisteJimCz;
 $smarty->assign('mp', $mp);
-$smarty->assign('message', array('subject' => $message['subject'], 'body' => $message['body_'], 'is_public' => $message['is_public']));
+$smarty->assign('message', array('subject' => $response['subject'], 'body' => $response['body_'], 'is_public' => $message['is_public']));
 $text = $smarty->fetch('email/response_from_mp.tpl');
 send_mail($from, $to, $subject, $text);
 
