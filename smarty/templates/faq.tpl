@@ -6,7 +6,6 @@ NapišteJim.cz - otázky a odpovědi
 
 {block name=body}
 <h1>Otázky a odpovědi</h1>
-Q a A
 
 <h3>1. Jak vyhledám komu chci napsat?</h3>
 

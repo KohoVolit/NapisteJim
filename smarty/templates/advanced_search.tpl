@@ -4,10 +4,7 @@
 NapišteJim.cz - Rozšířené vyhledávání
 {/block}
 {block name=head}
-<link rel="Stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/ui-lightness/jquery-ui.css" type="text/css" />
 <link rel="Stylesheet" href="css/ui.selectmenu.css" type="text/css" />
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
 <script type="text/javascript" src="js/ui.selectmenu.js"></script>	
 <script type="text/javascript" src="js/advanced_search.js"></script>	
 {/block}

@@ -14,7 +14,11 @@ $(document).ready(function() {
     ]
   });
 });
-
+//active ui buttons
+$(document).ready(function() {
+  $("#search_results-submit-mps").button();
+  $("#search_results-submit-geocode").button();
+});
 //geocoding + form
 $(document).ready(function() {
  initialize(lat,lng,zoom);
@@ -69,7 +73,7 @@ function codeAddress() {
       //postprocess
       processAddress(results);
 	} else { //stop whole process
-      results = show_messages(_("Try to improve your address, we have not been able to decipher this one."),"ERROR: Geocode was not successful for the following reason: " + status);
+      results = show_messages(_("Try to improve your address, we have not been able to decipher this one."),"ERROR: Geocode was not successful for the following reason: " + status,'error');
     }
   });
 }
@@ -86,7 +90,7 @@ function processAddress(results) {
   //check if address in given region
   var check1 = check_in_region(results[0].address_components, parent_region_type,"long_name",parent_region);
   if (!check1) {
-    show_messages(sprintf(_("The address is not in region %s. Enter a new address, please")),"check1");
+    show_messages(sprintf(_("The address is not in region %s. Enter a new address, please"),parent_region),"check1",'error');
   } else {
   
     //check if address geocoded enough
@@ -94,13 +98,13 @@ function processAddress(results) {
     var check2 = check_address_enough(results[0].address_components,conditions);
     if (!check2) {
       //try reverse geocoding
-      //show_messages("check2","check2");	//debug only
+      //show_messages("check2","check2",'');	//debug only
       codeLatLng(results[0].geometry.location.lat(),results[0].geometry.location.lng());
     } else {
       found_regions_str += '&formatted_address=' + results[0].formatted_address;
       found_regions_str += '&latitude=' + results[0].geometry.location.lat();
       found_regions_str += '&longitude=' + results[0].geometry.location.lng();
-	  show_messages(_("Address found") + ": " + results[0].formatted_address,"");	
+	  show_messages(_("Address found") + ": " + results[0].formatted_address,"",'alert');	
       ajaxForm('ajax/address2mps.php',found_regions_str,'#search_results-result');  
       anticycle = 0;
       //clear boxes + previous draggable (C+B)
@@ -140,7 +144,7 @@ function ajaxForm(page,data,result_div){
 //reverse geocoding
 function codeLatLng(lat,lng) {
   if (anticycle > 0) {
-    show_messages(_("Try to improve your address, we have not been able to decipher this one."),"Anticycle check in reverse geocoding");
+    show_messages(_("Try to improve your address, we have not been able to decipher this one."),"Anticycle check in reverse geocoding",'error');
   } else {
     var latlng = new google.maps.LatLng(lat, lng);
     geocoder.geocode({'latLng': latlng,"language":lang,"region":reg}, function(results, status) {
@@ -148,10 +152,10 @@ function codeLatLng(lat,lng) {
         //alert(dump(results));
         if (results[1]) {
         } else {
-          show_messages(_("Try to improve your address, we have not been able to decipher this one."),"No results found for reverse geocoding");
+          show_messages(_("Try to improve your address, we have not been able to decipher this one."),"No results found for reverse geocoding",'error');
         }
       } else {
-        show_messages(_("Try to improve your address, we have not been able to decipher this one."),"Reverse Geocoder failed due to: " + status);
+        show_messages(_("Try to improve your address, we have not been able to decipher this one."),"Reverse Geocoder failed due to: " + status,'error');
       }
       anticycle++;
       processAddress(results);
@@ -189,9 +193,14 @@ function extract_regions(results,regions) {
   return frs;
 }
 
-function show_messages(str1,str2) {
+function show_messages(str1,str2,type) {
     $('#search_results-message').hide();
-    $('#search_results-message').html(str1);
+    //$('#search_results-message').html(str1);
+    if (type == 'error') {
+       $('#search_results-message').writeError(str1);
+    } else {
+      $('#search_results-message').writeAlert(str1);
+    }
     $('#search_results-message').fadeIn('slow');
     $('#search_results-message-debug').hide();
     $('#search_results-message-debug').html(str2);
@@ -215,7 +224,7 @@ function g_find_type_in_results(ar,type,name_) {
 //draggable - droppable
 $(document).ready(function() {
 		$( ".droppable" ).droppable({
-			hoverClass: "ui-state-active",
+			hoverClass: "ui-state-active-border",
 			drop: function( event, ui ) {  //(B+A)
 			    var thisIdAr = $(this).attr('id').split('-');
 			    var thisId = thisIdAr[thisIdAr.length-1];  //id of box, from e.g. search_results-addressee-box-2
@@ -239,7 +248,6 @@ $(document).ready(function() {
     //get prevId
     var prevId = box[boxId];  //id of prev MP in box
     //B
-    alert(prevId);
     deselectAction(prevId);
     //C
     clearAction(boxId);
@@ -322,7 +330,12 @@ function clearAction(boxId) {
 //show hide
 $(document).ready(function() {
   $(".parliament-head").live('click',function() {
-  $(this).next().toggle('fast');
+    $(this).find(".ui-icon").toggleClass("ui-icon-triangle-1-s");
+    $(this).find(".ui-icon").toggleClass("ui-icon-triangle-1-e");
+    $(this).find("a").toggleClass("ui-state-active");
+    $(this).find("a").toggleClass("ui-state-default");
+    //$(this).toggleClass("ui-state-active");
+    $(this).next().toggle('fast');
 		return false;
   });
 });

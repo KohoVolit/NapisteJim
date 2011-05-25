@@ -46,6 +46,7 @@ $(document).ready(function() {
 		    appendTo: "body",
 			helper: "clone"
 		});
+		$("#search_results-submit-mps").button();
 });
 
 //deselect on X	(B+C)
@@ -139,7 +140,7 @@ function clearAction(boxId) {
 //show hide
 $(document).ready(function() {
   $(".parliament-head").live('click',function() {
-  $(this).next().toggle('fast');
+    $(this).next().toggle('fast');
 		return false;
   });
 });
