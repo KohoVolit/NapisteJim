@@ -22,7 +22,7 @@
 		  <a href="http://cs.kohovolit.eu">KohoVolit.eu</a>
 		</div>
 		<div id="licence">
-		  <a href="http://www.gnu.org/licenses/gpl.html">GNU/GPL</a> - <a href="/privacy">{t}Osobní údaje{/t}</a>
+		  <a href="http://www.gnu.org/licenses/gpl.html">GNU/GPL</a> - <a href="/privacy">{t}Osobní údaje{/t}</a> - <a href="/contact">Kontakt</a>
 		</div>
 	</div>
   </div>
