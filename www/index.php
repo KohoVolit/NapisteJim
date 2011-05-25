@@ -132,20 +132,20 @@ function send_page()
 	$res= $api_kohovolit->create('Message', array(array('subject' => $subject, 'body_' => $body, 'sender_name' => $name, 'sender_email' => $email, 'is_public' => $is_public, 'confirmation_code' => $confirmation_code)));
 	$message_id = $res[0];
 
-	// store binding between the message and its addressees
+	// prepare records for responses from all addressees of the message
 	$mp_list = trim_list($_POST['mp'], '|', 3);
 	$mps = explode('|', $mp_list);
 	$unique_mps = array();
-	$bindings = array();
+	$responses = array();
 	foreach ($mps as $mp)
 	{
 		if (array_key_exists($mp, $unique_mps)) continue;	// skip duplicate MPs
 		$unique_mps[$mp] = true;
-		$reply_code = unique_random_code(10, 'MessageToMp', 'reply_code');
+		$reply_code = unique_random_code(10, 'Response', 'reply_code');
 		$p = strrpos($mp, '/');
-		$bindings[] = array('message_id' => $message_id, 'mp_id' => substr($mp, $p + 1), 'parliament_code' => substr($mp, 0, $p), 'reply_code' => $reply_code);
+		$responses[] = array('message_id' => $message_id, 'mp_id' => substr($mp, $p + 1), 'parliament_code' => substr($mp, 0, $p), 'reply_code' => $reply_code);
 	}
-	$api_kohovolit->create('MessageToMp', $bindings);
+	$api_kohovolit->create('Response', $responses);
 
 	// send confirmation mail to the sender
 	$from = mime_encode('NapišteJim.cz') . ' <neodpovidejte@napistejim.cz>';
@@ -299,9 +299,9 @@ function addressees_of_message($message)
 	global $api_kohovolit, $api_napistejim;
 
 	// get list of MPs' id-s the message is addressed to
-	$mps = $api_kohovolit->read('MessageToMp', array('message_id' => $message['id']));
+	$mps = $api_kohovolit->read('Response', array('message_id' => $message['id']));
 	$mp_list = '';
-	foreach($mps['message_to_mp'] as $mp)
+	foreach($mps['response'] as $mp)
 		$mp_list .= $mp['parliament_code'] . '/' . $mp['mp_id'] . '|';
 
 	// get details of those MPs
@@ -311,7 +311,7 @@ function addressees_of_message($message)
 	// add a reply_code for each addressee to the returned details
 	$i = 0;
 	foreach ($mp_details['mp_details'] as &$mp)
-		$mp['reply_code'] = $mps['message_to_mp'][$i++]['reply_code'];
+		$mp['reply_code'] = $mps['response'][$i++]['reply_code'];
 	return $mp_details['mp_details'];
 }
 
@@ -394,7 +394,7 @@ function send_mail($from, $to, $subject, $message, $reply_to = null, $additional
 
 function order_newsletter($email)
 {
-	$from = 'From: ' . mime_encode('NapišteJim.cz') . ' <neodpovidejte@napistejim.cz>';
+	$from = mime_encode('NapišteJim.cz') . ' <neodpovidejte@napistejim.cz>';
 	$to = 'info@kohovolit.eu';
 	$subject = mime_encode('Objednání newsletteru');
 	$message = $email;
