@@ -148,17 +148,17 @@ function send_page()
 	$api_kohovolit->create('MessageToMp', $bindings);
 
 	// send confirmation mail to the sender
-	$from = 'NapišteJim.cz <neodpovidejte@napistejim.cz>';
+	$from = mime_encode('NapišteJim.cz') . ' <neodpovidejte@napistejim.cz>';
 	$to = $email;
-	$subject = 'Potvrďte prosím, že chcete odeslat zprávu přes NapišteJim.cz';
+	$subject = mime_encode('Potvrďte prosím, že chcete odeslat zprávu přes NapišteJim.cz');
 	$mp_details = $api_napistejim->read('MpDetails', array('mp' => $mp_list));
 	$smarty->assign('addressee', $mp_details['mp_details']);
 	$smarty->assign('message', array('subject' => $subject, 'body' => $body, 'is_public' => $is_public, 'confirmation_code' => $confirmation_code));
-	$message = $smarty->fetch('email/request_to_confirm.tpl');
-	send_mail($from, $to, $subject, $message);
+	$text = $smarty->fetch('email/request_to_confirm.tpl');
+	send_mail($from, $to, $subject, $text);
 
 	// order newsletter if requested
-	if ($_POST['order-newsletter'])
+	if (isset($_POST['newsletter']))
 		order_newsletter($email);
 
 	$smarty->display('confirm_sending.tpl');
@@ -191,7 +191,7 @@ function confirm_page()
 			}
 			else
 				send_message($message);
-			static_page('confirmation_result/processing.tpl');
+			static_page('confirmation_result/processing');
 			break;
 
 		case 'approve':
@@ -228,24 +228,24 @@ function send_message($message)
 	// send the message to all addressees one by one
 	foreach ($mp_details as $mp)
 	{
-		$from = "{$message['sender_name']} <reply.{$mp['reply_code']}@napistejim.cz>";
+		$from = mime_encode($message['sender_name']) . " <reply.{$mp['reply_code']}@napistejim.cz>";
 		$reply_to = ($message['is_public'] == 'yes') ? $from : $message['sender_email'];
 		$to = $mp['email'];
-		$subject = $message['subject'];
+		$subject = mime_encode($message['subject']);
 		$smarty->assign('message', array('subject' => $message['subject'], 'body' => $message['body_'], 'is_public' => $message['is_public'], 'reply_to' => $reply_to));
-		$message = $smarty->fetch('email/message_to_mp.tpl');
+		$text = $smarty->fetch('email/message_to_mp.tpl');
 		$to = 'jaroslav_semancik@yahoo.com';	// !!! REMOVE AFTER TESTING !!!
-		send_mail($from, $to, $subject, $message, $reply_to);
+		send_mail($from, $to, $subject, $text, $reply_to);
 	}
 
 	// send a copy to the sender
-	$from = 'NapišteJim.cz <neodpovidejte@napistejim.cz>';
+	$from = mime_encode('NapišteJim.cz') . ' <neodpovidejte@napistejim.cz>';
 	$to = $message['sender_email'];
-	$subject = 'Vaše zpráva byla odeslána';
+	$subject = mime_encode('Vaše zpráva byla odeslána');
 	$smarty->assign('addressee', $mp_details);
 	$smarty->assign('message', array('subject' => $message['subject'], 'body' => $message['body_'], 'is_public' => $message['is_public']));
-	$message = $smarty->fetch('email/message_sent.tpl');
-	send_mail($from, $to, $subject, $message);
+	$text = $smarty->fetch('email/message_sent.tpl');
+	send_mail($from, $to, $subject, $text);
 
 	// change message state
 	$api_kohovolit->update('Message', array('id' => $message['id']), array('state_' => 'sent', 'sent_on' => 'now'));
@@ -260,14 +260,14 @@ function send_to_reviewer($message)
 	$approval_code = random_code(10);
 
 	// send the message to a reviewer to approve
-	$from = 'NapišteJim.cz <neodpovidejte@napistejim.cz>';
+	$from = mime_encode('NapišteJim.cz') . ' <neodpovidejte@napistejim.cz>';
 	$to = 'veronika.sumova@kohovolit.eu';
-	$subject = 'Zpráva pro politiky potřebuje tvoje schválení';
+	$subject = mime_encode('Zpráva pro politiky potřebuje tvoje schválení');
 	$smarty->assign('addressee', addressees_of_message($message));
 	$smarty->assign('message', array('subject' => $message['subject'], 'body' => $message['body'], 'is_public' => $message['is_public'], 'confirmation_code' => $message['confirmation_code'], 'approval_code' => $approval_code));
-	$message = $smarty->fetch('email/request_to_review.tpl');
+	$text = $smarty->fetch('email/request_to_review.tpl');
 	$to = 'jaroslav_semancik@yahoo.com';	// !!! REMOVE AFTER TESTING !!!
-	send_mail($from, $to, $subject, $message);
+	send_mail($from, $to, $subject, $text);
 
 	// change message state
 	$api_kohovolit->update('Message', array('id' => $message['id']), array('state_' => 'waiting for approval', 'approval_code' => $approval_code));
@@ -279,13 +279,13 @@ function refuse_message($message)
 	$smarty = new SmartyNapisteJimCz;
 
 	// send explanation of the refusal to the sender
-	$from = 'NapišteJim.cz <neodpovidejte@napistejim.cz>';
+	$from = mime_encode('NapišteJim.cz') . ' <neodpovidejte@napistejim.cz>';
 	$to = $message['sender_email'];
-	$subject = 'Vaše zpráva byla vyhodnocena jako nezdvořilá a nebyla odeslána';
+	$subject = mime_encode('Vaše zpráva byla vyhodnocena jako nezdvořilá a nebyla odeslána');
 	$smarty->assign('addressee', addressees_of_message($message));
 	$smarty->assign('message', array('subject' => $message['subject'], 'body' => $message['body'], 'is_public' => $message['is_public']));
-	$message = $smarty->fetch('email/message_refused.tpl');
-	send_mail($from, $to, $subject, $message);
+	$text = $smarty->fetch('email/message_refused.tpl');
+	send_mail($from, $to, $subject, $text);
 
 	// change message state to refused or delete it completely if written as private
 	if ($message['is_public'] == 'yes')
@@ -341,7 +341,7 @@ function unique_random_code($length, $resource, $field)
 		$code = random_code($length);
 		$res = $api_kohovolit->read($resource, array($field => $code));
 	}
-	while (!empty(reset($res)));
+	while (!empty($res[strtolower($resource)]));
 	return $code;
 }
 
@@ -370,6 +370,8 @@ function send_mail($from, $to, $subject, $message, $reply_to = null, $additional
 	$headers = "From: $from\r\n" .
 		"Reply-To: $reply_to\r\n" .
 		'Content-Type: text/plain; charset="UTF-8"' . "\r\n" .
+		'MIME-Version: 1.0' . "\r\n" .
+		'Content-Transfer-Encoding: 8bit' . "\r\n" .
 		'X-Mailer: PHP';
 	if (!empty($additional_headers))
 		$headers .= "\r\n" . $additional_headers;
@@ -383,20 +385,25 @@ function send_mail($from, $to, $subject, $message, $reply_to = null, $additional
 		print_r(array('to' => $to, 'subject' => $subject, 'message' => $message, 'headers' => $headers), true), Log::ERROR);
 
 	// and inform admin
-	$headers = 'From: NapišteJim.cz <neodpovidejte@napistejim.cz>' . "\r\n" .
-	'Reply-To: NapišteJim.cz <neodpovidejte@napistejim.cz>' . "\r\n" .
+	$headers = 'From: ' . mime_encode('NapišteJim.cz') . ' <neodpovidejte@napistejim.cz>' . "\r\n" .
+	'Reply-To: ' . mime_encode('NapišteJim.cz') . ' <neodpovidejte@napistejim.cz>' . "\r\n" .
 	'Content-Type: text/plain; charset="UTF-8"' . "\r\n" .
 	'X-Mailer: PHP';
-	mail('info@kohovolit.eu', 'Odeslání mailu selhalo', 'Zkontroluj ' . WTT_LOGS_DIR . '/error.log', $headers);
+	mail('info@kohovolit.eu', mime_encode('Odeslání mailu selhalo'), 'Zkontroluj ' . WTT_LOGS_DIR . '/error.log', $headers);
 }
 
 function order_newsletter($email)
 {
-	$from = 'From: NapišteJim.cz <neodpovidejte@napistejim.cz>';
+	$from = 'From: ' . mime_encode('NapišteJim.cz') . ' <neodpovidejte@napistejim.cz>';
 	$to = 'info@kohovolit.eu';
-	$subject = 'Objednání newsletteru';
+	$subject = mime_encode('Objednání newsletteru');
 	$message = $email;
 	send_mail($from, $to, $subject, $message);
+}
+
+function mime_encode($text)
+{
+	return mb_encode_mimeheader($text, 'UTF-8');
 }
 
 ?>
