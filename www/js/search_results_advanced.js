@@ -29,7 +29,7 @@ var box = [];  //values in boxes
 //draggable - droppable
 $(document).ready(function() {
 		$( ".droppable" ).droppable({
-			hoverClass: "ui-state-active",
+			hoverClass: "ui-state-active-border",
 			drop: function( event, ui ) { //(B+A) 				
 			    var thisIdAr = $(this).attr('id').split('-');
 			    var thisId = thisIdAr[thisIdAr.length-1];  //id of box, from e.g. search_results-addressee-box-2
@@ -107,8 +107,8 @@ function deselectAction(prevId) {
 	var shortPrevIdAr = prevId.split('/');
     var shortPrevId = shortPrevIdAr[shortPrevIdAr.length-1];
     //deselect
-	$(".mp-clicked-"+shortPrevId).addClass('mp-toggle-off mp-clicked-off');
-	$(".mp-clicked-"+shortPrevId).removeClass('mp-toggle-on mp-clicked-on');
+	$(".mp-clicked-"+shortPrevId).addClass('mp-clicked-off');
+	$(".mp-clicked-"+shortPrevId).removeClass('ui-state-highlight  mp-clicked-on');
 	$(".mp-"+shortPrevId).draggable({ disabled: false });
 }
 
@@ -120,8 +120,8 @@ function selectAction(selectedId,boxId) {
 	var shortSelectedIdAr = selectedId.split('/');
     var shortSelectedId = shortSelectedIdAr[shortSelectedIdAr.length-1];
     //disable selected for next selection
-    $(".mp-clicked-"+shortSelectedId).addClass('mp-toggle-on mp-clicked-on');
-    $(".mp-clicked-"+shortSelectedId).removeClass('mp-toggle-off mp-clicked-off');
+    $(".mp-clicked-"+shortSelectedId).addClass('ui-state-highlight  mp-clicked-on');
+    $(".mp-clicked-"+shortSelectedId).removeClass('mp-clicked-off');
     $(".mp-"+shortSelectedId).draggable({ disabled: true });
     //get html
 	ajaxMp('ajax/id2mp.search_results.php','id='+selectedId,$("#search_results-addressee-box-"+boxId));
@@ -136,6 +136,19 @@ function clearAction(boxId) {
   box[boxId] = '';
   $("#search_results-input").val(setFormValue(box));
 }
+
+//show hide
+$(document).ready(function() {
+  $(".parliament-head").live('click',function() {
+    $(this).find(".ui-icon").toggleClass("ui-icon-triangle-1-s");
+    $(this).find(".ui-icon").toggleClass("ui-icon-triangle-1-e");
+    $(this).find("a").toggleClass("ui-state-active");
+    $(this).find("a").toggleClass("ui-state-default");
+    //$(this).toggleClass("ui-state-active");
+    $(this).next().toggle('fast');
+		return false;
+  });
+});
 
 //show hide
 $(document).ready(function() {

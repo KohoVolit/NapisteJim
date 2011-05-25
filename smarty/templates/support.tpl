@@ -38,7 +38,7 @@ Podpořte nás
 <li>finančně</li>
 </ul>
 <p>
-KohoVolit.eu hospodaří TRANSPARENTNĚ. Všechny transakce můžete vidět online: <a href="https://www.fio.cz/scgi-bin/hermes/dz-transparent.cgi?ID_ucet=2300049454">2300049454/2010</a>
+KohoVolit.eu hospodaří TRANSPARENTNĚ. <br/>Všechny transakce můžete vidět online: <a href="https://www.fio.cz/scgi-bin/hermes/dz-transparent.cgi?ID_ucet=2300049454">2300049454/2010</a>, <a href="https://www.fio.cz/scgi-bin/hermes/dz-transparent.cgi?ID_ucet=2600049456">2600049456/2010</a>
 </p>
 <p>
 DĚKUJEME:-)

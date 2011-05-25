@@ -62,9 +62,9 @@ foreach ((array) $groups as $key => $group_kind) {
 		$key_out = $i;
 	  $groups_out[$key_out] = order_array($groups[$key],'name_',SORT_ASC);
 	  $i++;
+	//quick hack to get right names of group_kinds
+    $groups_out[$key_out][0]['group_kind_name'] = group_kind2name($groups_out[$key_out][0]['group_kind_code']);
   }
-  //quick hack to get right names of group_kinds
-  $groups_out[$key_out][0]['group_kind_name'] = group_kind2name($groups_out[$key_out][0]['group_kind_code']);
 }
 
 ksort($groups_out);

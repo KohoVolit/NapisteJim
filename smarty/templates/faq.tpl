@@ -13,16 +13,16 @@ NapisteJim.cz nabízí TŘI různé možnosti jak najít "svého" politika:
 
 <p>- podle vaší adresy – stačí zadat do vyhledávacího políčka i fragment vaší adresy a zobrazí se vám seznam poslanců a senátorů, seřazených pěkně podle vzdálenosti jejich oficiálního kanceláře od zadaného místa
 </p><p>
-- podle politické strany – víte už předem, že chcete napsat poslancům nebo senátorům z konkrétní politické strany a nezáleží vám na tom, odkud jsou? Pak klikněte na nápis ‚Chci hledat podle politické strany‘ pod vyhledávacím políčkem
+- podle politické strany – víte už předem, že chcete napsat poslancům nebo senátorům z konkrétní politické strany a nezáleží vám na tom, odkud jsou? Pak klikněte na nápis ‚Rozšířené hledání‘ pod vyhledávacím políčkem
 </p><p>
-- podle výborů a komisí, ve kterých působí – nebo vás zajímá konkrétní téma? Klikněte ‚Chci hledat podle výborů a komisí‘ a zobrazí se vám jejich seznam. Kliknutím na vybranou komisi se vám ukáže rozpis jejích členů včetně jejich zodpovědností – pak už si stačí jen vybrat
+- podle výborů a komisí, ve kterých působí – nebo vás zajímá konkrétní téma? Klikněte ‚Rozšířené hledání‘ a zobrazí se vám jejich seznam.
 </p>
 
 <h3>2. Proč si mohu vybrat jen tři adresáty?</h3>
 <p>
 Aplikace NapisteJim.cz je vybudována s úmyslem podpořit osobní komunikaci občanů s politiky, nikoli sloužit jako brána pro masové uniformní kampaně, kdy se hromadně obešle celý parlament univerzální zprávou.
 </p><p>
-Samozřejmě budeme podporovat snahy dalších neziskových organizací, takže se směle inspirujte – třeba u Oživení, Transparency International, Hnutí Duha a dalších… ale pište za sebe a piště osobně
+Samozřejmě budeme podporovat snahy dalších neziskových organizací, takže se směle inspirujte – třeba u NašiPolitici.cz, Oživení, Transparency International, Hnutí Duha a dalších… ale pište za sebe a piště osobně
 </p><p>
 Jakkoli v naší zemi neplatí, že by určitý poslanec měl zodpovědnost pouze a výlučně za konkrétní region, i v České republice volíme regionálně. Nejvíce vám tak budou pravděpodobně naslouchat ti politici, kteří kandidovali ve vašem volebním obvodě, protože budou chtít být zvoleni znovu. Navíc, jako zástupci tohoto obvodu v parlamentu pro něj pravděpodobně budou moci nejvíce udělat. Kdo ví, možná zjistíte, že ‚váš‘ poslanec má kancelář přímo ‚za rohem‘ :-)
 </p>
@@ -31,15 +31,15 @@ Jakkoli v naší zemi neplatí, že by určitý poslanec měl zodpovědnost pou
 
 <p>Ze dvou důvodů:
 </p><p>
-Za prvé proto, aby vám na váš e-mail mohla přijít odpověď od daného politika. Pokud zprávu neoznačíte jako veřejnou, odpověď přijde pouze vám
+Za prvé proto, aby vám na váš e-mail mohla přijít odpověď od daného politika. Pokud zprávu neoznačíte jako veřejnou, odpověď přijde pouze Vám.
 </p><p>
-Za druhé před odesláním e-mailu politikovi vás požádáme o kliknutí na aktivační link, který pošleme na vaši e-mailovou adresu (viz níže). Jde o prvek, který snižuje zneužití systému. Chceme mít jistotu, že zprávy odesílají lidé z masa a kostí a nikoli spammovací roboti
+Za druhé před odesláním e-mailu politikovi Vás požádáme o kliknutí na aktivační link, který pošleme na Vaši e-mailovou adresu (viz níže). Jde o prvek, který snižuje zneužití systému. Chceme mít jistotu, že zprávy odesílají lidé z masa a kostí a nikoli spammovací roboti.
 </p>
 
 
 <h3>4. Jak mu/jí napíšu zprávu?</h3>
 
-<p>Jakmile budete mít vybraného 1-3 politiky nebo političky, kterým chcete napsat, klikněte na ‚piš‘. Budete přesměrováni na další stránku s jednoduchým textovým oknem, kde můžete formulovat svou zprávu. Když budete s textem spokojeni, klikněte na ‚odeslat‘
+<p>Jakmile budete mít vybraného 1-3 politiky nebo političky, kterým chcete napsat, klikněte na ‚Napište jim!‘. Budete přesměrováni na další stránku s jednoduchým textovým oknem, kde můžete formulovat svou zprávu. Když budete s textem spokojeni, klikněte na ‚odeslat‘.
 </p><p>
 Zbývá jeden poslední krok. Na vaši e-mailovou adresu, kterou jste vyplnili v předchozích krocích bude odeslán automatický e-mail s potvrzujícím odkazem. Stačí na něj kliknout a vaše zpráva pro politika byla právě odeslána.
 </p>
@@ -49,9 +49,9 @@ Zbývá jeden poslední krok. Na vaši e-mailovou adresu, kterou jste vyplnili v
 
 <p>I když o sobě uvádíte některé údaje, pořád je ještě odeslání zprávy politikovi prostřednictvím NapisteJim.cz poměrně anonymní záležitostí, kterou je možné zneužít odesíláním mnohem vulgárnějších sdělení než dopisem nebo dokonce tváří v tvář. 
 </p><p>
-Abychom zabránili tomuto zneužívání, zabudovali jsme systém, který automaticky kontroluje zprávy z tohoto hlediska. Pokud vaše zpráva systémem neprojde, bude vám vrácena zpátky. Máte následně možnost ji opravit a znovu odeslat. 
+Abychom zabránili tomuto zneužívání, zabudovali jsme systém, který automaticky kontroluje zprávy z tohoto hlediska. Pokud vaše zpráva systémem neprojde, bude Vám vrácena zpátky. Máte následně možnost ji opravit a znovu odeslat. 
 </p><p>
-Pokud se budete domnívat, že například váš e-mail obsahuje jenom jedno slovo, které vadí automatickému systému a je oprávněné a pro kontext důležité, můžete nás kontaktovat zde a můžeme se domluvit na individuální výjimce.
+Pokud se budete domnívat, že například Váš e-mail obsahuje jenom jedno slovo, které vadí automatickému systému a je oprávněné a pro kontext důležité, můžete nás kontaktovat <a href="/contact">zde</a> a můžeme se domluvit na individuální výjimce.
 </p>
 
 
@@ -76,9 +76,9 @@ Použitím aplikace souhlasíte s výše uvedeným skladováním osobních dat.
 
 <p>I když v KohoVolit toho děláme spoustu užitečného (mrkněte se třeba na naše předvolební kalkulačky nebo na analýzu aktivity poslanců), nezvládáme všechno najednou.
 </p><p>
-Plánujeme aplikaci postupně rozšiřovat a prvními kroky budou právě vláda a krajská zastupitelstva. Chtěli byste nám s tím pomoci? Kontaktujte nás! Nebo můžete na vývoj přispět zde. 
+Plánujeme aplikaci postupně rozšiřovat a prvními kroky budou právě vláda a krajská zastupitelstva. Chtěli byste nám s tím pomoci? <a href="/contact">Kontaktujte nás!<a/> Nebo můžete na vývoj přispět <a href="/support">zde</a>. 
 </p><p>
-Můžeme do systému ale přidat i úplně malou obec, pokud o to někdo projeví zájem a dodá nám e-mailové kontakty na místní zastupitelstvo – pro tuto možnost nás opět kontaktujte
+Můžeme do systému ale přidat i úplně malou obec, pokud o to někdo projeví zájem a dodá nám e-mailové kontakty na místní zastupitelstvo – pro tuto možnost nás opět <a href="/contact">kontaktujte</a>
 </p>
 
 
@@ -86,7 +86,7 @@ Můžeme do systému ale přidat i úplně malou obec, pokud o to někdo projev�
 
 <p>Aplikace NapisteJim.cz je vybudována s úmyslem podpořit osobní komunikaci občanů s politiky, nikoli sloužit jako brána pro masové uniformní kampaně, kdy se hromadně obešle celý parlament univerzální zprávou.
 </p><p>
-Také od politiků samotných máme zprávy, že se spíše zamyslí nad 10 autentickými, reálně psanými zprávami, než nad 50 identickými.
+Také od politiků samotných máme zprávy, že se spíše zamyslí nad 5 autentickými, reálně psanými zprávami, než nad 50 identickými.
 </p><p>
 Navíc, i když politik má k ruce asistenty, kteří mu pomáhají vyřizovat poštu, zpráv chodí velké množství. Pokud si má vybrat komu odpovědět a tím s ním navázat určitý dialog, odpoví spíše lidem, které skutečně zajímá konrétní oblast a dali si práci s formulací dopisu, než těm, co pouze překopírovali text a klikli na ‚odeslat‘.
 </p>
@@ -118,7 +118,7 @@ Data z veřejného zobrazení e-mailů a ze zaslaných dotazníků budeme využ
 </p><p>
 - zkuste daného poslance kontaktovat v jeho regionální kanceláři, na webu poslanecké sněmovny naleznete adresu a často i telefonní číslo. V regionech bývají poslanci vždy v pondělí
 </p><p>
-- zkuste kontktovat jiného poslance ze svého regionu nebo senátora
+- zkuste kontaktovat jiného poslance ze svého regionu nebo svého senátora
 </p><p>
 - kontaktujte místní pobočku jeho politické strany a žádejte odpověď přes ně
 </p><p>
@@ -137,24 +137,22 @@ regionálním mutacím deníků celostátních o vaší kauze
 
 <h3>13. Na jaké adresy jsou e-maily posílány?</h3>
 
-<p>Využíváme databázi Poslanecké sněmovny České Republiky. Tato databáze je s naší propojená dynamicky, takže okamžitě přijímáme změny tam učiněné. Tímto způsobem můžeme garantovat, že e-mailové adresy jsou aktuální
-</p><p>
-Poslanci a senátoři dostali možnost doplnit do našeho systému i osobní nebo osobnější adresy. Těm, kteří tuto možnost využili, chodí vaše e-maily i na tyto další adresy.
+<p>Využíváme databázi Poslanecké sněmovny České Republiky. Tato databáze je s naší propojená dynamicky, takže denně přijímáme změny tam učiněné. Tímto způsobem můžeme garantovat, že e-mailové adresy jsou aktuální
 </p>
 
 <h3>14. Mohu se spolehnout, že zpráva byla odeslána?</h3>
 
-<p>Na 99%. Propojenost naší e-mailové databáze s databází Poslanecké sněmovny zaručuje, že e-maily poslanců a senátorů jsou aktuální. Náš systém nam navíc ohlásí naprostou většinu možných technických komplikací. 1% necháváme pro případ vpádu UFO nebo jiných nepředvídaných problémů
+<p>Na 99%. Propojenost naší e-mailové databáze s databází Poslanecké sněmovny zaručuje, že e-maily poslanců a senátorů jsou aktuální. Náš systém nám navíc ohlásí naprostou většinu možných technických komplikací. 1% necháváme pro případ vpádu UFO nebo jiných nepředvídaných problémů
 </p>
 
 
 <h3>15. Mohu stornovat svou zprávu?</h3>
 
-<p>Dokud je ve fázi textového okna, jednoduše neklikejte na ‚odeslat‘, ale vraťte se a zprávu upravte, nebo začněte úplně odznova
+<p>Dokud je ve fázi textového okna, jednoduše neklikejte na ‚odeslat‘, ale vraťte se a zprávu upravte, nebo začněte úplně odznova.
 </p><p>
-Další možnost odstoupení máte, když vám přijde automatický e-mail s aktivačním odkazem – jednoduše ho nepotvrďte
+Další možnost odstoupení máte, když vám přijde automatický e-mail s aktivačním odkazem – jednoduše ho nepotvrďte.
 </p><p>
-Za tímto bodem jsou však již vaše šance na odchycení zprávy mizivé… přesto nás můžete kontaktovat zde
+Za tímto bodem jsou však již vaše šance na odchycení zprávy mizivé… přesto nás můžete kontaktovat <a href="/contact">zde</a>
 </p>
 
 
@@ -163,7 +161,7 @@ Za tímto bodem jsou však již vaše šance na odchycení zprávy mizivé… p�
 
 <p>Veškeré zdrojové kódy k NapisteJim.cz, stejně tak jako databáze dat jsou volně přistupné široké veřejnosti a kdokoli může vytvářet aplikace, které využívají naše data nebo kódy.
 </p><p>
-Každopádně, už ten fakt, že máte tenhle nápad vás činí zajímavým – chcete-li, kontaktujte nás zde a možná se domluvíme na hlubší spolupráci!
+Každopádně, už ten fakt, že máte tenhle nápad vás činí zajímavým – chcete-li, kontaktujte nás <a href="/contact">zde</a> a možná se domluvíme na hlubší spolupráci!
 </p>
 
 
@@ -173,17 +171,17 @@ Každopádně, už ten fakt, že máte tenhle nápad vás činí zajímavým –
 </p><p>
 - zařazování dalších institucí a míst (hlavně zjišťování platných e-mailových kontaktů a jejich vkládání do databáze)
 </p><p>
-- programování a vymýšlení dalších ‚vychytávek pro aplikaci
+- programování a vymýšlení dalších ‚vychytávek' pro aplikaci
 </p><p>
 - navazování spolupráce s místními neziskovými organizacemi pro docílení tlaku na konkrétní politiky
 </p><p>
-Zastřešující organizace KohoVolit.eu má na triku mnoho dalších zajímavých projektů, podívejte se se zde (o projektu)
+Zastřešující organizace KohoVolit.eu má na triku mnoho dalších zajímavých projektů, podívejte se se <a href="/about">zde</a> (o projektu)
 </p>
 
 
 <h3>18. Chci sdělit komentář, kritiku nebo pochvalu</h3>
 
-<p>Těšíme se na vaše názory, psát je můžete sem:
+<p>Těšíme se na vaše názory (viz <a href="/contact">kontakt</a>)
 </p>
 
 
