@@ -64,14 +64,14 @@ function search_results_advanced_page()
 {
 	global $api_napistejim;
 	$smarty = new SmartyNapisteJimCz;
-	
+
 	$data = array();
 	if (isset($_GET['groups']))
 		$data['groups'] = explode('|', $_GET['groups']);
 	if (isset($_GET['constituency']))
 		$data['constituency'] = $_GET['constituency'];
 	$search_mps = $api_napistejim->read('SearchMps', $data);
-	
+
 	if (isset($_GET['parliament_code']))
 		$smarty->assign('parliament', array('code' => $_GET['parliament_code']));
 	$smarty->assign('mps', $search_mps['search_mps']);
@@ -215,6 +215,10 @@ function confirm_page()
 		default:
 			static_page('confirmation_result/wrong_link');
 	}
+
+	// erase private message after sending or refusal
+	if ($message['is_public'] == 'no')
+		$api_kohovolit->update('Message', array('id' => $message['id']), array('subject' => '', 'body_' => ''));
 }
 
 function send_message($message)
@@ -287,11 +291,8 @@ function refuse_message($message)
 	$text = $smarty->fetch('email/message_refused.tpl');
 	send_mail($from, $to, $subject, $text);
 
-	// change message state to refused or delete it completely if written as private
-	if ($message['is_public'] == 'yes')
-		$api_kohovolit->update('Message', array('id' => $message['id']), array('state_' => 'refused'));
-	else
-		$api_kohovolit->delete('Message', array('id' => $message['id']));
+	// change message state
+	$api_kohovolit->update('Message', array('id' => $message['id']), array('state_' => 'refused'));
 }
 
 function addressees_of_message($message)
