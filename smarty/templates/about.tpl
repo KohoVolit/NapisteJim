@@ -22,6 +22,10 @@ Inspirací nám byly partnerské servery <a href="http://www.WriteToThem.com">Wr
 </p>
 <h2>Autoři</h2>
 <p>
+V zastřešujícím sdružení KohoVolit.eu se na práci na NapisteJim.cz podíleli Jaroslav Semančík, Michal Škop (programátorské a projektové práce) a Veronika Šumová (projektové práce, propagace)
+</p><p>
+Propagační video k aplikaci natočil studentský tým z FAMO Písek vystupující pod značkou www.Alcest.cz. Scénář napsal Jan Škop, režie se ujal Ladislav Plecitý.
+</p>
 KohoVolit.eu je internetový server a stejnojmenné občanské sdružení fungující od roku 2006 (občanské sdružení registrováno od roku 2009). Jeho primárním cílem je analyzovat a zveřejňovat měřitelné ukazatele skutečného chování politiků (hlasování, aktivita, předkládání návrhů aj.), které mají sloužit jako impuls ke zvýšení tlaku veřejnosti na volené zástupce. Až dosud se autoři soustředili na nástroje pomáhající při volebním rozhodování – mimojiné vyvinuli první tzv. VAA (Voting Advice Aplications) pro Českou republiku a Slovensko. Před posledními volbami do poslanecké sněmovny  vyzkoušelo tyto tzv. "předvolební kalkulačky" téměř 250 000 uživatelů.
 </p>
 <p>

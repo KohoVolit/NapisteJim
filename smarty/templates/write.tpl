@@ -12,7 +12,6 @@
 {/block}
 
 {block name=body}
-<br/><br/><br/>!!ODSTRAN TYTO br/ z write.tpl
 <div id="write-form-wrapper">
 
     <form id="write" class="formular" method="post" action="?">
@@ -38,7 +37,7 @@
       </div>
       <textarea id="write-body" rows="15" cols="62" name="body" class="validate[required,minSize[90]] textarea">{include file="email/initial_message.tpl"}</textarea>
       <input type="checkbox" id="write-newsletter" name="newsletter" value="order-newsletter" /> {t}Chci dostávat informace z NapišteJim.cz{/t}<br/>
-      <input class="submit" type="submit" value="Odeslat"/>
+      <input id="write-submit" class="submit" type="submit" value="Odeslat"/>
     </form>
     
   </div>
