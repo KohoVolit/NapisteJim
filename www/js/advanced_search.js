@@ -28,10 +28,9 @@ function sendForm() {
      }
   });
   if (str.length > 0) str = str.substring(0, str.length-1);
-  alert($("#constituency").val());
-  alert(str);
   $("#advanced_search-hidden-member").val(str);
   $("#advanced_search-hidden-constituency").val($("#constituency").val());
+  $("#advanced_search-hidden-parliament").val($("#advanced_search-select-parliament").val());
   $("#advanced_search-hidden").submit();
 }
 

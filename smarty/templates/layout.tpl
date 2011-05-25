@@ -19,13 +19,14 @@
 	{block name=body}{/block}
 	<div id="page-footer">
 		<div id="links">
-		  <a href="/about">{t}About project{/t}</a>
-		  <a href="/faq">{t}Faq{/t}</a>
+		  <a href="/about">{t}O projektu{/t}</a>
+		  <a href="/faq">{t}Otázky a odpovědi{/t}</a>
 		  <a href="/video">{t}Video{/t}</a>
+		  <a href="/support">{t}Podpořte nás{/t}</a>
 		  <a href="http://cs.kohovolit.eu">KohoVolit.eu</a>
 		</div>
 		<div id="licence">
-		  <a href="http://www.gnu.org/licenses/gpl.html">GNU/GPL</a> - <a href="/privacy">{t}Privacy{/t}</a>
+		  <a href="http://www.gnu.org/licenses/gpl.html">GNU/GPL</a> - <a href="/privacy">{t}Osobní údaje{/t}</a>
 		</div>
 	</div>
   </div>

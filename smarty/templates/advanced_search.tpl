@@ -24,6 +24,7 @@ NapišteJim.cz - Rozšířené vyhledávání
 <form id="advanced_search-hidden" action="">
   <input type="hidden" name="constituency" value='' id="advanced_search-hidden-constituency" />
   <input type="hidden" name="member" value='' id="advanced_search-hidden-member" />
+  <input type="hidden" name="parliament_code" value='' id="advanced_search-hidden-parliament" />
 </form>
 
 {/block}

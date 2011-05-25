@@ -8,7 +8,7 @@ const API_DIR = '/home/michal/api.kohovolit.eu/www';
 	
 	$adn = new ApiDirect('napistejim');
 	
-	$res = $adn->read('SearchMps', array('constituency' => 9, 'groups' => array(40, 92)));
+	$res = $adn->read('SearchMps', array('groups' => array(40)));
 	print_r($res);die();
 	
 	
