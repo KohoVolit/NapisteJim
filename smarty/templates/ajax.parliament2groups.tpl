@@ -17,10 +17,13 @@
   </select>
 {/foreach}
 </div>
-<input id="advanced_search-submit" value="Zobrazit seznam vybraných politiků >>" type="submit" />
+<input id="advanced_search-hidden-value" value="page" type="hidden" />
+<input id="advanced_search-submit" value="Psát vybraným politikům >>" type="submit" />
+
+
 <div id="advanced_search-note" class="ui-widget">
  <div class="ui-state-highlight ui-corner-all" style="padding: 0 .7em;">
   <span class="ui-icon ui-icon-info" style="float:left; margin-right: .3em;"></span>
-Pozn.: Je třeba vybrat alespoň nějaké kritérium uvnitř zastupitelského sboru
+Pozn.: Je třeba vybrat alespoň jedno kritérium uvnitř zastupitelského sboru
  </div>
 </div>

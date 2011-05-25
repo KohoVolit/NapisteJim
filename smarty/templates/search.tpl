@@ -11,7 +11,7 @@
 	    <a href="http://napistejim.cz"><img src="images/logo_project.png" title ="NapišteJim.cz" alt="NapišteJim.cz" width=314 height=166/></a>
   </div>
 {/block}
-{block name=body}
+{block name=basic_body}
 
 <div id="search-content-wrapper">
 	<div id="search-search-wrapper">
