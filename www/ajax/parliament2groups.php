@@ -63,7 +63,10 @@ foreach ((array) $groups as $key => $group_kind) {
 	  $groups_out[$key_out] = order_array($groups[$key],'name_',SORT_ASC);
 	  $i++;
   }
+  //quick hack to get right names of group_kinds
+  $groups_out[$key_out][0]['group_kind_name'] = group_kind2name($groups_out[$key_out][0]['group_kind_code']);
 }
+
 ksort($groups_out);
 $smarty->assign('groups',$groups_out);
 
@@ -71,7 +74,7 @@ $smarty->assign('groups',$groups_out);
 $constit_res = $adk->read('Constituency', array('parliament_code' => $_GET['parliament_code'], 'datetime' => $date));
 $constit = $constit_res['constituency'];
 
-//order constituencies alphabetically !!not using LOCALE!!
+//order constituencies alphabetically !!wrong order, not using LOCALE!!
 $constit = order_array($constit,'name_',SORT_ASC);
 
 $smarty->assign('constit',$constit);
@@ -95,6 +98,32 @@ function order_array($data,$column,$sort_order) {
 	// Add $data as the last parameter, to sort by the common key
 	array_multisort($order, $sort_order, $data);
 	return $data;
+}
+
+/*
+* quick hack
+*/
+function group_kind2name($gkc) { //group_kind_code
+ switch ($gkc) {
+   case 'political group':
+     return 'Parlamentní klub';
+   case 'committee':
+     return 'Výbor';
+   case 'commission':
+     return 'Komise';
+   case 'subcommittee':
+     return 'Podvýbor';
+   case 'friendship group':
+     return 'Skupina přátel';
+   case 'delegation':
+     return 'Delegace';
+   case 'working group':
+     return 'Pracovní skupina';
+   case 'verifier':
+     return 'Ověřovatelé';
+   default:
+     return $gkc;
+ }
 }
 
 

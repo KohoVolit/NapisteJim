@@ -56,7 +56,7 @@ switch ($page)
 function static_page($page)
 {
 	$smarty = new SmartyNapisteJimCz;
-	$smarty->setCaching(Smarty::CACHING_LIFETIME_CURRENT);
+	//$smarty->setCaching(Smarty::CACHING_LIFETIME_CURRENT);
 	$smarty->display($page . '.tpl');
 }
 

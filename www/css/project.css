@@ -10,13 +10,13 @@
 .party-logo {
    background: url(/images/parties.png) no-repeat top left;
 }
-.party-logo-cssd{ background-position: 0 0; width: 50px; height: 30px; } 
-.party-logo-kdu-csl{ background-position: 0 -80px; width: 50px; height: 30px; } 
-.party-logo-kscm{ background-position: 0 -160px; width: 50px; height: 30px; } 
-.party-logo-nezarazeni{ background-position: 0 -240px; width: 50px; height: 30px; } 
-.party-logo-ods{ background-position: 0 -320px; width: 50px; height: 30px; } 
-.party-logo-top09-s{ background-position: 0 -400px; width: 50px; height: 30px; } 
-.party-logo-vv{ background-position: 0 -480px; width: 50px; height: 30px; } 
+.party-logo-cssd{ background-position: 0 0; width: 43px; height: 43px; } 
+.party-logo-kdu-csl{ background-position: 0 -93px; width: 43px; height: 43px; } 
+.party-logo-kscm{ background-position: 0 -186px; width: 43px; height: 43px; } 
+.party-logo-nezarazeni{ background-position: 0 -279px; width: 43px; height: 43px; } 
+.party-logo-ods{ background-position: 0 -372px; width: 43px; height: 43px; } 
+.party-logo-top09-s{ background-position: 0 -465px; width: 43px; height: 43px; } 
+.party-logo-vv{ background-position: 0 -558px; width: 43px; height: 43px; } 
 
 /*rest*/
 .rounded-corners {
@@ -34,11 +34,25 @@
   color: #88F;
 }
 
+p {
+font-family: Verdana, Tahoma, Helvetica, Arial;
+}
+
+a {
+    color: #1FA2E1;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
 /* wrapper */
 body {
 	margin:0;
 	padding:0;
 	height:100%;
+	font-family: Verdana, Tahoma, Helvetica, Arial;
+	text-decoration: none;
 }
 .wrapper {
   margin:0;
@@ -56,9 +70,21 @@ body {
   padding:0;
 }
 .logo {
-  display: table-cell;
-  padding: 5px 40px;
 }
+
+#logo-center {
+  float: center;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1000px;
+    padding-bottom: 3em;
+    padding-top: 10px;
+    text-align: center;
+    width: 90%;
+}
+
+
+
 #logo-right {
   float:right;
 }
@@ -96,7 +122,61 @@ input#search-address,input#search-submit-geocode{
   font-size: 1.5em;
 }
 
-#search-right {
+
+#search-address{
+  width:65%;
+  max-width:750px;
+  display:inline;
+}
+
+#search-advanced-search{
+ display:inline;
+}
+
+#search-example{
+  color: #666;
+  font-style: italic;
+  font-size:0.75em;
+  text-align:center;
+  display:block;
+
+}
+
+#search-submit-geocode {
+  border: 1px solid #FBCB09;
+}
+fieldset.search {
+	border: none;
+	width: 600px;
+	margin: 0 auto;
+	background: #fff;
+	display:inline;
+	padding-left: 242px;
+    padding-right: 254px;
+}
+
+/**/
+
+
+/*input#search-address,input#search-submit-geocode{
+   display:inline;
+    color: #7e7e7e;
+	font-size: 1.2em;
+	width: 160px;
+	height: 40px;
+	padding: 1px 5px 0;
+	background: #fff url(napiste.gif) no-repeat;
+	margin-right: 5px;
+	border:none;
+}*/
+
+
+/*input#search-address,input#search-submit-geocode:focus {
+	background: #000 url(napiste.gif) no-repeat left -41px;
+	outline: none;
+	display:inline;
+}*/
+/*#search-right {
   display:inline;
 }
 
@@ -115,7 +195,39 @@ input#search-address,input#search-submit-geocode{
   font-style: italic;
   font-size:0.75em;
   text-align:center;
+  display:block;
 }
+*//*
+fieldset.search {
+	border: none;
+	width: 600px;
+	margin: 0 auto;
+	background: #fff;
+	display:inline;
+	padding-left: 242px;
+    padding-right: 254px;
+}*/
+/*.search input, .search button {
+	border: none;
+	float: left;
+	display:inline;
+}
+
+.search input.clearField {
+	color: #7e7e7e;
+	font-size: 1.2em;
+	width: 508px;
+	height: 34px;
+	padding: 4px 5px 0;
+	background: #fff url(search_bg.gif) no-repeat;
+	margin-right: 5px;
+	display:inline;
+}
+.search input.clearField:focus {
+	background: #000 url(search_bg.gif) no-repeat left -34px;
+	outline: none;
+	display:inline;
+}*/
 
 /**
 * search_results

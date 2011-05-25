@@ -6,6 +6,7 @@ NapišteJim.cz - Rozšířené vyhledávání
 {block name=head}
 <link rel="Stylesheet" href="css/ui.selectmenu.css" type="text/css" />
 <script type="text/javascript" src="js/ui.selectmenu.js"></script>	
+<script type="text/javascript" src="js/jquery.ui.highlight.js"></script>
 <script type="text/javascript" src="js/advanced_search.js"></script>	
 {/block}
 {block name=body}
@@ -17,6 +18,7 @@ NapišteJim.cz - Rozšířené vyhledávání
       <option value="cz/senat">Senát</option>
     </select>
   <div id="advanced_search-selects"></div>
+  <div id="advanced_search-note"></div>
 </form>
 <form id="advanced_search-hidden" action="">
   <input type="hidden" name="constituency" value='' id="advanced_search-hidden-constituency" />

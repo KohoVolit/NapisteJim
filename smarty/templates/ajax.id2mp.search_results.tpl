@@ -1,6 +1,6 @@
 <div class="box-mp">
-  <img src="{$mp.image}" class="box-photo" title="{$mp.last_name} {$mp.first_name}" alt="" />
-  <img src="imges/1x1.png" class="box-x deselect" alt='x' />
+  <img src="{$img_url}{$mp.image}" class="box-photo" title="{$mp.last_name} {$mp.first_name}" alt="" />
+  <div id="close-{$mp.id}" class="box-x deselect ui-icon ui-icon-circle-close" /></div>
   <div class="box-last-name">{$mp.last_name}</div>
   <div class="box-last-name">{$mp.first_name}</div>
 </div>

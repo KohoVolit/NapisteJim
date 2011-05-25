@@ -12,3 +12,7 @@ $(document).ready(function(){
   });
 });
 
+//style button
+$(document).ready(function(){
+  $("#write-submit").button();
+});

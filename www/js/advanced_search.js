@@ -20,6 +20,7 @@ $(function(){
 
 });
 
+
 function sendForm() {
   var str = "";
   $( ".advanced_search-select-2" ).each( function() {
