@@ -14,7 +14,6 @@ fwrite($backup, $mail . "\n\n\n");
 fclose($backup);
 
 // parse the mail
-require '../classes/fMailbox.php';
 if (strpos($mail, "\r\n") === false)
 	$mail = str_replace("\n", "\r\n", $mail);
 $parsed_mail = fMailBox::parseMessage($mail);
@@ -45,12 +44,25 @@ if ($res == 0)
 	return notice_admin($subject, $text);
 }
 
-// check accidental response to a private message
+// send the response to sender of the message
 $response = $api_kohovolit->read('Response', array('reply_code' => $reply_code));
 $response = $response['response'][0];
 $message_id = $response['message_id'];
 $message = $api_kohovolit->read('Message', array('id' => $message_id));
 $message = $message['message'][0];
+$mp = $api_kohovolit->read('Mp', array('id' => $response['mp_id']));
+$mp = $mp['mp'][0];
+
+$from = mime_encode('NapišteJim.cz') . ' <neodpovidejte@napistejim.cz>';
+$to = $message['sender_email'];
+$subject = mime_encode($mp['first_name'] . ' ' $mp['last_name'] . ' odpověděl' . (($mp['sex'] == 'f') ? 'a' : '') . ' na vaši zprávu');
+$smarty = new SmartyNapisteJimCz;
+$smarty->assign('mp', $mp);
+$smarty->assign('message', array('subject' => $message['subject'], 'body' => $message['body'], 'is_public' => $message['is_public']));
+$text = $smarty->fetch('email/response_from_mp.tpl');
+send_mail($from, $to, $subject, $text);
+
+// check accidental response to a private message
 if ($message['is_private'] == 'yes')
 {
 	// erase the response to a private message and resend it to the sender
