@@ -38,8 +38,7 @@
         E-mail: <input type="text"  id="write-email" name="email" value="" class="validate[required,custom[email]] text-input" /><br/>
         Předmět: <input type="text" id="write-subject" name="subject" value=""  class="validate[required] text-input" /><br/>
       </div>
-      <textarea id="write-body" rows="15" cols="62" name="body" class="validate[required,minSize[90]] textarea">
-	  {include file="email/initial_message.tpl"}</textarea>
+      <textarea id="write-body" rows="15" cols="62" name="body" class="validate[required,minSize[90]] textarea">{include file="email/initial_message.tpl"}</textarea>
       <input type="checkbox" id="write-newsletter" name="newsletter" value="order-newsletter" /> {t}Chci dostávat informace z NapišteJim.cz{/t}<br/>
       <input class="submit" type="submit" value="Odeslat"/>
     </form>

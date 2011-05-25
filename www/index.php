@@ -53,7 +53,6 @@ switch ($page)
 function static_page($page)
 {
 	$smarty = new SmartyNapisteJimCz;
-	$smarty->assign('locale', LOCALE);
 	$smarty->setCaching(Smarty::CACHING_LIFETIME_CURRENT);
 	$smarty->display($page . '.tpl');
 }
@@ -76,10 +75,11 @@ function search_results_page()
 function write_page()
 {
 	global $api_napistejim;
-	$mp_details = $api_napistejim->read('MpDetails', array('mp' => $_GET['mp']));
+	$mp_list = trim_list($_GET['mp'], '|', 3);
+	$mp_details = $api_napistejim->read('MpDetails', array('mp' => $mp_list));
 
 	$smarty = new SmartyNapisteJimCz;
-	$smarty->assign('mps', $_GET['mp']);
+	$smarty->assign('mps', $mp_list);
 	$smarty->assign('mp_details', $mp_details['mp_details']);
 	$smarty->assign('img_url', IMG_URL);
 	$smarty->display('write.tpl');
@@ -113,7 +113,8 @@ function send_page()
 	$letter_id = $res[0];
 
 	// store binding between the letter and its addressees
-	$mps = explode('|', $_POST['mp']);
+	$mp_list = trim_list($_POST['mp'], '|', 3);
+	$mps = explode('|', $mp_list);
 	$unique_mps = array();
 	$bindings = array();
 	foreach ($mps as $mp)
@@ -129,14 +130,14 @@ function send_page()
 	$from = 'NapisteJim.cz <neodpovidejte@napistejim.cz>';
 	$to = $email;
 	$subject = 'Potvrďte prosím, že chcete odeslat správu ' . ((count($unique_mps) > 1) ? 'svým zástupcům' : 'svému zástupci');
-	$mp_details = $api_napistejim->read('MpDetails', array('mp' => $_POST['mp']));
+	$mp_details = $api_napistejim->read('MpDetails', array('mp' => $mp_list));
 	$smarty->assign('addressee', $mp_details['mp_details']);
 	$smarty->assign('message', array('subject' => $subject, 'body' => $body, 'is_public' => $is_public, 'reply_code' => $reply_code));
 	$message = $smarty->fetch('email/request_to_confirm.tpl');
 	send_mail($from, $to, $subject, $message);
 
 	// order newsletter if requested
-	if ($_POST['order_newsletter'])
+	if ($_POST['order-newsletter'])
 		order_newsletter($email);
 
 	$smarty->display('confirm_sending.tpl');
@@ -159,6 +160,8 @@ function confirm_page()
 	switch ($action)
 	{
 		case 'send':
+			if ($letter['state_'] != 'created')
+				return static_page('confirmation_result/already_confirmed');
 			if (is_profane($letter['subject']) || is_profane($letter['body_']))
 			{
 				if ($letter['is_public'] == 'yes')
@@ -190,7 +193,7 @@ function confirm_page()
 			break;
 		
 		default:
-			static_page('search');
+			static_page('confirmation_result/wrong_link');
 	}
 }
 
@@ -209,7 +212,7 @@ function send_letter($letter)
 		$reply_to = ($letter['is_public'] == 'yes') ? $from : $letter['sender_email'];
 		$to = $mp['email'];
 		$subject = $letter['subject'];
-		$smarty->assign('message', array('subject' => $letter['subject'], 'body' => $letter['body_'], 'is_public' => $letter['is_public'], 'reply_to' => "<reply.{$letter['reply_code']}@napistejim.cz>"));
+		$smarty->assign('message', array('subject' => $letter['subject'], 'body' => $letter['body_'], 'is_public' => $letter['is_public'], 'reply_to' => $reply_to));
 		$message = $smarty->fetch('email/message_to_mp.tpl');
 		$to = 'jaroslav_semancik@yahoo.com';	// !!! REMOVE AFTER TESTING !!!
 		send_mail($from, $to, $subject, $message, $reply_to);
@@ -317,6 +320,15 @@ function escape_header_fields($text)
 	foreach($escape_tokens as $token)
 		$text = str_ireplace($token, strtr($token, ':', ';'), $text);
 	return $text;
+}
+
+function trim_list($text, $delimiter, $count)
+{
+	$i = $c = 0;
+	while ($i < strlen($text) && $c < $count)
+		if ($text[$i++] == $delimiter)
+			$c++;
+	return rtrim(substr($text, 0, $i), '|');
 }
 
 function send_mail($from, $to, $subject, $message, $reply_to = null, $additional_headers = null)
