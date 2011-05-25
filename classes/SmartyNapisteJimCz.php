@@ -13,8 +13,6 @@ class SmartyNapisteJimCz extends Smarty
 		$this->config_dir   = WTT_DIR . '/smarty/configs';
 		$this->cache_dir    = WTT_DIR . '/smarty/cache';
 
-//		$this->caching = 2;
-
 		$this->clearAllAssign();
 	}
 	
