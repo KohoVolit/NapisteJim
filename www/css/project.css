@@ -347,10 +347,10 @@ min-width:220px;
 }
 .mp {
   display:inline;
-  white-space:normal;
+  white-space:nowrap;
 }
 .mp-name-info {
-  white-space:
+  white-space:normal
 }
 .mp-name-name{
   color: #006;
