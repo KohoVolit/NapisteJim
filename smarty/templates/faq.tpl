@@ -9,13 +9,11 @@ NapišteJim.cz - otázky a odpovědi
 
 <h3>1. Jak vyhledám komu chci napsat?</h3>
 
-NapisteJim.cz nabízí TŘI různé možnosti jak najít "svého" politika:
+NapisteJim.cz nabízí DVĚ různé možnosti jak najít "svého" politika:
 
 <p>- podle vaší adresy – stačí zadat do vyhledávacího políčka i fragment vaší adresy a zobrazí se vám seznam poslanců a senátorů, seřazených pěkně podle vzdálenosti jejich oficiálního kanceláře od zadaného místa
 </p><p>
-- podle politické strany – víte už předem, že chcete napsat poslancům nebo senátorům z konkrétní politické strany a nezáleží vám na tom, odkud jsou? Pak klikněte na nápis ‚Rozšířené hledání‘ pod vyhledávacím políčkem
-</p><p>
-- podle výborů a komisí, ve kterých působí – nebo vás zajímá konkrétní téma? Klikněte ‚Rozšířené hledání‘ a zobrazí se vám jejich seznam.
+- podle politické strany, výborů nebo komisí, ve kterých působí – víte už předem, že chcete napsat poslancům nebo senátorům z konkrétní politické strany a nezáleží vám na tom, odkud jsou? Nebo vás zajímá konkrétní téma? Pak klikněte na nápis ‚Rozšířené hledání‘ pod vyhledávacím políčkem
 </p>
 
 <h3>2. Proč si mohu vybrat jen tři adresáty?</h3>
