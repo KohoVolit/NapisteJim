@@ -441,7 +441,10 @@ min-width:220px;
 }
 #write-privacy {
 	display: inline;
-	margin-left: 70px;
+	margin-left: 60px;
+}
+#write-privacy input {
+	margin-left: 10px;
 }
 #write-newsletter {
 	margin-top: 15px;
