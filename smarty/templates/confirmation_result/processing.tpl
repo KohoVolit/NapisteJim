@@ -1,7 +1,7 @@
 {extends file="layout.tpl"}
 
 {block name=title}
-Vaše správa se spracovává
+Vaše zpráva se zpracovává
 {/block}
 
 {block name=body}

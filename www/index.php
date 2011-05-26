@@ -236,7 +236,8 @@ function send_message($message)
 		$reply_to = ($message['is_public'] == 'yes') ? $from : $message['sender_email'];
 		$to = $mp['email'];
 		$subject = mime_encode($message['subject']);
-		$smarty->assign('message', array('subject' => $message['subject'], 'body' => $message['body_'], 'is_public' => $message['is_public'], 'reply_to' => $reply_to));
+		$smarty->assign('message', array('sender_name' => $message['sender_name'], 'sender_email' => $message['sender_email'],
+			'subject' => $message['subject'], 'body' => $message['body_'], 'is_public' => $message['is_public'], 'reply_to' => $reply_to));
 		$text = $smarty->fetch('email/message_to_mp.tpl');
 		$to = 'jaroslav_semancik@yahoo.com';	// !!! REMOVE AFTER TESTING !!!
 		send_mail($from, $to, $subject, $text, $reply_to);
@@ -285,7 +286,7 @@ function refuse_message($message)
 	// send explanation of the refusal to the sender
 	$from = mime_encode('NapišteJim.cz') . ' <neodpovidejte@napistejim.cz>';
 	$to = $message['sender_email'];
-	$subject = mime_encode('Vaše zpráva byla vyhodnocena jako nezdvořilá a nebyla odeslána');
+	$subject = mime_encode('Vaše zpráva byla vyhodnocena jako urážející a nebyla odeslána');
 	$smarty->assign('addressee', addressees_of_message($message));
 	$smarty->assign('message', array('subject' => $message['subject'], 'body' => $message['body'], 'is_public' => $message['is_public']));
 	$text = $smarty->fetch('email/message_refused.tpl');
