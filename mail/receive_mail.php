@@ -1,7 +1,7 @@
 <?php
 
-include '../config/settings.php';
-include '../setup.php';
+require '/home/shared/napistejim.cz/config/settings.php';
+require '/home/shared/napistejim.cz/setup.php';
 
 // read a mail from standard input
 $mail = '';
@@ -22,7 +22,7 @@ $parsed_mail = fMailbox::parseMessage($mail);
 $to = $parsed_mail['headers']['to'][0];
 if (substr($to['mailbox'], 0, 6) != 'reply.')
 {
-	$subject = mime_encode('Dorazil e-mail na adresu: ') . $to['mailbox'] . '@' . $to['host'];
+	$subject = mime_encode('Dorazil e-mail na adresu:') . ' ' . $to['mailbox'] . '@' . $to['host'];
 	$text = 'Nájdeš ho v ' . WTT_DIR . '/mail/backup/mails-' .  strftime('%Y-%m-%d');
 	return notice_admin($subject, $text);
 }
@@ -30,7 +30,7 @@ if (substr($to['mailbox'], 0, 6) != 'reply.')
 // parse a response to a message sent to representatives
 $reply_code = strtolower(substr($to['mailbox'], strpos($to['mailbox'], '.') + 1));
 $subject = $parsed_mail['headers']['subject'];
-$body = (isset($parsed_mail['html'])) ? $parsed_mail['html'] : ((isset($parsed_mail['text'])) ? $parsed_mail['text'] : '');
+$body = (isset($parsed_mail['text'])) ? $parsed_mail['text'] : ((isset($parsed_mail['html'])) ? $parsed_mail['html'] : '');
 
 // store the response
 $api_kohovolit = new ApiDirect('kohovolit');
@@ -62,17 +62,9 @@ $smarty->assign('message', array('subject' => $response['subject'], 'body' => $r
 $text = $smarty->fetch('email/response_from_mp.tpl');
 send_mail($from, $to, $subject, $text);
 
-// check accidental response to a private message
+// erase an accidental response to a private message
 if ($message['is_public'] == 'no')
-{
-	// erase the response to a private message and resend it to the sender
 	$api_kohovolit->update('Response', array('reply_code' => $reply_code), array('subject' => null, 'body_' => null, 'full_email_data' => null));
-	$from = mime_encode('NapišteJim.cz') . ' <neodpovidejte@napistejim.cz>';
-	$to = $message['sender_email'];
-	$subject = $response['subject'];
-	$text = $response['body_'];
-	send_mail($from, $to, $subject, $text);
-}
 
 exit;
 
