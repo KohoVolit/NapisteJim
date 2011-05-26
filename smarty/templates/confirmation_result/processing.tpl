@@ -5,5 +5,9 @@ Vaše zpráva se zpracovává
 {/block}
 
 {block name=body}
-Vaše zpráva byla zařazena na odeslání a nyní se zpracovává v systému. Po jejím odeslání dostanete kopii na svoji e-mailovou adresu.
+<h3>Vaše zpráva se zpracovává</h3>
+
+<p>Vaše zpráva byla zařazena na odeslání a nyní se zpracovává v systému. O jejím odeslání budete brzo informováni e-mailem.<p>
+
+<p><a href="http://napistejim.cz">Zpět na hlavní stránku</a></p>
 {/block}
