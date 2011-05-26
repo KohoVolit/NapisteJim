@@ -421,4 +421,27 @@ min-width:220px;
   margin-bottom: .65em;
 }
 
-
+.write-mp {
+	float: left;
+  margin: 0 120px 0px 0px;
+}
+#write-personal {
+	clear: both;
+	padding-top: 60px;
+}
+.write-mp-photo {
+  height:162px;
+  min-width:120px;
+}
+.write-mp-first_name {
+	padding-top: 7px;
+}
+#write-name, #write-email, #write-subject {
+	width: 300px;
+}
+#write-privacy {
+	display: inline;
+	margin-left: 70px;
+}
+#write-newsletter {
+	margin-top: 15px;
