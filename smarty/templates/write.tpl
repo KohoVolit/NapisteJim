@@ -30,13 +30,16 @@
       </div>
       
       <div id="write-personal">
-        Zpráva je: <input type="radio" id="write-radio-1" name="is_public" value="yes" class="validate[required] radio" />Veřejná <input type="radio" id="write-radio-2" name="is_public" value="no" class="validate[required] radio" />Soukromá <br/>
-        Vaše jméno: <input type="text" id="write-name" name="name" value="" class="validate[required] text-input" /><br/>
-        E-mail: <input type="text"  id="write-email" name="email" value="" class="validate[required,custom[email]] text-input" /><br/>
-        Předmět: <input type="text" id="write-subject" name="subject" value=""  class="validate[required] text-input" /><br/>
+        Vaše jméno: <br/><input type="text" id="write-name" name="name" value="" class="validate[required] text-input write-input" /><br/>
+        E-mail: <br/><input type="text"  id="write-email" name="email" value="" class="validate[required,custom[email]] text-input write-input" /><br/>
+        Předmět: <br/><input type="text" id="write-subject" name="subject" value=""  class="validate[required] text-input write-input" /><br/>
+        Zpráva je: <input type="radio" id="write-radio-1" name="is_public" value="yes" class="validate[required] radio write-input" />Veřejná <input type="radio" id="write-radio-2" name="is_public" value="no" class="validate[required] radio" />Soukromá <br/>
       </div>
-      <textarea id="write-body" rows="15" cols="62" name="body" class="validate[required,minSize[90]] textarea">{include file="email/initial_message.tpl"}</textarea>
-      <input type="checkbox" id="write-newsletter" name="newsletter" value="order-newsletter" /> {t}Chci dostávat informace z NapišteJim.cz{/t}<br/>
+      
+      <textarea id="write-body" rows="15" cols="80" name="body" class="validate[required,minSize[90]] textarea">{include file="email/initial_message.tpl"}</textarea>
+      <br/>
+      <input type="checkbox" id="write-newsletter" name="newsletter" value="order-newsletter" />
+       Chci dostávat informace z NapišteJim.cz<br/>
       <input id="write-submit" class="submit" type="submit" value="Odeslat"/>
     </form>
     

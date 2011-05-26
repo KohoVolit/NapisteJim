@@ -23,7 +23,7 @@
 	      </div>
 	    </fieldset>
 		<div id="search-example">
-		  {t}Např.{/t}: <a href="?address={t escape='url'}Bartoňova 951, 547 01 Náchod{/t}">	  {t}Bartonova 951, 547 01 Nachod{/t}</a>, <a href="?address={t escape='url'}331 01{/t}">{t}331 01{/t}</a>, <a href="?address={t escape='url'}Ostrava{/t}">{t}Ostrava{/t}</a>
+		  {t}Např.{/t}: <a href="?address={t escape='url'}Bartoňova 951 Náchod{/t}">{t}Bartoňova 951 Náchod{/t}</a>, <a href="?address={t escape='url'}331 01{/t}">{t}331 01{/t}</a>, <a href="?address={t escape='url'}Ostrava{/t}">{t}Ostrava{/t}</a>
 		</div>
 	    <div id="search-submit">
 	      <input id="search-submit-geocode" type="submit" value="{t}Najít své politiky{/t}"/>

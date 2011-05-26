@@ -110,6 +110,7 @@ function deselectAction(prevId) {
 	$(".mp-clicked-"+shortPrevId).addClass('mp-clicked-off');
 	$(".mp-clicked-"+shortPrevId).removeClass('ui-state-highlight  mp-clicked-on');
 	$(".mp-"+shortPrevId).draggable({ disabled: false });
+	$(".mp-clicked-"+shortPrevId).draggable({ disabled: false });
 }
 
 //action selecting current MP / A
@@ -123,6 +124,7 @@ function selectAction(selectedId,boxId) {
     $(".mp-clicked-"+shortSelectedId).addClass('ui-state-highlight  mp-clicked-on');
     $(".mp-clicked-"+shortSelectedId).removeClass('mp-clicked-off');
     $(".mp-"+shortSelectedId).draggable({ disabled: true });
+    $(".mp-clicked-"+shortSelectedId).draggable({ disabled: true });
     //get html
 	ajaxMp('ajax/id2mp.search_results.php','id='+selectedId,$("#search_results-addressee-box-"+boxId));
 	//insert id into form			
