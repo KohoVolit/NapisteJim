@@ -1,7 +1,7 @@
 <?php
 
-include '../config/setting.php';
-include '../setup.php';
+require '/home/shared/napistejim.cz/config/settings.php';
+require '/home/shared/napistejim.cz/setup.php';
 
 // read a mail from standard input
 $mail = '';
@@ -9,28 +9,28 @@ while (!feof(STDIN) && strlen($mail) < 4000000)	// limit to 4 MB
     $mail .= fread(STDIN, 8192);
 
 // backup the mail
-$backup = fopen(WTT_DIR . '/mail/backup/mails-' . strftime(%Y-%m-%d), 'a');
+$backup = fopen(WTT_DIR . '/mail/backup/mails-' . strftime('%Y-%m-%d'), 'a');
 fwrite($backup, $mail . "\n\n\n");
 fclose($backup);
 
 // parse the mail
 if (strpos($mail, "\r\n") === false)
 	$mail = str_replace("\n", "\r\n", $mail);
-$parsed_mail = fMailBox::parseMessage($mail);
+$parsed_mail = fMailbox::parseMessage($mail);
 
 // notice admin about other mails than responses to sent messages
 $to = $parsed_mail['headers']['to'][0];
 if (substr($to['mailbox'], 0, 6) != 'reply.')
 {
-	$subject = mime_encode('Dorazil e-mail na adresu: ') . $to['mailbox'] . '@' . $to['host'],
-	$text = 'Nájdeš ho v ' . WTT_DIR . '/mail/backup/mails-' .  strftime(%Y-%m-%d);
+	$subject = mime_encode('Dorazil e-mail na adresu:') . ' ' . $to['mailbox'] . '@' . $to['host'];
+	$text = 'Nájdeš ho v ' . WTT_DIR . '/mail/backup/mails-' .  strftime('%Y-%m-%d');
 	return notice_admin($subject, $text);
 }
 
 // parse a response to a message sent to representatives
-$reply_code = strtolower(substr($to_mailbox, strpos($to_mailbox, '.') + 1));
+$reply_code = strtolower(substr($to['mailbox'], strpos($to['mailbox'], '.') + 1));
 $subject = $parsed_mail['headers']['subject'];
-$body = (isset($parsed_mail['html'])) ? $parsed_mail['html'] : ((isset($parsed_mail['text'])) ? $parsed_mail['text'] : '');
+$body = (isset($parsed_mail['text'])) ? $parsed_mail['text'] : ((isset($parsed_mail['html'])) ? $parsed_mail['html'] : '');
 
 // store the response
 $api_kohovolit = new ApiDirect('kohovolit');
@@ -40,7 +40,7 @@ $res = $api_kohovolit->update('Response', array('reply_code' => $reply_code), ar
 if ($res == 0)
 {
 	$subject = mime_encode('K došlej odpovedi s kódom ') .  $reply_code . mime_encode(' sa nenašla príslušná správa');
-	$text = 'Došlú odpoveď nájdeš v ' . WTT_DIR . '/mail/backup/mails-' .  strftime(%Y-%m-%d);
+	$text = 'Došlú odpoveď nájdeš v ' . WTT_DIR . '/mail/backup/mails-' .  strftime('%Y-%m-%d');
 	return notice_admin($subject, $text);
 }
 
@@ -55,24 +55,16 @@ $mp = $mp['mp'][0];
 
 $from = mime_encode('NapišteJim.cz') . ' <neodpovidejte@napistejim.cz>';
 $to = $message['sender_email'];
-$subject = mime_encode($mp['first_name'] . ' ' $mp['last_name'] . ' odpověděl' . (($mp['sex'] == 'f') ? 'a' : '') . ' na vaši zprávu');
+$subject = mime_encode($mp['first_name'] . ' ' . $mp['last_name'] . ' odpověděl' . (($mp['sex'] == 'f') ? 'a' : '') . ' na vaši zprávu');
 $smarty = new SmartyNapisteJimCz;
 $smarty->assign('mp', $mp);
-$smarty->assign('message', array('subject' => $message['subject'], 'body' => $message['body'], 'is_public' => $message['is_public']));
+$smarty->assign('message', array('subject' => $response['subject'], 'body' => $response['body_'], 'is_public' => $message['is_public']));
 $text = $smarty->fetch('email/response_from_mp.tpl');
 send_mail($from, $to, $subject, $text);
 
-// check accidental response to a private message
-if ($message['is_private'] == 'yes')
-{
-	// erase the response to a private message and resend it to the sender
+// erase an accidental response to a private message
+if ($message['is_public'] == 'no')
 	$api_kohovolit->update('Response', array('reply_code' => $reply_code), array('subject' => null, 'body_' => null, 'full_email_data' => null));
-	$from = mime_encode('NapišteJim.cz') . ' <neodpovidejte@napistejim.cz>';
-	$to = $message['sender_email'];
-	$subject = $response['subject'];
-	$text = $response['body_'];
-	send_mail($from, $to, $subject, $text);
-}
 
 exit;
 

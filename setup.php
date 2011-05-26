@@ -9,6 +9,7 @@ function wtt_autoload($class_name)
 }
 spl_autoload_register('wtt_autoload');
 
+mb_internal_encoding('UTF-8');
 
 // ajax address2mps settings
 $parl_order = array(
