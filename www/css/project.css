@@ -262,6 +262,14 @@ fieldset.search {
 * search_results
 */
 
+.group{
+  min-height:50px;
+}
+.group-logo {
+ width: 80px;
+}
+
+
 /* map */
 #search_results-map_canvas {
   height:250px;
@@ -269,11 +277,28 @@ fieldset.search {
 }
 
 /* boxes */
+
+#search_results-send{
+background: #fff url(/images/back-znacka.png) no-repeat;
+}
+#search_results-submit-mps{
+margin:65 100px;
+}
+#search_results-addressee {
+
+display:block;
+}
 .addressee-box{
   border: 5px dashed #DDD;
-  height:100px;
-  min-width:200px;
+  height:162px;
+  min-width:120px;
   float:left;
+  margin: 0 20px;
+  display:block;
+}
+
+.search_results-up-to{
+min-width:220px;
 }
 
 /*jQuery UI */
@@ -322,7 +347,10 @@ fieldset.search {
 }
 .mp {
   display:inline;
-  white-space:nowrap;
+  white-space:normal;
+}
+.mp-name-info {
+  white-space:
 }
 .mp-name-name{
   color: #006;
@@ -369,10 +397,5 @@ fieldset.search {
 .write-input{
   margin-bottom: .65em;
 }
-.write-personal {
 
-}
-#write-submit {
-  padding-top: 1em;
-}
 

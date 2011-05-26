@@ -39,7 +39,7 @@
       <textarea id="write-body" rows="15" cols="80" name="body" class="validate[required,minSize[90]] textarea">{include file="email/initial_message.tpl"}</textarea>
       <br/>
       <input type="checkbox" id="write-newsletter" name="newsletter" value="order-newsletter" />
-       Chci dostávat informace z NapišteJim.cz<br/>
+       Chci dostávat informace z NapišteJim.cz<br/><br/>
       <input id="write-submit" class="submit" type="submit" value="Odeslat"/>
     </form>
     
