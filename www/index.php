@@ -150,12 +150,12 @@ function send_page()
 	// send confirmation mail to the sender
 	$from = mime_encode('NapišteJim.cz') . ' <neodpovidejte@napistejim.cz>';
 	$to = $email;
-	$subject = mime_encode('Potvrďte prosím, že chcete odeslat zprávu přes NapišteJim.cz');
+	$confirmation_subject = mime_encode('Potvrďte prosím, že chcete odeslat zprávu přes NapišteJim.cz');
 	$mp_details = $api_napistejim->read('MpDetails', array('mp' => $mp_list));
 	$smarty->assign('addressee', $mp_details['mp_details']);
 	$smarty->assign('message', array('subject' => $subject, 'body' => $body, 'is_public' => $is_public, 'confirmation_code' => $confirmation_code));
 	$text = $smarty->fetch('email/request_to_confirm.tpl');
-	send_mail($from, $to, $subject, $text);
+	send_mail($from, $to, $confirmation_subject, $text);
 
 	// order newsletter if requested
 	if (isset($_POST['newsletter']))
