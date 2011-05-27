@@ -263,7 +263,8 @@ fieldset.search {
 */
 
 .group{
-  min-height:50px;
+  _height:60px;
+  min-height:60px;
 }
 .group-logo {
  width: 80px;
