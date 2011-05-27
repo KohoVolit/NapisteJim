@@ -371,7 +371,6 @@ min-width:220px;
 }
 .mp {
   display:inline;
-  white-space:nowrap;
 }
 .mp-name-info {
   white-space:normal
