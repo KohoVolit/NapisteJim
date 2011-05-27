@@ -26,8 +26,7 @@
 		          <div class="group-mps">
 		            <div id="mp-{$parliament.code}/{$mp.id}" class="mp">
 		              <span class="mp-name">
-		                <span id="mp-name-name-{$parliament.code}/{$mp.id}" class="mp-name-name mp-clicked-off mp-clicked-{$mp.id} draggable">{$mp.last_name}</span><span
-							class="mp-name-info dimmed small-text">{$mp.info}</span>
+		                <span id="mp-name-name-{$parliament.code}/{$mp.id}" class="mp-name-name mp-clicked-off mp-clicked-{$mp.id} draggable">{$mp.last_name}</span>&nbsp;<span	class="mp-name-info dimmed small-text">{$mp.info}</span>
 		              </span>
 		            </div>
 		          </div>
