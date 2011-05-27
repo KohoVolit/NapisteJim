@@ -101,7 +101,7 @@ function processAddress(results) {
       //show_messages("check2","check2",'');	//debug only
       codeLatLng(results[0].geometry.location.lat(),results[0].geometry.location.lng());
     } else {
-      found_regions_str += '&formatted_address=' + results[0].formatted_address;
+      found_regions_str += '&formatted_address=' + encodeURIComponent(results[0].formatted_address);
       found_regions_str += '&latitude=' + results[0].geometry.location.lat();
       found_regions_str += '&longitude=' + results[0].geometry.location.lng();
 	  show_messages(_("Address found") + ": " + results[0].formatted_address,"",'alert');	
@@ -187,7 +187,7 @@ function extract_regions(results,regions) {
   $.each(regions, function(index, value) {
 	var reg_val = g_find_type_in_results(results[0].address_components, index,value);
 	if (!(typeof reg_val === 'undefined')) {
-      frs += index + '=' + reg_val + '&';
+      frs += index + '=' + encodeURIComponent(reg_val) + '&';
 	}
   });
   return frs;
