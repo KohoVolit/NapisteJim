@@ -1,8 +1,17 @@
-We are sorry, but your message was evaluated as profane and has not been sent to your representative(s).
-A copy of your message is below. Try another way to contact your representative(s). 
+Omlouváme se, ale Vaše zpráva pro politiky
 
-Addressee(s):
-{$addressee}
+{foreach $addressee as $a}{$a.first_name} {$a.last_name}
+{/foreach}
 
-Message:
-{$message}
+byla vyhodnocena jako urážející a nebyla jim odeslána. Chcete-li dotyčné
+kontaktovat jiným způsobem, kopii napsané zprávy najdete níže.
+
+Pokud jste přesvědčen(a), že zpráva byla zastavena neprávem, kontaktujte nás,
+prosím, e-mailem na info@kohovolit.eu.
+
+
+--- Vaše zpráva pro politiky ---
+
+Předmět: {$message.subject}
+
+{$message.body}

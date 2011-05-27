@@ -1,13 +1,16 @@
-Approve sending of the following mail, please.
+Zpráva napsaná přes web NapišteJim.cz se zdá jako urážející a aby mohla být
+odeslána, potřebuje tvoje posouzení a schválení. Napsaná zpráva je připojena
+níže.
 
-Click this link if the message is OK:
+Pokud je zpráva v pořádku a MÁ SE ODESLAT adresátům, klikni na tento odkaz:
 http://napistejim.cz/confirm?action=approve&cc={$message.confirmation_code}&ac={$message.approval_code}
 
-Click this link if the message is NOT OK:
+Pokud je zpráva urážející a NEMÁ SE ODESLAT adresátům, klikni sem:
 http://napistejim.cz/confirm?action=refuse&cc={$message.confirmation_code}&ac={$message.approval_code}
 
-Addressee(s):
-{$addressee}
 
-Message:
-{$message}
+--- Napsaná zpráva pro politiky ---
+
+Předmět: {$message.subject}
+
+{$message.body}

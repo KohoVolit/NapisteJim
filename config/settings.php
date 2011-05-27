@@ -4,7 +4,7 @@
 const WTT_DIR = '/home/shared/napistejim.cz';	//uprav local-server
 const API_DIR = '/home/shared/api.kohovolit.eu/www';	//uprav local-server
 const SMARTY_DIR = '/usr/local/lib/php/Smarty/libs/';	//uprav local-server (server: /libs/)
-const IMG_URL = 'http://kohovolit.eu/data/images/';
+const IMG_URL = 'http://cs.kohovolit.eu/data/';
 
 error_reporting(0);
 

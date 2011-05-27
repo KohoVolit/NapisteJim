@@ -74,7 +74,7 @@ Použitím aplikace souhlasíte s výše uvedeným skladováním osobních dat.
 
 <p>I když v KohoVolit toho děláme spoustu užitečného (mrkněte se třeba na naše předvolební kalkulačky nebo na analýzu aktivity poslanců), nezvládáme všechno najednou.
 </p><p>
-Plánujeme aplikaci postupně rozšiřovat a prvními kroky budou právě vláda a krajská zastupitelstva. Chtěli byste nám s tím pomoci? <a href="/contact">Kontaktujte nás!<a/> Nebo můžete na vývoj přispět <a href="/support">zde</a>. 
+Plánujeme aplikaci postupně rozšiřovat a prvními kroky budou právě vláda a krajská zastupitelstva. Chtěli byste nám s tím pomoci? <a href="/contact">Kontaktujte nás!</a> Nebo můžete na vývoj přispět <a href="/support">zde</a>. 
 </p><p>
 Můžeme do systému ale přidat i úplně malou obec, pokud o to někdo projeví zájem a dodá nám e-mailové kontakty na místní zastupitelstvo – pro tuto možnost nás opět <a href="/contact">kontaktujte</a>
 </p>
@@ -94,7 +94,7 @@ Navíc, i když politik má k ruce asistenty, kteří mu pomáhají vyřizovat 
 
 <p>Cílem této aplikace je vytvořit živou platformu pro elektronickou komunikaci mezi občany a politiky. 
 </p><p>
-O tom, jak projekt vzniknul a o KohoVolit.eu – zastřešující organizaci, se více dočtete zde
+O tom, jak projekt vzniknul a o KohoVolit.eu – zastřešující organizaci, se více dočtete <a href="/about">zde</a>.
 </p>
 
 
@@ -173,13 +173,13 @@ Každopádně, už ten fakt, že máte tenhle nápad vás činí zajímavým –
 </p><p>
 - navazování spolupráce s místními neziskovými organizacemi pro docílení tlaku na konkrétní politiky
 </p><p>
-Zastřešující organizace KohoVolit.eu má na triku mnoho dalších zajímavých projektů, podívejte se se <a href="/about">zde</a> (o projektu)
+Zastřešující organizace KohoVolit.eu má na triku mnoho dalších zajímavých projektů, podívejte se se <a href="/about">zde</a> (o projektu).
 </p>
 
 
 <h3>18. Chci sdělit komentář, kritiku nebo pochvalu</h3>
 
-<p>Těšíme se na vaše názory (viz <a href="/contact">kontakt</a>)
+<p>Těšíme se na vaše názory (viz <a href="/contact">kontakt</a>).
 </p>
 
 

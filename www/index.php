@@ -150,12 +150,12 @@ function send_page()
 	// send confirmation mail to the sender
 	$from = mime_encode('NapišteJim.cz') . ' <neodpovidejte@napistejim.cz>';
 	$to = $email;
-	$subject = mime_encode('Potvrďte prosím, že chcete odeslat zprávu přes NapišteJim.cz');
+	$confirmation_subject = mime_encode('Potvrďte prosím, že chcete odeslat zprávu přes NapišteJim.cz');
 	$mp_details = $api_napistejim->read('MpDetails', array('mp' => $mp_list));
 	$smarty->assign('addressee', $mp_details['mp_details']);
 	$smarty->assign('message', array('subject' => $subject, 'body' => $body, 'is_public' => $is_public, 'confirmation_code' => $confirmation_code));
 	$text = $smarty->fetch('email/request_to_confirm.tpl');
-	send_mail($from, $to, $subject, $text);
+	send_mail($from, $to, $confirmation_subject, $text);
 
 	// order newsletter if requested
 	if (isset($_POST['newsletter']))
@@ -236,9 +236,10 @@ function send_message($message)
 		$reply_to = ($message['is_public'] == 'yes') ? $from : $message['sender_email'];
 		$to = $mp['email'];
 		$subject = mime_encode($message['subject']);
-		$smarty->assign('message', array('subject' => $message['subject'], 'body' => $message['body_'], 'is_public' => $message['is_public'], 'reply_to' => $reply_to));
+		$smarty->assign('message', array('sender_name' => $message['sender_name'], 'sender_email' => $message['sender_email'],
+			'subject' => $message['subject'], 'body' => $message['body_'], 'is_public' => $message['is_public'], 'reply_to' => $reply_to));
 		$text = $smarty->fetch('email/message_to_mp.tpl');
-		$to = 'jaroslav_semancik@yahoo.com';	// !!! REMOVE AFTER TESTING !!!
+//		$to = 'jaroslav_semancik@yahoo.com';	// !!! REMOVE AFTER TESTING !!!
 		send_mail($from, $to, $subject, $text, $reply_to);
 	}
 
@@ -270,7 +271,7 @@ function send_to_reviewer($message)
 	$smarty->assign('addressee', addressees_of_message($message));
 	$smarty->assign('message', array('subject' => $message['subject'], 'body' => $message['body'], 'is_public' => $message['is_public'], 'confirmation_code' => $message['confirmation_code'], 'approval_code' => $approval_code));
 	$text = $smarty->fetch('email/request_to_review.tpl');
-	$to = 'jaroslav_semancik@yahoo.com';	// !!! REMOVE AFTER TESTING !!!
+//	$to = 'jaroslav_semancik@yahoo.com';	// !!! REMOVE AFTER TESTING !!!
 	send_mail($from, $to, $subject, $text);
 
 	// change message state
@@ -285,7 +286,7 @@ function refuse_message($message)
 	// send explanation of the refusal to the sender
 	$from = mime_encode('NapišteJim.cz') . ' <neodpovidejte@napistejim.cz>';
 	$to = $message['sender_email'];
-	$subject = mime_encode('Vaše zpráva byla vyhodnocena jako nezdvořilá a nebyla odeslána');
+	$subject = mime_encode('Vaše zpráva byla vyhodnocena jako urážející a nebyla odeslána');
 	$smarty->assign('addressee', addressees_of_message($message));
 	$smarty->assign('message', array('subject' => $message['subject'], 'body' => $message['body'], 'is_public' => $message['is_public']));
 	$text = $smarty->fetch('email/message_refused.tpl');

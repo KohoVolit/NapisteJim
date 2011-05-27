@@ -263,7 +263,8 @@ fieldset.search {
 */
 
 .group{
-  min-height:50px;
+  _height:60px;
+  min-height:60px;
 }
 .group-logo {
  width: 80px;
@@ -274,6 +275,7 @@ fieldset.search {
 #search_results-map_canvas {
   height:250px;
   width:250px;
+  float:right;
 }
 
 /* boxes */
@@ -285,13 +287,35 @@ background: #fff url(/images/back-znacka.png) no-repeat;
 margin:65 100px;
 }
 #search_results-addressee {
-
 display:block;
 }
+#search_results-addressee h2 {
+	margin-top: 110px;
+}
+#search_results-up-to {
+	clear: both;
+	margin-bottom: 10px;
+}
+#search_results-search-wrapper {
+	margin-top: 20px;
+	margin-right: 300px;
+}
+#search_results-message {
+	margin-right: 300px;
+}
+#search_results-geocode-address {
+	width: 250px;
+	font-size: 1em;
+}
+#search_results-submit-geocode {
+	font-size: 1em;
+	padding: 2px 10px;
+}
+
 .addressee-box{
   border: 5px dashed #DDD;
   height:162px;
-  min-width:120px;
+  width:120px;
   float:left;
   margin: 0 20px;
   display:block;
@@ -347,7 +371,6 @@ min-width:220px;
 }
 .mp {
   display:inline;
-  white-space:nowrap;
 }
 .mp-name-info {
   white-space:normal
@@ -398,4 +421,30 @@ min-width:220px;
   margin-bottom: .65em;
 }
 
-
+.write-mp {
+	float: left;
+  margin: 0 120px 0px 0px;
+}
+#write-personal {
+	clear: both;
+	padding-top: 60px;
+}
+.write-mp-photo {
+  height:162px;
+  width:120px;
+}
+.write-mp-first_name {
+	padding-top: 7px;
+}
+#write-name, #write-email, #write-subject {
+	width: 300px;
+}
+#write-privacy {
+	display: inline;
+	margin-left: 60px;
+}
+#write-privacy input {
+	margin-left: 10px;
+}
+#write-newsletter {
+	margin-top: 15px;
