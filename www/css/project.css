@@ -314,7 +314,7 @@ display:block;
 .addressee-box{
   border: 5px dashed #DDD;
   height:162px;
-  min-width:120px;
+  width:120px;
   float:left;
   margin: 0 20px;
   display:block;
@@ -431,7 +431,7 @@ min-width:220px;
 }
 .write-mp-photo {
   height:162px;
-  min-width:120px;
+  width:120px;
 }
 .write-mp-first_name {
 	padding-top: 7px;

@@ -25,7 +25,7 @@
 		        {foreach $group.mp as $mp}
 		          <div class="group-mps">
 		            <div id="mp-{$parliament.code}/{$mp.id}" class="mp">
-		              <span id="mp-toggle-{$parliament.code}/{$mp.id}" class="mp-toggle mp-clicked-off mp-clicked-{$mp.id} ui-icon ui-icon-check mp-{$mp.id}"></span>
+<!-- &nbsp; needed by IE8 -->&nbsp;<span id="mp-toggle-{$parliament.code}/{$mp.id}" class="mp-toggle mp-clicked-off mp-clicked-{$mp.id} ui-icon ui-icon-check mp-{$mp.id}"></span>
 		              <span class="mp-name">
 		                <span id="mp-name-name-{$parliament.code}/{$mp.id}" class="mp-name-name mp-clicked-off mp-clicked-{$mp.id} draggable">{$mp.last_name}</span>
 		                <span class="mp-name-info dimmed small-text">{$mp.info}</span>
