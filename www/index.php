@@ -319,6 +319,10 @@ function addressees_of_message($message)
 
 function is_profane($text)
 {
+	$profanities = file('../profanities.lst', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+	foreach ($profanities as $p)
+		if (strpos($text, $p) !== false)
+			return true;
 	return false;
 }
 
