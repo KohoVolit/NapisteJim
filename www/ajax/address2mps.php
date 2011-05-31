@@ -128,12 +128,12 @@ function make_mp_info($mp,$array,$one_constit,$adk) {
   $out = '';
   foreach ((array) $array as $item) {
     if (($item == 'office_distance') and ($item != ''))
-      $out .= round($mp[$item],0) . ' km ';
+      $out .= round($mp[$item],0) . "&nbsp;km&nbsp;";
     else
       if (is_numeric($mp[$item][strlen($mp[$item])-1]))	//hack for 'Praha 1'
-        $out .= $mp[$item] . '; ';
+        $out .= str_replace(' ','&nbsp;',$mp[$item]) . ";&nbsp;";
       else
-        $out .= $mp[$item] . ' ';
+        $out .= str_replace(' ','&nbsp;',$mp[$item]) . "&nbsp;";
   }
   if (!$one_constit) {
     $date = new DateTime('now');
