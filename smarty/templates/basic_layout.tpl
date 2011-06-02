@@ -15,6 +15,7 @@
 	{block name=basic_body}{/block}
 	<div id="page-footer">
 		<div id="links">
+		  <a href="/list">{t}Veřejné zprávy{/t}</a>
 		  <a href="/about">{t}O projektu{/t}</a>
 		  <a href="/faq">{t}Otázky a odpovědi{/t}</a>
 		  <a href="/video">{t}Video{/t}</a>

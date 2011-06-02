@@ -448,3 +448,78 @@ min-width:220px;
 }
 #write-newsletter {
 	margin-top: 15px;
+}
+
+/**
+* list
+*/
+#list-table {
+  width:100%;
+  table-layout:fixed;
+  border-width: 1px 1px 0;
+}
+#list-table tbody{
+  font-size:75%;
+}
+#list-table tr:hover {
+  background-color:#FBE09E;
+  border-color: #F6F5F2;
+}
+#list-table td {
+ overflow:hidden;
+ padding: 3px 5px 2px;
+     border-style: solid;
+    border-width: 0 0 1px;
+    border-color: #F6F5F2;
+    white-space:nowrap;
+}
+.list-subject {
+  font-weight: bold;
+}
+.list-body {
+  color: #7F7F7F;
+}
+.list-td-response-status {
+  width:45px;
+  text-align:center;
+}
+.list-td-date {
+  width:4em;
+}
+.list-td-responder{
+  width:30%;
+}
+.list-td-sender{
+  width:15%;
+}
+/*sprite- image*/
+.list-response-status {
+    background: url(/images/points.png) no-repeat top left;
+    width:15px;
+}
+.list-not-answered-short{ background-position: 0 0; width: 10px; height: 10px; } 
+.list-answered{ background-position: 0 -60px; width: 10px; height: 10px; } 
+.list-not-answered-long{ background-position: 0 -120px; width: 10px; height: 10px; } 
+
+/**
+* message
+*/
+.message-left {
+  width:200px;
+}
+.message-right{
+  margin-left:200px;
+}
+#message-message{
+  line-height:2em;
+}
+#message-subject{
+  font-weight:bold;
+}
+#message-body {
+  line-height:normal;
+}
+.message-response{
+  padding:2em 0;
+}
+
