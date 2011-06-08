@@ -17,7 +17,7 @@ NapišteJim.cz - seznam veřejným emailů
           <img src="/images/1x1.png" class="list-response-status list-{$rs.code}" title="{$rs.text}" alt=""/>
         {/foreach}
       </td>
-      <td class="list-td-responder">{foreach $message.responder as $responder}{$responder.name} {/foreach}</td>
+      <td class="list-td-responder">{foreach $message.responder as $responder}{$responder.name}{if !$responder@last}, {/if}{/foreach}</td>
       <td class="list-message" title="{$message.body_short}"><a href="/?message={$message.id}"><span class="list-subject">{$message.subject}</span>&nbsp;<span class="list-body">{$message.body_short}</span></a></td>
       <td class="list-td-date">{$message.date}</td>
       <td class="list-td-sender">{$message.sender_name}</td>
