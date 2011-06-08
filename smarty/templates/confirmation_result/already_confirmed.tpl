@@ -1,9 +1,13 @@
 {extends file="layout.tpl"}
 
 {block name=title}
-Duplicate confirmation
+Již potvrzeno
 {/block}
 
 {block name=body}
-Sending of this message has been already confirmed.
+<h3>Již potvrzeno</h3>
+
+<p>Odeslání této zprávy již bylo potvzeno.</p>
+
+<p class="small-text">Tuto záložku můžete nyní zavřít.</p>
 {/block}

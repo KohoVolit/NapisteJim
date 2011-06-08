@@ -13,6 +13,6 @@ Pokud si zvolíte, že Vaše zpráva bude veřejná, zobrazí se v přehledu ode
 </p><p>
 Na rozdíl od jména Vaši e-mailovou adresu zásadně zveřejňovat nebudeme, ani ji nikdy nepředáme dalším osobám. Jediný, kdo ji uvidí, je adresát Vašeho e-mailu, aby vám mohl odpovědět.
 </p><p>
-Použitím aplikace souhlasíte s výše uvedeným skladováním osobních dat.
+Použitím aplikace souhlasíte s uložením výšeuvedených osobních dat.
 </p>
 {/block}

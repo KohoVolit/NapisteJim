@@ -1,13 +1,11 @@
 {extends file="layout.tpl"}
 
 {block name=title}
-Chybnı odkaz pro potvrzení
+ChybnÃ½ odkaz pro potvrzenÃ­
 {/block}
 
 {block name=body}
-<h3>Chybnı odkaz pro potvrzení</h3>
+<h3>ChybnÃ½ odkaz pro potvrzenÃ­</h3>
 
-<p>Chybnı odkaz pro potvrzení zprávy. Moné jste ho nezkopíroval(a) celı. Nebo platnost odkazu u vypršela.</p>
-
-<p><a href="http://napistejim.cz">Zpet na hlavní stránku</a></p>
+<p>ChybnÃ½ odkaz pro potvrzenÃ­ zprÃ¡vy. MoÅ¾nÃ© jste odkaz nezkopÃ­roval(a) celÃ½. Nebo platnost odkazu uÅ¾ vyprÅ¡ela.</p>
 {/block}

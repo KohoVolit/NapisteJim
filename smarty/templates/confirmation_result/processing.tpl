@@ -9,5 +9,5 @@ Vaše zpráva se zpracovává
 
 <p>Vaše zpráva byla zařazena na odeslání a nyní se zpracovává v systému. O jejím odeslání budete brzo informováni e-mailem.<p>
 
-<p><a href="http://napistejim.cz">Zpět na hlavní stránku</a></p>
+<p class="small-text">Tuto záložku můžete nyní zavřít.</p>
 {/block}

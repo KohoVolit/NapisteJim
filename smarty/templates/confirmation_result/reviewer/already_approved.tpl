@@ -1,9 +1,13 @@
 {extends file="layout.tpl"}
 
 {block name=title}
-Wrong confirmation
+Již rozhodnuto
 {/block}
 
 {block name=body}
-The message has been already approved or refused.
+<h3>Již rozhodnuto</h3>
+
+<p>O odeslání této zprávy již bylo rozhodnuto (byla již schválena nebo zamítnuta).</p>
+
+<p class="small-text">Tuto záložku můžete nyní zavřít.</p>
 {/block}

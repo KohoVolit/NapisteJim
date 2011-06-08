@@ -1,9 +1,13 @@
 {extends file="layout.tpl"}
 
 {block name=title}
-A message refused
+Odmítnuto
 {/block}
 
 {block name=body}
-You refused to send the message as profane. A refusal explanation message has been sent to the sender.
+<h3>Odmítnuto</h3>
+
+<p>Odmítl(a) jste odeslání této zprávy jako urážející nebo neslušné. Odesílatel byl informován s vysvětlením.</p>
+
+<p class="small-text">Tuto záložku můžete nyní zavřít.</p>
 {/block}

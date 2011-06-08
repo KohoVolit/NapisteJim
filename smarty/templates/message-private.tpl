@@ -1,7 +1,7 @@
 {extends file="layout.tpl"}
 
 {block name=title}
-NapišteJim.cz - veřejný email
+NapišteJim.cz - soukromý email
 {/block}
 
 {block name=body}

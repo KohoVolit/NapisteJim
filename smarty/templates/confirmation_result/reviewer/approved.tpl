@@ -1,9 +1,13 @@
 {extends file="layout.tpl"}
 
 {block name=title}
-A message approved
+Schváleno
 {/block}
 
 {block name=body}
-You approved the message to send. The message has been sent to addressee(s).
+<h3>Schváleno</h3>
+
+<p>Schválil(a) jste odeslání této zprávy. Byla odeslána adresátům.</p>
+
+<p class="small-text">Tuto záložku můžete nyní zavřít.</p>
 {/block}

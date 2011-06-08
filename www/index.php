@@ -251,12 +251,12 @@ function confirm_page()
 			else if ($action == 'approve')
 			{
 				send_message($message);
-				static_page('confirmation_result/reviewer/approved.tpl');
+				static_page('confirmation_result/reviewer/approved');
 			}
 			else
 			{
 				refuse_message($message);
-				static_page('confirmation_result/reviewer/refused.tpl');
+				static_page('confirmation_result/reviewer/refused');
 			}
 			break;
 
