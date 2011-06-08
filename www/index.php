@@ -314,12 +314,11 @@ function send_to_reviewer($message)
 
 	// send the message to a reviewer to approve
 	$from = mime_encode('NapišteJim.cz') . ' <neodpovidejte@napistejim.cz>';
-	$to = 'veronika.sumova@kohovolit.eu';
+	$to = 'veronika.sumova@gmail.com';
 	$subject = mime_encode('Zpráva pro politiky potřebuje tvoje schválení');
 	$smarty->assign('addressee', addressees_of_message($message));
-	$smarty->assign('message', array('subject' => $message['subject'], 'body' => $message['body'], 'is_public' => $message['is_public'], 'confirmation_code' => $message['confirmation_code'], 'approval_code' => $approval_code));
+	$smarty->assign('message', array('subject' => $message['subject'], 'body' => $message['body_'], 'is_public' => $message['is_public'], 'confirmation_code' => $message['confirmation_code'], 'approval_code' => $approval_code));
 	$text = $smarty->fetch('email/request_to_review.tpl');
-//	$to = 'jaroslav_semancik@yahoo.com';	// !!! REMOVE AFTER TESTING !!!
 	send_mail($from, $to, $subject, $text);
 
 	// change message state
@@ -336,7 +335,7 @@ function refuse_message($message)
 	$to = $message['sender_email'];
 	$subject = mime_encode('Vaše zpráva byla vyhodnocena jako urážející a nebyla odeslána');
 	$smarty->assign('addressee', addressees_of_message($message));
-	$smarty->assign('message', array('subject' => $message['subject'], 'body' => $message['body'], 'is_public' => $message['is_public']));
+	$smarty->assign('message', array('subject' => $message['subject'], 'body' => $message['body_'], 'is_public' => $message['is_public']));
 	$text = $smarty->fetch('email/message_refused.tpl');
 	send_mail($from, $to, $subject, $text);
 
@@ -489,13 +488,13 @@ function send_mail($from, $to, $subject, $message, $reply_to = null, $additional
 	'Reply-To: ' . mime_encode('NapišteJim.cz') . ' <neodpovidejte@napistejim.cz>' . "\r\n" .
 	'Content-Type: text/plain; charset="UTF-8"' . "\r\n" .
 	'X-Mailer: PHP';
-	mail('info@kohovolit.eu', mime_encode('Odeslání mailu selhalo'), 'Zkontroluj ' . WTT_LOGS_DIR . '/error.log', $headers);
+	mail('jaroslav_semancik@yahoo.com', mime_encode('Odeslání mailu selhalo'), 'Zkontroluj ' . WTT_LOGS_DIR . '/error.log', $headers);
 }
 
 function order_newsletter($email)
 {
 	$from = mime_encode('NapišteJim.cz') . ' <neodpovidejte@napistejim.cz>';
-	$to = 'info@kohovolit.eu';
+	$to = 'michal@skop.eu';
 	$subject = mime_encode('Objednání newsletteru');
 	$message = $email;
 	send_mail($from, $to, $subject, $message);

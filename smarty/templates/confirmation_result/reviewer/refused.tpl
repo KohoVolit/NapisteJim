@@ -9,5 +9,5 @@ Odmítnuto
 
 <p>Odmítl(a) jste odeslání této zprávy jako urážející nebo neslušné. Odesílatel byl informován s vysvětlením.</p>
 
-<p class="small-text">Tuto záložku můžete nyní zavřít.</p>
+<p class="small-text">Toto okno můžete nyní zavřít.</p>
 {/block}

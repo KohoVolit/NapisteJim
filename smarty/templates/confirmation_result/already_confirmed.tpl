@@ -9,5 +9,5 @@ Již potvrzeno
 
 <p>Odeslání této zprávy již bylo potvzeno.</p>
 
-<p class="small-text">Tuto záložku můžete nyní zavřít.</p>
+<p class="small-text">Toto okno můžete nyní zavřít.</p>
 {/block}

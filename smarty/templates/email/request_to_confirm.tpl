@@ -16,6 +16,7 @@ zveřejněna i jejich případná odpověď.{else}Zvolil(a) jste soukromou zprá
 politikům bude na webu NapišteJim.cz smazána a případná jejich odpověď
 přijde jen přímo Vám.{/if}
 
+
 Pokud jste si to rozmyslel(a) a zprávu politikům odeslat nechcete, nemusíte
 dělat nic. Nekliknete-li na výšeuvedený odkaz, připravená zpráva bude po
 čase smazána bez odeslání.

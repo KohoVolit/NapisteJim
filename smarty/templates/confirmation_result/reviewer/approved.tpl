@@ -9,5 +9,5 @@ Schváleno
 
 <p>Schválil(a) jste odeslání této zprávy. Byla odeslána adresátům.</p>
 
-<p class="small-text">Tuto záložku můžete nyní zavřít.</p>
+<p class="small-text">Toto okno můžete nyní zavřít.</p>
 {/block}

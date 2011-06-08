@@ -9,5 +9,5 @@ Již rozhodnuto
 
 <p>O odeslání této zprávy již bylo rozhodnuto (byla již schválena nebo zamítnuta).</p>
 
-<p class="small-text">Tuto záložku můžete nyní zavřít.</p>
+<p class="small-text">Toto okno můžete nyní zavřít.</p>
 {/block}
