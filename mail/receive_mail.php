@@ -71,9 +71,8 @@ exit;
 
 function notice_admin($subject, $body)
 {
-	$to = 'info@kohovolit.eu';
+	$to = 'jaroslav_semancik@yahoo.com';
 	$from = mime_encode('NapišteJim.cz') . ' <neodpovidejte@napistejim.cz>';
-	$to = 'jaroslav_semancik@yahoo.com';	// !!! REMOVE AFTER TESTING !!!
 	send_mail($from, $to, $subject, $body);
 }
 
@@ -104,7 +103,7 @@ function send_mail($from, $to, $subject, $message, $reply_to = null, $additional
 	'Reply-To: ' . mime_encode('NapišteJim.cz') . ' <neodpovidejte@napistejim.cz>' . "\r\n" .
 	'Content-Type: text/plain; charset="UTF-8"' . "\r\n" .
 	'X-Mailer: PHP';
-	mail('info@kohovolit.eu', mime_encode('Odeslání mailu selhalo'), 'Zkontroluj ' . WTT_LOGS_DIR . '/error.log', $headers);
+	mail('jaroslav_semancik@yahoo.com', mime_encode('Odeslání mailu selhalo'), 'Zkontroluj ' . WTT_LOGS_DIR . '/error.log', $headers);
 }
 
 function mime_encode($text)
