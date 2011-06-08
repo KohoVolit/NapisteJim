@@ -522,4 +522,6 @@ min-width:220px;
 .message-response{
   padding:2em 0;
 }
-
+.message-response .message-left {
+  font-weight: bold;
+}
