@@ -278,8 +278,10 @@ function send_message($message)
 	$mp_details = addressees_of_message($message);
 
 	// send the message to all addressees one by one
+	$addressee_with_email = array();
 	foreach ($mp_details as $mp)
 	{
+		if (!isset($mp['email']) || empty($mp['email'])) continue;
 		$from = mime_encode($message['sender_name']) . " <reply.{$mp['reply_code']}@napistejim.cz>";
 		$reply_to = ($message['is_public'] == 'yes') ? $from : $message['sender_email'];
 		$to = $mp['email'];
@@ -289,13 +291,14 @@ function send_message($message)
 		$text = $smarty->fetch('email/message_to_mp.tpl');
 //		$to = 'jaroslav_semancik@yahoo.com';	// !!! REMOVE AFTER TESTING !!!
 		send_mail($from, $to, $subject, $text, $reply_to);
+		$addressee_with_email[] = $mp;
 	}
 
 	// send a copy to the sender
 	$from = mime_encode('NapišteJim.cz') . ' <neodpovidejte@napistejim.cz>';
 	$to = $message['sender_email'];
 	$subject = mime_encode('Vaše zpráva byla odeslána');
-	$smarty->assign('addressee', $mp_details);
+	$smarty->assign('addressee', $addressee_with_email);
 	$smarty->assign('message', array('subject' => $message['subject'], 'body' => $message['body_'], 'is_public' => $message['is_public']));
 	$text = $smarty->fetch('email/message_sent.tpl');
 	send_mail($from, $to, $subject, $text);
