@@ -66,24 +66,24 @@ function message($message_id) {
 
 	global $api_kohovolit;
  	$smarty = new SmartyNapisteJimCz;
- 	
+
 	$message_ar = $api_kohovolit->read('Message', array('id' => $message_id));
 	$message = $message_ar['message'][0];
-	
+
 	//display only public emails
 	if ($message['is_public'] == 'yes') {
 	    // change \n into breaks
 	    $message['body_'] = nl2br($message['body_']);
-	
-		//get responses	
+
+		//get responses
 		$responses_orig = $api_kohovolit->read('Response', array('message_id' => $message_id));
 		$responses = $responses_orig['response'];
-		
+
 		//add 'to:'
 		$to = array();
-	
+
 		foreach((array)$responses as $key => $response) {
-			//get info about responder	
+			//get info about responder
 		  $responder = $api_kohovolit->read('Mp', array('id' => $response['mp_id']));
 		  $responder['mp'][0]['name'] = $responder['mp'][0]['last_name'] ."&nbsp;" . $responder['mp'][0]['first_name'];
 		  $responses[$key]['responder'] = $responder['mp'][0];
@@ -99,13 +99,13 @@ function message($message_id) {
 		//make date
 		$date = new DateTime($message['sent_on']);
 	    $message['date'] = $date->format('j.n.Y');
-	    
+
 		$smarty->assign('message', $message);
 		$smarty->assign('responses', $responses);
 		$smarty->display('message.tpl');
-	} else 
+	} else
 	  $smarty->display('message-private.tpl');
-	
+
 }
 
 function search_results_advanced_page()
@@ -230,7 +230,7 @@ function confirm_page()
 		case 'send':
 			if ($message['state_'] != 'created')
 				return static_page('confirmation_result/already_confirmed');
-			if (is_profane($message['subject']) || is_profane($message['body_']))
+			if (message_is_profane($message))
 			{
 				if ($message['is_public'] == 'yes')
 					send_to_reviewer($message);
@@ -289,7 +289,6 @@ function send_message($message)
 		$smarty->assign('message', array('sender_name' => $message['sender_name'], 'sender_email' => $message['sender_email'],
 			'subject' => $message['subject'], 'body' => $message['body_'], 'is_public' => $message['is_public'], 'reply_to' => $reply_to));
 		$text = $smarty->fetch('email/message_to_mp.tpl');
-//		$to = 'jaroslav_semancik@yahoo.com';	// !!! REMOVE AFTER TESTING !!!
 		send_mail($from, $to, $subject, $text, $reply_to);
 		$addressee_with_email[] = $mp;
 	}
@@ -367,12 +366,25 @@ function addressees_of_message($message)
 	return $mp_details['mp_details'];
 }
 
-function is_profane($text)
+function message_is_profane($message)
 {
-	$profanities = file('../profanities.lst', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
-	foreach ($profanities as $p)
+	$file = ($message['is_public'] == 'yes') ? 'profanities_public.lst' : 'profanities_private.lst';
+	$profanities = file("../$file", FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+	$prefix_only = !($message['is_public'] == 'yes');
+	return text_is_profane($message['subject'], $profanities, $prefix_only) || text_is_profane($message['body_'], $profanities, $prefix_only);
+}
+
+function text_is_profane($text, $profanities_list, $prefix_only)
+{
+	$text = mb_strtolower($text);
+	$text = ' ' . strtr($text, ".,:;!?-'\"()\r\n", '              ');
+	foreach ($profanities_list as $p)
+	{
+		if ($prefix_only)
+			$p = ' ' . $p;
 		if (strpos($text, $p) !== false)
 			return true;
+	}
 	return false;
 }
 
@@ -380,11 +392,11 @@ function messages_page()
 {
     global $api_kohovolit;
 	$smarty = new SmartyNapisteJimCz;
-	
+
 	$messages_orig = $api_kohovolit->read('Message', array('is_public' => 'yes','state_' => 'sent' ));
 	$messages =  $messages_orig['message'];
 	$responses_orig = $api_kohovolit->read('Response', array());
-	
+
 	//reorder $responses to be able to access them directly
 	foreach ((array)$responses_orig['response'] as $row) {
 	  $responses[$row['message_id']][] = $row;
@@ -403,7 +415,7 @@ function messages_page()
 	  // + 2weeks more date ?
 	  $date_limit = $date->add(new DateInterval('P14D'));
 	  $now = new DateTime('now');
-	  if ($now > $date_limit) 
+	  if ($now > $date_limit)
 	    $over14 = true;
 	  else
 	    $over14 = false;
@@ -424,7 +436,7 @@ function messages_page()
 	array_multisort($sort, SORT_DESC, $messages );
 	$smarty->assign('messages', $messages);
 	$smarty->display('list.tpl');
-	
+
 }
 
 function random_code($length)
