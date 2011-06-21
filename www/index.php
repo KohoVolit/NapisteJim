@@ -283,7 +283,7 @@ function send_message($message)
 	{
 		if (!isset($mp['email']) || empty($mp['email'])) continue;
 		$from = mime_encode($message['sender_name']) . " <reply.{$mp['reply_code']}@napistejim.cz>";
-		$reply_to = ($message['is_public'] == 'yes') ? $from : $message['sender_email'];
+		$reply_to = ($message['is_public'] == 'yes') ? $from : mime_encode($message['sender_name']) . ' <' . $message['sender_email'] . '>';
 		$to = $mp['email'];
 		$subject = mime_encode($message['subject']);
 		$smarty->assign('message', array('sender_name' => $message['sender_name'], 'sender_email' => $message['sender_email'],
@@ -517,7 +517,7 @@ function order_newsletter($email)
 
 function mime_encode($text)
 {
-	return mb_encode_mimeheader($text, 'UTF-8');
+	return mb_encode_mimeheader($text, 'UTF-8', 'Q');
 }
 
 ?>

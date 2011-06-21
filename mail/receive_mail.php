@@ -60,7 +60,8 @@ $smarty = new SmartyNapisteJimCz;
 $smarty->assign('mp', $mp);
 $smarty->assign('message', array('subject' => $response['subject'], 'body' => $response['body_'], 'is_public' => $message['is_public']));
 $text = $smarty->fetch('email/response_from_mp.tpl');
-send_mail($from, $to, $subject, $text);
+$reply_to = mime_encode($parsed_mail['headers']['from']['personal']) . ' <' . $parsed_mail['headers']['from']['mailbox'] . '@' . $parsed_mail['headers']['from']['host'] . '>';
+send_mail($from, $to, $subject, $text, $reply_to);
 
 // erase an accidental response to a private message
 if ($message['is_public'] == 'no')
@@ -108,7 +109,7 @@ function send_mail($from, $to, $subject, $message, $reply_to = null, $additional
 
 function mime_encode($text)
 {
-	return mb_encode_mimeheader($text, 'UTF-8');
+	return mb_encode_mimeheader($text, 'UTF-8', 'Q');
 }
 
 ?>
