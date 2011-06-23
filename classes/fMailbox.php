@@ -424,7 +424,7 @@ class fMailbox
 			if ($match[1][0] == '"' && substr($match[1], -1) == '"') {
 				$match[1] = substr($match[1], 1, -1);
 			}
-			return array('personal' => $match[1], 'mailbox' => $match[2], 'host' => $match[3]);
+			return array('personal' => self::decodeHeader($match[1]), 'mailbox' => $match[2], 'host' => $match[3]);	// modified by GIRO
 		
 		} elseif (preg_match('~^[ \t]*(?:<[ \t]*)?' . $email_regex . '(?:[ \t]*>)?[ \t]*$~ixD', $string, $match)) {
 			return array('mailbox' => $match[1], 'host' => $match[2]);
@@ -437,7 +437,7 @@ class fMailbox
 				$match[3] = substr($match[3], 1, -1);
 			}
 			
-			return array('personal' => $match[3], 'mailbox' => $match[1], 'host' => $match[2]);
+			return array('personal' => self::decodeHeader($match[3]), 'mailbox' => $match[1], 'host' => $match[2]);	// modified by GIRO
 		}
 		
 		if (strpos($string, '@') !== FALSE) {
@@ -467,7 +467,7 @@ class fMailbox
 		$headers = array();
 		foreach ($header_lines as $header_line) {
 			$header_line = preg_replace("#\r\n\s+#", '', $header_line);
-			$header_line = self::decodeHeader($header_line);
+//			$header_line = self::decodeHeader($header_line);	// modified by GIRO
 			
 			list ($header, $value) = preg_split('#:\s*#', $header_line, 2);
 			$header = strtolower($header);
@@ -538,7 +538,7 @@ class fMailbox
 				$headers[$header][] = preg_replace('#\s+#', ' ', $value);
 				
 			} else {
-				$headers[$header] = $value;
+				$headers[$header] = self::decodeHeader($value);	// modified by GIRO
 			}
 		}
 		
