@@ -527,7 +527,7 @@ function compose_email_address($display_name, $address)
 	$encoded_display_name = mime_encode($display_name);
 	if (strpos($display_name, ',') !== false)
 		$encoded_display_name = '"' . $encoded_display_name . '"';
-	return $encoded_display_name . ' <' . $address '>';
+	return $encoded_display_name . ' <' . $address . '>';
 }
 
 ?>
