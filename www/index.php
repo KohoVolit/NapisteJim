@@ -284,7 +284,7 @@ function send_message($message)
 		if (!isset($mp['email']) || empty($mp['email'])) continue;
 		$from = compose_email_address($message['sender_name'], 'reply.' . $mp['reply_code'] . '@napistejim.cz');
 		$reply_to = ($message['is_public'] == 'yes') ? $from : compose_email_address($message['sender_name'], $message['sender_email']);
-		$to = $mp['email'];
+		$to = compose_email_address($mp['first_name'] . (!empty($mp['middle_names']) ? ' ' . $mp['middle_names'] . ' ' : ' ') . $mp['last_name'], $mp['email']);
 		$subject = mime_encode($message['subject']);
 		$smarty->assign('message', array('sender_name' => $message['sender_name'], 'sender_email' => $message['sender_email'],
 			'subject' => $message['subject'], 'body' => $message['body_'], 'is_public' => $message['is_public'], 'reply_to' => $reply_to));
