@@ -196,7 +196,7 @@ function send_page()
 	$api_kohovolit->create('Response', $responses);
 
 	// send confirmation mail to the sender
-	$from = compose_email_address('NapišteJim.cz', 'neodpovidejte@napistejim.cz');
+	$from = compose_email_address(WTT_FROM_NAME, WTT_FROM_EMAIL);
 	$to = compose_email_address($name, $email);
 	$confirmation_subject = mime_encode('Potvrďte prosím, že chcete odeslat zprávu přes NapišteJim.cz');
 	$mp_details = $api_napistejim->read('MpDetails', array('mp' => $mp_list));
@@ -282,7 +282,7 @@ function send_message($message)
 	foreach ($mp_details as $mp)
 	{
 		if (!isset($mp['email']) || empty($mp['email'])) continue;
-		$from = compose_email_address($message['sender_name'], 'reply.' . $mp['reply_code'] . '@napistejim.cz');
+		$from = compose_email_address($message['sender_name'], 'reply.' . $mp['reply_code'] . '@' . WTT_FROM_HOST);
 		$reply_to = ($message['is_public'] == 'yes') ? $from : compose_email_address($message['sender_name'], $message['sender_email']);
 		$to = compose_email_address($mp['first_name'] . (!empty($mp['middle_names']) ? ' ' . $mp['middle_names'] . ' ' : ' ') . $mp['last_name'], $mp['email']);
 		$subject = mime_encode($message['subject']);
@@ -294,7 +294,7 @@ function send_message($message)
 	}
 
 	// send a copy to the sender
-	$from = compose_email_address('NapišteJim.cz', 'neodpovidejte@napistejim.cz');
+	$from = compose_email_address(WTT_FROM_NAME, WTT_FROM_EMAIL);
 	$to = compose_email_address($message['sender_name'], $message['sender_email']);
 	$subject = mime_encode('Vaše zpráva byla odeslána');
 	$smarty->assign('addressee', $addressee_with_email);
@@ -315,8 +315,8 @@ function send_to_reviewer($message)
 	$approval_code = random_code(10);
 
 	// send the message to a reviewer to approve
-	$from = compose_email_address('NapišteJim.cz', 'neodpovidejte@napistejim.cz');
-	$to = 'veronika.sumova@gmail.com';
+	$from = compose_email_address(WTT_FROM_NAME, WTT_FROM_EMAIL);
+	$to = REVIEWER_EMAIL;
 	$subject = mime_encode('Zpráva pro politiky potřebuje tvoje schválení');
 	$smarty->assign('addressee', addressees_of_message($message));
 	$smarty->assign('message', array('subject' => $message['subject'], 'body' => $message['body_'], 'is_public' => $message['is_public'], 'confirmation_code' => $message['confirmation_code'], 'approval_code' => $approval_code));
@@ -333,7 +333,7 @@ function refuse_message($message)
 	$smarty = new SmartyNapisteJimCz;
 
 	// send explanation of the refusal to the sender
-	$from = compose_email_address('NapišteJim.cz', 'neodpovidejte@napistejim.cz');
+	$from = compose_email_address(WTT_FROM_NAME, WTT_FROM_EMAIL);
 	$to = compose_email_address($message['sender_name'], $message['sender_email']);
 	$subject = mime_encode('Vaše zpráva byla vyhodnocena jako neslušná a nebyla odeslána');
 	$smarty->assign('addressee', addressees_of_message($message));
@@ -499,17 +499,17 @@ function send_mail($from, $to, $subject, $message, $reply_to = null, $additional
 		print_r(array('to' => $to, 'subject' => $subject, 'message' => $message, 'headers' => $headers), true), Log::ERROR);
 
 	// and inform admin
-	$headers = 'From: ' . compose_email_address('NapišteJim.cz', 'neodpovidejte@napistejim.cz') . "\r\n" .
-	'Reply-To: ' . compose_email_address('NapišteJim.cz', 'neodpovidejte@napistejim.cz') . "\r\n" .
+	$headers = 'From: ' . compose_email_address(WTT_FROM_NAME, WTT_FROM_EMAIL) . "\r\n" .
+	'Reply-To: ' . compose_email_address(WTT_FROM_NAME, WTT_FROM_EMAIL) . "\r\n" .
 	'Content-Type: text/plain; charset="UTF-8"' . "\r\n" .
 	'X-Mailer: PHP';
-	mail('jaroslav_semancik@yahoo.com', mime_encode('Odeslání mailu selhalo'), 'Zkontroluj ' . WTT_LOGS_DIR . '/error.log', $headers);
+	mail(ADMIN_EMAIL, mime_encode('Odeslání mailu selhalo'), 'Zkontroluj ' . WTT_LOGS_DIR . '/error.log', $headers);
 }
 
 function order_newsletter($email)
 {
-	$from = compose_email_address('NapišteJim.cz', 'neodpovidejte@napistejim.cz');
-	$to = 'michal@skop.eu';
+	$from = compose_email_address(WTT_FROM_NAME, WTT_FROM_EMAIL);
+	$to = ORDER_NEWSLETTER_EMAIL;
 	$subject = mime_encode('Objednání newsletteru');
 	$message = $email;
 	send_mail($from, $to, $subject, $message);
@@ -520,20 +520,18 @@ function mime_encode($text)
 	return mb_encode_mimeheader($text, 'UTF-8', 'Q');
 }
 
-// in case that display name contains comma, enclose it by quotes
-// mime encoded address in quotes violates RFC 2047, nevertheless some mail clients decode mime-encoded strings *before* header parsing instead of *after* as requires RFC 2047
 function compose_email_address($display_name, $address)
 {
-	$encoded_display_name = mime_encode($display_name);
-	if (strpos($display_name, ',') !== false)
-		$encoded_display_name = '"' . $encoded_display_name . '"';
-		
+	if (empty($display_name)) return $address;
+
+	$name = mime_encode($display_name);
+	if (strpos($name, ',') !== false)
+		$name = '"' . $name . '"';
+
 	$addresses = explode(',', $address);
 	foreach ($addresses as &$a)
-		$a = $encoded_display_name . ' <' . trim($a) . '>';
-	$address = implode(',', $addresses);
-	
-	return $address;
+		$a = $name . ' <' . trim($a) . '>';
+	return implode(', ', $addresses);
 }
 
 ?>

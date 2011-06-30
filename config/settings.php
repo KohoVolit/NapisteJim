@@ -6,9 +6,18 @@ const API_DIR = '/home/shared/api.kohovolit.eu/www';	//uprav local-server
 const SMARTY_DIR = '/usr/local/lib/php/Smarty/libs/';	//uprav local-server (server: /libs/)
 const IMG_URL = 'http://cs.kohovolit.eu/data/';
 
-error_reporting(0);
-
 define("WTT_LOGS_DIR", WTT_DIR . '/logs');
+
+const ADMIN_EMAIL = 'jaroslav_semancik@yahoo.com';
+const REVIEWER_EMAIL = 'veronika.sumova@gmail.com';
+const ORDER_NEWSLETTER_EMAIL = 'veronika.sumova@gmail.com';
+const WTT_FROM_MAILBOX = 'neodpovidejte';
+const WTT_FROM_HOST = 'napistejim.cz';
+const WTT_FROM_NAME = 'NapišteJim.cz';
+
+define("WTT_FROM_EMAIL", WTT_FROM_MAILBOX . '@' . WTT_FROM_HOST);
+
+error_reporting(0);
 
 // COUNTRY SPECIFIC SETTINGS
 // locale

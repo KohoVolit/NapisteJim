@@ -58,7 +58,7 @@ foreach ($to_list as $to)
 	$mp = $api_kohovolit->read('Mp', array('id' => $response['mp_id']));
 	$mp = $mp['mp'][0];
 
-	$from = compose_email_address('NapišteJim.cz', 'neodpovidejte@napistejim.cz');
+	$from = compose_email_address(WTT_FROM_NAME, WTT_FROM_EMAIL);
 	$to = compose_email_address($message['sender_name'], $message['sender_email']);
 	$subject = mime_encode($mp['first_name'] . ' ' . $mp['last_name'] . ' odpověděl' . (($mp['sex'] == 'f') ? 'a' : '') . ' na vaši zprávu');
 	$smarty = new SmartyNapisteJimCz;
@@ -78,8 +78,8 @@ exit;
 
 function notice_admin($subject, $body)
 {
-	$to = 'jaroslav_semancik@yahoo.com';
-	$from = compose_email_address('NapišteJim.cz', 'neodpovidejte@napistejim.cz');
+	$to = ADMIN_EMAIL;
+	$from = compose_email_address(WTT_FROM_NAME, WTT_FROM_EMAIL);
 	send_mail($from, $to, $subject, $body);
 }
 
@@ -106,11 +106,11 @@ function send_mail($from, $to, $subject, $message, $reply_to = null, $additional
 		print_r(array('to' => $to, 'subject' => $subject, 'message' => $message, 'headers' => $headers), true), Log::ERROR);
 
 	// and inform admin
-	$headers = 'From: ' . compose_email_address('NapišteJim.cz', 'neodpovidejte@napistejim.cz') . "\r\n" .
-	'Reply-To: ' . compose_email_address('NapišteJim.cz', 'neodpovidejte@napistejim.cz') . "\r\n" .
+	$headers = 'From: ' . compose_email_address(WTT_FROM_NAME, WTT_FROM_EMAIL) . "\r\n" .
+	'Reply-To: ' . compose_email_address(WTT_FROM_NAME, WTT_FROM_EMAIL) . "\r\n" .
 	'Content-Type: text/plain; charset="UTF-8"' . "\r\n" .
 	'X-Mailer: PHP';
-	mail('jaroslav_semancik@yahoo.com', mime_encode('Odeslání mailu selhalo'), 'Zkontroluj ' . WTT_LOGS_DIR . '/error.log', $headers);
+	mail(ADMIN_EMAIL, mime_encode('Odeslání mailu selhalo'), 'Zkontroluj ' . WTT_LOGS_DIR . '/error.log', $headers);
 }
 
 function mime_encode($text)
@@ -118,14 +118,18 @@ function mime_encode($text)
 	return mb_encode_mimeheader($text, 'UTF-8', 'Q');
 }
 
-// in case that display name contains comma, enclose it by quotes
-// mime encoded address in quotes violates RFC 2047, nevertheless some mail clients decode mime-encoded strings *before* header parsing instead of *after* as requires RFC 2047
 function compose_email_address($display_name, $address)
 {
-	$encoded_display_name = mime_encode($display_name);
-	if (strpos($display_name, ',') !== false)
-		$encoded_display_name = '"' . $encoded_display_name . '"';
-	return $encoded_display_name . ' <' . $address . '>';
+	if (empty($display_name)) return $address;
+
+	$name = mime_encode($display_name);
+	if (strpos($name, ',') !== false)
+		$name = '"' . $name . '"';
+
+	$addresses = explode(',', $address);
+	foreach ($addresses as &$a)
+		$a = $name . ' <' . trim($a) . '>';
+	return implode(', ', $addresses);
 }
 
 ?>
