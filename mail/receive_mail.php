@@ -38,6 +38,7 @@ foreach ($to_list as $to)
 
 	// store the response
 	$api_kohovolit = new ApiDirect('kohovolit');
+	$body = preg_replace('/reply\.[a-z]{10}@/', 'reply.**********@', $body);
 	$res = $api_kohovolit->update('Response', array('reply_code' => $reply_code), array('subject' => $subject, 'body_' => $body, 'full_email_data' => $mail, 'received_on' => 'now'));
 
 	// notice admin about unrecognized responses
