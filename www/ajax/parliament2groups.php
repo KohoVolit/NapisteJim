@@ -78,7 +78,7 @@ $constit = $constit_res['constituency'];
 $constit = order_array($constit,'name_',SORT_ASC);
 
 $smarty->assign('constit',$constit);
-$smarty->display('ajax.parliament2groups.tpl');
+$smarty->display('ajax/parliament2groups.tpl');
 
 /**
 * function to order array according its one column

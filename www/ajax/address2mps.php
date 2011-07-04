@@ -79,7 +79,7 @@ foreach ((array)$data as $pkey => $parliament) {
 }
 
 $smarty->assign('data',$data);
-$smarty->display('ajax.address2mps.tpl');
+$smarty->display('ajax/address2mps.tpl');
 
 /**
 * correct known problems with parliament/constituency/areas

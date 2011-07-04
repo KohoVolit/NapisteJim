@@ -126,7 +126,7 @@ function selectAction(selectedId,boxId) {
     $(".mp-"+shortSelectedId).draggable({ disabled: true });
     $(".mp-clicked-"+shortSelectedId).draggable({ disabled: true });
     //get html
-	ajaxMp('ajax/id2mp.search_results.php','id='+selectedId,$("#search_results-addressee-box-"+boxId));
+	ajaxMp('ajax/id2mp_search_results.php','id='+selectedId,$("#search_results-addressee-box-"+boxId));
 	//insert id into form			
 	box[boxId] = selectedId;
 	$("#search_results-input").val(setFormValue(box));
