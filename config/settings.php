@@ -25,6 +25,7 @@ date_default_timezone_set('Europe/Prague');
 const LOCALE = 'cs_CZ.UTF8';	// note: must be with capital UTF8, not utf8
 const LOCALE_DIR = "./locale";	// with respect to index.php
 const LOCALIZED_DOMAIN = 'messages';	// name of translation files
+const LOCALIZED_DATE_FORMAT = '%-d. %-m. %Y';
 
 // default map
 const CENTER_LAT = 50;

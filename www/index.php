@@ -32,7 +32,7 @@ switch ($page)
 		break;
 
 	case 'list':
-		messages_page();
+		public_messages_page();
 		break;
 
 	default:
@@ -49,7 +49,7 @@ switch ($page)
 			else if (isset($_GET['advanced']))
 				static_page('advanced_search');
 			else if (isset($_GET['message']))
-				message($_GET['message']);
+				public_message_page($_GET['message']);
 			else
 				static_page('search');
 		}
@@ -62,50 +62,23 @@ function static_page($page)
 	$smarty->display($page . '.tpl');
 }
 
-function message($message_id) {
-
-	global $api_kohovolit;
+function public_message_page($message_id)
+{
+	global $api_kohovolit, $api_napistejim;
  	$smarty = new SmartyNapisteJimCz;
 
+	// get message
 	$message_ar = $api_kohovolit->read('Message', array('id' => $message_id));
 	$message = $message_ar['message'][0];
+	if ($message['is_public'] == 'no')
+		return $smarty->display('message-private.tpl');
+	$smarty->assign('message', $message);
 
-	//display only public emails
-	if ($message['is_public'] == 'yes') {
-	    // change \n into breaks
-	    $message['body_'] = nl2br($message['body_']);
+	// get responses to the message
+	$responses = $api_napistejim->read('ResponsesToMessage', array('message_id' => $message_id));
+	$smarty->assign('responses', $responses['responses_to_message']);
 
-		//get responses
-		$responses_orig = $api_kohovolit->read('Response', array('message_id' => $message_id));
-		$responses = $responses_orig['response'];
-
-		//add 'to:'
-		$to = array();
-
-		foreach((array)$responses as $key => $response) {
-			//get info about responder
-		  $responder = $api_kohovolit->read('Mp', array('id' => $response['mp_id']));
-		  $responder['mp'][0]['name'] = $responder['mp'][0]['last_name'] ."&nbsp;" . $responder['mp'][0]['first_name'];
-		  $responses[$key]['responder'] = $responder['mp'][0];
-		  $to[] = $responder['mp'][0]['name'];
-		  // if no response, add custom text
-		  if ($responses[$key]['body_'] == '')
-		    $responses[$key]['body_'] = '<i>Zatím bez odpovědi ...</i>';
-		  // change \n into breaks
-		  $responses[$key]['body_'] =  nl2br($responses[$key]['body_']);
-		}
-		//make 'to:'
-		$message['to'] = implode(', ',$to);
-		//make date
-		$date = new DateTime($message['sent_on']);
-	    $message['date'] = $date->format('j.n.Y');
-
-		$smarty->assign('message', $message);
-		$smarty->assign('responses', $responses);
-		$smarty->display('message.tpl');
-	} else
-	  $smarty->display('message-private.tpl');
-
+	$smarty->display('message.tpl');
 }
 
 function search_results_advanced_page()
@@ -113,12 +86,12 @@ function search_results_advanced_page()
 	global $api_napistejim;
 	$smarty = new SmartyNapisteJimCz;
 
-	$data = array();
-	if (isset($_GET['groups']) and ($_GET['groups'] != ''))
-		$data['groups'] = explode('|', $_GET['groups']);
-	if (isset($_GET['constituency']) and ($_GET['constituency'] != ''))
-		$data['constituency'] = $_GET['constituency'];
-	$search_mps = $api_napistejim->read('SearchMps', $data);
+	$params = array();
+	if (isset($_GET['groups']) && !empty($_GET['groups']))
+		$params['groups'] = explode('|', $_GET['groups']);
+	if (isset($_GET['constituency']) && !empty($_GET['constituency']))
+		$params['constituency'] = $_GET['constituency'];
+	$search_mps = $api_napistejim->read('SearchMps', $params);
 
 	if (isset($_GET['parliament_code']))
 		$smarty->assign('parliament', array('code' => $_GET['parliament_code']));
@@ -388,55 +361,19 @@ function text_is_profane($text, $profanities_list, $prefix_only)
 	return false;
 }
 
-function messages_page()
+function public_messages_page()
 {
-    global $api_kohovolit;
+	global $api_napistejim;
 	$smarty = new SmartyNapisteJimCz;
 
-	$messages_orig = $api_kohovolit->read('Message', array('is_public' => 'yes','state_' => 'sent' ));
-	$messages =  $messages_orig['message'];
-	$responses_orig = $api_kohovolit->read('Response', array());
+	$messages_orig = $api_napistejim->read('PublicMessages');
+	$messages =  $messages_orig['public_messages'];
 
-	//reorder $responses to be able to access them directly
-	foreach ((array)$responses_orig['response'] as $row) {
-	  $responses[$row['message_id']][] = $row;
-	}
-	//sort messages by date, add responses, add mps' names
-	foreach ((array) $messages as $key => $message) {
-	  //for sorting
-	  $sort[$key]  = $message['sent_on'];
-	  //add answers
-	  $messages[$key]['response'] = $responses[$message['id']];
-	  //add shortened body_
-	  $messages[$key]['body_short'] = mb_substr($message['body_'],0,150,"UTF-8") . '...';
-	  //add formatted date
-	  $date = new DateTime($message['sent_on']);
-	  $messages[$key]['date'] = $date->format('j.n.Y');
-	  // + 2weeks more date ?
-	  $date_limit = $date->add(new DateInterval('P14D'));
-	  $now = new DateTime('now');
-	  if ($now > $date_limit)
-	    $over14 = true;
-	  else
-	    $over14 = false;
-	  //add mps' names
-	  foreach ((array) $responses[$message['id']] as $response) {
-	    $responder = $api_kohovolit->read('Mp', array('id' => $response['mp_id']));
-	    $responder['mp'][0]['name'] = $responder['mp'][0]['last_name'] ."&nbsp;" . mb_substr($responder['mp'][0]['first_name'],0,1,"UTF-8") . '.';
-	    $messages[$key]['responder'][] = $responder['mp'][0];
-	    //response status: answered, not-answered-long (>2 weeks), not-answered-short (<2 weeks)
-	    if ($response['body_'] != '')
-	      $messages[$key]['response_status'][] = array('code' => 'answered','text' => 'Email zodpovězen');
-		else if ($over14)
-		  $messages[$key]['response_status'][] = array('code' => 'not-answered-long','text' => 'Email nezodpovězen (více jak 14 dní)');
-		else
-		  $messages[$key]['response_status'][] = array('code' => 'not-answered-short','text' => 'Email nezodpovězen (méně jak 14 dní)');
-	  }
-	}
-	array_multisort($sort, SORT_DESC, $messages );
+	foreach ($messages as &$message)
+		$message['response_exists'] = explode(',', $message['response_exists']);
+
 	$smarty->assign('messages', $messages);
 	$smarty->display('list.tpl');
-
 }
 
 function random_code($length)
