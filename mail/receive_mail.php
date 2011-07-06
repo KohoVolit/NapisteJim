@@ -27,9 +27,9 @@ foreach ($to_list as $to)
 	{
 		$subject = mime_encode('Dorazil e-mail na adresu:') . ' ' . $to['mailbox'] . '@' . $to['host'];
 		$text = 'From: "' . $parsed_mail['headers']['from']['personal']. '" <' . $parsed_mail['headers']['from']['mailbox'] . '@' . $parsed_mail['headers']['from']['host'] . ">\n";
-		$text .= 'Subject: ' . $parsed_mail['headers']['subject'] . "\n";
-		$text .= (isset($parsed_mail['text'])) ? $parsed_mail['text'] : ((isset($parsed_mail['html'])) ? $parsed_mail['html'] : '') . "\n\n\n";
-		$text .= "---------- Úplné data e-mailu ----------\n\n";
+		$text .= 'Subject: ' . $parsed_mail['headers']['subject'] . "\n\n";
+		$text .= (isset($parsed_mail['text'])) ? $parsed_mail['text'] : ((isset($parsed_mail['html'])) ? $parsed_mail['html'] : '');
+		$text .= "\n\n\n---------- Úplné data e-mailu ----------\n\n";
 		$text .= $mail;
 		notice_admin($subject, $text);
 		continue;
