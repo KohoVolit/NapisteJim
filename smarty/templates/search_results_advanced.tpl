@@ -1,8 +1,6 @@
 {extends file="layout.tpl"}
 
-{block name=title}
-NapišteJim.cz - výběr
-{/block}
+{block name=title}{$smarty.const.WTT_TITLE} – Výběr{/block}
 {block name=head}
 <script type="text/javascript" src="locale/{$locale}/LC_MESSAGES/locale.js"></script>
 <script type="text/javascript" src="js/i18n.js"></script>

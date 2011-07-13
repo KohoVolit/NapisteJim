@@ -1,8 +1,6 @@
 {extends file="layout.tpl"}
 
-{block name=title}
-NapišteJim.cz - Kontakt
-{/block}
+{block name=title}{$smarty.const.WTT_TITLE} – Kontakt{/block}
 
 {block name=body}
 <h1>Kontakt</h1>

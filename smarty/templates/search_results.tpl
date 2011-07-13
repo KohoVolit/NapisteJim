@@ -1,6 +1,6 @@
 {extends file="layout.tpl"}
 
-{block name=title}{t}NapisteJim.cz{/t} - {t}Found Representatives{/t}{/block}
+{block name=title}{$smarty.const.WTT_TITLE} – {t}Found Representatives{/t}{/block}
 
 {block name=head}
 <script type="text/javascript" src="http://maps.google.com/maps/api/js?v=3.2&sensor=false"></script>

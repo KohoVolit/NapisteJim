@@ -1,10 +1,10 @@
-{$mp.first_name} {$mp.last_name} reagoval{if $mp.sex == 'f'}a{/if} na Vaši zprávu zaslanou přes NapišteJim.cz.
+{$mp.first_name} {$mp.last_name} reagoval{if $mp.sex == 'f'}a{/if} na Vaši zprávu zaslanou přes {$smarty.const.WTT_TITLE}.
 {if $mp.sex == 'f'}Její{else}Jeho{/if} odpověď najdete níže.
 
 {if $message.is_public == 'yes'}Protože byla Vaše zpráva zaslána jako veřejná, je odpověď zároveň
-zveřejněna na webu NapišteJim.cz. Budete-li však pokračovat v diskusi
+zveřejněna na webu {$smarty.const.WTT_TITLE}. Budete-li však pokračovat v diskusi
 odpovědí na tento e-mail, tato už bude odeslána přímo adresátovi mimo webu
-NapišteJim.cz.{/if}
+{$smarty.const.WTT_TITLE}.{/if}
 
 
 --- Odpověď na Vaši zprávu ---

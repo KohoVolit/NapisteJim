@@ -1,5 +1,7 @@
 <?php
 
+// constant API_DIR must be defined
+
 /**
  * ...
  */
@@ -17,7 +19,7 @@ class ApiDirect
 	/**
 	 * ...
 	 */
-	public function __construct($project = 'kohovolit', $default_params = null, $default_data = null)
+	public function __construct($project, $default_params = null, $default_data = null)
 	{
 		$this->project = $project;
 		$this->default_params = $default_params;
@@ -73,9 +75,10 @@ class ApiDirect
 		require_once  API_DIR . '/config/settings.php';
 		require_once  API_DIR . '/setup.php';
 		@include_once API_DIR . "/projects/{$this->project}/config/settings.php";
-		$ok = @include_once "projects/{$this->project}/api/$resource.php";
+		@include_once API_DIR . "/projects/{$this->project}/setup.php";
+		$ok = @include_once API_DIR . "/projects/{$this->project}/resources/$resource.php";
 		if (!$ok)
-			throw new \Exception("There is no API resource <em>$resource</em>.", 404);
+			throw new \Exception("There is no API resource <em>$resource</em> in <em>{$this->project}</em> project.", 404);
 	}
 }
 

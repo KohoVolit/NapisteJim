@@ -2,7 +2,7 @@
 
 require_once SMARTY_DIR . 'Smarty.class.php';
 
-class SmartyNapisteJimCz extends Smarty
+class SmartyWtt extends Smarty
 {
 	public function __construct()
 	{

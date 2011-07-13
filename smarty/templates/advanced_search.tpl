@@ -1,8 +1,7 @@
 {extends file="layout.tpl"}
 
-{block name=title}
-NapišteJim.cz - Rozšířené vyhledávání
-{/block}
+{block name=title}{$smarty.const.WTT_TITLE} – Rozšířené vyhledávání{/block}
+
 {block name=head}
 <link rel="Stylesheet" href="css/ui.selectmenu.css" type="text/css" />
 <script type="text/javascript" src="js/ui.selectmenu.js"></script>	

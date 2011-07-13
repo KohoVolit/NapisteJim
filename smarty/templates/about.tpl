@@ -1,18 +1,17 @@
 {extends file="layout.tpl"}
 
-{block name=title}NapišteJim.cz - O projektu{/block}
+{block name=title}{$smarty.const.WTT_TITLE} – O projektu{/block}
 
 {block name=body}
-
 <h1>O projektu</h1>
 <p>
-Cílem projektu NapišteJim.cz je fungovat jako živá brána e-mailové komunikace mezi občany a politiky. 
+Cílem projektu {$smarty.const.WTT_TITLE} je fungovat jako živá brána e-mailové komunikace mezi občany a politiky. 
 </p>
 <p>
 Chceme snižovat současné bariéry mezi „obyčejnými lidmi“ a vysokými politickými představiteli a povzbuzovat veřejnost k vyjádření názoru a většímu zájmu o politiku a správu státu, bez kterého je demokracie pouze poloviční.
 </p>
 <p>
-Na NapišteJim.cz můžete:
+Na {$smarty.const.WTT_TITLE} můžete:
 <ul>
 	<li><strong>vyhledat</strong> konkrétního politika (např. dle regionu, strany, nebo komise, ve které zasedá)</li>
 	<li><strong>napsat</strong> mu/ji</li>
@@ -24,7 +23,7 @@ Inspirací nám byly partnerské weby <a href="http://www.WriteToThem.com">Write
 
 <h2>Autoři</h2>
 <p>
-V zastřešujícím sdružení <a href="http://kohovolit.eu">KohoVolit.eu</a> se na práci na NapišteJim.cz podíleli Jaroslav Semančík, Michal Škop (programátorské a projektové práce) a Veronika Šumová (projektové práce, propagace).
+V zastřešujícím sdružení <a href="http://kohovolit.eu">KohoVolit.eu</a> se na práci na {$smarty.const.WTT_TITLE} podíleli Jaroslav Semančík, Michal Škop (programátorské a projektové práce) a Veronika Šumová (projektové práce, propagace).
 </p><p>
 Propagační <a href="/video">videa</a> k aplikaci natočil studentský tým z FAMO Písek vystupující pod značkou <a href="http://www.alcest.cz">Alcest.cz</a>. Scénář napsal Jan Škop, režie se ujal Ladislav Plecitý.
 </p><p>

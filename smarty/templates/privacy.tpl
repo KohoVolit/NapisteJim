@@ -1,8 +1,6 @@
 {extends file="layout.tpl"}
 
-{block name=title}
-NapišteJim.cz - Ochrana osobních dat
-{/block}
+{block name=title}{$smarty.const.WTT_TITLE} – Ochrana osobních dat{/block}
 
 {block name=body}
 <h1>Ochrana osobních dat</h1>
