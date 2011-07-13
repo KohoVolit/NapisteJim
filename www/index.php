@@ -370,7 +370,7 @@ function public_messages_page()
 	$messages =  $messages_orig['public_messages'];
 
 	foreach ($messages as &$message)
-		$message['response_exists'] = explode(',', $message['response_exists']);
+		$message['response_exists'] = explode(', ', $message['response_exists']);
 
 	$smarty->assign('messages', $messages);
 	$smarty->display('list.tpl');
