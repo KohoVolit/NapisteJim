@@ -53,4 +53,7 @@ Postupně se chtějí stát plnohodnotným internetovým parlamentním watchdoge
 <p>
 Pokud se vám aplikace líbí a rádi byste, aby se dále rozvíjela, můžete nás <a href="/support">podpořit</a>.
 </p>
+<p>Aplikace vznikla za laskavé podpory:<br/><br/>
+<img src="http://osf.cz/download/images/logo/osf_praha_cz.gif" width='150' height='32' alt='OSF.cz' title='OSF.cz' /><br/><br/>
+<img src="http://c0431992.cdn2.cloudfiles.rackspacecloud.com/osf-logo.gif" width='150' height='35' alt='OSI.hu' title='OSI.hu' />
 {/block}
