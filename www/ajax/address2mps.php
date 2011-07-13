@@ -3,15 +3,15 @@ require '../../config/settings.php';
 require '../../setup.php';
 
 //get array with mps
-$adn = new ApiDirect('napistejim');
-$res = $adn->read('AddressRepresentatives',$_GET);
+$adw = new ApiDirect('wtt');
+$res = $adw->read('AddressRepresentatives',$_GET);
 $adk = new ApiDirect('kohovolit');
 
 //check for known problems in parliaments/areas and correct them
-$res = parl_zero_constit($adn,$_GET,$res,$parl_zero_constit);
+$res = parl_zero_constit($adw,$_GET,$res,$parl_zero_constit);
 
 //new smarty
-$smarty = new SmartyNapisteJimCz;
+$smarty = new SmartyWtt;
 
 //Language
 // Set language to LOCALE
@@ -84,14 +84,14 @@ $smarty->display('ajax/address2mps.tpl');
 /**
 * correct known problems with parliament/constituency/areas
 *
-* @param $adn ApiDirect('napistejim')
+* @param $adw ApiDirect('wtt')
 * @param $get $_GET
 * @param $res current results to be checked
 * @param $parl_zero_constit array from settings.php to know, which parliament can be corrected
 *
 * @return $out new results (as $res)
 */
-function parl_zero_constit($adn,$get,$res,$parl_zero_constit) {
+function parl_zero_constit($adw,$get,$res,$parl_zero_constit) {
   $correction = array();
   $out = $res;
   
@@ -110,7 +110,7 @@ function parl_zero_constit($adn,$get,$res,$parl_zero_constit) {
 	    case 'cz/senat':
 	      if (isset($get['sublocality'])) {
 	        unset($get['sublocality']);
-	        $out = $adn->read('AddressRepresentatives',$get);
+	        $out = $adw->read('AddressRepresentatives',$get);
 	      }
 	  }
   }

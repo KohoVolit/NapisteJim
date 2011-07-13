@@ -13,7 +13,7 @@ bindtextdomain(LOCALIZED_DOMAIN, LOCALE_DIR);
 textdomain(LOCALIZED_DOMAIN);
 
 $api_kohovolit = new ApiDirect('kohovolit');
-$api_napistejim = new ApiDirect('napistejim');
+$api_wtt = new ApiDirect('wtt');
 
 $page = isset($_GET['page']) ? $_GET['page'] : null;
 switch ($page)
@@ -57,15 +57,15 @@ switch ($page)
 
 function static_page($page)
 {
-	$smarty = new SmartyNapisteJimCz;
+	$smarty = new SmartyWtt;
 	//$smarty->setCaching(Smarty::CACHING_LIFETIME_CURRENT);
 	$smarty->display($page . '.tpl');
 }
 
 function public_message_page($message_id)
 {
-	global $api_kohovolit, $api_napistejim;
- 	$smarty = new SmartyNapisteJimCz;
+	global $api_kohovolit, $api_wtt;
+	$smarty = new SmartyWtt;
 
 	// get message
 	$message_ar = $api_kohovolit->read('Message', array('id' => $message_id));
@@ -75,7 +75,7 @@ function public_message_page($message_id)
 	$smarty->assign('message', $message);
 
 	// get responses to the message
-	$responses = $api_napistejim->read('ResponsesToMessage', array('message_id' => $message_id));
+	$responses = $api_wtt->read('ResponsesToMessage', array('message_id' => $message_id));
 	$smarty->assign('responses', $responses['responses_to_message']);
 
 	$smarty->display('message.tpl');
@@ -83,15 +83,15 @@ function public_message_page($message_id)
 
 function search_results_advanced_page()
 {
-	global $api_napistejim;
-	$smarty = new SmartyNapisteJimCz;
+	global $api_wtt;
+	$smarty = new SmartyWtt;
 
 	$params = array();
 	if (isset($_GET['groups']) && !empty($_GET['groups']))
 		$params['groups'] = explode('|', $_GET['groups']);
 	if (isset($_GET['constituency']) && !empty($_GET['constituency']))
 		$params['constituency'] = $_GET['constituency'];
-	$search_mps = $api_napistejim->read('SearchMps', $params);
+	$search_mps = $api_wtt->read('SearchMps', $params);
 
 	if (isset($_GET['parliament_code']))
 		$smarty->assign('parliament', array('code' => $_GET['parliament_code']));
@@ -101,7 +101,7 @@ function search_results_advanced_page()
 
 function search_results_page()
 {
-	$smarty = new SmartyNapisteJimCz;
+	$smarty = new SmartyWtt;
 	$smarty->assign('lang', SEARCH_LANGUAGE);
 	$smarty->assign('reg', SEARCH_REGION);
 	$smarty->assign('parent_region', SEARCH_PARENT_REGION);
@@ -116,11 +116,11 @@ function search_results_page()
 
 function write_page()
 {
-	global $api_napistejim;
+	global $api_wtt;
 	$mp_list = trim_list($_GET['mp'], '|', 3);
-	$mp_details = $api_napistejim->read('MpDetails', array('mp' => $mp_list));
+	$mp_details = $api_wtt->read('MpDetails', array('mp' => $mp_list));
 
-	$smarty = new SmartyNapisteJimCz;
+	$smarty = new SmartyWtt;
 	$smarty->assign('mps', $mp_list);
 	$smarty->assign('mp_details', $mp_details['mp_details']);
 	$smarty->assign('img_url', IMG_URL);
@@ -129,8 +129,8 @@ function write_page()
 
 function send_page()
 {
-	global $api_kohovolit, $api_napistejim;
-	$smarty = new SmartyNapisteJimCz;
+	global $api_kohovolit, $api_wtt;
+	$smarty = new SmartyWtt;
 
 	// prevent mail header injection
 	$subject = escape_header_fields($_POST['subject']);
@@ -150,7 +150,7 @@ function send_page()
 	$confirmation_code = unique_random_code(10, 'Message', 'confirmation_code');
 
 	// store the message
-	$res= $api_kohovolit->create('Message', array(array('subject' => $subject, 'body_' => $body, 'sender_name' => $name, 'sender_email' => $email, 'is_public' => $is_public, 'confirmation_code' => $confirmation_code)));
+	$res= $api_kohovolit->create('Message', array('subject' => $subject, 'body_' => $body, 'sender_name' => $name, 'sender_email' => $email, 'is_public' => $is_public, 'confirmation_code' => $confirmation_code));
 	$message_id = $res[0];
 
 	// prepare records for responses from all addressees of the message
@@ -169,10 +169,10 @@ function send_page()
 	$api_kohovolit->create('Response', $responses);
 
 	// send confirmation mail to the sender
-	$from = compose_email_address(WTT_FROM_NAME, WTT_FROM_EMAIL);
+	$from = compose_email_address(WTT_TITLE, FROM_EMAIL);
 	$to = compose_email_address($name, $email);
 	$confirmation_subject = mime_encode('Potvrďte prosím, že chcete odeslat zprávu přes NapišteJim.cz');
-	$mp_details = $api_napistejim->read('MpDetails', array('mp' => $mp_list));
+	$mp_details = $api_wtt->read('MpDetails', array('mp' => $mp_list));
 	$smarty->assign('addressee', $mp_details['mp_details']);
 	$smarty->assign('message', array('subject' => $subject, 'body' => $body, 'is_public' => $is_public, 'confirmation_code' => $confirmation_code));
 	$text = $smarty->fetch('email/request_to_confirm.tpl');
@@ -245,7 +245,7 @@ function confirm_page()
 function send_message($message)
 {
 	global $api_kohovolit;
-	$smarty = new SmartyNapisteJimCz;
+	$smarty = new SmartyWtt;
 
 	// get information about addressees of the message
 	$mp_details = addressees_of_message($message);
@@ -255,7 +255,7 @@ function send_message($message)
 	foreach ($mp_details as $mp)
 	{
 		if (!isset($mp['email']) || empty($mp['email'])) continue;
-		$from = compose_email_address($message['sender_name'], 'reply.' . $mp['reply_code'] . '@' . WTT_FROM_HOST);
+		$from = compose_email_address($message['sender_name'], 'reply.' . $mp['reply_code'] . '@' . WTT_HOST);
 		$reply_to = ($message['is_public'] == 'yes') ? $from : compose_email_address($message['sender_name'], $message['sender_email']);
 		$to = compose_email_address($mp['first_name'] . (!empty($mp['middle_names']) ? ' ' . $mp['middle_names'] . ' ' : ' ') . $mp['last_name'], $mp['email']);
 		$subject = mime_encode($message['subject']);
@@ -267,7 +267,7 @@ function send_message($message)
 	}
 
 	// send a copy to the sender
-	$from = compose_email_address(WTT_FROM_NAME, WTT_FROM_EMAIL);
+	$from = compose_email_address(WTT_TITLE, FROM_EMAIL);
 	$to = compose_email_address($message['sender_name'], $message['sender_email']);
 	$subject = mime_encode('Vaše zpráva byla odeslána');
 	$smarty->assign('addressee', $addressee_with_email);
@@ -282,13 +282,13 @@ function send_message($message)
 function send_to_reviewer($message)
 {
 	global $api_kohovolit;
-	$smarty = new SmartyNapisteJimCz;
+	$smarty = new SmartyWtt;
 
 	// generate a random approval code for the message
 	$approval_code = random_code(10);
 
 	// send the message to a reviewer to approve
-	$from = compose_email_address(WTT_FROM_NAME, WTT_FROM_EMAIL);
+	$from = compose_email_address(WTT_TITLE, FROM_EMAIL);
 	$to = REVIEWER_EMAIL;
 	$subject = mime_encode('Zpráva pro politiky potřebuje tvoje schválení');
 	$smarty->assign('addressee', addressees_of_message($message));
@@ -303,10 +303,10 @@ function send_to_reviewer($message)
 function refuse_message($message)
 {
 	global $api_kohovolit;
-	$smarty = new SmartyNapisteJimCz;
+	$smarty = new SmartyWtt;
 
 	// send explanation of the refusal to the sender
-	$from = compose_email_address(WTT_FROM_NAME, WTT_FROM_EMAIL);
+	$from = compose_email_address(WTT_TITLE, FROM_EMAIL);
 	$to = compose_email_address($message['sender_name'], $message['sender_email']);
 	$subject = mime_encode('Vaše zpráva byla vyhodnocena jako neslušná a nebyla odeslána');
 	$smarty->assign('addressee', addressees_of_message($message));
@@ -320,7 +320,7 @@ function refuse_message($message)
 
 function addressees_of_message($message)
 {
-	global $api_kohovolit, $api_napistejim;
+	global $api_kohovolit, $api_wtt;
 
 	// get list of MPs' id-s the message is addressed to
 	$mps = $api_kohovolit->read('Response', array('message_id' => $message['id']));
@@ -330,7 +330,7 @@ function addressees_of_message($message)
 
 	// get details of those MPs
 	$mp_list = rtrim($mp_list, '|');
-	$mp_details = $api_napistejim->read('MpDetails', array('mp' => $mp_list));
+	$mp_details = $api_wtt->read('MpDetails', array('mp' => $mp_list));
 
 	// add a reply_code for each addressee to the returned details
 	$i = 0;
@@ -363,10 +363,10 @@ function text_is_profane($text, $profanities_list, $prefix_only)
 
 function public_messages_page()
 {
-	global $api_napistejim;
-	$smarty = new SmartyNapisteJimCz;
+	global $api_wtt;
+	$smarty = new SmartyWtt;
 
-	$messages_orig = $api_napistejim->read('PublicMessages');
+	$messages_orig = $api_wtt->read('PublicMessages');
 	$messages =  $messages_orig['public_messages'];
 
 	foreach ($messages as &$message)
@@ -436,8 +436,8 @@ function send_mail($from, $to, $subject, $message, $reply_to = null, $additional
 		print_r(array('to' => $to, 'subject' => $subject, 'message' => $message, 'headers' => $headers), true), Log::ERROR);
 
 	// and inform admin
-	$headers = 'From: ' . compose_email_address(WTT_FROM_NAME, WTT_FROM_EMAIL) . "\r\n" .
-	'Reply-To: ' . compose_email_address(WTT_FROM_NAME, WTT_FROM_EMAIL) . "\r\n" .
+	$headers = 'From: ' . compose_email_address(WTT_TITLE, FROM_EMAIL) . "\r\n" .
+	'Reply-To: ' . compose_email_address(WTT_TITLE, FROM_EMAIL) . "\r\n" .
 	'Content-Type: text/plain; charset="UTF-8"' . "\r\n" .
 	'X-Mailer: PHP';
 	mail(ADMIN_EMAIL, mime_encode('Odeslání mailu selhalo'), 'Zkontroluj ' . WTT_LOGS_DIR . '/error.log', $headers);
@@ -445,7 +445,7 @@ function send_mail($from, $to, $subject, $message, $reply_to = null, $additional
 
 function order_newsletter($email)
 {
-	$from = compose_email_address(WTT_FROM_NAME, WTT_FROM_EMAIL);
+	$from = compose_email_address(WTT_TITLE, FROM_EMAIL);
 	$to = ORDER_NEWSLETTER_EMAIL;
 	$subject = mime_encode('Objednání newsletteru');
 	$message = $email;

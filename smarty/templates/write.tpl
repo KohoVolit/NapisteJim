@@ -1,6 +1,6 @@
 {extends file="layout.tpl"}
 
-{block name=title}NapišteJim.cz - Napsat zprávu{/block}
+{block name=title}{$smarty.const.WTT_TITLE} – Napsat zprávu{/block}
 
 {block name=head}
 <script type="text/javascript" src="locale/{$locale}/LC_MESSAGES/locale.js"></script>
@@ -39,7 +39,7 @@
       <textarea id="write-body" rows="15" cols="80" name="body" class="validate[required,minSize[90]] textarea">{include file="email/initial_message.tpl"}</textarea>
       <br/>
       <input type="checkbox" id="write-newsletter" name="newsletter" value="order-newsletter" />
-       Chci dostávat informace z NapišteJim.cz<br/><br/>
+       Chci dostávat informace z {$smarty.const.WTT_TITLE}<br/><br/>
       <input id="write-submit" class="submit" type="submit" value="Odeslat"/>
     </form>
     

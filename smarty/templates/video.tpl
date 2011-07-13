@@ -1,6 +1,6 @@
 {extends file="layout.tpl"}
 
-{block name=title}{t}NapišteJim.cz{/t} - {t}Video{/t}{/block}
+{block name=title}{$smarty.const.WTT_TITLE} – {t}Video{/t}{/block}
 
 {block name=body}
 <h1>Video</h1>

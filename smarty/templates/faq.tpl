@@ -1,15 +1,13 @@
 {extends file="layout.tpl"}
 
-{block name=title}
-NapišteJim.cz - otázky a odpovědi
-{/block}
+{block name=title}{$smarty.const.WTT_TITLE} – Otázky a odpovědi{/block}
 
 {block name=body}
 <h1>Otázky a odpovědi</h1>
 
 <h3>1. Jak vyhledám komu chci napsat?</h3>
 <p>
-NapišteJim.cz nabízí dvě různé možnosti jak najít „svého“ politika:
+{$smarty.const.WTT_TITLE} nabízí dvě různé možnosti jak najít „svého“ politika:
 <ul>
 	<li>podle vaší adresy – stačí zadat do vyhledávacího políčka vaší adresu nebo její část a zobrazí se vám seznam poslanců a senátorů, seřazených pěkně podle vzdálenosti jejich oficiální kanceláře od zadaného místa</li>
 	<li>podle politické strany, výborů nebo komisí, ve kterých působí – víte už předem, že chcete napsat poslancům nebo senátorům z konkrétní politické strany a nezáleží vám na tom, odkud jsou? Nebo vás zajímá konkrétní téma? Pak klikněte na nápis <em>Rozšířené hledání</em> pod vyhledávacím políčkem.
@@ -18,7 +16,7 @@ NapišteJim.cz nabízí dvě různé možnosti jak najít „svého“ politika:
 
 <h3>2. Proč si mohu vybrat jen tři adresáty?</h3>
 <p>
-Aplikace NapišteJim.cz je vybudována s úmyslem podpořit osobní komunikaci občanů s politiky, nikoli sloužit jako brána pro masové uniformní kampaně, kdy se hromadně obešle celý parlament univerzální zprávou.
+Aplikace {$smarty.const.WTT_TITLE} je vybudována s úmyslem podpořit osobní komunikaci občanů s politiky, nikoli sloužit jako brána pro masové uniformní kampaně, kdy se hromadně obešle celý parlament univerzální zprávou.
 </p><p>
 Chceme podpořit komunikaci i v rámci kampaní neziskových organizací. Směle se inspirujte – třeba u NašiPolitici.cz, Oživení, Transparency International, Hnutí Duha a dalších – ale pište za sebe a piště osobně.
 </p><p>
@@ -43,7 +41,7 @@ Zbývá jeden poslední krok. Na vaši e-mailovou adresu, kterou jste vyplnili v
 
 <h3>5. Proč vracíme zpátky e-maily s vulgárním obsahem?</h3>
 <p>
-I když o sobě uvádíte některé údaje, pořád je ještě odeslání zprávy politikovi prostřednictvím NapišteJim.cz poměrně anonymní záležitostí, kterou je možné zneužít odesíláním mnohem vulgárnějších sdělení než dopisem nebo dokonce tváří v tvář.
+I když o sobě uvádíte některé údaje, pořád je ještě odeslání zprávy politikovi prostřednictvím {$smarty.const.WTT_TITLE} poměrně anonymní záležitostí, kterou je možné zneužít odesíláním mnohem vulgárnějších sdělení než dopisem nebo dokonce tváří v tvář.
 </p><p>
 Abychom zabránili tomuto zneužívání, zabudovali jsme systém, který automaticky kontroluje zprávy z tohoto hlediska. Pokud vaše zpráva systémem neprojde, bude Vám vrácena zpátky. Máte následně možnost ji opravit a znovu odeslat. 
 </p><p>
@@ -73,7 +71,7 @@ Můžeme do systému ale přidat i úplně malou obec, pokud o to někdo projev�
 
 <h3>8. Proč nedoporučujeme posílat předpřipravené e-maily</h3>
 <p>
-Aplikace NapišteJim.cz je vybudována s úmyslem podpořit osobní komunikaci občanů s politiky, nikoli sloužit jako brána pro masové uniformní kampaně, kdy se hromadně obešle celý parlament univerzální zprávou.
+Aplikace {$smarty.const.WTT_TITLE} je vybudována s úmyslem podpořit osobní komunikaci občanů s politiky, nikoli sloužit jako brána pro masové uniformní kampaně, kdy se hromadně obešle celý parlament univerzální zprávou.
 </p><p>
 Také od politiků samotných máme zprávy, že se spíše zamyslí nad 5 autentickými, reálně psanými zprávami, než nad 50 identickými.
 </p><p>
@@ -91,7 +89,7 @@ O tom, jak projekt vzniknul a o KohoVolit.eu – zastřešující organizaci, se
 <p>
 Ne, ze zákona (na rozdíl například od určených státních institucí) volení zastupitelé tuto povinnost nemají. Existují ale způsoby jak ocenit dobrou práci nebo naopak vyjádřit svou nespokojenost.
 </p><p>
-Přímo na NapišteJim.cz pro to budeme využívat následující kanály: Pokud označíte svou zprávu jako veřejnou, bude na NapišteJim.cz zobrazena a bude u ní indikováno, zda adresát odpověděl či nikoli. Pokud odpověď nedorazí, budeme po dvou týdnech politika urgovat opakovaně odeslanou zprávou.
+Přímo na {$smarty.const.WTT_TITLE} pro to budeme využívat následující kanály: Pokud označíte svou zprávu jako veřejnou, bude na {$smarty.const.WTT_TITLE} zobrazena a bude u ní indikováno, zda adresát odpověděl či nikoli. Pokud odpověď nedorazí, budeme po dvou týdnech politika urgovat opakovaně odeslanou zprávou.
 </p><p>
 Pokud zprávu označíte jako soukromou, pouze vy budete vědět jestli vám adresát odpověděl. Po dvou týdnech vám proto pošleme e-mail, kde se vás zeptáme, jestli vám byla doručena odpověď. Stačí jednoduše kliknout na jeden ze dvou odkazů v těle e-mailu.
 </p><p>
@@ -133,14 +131,14 @@ Další možnost odstoupení máte, když vám přijde automatický e-mail s ak
 Za tímto bodem jsou však již vaše šance na odchycení zprávy mizivé. Přesto nás můžete <a href="/contact">kontaktovat</a>.
 </p>
 
-<h3>16. Mám nápad na podobnou aplikaci jako je NapišteJim.cz, můžete mi pomoci s jeho realizací?  Mohu použít váš software?</h3>
+<h3>16. Mám nápad na podobnou aplikaci jako je {$smarty.const.WTT_TITLE}, můžete mi pomoci s jeho realizací?  Mohu použít váš software?</h3>
 <p>
-Veškeré zdrojové kódy k NapišteJim.cz, stejně tak jako databáze dat jsou volně přistupné široké veřejnosti a kdokoli může vytvářet aplikace, které využívají naše data nebo kódy.
+Veškeré zdrojové kódy k {$smarty.const.WTT_TITLE}, stejně tak jako databáze dat jsou volně přistupné široké veřejnosti a kdokoli může vytvářet aplikace, které využívají naše data nebo kódy.
 </p><p>
 Každopádně, už ten fakt, že máte tenhle nápad, vás činí zajímavým – chcete-li, <a href="/contact">kontaktujte nás</a> a možná se domluvíme na hlubší spolupráci!
 </p>
 
-<h3>17. Chci pomáhat NapišteJim.cz jako dobrovolník</h3>
+<h3>17. Chci pomáhat {$smarty.const.WTT_TITLE} jako dobrovolník</h3>
 <p>
 Super, ochotných lidí není nikdy dost! Základní možnosti spolupráce:
 <ul>

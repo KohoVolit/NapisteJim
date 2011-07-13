@@ -1,13 +1,13 @@
 {extends file="layout.tpl"}
 
-{block name=title}NapišteJim.cz - Podpořte nás{/block}
+{block name=title}{$smarty.const.WTT_TITLE} – Podpořte nás{/block}
 
 {block name=body}
 <h1>Podpořte nás</h1>
 <p>
-Projekty <a href="http://KohoVolit.eu">KohoVolit.eu</a> včetně NapišteJim.cz vznikají částečně dobrovolnou prací. To jim dává ten správný étos občanské společnosti, ale zároveň nám to občas brání v realizaci dalších skvělých nápadů a aplikací.
+Projekty <a href="http://KohoVolit.eu">KohoVolit.eu</a> včetně {$smarty.const.WTT_TITLE} vznikají částečně dobrovolnou prací. To jim dává ten správný étos občanské společnosti, ale zároveň nám to občas brání v realizaci dalších skvělých nápadů a aplikací.
 </p><p>
-V kontextu NapišteJim.cz to je třeba
+V kontextu {$smarty.const.WTT_TITLE} to je třeba
 <ul>
 	<li>rozšíření o další instituce (vláda, úřady)</li>
 	<li>rozšíření regionálně (kraje, obce)</li>

@@ -1,8 +1,6 @@
 {extends file="layout.tpl"}
 
-{block name=title}
-NapišteJim.cz - seznam veřejným emailů
-{/block}
+{block name=title}{$smarty.const.WTT_TITLE} – Seznam veřejným emailů{/block}
 
 {block name=body}
 <table id="list-table">

@@ -2,7 +2,7 @@
 require '../../config/settings.php';
 require '../../setup.php';
 
-$adn = new ApiDirect('napistejim');
+$adw = new ApiDirect('wtt');
 $adk = new ApiDirect('kohovolit');
 
 //order of group_kinds, if not set, randomly afterwards
@@ -14,7 +14,7 @@ $order = array(
 );
 
 //new smarty
-$smarty = new SmartyNapisteJimCz;
+$smarty = new SmartyWtt;
 
 //Language
 // Set language to LOCALE

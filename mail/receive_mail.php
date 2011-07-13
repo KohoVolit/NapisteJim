@@ -1,7 +1,7 @@
 <?php
 
-require '/home/shared/napistejim.cz/config/settings.php';
-require '/home/shared/napistejim.cz/setup.php';
+require '../config/settings.php';
+require '../setup.php';
 
 // read a mail from standard input
 $mail = '';
@@ -63,10 +63,10 @@ foreach ($to_list as $to)
 	$mp = $api_kohovolit->read('Mp', array('id' => $response['mp_id']));
 	$mp = $mp['mp'][0];
 
-	$from = compose_email_address(WTT_FROM_NAME, WTT_FROM_EMAIL);
+	$from = compose_email_address(WTT_TITLE, FROM_EMAIL);
 	$to = compose_email_address($message['sender_name'], $message['sender_email']);
 	$subject = mime_encode($mp['first_name'] . ' ' . $mp['last_name'] . ' odpověděl' . (($mp['sex'] == 'f') ? 'a' : '') . ' na vaši zprávu');
-	$smarty = new SmartyNapisteJimCz;
+	$smarty = new SmartyWtt;
 	$smarty->assign('mp', $mp);
 	$smarty->assign('message', array('subject' => $response['subject'], 'body' => $response['body_'], 'is_public' => $message['is_public']));
 	$text = $smarty->fetch('email/response_from_mp.tpl');
@@ -84,7 +84,7 @@ exit;
 function notice_admin($subject, $body)
 {
 	$to = ADMIN_EMAIL;
-	$from = compose_email_address(WTT_FROM_NAME, WTT_FROM_EMAIL);
+	$from = compose_email_address(WTT_TITLE, FROM_EMAIL);
 	send_mail($from, $to, $subject, $body);
 }
 
@@ -111,8 +111,8 @@ function send_mail($from, $to, $subject, $message, $reply_to = null, $additional
 		print_r(array('to' => $to, 'subject' => $subject, 'message' => $message, 'headers' => $headers), true), Log::ERROR);
 
 	// and inform admin
-	$headers = 'From: ' . compose_email_address(WTT_FROM_NAME, WTT_FROM_EMAIL) . "\r\n" .
-	'Reply-To: ' . compose_email_address(WTT_FROM_NAME, WTT_FROM_EMAIL) . "\r\n" .
+	$headers = 'From: ' . compose_email_address(WTT_TITLE, FROM_EMAIL) . "\r\n" .
+	'Reply-To: ' . compose_email_address(WTT_TITLE, FROM_EMAIL) . "\r\n" .
 	'Content-Type: text/plain; charset="UTF-8"' . "\r\n" .
 	'X-Mailer: PHP';
 	mail(ADMIN_EMAIL, mime_encode('Odeslání mailu selhalo'), 'Zkontroluj ' . WTT_LOGS_DIR . '/error.log', $headers);

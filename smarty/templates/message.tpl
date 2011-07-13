@@ -1,8 +1,6 @@
 {extends file="layout.tpl"}
 
-{block name=title}
-NapišteJim.cz - veřejný email
-{/block}
+{block name=title}{$smarty.const.WTT_TITLE} – Veřejný email{/block}
 
 {block name=body}
 <div class="wrapper">

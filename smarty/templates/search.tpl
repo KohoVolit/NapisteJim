@@ -1,6 +1,6 @@
 {extends file="basic_layout.tpl"}
 
-{block name=title}{t}NapišteJim.cz{/t} - {t}Vyhledání{/t}{/block}
+{block name=title}{$smarty.const.WTT_TITLE} - {t}Vyhledání{/t}{/block}
 
 {block name=head}
 <script type="text/javascript" src="js/jquery.clearfield.packed.js"></script>
@@ -8,7 +8,7 @@
 {/block}
 {block name=logo}
   <div id="logo-center" class="logo">
-	    <a href="http://napistejim.cz"><img src="images/logo_project.png" title ="NapišteJim.cz" alt="NapišteJim.cz" width=314 height=166/></a>
+	    <a href="http://{$smarty.const.WTT_HOST}"><img src="images/logo_project.png" title ="{$smarty.const.WTT_TITLE}" alt="{$smarty.const.WTT_TITLE}" width=314 height=166/></a>
   </div>
 {/block}
 {block name=basic_body}
