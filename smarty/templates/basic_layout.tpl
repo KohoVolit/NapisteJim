@@ -1,7 +1,8 @@
 <html>
 <head>
-	<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
 	<title>{block name=title}{/block}</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+	<meta name="Description" content="Napište svým zastupitelům. Najdete je snadno dle své adresy nebo v pokročilém hledání. Co píši politikům jiní a co politici odpovídají?" />
 	<link rel="Stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/ui-lightness/jquery-ui.css" type="text/css" />
 	<link rel="stylesheet" type="text/css" href="css/project.css" />
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>

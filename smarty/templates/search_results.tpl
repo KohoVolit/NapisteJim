@@ -36,7 +36,7 @@ var zoom = "{$zoom}";
 	<div id="search_results-formatted-address"></div>
 	<div id="search_results-message-debug"></div>
 	<div id="search_results-addressee">
-	  <h2>{t}Adresáti{/t}</h2><div id="search_results-up-to">{t}Přetažením jmen do boxů nebo kliknutím na jméno vyberte nejvíce 3 adresáty ze svých politiků{/t}</div>
+	  <h2>{t}Adresáti{/t}</h2><div id="search_results-up-to">{t}Přetažením jmen do boxů nebo kliknutím na jméno vyberte nejvýše 3 adresáty ze svých politiků{/t}</div>
 	  <div id="search_results-addressee-box-1" class="addressee-box rounded-corners droppable"></div>
 	  <div id="search_results-addressee-box-2" class="addressee-box rounded-corners droppable"></div>
 	  <div id="search_results-addressee-box-3" class="addressee-box rounded-corners droppable"></div>
