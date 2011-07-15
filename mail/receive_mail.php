@@ -1,7 +1,7 @@
 <?php
 
-require '../config/settings.php';
-require '../setup.php';
+require '/home/shared/napistejim.cz/config/settings.php';
+require '/home/shared/napistejim.cz/setup.php';
 
 // read a mail from standard input
 $mail = '';
@@ -26,7 +26,7 @@ foreach ($to_list as $to)
 	if (substr($to['mailbox'], 0, 6) != 'reply.')
 	{
 		$subject = mime_encode('Dorazil e-mail na adresu:') . ' ' . $to['mailbox'] . '@' . $to['host'];
-		$text = 'From: "' . $parsed_mail['headers']['from']['personal']. '" <' . $parsed_mail['headers']['from']['mailbox'] . '@' . $parsed_mail['headers']['from']['host'] . ">\n";
+		$text = 'From: ' . $parsed_mail['headers']['from']['personal']. ' <' . $parsed_mail['headers']['from']['mailbox'] . '@' . $parsed_mail['headers']['from']['host'] . ">\n";
 		$text .= 'Subject: ' . $parsed_mail['headers']['subject'] . "\n\n";
 		$text .= (isset($parsed_mail['text'])) ? $parsed_mail['text'] : ((isset($parsed_mail['html'])) ? $parsed_mail['html'] : '');
 		$text .= "\n\n\n---------- Úplné data e-mailu ----------\n\n";
