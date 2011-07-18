@@ -68,15 +68,14 @@ function public_message_page($message_id)
 	$smarty = new SmartyWtt;
 
 	// get message
-	$message_ar = $api_kohovolit->read('Message', array('id' => $message_id));
-	$message = $message_ar['message'][0];
+	$message = $api_kohovolit->readOne('Message', array('id' => $message_id));
 	if ($message['is_public'] == 'no')
 		return $smarty->display('message-private.tpl');
 	$smarty->assign('message', $message);
 
 	// get responses to the message
-	$responses = $api_wtt->read('ResponsesToMessage', array('message_id' => $message_id));
-	$smarty->assign('responses', $responses['responses_to_message']);
+	$responses = $api_wtt->read('ResponseToMessage', array('message_id' => $message_id));
+	$smarty->assign('responses', $responses);
 
 	$smarty->display('message.tpl');
 }
@@ -91,11 +90,11 @@ function search_results_advanced_page()
 		$params['groups'] = explode('|', $_GET['groups']);
 	if (isset($_GET['constituency']) && !empty($_GET['constituency']))
 		$params['constituency'] = $_GET['constituency'];
-	$search_mps = $api_wtt->read('SearchMps', $params);
+	$search_mps = $api_wtt->read('FindMp', $params);
 
 	if (isset($_GET['parliament_code']))
 		$smarty->assign('parliament', array('code' => $_GET['parliament_code']));
-	$smarty->assign('mps', $search_mps['search_mps']);
+	$smarty->assign('mps', $search_mps);
 	$smarty->display('search_results_advanced.tpl');
 }
 
@@ -122,7 +121,7 @@ function write_page()
 
 	$smarty = new SmartyWtt;
 	$smarty->assign('mps', $mp_list);
-	$smarty->assign('mp_details', $mp_details['mp_details']);
+	$smarty->assign('mp_details', $mp_details);
 	$smarty->assign('img_url', IMG_URL);
 	$smarty->display('write.tpl');
 }
@@ -150,8 +149,8 @@ function send_page()
 	$confirmation_code = unique_random_code(10, 'Message', 'confirmation_code');
 
 	// store the message
-	$res= $api_kohovolit->create('Message', array('subject' => $subject, 'body_' => $body, 'sender_name' => $name, 'sender_email' => $email, 'is_public' => $is_public, 'confirmation_code' => $confirmation_code));
-	$message_id = $res[0];
+	$res = $api_kohovolit->create('Message', array('subject' => $subject, 'body_' => $body, 'sender_name' => $name, 'sender_email' => $email, 'is_public' => $is_public, 'confirmation_code' => $confirmation_code));
+	$message_id = $res[0]['id'];
 
 	// prepare records for responses from all addressees of the message
 	$mp_list = trim_list($_POST['mp'], '|', 3);
@@ -173,7 +172,7 @@ function send_page()
 	$to = compose_email_address($name, $email);
 	$confirmation_subject = mime_encode('Potvrďte prosím, že chcete odeslat zprávu přes NapišteJim.cz');
 	$mp_details = $api_wtt->read('MpDetails', array('mp' => $mp_list));
-	$smarty->assign('addressee', $mp_details['mp_details']);
+	$smarty->assign('addressee', $mp_details);
 	$smarty->assign('message', array('subject' => $subject, 'body' => $body, 'is_public' => $is_public, 'confirmation_code' => $confirmation_code));
 	$text = $smarty->fetch('email/request_to_confirm.tpl');
 	send_mail($from, $to, $confirmation_subject, $text);
@@ -193,9 +192,8 @@ function confirm_page()
 	$confirmation_code = (isset($_GET['cc'])) ? $_GET['cc'] : null;
 
 	// find a message corresponding to the given confirmation_code
-	$res = $api_kohovolit->read('Message', array('confirmation_code' => $confirmation_code));
-	$message = $res['message'][0];
-	if (empty($message))
+	$message = $api_kohovolit->readOne('Message', array('confirmation_code' => $confirmation_code));
+	if (!$message)
 		return static_page('confirmation_result/wrong_link');
 
 	switch ($action)
@@ -257,8 +255,17 @@ function send_message($message)
 		if (!isset($mp['email']) || empty($mp['email'])) continue;
 		$from = compose_email_address($message['sender_name'], 'reply.' . $mp['reply_code'] . '@' . WTT_HOST);
 		$reply_to = ($message['is_public'] == 'yes') ? $from : compose_email_address($message['sender_name'], $message['sender_email']);
-		$to = compose_email_address($mp['first_name'] . (!empty($mp['middle_names']) ? ' ' . $mp['middle_names'] . ' ' : ' ') . $mp['last_name'], $mp['email']);
+
+		// process also To: addresses like mailbox@host?subject=addressee
 		$subject = mime_encode($message['subject']);
+		$to = $mp['email'];
+		if (($p = strpos($to, '?subject=')) !== false)
+		{
+			$to = substr($to, 0, $p);
+			$subject = mime_encode(substr($to, $p + strlen('?subject='))) . ' – ' . $subject;
+		}
+		$to = compose_email_address($mp['first_name'] . (!empty($mp['middle_names']) ? ' ' . $mp['middle_names'] . ' ' : ' ') . $mp['last_name'], $to);
+
 		$smarty->assign('message', array('sender_name' => $message['sender_name'], 'sender_email' => $message['sender_email'],
 			'subject' => $message['subject'], 'body' => $message['body_'], 'is_public' => $message['is_public'], 'reply_to' => $reply_to));
 		$text = $smarty->fetch('email/message_to_mp.tpl');
@@ -323,10 +330,10 @@ function addressees_of_message($message)
 	global $api_kohovolit, $api_wtt;
 
 	// get list of MPs' id-s the message is addressed to
-	$mps = $api_kohovolit->read('Response', array('message_id' => $message['id']));
+	$responses = $api_kohovolit->read('Response', array('message_id' => $message['id']));
 	$mp_list = '';
-	foreach($mps['response'] as $mp)
-		$mp_list .= $mp['parliament_code'] . '/' . $mp['mp_id'] . '|';
+	foreach($responses as $response)
+		$mp_list .= $response['parliament_code'] . '/' . $response['mp_id'] . '|';
 
 	// get details of those MPs
 	$mp_list = rtrim($mp_list, '|');
@@ -334,9 +341,9 @@ function addressees_of_message($message)
 
 	// add a reply_code for each addressee to the returned details
 	$i = 0;
-	foreach ($mp_details['mp_details'] as &$mp)
-		$mp['reply_code'] = $mps['response'][$i++]['reply_code'];
-	return $mp_details['mp_details'];
+	foreach ($mp_details as &$mp)
+		$mp['reply_code'] = $responses[$i++]['reply_code'];
+	return $mp_details;
 }
 
 function message_is_profane($message)
@@ -366,8 +373,7 @@ function public_messages_page()
 	global $api_wtt;
 	$smarty = new SmartyWtt;
 
-	$messages_orig = $api_wtt->read('PublicMessages');
-	$messages =  $messages_orig['public_messages'];
+	$messages = $api_wtt->read('PublicMessagePreview');
 
 	foreach ($messages as &$message)
 		$message['response_exists'] = explode(', ', $message['response_exists']);
@@ -390,9 +396,9 @@ function unique_random_code($length, $resource, $field)
 	do
 	{
 		$code = random_code($length);
-		$res = $api_kohovolit->read($resource, array($field => $code));
+		$res = $api_kohovolit->readOne($resource, array($field => $code));
 	}
-	while (!empty($res[strtolower($resource)]));
+	while ($res);
 	return $code;
 }
 

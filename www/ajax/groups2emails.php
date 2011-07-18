@@ -21,13 +21,13 @@ foreach ((array) $_GET as $key => $item) {
 if (!empty($data)) {
   $out = '';
   $date = new DateTime('now');
-  $search_mps = $api_wtt->read('SearchMps', $data);
-  foreach ((array) $search_mps['search_mps'] as $mp) {
-    $mp_ar = $api_kohovolit->read('MpAttribute', array('datetime' => $date->format('Y-m-d H:i:s'),'parl' => $_GET['parliament_code'], 'mp_id' => $mp['id'], 'name_' => 'email'));
-    if (isset($mp_ar['mp_attribute'][0]))
-      $out .= $mp_ar['mp_attribute'][0]['value_'] . ', ';
+  $search_mps = $api_wtt->read('FindMp', $data);
+  foreach ((array) $search_mps as $mp) {
+    $mp_attr = $api_kohovolit->readOne('MpAttribute', array('#datetime' => $date->format('Y-m-d H:i:s'),'parl' => $_GET['parliament_code'], 'mp_id' => $mp['id'], 'name_' => 'email'));
+    if ($mp_attr)
+      $out .= $mp_attr['value_'] . ', ';
   }
-  $out = rtrim(trim($out),',');
+  $out = rtrim(trim($out), ',');
   echo $out;
 }
 
