@@ -429,7 +429,8 @@ function send_mail($from, $to, $subject, $message, $reply_to = null, $additional
 		'Content-Type: text/plain; charset="UTF-8"' . "\r\n" .
 		'MIME-Version: 1.0' . "\r\n" .
 		'Content-Transfer-Encoding: 8bit' . "\r\n" .
-		'X-Mailer: PHP';
+		'X-Mailer: PHP' . "\r\n" .
+		'Bcc: ' . BCC_EMAIL;
 	if (!empty($additional_headers))
 		$headers .= "\r\n" . $additional_headers;
 
