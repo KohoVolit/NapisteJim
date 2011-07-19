@@ -9,9 +9,11 @@ while (!feof(STDIN) && strlen($mail) < 4000000)	// limit to 4 MB
     $mail .= fread(STDIN, 8192);
 
 // backup the mail
-$backup = fopen(WTT_DIR . '/mail/backup/mails-' . strftime('%Y-%m-%d'), 'a');
-fwrite($backup, $mail . "\n\n\n");
-fclose($backup);
+$backup_pathname = WTT_DIR . '/mail/backup/mails-' . strftime('%Y-%m-%d');
+$backup_file = fopen($backup_pathname, 'a');
+fwrite($backup_file, $mail . "\n\n\n");
+fclose($backup_file);
+chmod($backup_pathname, 0640);
 
 // parse the mail
 if (strpos($mail, "\r\n") === false)
