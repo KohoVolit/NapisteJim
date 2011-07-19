@@ -261,8 +261,8 @@ function send_message($message)
 		$to = $mp['email'];
 		if (($p = strpos($to, '?subject=')) !== false)
 		{
+			$subject = mime_encode(substr($to, $p + strlen('?subject=')) . ' – ') . $subject;
 			$to = substr($to, 0, $p);
-			$subject = mime_encode(substr($to, $p + strlen('?subject='))) . ' – ' . $subject;
 		}
 		$to = compose_email_address($mp['first_name'] . (!empty($mp['middle_names']) ? ' ' . $mp['middle_names'] . ' ' : ' ') . $mp['last_name'], $to);
 
@@ -467,7 +467,7 @@ function compose_email_address($display_name, $address)
 {
 	if (empty($display_name)) return $address;
 
-	$name = mime_encode($display_name);
+	$name = mime_encode(trim(trim($display_name), '"'));
 	if (strpos($name, ',') !== false)
 		$name = '"' . $name . '"';
 

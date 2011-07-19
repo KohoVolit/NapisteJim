@@ -123,7 +123,7 @@ function compose_email_address($display_name, $address)
 {
 	if (empty($display_name)) return $address;
 
-	$name = mime_encode($display_name);
+	$name = mime_encode(trim(trim($display_name), '"'));
 	if (strpos($name, ',') !== false)
 		$name = '"' . $name . '"';
 
