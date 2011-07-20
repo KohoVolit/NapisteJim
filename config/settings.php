@@ -11,6 +11,7 @@ define("WTT_LOGS_DIR", WTT_DIR . '/logs');
 const WTT_HOST = 'napistejim.cz';
 const WTT_TITLE = 'NapišteJim.cz';
 const FROM_EMAIL = 'neodpovidejte@napistejim.cz';
+const BCC_EMAIL = 'napistejim.cz@gmail.com';
 const ADMIN_EMAIL = 'jaroslav_semancik@yahoo.com';
 const REVIEWER_EMAIL = 'veronika.sumova@gmail.com';
 const ORDER_NEWSLETTER_EMAIL = 'veronika.sumova@gmail.com';
