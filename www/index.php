@@ -118,11 +118,13 @@ function write_page()
 	global $api_wtt;
 	$mp_list = trim_list($_GET['mp'], '|', 3);
 	$mp_details = $api_wtt->read('MpDetails', array('mp' => $mp_list));
+	$location = $_GET['location'];
 
 	$smarty = new SmartyWtt;
 	$smarty->assign('mps', $mp_list);
 	$smarty->assign('mp_details', $mp_details);
 	$smarty->assign('img_url', IMG_URL);
+	$smarty->assign('location',$location);
 	$smarty->display('write.tpl');
 }
 

@@ -31,6 +31,7 @@
       
       <div id="write-personal">
         Vaše jméno: <br/><input type="text" id="write-name" name="name" value="" class="validate[required] text-input write-input" /><br/>
+        Bydliště: <br/><input type="text" id="write-location" name="location" value="{$location}" class="text-input write-input" /><br/>
         E-mail: <br/><input type="text"  id="write-email" name="email" value="" class="validate[required,custom[email]] text-input write-input" /><br/>
         Předmět: <br/><input type="text" id="write-subject" name="subject" value=""  class="validate[required] text-input write-input" />
         <div id="write-privacy">Zpráva je: <input type="radio" id="write-radio-1" name="is_public" value="yes" class="validate[required] radio write-input" />Veřejná <input type="radio" id="write-radio-2" name="is_public" value="no" class="validate[required] radio" />Soukromá </div>

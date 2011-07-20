@@ -118,6 +118,8 @@ function processAddress(results) {
 		  clearAction(boxId);
 		}
       }
+      //add locality into hidden input
+      $("#search_results-input-2").val(g_find_type_in_results(results[0].address_components,"locality","long_name"));
     }
   }
   
@@ -192,6 +194,8 @@ function extract_regions(results,regions) {
   });
   return frs;
 }
+
+//finds value for 
 
 function show_messages(str1,str2,type) {
     $('#search_results-message').hide();

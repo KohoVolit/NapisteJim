@@ -8,7 +8,7 @@ $(document).ready(function(){
 $(document).ready(function(){
   $("#write-name").change(function() {
     var current_text = $("#write-body").val();
-    $("#write-body").val(current_text + $("#write-name").val());
+    $("#write-body").val(current_text + $("#write-name").val() + "\n" + $("#write-location").val());
   });
 });
 
