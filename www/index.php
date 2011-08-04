@@ -118,7 +118,7 @@ function write_page()
 	global $api_wtt;
 	$mp_list = implode('|', array_slice(array_unique(explode('|', $_GET['mp'])), 0, 3));
 	$mp_details = $api_wtt->read('MpDetails', array('mp' => $mp_list));
-	$location = $_GET['location'];
+	$location = isset($_GET['location']) ? $_GET['location'] : '';
 
 	$smarty = new SmartyWtt;
 	$smarty->assign('mps', $mp_list);
@@ -135,9 +135,10 @@ function send_page()
 
 	// prevent mail header injection
 	$subject = escape_header_fields($_POST['subject']);
-	$body = $_POST['body'];
 	$name = escape_header_fields($_POST['name']);
 	$email = escape_header_fields($_POST['email']);
+	$address = $_POST['address'];
+	$body = $_POST['body'];
 	$is_public = $_POST['is_public'];
 	$mps = array_slice(array_unique(explode('|', $_POST['mp'])), 0, 3);
 
@@ -145,7 +146,7 @@ function send_page()
 	$confirmation_code = unique_random_code(10, 'Message', 'confirmation_code');
 
 	// store the message
-	$res = $api_kohovolit->create('Message', array('subject' => $subject, 'body_' => $body, 'sender_name' => $name, 'sender_email' => $email, 'is_public' => $is_public, 'confirmation_code' => $confirmation_code));
+	$res = $api_kohovolit->create('Message', array('subject' => $subject, 'body_' => $body, 'sender_name' => $name, 'sender_address' => $address, 'sender_email' => $email, 'is_public' => $is_public, 'confirmation_code' => $confirmation_code));
 	$message_id = $res[0]['id'];
 
 	// prepare records for responses from all addressees of the message
@@ -488,19 +489,19 @@ function compose_email_address($display_name, $address)
 
 function similar_message($sample_message, $messages)
 {
-	$sample_length = mb_strlen($sample_message['body_']);
-	$sample_text = str_replace($sample_message['sender_name'], '', $sample_message['body_']);
+	$sample_text = str_replace(array($sample_message['sender_name'], $sample_message['sender_address']), '', $sample_message['body_']);
+	$sample_length = mb_strlen($sample_text);
 	foreach ($messages as $message)
 	{
 		// skip the tested message itself
 		if ($message['id'] == $sample_message['id']) continue;
 
-		// different text lengths by more than 20% implies different texts
-		$length = mb_strlen($message['body_']);
-		if (abs($length - $sample_length) > 0.2 * min($length, $sample_length)) continue;
-
 		// remove signature from the text
-		$text = str_replace($message['sender_name'], '', $message['body_']);
+		$text = str_replace(array($message['sender_name'], $message['sender_address']), '', $message['body_']);
+
+		// different text lengths by more than 20% implies different texts
+		$length = mb_strlen($text);
+		if (abs($length - $sample_length) > 0.2 * min($length, $sample_length)) continue;
 
 		// compare bodies for similarity
 		if (similarity($text, $sample_text) > 0.9)
