@@ -13,7 +13,7 @@
  <form id="advanced_search-form" action="javascript:sendForm()">
     <label for="advanced_search-select-parliament" class="left">Vyberte zastupitelský sbor: </label>
     <select name="parliament_code" id="advanced_search-select-parliament" class="advanced_search-select">
-      <option value="0" selected="selected">Zastupitelský sbor</option>
+      <option value="0" selected="selected">--</option>
       <option value="cz/psp">Poslanecká sněmovna</option>
       <option value="cz/senat">Senát</option>
     </select>

@@ -436,7 +436,7 @@ min-width:220px;
 .write-mp-first_name {
 	padding-top: 7px;
 }
-#write-name, #write-email, #write-subject {
+#write-name, #write-email, #write-subject, #write-location {
 	width: 300px;
 }
 #write-privacy {

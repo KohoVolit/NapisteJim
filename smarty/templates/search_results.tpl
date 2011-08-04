@@ -44,6 +44,7 @@ var zoom = "{$zoom}";
 	  <form id="search_results-send" action="" >
 
 	    <input type="hidden" name="mp" id="search_results-input" value="" />
+	    <input type="hidden" name="location" id="search_results-input-2" value="" />
 	    <input id="search_results-submit-mps" type="submit" value="{t}Napište jim!{/t}"/>
 	  </form>
 	</div>
