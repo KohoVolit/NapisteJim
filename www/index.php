@@ -124,7 +124,7 @@ function write_page()
 	$smarty->assign('mps', $mp_list);
 	$smarty->assign('mp_details', $mp_details);
 	$smarty->assign('img_url', IMG_URL);
-	$smarty->assign('location',$location);
+	$smarty->assign('location', $location);
 	$smarty->display('write.tpl');
 }
 
@@ -194,7 +194,7 @@ function confirm_page()
 				return static_page('confirmation_result/already_confirmed');
 
 			// prevent sending the same message more than once
-			$my_messages = $api_kohovolit->read('Message', array('sender_email' => $message['email']));
+			$my_messages = $api_kohovolit->read('Message', array('sender_email' => $message['sender_email']));
 			if (similar_message($message, $my_messages))
 			{
 				$api_kohovolit->delete('Message', array('id' => $message['id']));
@@ -239,7 +239,7 @@ function confirm_page()
 
 function send_message($message)
 {
-	global $api_kohovolit;
+	global $api_kohovolit, $api_wtt;
 	$smarty = new SmartyWtt;
 
 	// send the message to all addressees one by one
@@ -286,10 +286,11 @@ function send_message($message)
 	$from = compose_email_address(WTT_TITLE, FROM_EMAIL);
 	$to = compose_email_address($message['sender_name'], $message['sender_email']);
 	$subject = (!isset($addressees['sent'])) ?
-		mime_encode('Vaše zpráva nebyla odeslána') :
+		mime_encode('Vaše zpráva nebyla odeslána') : (
 		(count($addressees['sent']) == count($mps)) ?
 			mime_encode('Vaše zpráva byla odeslána') :
-			mime_encode('Vaše zpráva byla odeslána jen některým adresátům');
+			mime_encode('Vaše zpráva byla odeslána jen některým adresátům')
+		);
 	$smarty->assign('addressee', $addressees);
 	$smarty->assign('message', array('subject' => $message['subject'], 'body' => $message['body_'], 'is_public' => $message['is_public']));
 	$text = $smarty->fetch('email/message_sent.tpl');
@@ -491,6 +492,9 @@ function similar_message($sample_message, $messages)
 	$sample_text = str_replace($sample_message['sender_name'], '', $sample_message['body_']);
 	foreach ($messages as $message)
 	{
+		// skip the tested message itself
+		if ($message['id'] == $sample_message['id']) continue;
+
 		// different text lengths by more than 20% implies different texts
 		$length = mb_strlen($message['body_']);
 		if (abs($length - $sample_length) > 0.2 * min($length, $sample_length)) continue;
