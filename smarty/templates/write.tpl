@@ -16,7 +16,9 @@
 
     <form id="write" class="formular" method="post" action="?">
       <input type="hidden" value="{$mps}" name="mp"/>
-      
+      <h2>Vaše zpráva pro politiky</h2>
+	  <p>Napište svou zprávu pro vybrané politiky. Pište prosím osobně, nekopírujte text, který někdo předem připravil. Pokud politik už stejnou zprávu dostal od někoho jiného, nebude mu odeslána znovu. <a class="small-text" href="faq#q8" target="_blank">Proč?</a></p>
+
       <div id="write-mps">
         {foreach $mp_details as $key=>$mp}
           <div id="write-mp-{$mp.id}" class="addressee-box rounded-corners write-mp">
@@ -28,20 +30,20 @@
           </div>
         {/foreach}
       </div>
-      
+
       <div id="write-personal">
         Vaše jméno: <br/><input type="text" id="write-name" name="name" value="" class="validate[required] text-input write-input" /><br/>
         E-mail: <br/><input type="text"  id="write-email" name="email" value="" class="validate[required,custom[email]] text-input write-input" /><br/>
         Předmět: <br/><input type="text" id="write-subject" name="subject" value=""  class="validate[required] text-input write-input" />
         <div id="write-privacy">Zpráva je: <input type="radio" id="write-radio-1" name="is_public" value="yes" class="validate[required] radio write-input" />Veřejná <input type="radio" id="write-radio-2" name="is_public" value="no" class="validate[required] radio" />Soukromá </div>
       </div>
-      
+
       <textarea id="write-body" rows="15" cols="80" name="body" class="validate[required,minSize[90]] textarea">{include file="email/initial_message.tpl"}</textarea>
       <br/>
       <input type="checkbox" id="write-newsletter" name="newsletter" value="order-newsletter" />
        Chci dostávat informace z {$smarty.const.WTT_TITLE}<br/><br/>
       <input id="write-submit" class="submit" type="submit" value="Odeslat"/>
     </form>
-    
+
   </div>
 {/block}

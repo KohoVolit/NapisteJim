@@ -8,8 +8,9 @@ const IMG_URL = 'http://cs.kohovolit.eu/data/';
 
 define("WTT_LOGS_DIR", WTT_DIR . '/logs');
 
-const WTT_HOST = 'napistejim.cz';
 const WTT_TITLE = 'NapišteJim.cz';
+const WTT_HOST = 'napistejim.cz';
+const CONTACT_EMAIL = 'info@kohovolit.eu';
 const FROM_EMAIL = 'neodpovidejte@napistejim.cz';
 const BCC_EMAIL = 'napistejim.cz@gmail.com';
 const ADMIN_EMAIL = 'jaroslav_semancik@yahoo.com';

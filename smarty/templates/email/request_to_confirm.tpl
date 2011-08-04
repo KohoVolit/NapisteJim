@@ -22,10 +22,10 @@ dělat nic. Nekliknete-li na výšeuvedený odkaz, připravená zpráva bude po
 čase smazána bez odeslání.
 
 Pokud jste tuto zprávu politikům nepsal(a) vy, dejte nám, prosím, vědět na
-info@kohovolit.eu.
+{$smarty.const.CONTACT_EMAIL}.
 
 Na tento e-mail neodpovídejte. Chcete-li nám napsat svůj názor na projekt,
-návrhy nebo problémy, použijte adresu info@kohovolit.eu. Rádi si je přečteme.
+návrhy nebo problémy, použijte adresu {$smarty.const.CONTACT_EMAIL}. Rádi si je přečteme.
 
 
 --- Vaše zpráva pro politiky ---

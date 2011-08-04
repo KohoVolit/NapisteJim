@@ -1,17 +1,40 @@
-Vaše zpráva byla odeslána Vašim zástupcum:
+{if isset($addressee.sent)}Vaše zpráva byla odeslána Vašim zástupcům:
 
-{foreach $addressee as $a}{$a.first_name} {$a.last_name}
+{foreach $addressee.sent as $a}{$a.first_name} {$a.last_name}
+{/foreach}
+{else}Vaše zpráva nebyla odeslána Vašim zástupcům.
+{/if}
+
+{if isset($addressee.blocked)}Adresáti:
+
+{foreach $addressee.blocked as $a}{$a.first_name} {$a.last_name}
 {/foreach}
 
-Pro případ, že se rozhodnete je oslovit i jiným způsobem, připájíme dole
+již stejnou zprávu obdrželi od jiného pisatele a tato jim už nebyla odeslána.
+Záměrem projektu {$smarty.const.WTT_TITLE} je podpořit osobní
+komunikaci občanů s politiky. I několik málo originálních zpráv má obvykle
+větší efekt, než zaplavení politika jednou předpřipravenou zprávou.
+Více viz.: http://{$smarty.const.WTT_HOST}/faq#q8
+{/if}
+
+{if isset($addressee.no_mail)}U adresátů:
+
+{foreach $addressee.no_mail as $a}{$a.first_name} {$a.last_name}
+{/foreach}
+
+se nám nepodařilo zjistit jejich e-mailový kontakt a nelze im Vaší zprávu
+odeslat.
+{/if}
+
+Pro případ, že se rozhodnete je oslovit{if isset($addressee.sent)} i{/if} jiným způsobem, připájíme dole
 její kopii.
 
-{if $message.is_public == 'yes'}Odeslal(a) jste veřejnou zprávu - bude zveřejněna na webu {$smarty.const.WTT_TITLE}
+{if isset($addressee.sent)}{if $message.is_public == 'yes'}Odeslal(a) jste veřejnou zprávu - bude zveřejněna na webu {$smarty.const.WTT_TITLE}
 a na stejném míste bude zveřejněna i případná odpověď oslovených politiků.{else}Zvolil(a) jste soukromou zprávu - na webu {$smarty.const.WTT_TITLE} bude smazána a
-případná odpověď oslovených politiků přijde jen přímo Vám.{/if}
+případná odpověď oslovených politiků přijde jen přímo Vám.{/if}{/if}
 
 Na tento e-mail neodpovídejte. Chcete-li nám napsat svůj názor na projekt,
-návrhy nebo problémy, použijte adresu info@kohovolit.eu. Rádi si je přečteme.
+návrhy nebo problémy, použijte adresu {$smarty.const.CONTACT_EMAIL}. Rádi si je přečteme.
 
 
 --- Vaše zpráva pro politiky ---

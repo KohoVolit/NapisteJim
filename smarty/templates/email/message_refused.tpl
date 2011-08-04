@@ -10,7 +10,7 @@ Ve výjimečných případech může systém zachytit i zcela nezávadnou zpráv
 Na vylepšení systému kontinuálně pracujeme.
 
 Pokud jste tedy přesvědčen(a), že zpráva byla zastavena neprávem,
-kontaktujte nás, prosím, e-mailem na info@kohovolit.eu.
+kontaktujte nás, prosím, e-mailem na {$smarty.const.CONTACT_EMAIL}.
 
 
 --- Vaše zpráva pro politiky ---
