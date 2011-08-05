@@ -257,10 +257,11 @@ function send_message($message)
 
 		// prevent sending the same message to one MP multiple times
 		$messages_to_mp = $api_wtt->read('MessageToMp', array('mp_id' => $mp['id'], 'parliament_code' => $mp['parliament_code']));
-		if ($similar_message_id = similar_message($message, $messages_to_mp))
+		if (($similar_message_id = similar_message($message, $messages_to_mp)) !== false)
 		{
 			$api_kohovolit->delete('Response', array('message_id' => $message['id'], 'mp_id' => $mp['id'], 'parliament_code' => $mp['parliament_code']));
-			$addressees['blocked'][] = $mp;
+			$former_message = $api_kohovolit->readOne('Message', array('id' => $similar_message_id));
+			$addressees['blocked'][] = $mp + array('former_message' => $former_message);
 			continue;
 		}
 

@@ -6,14 +6,14 @@
 {/if}
 {if isset($addressee.blocked)}
 
-Adresáti:
+Následující adresáti již stejnou zprávu obdrželi od jiného pisatele a tato
+jim už nebyla odeslána.
 
-{foreach $addressee.blocked as $a}{$a.first_name} {$a.last_name}
+{foreach $addressee.blocked as $a}{$a.first_name} {$a.last_name},  {if $a.former_message.is_public == 'yes'}zpráva viz. http://napistejim.cz/?message={$a.former_message.id}{else}zpráva byla zaslána soukromě{/if}
 {/foreach}
 
-již stejnou zprávu obdrželi od jiného pisatele a tato jim už nebyla
-odeslána. Záměrem projektu {$smarty.const.WTT_TITLE} je podpořit osobní komunikaci
-občanů s politiky. I několik málo originálních zpráv má obvykle
+Záměrem projektu {$smarty.const.WTT_TITLE} je podpořit osobní
+komunikaci občanů s politiky. I několik málo originálních zpráv má obvykle
 větší efekt, než zaplavení politika jednou předpřipravenou zprávou.
 Více viz.: http://{$smarty.const.WTT_HOST}/faq#q8
 {/if}
