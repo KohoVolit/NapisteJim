@@ -6,7 +6,7 @@
 <div class="wrapper">
 <div id="message-message">
 	<div class="message-left left">Od:</div>
-	<div class="message-right">{$message.sender_name}</div>
+	<div class="message-right">{$message.sender_name}{if !empty($message.sender_address)}, {$message.sender_address}{/if}</div>
 	<div class="message-left left">Komu:</div>
 	<div class="message-right">{foreach $responses as $response}{$response.first_name}&nbsp;{$response.last_name}{if !$response@last}, {/if}{/foreach}</div>
 	<div class="message-left left">Předmět:</div>

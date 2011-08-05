@@ -433,6 +433,8 @@ function send_mail($from, $to, $subject, $message, $reply_to = null, $additional
 	// make standard headers
 	if (empty($reply_to))
 		$reply_to = $from;
+	if ($from == compose_email_address(WTT_TITLE, FROM_EMAIL))
+		$reply_to = CONTACT_EMAIL;
 	$headers = "From: $from\r\n" .
 		"Reply-To: $reply_to\r\n" .
 		'Content-Type: text/plain; charset="UTF-8"' . "\r\n" .
