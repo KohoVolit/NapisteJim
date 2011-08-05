@@ -13,10 +13,10 @@ jim už nebyla odeslána.
 
 {/foreach}
 
-Záměrem projektu {$smarty.const.WTT_TITLE} je podpořit osobní
-komunikaci občanů s politiky. I několik málo originálních zpráv má obvykle
-větší efekt, než zaplavení politika jednou předpřipravenou zprávou.
-Více viz.: http://{$smarty.const.WTT_HOST}/faq#q8
+Záměrem projektu {$smarty.const.WTT_TITLE} je podpořit osobní komunikaci občanů
+s politiky. I několik málo originálních zpráv má obvykle větší efekt, než
+zaplavení politika jednou předpřipravenou zprávou. Více viz.:
+http://{$smarty.const.WTT_HOST}/faq#q8
 {/if}
 {if isset($addressee.no_email)}
 
