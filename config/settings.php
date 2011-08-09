@@ -3,8 +3,8 @@
 // instalation settings
 const WTT_DIR = '/home/shared/napistejim.cz';
 const API_DIR = '/home/shared/api.kohovolit.eu';
+const API_FILES_URL = 'http://api.kohovolit.eu/files';
 const SMARTY_DIR = '/usr/local/lib/php/Smarty/libs/';
-const IMG_URL = 'http://cs.kohovolit.eu/data/';
 
 define("WTT_LOGS_DIR", WTT_DIR . '/logs');
 

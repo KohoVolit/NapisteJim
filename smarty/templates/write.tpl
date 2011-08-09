@@ -23,7 +23,7 @@
         {foreach $mp_details as $key=>$mp}
           <div id="write-mp-{$mp.id}" class="addressee-box rounded-corners write-mp">
             <div id="write-mp-photo-{$mp.id}" class="write-mp-photo">
-              <img src="{$img_url}{$mp.image}" alt="" title="{$mp.last_name}"  height="162"/>
+              <img src="{$smarty.const.API_FILES_URL}/{$mp.image}" alt="" title="{$mp.last_name}"  height="162"/>
             </div>
             <div id="write-mp-first_name-{$mp.id}" class="write-mp-first_name">{$mp.first_name}</div>
             <div id="write-mp-last_name-{$mp.id}" class="write-mp-last_name">{$mp.last_name}</div>

@@ -123,7 +123,6 @@ function write_page()
 	$smarty = new SmartyWtt;
 	$smarty->assign('mps', $mp_list);
 	$smarty->assign('mp_details', $mp_details);
-	$smarty->assign('img_url', IMG_URL);
 	$smarty->assign('location', $location);
 	$smarty->display('write.tpl');
 }
