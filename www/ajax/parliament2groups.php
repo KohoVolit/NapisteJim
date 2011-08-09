@@ -2,7 +2,7 @@
 require '../../config/settings.php';
 require '../../setup.php';
 
-$api_kohovolit = new ApiDirect('kohovolit');
+$api_data = new ApiDirect('data');
 
 //order of group_kinds, if not set, randomly afterwards
 $order = array(
@@ -34,13 +34,13 @@ if ( (!(isset($_GET['parliament_code']))) or ($_GET['parliament_code'] == '0') )
 }
 
 //find info about parliament
-$parl = $api_kohovolit->readOne('Parliament', array('code' => $_GET['parliament_code']));
+$parl = $api_data->readOne('Parliament', array('code' => $_GET['parliament_code']));
 
 //find term for given parliament
-$term = $api_kohovolit->readOne('Term', array('parliament_kind_code' => $parl['parliament_kind_code'], 'country_code' => $parl['country_code'], '#datetime' => $date));
+$term = $api_data->readOne('Term', array('parliament_kind_code' => $parl['parliament_kind_code'], 'country_code' => $parl['country_code'], '#datetime' => $date));
 
 //find groups in given term and parliament
-$groups_db = $api_kohovolit->read('Group', array('parliament_kind_code' => $parl['parliament_kind_code'], 'term_id' => $term['id']));
+$groups_db = $api_data->read('Group', array('parliament_kind_code' => $parl['parliament_kind_code'], 'term_id' => $term['id']));
 
 //reorder groups into arrays by group_kind_code
 $groups = array();
@@ -68,7 +68,7 @@ ksort($groups_out);
 $smarty->assign('groups', $groups_out);
 
 //select constituencies with parliament and datetime
-$constit = $api_kohovolit->read('Constituency', array('parliament_code' => $_GET['parliament_code'], '#datetime' => $date));
+$constit = $api_data->read('Constituency', array('parliament_code' => $_GET['parliament_code'], '#datetime' => $date));
 
 //order constituencies alphabetically !!wrong order, not using LOCALE!!
 $constit = order_array($constit, 'name_', SORT_ASC);

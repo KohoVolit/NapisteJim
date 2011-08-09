@@ -43,9 +43,9 @@ foreach ($to_list as $to)
 	$body = (isset($parsed_mail['text'])) ? $parsed_mail['text'] : ((isset($parsed_mail['html'])) ? $parsed_mail['html'] : '');
 
 	// store the response
-	$api_kohovolit = new ApiDirect('kohovolit');
+	$api_data = new ApiDirect('data');
 	$body = preg_replace('/reply\.[a-z]{10}@/', 'reply.**********@', $body);
-	$res = $api_kohovolit->update('Response', array('reply_code' => $reply_code), array('subject' => $subject, 'body_' => $body, 'full_email_data' => $mail, 'received_on' => 'now'));
+	$res = $api_data->update('Response', array('reply_code' => $reply_code), array('subject' => $subject, 'body_' => $body, 'full_email_data' => $mail, 'received_on' => 'now'));
 
 	// notice admin about unrecognized responses
 	if (count($res) == 0)
@@ -57,9 +57,9 @@ foreach ($to_list as $to)
 	}
 
 	// send the response to sender of the message
-	$response = $api_kohovolit->readOne('Response', array('reply_code' => $reply_code));
-	$message = $api_kohovolit->readOne('Message', array('id' => $response['message_id']));
-	$mp = $api_kohovolit->readOne('Mp', array('id' => $response['mp_id']));
+	$response = $api_data->readOne('Response', array('reply_code' => $reply_code));
+	$message = $api_data->readOne('Message', array('id' => $response['message_id']));
+	$mp = $api_data->readOne('Mp', array('id' => $response['mp_id']));
 
 	$from = compose_email_address(WTT_TITLE, FROM_EMAIL);
 	$to = compose_email_address($message['sender_name'], $message['sender_email']);
@@ -73,7 +73,7 @@ foreach ($to_list as $to)
 
 	// erase an accidental response to a private message
 	if ($message['is_public'] == 'no')
-		$api_kohovolit->update('Response', array('reply_code' => $reply_code), array('subject' => null, 'body_' => null, 'full_email_data' => null));
+		$api_data->update('Response', array('reply_code' => $reply_code), array('subject' => null, 'body_' => null, 'full_email_data' => null));
 }
 
 exit;

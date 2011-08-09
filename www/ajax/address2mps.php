@@ -5,7 +5,7 @@ require '../../setup.php';
 //get array with mps
 $api_wtt = new ApiDirect('wtt');
 $res = $api_wtt->read('AddressRepresentative', $_GET);
-$api_kohovolit = new ApiDirect('kohovolit');
+$api_data = new ApiDirect('data');
 
 //check for known problems in parliaments/areas and correct them
 $res = parl_zero_constit($api_wtt, $_GET, $res, $parl_zero_constit);
@@ -62,7 +62,7 @@ foreach ((array)$data as $pkey => $parliament) {
       $group['friendly_name'] = friendly_url($group['name'],LOCALE);
       //add mp info
       foreach($group['mp'] as $mkey=> $mp) {
-        $mp['info'] = make_mp_info($mp, $parl_order[$parliament['code']]['info'], $one_constit, $api_kohovolit);
+        $mp['info'] = make_mp_info($mp, $parl_order[$parliament['code']]['info'], $one_constit, $api_data);
         
         $group['mp'][$mkey] = $mp;
       }
@@ -124,7 +124,7 @@ function parl_zero_constit($api_wtt, $get, $res, $parl_zero_constit) {
 *
 * @out mp info (string)
 */
-function make_mp_info($mp, $array, $one_constit, $api_kohovolit) {
+function make_mp_info($mp, $array, $one_constit, $api_data) {
   $out = '';
   foreach ((array) $array as $item) {
     if (($item == 'office_distance') and ($item != ''))
@@ -137,12 +137,12 @@ function make_mp_info($mp, $array, $one_constit, $api_kohovolit) {
   }
   if (!$one_constit) {
     $date = new DateTime('now');
-    $mp_in_group = $api_kohovolit->read('MpInGroup', array('mp_id' => $mp['id'], 'role_code' => 'member', '#datetime' => $date->format('Y-m-d H:i:s')));
+    $mp_in_group = $api_data->read('MpInGroup', array('mp_id' => $mp['id'], 'role_code' => 'member', '#datetime' => $date->format('Y-m-d H:i:s')));
     foreach((array) $mp_in_group as $mig) {
       if ($mig['constituency_id'] > 0) {
-        $group = $api_kohovolit->readOne('Group', array('id' => $mig['group_id']));
+        $group = $api_data->readOne('Group', array('id' => $mig['group_id']));
         if ($group and ($group['parliament_code'] == $mp['parliament_code'])) {
-          $constit = $api_kohovolit->readOne('Constituency', array('id' => $mig['constituency_id']));
+          $constit = $api_data->readOne('Constituency', array('id' => $mig['constituency_id']));
           $out .= $constit['name_'];
           if ($constit['description'] != '')
             $out .= ': ' . $constit['description'];

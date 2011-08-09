@@ -12,7 +12,7 @@ bindtextdomain(LOCALIZED_DOMAIN, LOCALE_DIR);
 // Choose domain
 textdomain(LOCALIZED_DOMAIN);
 
-$api_kohovolit = new ApiDirect('kohovolit');
+$api_data = new ApiDirect('data');
 $api_wtt = new ApiDirect('wtt');
 
 $page = isset($_GET['page']) ? $_GET['page'] : null;
@@ -64,11 +64,11 @@ function static_page($page)
 
 function public_message_page($message_id)
 {
-	global $api_kohovolit, $api_wtt;
+	global $api_data, $api_wtt;
 	$smarty = new SmartyWtt;
 
 	// get message
-	$message = $api_kohovolit->readOne('Message', array('id' => $message_id));
+	$message = $api_data->readOne('Message', array('id' => $message_id));
 	if ($message['is_public'] == 'no')
 		return $smarty->display('message-private.tpl');
 	$smarty->assign('message', $message);
@@ -130,7 +130,7 @@ function write_page()
 
 function send_page()
 {
-	global $api_kohovolit, $api_wtt;
+	global $api_data, $api_wtt;
 	$smarty = new SmartyWtt;
 
 	// prevent mail header injection
@@ -146,7 +146,7 @@ function send_page()
 	$confirmation_code = unique_random_code(10, 'Message', 'confirmation_code');
 
 	// store the message
-	$res = $api_kohovolit->create('Message', array('subject' => $subject, 'body_' => $body, 'sender_name' => $name, 'sender_address' => $address, 'sender_email' => $email, 'is_public' => $is_public, 'confirmation_code' => $confirmation_code));
+	$res = $api_data->create('Message', array('subject' => $subject, 'body_' => $body, 'sender_name' => $name, 'sender_address' => $address, 'sender_email' => $email, 'is_public' => $is_public, 'confirmation_code' => $confirmation_code));
 	$message_id = $res[0]['id'];
 
 	// prepare records for responses from all addressees of the message
@@ -157,7 +157,7 @@ function send_page()
 		$p = strrpos($mp, '/');
 		$responses[] = array('message_id' => $message_id, 'mp_id' => substr($mp, $p + 1), 'parliament_code' => substr($mp, 0, $p), 'reply_code' => $reply_code);
 	}
-	$api_kohovolit->create('Response', $responses);
+	$api_data->create('Response', $responses);
 
 	// send confirmation mail to the sender
 	$from = compose_email_address(WTT_TITLE, FROM_EMAIL);
@@ -178,13 +178,13 @@ function send_page()
 
 function confirm_page()
 {
-	global $api_kohovolit, $api_wtt;
+	global $api_data, $api_wtt;
 
 	$action = (isset($_GET['action'])) ? $_GET['action'] : null;
 	$confirmation_code = (isset($_GET['cc'])) ? $_GET['cc'] : null;
 
 	// find a message corresponding to the given confirmation_code
-	$message = $api_kohovolit->readOne('Message', array('confirmation_code' => $confirmation_code));
+	$message = $api_data->readOne('Message', array('confirmation_code' => $confirmation_code));
 	if (!$message)
 		return static_page('confirmation_result/wrong_link');
 
@@ -195,10 +195,10 @@ function confirm_page()
 				return static_page('confirmation_result/already_confirmed');
 
 			// prevent sending the same message more than once
-			$my_messages = $api_kohovolit->read('Message', array('sender_email' => $message['sender_email']));
+			$my_messages = $api_data->read('Message', array('sender_email' => $message['sender_email']));
 			if (similar_message($message, $my_messages))
 			{
-				$api_kohovolit->delete('Message', array('id' => $message['id']));
+				$api_data->delete('Message', array('id' => $message['id']));
 				return static_page('already_sent');
 			}
 
@@ -240,7 +240,7 @@ function confirm_page()
 
 function send_message($message)
 {
-	global $api_kohovolit, $api_wtt;
+	global $api_data, $api_wtt;
 	$smarty = new SmartyWtt;
 
 	// send the message to all addressees one by one
@@ -259,8 +259,8 @@ function send_message($message)
 		$messages_to_mp = $api_wtt->read('MessageToMp', array('mp_id' => $mp['id'], 'parliament_code' => $mp['parliament_code']));
 		if (($similar_message_id = similar_message($message, $messages_to_mp)) !== false)
 		{
-			$api_kohovolit->delete('Response', array('message_id' => $message['id'], 'mp_id' => $mp['id'], 'parliament_code' => $mp['parliament_code']));
-			$former_message = $api_kohovolit->readOne('Message', array('id' => $similar_message_id));
+			$api_data->delete('Response', array('message_id' => $message['id'], 'mp_id' => $mp['id'], 'parliament_code' => $mp['parliament_code']));
+			$former_message = $api_data->readOne('Message', array('id' => $similar_message_id));
 			$addressees['blocked'][] = $mp + array('former_message' => $former_message);
 			continue;
 		}
@@ -300,14 +300,14 @@ function send_message($message)
 
 	// change message state
 	if (isset($addressees['sent']))
-		$api_kohovolit->update('Message', array('id' => $message['id']), array('state_' => 'sent', 'sent_on' => 'now'));
+		$api_data->update('Message', array('id' => $message['id']), array('state_' => 'sent', 'sent_on' => 'now'));
 	else
-		$api_kohovolit->delete('Message', array('id' => $message['id']));
+		$api_data->delete('Message', array('id' => $message['id']));
 }
 
 function send_to_reviewer($message)
 {
-	global $api_kohovolit;
+	global $api_data;
 	$smarty = new SmartyWtt;
 
 	// generate a random approval code for the message
@@ -323,12 +323,12 @@ function send_to_reviewer($message)
 	send_mail($from, $to, $subject, $text);
 
 	// change message state
-	$api_kohovolit->update('Message', array('id' => $message['id']), array('state_' => 'waiting for approval', 'approval_code' => $approval_code));
+	$api_data->update('Message', array('id' => $message['id']), array('state_' => 'waiting for approval', 'approval_code' => $approval_code));
 }
 
 function refuse_message($message)
 {
-	global $api_kohovolit;
+	global $api_data;
 	$smarty = new SmartyWtt;
 
 	// send explanation of the refusal to the sender
@@ -341,15 +341,15 @@ function refuse_message($message)
 	send_mail($from, $to, $subject, $text);
 
 	// change message state
-	$api_kohovolit->update('Message', array('id' => $message['id']), array('state_' => 'refused'));
+	$api_data->update('Message', array('id' => $message['id']), array('state_' => 'refused'));
 }
 
 function addressees_of_message($message)
 {
-	global $api_kohovolit, $api_wtt;
+	global $api_data, $api_wtt;
 
 	// get list of MPs' id-s the message is addressed to
-	$responses = $api_kohovolit->read('Response', array('message_id' => $message['id']));
+	$responses = $api_data->read('Response', array('message_id' => $message['id']));
 	$mp_list = '';
 	foreach($responses as $response)
 		$mp_list .= $response['parliament_code'] . '/' . $response['mp_id'] . '|';
@@ -411,11 +411,11 @@ function random_code($length)
 
 function unique_random_code($length, $resource, $field)
 {
-	global $api_kohovolit;
+	global $api_data;
 	do
 	{
 		$code = random_code($length);
-		$res = $api_kohovolit->readOne($resource, array($field => $code));
+		$res = $api_data->readOne($resource, array($field => $code));
 	}
 	while ($res);
 	return $code;
