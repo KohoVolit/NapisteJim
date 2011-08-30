@@ -15,6 +15,7 @@ mb_internal_encoding('UTF-8');
 $parl_order = array(
 'cz/psp' => array('weight' => -100, 'info' => array('office_town','office_distance')),
 'cz/senat' => array('weight' => -99, 'info' => array()),
+'cz/starostove' => array('weight' => -98, 'info' => array()),
 );
 
 $parl_zero_constit = array( //in case no constituency is found

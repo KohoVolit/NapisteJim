@@ -506,7 +506,7 @@ function similar_message($sample_message, $messages)
 		if (abs($length - $sample_length) > 0.2 * min($length, $sample_length)) continue;
 
 		// compare bodies for similarity
-		if (similarity($text, $sample_text) > 0.9)
+		if (similarity($text, $sample_text) > 0.8)
 			return $message['id'];
 	}
 	return false;
