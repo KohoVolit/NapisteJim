@@ -18,6 +18,7 @@ foreach ((array) $_GET as $key => $item) {
       if ($item != 0) $data['groups'][] = $item;
   }
 }
+$data['groups'] = implode('|', $data['groups']);
 if (!empty($data)) {
   $out = '';
   $date = new DateTime('now');

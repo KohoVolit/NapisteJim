@@ -8,7 +8,7 @@
 <script type="text/javascript" src="js/search_results_advanced.js"></script>
 {/block}
 {block name=body}
-<h2>{t}Adresáti{/t}</h2><div id="search_results-up-to">{t}Přetažením jmen do boxů nebo kliknutím na jméno vyberte až 3 adresáty ze svých politiků{/t}</div>
+<h2>{t}Adresáti{/t}</h2><div id="search_results-up-to">{t}Přetažením jmen do boxů nebo kliknutím na jméno vyberte ze svých politiků nejvíce tři adresáty Vaší zprávy. Dalším  politikům pak už stejnou zprávu nebudete moct odeslat.{/t}</div>
   <div id="search_results-addressee-box-1" class="addressee-box rounded-corners droppable"></div>
   <div id="search_results-addressee-box-2" class="addressee-box rounded-corners droppable"></div>
   <div id="search_results-addressee-box-3" class="addressee-box rounded-corners droppable"></div>

@@ -87,9 +87,11 @@ function search_results_advanced_page()
 
 	$params = array();
 	if (isset($_GET['groups']) && !empty($_GET['groups']))
-		$params['groups'] = explode('|', $_GET['groups']);
+		$params['groups'] = $_GET['groups'];
 	if (isset($_GET['constituency']) && !empty($_GET['constituency']))
 		$params['constituency'] = $_GET['constituency'];
+	if (isset($_GET['#datetime']) && !empty($_GET['#datetime']))
+		$params['#datetime'] = $_GET['#datetime'];
 	$search_mps = $api_wtt->read('FindMp', $params);
 
 	if (isset($_GET['parliament_code']))
@@ -198,7 +200,7 @@ function confirm_page()
 			if (similar_message($message, $my_messages))
 			{
 				$api_data->delete('Message', array('id' => $message['id']));
-				return static_page('already_sent');
+				return static_page('confirmation_result/already_sent');
 			}
 
 			// send profane messages to a reviewer
