@@ -3,7 +3,7 @@
 <select name="constituency" id="constituency">
 <option value="0" selected="selected">Nezáleží</option>
 {foreach $constit as $c}
-<option value="{$c.id}">{$c.name_}</option>
+<option value="{$c.id}">{$c.name}</option>
 {/foreach}
 </select>
 
@@ -12,7 +12,7 @@
   <select name="{$group_kind.0.group_kind_code|escape:'url'}" id="{$group_kind.0.group_kind_code|escape:'url'}" class="advanced_search-select-2" >
   <option value="0" selected="selected">Nezáleží</option>
   {foreach $group_kind as $group}
-    <option value="{$group.id}">{$group.name_}</option>
+    <option value="{$group.id}">{$group.name}</option>
   {/foreach}
   </select>
 {/foreach}

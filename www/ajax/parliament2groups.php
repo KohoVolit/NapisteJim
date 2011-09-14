@@ -57,7 +57,7 @@ foreach ((array) $groups as $key => $group_kind) {
 		$key_out = $order[$key];
 	  else
 		$key_out = $i;
-	  $groups_out[$key_out] = order_array($groups[$key], 'name_', SORT_ASC);
+	  $groups_out[$key_out] = order_array($groups[$key], 'name', SORT_ASC);
 	  $i++;
 	//quick hack to get right names of group_kinds
     $groups_out[$key_out][0]['group_kind_name'] = group_kind2name($groups_out[$key_out][0]['group_kind_code']);
@@ -71,7 +71,7 @@ $smarty->assign('groups', $groups_out);
 $constit = $api_data->read('Constituency', array('parliament_code' => $_GET['parliament_code'], '#datetime' => $date));
 
 //order constituencies alphabetically !!wrong order, not using LOCALE!!
-$constit = order_array($constit, 'name_', SORT_ASC);
+$constit = order_array($constit, 'name', SORT_ASC);
 
 $smarty->assign('constit', $constit);
 $smarty->display('ajax/parliament2groups.tpl');

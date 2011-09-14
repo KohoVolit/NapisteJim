@@ -45,7 +45,7 @@ foreach ($to_list as $to)
 	// store the response
 	$api_data = new ApiDirect('data');
 	$body = preg_replace('/reply\.[a-z]{10}@/', 'reply.**********@', $body);
-	$res = $api_data->update('Response', array('reply_code' => $reply_code), array('subject' => $subject, 'body_' => $body, 'full_email_data' => $mail, 'received_on' => 'now'));
+	$res = $api_data->update('Response', array('reply_code' => $reply_code), array('subject' => $subject, 'body' => $body, 'full_email_data' => $mail, 'received_on' => 'now'));
 
 	// notice admin about unrecognized responses
 	if (count($res) == 0)
@@ -66,14 +66,14 @@ foreach ($to_list as $to)
 	$subject = mime_encode($mp['first_name'] . ' ' . $mp['last_name'] . ' odpověděl' . (($mp['sex'] == 'f') ? 'a' : '') . ' na vaši zprávu');
 	$smarty = new SmartyWtt;
 	$smarty->assign('mp', $mp);
-	$smarty->assign('message', array('subject' => $response['subject'], 'body' => $response['body_'], 'is_public' => $message['is_public']));
+	$smarty->assign('message', array('subject' => $response['subject'], 'body' => $response['body'], 'is_public' => $message['is_public']));
 	$text = $smarty->fetch('email/response_from_mp.tpl');
 	$reply_to = compose_email_address($parsed_mail['headers']['from']['personal'], $parsed_mail['headers']['from']['mailbox'] . '@' . $parsed_mail['headers']['from']['host']);
 	send_mail($from, $to, $subject, $text, $reply_to);
 
 	// erase an accidental response to a private message
 	if ($message['is_public'] == 'no')
-		$api_data->update('Response', array('reply_code' => $reply_code), array('subject' => null, 'body_' => null, 'full_email_data' => null));
+		$api_data->update('Response', array('reply_code' => $reply_code), array('subject' => null, 'body' => null, 'full_email_data' => null));
 }
 
 exit;

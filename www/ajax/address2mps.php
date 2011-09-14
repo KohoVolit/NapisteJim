@@ -143,7 +143,7 @@ function make_mp_info($mp, $array, $one_constit, $api_data) {
         $group = $api_data->readOne('Group', array('id' => $mig['group_id']));
         if ($group and ($group['parliament_code'] == $mp['parliament_code'])) {
           $constit = $api_data->readOne('Constituency', array('id' => $mig['constituency_id']));
-          $out .= $constit['name_'];
+          $out .= $constit['name'];
           if ($constit['description'] != '')
             $out .= ': ' . $constit['description'];
         }

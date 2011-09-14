@@ -147,7 +147,7 @@ function send_page()
 	$confirmation_code = unique_random_code(10, 'Message', 'confirmation_code');
 
 	// store the message
-	$message_pkey = $api_data->create('Message', array('subject' => $subject, 'body_' => $body, 'sender_name' => $name, 'sender_address' => $address, 'sender_email' => $email, 'is_public' => $is_public, 'confirmation_code' => $confirmation_code));
+	$message_pkey = $api_data->create('Message', array('subject' => $subject, 'body' => $body, 'sender_name' => $name, 'sender_address' => $address, 'sender_email' => $email, 'is_public' => $is_public, 'confirmation_code' => $confirmation_code));
 	$message_id = $message_pkey['id'];
 
 	// prepare records for responses from all addressees of the message
@@ -192,7 +192,7 @@ function confirm_page()
 	switch ($action)
 	{
 		case 'send':
-			if ($message['state_'] != 'created')
+			if ($message['state'] != 'created')
 				return static_page('confirmation_result/already_confirmed');
 
 			// prevent sending the same message more than once
@@ -220,7 +220,7 @@ function confirm_page()
 		case 'refuse':
 			if (!isset($_GET['ac']) || $_GET['ac'] != $message['approval_code'])
 				static_page('confirmation_result/wrong_link');
-			else if ($message['state_'] != 'waiting for approval')
+			else if ($message['state'] != 'waiting for approval')
 				static_page('confirmation_result/reviewer/already_approved');
 			else if ($action == 'approve')
 			{
@@ -279,7 +279,7 @@ function send_message($message)
 		$reply_to = ($message['is_public'] == 'yes') ? $from : compose_email_address($message['sender_name'], $message['sender_email']);
 
 		$smarty->assign('message', array('sender_name' => $message['sender_name'], 'sender_email' => $message['sender_email'],
-			'subject' => $message['subject'], 'body' => $message['body_'], 'is_public' => $message['is_public'], 'reply_to' => $reply_to));
+			'subject' => $message['subject'], 'body' => $message['body'], 'is_public' => $message['is_public'], 'reply_to' => $reply_to));
 		$text = $smarty->fetch('email/message_to_mp.tpl');
 		send_mail($from, $to, $subject, $text, $reply_to);
 		$addressees['sent'][] = $mp;
@@ -295,13 +295,13 @@ function send_message($message)
 			mime_encode('Vaše zpráva byla odeslána jen některým adresátům')
 		);
 	$smarty->assign('addressee', $addressees);
-	$smarty->assign('message', array('subject' => $message['subject'], 'body' => $message['body_'], 'is_public' => $message['is_public']));
+	$smarty->assign('message', array('subject' => $message['subject'], 'body' => $message['body'], 'is_public' => $message['is_public']));
 	$text = $smarty->fetch('email/message_sent.tpl');
 	send_mail($from, $to, $subject, $text);
 
 	// change message state
 	if (isset($addressees['sent']))
-		$api_data->update('Message', array('id' => $message['id']), array('state_' => 'sent', 'sent_on' => 'now'));
+		$api_data->update('Message', array('id' => $message['id']), array('state' => 'sent', 'sent_on' => 'now'));
 	else
 		$api_data->delete('Message', array('id' => $message['id']));
 }
@@ -319,12 +319,12 @@ function send_to_reviewer($message)
 	$to = REVIEWER_EMAIL;
 	$subject = mime_encode('Zpráva pro politiky potřebuje tvoje schválení');
 	$smarty->assign('addressee', addressees_of_message($message));
-	$smarty->assign('message', array('subject' => $message['subject'], 'body' => $message['body_'], 'is_public' => $message['is_public'], 'confirmation_code' => $message['confirmation_code'], 'approval_code' => $approval_code));
+	$smarty->assign('message', array('subject' => $message['subject'], 'body' => $message['body'], 'is_public' => $message['is_public'], 'confirmation_code' => $message['confirmation_code'], 'approval_code' => $approval_code));
 	$text = $smarty->fetch('email/request_to_review.tpl');
 	send_mail($from, $to, $subject, $text);
 
 	// change message state
-	$api_data->update('Message', array('id' => $message['id']), array('state_' => 'waiting for approval', 'approval_code' => $approval_code));
+	$api_data->update('Message', array('id' => $message['id']), array('state' => 'waiting for approval', 'approval_code' => $approval_code));
 }
 
 function refuse_message($message)
@@ -337,12 +337,12 @@ function refuse_message($message)
 	$to = compose_email_address($message['sender_name'], $message['sender_email']);
 	$subject = mime_encode('Vaše zpráva byla vyhodnocena jako neslušná a nebyla odeslána');
 	$smarty->assign('addressee', addressees_of_message($message));
-	$smarty->assign('message', array('subject' => $message['subject'], 'body' => $message['body_'], 'is_public' => $message['is_public']));
+	$smarty->assign('message', array('subject' => $message['subject'], 'body' => $message['body'], 'is_public' => $message['is_public']));
 	$text = $smarty->fetch('email/message_refused.tpl');
 	send_mail($from, $to, $subject, $text);
 
 	// change message state
-	$api_data->update('Message', array('id' => $message['id']), array('state_' => 'refused'));
+	$api_data->update('Message', array('id' => $message['id']), array('state' => 'refused'));
 }
 
 function addressees_of_message($message)
@@ -371,7 +371,7 @@ function message_is_profane($message)
 	$file = ($message['is_public'] == 'yes') ? 'profanities_public.lst' : 'profanities_private.lst';
 	$profanities = file("../$file", FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 	$prefix_only = !($message['is_public'] == 'yes');
-	return text_is_profane($message['subject'], $profanities, $prefix_only) || text_is_profane($message['body_'], $profanities, $prefix_only);
+	return text_is_profane($message['subject'], $profanities, $prefix_only) || text_is_profane($message['body'], $profanities, $prefix_only);
 }
 
 function text_is_profane($text, $profanities_list, $prefix_only)
@@ -493,7 +493,7 @@ function compose_email_address($display_name, $address)
 
 function similar_message($sample_message, $messages)
 {
-	$sample_text = str_replace(array($sample_message['sender_name'], $sample_message['sender_address']), '', $sample_message['body_']);
+	$sample_text = str_replace(array($sample_message['sender_name'], $sample_message['sender_address']), '', $sample_message['body']);
 	$sample_length = mb_strlen($sample_text);
 	foreach ($messages as $message)
 	{
@@ -501,7 +501,7 @@ function similar_message($sample_message, $messages)
 		if ($message['id'] == $sample_message['id']) continue;
 
 		// remove signature from the text
-		$text = str_replace(array($message['sender_name'], $message['sender_address']), '', $message['body_']);
+		$text = str_replace(array($message['sender_name'], $message['sender_address']), '', $message['body']);
 
 		// different text lengths by more than 20% implies different texts
 		$length = mb_strlen($text);

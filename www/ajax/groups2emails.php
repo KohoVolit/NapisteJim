@@ -24,9 +24,9 @@ if (!empty($data)) {
   $date = new DateTime('now');
   $search_mps = $api_wtt->read('FindMp', $data);
   foreach ((array) $search_mps as $mp) {
-    $mp_attr = $api_data->readOne('MpAttribute', array('#datetime' => $date->format('Y-m-d H:i:s'),'parl' => $_GET['parliament_code'], 'mp_id' => $mp['id'], 'name_' => 'email'));
+    $mp_attr = $api_data->readOne('MpAttribute', array('#datetime' => $date->format('Y-m-d H:i:s'),'parl' => $_GET['parliament_code'], 'mp_id' => $mp['id'], 'name' => 'email'));
     if ($mp_attr)
-      $out .= $mp_attr['value_'] . ', ';
+      $out .= $mp_attr['value'] . ', ';
   }
   $out = rtrim(trim($out), ',');
   echo $out;

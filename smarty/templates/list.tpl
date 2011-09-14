@@ -16,7 +16,7 @@
 {/foreach}
 		</td>
 		<td class="list-td-responder">{$message.recipients}</td>
-		<td class="list-message" title="{$message.body_|truncate:150}"><a href="/?message={$message.id}"><span class="list-subject">{$message.subject}</span>&nbsp;<span class="list-body">{$message.body_|truncate:150}</span></a></td>
+		<td class="list-message" title="{$message.body|truncate:150}"><a href="/?message={$message.id}"><span class="list-subject">{$message.subject}</span>&nbsp;<span class="list-body">{$message.body|truncate:150}</span></a></td>
 		<td class="list-td-date">{$message.sent_on|date_format:$smarty.const.LOCALIZED_DATE_FORMAT}</td>
 		<td class="list-td-sender">{$message.sender_name}</td>
 	</tr>
