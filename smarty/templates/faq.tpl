@@ -39,7 +39,7 @@
 <p>
 Aplikace {$smarty.const.WTT_TITLE} je vybudována s úmyslem podpořit osobní komunikaci občanů s politiky, nikoli sloužit jako brána pro masové uniformní kampaně, kdy se hromadně obešle celý parlament univerzální zprávou.
 </p><p>
-Chceme podpořit komunikaci i v rámci kampaní neziskových organizací. Směle se inspirujte – třeba u NašiPolitici.cz, Oživení, Transparency International, Hnutí Duha a dalších – ale pište za sebe a piště osobně.
+Chceme podpořit komunikaci i v rámci kampaní neziskových organizací. Směle se inspirujte – třeba u <a href="http://www.nasipolitici.cz">NašiPolitici.cz</a>, <a href="http://www.oziveni.cz">Oživení</a>, <a href="http://www.transparency.cz">Transparency International</a>, <a href="http://www.hnutiduha.cz">Hnutí Duha</a>, <a href="http://www.podnety.cz">Podněty.cz</a> a dalších – ale pište za sebe a piště osobně.
 </p><p>
 Jakkoli v naší zemi neplatí, že by určitý poslanec měl zodpovědnost pouze a výlučně za konkrétní region, i v České republice volíme regionálně. Nejvíce vám tak budou pravděpodobně naslouchat ti politici, kteří kandidovali ve vašem volebním obvodě, protože budou chtít být zvoleni znovu. Navíc, jako zástupci tohoto obvodu v parlamentu pro něj pravděpodobně budou moci nejvíce udělat. Kdo ví, možná zjistíte, že „váš“ poslanec má kancelář přímo „za rohem“ :-)
 </p>
@@ -88,6 +88,8 @@ I když v KohoVolit.eu toho děláme spoustu užitečného (mrkněte se třeba 
 Plánujeme aplikaci postupně rozšiřovat a prvními kroky budou právě vláda a krajská zastupitelstva. Chtěli byste nám s tím pomoci? <a href="/contact">Kontaktujte nás!</a> Nebo můžete na vývoj <a href="/support">přispět</a>. 
 </p><p>
 Můžeme do systému ale přidat i úplně malou obec, pokud o to někdo projeví zájem a dodá nám e-mailové kontakty na místní zastupitelstvo – pro tuto možnost nás také <a href="/contact">kontaktujte</a>.
+</p><p>
+Představitelům obcí, měst a krajů můžete také posílat <a href="http://www.podnety.cz/podnet-cislo-20100805175814">stručné podněty</a> k  nápravě stavu přes <a href="http://www.podnety.cz/vlozit-podnet">formulář občanského sdružení Podněty.cz</a>.
 </p>
 
 <h3 id="q8">8. Proč bráníme posílání předpřipravených e-mailů?</h3>
@@ -115,6 +117,8 @@ Přímo na {$smarty.const.WTT_TITLE} pro to budeme využívat následující kan
 Pokud zprávu označíte jako soukromou, pouze vy budete vědět jestli vám adresát odpověděl. Po dvou týdnech vám proto pošleme e-mail, kde se vás zeptáme, jestli vám byla doručena odpověď. Stačí jednoduše kliknout na jeden ze dvou odkazů v těle e-mailu.
 </p><p>
 Data z veřejného zobrazení e-mailů a získaná dotazovaním budeme využívat k sestavování tabulek poslanců, senátorů a stran podle toho, jak odpovídají na dotazy občanů a výsledky budeme medializovat.
+</p><p>
+Obci a kraji můžete také podat podnět k nápravě stavu, na který, pokud je řádně podán, představitelé veřejné správy (podle zákona o obcích či krajích) odpovědět musí. Databázi občanských podnětů a žádostí o informace zřídilo <a href="http://www.podnety.cz/prezentace-projektu">o.s. Podněty.cz</a>.
 </p>
 
 <h3 id="q11">11.  Co když mi neodpoví?</h3>
