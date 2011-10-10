@@ -15,11 +15,13 @@ class SmartyWtt extends Smarty
 
 		$this->clearAllAssign();
 	}
-	
+
 	public function clearAllAssign()
 	{
+		global $locale;
+
 		parent::clearAllAssign();
-		$this->assign('locale', LOCALE);
+		$this->assign('locale', $locale);
 	}
 }
 

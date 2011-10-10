@@ -3,9 +3,9 @@
 {block name=title}{$smarty.const.WTT_TITLE} – Napsat zprávu{/block}
 
 {block name=head}
-<script type="text/javascript" src="locale/{$locale}/LC_MESSAGES/locale.js"></script>
+<script type="text/javascript" src="locale/{$locale.system_locale}/LC_MESSAGES/locale.js"></script>
 <script type="text/javascript" src="js/i18n.js"></script>
-<script type="text/javascript" src="js/jquery.validationEngine-{$locale}.js"></script>
+<script type="text/javascript" src="js/jquery.validationEngine-{$locale.system_locale}.js"></script>
 <script type="text/javascript" src="js/jquery.validationEngine.js"></script>
 <script type="text/javascript" src="js/write.js"></script>
 <link rel="stylesheet" href="css/validationEngine.jquery.css" type="text/css"/>

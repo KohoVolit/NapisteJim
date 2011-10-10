@@ -10,7 +10,7 @@ $(document).ready(function() {
 $(document).ready(function() {
   $("#search_results-send").RSV({
     rules: [
-      "required,mp,"+_("Vyberte alespoň jednoho politika, prosím."),
+      "required,mp,"+_("Choose at least one representative, please."),
     ]
   });
 });
@@ -19,12 +19,13 @@ $(document).ready(function() {
   $("#search_results-submit-mps").button();
   $("#search_results-submit-geocode").button();
 });
+
 //geocoding + form
 $(document).ready(function() {
- initialize(lat,lng,zoom);
- //set address
- $('#search_results-geocode-address').val(address);
- codeAddress();
+	initialize(map_center_lat, map_center_lng, map_zoom);
+	//set address
+	$('#search_results-geocode-address').val(address);
+	codeAddress();
 });
 
 //define global variables
@@ -37,7 +38,7 @@ var box = [];  //values in boxes
   box[3] = '';
 
 //initialize map
-function initialize(lat,lng,zoom) {
+function initialize(lat, lng, zoom) {
 	//geocoder = new google.maps.Geocoder();
 	var latlng = new google.maps.LatLng(lat, lng);
 	var myOptions = {
@@ -55,10 +56,10 @@ function codeAddress() {
   $('#search_results-message-debug').hide();
   $('#search_results-message').hide();
 
-  var address = document.getElementById("search_results-geocode-address").value + ',' + parent_region; // e.g.:'+ 'Česká republika'
+  var address = document.getElementById("search_results-geocode-address").value + ', ' + country_name;
     
     geocoder = new google.maps.Geocoder();
-    geocoder.geocode( { "address":address,"language":lang,"region":reg}, function(results, status) {
+    geocoder.geocode({"address": address, "language": lang, "region": country_code}, function(results, status) {
 	if (status == google.maps.GeocoderStatus.OK) {
 	  //clear previous marker
 	  clearOverlays();
@@ -73,7 +74,7 @@ function codeAddress() {
       //postprocess
       processAddress(results);
 	} else { //stop whole process
-      results = show_messages(_("Try to improve your address, we have not been able to decipher this one."),"ERROR: Geocode was not successful for the following reason: " + status,'error');
+      results = show_messages(_("Be more specific entering your address, please. This one has not been recognized."), "ERROR: Geocoding has not been successful for the following reason: " + status, 'error');
     }
   });
 }
@@ -82,30 +83,30 @@ function codeAddress() {
 function processAddress(results) {
   // set variables
   var found_regions_str;
-  var regions = {"street_number":"long_name","route":"long_name","neighborhood":"long_name","sublocality":"long_name","locality":"short_name", "administrative_area_level_2":"long_name", "administrative_area_level_1":"long_name","country":"long_name"};
+  var regions = {"street_number":"long_name", "route":"long_name", "neighborhood":"long_name", "sublocality":"long_name", "locality":"short_name", "administrative_area_level_2":"long_name", "administrative_area_level_1":"long_name", "country":"long_name"};
   
   //extract regions from address
-  found_regions_str = extract_regions(results,regions);
+  found_regions_str = extract_regions(results, regions);
   
   //check if address in given region
-  var check1 = check_in_region(results[0].address_components, parent_region_type,"long_name",parent_region);
+  var check1 = check_in_region(results[0].address_components, "country", "long_name", country_name);
   if (!check1) {
-    show_messages(sprintf(_("The address is not in region %s. Enter a new address, please"),parent_region),"check1",'error');
+    show_messages(sprintf(_("The address is not in country %s. Enter a new address, please."), country_name), "check1", 'error');
   } else {
   
     //check if address geocoded enough
-    var conditions = new Array(new Array(region_check,"long_name"));
-    var check2 = check_address_enough(results[0].address_components,conditions);
+    var conditions = new Array(new Array(required_address_level, "long_name"));
+    var check2 = check_address_enough(results[0].address_components, conditions);
     if (!check2) {
       //try reverse geocoding
       //show_messages("check2","check2",'');	//debug only
-      codeLatLng(results[0].geometry.location.lat(),results[0].geometry.location.lng());
+      codeLatLng(results[0].geometry.location.lat(), results[0].geometry.location.lng());
     } else {
       found_regions_str += '&formatted_address=' + encodeURIComponent(results[0].formatted_address);
       found_regions_str += '&latitude=' + results[0].geometry.location.lat();
       found_regions_str += '&longitude=' + results[0].geometry.location.lng();
-	  show_messages(_("Address found") + ": " + results[0].formatted_address,"",'alert');	
-      ajaxForm('ajax/address2mps.php',found_regions_str,'#search_results-result');  
+	  show_messages(_("Address found: ") + results[0].formatted_address, "", 'alert');	
+      ajaxForm('ajax/address_representatives.php', found_regions_str, '#search_results-result');  
       anticycle = 0;
       //clear boxes + previous draggable (C+B)
       for (i=1;i<=3;i++) {
@@ -144,20 +145,20 @@ function ajaxForm(page,data,result_div){
 }
 
 //reverse geocoding
-function codeLatLng(lat,lng) {
+function codeLatLng(lat, lng) {
   if (anticycle > 0) {
-    show_messages(_("Try to improve your address, we have not been able to decipher this one."),"Anticycle check in reverse geocoding",'error');
+    show_messages(_("Be more specific entering your address, please. This one has not been recognized."), "Anticycle check in reverse geocoding", 'error');
   } else {
     var latlng = new google.maps.LatLng(lat, lng);
-    geocoder.geocode({'latLng': latlng,"language":lang,"region":reg}, function(results, status) {
+    geocoder.geocode({'latLng': latlng, "language": lang, "region": country_code}, function(results, status) {
       if (status == google.maps.GeocoderStatus.OK) {
         //alert(dump(results));
         if (results[1]) {
         } else {
-          show_messages(_("Try to improve your address, we have not been able to decipher this one."),"No results found for reverse geocoding",'error');
+          show_messages(_("Be more specific entering your address, please. This one has not been recognized."), "No results found for reverse geocoding", 'error');
         }
       } else {
-        show_messages(_("Try to improve your address, we have not been able to decipher this one."),"Reverse Geocoder failed due to: " + status,'error');
+        show_messages(_("Be more specific entering your address, please. This one has not been recognized."), "Reverse Geocoder failed due to: " + status, 'error');
       }
       anticycle++;
       processAddress(results);
@@ -271,7 +272,7 @@ $(document).ready(function() {
       }
     }
     if (warn) {
-		alert(_('Lze vybrat max. 3 adresáty. Pro přidání dalšího adresáta nejprve jiného, prosím, odeberte. Nebo použíjte přetažení'));
+		alert(_('Three representatives can be chosen at most. Remove one of the chosen representatives first to add another one or use drag and drop, please.'));
     } else {
       //get selectedId
       var selectedIdAr = $(this).attr('id').split('-');
@@ -320,7 +321,7 @@ function selectAction(selectedId,boxId) {
     $(".mp-"+shortSelectedId).draggable({ disabled: true });
     $(".mp-clicked-"+shortSelectedId).draggable({ disabled: true });
     //get html
-	ajaxMp('ajax/id2mp_search_results.php','id='+selectedId,$("#search_results-addressee-box-"+boxId));
+	ajaxMp('ajax/mp_details.php', 'id=' + selectedId, $("#search_results-addressee-box-" + boxId));
 	//insert id into form			
 	box[boxId] = selectedId;
 	$("#search_results-input").val(setFormValue(box));

@@ -2,7 +2,7 @@
 
 {block name=title}{$smarty.const.WTT_TITLE} – Výběr{/block}
 {block name=head}
-<script type="text/javascript" src="locale/{$locale}/LC_MESSAGES/locale.js"></script>
+<script type="text/javascript" src="locale/{$locale.system_locale}/LC_MESSAGES/locale.js"></script>
 <script type="text/javascript" src="js/i18n.js"></script>
 <script type="text/javascript" src="js/jquery.rsv.js"></script>
 <script type="text/javascript" src="js/search_results_advanced.js"></script>

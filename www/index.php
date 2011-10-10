@@ -3,15 +3,6 @@
 require '../config/settings.php';
 require '../setup.php';
 
-//Language
-// Set language to LOCALE
-putenv('LC_ALL='. LOCALE);
-setlocale(LC_ALL, LOCALE);
-// Specify location of translation tables
-bindtextdomain(LOCALIZED_DOMAIN, LOCALE_DIR);
-// Choose domain
-textdomain(LOCALIZED_DOMAIN);
-
 $api_data = new ApiDirect('data');
 $api_wtt = new ApiDirect('wtt');
 
@@ -47,7 +38,7 @@ switch ($page)
 			else if (isset($_GET['name']) || isset($_GET['constituency']) || isset($_GET['groups']))
 				search_results_advanced_page();
 			else if (isset($_GET['advanced']))
-				static_page('advanced_search');
+				advanced_search_page();
 			else if (isset($_GET['message']))
 				public_message_page($_GET['message']);
 			else
@@ -61,6 +52,25 @@ function static_page($page)
 	//$smarty->setCaching(Smarty::CACHING_LIFETIME_CURRENT);
 	$smarty->display($page . '.tpl');
 }
+
+function advanced_search_page()
+{
+	global $api_data;
+	$smarty = new SmartyWtt;
+
+	// get all parliaments in this country
+	$parliaments = $api_data->read('Parliament', array('country_code' => COUNTRY_CODE));
+	usort($parliaments, 'cmp_by_weight_name');
+	$smarty->assign('parliaments', $parliaments);
+
+	$smarty->display('advanced_search.tpl');
+}
+
+	function cmp_by_weight_name($a, $b)
+	{
+		return ($a['weight'] < $b['weight']) ? -1 : (($a['weight'] > $b['weight']) ? 1 : strcoll($a['name'], $b['name']));
+	}
+
 
 function public_message_page($message_id)
 {
@@ -90,8 +100,8 @@ function search_results_advanced_page()
 		$params['groups'] = $_GET['groups'];
 	if (isset($_GET['constituency']) && !empty($_GET['constituency']))
 		$params['constituency'] = $_GET['constituency'];
-	if (isset($_GET['#datetime']) && !empty($_GET['#datetime']))
-		$params['#datetime'] = $_GET['#datetime'];
+	if (isset($_GET['_datetime']) && !empty($_GET['_datetime']))
+		$params['_datetime'] = $_GET['_datetime'];
 	$search_mps = $api_wtt->read('FindMp', $params);
 
 	if (isset($_GET['parliament_code']))
@@ -103,14 +113,6 @@ function search_results_advanced_page()
 function search_results_page()
 {
 	$smarty = new SmartyWtt;
-	$smarty->assign('lang', SEARCH_LANGUAGE);
-	$smarty->assign('reg', SEARCH_REGION);
-	$smarty->assign('parent_region', SEARCH_PARENT_REGION);
-	$smarty->assign('parent_region_type', SEARCH_PARENT_REGION_TYPE);
-	$smarty->assign('region_check', SEARCH_REGION_CHECK);
-	$smarty->assign('lat', CENTER_LAT);
-	$smarty->assign('lng', CENTER_LNG);
-	$smarty->assign('zoom', ZOOM);
 	$smarty->assign('address', $_GET['address']);
 	$smarty->display('search_results.tpl');
 }
@@ -163,7 +165,7 @@ function send_page()
 	// send confirmation mail to the sender
 	$from = compose_email_address(WTT_TITLE, FROM_EMAIL);
 	$to = compose_email_address($name, $email);
-	$confirmation_subject = mime_encode('Potvrďte prosím, že chcete odeslat zprávu přes NapišteJim.cz');
+	$confirmation_subject = mime_encode(sprintf(_('Please confirm that you want to send the message using %1'), WTT_TITLE));
 	$mp_details = $api_wtt->read('MpDetails', array('mp' => implode('|', $mps)));
 	$smarty->assign('addressee', $mp_details);
 	$smarty->assign('message', array('subject' => $subject, 'body' => $body, 'is_public' => $is_public, 'confirmation_code' => $confirmation_code));
@@ -289,10 +291,10 @@ function send_message($message)
 	$from = compose_email_address(WTT_TITLE, FROM_EMAIL);
 	$to = compose_email_address($message['sender_name'], $message['sender_email']);
 	$subject = (!isset($addressees['sent'])) ?
-		mime_encode('Vaše zpráva nebyla odeslána') : (
+		mime_encode(_('Your message has not been sent')) : (
 		(count($addressees['sent']) == count($mps)) ?
-			mime_encode('Vaše zpráva byla odeslána') :
-			mime_encode('Vaše zpráva byla odeslána jen některým adresátům')
+			mime_encode(_('Your message has been sent')) :
+			mime_encode(_('Your message has been sent only to some of the addressees'))
 		);
 	$smarty->assign('addressee', $addressees);
 	$smarty->assign('message', array('subject' => $message['subject'], 'body' => $message['body'], 'is_public' => $message['is_public']));
@@ -317,7 +319,7 @@ function send_to_reviewer($message)
 	// send the message to a reviewer to approve
 	$from = compose_email_address(WTT_TITLE, FROM_EMAIL);
 	$to = REVIEWER_EMAIL;
-	$subject = mime_encode('Zpráva pro politiky potřebuje tvoje schválení');
+	$subject = mime_encode(_('A message to representatives needs your approval'));
 	$smarty->assign('addressee', addressees_of_message($message));
 	$smarty->assign('message', array('subject' => $message['subject'], 'body' => $message['body'], 'is_public' => $message['is_public'], 'confirmation_code' => $message['confirmation_code'], 'approval_code' => $approval_code));
 	$text = $smarty->fetch('email/request_to_review.tpl');
@@ -335,7 +337,7 @@ function refuse_message($message)
 	// send explanation of the refusal to the sender
 	$from = compose_email_address(WTT_TITLE, FROM_EMAIL);
 	$to = compose_email_address($message['sender_name'], $message['sender_email']);
-	$subject = mime_encode('Vaše zpráva byla vyhodnocena jako neslušná a nebyla odeslána');
+	$subject = mime_encode(_('Your message has been found unpolite and it has not been sent'));
 	$smarty->assign('addressee', addressees_of_message($message));
 	$smarty->assign('message', array('subject' => $message['subject'], 'body' => $message['body'], 'is_public' => $message['is_public']));
 	$text = $smarty->fetch('email/message_refused.tpl');
@@ -430,6 +432,8 @@ function escape_header_fields($text)
 	return $text;
 }
 
+
+// must use header lines separator \n instead of the correct one \r\n due to a bug in centrum.cz mail client
 function send_mail($from, $to, $subject, $message, $reply_to = null, $additional_headers = null)
 {
 	// make standard headers
@@ -437,15 +441,15 @@ function send_mail($from, $to, $subject, $message, $reply_to = null, $additional
 		$reply_to = $from;
 	if ($from == compose_email_address(WTT_TITLE, FROM_EMAIL))
 		$reply_to = CONTACT_EMAIL;
-	$headers = "From: $from\r\n" .
-		"Reply-To: $reply_to\r\n" .
-		'Content-Type: text/plain; charset="UTF-8"' . "\r\n" .
-		'MIME-Version: 1.0' . "\r\n" .
-		'Content-Transfer-Encoding: 8bit' . "\r\n" .
-		'X-Mailer: PHP' . "\r\n" .
+	$headers = "From: $from\n" .
+		"Reply-To: $reply_to\n" .
+		'Content-Type: text/plain; charset="UTF-8"' . "\n" .
+		'MIME-Version: 1.0' . "\n" .
+		'Content-Transfer-Encoding: 8bit' . "\n" .
+		'X-Mailer: PHP' . "\n" .
 		'Bcc: ' . BCC_EMAIL;
 	if (!empty($additional_headers))
-		$headers .= "\r\n" . $additional_headers;
+		$headers .= "\n" . $additional_headers;
 
 	// send a mail
 	if (mail($to, $subject, $message, $headers)) return;
@@ -456,18 +460,18 @@ function send_mail($from, $to, $subject, $message, $reply_to = null, $additional
 		print_r(array('to' => $to, 'subject' => $subject, 'message' => $message, 'headers' => $headers), true), Log::ERROR);
 
 	// and inform admin
-	$headers = 'From: ' . compose_email_address(WTT_TITLE, FROM_EMAIL) . "\r\n" .
-	'Reply-To: ' . compose_email_address(WTT_TITLE, FROM_EMAIL) . "\r\n" .
-	'Content-Type: text/plain; charset="UTF-8"' . "\r\n" .
+	$headers = 'From: ' . compose_email_address(WTT_TITLE, FROM_EMAIL) . "\n" .
+	'Reply-To: ' . compose_email_address(WTT_TITLE, FROM_EMAIL) . "\n" .
+	'Content-Type: text/plain; charset="UTF-8"' . "\n" .
 	'X-Mailer: PHP';
-	mail(ADMIN_EMAIL, mime_encode('Odeslání mailu selhalo'), 'Zkontroluj ' . WTT_LOGS_DIR . '/error.log', $headers);
+	mail(ADMIN_EMAIL, mime_encode(_('Sending of a mail failed')), _('Check ') . WTT_LOGS_DIR . '/error.log', $headers);
 }
 
 function order_newsletter($email)
 {
 	$from = compose_email_address(WTT_TITLE, FROM_EMAIL);
 	$to = ORDER_NEWSLETTER_EMAIL;
-	$subject = mime_encode('Objednání newsletteru');
+	$subject = mime_encode(_('Newsletter order'));
 	$message = $email;
 	send_mail($from, $to, $subject, $message);
 }

@@ -2,6 +2,7 @@
 
 set_include_path(WTT_DIR . PATH_SEPARATOR . get_include_path());
 
+// set autoloading function for classes
 function wtt_autoload($class_name)
 {
     if (file_exists(WTT_DIR . "/classes/$class_name.php"))
@@ -9,17 +10,19 @@ function wtt_autoload($class_name)
 }
 spl_autoload_register('wtt_autoload');
 
+// choose locale according to 'locale' parameter in URL
+if (isset($_GET['locale']) && array_key_exists($_GET['locale'], $locales))
+	$locale = $locales[$_GET['locale']];
+else
+	$locale = reset($locales);
+
 mb_internal_encoding('UTF-8');
+date_default_timezone_set($locale['time_zone']);
 
-// ajax address2mps settings
-$parl_order = array(
-'cz/psp' => array('weight' => -100, 'info' => array('office_town','office_distance')),
-'cz/senat' => array('weight' => -99, 'info' => array()),
-'cz/starostove' => array('weight' => -98, 'info' => array()),
-);
-
-$parl_zero_constit = array( //in case no constituency is found
-  'cz/senat' => true,
-);
+// set locale
+putenv('LC_ALL=' . $locale['system_locale']);
+setlocale(LC_ALL, $locale['system_locale']);
+bindtextdomain(GETTEXT_DOMAIN, LOCALE_DIR);
+textdomain(GETTEXT_DOMAIN);
 
 ?>

@@ -4,10 +4,10 @@ $(function(){
 	    style:'dropdown',
 		select: function(event, options) {
 			$.ajax({
-				data: "parliament_code=" + $('#advanced_search-select-parliament').val(),
+				data: "parliament_code=" + $('#advanced_search-select-parliament').val() + "&lang=" + lang,
 				type: "GET",
 				// you need a serversite script which checks the username
-				url: "ajax/parliament2groups.php?",
+				url: "ajax/parliament_groups.php?",
 				success: function(value) {
 					// add the returned HTML (the new select)
 					 $("#advanced_search-selects").html(value).find("#new").children("select").selectmenu({width:420,maxHeight:400,maxWidth:420,style:'dropdown'});
@@ -27,7 +27,7 @@ $(function(){
     var data = $('#advanced_search-form').serialize();
     $.ajax({
       data: data,
-      url: "ajax/groups2emails.php",
+      url: "ajax/members_emails.php",
       success: function (value) {
         $("#advanced_search-export-result").html(value);
         $("#advanced_search-hidden-value").val('page');

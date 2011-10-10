@@ -10,7 +10,7 @@ $(document).ready(function() {
 $(document).ready(function() {
   $("#search_results-send").RSV({
     rules: [
-      "required,mp,"+_("Choose at least one representative please"),
+      "required,mp,"+_("Choose at least one representative, please."),
     ]
   });
 });
@@ -77,7 +77,7 @@ $(document).ready(function() {
       }
     }
     if (warn) {
-		alert(_('Lze vybrat max. 3 adresáty. Pro přidání dalšího adresáta nejprve jiného, prosím, odeberte. Nebo použíjte přetažení'));
+		alert(_('Three representatives can be chosen at most. Remove one of the chosen representatives first to add another one or use drag and drop, please.'));
     } else {
       //get selectedId
       var selectedIdAr = $(this).attr('id').split('-');
@@ -126,7 +126,7 @@ function selectAction(selectedId,boxId) {
     $(".mp-"+shortSelectedId).draggable({ disabled: true });
     $(".mp-clicked-"+shortSelectedId).draggable({ disabled: true });
     //get html
-	ajaxMp('ajax/id2mp_search_results.php','id='+selectedId,$("#search_results-addressee-box-"+boxId));
+	ajaxMp('ajax/mp_details.php', 'id=' + selectedId, $("#search_results-addressee-box-" + boxId));
 	//insert id into form			
 	box[boxId] = selectedId;
 	$("#search_results-input").val(setFormValue(box));

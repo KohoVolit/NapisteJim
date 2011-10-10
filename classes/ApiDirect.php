@@ -1,6 +1,8 @@
 <?php
 
-// constant API_DIR must be defined
+// API_DIR constant must be defined here and point to your API installation directory when using ApiDirect class.
+// The following check handles just internal usage of ApiDirect within the API itself.
+if (!defined('API_DIR')) define("API_DIR", API_ROOT);
 
 /**
  * ...
@@ -43,7 +45,7 @@ class ApiDirect
 	 */
 	public function readOne($resource, $params = null)
 	{
-		$result = $this->read($resource, array('#limit' => 1) + $params);
+		$result = $this->read($resource, array('_limit' => 1) + $params);
 		return count($result) > 0 ? $result[0] : array();
 	}
 

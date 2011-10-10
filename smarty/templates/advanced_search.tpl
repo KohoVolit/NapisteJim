@@ -4,6 +4,10 @@
 
 {block name=head}
 <link rel="Stylesheet" href="css/ui.selectmenu.css" type="text/css" />
+<script type="text/javascript">
+//define global variables from settings.php
+var lang = "{$locale.lang}";
+</script>
 <script type="text/javascript" src="js/ui.selectmenu.js"></script>	
 <script type="text/javascript" src="js/jquery.ui.highlight.js"></script>
 <script type="text/javascript" src="js/advanced_search.js"></script>	
@@ -14,8 +18,9 @@
     <label for="advanced_search-select-parliament" class="left">Vyberte zastupitelský sbor: </label>
     <select name="parliament_code" id="advanced_search-select-parliament" class="advanced_search-select">
       <option value="0" selected="selected">--</option>
-      <option value="cz/psp">Poslanecká sněmovna</option>
-      <option value="cz/senat">Senát</option>
+	  {foreach $parliaments as $p}
+      <option value="{$p.code}">{$p.name}</option>
+	  {/foreach}
     </select>
   <div id="advanced_search-selects"></div>
   <div id="advanced_search-note"></div>

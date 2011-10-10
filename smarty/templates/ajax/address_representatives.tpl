@@ -1,5 +1,5 @@
 <div class='wrapper'>
-{foreach $data as $parliament}
+{foreach $representatives as $parliament}
 <div class="parliament ui-widget" id="parliament-{$parliament.code}">
   <div class="parliament-head ui-accordion ui-accordion-icons ui-helper-reset" id="parliament-head-{$parliament.code}" > 
     <h3 class="parliament-head-name ui-accordion-header" id="parliament-head-name-{$parliament.code}" >
@@ -11,22 +11,25 @@
     </div>
   </div>
   <div id="parliament-body-{$parliament.code}" class="parliament-body">
-    <div class="constituencies-message">
-      {$parliament.message}
-    </div>
+	{if count($parliament.constituency) > 1}
+    <div class="constituencies-message">{t}We were not able to recognize exactly which constituency your address belongs to.{/t}</div>
+	{/if}
     {foreach $parliament.constituency as $ckey => $constituency}
       <div id="constituency-{$ckey}" class="constituency">
-        {foreach $constituency.group as $group}
-          <div id="group-{$group.friendly_name}" class="group">
+		{if $constituency@total > 1}
+		<div class="constituency-description">{$constituency.name}: {$constituency.description}</div>
+		{/if}
+        {foreach $constituency.group as $gkey => $group}
+          <div id="group-{$gkey}" class="group">
           	<div class="wrapper">
           	  	<div class="group-logo left">
-		          <img src="images/1x1.png" class="party-logo party-logo-{$group.friendly_name}" title="{$group.name}" alt="{$group.name}" />
+		          <img src="{$smarty.const.API_FILES_URL}/{$group.logo}" class="party-logo" title="{$group.name}" alt="{$group.short_name}" />
 		        </div>
 		        {foreach $group.mp as $mp}
 		          <div class="group-mps">
 		            <div id="mp-{$parliament.code}/{$mp.id}" class="mp">
 		              <span class="mp-name">
-		                <span id="mp-name-name-{$parliament.code}/{$mp.id}" class="mp-name-name mp-clicked-off mp-clicked-{$mp.id} draggable">{$mp.last_name}</span>&nbsp;<span	class="mp-name-info dimmed small-text">{$mp.info}</span>
+		                <span id="mp-name-name-{$parliament.code}/{$mp.id}" class="mp-name-name mp-clicked-off mp-clicked-{$mp.id} draggable">{$mp.last_name}</span>&nbsp;<span	class="mp-name-info dimmed small-text">{$mp.additional_info}</span>
 		              </span>
 		            </div>
 		          </div>

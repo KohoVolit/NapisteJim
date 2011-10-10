@@ -12,7 +12,7 @@
 	<div class="message-left left">Předmět:</div>
 	<div id="message-subject" class="message-right">{$message.subject}</div>
 	<div class="message-left left">Datum:</div>
-	<div class="message-right">{$message.sent_on|date_format:$smarty.const.LOCALIZED_DATE_FORMAT}</div>
+	<div class="message-right">{$message.sent_on|date_format:$locale.date_format}</div>
 	<div id="message-body" class="message-right">{$message.body|nl2br}</div>
 </div>
 {foreach $responses as $response}
