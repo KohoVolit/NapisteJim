@@ -5,16 +5,16 @@
 <script type="text/javascript" src="locale/{$locale.system_locale}/LC_MESSAGES/locale.js"></script>
 <script type="text/javascript" src="js/i18n.js"></script>
 <script type="text/javascript" src="js/jquery.rsv.js"></script>
-<script type="text/javascript" src="js/search_results_advanced.js"></script>
+<script type="text/javascript" src="js/choose_advanced.js"></script>
 {/block}
 {block name=body}
-<h2>{t}Adresáti{/t}</h2><div id="search_results-up-to">{t}Přetažením jmen do boxů nebo kliknutím na jméno vyberte ze svých politiků nejvíce tři adresáty Vaší zprávy. Dalším  politikům pak už stejnou zprávu nebudete moct odeslat.{/t}</div>
-  <div id="search_results-addressee-box-1" class="addressee-box rounded-corners droppable"></div>
-  <div id="search_results-addressee-box-2" class="addressee-box rounded-corners droppable"></div>
-  <div id="search_results-addressee-box-3" class="addressee-box rounded-corners droppable"></div>
-  <form id="search_results-send" action="" >
-    <input type="hidden" name="mp" id="search_results-input" value="" />
-    <input id="search_results-submit-mps" type="submit" value="{t}Napište jim!{/t}"/>
+<h2>{t}Adresáti{/t}</h2><div id="choose-up-to">{t}Přetažením jmen do boxů nebo kliknutím na jméno vyberte ze svých politiků nejvíce tři adresáty Vaší zprávy. Dalším  politikům pak už stejnou zprávu nebudete moct odeslat.{/t}</div>
+  <div id="choose-addressee-box-1" class="addressee-box rounded-corners droppable"></div>
+  <div id="choose-addressee-box-2" class="addressee-box rounded-corners droppable"></div>
+  <div id="choose-addressee-box-3" class="addressee-box rounded-corners droppable"></div>
+  <form id="choose-send" action="" >
+    <input type="hidden" name="mp" id="choose-input" value="" />
+    <input id="choose-submit-mps" type="submit" value="{t}Napište jim!{/t}"/>
   </form>  
              <div class="group-mps">
 				{foreach $mps as $mp}

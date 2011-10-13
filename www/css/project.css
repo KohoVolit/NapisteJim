@@ -6,18 +6,6 @@
 .clearFieldBlurred { color: #888; font-style: italic; }
 .clearFieldActive { color: #000; }
 
-/* parties' logos sprite */
-.party-logo {
-   background: url(/images/parties.png) no-repeat top left;
-}
-.party-logo-cssd{ background-position: 0 0; width: 43px; height: 43px; } 
-.party-logo-kdu-csl{ background-position: 0 -93px; width: 43px; height: 43px; } 
-.party-logo-kscm{ background-position: 0 -186px; width: 43px; height: 43px; } 
-.party-logo-nezarazeni{ background-position: 0 -279px; width: 43px; height: 43px; } 
-.party-logo-ods{ background-position: 0 -372px; width: 43px; height: 43px; } 
-.party-logo-top09-s{ background-position: 0 -465px; width: 43px; height: 43px; } 
-.party-logo-vv{ background-position: 0 -558px; width: 43px; height: 43px; } 
-
 /*rest*/
 .rounded-corners {
      -moz-border-radius: 20px;
@@ -259,7 +247,7 @@ fieldset.search {
 }*/
 
 /**
-* search_results
+* choose
 */
 
 .group{
@@ -272,7 +260,7 @@ fieldset.search {
 
 
 /* map */
-#search_results-map_canvas {
+#choose-map_canvas {
   height:250px;
   width:250px;
   float:right;
@@ -280,34 +268,34 @@ fieldset.search {
 
 /* boxes */
 
-#search_results-send{
+#choose-send{
 background: #fff url(/images/back-znacka.png) no-repeat;
 }
-#search_results-submit-mps{
+#choose-submit-mps{
 margin:65 100px;
 }
-#search_results-addressee {
+#choose-addressee {
 display:block;
 }
-#search_results-addressee h2 {
+#choose-addressee h2 {
 	margin-top: 100px;
 }
-#search_results-up-to {
+#choose-up-to {
 	clear: both;
 	margin-bottom: 10px;
 }
-#search_results-search-wrapper {
+#choose-search-wrapper {
 	margin-top: 20px;
 	margin-right: 300px;
 }
-#search_results-message {
+#choose-message {
 	margin-right: 300px;
 }
-#search_results-geocode-address {
+#choose-geocode-address {
 	width: 250px;
 	font-size: 1em;
 }
-#search_results-submit-geocode {
+#choose-submit-geocode {
 	font-size: 1em;
 	padding: 2px 10px;
 }
@@ -321,7 +309,7 @@ display:block;
   display:block;
 }
 
-.search_results-up-to{
+.choose-up-to{
 min-width:220px;
 }
 
@@ -383,33 +371,33 @@ min-width:220px;
 }
 
 /* debug geocoding */
-#search_results-message-debug {
+#choose-message-debug {
   color: #888; 
   background-color: #BBB;
   display: none;
 }
 
 /* advanced search */
-#advanced_search-form label {
+#search_advanced-form label {
   width: 18em;
   display:inline-block;
 }
-/*#advanced_search-form {
+/*#search_advanced-form {
     margin-left: auto;
     margin-right: auto;
     width: 45em;
 }*/
-#advanced_search-submit {
+#search_advanced-submit {
   margin: 1em 0 1em 0;
   display:block;
 }
-#advanced_search-export {
+#search_advanced-export {
 
 }
 /*#advanced-search-export-form {
   text-align: center;
 }*/
-#advanced_search-page-wrapper {
+#search_advanced-page-wrapper {
   max-width: 1000px;
   width: 90%;
   margin: 0 auto;

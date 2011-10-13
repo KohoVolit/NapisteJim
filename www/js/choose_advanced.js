@@ -1,14 +1,14 @@
 /**
-* js for search_results_advanced page
+* js for choose_advanced page
 */
 
 //form validation
 $(document).ready(function() {
-  $("#search_results-input").val('');
+  $("#choose-input").val('');
 });
 
 $(document).ready(function() {
-  $("#search_results-send").RSV({
+  $("#choose-send").RSV({
     rules: [
       "required,mp,"+_("Choose at least one representative, please."),
     ]
@@ -32,7 +32,7 @@ $(document).ready(function() {
 			hoverClass: "ui-state-active-border",
 			drop: function( event, ui ) { //(B+A) 				
 			    var thisIdAr = $(this).attr('id').split('-');
-			    var thisId = thisIdAr[thisIdAr.length-1];  //id of box, from e.g. search_results-addressee-box-2
+			    var thisId = thisIdAr[thisIdAr.length-1];  //id of box, from e.g. choose-addressee-box-2
 			    var selectedIdAr = ui.draggable.attr('id').split('-');
 			    var selectedId = selectedIdAr[selectedIdAr.length-1]; //id of selected mp
 			    var prevId = box[thisId]; //id of previous mp in the box
@@ -46,7 +46,7 @@ $(document).ready(function() {
 		    appendTo: "body",
 			helper: "clone"
 		});
-		$("#search_results-submit-mps").button();
+		$("#choose-submit-mps").button();
 });
 
 //deselect on X	(B+C)
@@ -54,7 +54,7 @@ $(document).ready(function() {
   $(".box-x").live('click',function() {
     //get boxId
     var boxIdAr = $(this).closest(".addressee-box").attr('id').split('-');
-    var boxId = boxIdAr[boxIdAr.length-1];  //id of box, from e.g. search_results-addressee-box-2
+    var boxId = boxIdAr[boxIdAr.length-1];  //id of box, from e.g. choose-addressee-box-2
     //get prevId
     var prevId = box[boxId];  //id of prev MP in box
     //B
@@ -126,17 +126,17 @@ function selectAction(selectedId,boxId) {
     $(".mp-"+shortSelectedId).draggable({ disabled: true });
     $(".mp-clicked-"+shortSelectedId).draggable({ disabled: true });
     //get html
-	ajaxMp('ajax/mp_details.php', 'id=' + selectedId, $("#search_results-addressee-box-" + boxId));
+	ajaxMp('ajax/mp_details.php', 'id=' + selectedId, $("#choose-addressee-box-" + boxId));
 	//insert id into form			
 	box[boxId] = selectedId;
-	$("#search_results-input").val(setFormValue(box));
+	$("#choose-input").val(setFormValue(box));
 }
 
 //clear box / C
 function clearAction(boxId) {
-  $("#search_results-addressee-box-"+boxId).html('');
+  $("#choose-addressee-box-"+boxId).html('');
   box[boxId] = '';
-  $("#search_results-input").val(setFormValue(box));
+  $("#choose-input").val(setFormValue(box));
 }
 
 //show hide

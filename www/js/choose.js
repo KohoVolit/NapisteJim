@@ -1,14 +1,14 @@
 /**
-* js for search_results page
+* js for choose page
 */
 
 //form validation
 $(document).ready(function() {
-  $("#search_results-input").val('');
+  $("#choose-input").val('');
 });
 
 $(document).ready(function() {
-  $("#search_results-send").RSV({
+  $("#choose-send").RSV({
     rules: [
       "required,mp,"+_("Choose at least one representative, please."),
     ]
@@ -16,15 +16,15 @@ $(document).ready(function() {
 });
 //active ui buttons
 $(document).ready(function() {
-  $("#search_results-submit-mps").button();
-  $("#search_results-submit-geocode").button();
+  $("#choose-submit-mps").button();
+  $("#choose-submit-geocode").button();
 });
 
 //geocoding + form
 $(document).ready(function() {
 	initialize(map_center_lat, map_center_lng, map_zoom);
 	//set address
-	$('#search_results-geocode-address').val(address);
+	$('#choose-geocode-address').val(address);
 	codeAddress();
 });
 
@@ -46,17 +46,17 @@ function initialize(lat, lng, zoom) {
 	  center: latlng,
 	  mapTypeId: google.maps.MapTypeId.ROADMAP
 	};  
-	map = new google.maps.Map(document.getElementById("search_results-map_canvas"), myOptions);
+	map = new google.maps.Map(document.getElementById("choose-map_canvas"), myOptions);
 	codeAddress();
 }
 
 
 //geocode address
 function codeAddress() {
-  $('#search_results-message-debug').hide();
-  $('#search_results-message').hide();
+  $('#choose-message-debug').hide();
+  $('#choose-message').hide();
 
-  var address = document.getElementById("search_results-geocode-address").value + ', ' + country_name;
+  var address = document.getElementById("choose-geocode-address").value + ', ' + country_name;
     
     geocoder = new google.maps.Geocoder();
     geocoder.geocode({"address": address, "language": lang, "region": country_code}, function(results, status) {
@@ -106,7 +106,7 @@ function processAddress(results) {
       found_regions_str += '&latitude=' + results[0].geometry.location.lat();
       found_regions_str += '&longitude=' + results[0].geometry.location.lng();
 	  show_messages(_("Address found: ") + results[0].formatted_address, "", 'alert');	
-      ajaxForm('ajax/address_representatives.php', found_regions_str, '#search_results-result');  
+      ajaxForm('ajax/address_representatives.php', found_regions_str, '#choose-result');  
       anticycle = 0;
       //clear boxes + previous draggable (C+B)
       for (i=1;i<=3;i++) {
@@ -120,7 +120,7 @@ function processAddress(results) {
 		}
       }
       //add locality into hidden input
-      $("#search_results-input-2").val(g_find_type_in_results(results[0].address_components,"locality","long_name"));
+      $("#choose-input-2").val(g_find_type_in_results(results[0].address_components,"locality","long_name"));
     }
   }
   
@@ -199,17 +199,17 @@ function extract_regions(results,regions) {
 //finds value for 
 
 function show_messages(str1,str2,type) {
-    $('#search_results-message').hide();
-    //$('#search_results-message').html(str1);
+    $('#choose-message').hide();
+    //$('#choose-message').html(str1);
     if (type == 'error') {
-       $('#search_results-message').writeError(str1);
+       $('#choose-message').writeError(str1);
     } else {
-      $('#search_results-message').writeAlert(str1);
+      $('#choose-message').writeAlert(str1);
     }
-    $('#search_results-message').fadeIn('slow');
-    $('#search_results-message-debug').hide();
-    $('#search_results-message-debug').html(str2);
-    //$('#search_results-message-debug').fadeIn('slow'); //for debugging only!
+    $('#choose-message').fadeIn('slow');
+    $('#choose-message-debug').hide();
+    $('#choose-message-debug').html(str2);
+    //$('#choose-message-debug').fadeIn('slow'); //for debugging only!
     
 }
 
@@ -232,7 +232,7 @@ $(document).ready(function() {
 			hoverClass: "ui-state-active-border",
 			drop: function( event, ui ) {  //(B+A)
 			    var thisIdAr = $(this).attr('id').split('-');
-			    var thisId = thisIdAr[thisIdAr.length-1];  //id of box, from e.g. search_results-addressee-box-2
+			    var thisId = thisIdAr[thisIdAr.length-1];  //id of box, from e.g. choose-addressee-box-2
 			    var selectedIdAr = ui.draggable.attr('id').split('-');
 			    var selectedId = selectedIdAr[selectedIdAr.length-1]; //id of selected mp
 			    var prevId = box[thisId]; //id of previous mp in the box
@@ -249,7 +249,7 @@ $(document).ready(function() {
   $(".box-x").live('click',function() {
     //get boxId
     var boxIdAr = $(this).closest(".addressee-box").attr('id').split('-');
-    var boxId = boxIdAr[boxIdAr.length-1];  //id of box, from e.g. search_results-addressee-box-2
+    var boxId = boxIdAr[boxIdAr.length-1];  //id of box, from e.g. choose-addressee-box-2
     //get prevId
     var prevId = box[boxId];  //id of prev MP in box
     //B
@@ -321,17 +321,17 @@ function selectAction(selectedId,boxId) {
     $(".mp-"+shortSelectedId).draggable({ disabled: true });
     $(".mp-clicked-"+shortSelectedId).draggable({ disabled: true });
     //get html
-	ajaxMp('ajax/mp_details.php', 'id=' + selectedId, $("#search_results-addressee-box-" + boxId));
+	ajaxMp('ajax/mp_details.php', 'id=' + selectedId, $("#choose-addressee-box-" + boxId));
 	//insert id into form			
 	box[boxId] = selectedId;
-	$("#search_results-input").val(setFormValue(box));
+	$("#choose-input").val(setFormValue(box));
 }
 
 //clear box / C
 function clearAction(boxId) {
-  $("#search_results-addressee-box-"+boxId).html('');
+  $("#choose-addressee-box-"+boxId).html('');
   box[boxId] = '';
-  $("#search_results-input").val(setFormValue(box));
+  $("#choose-input").val(setFormValue(box));
 }
 
 //show hide

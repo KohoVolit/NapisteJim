@@ -34,11 +34,11 @@ switch ($page)
 			if (isset($_GET['mp']))
 				write_page();
 			else if (isset($_GET['address']))
-			  	search_results_page();
+			  	choose_page();
 			else if (isset($_GET['name']) || isset($_GET['constituency']) || isset($_GET['groups']))
-				search_results_advanced_page();
+				choose_advanced_page();
 			else if (isset($_GET['advanced']))
-				advanced_search_page();
+				search_advanced_page();
 			else if (isset($_GET['message']))
 				public_message_page($_GET['message']);
 			else
@@ -53,7 +53,7 @@ function static_page($page)
 	$smarty->display($page . '.tpl');
 }
 
-function advanced_search_page()
+function search_advanced_page()
 {
 	global $api_data;
 	$smarty = new SmartyWtt;
@@ -63,7 +63,7 @@ function advanced_search_page()
 	usort($parliaments, 'cmp_by_weight_name');
 	$smarty->assign('parliaments', $parliaments);
 
-	$smarty->display('advanced_search.tpl');
+	$smarty->display('search_advanced.tpl');
 }
 
 	function cmp_by_weight_name($a, $b)
@@ -80,7 +80,7 @@ function public_message_page($message_id)
 	// get message
 	$message = $api_data->readOne('Message', array('id' => $message_id));
 	if ($message['is_public'] == 'no')
-		return $smarty->display('message-private.tpl');
+		return $smarty->display('message_private.tpl');
 	$smarty->assign('message', $message);
 
 	// get responses to the message
@@ -90,7 +90,7 @@ function public_message_page($message_id)
 	$smarty->display('message.tpl');
 }
 
-function search_results_advanced_page()
+function choose_advanced_page()
 {
 	global $api_wtt;
 	$smarty = new SmartyWtt;
@@ -107,14 +107,14 @@ function search_results_advanced_page()
 	if (isset($_GET['parliament_code']))
 		$smarty->assign('parliament', array('code' => $_GET['parliament_code']));
 	$smarty->assign('mps', $search_mps);
-	$smarty->display('search_results_advanced.tpl');
+	$smarty->display('choose_advanced.tpl');
 }
 
-function search_results_page()
+function choose_page()
 {
 	$smarty = new SmartyWtt;
 	$smarty->assign('address', $_GET['address']);
-	$smarty->display('search_results.tpl');
+	$smarty->display('choose.tpl');
 }
 
 function write_page()
