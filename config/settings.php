@@ -7,7 +7,7 @@ const API_FILES_URL = 'http://api.kohovolit.eu/files';
 const SMARTY_DIR = '/usr/local/lib/php/Smarty/libs/';
 
 define("WTT_LOGS_DIR", WTT_DIR . '/logs');
-define("LOCALE_DIR", WTT_DIR . '/locale');
+define("LOCALE_DIR", WTT_DIR . '/www/locale');
 
 // domain and service e-mail addresses
 const WTT_TITLE = 'NapišteJim.cz';
