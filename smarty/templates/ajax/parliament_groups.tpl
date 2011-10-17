@@ -1,5 +1,5 @@
 <div id="new">
-<label for="constituency" class="left">{t}Constituency: {/t}</label>
+<label for="constituency" class="left">{t}Constituency:{/t} </label>
 <select name="constituency" id="constituency">
 <option value="0" selected="selected">{t}any{/t}</option>
 {foreach $constituencies as $c}
@@ -18,7 +18,7 @@
 {/foreach}
 </div>
 <input id="search_advanced-hidden-value" value="page" type="hidden" />
-<input id="search_advanced-submit" value="{t}Write to chosen politicians >>{/t}" type="submit" />
+<input id="search_advanced-submit" value="{t}Write to chosen politicians{/t}" type="submit" />
 
 
 <div id="search_advanced-note" class="ui-widget">

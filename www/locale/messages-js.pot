@@ -1,0 +1,43 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-10-17 16:20+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: dummy.js
+msgid "thousands_sep"
+msgstr ""
+
+#: choose.js:13 choose_advanced.js:13
+msgid "Choose at least one representative, please."
+msgstr ""
+
+#: choose.js:77 choose.js:150 choose.js:158 choose.js:161
+msgid "Be more specific entering your address, please. This one has not been recognized."
+msgstr ""
+
+#: choose.js:94
+#, python-format
+msgid "The address is not in country %s. Enter a new address, please."
+msgstr ""
+
+#: choose.js:108
+msgid "Address found:"
+msgstr ""
+
+#: choose.js:275 choose_advanced.js:80
+msgid "Three representatives can be chosen at most. Remove one of the chosen representatives first to add another one or use drag and drop, please."
+msgstr ""

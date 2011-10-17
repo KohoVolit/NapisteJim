@@ -1,13 +1,13 @@
 {extends file="layout.tpl"}
 
 {block name=title}
-Odmítnuto
+{t}Refused{/t}
 {/block}
 
 {block name=body}
-<h3>Odmítnuto</h3>
+<h3>{t}Refused{/t}</h3>
 
-<p>Odmítl(a) jste odeslání této zprávy jako urážející nebo neslušné. Odesílatel byl informován s vysvětlením.</p>
+<p>{t}You refused sending of this message as an offensive or impolite one. The sender was informed with an explanation.{/t}</p>
 
-<p class="small-text">Toto okno můžete nyní zavřít.</p>
+<p class="small-text">{t}You can close this window now.{/t}</p>
 {/block}

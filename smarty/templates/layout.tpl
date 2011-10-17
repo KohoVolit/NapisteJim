@@ -14,11 +14,9 @@
 </div>
 {/block}
 
-
 {block name=basic_body}
 <div id="wrapper-page">
 {block name=body}
 {/block}
 </div>
 {/block}
-

@@ -2,7 +2,7 @@
 <head>
 	<title>{block name=title}{/block}</title>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
-	<meta name="Description" content="Napište svým zastupitelům. Najdete je snadno dle své adresy nebo v pokročilém hledání. Co píši politikům jiní a co politici odpovídají?" />
+	<meta name="Description" content="{t}MSGID_HTML_HEAD_DESCRIPTION{/t}" />
 	<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
 	<link rel="icon" href="/images/favicon.ico" type="image/x-icon">
 	<link rel="Stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/ui-lightness/jquery-ui.css" type="text/css" />
@@ -18,15 +18,15 @@
 	{block name=basic_body}{/block}
 	<div id="page-footer">
 		<div id="links">
-		  <a href="/list">{t}Veřejné zprávy{/t}</a>
-		  <a href="/about">{t}O projektu{/t}</a>
-		  <a href="/faq">{t}Otázky a odpovědi{/t}</a>
+		  <a href="/list">{t}Public messages{/t}</a>
+		  <a href="/about">{t}About{/t}</a>
+		  <a href="/faq">{t}FAQ{/t}</a>
 		  <a href="/video">{t}Video{/t}</a>
-		  <a href="/support">{t}Podpořte nás{/t}</a>
-		  <a href="http://cs.kohovolit.eu">KohoVolit.eu</a>
+		  <a href="/support">{t}Support us{/t}</a>
+		  <a href="{t}http://en.kohovolit.eu{/t}">KohoVolit.eu</a>
 		</div>
 		<div id="licence">
-		  <a href="http://www.gnu.org/licenses/gpl.html">GNU/GPL</a> - <a href="/privacy">{t}Osobní údaje{/t}</a> - <a href="/contact">Kontakt</a>
+		  <a href="http://www.gnu.org/licenses/gpl.html">{t}Licence{/t}</a> – <a href="/privacy">{t}Privacy{/t}</a> – <a href="/contact">{t}Contact{/t}</a>
 		</div>
 	</div>
   </div>

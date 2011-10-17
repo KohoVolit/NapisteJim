@@ -1,20 +1,20 @@
-Omlouváme se, ale Vaše zpráva pro politiky
+{t}We are sorry, but your message for politicians{/t}
 
 {foreach $addressee as $a}{$a.first_name} {$a.last_name}
 {/foreach}
 
-byla zastavena automatickým systémem pro kontrolu vulgárních výrazů a
-nebyla jim odeslána.
+{t}has been blocked by an automatic invectives-checking system and it
+has not been sent.{/t}
 
-Ve výjimečných případech může systém zachytit i zcela nezávadnou zprávu.
-Na vylepšení systému kontinuálně pracujeme.
+{t}Although we are continually working on enhancing the checking system,
+it may block a completely correct message exceptionally.{/t}
 
-Pokud jste tedy přesvědčen(a), že zpráva byla zastavena neprávem,
-kontaktujte nás, prosím, e-mailem na {$smarty.const.CONTACT_EMAIL}.
+{t 1='$smarty.const.CONTACT_EMAIL'}If you believe, that your message has been blocked by mistake,
+please contact us by e-mail to %1.{/t}
 
 
---- Vaše zpráva pro politiky ---
+--- {t}Your message for politicians{/t} ---
 
-Předmět: {$message.subject}
+{t}Subject{/t}: {$message.subject}
 
 {$message.body}

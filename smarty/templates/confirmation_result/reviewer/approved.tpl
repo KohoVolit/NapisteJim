@@ -1,13 +1,13 @@
 {extends file="layout.tpl"}
 
 {block name=title}
-Schváleno
+{t}Approved{/t}
 {/block}
 
 {block name=body}
-<h3>Schváleno</h3>
+<h3>{t}Approved{/t}</h3>
 
-<p>Schválil(a) jste odeslání této zprávy. Byla odeslána adresátům.</p>
+<p>{t}You approved sending of this message. It was sent to addressees.{/t}</p>
 
-<p class="small-text">Toto okno můžete nyní zavřít.</p>
+<p class="small-text">{t}You can close this window now.{/t}</p>
 {/block}

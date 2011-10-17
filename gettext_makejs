@@ -3,43 +3,18 @@
 use strict;
 use HTML::Entities;
 
-my %langs = (
-    'be_BY' => 'be',
-    'cy_GB' => 'cy',
-    'de_DE' => 'de',
-    'en_GB' => 'en-gb',
-    'eo_XX' => 'eo',
-    'es_ES' => 'es',
-    'et_EE' => 'et',
-    'fi_FI' => 'fi',
-    'fr_FR' => 'fr',
-    'it_IT' => 'it',
-    'ja_JP' => 'ja',
-    'nl_BE' => 'nl-be',
-    'nl_NL' => 'nl',
-    'pa_IN' => 'pa',
-    'pl_PL' => 'pl',
-    'pt_BR' => 'pt-br',
-    'ru_RU' => 'ru',
-    'sk_SK' => 'sk',
-    'uk_UA' => 'uk',
-    'zh_CN' => 'zh'
-);
-
-for (<locale/*.UTF-8/LC_MESSAGES/PledgeBank*.po>) {
-    #print $_ . "\n";
-    my ($lang) = /locale\/(.*?)\./;
-    my ($microsite) = /PledgeBank(.*?)\.po$/;
-    $microsite = ".".(lc $microsite) if $microsite;
-    #print $lang . " $microsite\n";
+for (<*.utf8/LC_MESSAGES/messages-js.po>) {
+    print $_ . "\n";
+    my ($lang) = /(.*?)\./;
+    #print $lang . "\n";
     open(FP, $_) or die $!;
     my $out = '';
     while (<FP>) {
-        next unless /^#:.*?pb\.js/;
+        next unless /^#:.*\.js/;
         my $next;
         do {
             $next = <FP>;
-        } while $next =~ /^#:.*?pb\.js/;
+        } while $next =~ /^#:.*\.js/;
         my $fuzzy = 0;
         $fuzzy = 1 if $next =~ /fuzzy/;
         $next = <FP> if $next =~ /^#,/;
@@ -71,10 +46,10 @@ for (<locale/*.UTF-8/LC_MESSAGES/PledgeBank*.po>) {
     }
     close FP;
     $out = substr($out, 0, -2);
-    open (FP, ">pb/web/js/pb.$langs{$lang}${microsite}.js") or die $!;
+    open (FP, ">$lang.utf8/LC_MESSAGES/messages.js") or die $!;
     print FP <<EOF;
 /*
- * pb.$langs{$lang}.js
+ * $lang.utf8/LC_MESSAGES/messages.js
  * Translation of JS strings
  * Auto-generated from .po files by gettext-makejs
  *
@@ -83,7 +58,7 @@ for (<locale/*.UTF-8/LC_MESSAGES/PledgeBank*.po>) {
  *
  */
 
-var translation = {
+var i18n = {
 EOF
     print FP $out;
     print FP "\n}\n";

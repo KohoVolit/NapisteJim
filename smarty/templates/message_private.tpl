@@ -1,7 +1,7 @@
 {extends file="layout.tpl"}
 
-{block name=title}{$smarty.const.WTT_TITLE} – Soukromý email{/block}
+{block name=title}{$smarty.const.WTT_TITLE} – {t}Private message{/t}{/block}
 
 {block name=body}
-Tento email byl zaslán jako soukromý.
+{t}This message was sent as a private one.{/t}
 {/block}

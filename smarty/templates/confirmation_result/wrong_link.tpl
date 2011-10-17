@@ -1,11 +1,11 @@
 {extends file="layout.tpl"}
 
 {block name=title}
-Chybný odkaz pro potvrzení
+{t}Wrong link of confirmation{/t}
 {/block}
 
 {block name=body}
-<h3>Chybný odkaz pro potvrzení</h3>
+<h3>{t}Wrong link of confirmation{/t}</h3>
 
-<p>Chybný odkaz pro potvrzení zprávy. Možné jste odkaz nezkopíroval(a) celý. Nebo platnost odkazu už vypršela.</p>
+<p>{t}Wrong link to confirm sending of a message. Maybe you copy&pasted an incomplete link. Or the link might already expired.{/t}</p>
 {/block}

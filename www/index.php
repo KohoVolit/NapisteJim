@@ -165,7 +165,7 @@ function send_page()
 	// send confirmation mail to the sender
 	$from = compose_email_address(WTT_TITLE, FROM_EMAIL);
 	$to = compose_email_address($name, $email);
-	$confirmation_subject = mime_encode(sprintf(_('Please confirm that you want to send the message using %1'), WTT_TITLE));
+	$confirmation_subject = mime_encode(sprintf(_('Please confirm that you want to send the message using %s'), WTT_TITLE));
 	$mp_details = $api_wtt->read('MpDetails', array('mp' => implode('|', $mps)));
 	$smarty->assign('addressee', $mp_details);
 	$smarty->assign('message', array('subject' => $subject, 'body' => $body, 'is_public' => $is_public, 'confirmation_code' => $confirmation_code));
@@ -176,7 +176,7 @@ function send_page()
 	if (isset($_POST['newsletter']))
 		order_newsletter($email);
 
-	$smarty->display('confirm_sending.tpl');
+	$smarty->display('confirm.tpl');
 }
 
 function confirm_page()
@@ -464,7 +464,7 @@ function send_mail($from, $to, $subject, $message, $reply_to = null, $additional
 	'Reply-To: ' . compose_email_address(WTT_TITLE, FROM_EMAIL) . "\n" .
 	'Content-Type: text/plain; charset="UTF-8"' . "\n" .
 	'X-Mailer: PHP';
-	mail(ADMIN_EMAIL, mime_encode(_('Sending of a mail failed')), _('Check ') . WTT_LOGS_DIR . '/error.log', $headers);
+	mail(ADMIN_EMAIL, mime_encode(_('Sending of a mail failed')), _('Check') . ' ' . WTT_LOGS_DIR . '/error.log', $headers);
 }
 
 function order_newsletter($email)

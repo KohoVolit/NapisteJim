@@ -1,13 +1,13 @@
 {extends file="layout.tpl"}
 
 {block name=title}
-Již potvrzeno
+{t}Already confirmed{/t}
 {/block}
 
 {block name=body}
-<h3>Již potvrzeno</h3>
+<h3>{t}Already confirmed{/t}</h3>
 
-<p>Odeslání této zprávy již bylo potvzeno.</p>
+<p>{t}Sending of this message has been already confirmed.{/t}</p>
 
-<p class="small-text">Toto okno můžete nyní zavřít.</p>
+<p class="small-text">{t}You can close this window now.{/t}</p>
 {/block}

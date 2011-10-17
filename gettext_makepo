@@ -1,0 +1,14 @@
+#!/bin/bash
+
+php www/locale/tsmarty2c.php smarty > www/locale/smarty.c
+
+# use for initialization
+# xgettext -p locale --add-comments --no-wrap -o messages.pot -o messages.pot classes/*.php mail/*.php www/*.php www/locale/smarty.c
+
+# use to merge new translations
+xgettext -j -p locale --no-wrap -o messages.pot -o messages.pot classes/*.php mail/*.php www/*.php www/locale/smarty.c
+
+rm www/locale/smarty.c
+
+cd www/js
+xgettext -j -p ../locale --add-comments --no-wrap -L python -d messages-js -o messages-js.pot choose.js choose_advanced.js search.js search_advanced.js write.js

@@ -1,13 +1,13 @@
 {extends file="layout.tpl"}
 
 {block name=title}
-Již rozhodnuto
+{t}Already approved or refused{/t}
 {/block}
 
 {block name=body}
-<h3>Již rozhodnuto</h3>
+<h3>{t}Already approved or refused{/t}</h3>
 
-<p>O odeslání této zprávy již bylo rozhodnuto (byla již schválena nebo zamítnuta).</p>
+<p>{t}Sending of this message has been already approved or refused.{/t}</p>
 
-<p class="small-text">Toto okno můžete nyní zavřít.</p>
+<p class="small-text">{t}You can close this window now.{/t}</p>
 {/block}

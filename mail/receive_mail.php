@@ -27,11 +27,11 @@ foreach ($to_list as $to)
 	// notice admin about other mails than responses to sent messages
 	if (substr($to['mailbox'], 0, 6) != 'reply.')
 	{
-		$subject = mime_encode(sprintf(_('An e-mail received to address %1'), $to['mailbox'] . '@' . $to['host']));
-		$text = _('From: ') . $parsed_mail['headers']['from']['personal'] . ' <' . $parsed_mail['headers']['from']['mailbox'] . '@' . $parsed_mail['headers']['from']['host'] . ">\n";
-		$text .= _('Subject: ') . $parsed_mail['headers']['subject'] . "\n\n";
+		$subject = mime_encode(sprintf(_('An e-mail received to address %s'), $to['mailbox'] . '@' . $to['host']));
+		$text = _('From:') . ' ' . $parsed_mail['headers']['from']['personal'] . ' <' . $parsed_mail['headers']['from']['mailbox'] . '@' . $parsed_mail['headers']['from']['host'] . ">\n";
+		$text .= _('Subject:') . ' ' . $parsed_mail['headers']['subject'] . "\n\n";
 		$text .= (isset($parsed_mail['text'])) ? $parsed_mail['text'] : ((isset($parsed_mail['html'])) ? $parsed_mail['html'] : '');
-		$text .= "\n\n\n" . _('---------- Full e-mail data ----------') . "\n\n";
+		$text .= "\n\n\n" . '---------- ' . _('Full e-mail data') . '----------' . "\n\n";
 		$text .= $mail;
 		notice_admin($subject, $text);
 		continue;
@@ -50,8 +50,8 @@ foreach ($to_list as $to)
 	// notice admin about unrecognized responses
 	if (count($res) == 0)
 	{
-		$subject = mime_encode(sprintf(_('No corresponding message found to the received response with code %1'), $reply_code));
-		$text = sprintf(_('The received response can be found in %1'), WTT_DIR . '/mail/backup/mails-' .  strftime('%Y-%m-%d'));
+		$subject = mime_encode(sprintf(_('No corresponding message found to the received response with code %s'), $reply_code));
+		$text = sprintf(_('The received response can be found in %s'), WTT_DIR . '/mail/backup/mails-' .  strftime('%Y-%m-%d'));
 		notice_admin($subject, $text);
 		continue;
 	}
@@ -63,7 +63,7 @@ foreach ($to_list as $to)
 
 	$from = compose_email_address(WTT_TITLE, FROM_EMAIL);
 	$to = compose_email_address($message['sender_name'], $message['sender_email']);
-	$subject = mime_encode(sprintf(_('%1 %2 has responded to your message'), $mp['first_name'], $mp['last_name']));
+	$subject = mime_encode(sprintf(_('%s %s has responded to your message'), $mp['first_name'], $mp['last_name']));
 	$smarty = new SmartyWtt;
 	$smarty->assign('mp', $mp);
 	$smarty->assign('message', array('subject' => $response['subject'], 'body' => $response['body'], 'is_public' => $message['is_public']));

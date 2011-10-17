@@ -1,9 +1,9 @@
 {extends file="layout.tpl"}
 
-{block name=title}{$smarty.const.WTT_TITLE} – Napsat zprávu{/block}
+{block name=title}{$smarty.const.WTT_TITLE} – {t}Write message{/t}{/block}
 
 {block name=head}
-<script type="text/javascript" src="locale/{$locale.system_locale}/LC_MESSAGES/locale.js"></script>
+<script type="text/javascript" src="locale/{$locale.system_locale}/LC_MESSAGES/messages.js"></script>
 <script type="text/javascript" src="js/i18n.js"></script>
 <script type="text/javascript" src="js/jquery.validationEngine-{$locale.system_locale}.js"></script>
 <script type="text/javascript" src="js/jquery.validationEngine.js"></script>
@@ -16,8 +16,8 @@
 
     <form id="write" class="formular" method="post" action="?">
       <input type="hidden" value="{$mps}" name="mp"/>
-      <h2>Vaše zpráva pro politiky</h2>
-	  <p>Napište svou zprávu pro vybrané politiky. Pište prosím osobně, nekopírujte text, který někdo předem připravil. Pokud politik už stejnou zprávu dostal od někoho jiného, nebude mu odeslána znovu. <a class="small-text" href="faq#q8" target="_blank">Proč?</a></p>
+      <h2>{t}Your message for politicians{/t}</h2>
+	  <p>{t}Write your message for selected representatives. Please write personally, do not copy&paste a text prearranged by someone. If a politician already received the same message from someone else it will not be sent again.{/t} <a class="small-text" href="faq#q8" target="_blank">Proč?</a></p>
 
       <div id="write-mps">
         {foreach $mp_details as $key=>$mp}
@@ -32,17 +32,17 @@
       </div>
 
       <div id="write-personal">
-        Vaše jméno: <br/><input type="text" id="write-name" name="name" value="" class="validate[required] text-input write-input" /><br/>
-        Obec: <br/><input type="text" id="write-address" name="address" value="{$location}" class="text-input write-input" /><br/>
-        E-mail: <br/><input type="text"  id="write-email" name="email" value="" class="validate[required,custom[email]] text-input write-input" /><br/>
-        Předmět: <br/><input type="text" id="write-subject" name="subject" value=""  class="validate[required] text-input write-input" />
-        <div id="write-privacy">Zpráva je: <input type="radio" id="write-radio-1" name="is_public" value="yes" class="validate[required] radio write-input" />Veřejná <input type="radio" id="write-radio-2" name="is_public" value="no" class="validate[required] radio" />Soukromá </div>
+        {t}Your name:{/t} <br/><input type="text" id="write-name" name="name" value="" class="validate[required] text-input write-input" /><br/>
+        {t}Town:{/t} <br/><input type="text" id="write-address" name="address" value="{$location}" class="text-input write-input" /><br/>
+        {t}E-mail:{/t} <br/><input type="text"  id="write-email" name="email" value="" class="validate[required,custom[email]] text-input write-input" /><br/>
+        {t}Subject:{/t} <br/><input type="text" id="write-subject" name="subject" value=""  class="validate[required] text-input write-input" />
+        <div id="write-privacy">{t}The message is:{/t} <input type="radio" id="write-radio-1" name="is_public" value="yes" class="validate[required] radio write-input" />{t}public{/t} <input type="radio" id="write-radio-2" name="is_public" value="no" class="validate[required] radio" />{t}private{/t} </div>
       </div>
 
       <textarea id="write-body" rows="15" cols="80" name="body" class="validate[required,minSize[90]] textarea">{include file="email/initial_message.tpl"}</textarea>
       <br/>
       <input type="checkbox" id="write-newsletter" name="newsletter" value="order-newsletter" />
-       Chci dostávat informace z {$smarty.const.WTT_TITLE}<br/><br/>
+       {t 1=$smarty.const.WTT_TITLE}I want to receive news from %1{/t}<br/><br/>
       <input id="write-submit" class="submit" type="submit" value="Odeslat"/>
     </form>
 

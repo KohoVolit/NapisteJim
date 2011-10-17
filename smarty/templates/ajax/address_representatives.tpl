@@ -12,7 +12,7 @@
   </div>
   <div id="parliament-body-{$parliament.code}" class="parliament-body">
 	{if count($parliament.constituency) > 1}
-    <div class="constituencies-message">{t}We were not able to recognize exactly which constituency your address belongs to.{/t}</div>
+    <div class="constituencies-message">{t}Several constituencies has been found to your address. Choose the right one or try to specify your address more precisely.{/t}</div>
 	{/if}
     {foreach $parliament.constituency as $ckey => $constituency}
       <div id="constituency-{$ckey}" class="constituency">

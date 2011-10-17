@@ -1,6 +1,6 @@
 {extends file="layout.tpl"}
 
-{block name=title}{$smarty.const.WTT_TITLE} – Rozšířené vyhledávání{/block}
+{block name=title}{$smarty.const.WTT_TITLE} – {t}Advanced search of your representatives{/t}{/block}
 
 {block name=head}
 <link rel="Stylesheet" href="css/ui.selectmenu.css" type="text/css" />
@@ -15,7 +15,7 @@ var lang = "{$locale.lang}";
 {block name=body}
 <div id="search_advanced-page-wrapper">
  <form id="search_advanced-form" action="javascript:sendForm()">
-    <label for="search_advanced-select-parliament" class="left">Vyberte zastupitelský sbor: </label>
+    <label for="search_advanced-select-parliament" class="left">{t}Choose a parliament:{/t} </label>
     <select name="parliament_code" id="search_advanced-select-parliament" class="search_advanced-select">
       <option value="0" selected="selected">--</option>
 	  {foreach $parliaments as $p}
@@ -28,7 +28,7 @@ var lang = "{$locale.lang}";
   
  </form>
   <form id="advanced-search-export-form">
-    <input id="search_advanced-export" value="Exportovat emailové adresy" name='export' type="button" />
+    <input id="search_advanced-export" value="{t}Export e-mail addresses{/t}" name='export' type="button" />
   </form>
   <div id="search_advanced-export-result"></div>
  <form id="search_advanced-hidden" action="">

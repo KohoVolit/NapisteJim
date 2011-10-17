@@ -1,16 +1,18 @@
-Zpráva napsaná přes web {$smarty.const.WTT_TITLE} se zdá jako urážející a aby mohla být
-odeslána, potřebuje tvoje posouzení a schválení. Napsaná zpráva je připojena
-níže.
+{t 1=$smarty.const.WTT_TITLE}A message written on %1 website seems to be offensive and it
+needs your review and approval to be sent to politicians. The message
+is attached below.{/t}
 
-Pokud je zpráva v pořádku a MÁ SE ODESLAT adresátům, klikni na tento odkaz:
+{t}If the message is all right and it SHOULD BE sent to addressees,
+click on this link:{/t}
 http://{$smarty.const.WTT_HOST}/confirm?action=approve&cc={$message.confirmation_code}&ac={$message.approval_code}
 
-Pokud je zpráva urážející a NEMÁ SE ODESLAT adresátům, klikni sem:
+{t}If the message is offensive and SHOULD NOT be sent to addressees,
+click on this link:{/t}
 http://{$smarty.const.WTT_HOST}/confirm?action=refuse&cc={$message.confirmation_code}&ac={$message.approval_code}
 
 
---- Napsaná zpráva pro politiky ---
+--- {t}The message for politicians{/t} ---
 
-Předmět: {$message.subject}
+{t}Subject{/t}: {$message.subject}
 
 {$message.body}

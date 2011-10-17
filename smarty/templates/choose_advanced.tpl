@@ -1,20 +1,20 @@
 {extends file="layout.tpl"}
 
-{block name=title}{$smarty.const.WTT_TITLE} – Výběr{/block}
+{block name=title}{$smarty.const.WTT_TITLE} – {t}Choose your representatives{/t}{/block}
 {block name=head}
-<script type="text/javascript" src="locale/{$locale.system_locale}/LC_MESSAGES/locale.js"></script>
+<script type="text/javascript" src="locale/{$locale.system_locale}/LC_MESSAGES/messages.js"></script>
 <script type="text/javascript" src="js/i18n.js"></script>
 <script type="text/javascript" src="js/jquery.rsv.js"></script>
 <script type="text/javascript" src="js/choose_advanced.js"></script>
 {/block}
 {block name=body}
-<h2>{t}Adresáti{/t}</h2><div id="choose-up-to">{t}Přetažením jmen do boxů nebo kliknutím na jméno vyberte ze svých politiků nejvíce tři adresáty Vaší zprávy. Dalším  politikům pak už stejnou zprávu nebudete moct odeslat.{/t}</div>
+<h2>{t}Addressees{/t}</h2><div id="choose-up-to">{t}Choose up to three addressees of your message from the found politicians by clicking on their name or using drag&drop into boxes. The same message then cannot be sent again to other politicians.{/t} <a class="small-text" href="faq#q2" target="_blank">{t}Why?{/t}</a></div>
   <div id="choose-addressee-box-1" class="addressee-box rounded-corners droppable"></div>
   <div id="choose-addressee-box-2" class="addressee-box rounded-corners droppable"></div>
   <div id="choose-addressee-box-3" class="addressee-box rounded-corners droppable"></div>
   <form id="choose-send" action="" >
     <input type="hidden" name="mp" id="choose-input" value="" />
-    <input id="choose-submit-mps" type="submit" value="{t}Napište jim!{/t}"/>
+    <input id="choose-submit-mps" type="submit" value="{t}Write to them!{/t}"/>
   </form>  
              <div class="group-mps">
 				{foreach $mps as $mp}

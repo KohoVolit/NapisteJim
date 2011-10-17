@@ -1,7 +1,7 @@
-Dobrý den,
+{t}Greetings,{/t}
 
 
 
 
-S pozdravem,
+{t}Yours sincerely,{/t}
 

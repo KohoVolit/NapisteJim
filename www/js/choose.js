@@ -10,7 +10,7 @@ $(document).ready(function() {
 $(document).ready(function() {
   $("#choose-send").RSV({
     rules: [
-      "required,mp,"+_("Choose at least one representative, please."),
+      "required,mp," + _("Choose at least one representative, please.").replace(/,/g, '\\,'),
     ]
   });
 });
@@ -105,7 +105,7 @@ function processAddress(results) {
       found_regions_str += '&formatted_address=' + encodeURIComponent(results[0].formatted_address);
       found_regions_str += '&latitude=' + results[0].geometry.location.lat();
       found_regions_str += '&longitude=' + results[0].geometry.location.lng();
-	  show_messages(_("Address found: ") + results[0].formatted_address, "", 'alert');	
+	  show_messages(_("Address found:") + " " + results[0].formatted_address, "", 'alert');	
       ajaxForm('ajax/address_representatives.php', found_regions_str, '#choose-result');  
       anticycle = 0;
       //clear boxes + previous draggable (C+B)

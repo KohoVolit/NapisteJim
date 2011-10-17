@@ -1,48 +1,55 @@
-{if isset($addressee.sent)}Vaše zpráva byla odeslána Vašim zástupcům:
+{if isset($addressee.sent)}{t}Your message has been sent to your representatives:{/t}
 
 {foreach $addressee.sent as $a}{$a.first_name} {$a.last_name}
 {/foreach}
-{else}Vaše zpráva nebyla odeslána Vašim zástupcům.
+{else}{t}Your message has not been sent to your representatives.{/t}
 {/if}
 {if isset($addressee.blocked)}
 
-Následující adresáti již stejnou zprávu obdrželi od jiného pisatele a tato
-jim už nebyla odeslána.
+{t}The following addressees already received the same message from another
+sender, thus this one has not been sent to them:{/t}
 
-{foreach $addressee.blocked as $a}{$a.first_name} {$a.last_name}, {if $a.former_message.is_public == 'yes'}zpráva viz. http://{$smarty.const.WTT_HOST}/?message={$a.former_message.id}{else}zpráva byla zaslána soukromě{/if}
+{foreach $addressee.blocked as $a}{$a.first_name} {$a.last_name}, {if $a.former_message.is_public == 'yes'}{t}see message{/t} http://{$smarty.const.WTT_HOST}/?message={$a.former_message.id}{else}{t}the message was sent as a private one{/t}{/if}
 
 {/foreach}
 
-Záměrem projektu {$smarty.const.WTT_TITLE} je podpořit osobní komunikaci občanů
-s politiky. I několik málo originálních zpráv má obvykle větší efekt, než
-zaplavení politika jednou předpřipravenou zprávou. Více viz.:
+{t 1=$smarty.const.WTT_TITLE}Intention of the project %1 is to strengthen personal
+communication between citizens and politicians. Even a few originally
+written messages often have a greater impact than flooding of a politician
+by copies of one prearanged message. See more in:{/t}
 http://{$smarty.const.WTT_HOST}/faq#q8
 {/if}
 {if isset($addressee.no_email)}
 
-U adresátů:
+{t}In case of addressees:{/t}
 
 {foreach $addressee.no_email as $a}{$a.first_name} {$a.last_name}
 {/foreach}
 
-se nám nepodařilo zjistit jejich e-mailový kontakt a nelze jim Vaší zprávu
-odeslat.
+{t}we do not have an e-mail address to them hence your message cannot be
+sent to them.{/t}
 {/if}
 
-Pro případ, že se rozhodnete oslovit politiky{if isset($addressee.sent)} i{/if} jiným způsobem, připájíme dole
-kopii zprávy.
+{if isset($addressee.sent)}
+{t}For the case you decide to contact the politicans also by another way,
+a copy of your message is attached below.{/t}
+{else}
+{t}For the case you decide to contact the politicans by another way,
+a copy of your message is attached below.{/t}
+{/if}
 {if isset($addressee.sent)}
 
-{if $message.is_public == 'yes'}Odeslal(a) jste veřejnou zprávu - bude zveřejněna na webu {$smarty.const.WTT_TITLE}
-a na stejném míste bude zveřejněna i případná odpověď oslovených politiků.{else}Zvolil(a) jste soukromou zprávu - na webu {$smarty.const.WTT_TITLE} bude smazána a
-případná odpověď oslovených politiků přijde jen přímo Vám.{/if}{/if}
+{if $message.is_public == 'yes'}{t 1=$smarty.const.WTT_TITLE}You have sent a public message - it will be published on the %1
+website as well as as an eventual response of the contacted politicians.{/t}{else}{t}You have chosen a private message - it will not be published on the
+%1 website and the contacted politicians will send their eventual response
+directly to you.{/t}{/if}{/if}
 
-Na tento e-mail neodpovídejte. Chcete-li nám napsat svůj názor na projekt,
-návrhy nebo problémy, použijte adresu {$smarty.const.CONTACT_EMAIL}. Rádi si je přečteme.
+{t 1=$smarty.const.CONTACT_EMAIL}Please do not reply to this e-mail. We will really appreciate
+your feedback on the project, suggestions or problems at %1{/t}
 
 
---- Vaše zpráva pro politiky ---
+--- {t}Your message for politicians{/t} ---
 
-Předmět: {$message.subject}
+{t}Subject{/t}: {$message.subject}
 
 {$message.body}

@@ -1,15 +1,15 @@
-{$mp.first_name} {$mp.last_name} reagoval{if $mp.sex == 'f'}a{/if} na Vaši zprávu zaslanou přes {$smarty.const.WTT_TITLE}.
-{if $mp.sex == 'f'}Její{else}Jeho{/if} odpověď najdete níže.
+{t 1=$smarty.const.WTT_TITLE 2=$mp.first_name 3=$mp.last_name}%2 %3 responded to your message sent through
+%1 website. You can find the response below.{/t}
 
-{if $message.is_public == 'yes'}Protože byla Vaše zpráva zaslána jako veřejná, je odpověď zároveň
-zveřejněna na webu {$smarty.const.WTT_TITLE}. Budete-li však pokračovat v diskusi
-odpovědí na tento e-mail, tato už bude odeslána přímo adresátovi mimo webu
-{$smarty.const.WTT_TITLE}.{/if}
+{if $message.is_public == 'yes'}{t 1=$smarty.const.WTT_TITLE }Because your message was sent as a public one, the response is published
+on the %1 website as well. If you will go on in discussion by
+replying to this e-mail, your reply will be sent to the addressee, aside
+from %1 website.{/t}{/if}
 
 
---- Odpověď na Vaši zprávu ---
+--- {t}Response to your message{/t} ---
 
-Od: {$mp.first_name} {$mp.last_name}
-Předmět: {$message.subject}
+{t}From{/t}: {$mp.first_name} {$mp.last_name}
+{t}Subject{/t}: {$message.subject}
 
 {$message.body}

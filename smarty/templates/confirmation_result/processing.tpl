@@ -1,13 +1,13 @@
 {extends file="layout.tpl"}
 
 {block name=title}
-Vaše zpráva se zpracovává
+{t}Your message is beeing processed now{/t}
 {/block}
 
 {block name=body}
-<h3>Vaše zpráva se zpracovává</h3>
+<h3>{t}Your message is beeing processed now{/t}</h3>
 
-<p>Vaše zpráva byla zařazena na odeslání a nyní se zpracovává v systému. O jejím odeslání budete brzo informováni e-mailem.<p>
+<p>{t}Your message has been queued up for sending and it is beeing processed in the system now. You will be informed soon about its sending by e-mail.{/t}<p>
 
-<p class="small-text">Toto okno můžete nyní zavřít.</p>
+<p class="small-text">{t}You can close this window now.{/t}</p>
 {/block}
