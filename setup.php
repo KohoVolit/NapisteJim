@@ -10,9 +10,16 @@ function wtt_autoload($class_name)
 }
 spl_autoload_register('wtt_autoload');
 
-// choose locale according to 'locale' parameter in URL
-if (isset($_GET['locale']) && array_key_exists($_GET['locale'], $locales))
-	$locale = $locales[$_GET['locale']];
+// store URL parameters that should be persistent to session
+session_start();
+if (isset($_GET['parliament']))
+	$_SESSION['parliament'] = $_GET['parliament'];
+if (isset($_GET['locale']))
+	$_SESSION['locale'] = $_GET['locale'];
+
+// choose locale according to locale stored in session
+if (isset($_SESSION['locale']) && array_key_exists($_SESSION['locale'], $locales))
+	$locale = $locales[$_SESSION['locale']];
 else
 	$locale = reset($locales);
 

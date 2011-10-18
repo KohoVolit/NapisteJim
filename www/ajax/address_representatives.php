@@ -2,9 +2,12 @@
 require '../../config/settings.php';
 require '../../setup.php';
 
-// get representatives for the given address
+// get representatives for the given address and parliament(s)
+$params = $_GET;
+if (isset($_SESSION['parliament']) && !empty($_SESSION['parliament']))
+	$params['parliament'] = $_SESSION['parliament'];
 $api_wtt = new ApiDirect('wtt');
-$representatives = $api_wtt->read('AddressRepresentative', $_GET);
+$representatives = $api_wtt->read('AddressRepresentative', $params);
 
 // fix parliaments where no representative has been found but there should be at least one
 fix_global_parliaments($representatives);

@@ -395,7 +395,10 @@ function public_messages_page()
 	global $api_wtt;
 	$smarty = new SmartyWtt;
 
-	$messages = $api_wtt->read('PublicMessagePreview');
+	$params = array();
+	if (isset($_SESSION['parliament']) && !empty($_SESSION['parliament']))
+		$params['parliament'] = $_SESSION['parliament'];
+	$messages = $api_wtt->read('PublicMessagePreview', $params);
 
 	foreach ($messages as &$message)
 		$message['response_exists'] = explode(', ', $message['response_exists']);

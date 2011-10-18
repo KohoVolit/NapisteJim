@@ -40,7 +40,7 @@ const GETTEXT_DOMAIN = 'messages';
 // available locales
 $locales = array(
 	'cs_CZ' => array('lang' => 'cs', 'system_locale' => 'cs_CZ.utf8', 'date_format' => '%-d. %-m. %Y', 'time_zone' => 'Europe/Prague'),
-	'en_US' => array('lang' => 'en', 'system_locale' => 'en_US.utf8', 'date_format' => '%Y-%m-%d', 'time_zone' => 'Europe/Greenwitch')
+	'en_US' => array('lang' => 'en', 'system_locale' => 'en_US.utf8', 'date_format' => '%Y-%m-%d', 'time_zone' => 'GMT')
 );
 
 $global_parliaments_to_fix = array(
