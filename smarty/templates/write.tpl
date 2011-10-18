@@ -33,7 +33,7 @@
 
       <div id="write-personal">
         {t}Your name:{/t} <br/><input type="text" id="write-name" name="name" value="" class="validate[required] text-input write-input" /><br/>
-        {t}Town:{/t} <br/><input type="text" id="write-address" name="address" value="{$location}" class="text-input write-input" /><br/>
+        {t}Town:{/t} <br/><input type="text" id="write-address" name="address" value="{$locality}" class="text-input write-input" /><br/>
         {t}E-mail:{/t} <br/><input type="text"  id="write-email" name="email" value="" class="validate[required,custom[email]] text-input write-input" /><br/>
         {t}Subject:{/t} <br/><input type="text" id="write-subject" name="subject" value=""  class="validate[required] text-input write-input" />
         <div id="write-privacy">{t}The message is:{/t} <input type="radio" id="write-radio-1" name="is_public" value="yes" class="validate[required] radio write-input" />{t}public{/t} <input type="radio" id="write-radio-2" name="is_public" value="no" class="validate[required] radio" />{t}private{/t} </div>

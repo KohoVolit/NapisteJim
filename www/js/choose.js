@@ -119,8 +119,6 @@ function processAddress(results) {
 		  clearAction(boxId);
 		}
       }
-      //add locality into hidden input
-      $("#choose-input-2").val(g_find_type_in_results(results[0].address_components,"locality","long_name"));
     }
   }
   

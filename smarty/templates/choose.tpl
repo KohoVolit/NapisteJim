@@ -43,7 +43,6 @@ var address = "{$address}";
 	  <form id="choose-send" action="" >
 
 	    <input type="hidden" name="mp" id="choose-input" value="" />
-	    <input type="hidden" name="location" id="choose-input-2" value="" />
 	    <input id="choose-submit-mps" type="submit" value="{t}Write to them!{/t}"/>
 	  </form>
 	</div>

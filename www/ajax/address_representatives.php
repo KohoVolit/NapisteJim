@@ -17,6 +17,10 @@ $smarty = new SmartyWtt;
 $smarty->assign('representatives', $representatives['parliament']);
 $smarty->display('ajax/address_representatives.tpl');
 
+// store locality to prefill in the write message form
+if (isset($_GET['locality']))
+	$_SESSION['locality'] = $_GET['locality'];
+
 
 /*
  * Checks if all parliaments in global variable \c $global_parliaments_to_fix are present in the search results

@@ -122,12 +122,12 @@ function write_page()
 	global $api_wtt;
 	$mp_list = implode('|', array_slice(array_unique(explode('|', $_GET['mp'])), 0, 3));
 	$mp_details = $api_wtt->read('MpDetails', array('mp' => $mp_list));
-	$location = isset($_GET['location']) ? $_GET['location'] : '';
+	$locality = isset($_SESSION['locality']) ? $_SESSION['locality'] : '';
 
 	$smarty = new SmartyWtt;
 	$smarty->assign('mps', $mp_list);
 	$smarty->assign('mp_details', $mp_details);
-	$smarty->assign('location', $location);
+	$smarty->assign('locality', $locality);
 	$smarty->display('write.tpl');
 }
 

@@ -10,7 +10,7 @@ function wtt_autoload($class_name)
 }
 spl_autoload_register('wtt_autoload');
 
-// store URL parameters that should be persistent to session
+// store URL parameters that should be persistent to the session
 session_start();
 if (isset($_GET['parliament']))
 	$_SESSION['parliament'] = $_GET['parliament'];
