@@ -250,6 +250,9 @@ fieldset.search {
 * choose
 */
 
+.constituency-description {	font-size: 13px; }
+.constituency-description .name {font-weight: bold; }
+
 .group{
   _height:60px;
   min-height:60px;

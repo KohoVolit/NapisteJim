@@ -17,7 +17,7 @@
     {foreach $parliament.constituency as $ckey => $constituency}
       <div id="constituency-{$ckey}" class="constituency">
 		{if $constituency@total > 1}
-		<div class="constituency-description">{$constituency.name}: {$constituency.description}</div>
+		<div class="constituency-description"><span class="name">{$constituency.name}:</span> {$constituency.description}</div>
 		{/if}
         {foreach $constituency.group as $gkey => $group}
           <div id="group-{$gkey}" class="group">
