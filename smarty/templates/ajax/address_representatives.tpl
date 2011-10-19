@@ -6,9 +6,9 @@
       <span class="ui-icon ui-icon-triangle-1-s"></span>
       <a href="#" class="ui-state-active"> {$parliament.name}</a>
     </h3>
-    <div class="parliament-head-description" id="parliament-head-description-{$parliament.code}">
+<!--    <div class="parliament-head-description" id="parliament-head-description-{$parliament.code}">
       {$parliament.description}
-    </div>
+    </div>-->
   </div>
   <div id="parliament-body-{$parliament.code}" class="parliament-body">
 	{if count($parliament.constituency) > 1}
