@@ -33,6 +33,8 @@ function fix_global_parliaments(&$representatives)
 {
 	global $global_parliaments_to_fix, $api_wtt;
 
+	$parliaments_restriction = isset($_SESSION['parliament']) ? explode('|', $_SESSION['parliament']) : array();
+
 	foreach ($global_parliaments_to_fix as $parl_code => $remove_fields)
 	{
 		// check if the parliament is in the search results
@@ -41,7 +43,7 @@ function fix_global_parliaments(&$representatives)
 			if ($parl['code'] == $parl_code)
 				$parl_present = true;
 
-		if (!$parl_present)
+		if (!$parl_present && (empty($parliaments_restriction) || in_array($parl_code, $parliaments_restriction)))
 		{
 			// remove some address fields and search representatives of this parliament again
 			$get = $_GET;
