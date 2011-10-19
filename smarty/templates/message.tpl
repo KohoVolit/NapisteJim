@@ -18,7 +18,7 @@
 {foreach $responses as $response}
 <div class="message-response">
 	<div class="message-left left">{$response.first_name}&nbsp;{$response.last_name}:</div>
-	<div class="message-right">{$response.body|nl2br|default:'<em>{t}Not answered yet{/t}&hellip;</em>'}</div>
+	<div class="message-right">{if !empty($response.body)}{$response.body|nl2br}{else}<em>{t}Not answered yet{/t}&hellip;</em>{/if}</div>
 </div>
 {/foreach}
 {/block}
