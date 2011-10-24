@@ -993,3 +993,7 @@ msgstr ""
 #: locale/smarty.c:677
 msgid "Privacy"
 msgstr ""
+
+#. smarty/templates/search.tpl
+msgid "or"
+msgstr ""

@@ -6,7 +6,7 @@
 
 {block name="logo"}
 <div id="head">
-  <div id="logo-small">
+  <div id="logo-small" class="logo">
     <a href="/">
       <img height="79" width="150" alt="{$smarty.const.WTT_TITLE}" src="images/logo.png">
     </a>

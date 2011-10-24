@@ -243,7 +243,7 @@ function confirm_page()
 
 function send_message($message)
 {
-	global $api_data, $api_wtt;
+	global $api_data, $api_wtt, $locales;
 	$smarty = new SmartyWtt;
 
 	// send the message to all addressees one by one
@@ -282,7 +282,16 @@ function send_message($message)
 
 		$smarty->assign('message', array('sender_name' => $message['sender_name'], 'sender_email' => $message['sender_email'],
 			'subject' => $message['subject'], 'body' => $message['body'], 'is_public' => $message['is_public'], 'reply_to' => $reply_to));
+
+		// instructions in the e-mail for MPs are always in the primary language of the site
+		$old_locale = setlocale(LC_ALL, '0');
+		$locale = reset($locales);
+		putenv('LC_ALL=' . $locale['system_locale']);
+		setlocale(LC_ALL, $locale['system_locale']);
 		$text = $smarty->fetch('email/message_to_mp.tpl');
+		putenv('LC_ALL=' . $old_locale);
+		setlocale(LC_ALL, $old_locale);
+
 		send_mail($from, $to, $subject, $text, $reply_to);
 		$addressees['sent'][] = $mp;
 	}

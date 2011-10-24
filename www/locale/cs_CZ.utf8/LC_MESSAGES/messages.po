@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: NapišteJim.cz 1.0\n"
 "Report-Msgid-Bugs-To: info@KohoVolit.eu\n"
-"POT-Creation-Date: 2011-10-17 11:02+0200\n"
-"PO-Revision-Date: 2011-10-17 16:20+0200\n"
+"POT-Creation-Date: 2011-10-24 21:45+0200\n"
+"PO-Revision-Date: 2011-10-24 21:46+0200\n"
 "Language-Team: Czech <info@kohovolit.eu>\n"
 "Language: czech\n"
 "MIME-Version: 1.0\n"
@@ -1257,3 +1257,7 @@ msgstr "Licence"
 #: locale/smarty.c:677
 msgid "Privacy"
 msgstr "Osobní údaje"
+
+#. smarty/templates/search.tpl
+msgid "or"
+msgstr "nebo"

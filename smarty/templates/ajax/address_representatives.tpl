@@ -23,7 +23,7 @@
           <div id="group-{$gkey}" class="group">
           	<div class="wrapper">
           	  	<div class="group-logo left">
-		          <img src="{$smarty.const.API_FILES_URL}/{$group.logo}" class="party-logo" title="{$group.name}" alt="{$group.short_name}" />
+		          {if !empty($group.logo)}<img src="{$smarty.const.API_FILES_URL}/{$group.logo}" class="party-logo" title="{$group.name}" alt="{$group.short_name}" />{else}{$group.short_name}{/if}
 		        </div>
 		        {foreach $group.mp as $mp}
 		          <div class="group-mps">

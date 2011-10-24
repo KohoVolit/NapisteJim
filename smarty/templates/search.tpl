@@ -23,7 +23,7 @@
 	      </div>
 	    </fieldset>
 		<div id="search-example">
-		  {t}E.g.{/t}: <a href="?address={t escape='url'}MSGID_ADDRESS_EXAMPLE_1{/t}">{t}MSGID_ADDRESS_EXAMPLE_1{/t}</a>, <a href="?address={t escape='url'}MSGID_ADDRESS_EXAMPLE_2{/t}">{t}MSGID_ADDRESS_EXAMPLE_2{/t}</a>, <a href="?address={t escape='url'}MSGID_ADDRESS_EXAMPLE_3{/t}">{t}MSGID_ADDRESS_EXAMPLE_3{/t}</a>
+		  {t}E.g.{/t}: <a href="?address={t escape='url'}MSGID_ADDRESS_EXAMPLE_1{/t}">{t}MSGID_ADDRESS_EXAMPLE_1{/t}</a> {t}or{/t} <a href="?address={t escape='url'}MSGID_ADDRESS_EXAMPLE_2{/t}">{t}MSGID_ADDRESS_EXAMPLE_2{/t}</a> {t}or{/t} <a href="?address={t escape='url'}MSGID_ADDRESS_EXAMPLE_3{/t}">{t}MSGID_ADDRESS_EXAMPLE_3{/t}</a>
 		</div>
 	    <div id="search-submit">
 	      <input id="search-submit-geocode" type="submit" value="{t}Search your representatives{/t}"/>

@@ -57,7 +57,8 @@ body {
   margin:0;
   padding:0;
 }
-.logo {
+.logo a img {
+  border: none;
 }
 
 
@@ -143,7 +144,7 @@ input#search-address,input#search-submit-geocode{
 }
 
 #search-advanced-search{
- display:inline-block;
+ display:inline;
  width: 50px;
 }
 
@@ -258,7 +259,7 @@ fieldset.search {
   min-height:60px;
 }
 .group-logo {
-  width: 80px;
+  width: 100px;
   font-weight: bold;
   text-align: right;
   padding-right: 20px;
