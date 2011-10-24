@@ -20,25 +20,11 @@ if (strpos($mail, "\r\n") === false)
 	$mail = str_replace("\n", "\r\n", $mail);
 $parsed_mail = fMailbox::parseMessage($mail);
 
-// process all recipients in To: field
-$to_list = $parsed_mail['headers']['to'];
-foreach ($to_list as $to)
+// if the mail is a response, process its content
+if (preg_match('/reply\.([a-z]{10})@/', $parsed_mail['headers']['x-original-to'], $recipient))
 {
-	// notice admin about other mails than responses to sent messages
-	if (substr($to['mailbox'], 0, 6) != 'reply.')
-	{
-		$subject = mime_encode(sprintf(_('An e-mail received to address %s'), $to['mailbox'] . '@' . $to['host']));
-		$text = _('From:') . ' ' . $parsed_mail['headers']['from']['personal'] . ' <' . $parsed_mail['headers']['from']['mailbox'] . '@' . $parsed_mail['headers']['from']['host'] . ">\n";
-		$text .= _('Subject:') . ' ' . $parsed_mail['headers']['subject'] . "\n\n";
-		$text .= (isset($parsed_mail['text'])) ? $parsed_mail['text'] : ((isset($parsed_mail['html'])) ? $parsed_mail['html'] : '');
-		$text .= "\n\n\n" . '---------- ' . _('Full e-mail data') . '----------' . "\n\n";
-		$text .= $mail;
-		notice_admin($subject, $text);
-		continue;
-	}
-
 	// parse a response to a message sent to representatives
-	$reply_code = strtolower(substr($to['mailbox'], strpos($to['mailbox'], '.') + 1));
+	$reply_code = strtolower($recipient[1]);
 	$subject = $parsed_mail['headers']['subject'];
 	$body = (isset($parsed_mail['text'])) ? $parsed_mail['text'] : ((isset($parsed_mail['html'])) ? $parsed_mail['html'] : '');
 
@@ -74,6 +60,17 @@ foreach ($to_list as $to)
 	// erase an accidental response to a private message
 	if ($message['is_public'] == 'no')
 		$api_data->update('Response', array('reply_code' => $reply_code), array('subject' => null, 'body' => null, 'full_email_data' => null));
+}
+else
+{
+	// notice admin about other mails than responses to sent messages
+	$subject = mime_encode(sprintf(_('An e-mail received to address %s'), $parsed_mail['headers']['x-original-to']));
+	$text = _('From:') . ' ' . $parsed_mail['headers']['from']['personal'] . ' <' . $parsed_mail['headers']['from']['mailbox'] . '@' . $parsed_mail['headers']['from']['host'] . ">\n";
+	$text .= _('Subject:') . ' ' . $parsed_mail['headers']['subject'] . "\n\n";
+	$text .= (isset($parsed_mail['text'])) ? $parsed_mail['text'] : ((isset($parsed_mail['html'])) ? $parsed_mail['html'] : '');
+	$text .= "\n\n\n" . '---------- ' . _('Full e-mail data') . '----------' . "\n\n";
+	$text .= $mail;
+	notice_admin($subject, $text);
 }
 
 exit;

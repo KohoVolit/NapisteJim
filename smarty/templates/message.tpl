@@ -1,6 +1,6 @@
 {extends file="layout.tpl"}
 
-{block name=title}{$smarty.const.WTT_TITLE} – $message.subject{/block}
+{block name=title}{$smarty.const.WTT_TITLE} – {$message.subject}{/block}
 
 {block name=body}
 <div class="wrapper">
