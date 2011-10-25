@@ -1,7 +1,7 @@
-{t}Greetings,{/t}
+{t escape=no}Greetings,{/t}
 
 
 
 
-{t}Yours sincerely,{/t}
+{t escape=no}Yours sincerely,{/t}
 
