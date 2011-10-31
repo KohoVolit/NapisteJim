@@ -201,7 +201,7 @@ function confirm_page()
 			$my_messages = $api_data->read('Message', array('sender_email' => $message['sender_email']));
 			if (similar_message($message, $my_messages))
 			{
-				$api_data->delete('Message', array('id' => $message['id']));
+				$api_data->update('Message', array('id' => $message['id']), array('state' => 'blocked'));
 				return static_page('confirmation_result/already_sent');
 			}
 
@@ -314,7 +314,7 @@ function send_message($message)
 	if (isset($addressees['sent']))
 		$api_data->update('Message', array('id' => $message['id']), array('state' => 'sent', 'sent_on' => 'now'));
 	else
-		$api_data->delete('Message', array('id' => $message['id']));
+		$api_data->update('Message', array('id' => $message['id']), array('state' => 'blocked'));
 }
 
 function send_to_reviewer($message)
