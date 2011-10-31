@@ -1,4 +1,4 @@
 #!/bin/bash
 
-cd cs_CZ.utf8/LC_MESSAGES
+cd www/locale/cs_CZ.utf8/LC_MESSAGES
 msgfmt -o messages.mo messages.po

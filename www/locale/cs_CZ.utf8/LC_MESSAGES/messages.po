@@ -1157,7 +1157,7 @@ msgid ""
 "your web browser."
 msgstr ""
 "Pokud na link nelze kliknout, označte jej a skopírujte jako adresu do\n"
-"\nwebového prohlížeče."
+"webového prohlížeče."
 
 #. smarty/templates/email/request_to_confirm.tpl
 #: locale/smarty.c:623
