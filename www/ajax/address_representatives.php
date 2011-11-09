@@ -101,7 +101,7 @@ function fix_local_parliaments(&$representatives, $params)
 			'name' => $params['locality'],
 			'kind' => 'local',
 			'competence' => _("We don't know representatives of your town.") . ' ' .
-				_('You can simply add them and give the option to contact them to the public. See <a href="http://community.kohovolit.eu/doku.php/wtt:external-datasets">how to do it</a>.'),
+				_('You can simply add them and give the option to contact them to the public. See <a href="http://community.kohovolit.eu/doku.php/wtt:external-datasets" target="_blank">how to do it</a>.'),
 			'weight' => $local_weight,
 			'constituency' => array()
 		);
@@ -116,7 +116,7 @@ function fix_local_parliaments(&$representatives, $params)
 			'name' => sprintf(_('Region %s'), $params['administrative_area_level_1']),
 			'kind' => 'regional',
 			'competence' => _("We don't know representatives of your region.") . ' ' .
-				_('You can simply add them and give the option to contact them to the public. See <a href="http://community.kohovolit.eu/doku.php/wtt:external-datasets">how to do it</a>.'),
+				_('You can simply add them and give the option to contact them to the public. See <a href="http://community.kohovolit.eu/doku.php/wtt:external-datasets" target="_blank">how to do it</a>.'),
 			'weight' => $regional_weight,
 			'constituency' => array()
 		);

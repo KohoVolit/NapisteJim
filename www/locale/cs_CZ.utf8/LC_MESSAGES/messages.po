@@ -101,16 +101,16 @@ msgstr "Zastupitele ve Vašem měste neznáme."
 msgid ""
 "You can simply add them and give the option to contact them to the public. "
 "See <a href=\"http://community.kohovolit.eu/doku.php/wtt:external-datasets"
-"\">how to do it</a>."
+"\" target=\"_blank\">how to do it</a>."
 msgstr ""
 "Můžete je jednoduše přidat a dát tak lidem možnost napsat jim. Podívejte se "
 "<a href=\"http://community.kohovolit.eu/doku.php/napistejim:externi_kontakty"
-"\">jak na to</a>."
+"\" target=\"_blank\">jak na to</a>."
 
 #: www/ajax/address_representatives.php:115
 #, php-format
 msgid "Region %s"
-msgstr "%s kraj"
+msgstr "Kraj %s"
 
 #: www/ajax/address_representatives.php:117
 msgid "We don't know representatives of your region."
