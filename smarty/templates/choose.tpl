@@ -12,7 +12,7 @@ var required_address_level = "{$smarty.const.REQUIRED_ADDRESS_LEVEL}";
 var map_center_lat = "{$smarty.const.MAP_CENTER_LAT}";
 var map_center_lng = "{$smarty.const.MAP_CENTER_LNG}";
 var map_zoom = "{$smarty.const.MAP_ZOOM}";
-var lang = "{$locale.lang}";
+var areas_language = "{$smarty.const.AREAS_LANGUAGE}"
 var address = "{$address}";
 </script>
 <script type="text/javascript" src="locale/{$locale.system_locale}/LC_MESSAGES/messages.js"></script>

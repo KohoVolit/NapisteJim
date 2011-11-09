@@ -25,6 +25,9 @@ error_reporting(0);
 const COUNTRY_NAME = 'Česká republika';
 const COUNTRY_CODE = 'cz';
 
+// code of the language the constiuency areas in the database are specified in
+const AREAS_LANGUAGE = 'cs';
+
 // address field required in the result of Google geocoding to treat the input address as complete (reverse geocoding is used otherwise)
 const REQUIRED_ADDRESS_LEVEL = 'administrative_area_level_2';
 

@@ -29,7 +29,7 @@ date_default_timezone_set($locale['time_zone']);
 // set locale
 putenv('LC_ALL=' . $locale['system_locale']);
 setlocale(LC_ALL, $locale['system_locale']);
-bindtextdomain('messages', '/www/locale');
+bindtextdomain('messages', WTT_DIR . '/www/locale');
 textdomain('messages');
 
 ?>
