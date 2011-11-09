@@ -55,22 +55,25 @@ function static_page($page)
 
 function search_advanced_page()
 {
-	global $api_data;
+	global $api_data, $api_wtt;
 	$smarty = new SmartyWtt;
 
 	// get all parliaments in this country
 	$parliaments = $api_data->read('Parliament', array('country_code' => COUNTRY_CODE));
-	usort($parliaments, 'cmp_by_weight_name');
-	$smarty->assign('parliaments', $parliaments);
+	$parl_codes = array();
+	foreach ($parliaments as $p)
+		$parl_codes[] = $p['code'];
+	$parliament_details = $api_wtt->read('ParliamentDetails', Db::arrayOfStringsArgument($parl_codes));
+	usort($parliament_details, 'cmp_by_weight_name');
 
+	$smarty->assign('parliaments', $parliament_details);
 	$smarty->display('search_advanced.tpl');
 }
 
-	function cmp_by_weight_name($a, $b)
-	{
-		return ($a['weight'] < $b['weight']) ? -1 : (($a['weight'] > $b['weight']) ? 1 : strcoll($a['name'], $b['name']));
-	}
-
+function cmp_by_weight_name($a, $b)
+{
+	return ($a['weight'] < $b['weight']) ? -1 : (($a['weight'] > $b['weight']) ? 1 : strcoll($a['name'], $b['name']));
+}
 
 function public_message_page($message_id)
 {

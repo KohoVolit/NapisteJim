@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-10-17 16:20+0200\n"
+"POT-Creation-Date: 2011-11-08 14:09+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,15 +17,11 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: dummy.js
-msgid "thousands_sep"
-msgstr ""
-
 #: choose.js:13 choose_advanced.js:13
 msgid "Choose at least one representative, please."
 msgstr ""
 
-#: choose.js:77 choose.js:150 choose.js:158 choose.js:161
+#: choose.js:77 choose.js:148 choose.js:156 choose.js:159
 msgid "Be more specific entering your address, please. This one has not been recognized."
 msgstr ""
 
@@ -38,6 +34,6 @@ msgstr ""
 msgid "Address found:"
 msgstr ""
 
-#: choose.js:275 choose_advanced.js:80
+#: choose.js:273 choose_advanced.js:80
 msgid "Three representatives can be chosen at most. Remove one of the chosen representatives first to add another one or use drag and drop, please."
 msgstr ""

@@ -8,23 +8,21 @@ msgstr ""
 "Project-Id-Version: NapišteJim.cz 1.0\n"
 "Report-Msgid-Bugs-To: info@KohoVolit.eu\n"
 "POT-Creation-Date: 2011-10-17 11:02+0200\n"
-"PO-Revision-Date: 2011-10-17 17:25+0200\n"
+"PO-Revision-Date: 2011-11-08 14:18+0100\n"
 "Language-Team: Czech <info@kohovolit.eu>\n"
 "Language: czech\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: dummy.js
-msgid "thousands_sep"
-msgstr ","
-
 #: choose.js:13 choose_advanced.js:13
 msgid "Choose at least one representative, please."
 msgstr "Vyberte, prosím, alespoň jednoho zastupitele."
 
-#: choose.js:77 choose.js:150 choose.js:158 choose.js:161
-msgid "Be more specific entering your address, please. This one has not been recognized."
+#: choose.js:77 choose.js:148 choose.js:156 choose.js:159
+msgid ""
+"Be more specific entering your address, please. This one has not been "
+"recognized."
 msgstr "Zkuste, prosím, napsat adresu přesněji. Tato nebyla rozpoznána."
 
 #: choose.js:94
@@ -36,6 +34,14 @@ msgstr "Adresa neleží v krajině %s. Zadejte, prosím, jinou adresu."
 msgid "Address found:"
 msgstr "Nalezená adresa:"
 
-#: choose.js:275 choose_advanced.js:80
-msgid "Three representatives can be chosen at most. Remove one of the chosen representatives first to add another one or use drag and drop, please."
-msgstr "Můžete zvolit nejvíce tři zastupitele. Nejprve některého odeberte nebo použijte pretažení myší."
+#: choose.js:273 choose_advanced.js:80
+msgid ""
+"Three representatives can be chosen at most. Remove one of the chosen "
+"representatives first to add another one or use drag and drop, please."
+msgstr ""
+"Můžete zvolit nejvíce tři zastupitele. Nejprve některého odeberte nebo "
+"použijte pretažení myší."
+
+#: dummy.js
+msgid "thousands_sep"
+msgstr ","

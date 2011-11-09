@@ -7,7 +7,6 @@ const API_FILES_URL = 'http://api.kohovolit.eu/files';
 const SMARTY_DIR = '/usr/local/lib/php/Smarty/libs/';
 
 define("WTT_LOGS_DIR", WTT_DIR . '/logs');
-define("LOCALE_DIR", WTT_DIR . '/www/locale');
 
 // domain and service e-mail addresses
 const WTT_TITLE = 'NapišteJim.cz';
@@ -33,9 +32,6 @@ const REQUIRED_ADDRESS_LEVEL = 'administrative_area_level_2';
 const MAP_CENTER_LAT = 50;
 const MAP_CENTER_LNG = 15;
 const MAP_ZOOM = 5;
-
-// name of translation files
-const GETTEXT_DOMAIN = 'messages';
 
 // available locales
 $locales = array(

@@ -4,13 +4,13 @@
   <div class="parliament-head ui-accordion ui-accordion-icons ui-helper-reset" id="parliament-head-{$parliament.code}" > 
     <h3 class="parliament-head-name ui-accordion-header" id="parliament-head-name-{$parliament.code}" >
       <span class="ui-icon ui-icon-triangle-1-s"></span>
-      <a href="#" class="ui-state-active"> {$parliament.name}</a>
+      <a href="#" class="ui-state-active">{$parliament.name}</a>
     </h3>
-<!--    <div class="parliament-head-description" id="parliament-head-description-{$parliament.code}">
-      {$parliament.description}
-    </div>-->
   </div>
   <div id="parliament-body-{$parliament.code}" class="parliament-body">
+    <div class="parliament-head-description" id="parliament-head-description-{$parliament.code}">
+      {$parliament.competence}
+    </div>
 	{if count($parliament.constituency) > 1}
     <div class="constituencies-message">{t}Several constituencies has been found to your address. Choose the right one or try to specify your address more precisely.{/t}</div>
 	{/if}

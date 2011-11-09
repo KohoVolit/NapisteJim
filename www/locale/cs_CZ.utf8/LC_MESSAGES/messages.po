@@ -7,146 +7,181 @@ msgid ""
 msgstr ""
 "Project-Id-Version: NapišteJim.cz 1.0\n"
 "Report-Msgid-Bugs-To: info@KohoVolit.eu\n"
-"POT-Creation-Date: 2011-10-24 21:45+0200\n"
-"PO-Revision-Date: 2011-10-24 21:46+0200\n"
+"POT-Creation-Date: 2011-10-17 11:01+0200\n"
+"PO-Revision-Date: 2011-11-08 14:09+0100\n"
 "Language-Team: Czech <info@kohovolit.eu>\n"
 "Language: czech\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=((((n%10)==1)&&((n%100)!=11))?(0):(((((n%10)>=2)&&((n%10)<=4))&&(((n%100)<10)||((n%100)>=20)))?(1):2));\n"
+"Plural-Forms: nplurals=3; plural=((((n%10)==1)&&((n%100)!=11))?(0):(((((n%10)"
+">=2)&&((n%10)<=4))&&(((n%100)<10)||((n%100)>=20)))?(1):2));\n"
 
-#: mail/receive_mail.php:30
-#, php-format
-msgid "An e-mail received to address %s"
-msgstr "Přišel e-mail na adresu %s"
-
-#: mail/receive_mail.php:31
-msgid "From:"
-msgstr "Od:"
-
-#. smarty/templates/write.tpl
-#: mail/receive_mail.php:32 locale/smarty.c:74
-msgid "Subject:"
-msgstr "Předmět:"
-
-#: mail/receive_mail.php:34
-msgid "Full e-mail data"
-msgstr "Úplná data e-mailu"
-
-#: mail/receive_mail.php:53
+#: mail/receive_mail.php:39
 #, php-format
 msgid "No corresponding message found to the received response with code %s"
 msgstr "K došlé odpovědi s kódem '%s' se nanašla odpovídající zpráva"
 
-#: mail/receive_mail.php:54
+#: mail/receive_mail.php:40
 #, php-format
 msgid "The received response can be found in %s"
 msgstr "Došlou odpověď lze najít v %s"
 
-#: mail/receive_mail.php:66
+#: mail/receive_mail.php:52
 #, php-format
 msgid "%s %s has responded to your message"
 msgstr "%s %s odpovědel(a) na Vaši zprávu"
 
-#: mail/receive_mail.php:117 www/index.php:467
+#. notice admin about other mails than responses to sent messages
+#: mail/receive_mail.php:67
+#, php-format
+msgid "An e-mail received to address %s"
+msgstr "Přišel e-mail na adresu %s"
+
+#: mail/receive_mail.php:68
+msgid "From:"
+msgstr "Od:"
+
+#. smarty/templates/write.tpl
+#: mail/receive_mail.php:69 www/locale/smarty.c:80
+msgid "Subject:"
+msgstr "Předmět:"
+
+#: mail/receive_mail.php:71
+msgid "Full e-mail data"
+msgstr "Úplná data e-mailu"
+
+#: mail/receive_mail.php:114 www/index.php:482
 msgid "Sending of a mail failed"
 msgstr "Odeslání mailu selhalo"
 
-#: mail/receive_mail.php:117
-#: www/index.php:467
-msgid "Check"
-msgstr "Zkontroluj"
+#: mail/receive_mail.php:114
+msgid "Check "
+msgstr "Zkontroluj "
 
-#: www/index.php:168
+#: www/index.php:171
 #, php-format
 msgid "Please confirm that you want to send the message using %s"
 msgstr "Potvrďte prosím, že chcete odeslat zprávu přes %s"
 
-#: www/index.php:294
+#: www/index.php:306
 msgid "Your message has not been sent"
 msgstr "Vaše zpráva nebyla odeslána"
 
-#: www/index.php:296
+#: www/index.php:308
 msgid "Your message has been sent"
 msgstr "Vaše zpráva byla odeslána"
 
-#: www/index.php:297
+#: www/index.php:309
 msgid "Your message has been sent only to some of the addressees"
 msgstr "Vaše zpráva byla odeslána jen některým adresátům"
 
-#: www/index.php:322
+#: www/index.php:334
 msgid "A message to representatives needs your approval"
 msgstr "Zpráva pro politiky potřebuje tvoje schválení"
 
-#: www/index.php:340
+#: www/index.php:352
 msgid "Your message has been found unpolite and it has not been sent"
 msgstr "Vaše zpráva byla shledána jako neslušná a nebyla odeslána"
 
-#: www/index.php:474
+#: www/index.php:482
+msgid "Check"
+msgstr "Zkontroluj"
+
+#: www/index.php:489
 msgid "Newsletter order"
 msgstr "Objednání newsletteru"
 
+#: www/ajax/address_representatives.php:102
+msgid "We don't know representatives of your town."
+msgstr "Zastupitele ve Vašem měste neznáme."
+
+#: www/ajax/address_representatives.php:103
+#: www/ajax/address_representatives.php:118
+msgid ""
+"You can simply add them and give the option to contact them to the public. "
+"See <a href=\"http://community.kohovolit.eu/doku.php/wtt:external-datasets"
+"\">how to do it</a>."
+msgstr ""
+"Můžete je jednoduše přidat a dát tak lidem možnost napsat jim. Podívejte se "
+"<a href=\"http://community.kohovolit.eu/doku.php/napistejim:externi_kontakty"
+"\">jak na to</a>."
+
+#: www/ajax/address_representatives.php:115
+#, php-format
+msgid "Region %s"
+msgstr "%s kraj"
+
+#: www/ajax/address_representatives.php:117
+msgid "We don't know representatives of your region."
+msgstr "Zastupitele ve Vašem kraji neznáme."
+
 #. smarty/templates/choose.tpl
 #. smarty/templates/choose_advanced.tpl
-#: locale/smarty.c:2 locale/smarty.c:41
+#: www/locale/smarty.c:2 www/locale/smarty.c:47
 msgid "Choose your representatives"
 msgstr "Vyberte politiky"
 
 #. smarty/templates/choose.tpl
-#: locale/smarty.c:5
+#: www/locale/smarty.c:5
 msgid "Change address"
 msgstr "Změnit adresu"
 
 #. smarty/templates/choose.tpl
 #. smarty/templates/choose_advanced.tpl
-#: locale/smarty.c:8 locale/smarty.c:44
+#: www/locale/smarty.c:8 www/locale/smarty.c:50
 msgid "Addressees"
 msgstr "Adresáti"
 
 #. smarty/templates/choose.tpl
 #. smarty/templates/choose_advanced.tpl
-#: locale/smarty.c:11
-msgid "Choose up to three addressees of your message from the found politicians by clicking on their name or using drag&drop into boxes. The same message then cannot be sent again to other politicians."
-msgstr "Přetažením jmen do boxů nebo kliknutím na jméno vyberte ze svých politiků nejvíce tři adresáty Vaší zprávy. Dalším politikům pak už stejnou zprávu nebudete moct odeslat."
+#: www/locale/smarty.c:11 www/locale/smarty.c:53
+msgid ""
+"Choose up to three addressees of your message from the found politicians by "
+"clicking on their name or using drag&drop into boxes. The same message then "
+"cannot be sent again to other politicians."
+msgstr ""
+"Přetažením jmen do boxů nebo kliknutím na jméno vyberte ze svých politiků "
+"nejvíce tři adresáty Vaší zprávy. Dalším politikům pak už stejnou zprávu "
+"nebudete moct odeslat."
 
 #. smarty/templates/choose.tpl
 #. smarty/templates/choose_advanced.tpl
-#: locale/smarty.c:14 locale/smarty.c:50
+#: www/locale/smarty.c:14 www/locale/smarty.c:56
 msgid "Why?"
 msgstr "Proč?"
 
 #. smarty/templates/choose.tpl
 #. smarty/templates/choose_advanced.tpl
-#: locale/smarty.c:17 locale/smarty.c:53
+#: www/locale/smarty.c:17 www/locale/smarty.c:59
 msgid "Write to them!"
 msgstr "Napište Jim!"
 
 #. smarty/templates/list.tpl
 #. smarty/templates/confirm.tpl
-#: locale/smarty.c:20 locale/smarty.c:188
+#: www/locale/smarty.c:20 www/locale/smarty.c:203
 msgid "List of public messages"
 msgstr "Seznam veřejných zpráv"
 
 #. smarty/templates/list.tpl
-#: locale/smarty.c:23
+#: www/locale/smarty.c:23
 msgid "Status"
 msgstr "Stav"
 
 #. smarty/templates/list.tpl
 #. smarty/templates/message.tpl
-#: locale/smarty.c:26 locale/smarty.c:161
+#: www/locale/smarty.c:26 www/locale/smarty.c:173
 msgid "To"
 msgstr "Komu"
 
 #. smarty/templates/list.tpl
-#: locale/smarty.c:29
+#: www/locale/smarty.c:29
 msgid "Message"
 msgstr "Zpráva"
 
 #. smarty/templates/list.tpl
 #. smarty/templates/message.tpl
-#: locale/smarty.c:32 locale/smarty.c:167
+#: www/locale/smarty.c:32 www/locale/smarty.c:179
 msgid "Date"
 msgstr "Datum"
 
@@ -154,28 +189,28 @@ msgstr "Datum"
 #. smarty/templates/message.tpl
 #. smarty/templates/email/message_to_mp.tpl
 #. smarty/templates/email/response_from_mp.tpl
-#: locale/smarty.c:35 locale/smarty.c:158 locale/smarty.c:584
-#: locale/smarty.c:596
+#: www/locale/smarty.c:35 www/locale/smarty.c:170 www/locale/smarty.c:602
+#: www/locale/smarty.c:614
 msgid "From"
 msgstr "Od"
 
 #. smarty/templates/list.tpl
-#: locale/smarty.c:38
+#: www/locale/smarty.c:38
 msgid "Message answered"
 msgstr "Zpráva zodpovězena"
 
 #. smarty/templates/list.tpl
-#: locale/smarty.c:41
+#: www/locale/smarty.c:41
 msgid "Message answered (more than %1 days)"
 msgstr "Zpráva nezodpovězena (více jak 14 dní)"
 
 #. smarty/templates/list.tpl
-#: locale/smarty.c:44
+#: www/locale/smarty.c:44
 msgid "Message answered (less than %1 days)"
 msgstr "Zpráva nezodpovězena (méně jak 14 dní)"
 
 #. smarty/templates/write.tpl
-#: locale/smarty.c:62
+#: www/locale/smarty.c:62
 msgid "Write message"
 msgstr "Napsat zprávu"
 
@@ -183,209 +218,261 @@ msgstr "Napsat zprávu"
 #. smarty/templates/email/message_refused.tpl
 #. smarty/templates/email/message_sent.tpl
 #. smarty/templates/email/request_to_confirm.tpl
-#: locale/smarty.c:65 locale/smarty.c:524 locale/smarty.c:569
-#: locale/smarty.c:632
+#: www/locale/smarty.c:65 www/locale/smarty.c:536 www/locale/smarty.c:581
+#: www/locale/smarty.c:644
 msgid "Your message for politicians"
 msgstr "Vaše zpráva pro politiky"
 
 #. smarty/templates/write.tpl
-#: locale/smarty.c:68
-msgid "Write your message for selected representatives. Please write personally, do not copy&paste a text prearranged by someone. If a politician already received the same message from someone else it will not be sent again."
-msgstr "Napište svou zprávu pro vybrané politiky. Pište prosím osobně, nekopírujte text, který někdo předem připravil. Pokud politik už stejnou zprávu dostal od někoho jiného, nebude mu odeslána znovu."
+#: www/locale/smarty.c:68
+msgid ""
+"Write your message for selected representatives. Please write personally, do "
+"not copy&paste a text prearranged by someone. If a politician already "
+"received the same message from someone else it will not be sent again."
+msgstr ""
+"Napište svou zprávu pro vybrané politiky. Pište prosím osobně, nekopírujte "
+"text, který někdo předem připravil. Pokud politik už stejnou zprávu dostal "
+"od někoho jiného, nebude mu odeslána znovu."
 
 #. smarty/templates/write.tpl
-#: locale/smarty.c:71
+#: www/locale/smarty.c:71
 msgid "Your name:"
 msgstr "Vaše jméno:"
 
 #. smarty/templates/write.tpl
-#: locale/smarty.c:74
+#: www/locale/smarty.c:74
 msgid "Town:"
 msgstr "Obec:"
 
 #. smarty/templates/write.tpl
-#: locale/smarty.c:77
+#: www/locale/smarty.c:77
 msgid "E-mail:"
 msgstr "E-mail:"
 
 #. smarty/templates/write.tpl
-#: locale/smarty.c:83
+#: www/locale/smarty.c:83
 msgid "The message is:"
 msgstr "Zpráva je:"
 
 #. smarty/templates/write.tpl
-#: locale/smarty.c:86
+#: www/locale/smarty.c:86
 msgid "public"
 msgstr "veřejná"
 
 #. smarty/templates/write.tpl
-#: locale/smarty.c:89
+#: www/locale/smarty.c:89
 msgid "private"
 msgstr "soukromá"
 
 #. smarty/templates/write.tpl
-#: locale/smarty.c:92
+#: www/locale/smarty.c:92
 msgid "I want to receive news from %1"
 msgstr "Chci dostávat informace z %1"
 
 #. smarty/templates/about.tpl
-#: locale/smarty.c:95 locale/smarty.c:98
+#: www/locale/smarty.c:95 www/locale/smarty.c:98
 msgid "About project"
 msgstr "O projektu"
 
 #. smarty/templates/about.tpl
-#: locale/smarty.c:101
+#: www/locale/smarty.c:101
 msgid "MSGID_ABOUT_PROJECT_SECTION"
 msgstr ""
 "<p>\n"
-"Cílem projektu %1 je fungovat jako živá brána e-mailové komunikace mezi občany a politiky. \n"
+"Cílem projektu %1 je fungovat jako živá brána e-mailové komunikace mezi "
+"občany a politiky. \n"
 "</p>\n"
 "<p>\n"
-"Chceme snižovat současné bariéry mezi „obyčejnými lidmi“ a vysokými politickými představiteli a povzbuzovat veřejnost k vyjádření názoru a většímu zájmu o politiku a správu státu, bez kterého je demokracie pouze poloviční.\n"
+"Chceme snižovat současné bariéry mezi „obyčejnými lidmi“ a vysokými "
+"politickými představiteli a povzbuzovat veřejnost k vyjádření názoru a "
+"většímu zájmu o politiku a správu státu, bez kterého je demokracie pouze "
+"poloviční.\n"
 "</p>\n"
 "<p>\n"
 "Na %1 můžete:\n"
 "<ul>\n"
-"	<li><strong>vyhledat</strong> konkrétního politika (např. dle regionu, strany, nebo komise, ve které zasedá)</li>\n"
-"	<li><strong>napsat</strong> mu/ji</li>\n"
-"	<li><strong>sledovat</strong>, na co se lidé ptají a jak politici odpovídají</li>\n"
+"\t<li><strong>vyhledat</strong> konkrétního politika (např. dle regionu, "
+"strany, nebo komise, ve které zasedá)</li>\n"
+"\t<li><strong>napsat</strong> mu/ji</li>\n"
+"\t<li><strong>sledovat</strong>, na co se lidé ptají a jak politici "
+"odpovídají</li>\n"
 "</ul>\n"
 "</p><p>\n"
-"Inspirací nám byly partnerské weby <a href=\"http://www.WriteToThem.com\">WriteToThem.com</a> a <a href=\"http://www.ParasykJiems.lt\">ParasykJiems.lt</a>.\n"
+"Inspirací nám byly partnerské weby <a href=\"http://www.WriteToThem.com"
+"\">WriteToThem.com</a> a <a href=\"http://www.ParasykJiems.lt\">ParasykJiems."
+"lt</a>.\n"
 "</p>"
 
 #. smarty/templates/about.tpl
-#: locale/smarty.c:104
+#: www/locale/smarty.c:104
 msgid "Authors"
 msgstr "Autoři"
 
 #. smarty/templates/about.tpl
-#: locale/smarty.c:107
+#: www/locale/smarty.c:107
 msgid "MSGID_AUTHORS_SECTION"
 msgstr ""
 "<p>\n"
-"V zastřešujícím sdružení <a href=\"http://kohovolit.eu\">KohoVolit.eu</a> se na práci na %1 podíleli Jaroslav Semančík, Michal Škop (programátorské a projektové práce) a Veronika Šumová (projektové práce, propagace).\n"
+"V zastřešujícím sdružení <a href=\"http://kohovolit.eu\">KohoVolit.eu</a> se "
+"na práci na %1 podíleli Jaroslav Semančík, Michal Škop (programátorské a "
+"projektové práce) a Veronika Šumová (projektové práce, propagace).\n"
 "</p><p>\n"
-"Propagační <a href=\"/video\">videa</a> k aplikaci natočil studentský tým z FAMO Písek vystupující pod značkou <a href=\"http://www.alcest.cz\">Alcest.cz</a>. Scénář napsal Jan Škop, režie se ujal Ladislav Plecitý.\n"
+"Propagační <a href=\"/video\">videa</a> k aplikaci natočil studentský tým "
+"z FAMO Písek vystupující pod značkou <a href=\"http://www.alcest.cz\">Alcest."
+"cz</a>. Scénář napsal Jan Škop, režie se ujal Ladislav Plecitý.\n"
 "</p><p>\n"
-"<a href=\"http://kohovolit.eu\">KohoVolit.eu</a> je internetový server a stejnojmenné občanské sdružení fungující od roku 2006 (občanské sdružení registrováno od roku 2009). Jeho primárním cílem je analyzovat a zveřejňovat měřitelné ukazatele skutečného chování politiků (hlasování, aktivita, předkládání návrhů aj.), které mají sloužit jako impuls ke zvýšení tlaku veřejnosti na volené zástupce. Až dosud se autoři soustředili na nástroje pomáhající při volebním rozhodování – mimojiné vyvinuli první tzv. VAA (Voting Advice Aplications) pro Českou republiku a Slovensko. Před posledními volbami do poslanecké sněmovny  vyzkoušelo tyto tzv. „předvolební kalkulačky“ téměř 250 tisíc uživatelů.\n"
+"<a href=\"http://kohovolit.eu\">KohoVolit.eu</a> je internetový server a "
+"stejnojmenné občanské sdružení fungující od roku 2006 (občanské sdružení "
+"registrováno od roku 2009). Jeho primárním cílem je analyzovat a zveřejňovat "
+"měřitelné ukazatele skutečného chování politiků (hlasování, aktivita, "
+"předkládání návrhů aj.), které mají sloužit jako impuls ke zvýšení tlaku "
+"veřejnosti na volené zástupce. Až dosud se autoři soustředili na nástroje "
+"pomáhající při volebním rozhodování – mimojiné vyvinuli první tzv. VAA "
+"(Voting Advice Aplications) pro Českou republiku a Slovensko. Před "
+"posledními volbami do poslanecké sněmovny  vyzkoušelo tyto tzv. „předvolební "
+"kalkulačky“ téměř 250 tisíc uživatelů.\n"
 "</p><p>\n"
-"Postupně se chtějí stát plnohodnotným internetovým parlamentním watchdogem inspirováni britským <a href=\"http://TheyWorkForYou.com\">TheyWorkForYou.com</a>, polským <a href=\"http://sejmometr.pl\">Sejmometr.pl</a> a slovenským <a href=\"http://dotankoch.sk\">DoTankoch.sk</a>.\n"
+"Postupně se chtějí stát plnohodnotným internetovým parlamentním watchdogem "
+"inspirováni britským <a href=\"http://TheyWorkForYou.com\">TheyWorkForYou."
+"com</a>, polským <a href=\"http://sejmometr.pl\">Sejmometr.pl</a> a "
+"slovenským <a href=\"http://dotankoch.sk\">DoTankoch.sk</a>.\n"
 "</p>"
 
 #. smarty/templates/about.tpl
-#: locale/smarty.c:110
+#: www/locale/smarty.c:110
 msgid "Published tools examples"
 msgstr "Příklady publikovaných nástrojů"
 
 #. smarty/templates/about.tpl
-#: locale/smarty.c:113
+#: www/locale/smarty.c:113
 msgid "MSGID_PUBLISHED_TOOLS_EXAMPLES_SECTION"
 msgstr ""
 "<h3>„Předvolební kalkulačky“</h3>\n"
 "<ul>\n"
-"	<li><a href=\"http://cs.kohovolit.eu/cz/psp/vote/11\">na základě reálných hlasování</a></li>\n"
-"	<li><a href=\"http://cs.kohovolit.eu/cz/psp/vote/24\">na základě názorů kandidátů</a></li>\n"
+"\t<li><a href=\"http://cs.kohovolit.eu/cz/psp/vote/11\">na základě reálných "
+"hlasování</a></li>\n"
+"\t<li><a href=\"http://cs.kohovolit.eu/cz/psp/vote/24\">na základě názorů "
+"kandidátů</a></li>\n"
 "</ul>\n"
 "\n"
 "<h3>Analýzy hlasování</h3>\n"
 "<ul>\n"
-"	<li><a href=\"http://cs.kohovolit.eu/cz/praha/analysis/mds\">třeba z pražského magistrátu</a></li>\n"
+"\t<li><a href=\"http://cs.kohovolit.eu/cz/praha/analysis/mds\">třeba z "
+"pražského magistrátu</a></li>\n"
 "</ul>\n"
 "\n"
 "<h3>Analýzy aktivity poslanců</h3>\n"
 "<ul>\n"
-"	<li><a href=\"http://cs.kohovolit.eu/cz/psp/analysis/prehled_aktivity_poslancu_2010\">za rok 2010</a></li>\n"
+"\t<li><a href=\"http://cs.kohovolit.eu/cz/psp/analysis/"
+"prehled_aktivity_poslancu_2010\">za rok 2010</a></li>\n"
 "</ul>"
 
 #. smarty/templates/about.tpl
-#: locale/smarty.c:116
-msgid "If you like the application and you would like it to be further developed, <a href=\"/support\">support  it</a> please."
-msgstr "Pokud se vám aplikace líbí a rádi byste, aby se dále rozvíjela, <a href=\"/support\">podpořte nás</a>."
+#: www/locale/smarty.c:116
+msgid ""
+"If you like the application and you would like it to be further developed, "
+"<a href=\"/support\">support  it</a> please."
+msgstr ""
+"Pokud se vám aplikace líbí a rádi byste, aby se dále rozvíjela, <a href=\"/"
+"support\">podpořte nás</a>."
 
 #. smarty/templates/about.tpl
-#: locale/smarty.c:119
+#: www/locale/smarty.c:119
 msgid "The application was created with kind support of:"
 msgstr "Aplikace vznikla za laskavé podpory:"
 
 #. smarty/templates/support.tpl
 #. smarty/templates/basic_layout.tpl
-#: locale/smarty.c:122 locale/smarty.c:125 locale/smarty.c:662
+#: www/locale/smarty.c:122 www/locale/smarty.c:125 www/locale/smarty.c:674
 msgid "Support us"
 msgstr "Podpořte nás"
 
 #. smarty/templates/support.tpl
-#: locale/smarty.c:128
+#: www/locale/smarty.c:128
 msgid "MSGID_SUPPORT_US_SECTION"
 msgstr ""
 "<h1>Podpořte nás</h1>\n"
 "<p>\n"
-"Projekty <a href=\"http://KohoVolit.eu\">KohoVolit.eu</a> včetně %1 vznikají částečně dobrovolnou prací. To jim dává ten správný étos občanské společnosti, ale zároveň nám to občas brání v realizaci dalších skvělých nápadů a aplikací.\n"
+"Projekty <a href=\"http://KohoVolit.eu\">KohoVolit.eu</a> včetně %1 vznikají "
+"částečně dobrovolnou prací. To jim dává ten správný étos občanské "
+"společnosti, ale zároveň nám to občas brání v realizaci dalších skvělých "
+"nápadů a aplikací.\n"
 "</p><p>\n"
 "V kontextu %1 to je třeba\n"
 "<ul>\n"
-"	<li>rozšíření o další instituce (vláda, úřady)</li>\n"
-"	<li>rozšíření regionálně (kraje, obce)</li>\n"
+"\t<li>rozšíření o další instituce (vláda, úřady)</li>\n"
+"\t<li>rozšíření regionálně (kraje, obce)</li>\n"
 "</ul>\n"
 "</p><p>\n"
 "Pro KohoVolit.eu obecně:\n"
 "<ul>\n"
-"	<li>automatizované profily politiků (se záznamem hlasování, aktivity, promluv, interpelací aj.)</li>\n"
-"	<li>hlubší analýza hlasování</li>\n"
-"	<li>vizuální obchodní rejstřík v ČR</li>\n"
-"	<li>aplikace pro hlášení závad ve městech (po vzoru <a href=\"http://FixMyStreet.com\">FixMyStreet.com</a> a <a href=\"http://OdkazPreStarostu.sk\">OdkazPreStarostu.sk</a>)</li>\n"
+"\t<li>automatizované profily politiků (se záznamem hlasování, aktivity, "
+"promluv, interpelací aj.)</li>\n"
+"\t<li>hlubší analýza hlasování</li>\n"
+"\t<li>vizuální obchodní rejstřík v ČR</li>\n"
+"\t<li>aplikace pro hlášení závad ve městech (po vzoru <a href=\"http://"
+"FixMyStreet.com\">FixMyStreet.com</a> a <a href=\"http://OdkazPreStarostu.sk"
+"\">OdkazPreStarostu.sk</a>)</li>\n"
 "</ul>\n"
 "</p><p>\n"
-"Líbí se vám některý z těchto nápadů? Nebo máte vlastní? <a href=\"/contact\">Kontaktujte nás!</a>\n"
+"Líbí se vám některý z těchto nápadů? Nebo máte vlastní? <a href=\"/contact"
+"\">Kontaktujte nás!</a>\n"
 "</p>\n"
 "<h3>Podpořte nás</h3>\n"
 "<ul>\n"
-"	<li>řekněte o této možnosti svým známým</li>\n"
-"	<li>napište o nás (článek nebo na svůj blog)</li>\n"
-"	<li>jako dobrovolníci (krátkodobě i dlouhodobě)</li>\n"
-"	<li>finančně</li>\n"
+"\t<li>řekněte o této možnosti svým známým</li>\n"
+"\t<li>napište o nás (článek nebo na svůj blog)</li>\n"
+"\t<li>jako dobrovolníci (krátkodobě i dlouhodobě)</li>\n"
+"\t<li>finančně</li>\n"
 "</ul>\n"
 "<p>\n"
 "KohoVolit.eu hospodaří <strong>transparentně</strong>.<br/>\n"
 "Všechny transakce můžete vidět online:\n"
-"<a href=\"https://www.fio.cz/scgi-bin/hermes/dz-transparent.cgi?ID_ucet=2300049454\">2300049454/2010</a>,\n"
-"<a href=\"https://www.fio.cz/scgi-bin/hermes/dz-transparent.cgi?ID_ucet=2600049456\">2600049456/2010</a>\n"
+"<a href=\"https://www.fio.cz/scgi-bin/hermes/dz-transparent.cgi?"
+"ID_ucet=2300049454\">2300049454/2010</a>,\n"
+"<a href=\"https://www.fio.cz/scgi-bin/hermes/dz-transparent.cgi?"
+"ID_ucet=2600049456\">2600049456/2010</a>\n"
 "</p><p>\n"
 "DĚKUJEME :-)\n"
 "</p>"
 
 #. smarty/templates/search.tpl
-#: locale/smarty.c:131 locale/smarty.c:161
+#: www/locale/smarty.c:131 www/locale/smarty.c:167
 msgid "Search your representatives"
 msgstr "Najít své zastupitele"
 
 #. smarty/templates/search.tpl
-#: locale/smarty.c:134
+#: www/locale/smarty.c:134
 msgid "Your address"
 msgstr "Vaše adresa"
 
 #. smarty/templates/search.tpl
-#: locale/smarty.c:137
+#: www/locale/smarty.c:137
 msgid "Advanced search"
 msgstr "Rozšířené vyhledávání"
 
 #. smarty/templates/search.tpl
-#: locale/smarty.c:140
+#: www/locale/smarty.c:140
 msgid "E.g."
 msgstr "Např."
 
 #. smarty/templates/search.tpl
-#: locale/smarty.c:143 locale/smarty.c:146
+#: www/locale/smarty.c:143 www/locale/smarty.c:146
 msgid "MSGID_ADDRESS_EXAMPLE_1"
 msgstr "Bartoňova 951 Náchod"
 
 #. smarty/templates/search.tpl
-#: locale/smarty.c:149 locale/smarty.c:152
+#: www/locale/smarty.c:149 www/locale/smarty.c:158
+msgid "or"
+msgstr "nebo"
+
+#. smarty/templates/search.tpl
+#: www/locale/smarty.c:152 www/locale/smarty.c:155
 msgid "MSGID_ADDRESS_EXAMPLE_2"
 msgstr "331 01"
 
 #. smarty/templates/search.tpl
-#: locale/smarty.c:155 locale/smarty.c:158
+#: www/locale/smarty.c:161 www/locale/smarty.c:164
 msgid "MSGID_ADDRESS_EXAMPLE_3"
 msgstr "Ostrava"
 
@@ -396,343 +483,447 @@ msgstr "Ostrava"
 #. smarty/templates/email/message_to_mp.tpl
 #. smarty/templates/email/response_from_mp.tpl
 #. smarty/templates/email/request_to_confirm.tpl
-#: locale/smarty.c:170 locale/smarty.c:512 locale/smarty.c:527
-#: locale/smarty.c:572 locale/smarty.c:587 locale/smarty.c:605
-#: locale/smarty.c:635
+#: www/locale/smarty.c:176 www/locale/smarty.c:521 www/locale/smarty.c:539
+#: www/locale/smarty.c:584 www/locale/smarty.c:599 www/locale/smarty.c:617
+#: www/locale/smarty.c:647
 msgid "Subject"
 msgstr "Předmět"
 
 #. smarty/templates/message.tpl
-#: locale/smarty.c:176
+#: www/locale/smarty.c:182
 msgid "Not answered yet"
 msgstr "Zatím bez odpovědi"
 
 #. smarty/templates/search_advanced.tpl
-#: locale/smarty.c:179
+#: www/locale/smarty.c:185
 msgid "Advanced search of your representatives"
 msgstr "Rozšířené vyhledávání zastupitelů"
 
 #. smarty/templates/search_advanced.tpl
-#: locale/smarty.c:182
+#: www/locale/smarty.c:188
 msgid "Choose a parliament:"
 msgstr "Zvolte zastupitelský sbor:"
 
 #. smarty/templates/search_advanced.tpl
-#: locale/smarty.c:185
+#: www/locale/smarty.c:191
 msgid "Export e-mail addresses"
 msgstr "Zobrazit e-mailové adresy"
 
 #. smarty/templates/confirm.tpl
-#: locale/smarty.c:188
+#: www/locale/smarty.c:194
 msgid "Confirmation of sending of the message"
 msgstr "Potvrdit odeslání zprávy"
 
 #. smarty/templates/confirm.tpl
-#: locale/smarty.c:191
+#: www/locale/smarty.c:197
 msgid "Please confirm that you want to send the message"
 msgstr "Potvrďte prosím, že chcete odeslat zprávu"
 
 #. smarty/templates/confirm.tpl
-#: locale/smarty.c:194
-msgid "The message must be confirmed to send by clicking on the confirmation link sent to you by e-mail yet. Check your mailbox. Sometimes it can take a while to be delivered. If you still cannot find the e-mail check also a spam folder."
-msgstr "Odeslání zprávy musíte ještě potvrdit kliknutím na odkaz, který Vám byl zaslán v e-mailu. Zkontrolujte si svoji schránku, jeho doručení však může chvíli trvat. Pokud potvrzovací e-mail nemůžete nalézt, podívejte se také, jestli nebyl omylem zařazen mezi nevyžádanou poštu."
+#: www/locale/smarty.c:200
+msgid ""
+"The message must be confirmed to send by clicking on the confirmation link "
+"sent to you by e-mail yet. Check your mailbox. Sometimes it can take a while "
+"to be delivered. If you still cannot find the e-mail check also a spam "
+"folder."
+msgstr ""
+"Odeslání zprávy musíte ještě potvrdit kliknutím na odkaz, který Vám byl "
+"zaslán v e-mailu. Zkontrolujte si svoji schránku, jeho doručení však může "
+"chvíli trvat. Pokud potvrzovací e-mail nemůžete nalézt, podívejte se také, "
+"jestli nebyl omylem zařazen mezi nevyžádanou poštu."
 
 #. smarty/templates/faq.tpl
-#: locale/smarty.c:200 locale/smarty.c:203
+#: www/locale/smarty.c:206 www/locale/smarty.c:209
 msgid "Frequently asked questions"
 msgstr "Otázky a odpovědi"
 
 #. smarty/templates/faq.tpl
-#: locale/smarty.c:206 locale/smarty.c:260
+#: www/locale/smarty.c:212 www/locale/smarty.c:266
 msgid "MSGID_QUESTION_1"
 msgstr "Jak vyhledám komu chci napsat?"
 
 #. smarty/templates/faq.tpl
-#: locale/smarty.c:263
+#: www/locale/smarty.c:215 www/locale/smarty.c:272
+msgid "MSGID_QUESTION_2"
+msgstr "Proč si mohu vybrat jen tři adresáty?"
+
+#. smarty/templates/faq.tpl
+#: www/locale/smarty.c:218 www/locale/smarty.c:278
+msgid "MSGID_QUESTION_3"
+msgstr "Proč musím vyplňovat svou e-mailovu adresu?"
+
+#. smarty/templates/faq.tpl
+#: www/locale/smarty.c:221 www/locale/smarty.c:284
+msgid "MSGID_QUESTION_4"
+msgstr "Jak mu/jí napíšu zprávu?"
+
+#. smarty/templates/faq.tpl
+#: www/locale/smarty.c:224 www/locale/smarty.c:290
+msgid "MSGID_QUESTION_5"
+msgstr "Proč vracíme zpátky e-maily s vulgárním obsahem?"
+
+#. smarty/templates/faq.tpl
+#: www/locale/smarty.c:227 www/locale/smarty.c:296
+msgid "MSGID_QUESTION_6"
+msgstr "Ochrana osobních dat"
+
+#. smarty/templates/faq.tpl
+#: www/locale/smarty.c:230 www/locale/smarty.c:302
+msgid "MSGID_QUESTION_7"
+msgstr ""
+"Proč nemohu napsat třeba ministrovi, hejtmanovi nebo krajskému zastupiteli?"
+
+#. smarty/templates/faq.tpl
+#: www/locale/smarty.c:233 www/locale/smarty.c:308
+msgid "MSGID_QUESTION_8"
+msgstr "Proč bráníme posílání předpřipravených e-mailů?"
+
+#. smarty/templates/faq.tpl
+#: www/locale/smarty.c:236 www/locale/smarty.c:314
+msgid "MSGID_QUESTION_9"
+msgstr "Co je cílem projektu a kdo je za tím?"
+
+#. smarty/templates/faq.tpl
+#: www/locale/smarty.c:239 www/locale/smarty.c:320
+msgid "MSGID_QUESTION_10"
+msgstr "Mají politici povinnost mi odpovědět?"
+
+#. smarty/templates/faq.tpl
+#: www/locale/smarty.c:242 www/locale/smarty.c:326
+msgid "MSGID_QUESTION_11"
+msgstr "Co když mi neodpoví?"
+
+#. smarty/templates/faq.tpl
+#: www/locale/smarty.c:245 www/locale/smarty.c:332
+msgid "MSGID_QUESTION_12"
+msgstr "Mohu si zkontrolovat celou svou zprávu ještě před odesláním?"
+
+#. smarty/templates/faq.tpl
+#: www/locale/smarty.c:248 www/locale/smarty.c:338
+msgid "MSGID_QUESTION_13"
+msgstr "Na jaké adresy jsou e-maily posílány?"
+
+#. smarty/templates/faq.tpl
+#: www/locale/smarty.c:251 www/locale/smarty.c:344
+msgid "MSGID_QUESTION_14"
+msgstr "Mohu se spolehnout, že zpráva byla odeslána?"
+
+#. smarty/templates/faq.tpl
+#: www/locale/smarty.c:254 www/locale/smarty.c:350
+msgid "MSGID_QUESTION_15"
+msgstr "Mohu stornovat svou zprávu?"
+
+#. smarty/templates/faq.tpl
+#: www/locale/smarty.c:257 www/locale/smarty.c:356
+msgid "MSGID_QUESTION_16"
+msgstr ""
+"Mám nápad na podobnou aplikaci jako je %1, můžete mi pomoci s jeho "
+"realizací? Mohu použít váš software?"
+
+#. smarty/templates/faq.tpl
+#: www/locale/smarty.c:260 www/locale/smarty.c:362
+msgid "MSGID_QUESTION_17"
+msgstr "Chci pomáhat %1 jako dobrovolník."
+
+#. smarty/templates/faq.tpl
+#: www/locale/smarty.c:263 www/locale/smarty.c:368
+msgid "MSGID_QUESTION_18"
+msgstr "Chci sdělit komentář, kritiku nebo pochvalu."
+
+#. smarty/templates/faq.tpl
+#: www/locale/smarty.c:269
 msgid "MSGID_ANSWER_1"
 msgstr ""
 "<p>\n"
 "%1 nabízí dvě různé možnosti jak najít „svého“ politika:\n"
 "<ul>\n"
-"	<li>podle vaší adresy – stačí zadat do vyhledávacího políčka vaší adresu nebo její část a zobrazí se vám seznam poslanců a senátorů, seřazených pěkně podle vzdálenosti jejich oficiální kanceláře od zadaného místa</li>\n"
-"	<li>podle politické strany, výborů nebo komisí, ve kterých působí – víte už předem, že chcete napsat poslancům nebo senátorům z konkrétní politické strany a nezáleží vám na tom, odkud jsou? Nebo vás zajímá konkrétní téma? Pak klikněte na nápis <em>Rozšířené hledání</em> pod vyhledávacím políčkem.\n"
+"\t<li>podle vaší adresy – stačí zadat do vyhledávacího políčka vaší adresu "
+"nebo její část a zobrazí se vám seznam poslanců a senátorů, seřazených pěkně "
+"podle vzdálenosti jejich oficiální kanceláře od zadaného místa</li>\n"
+"\t<li>podle politické strany, výborů nebo komisí, ve kterých působí – víte "
+"už předem, že chcete napsat poslancům nebo senátorům z konkrétní politické "
+"strany a nezáleží vám na tom, odkud jsou? Nebo vás zajímá konkrétní téma? "
+"Pak klikněte na nápis <em>Rozšířené hledání</em> pod vyhledávacím políčkem.\n"
 "</ul>\n"
 "</p>"
 
 #. smarty/templates/faq.tpl
-#: locale/smarty.c:209 locale/smarty.c:266
-msgid "MSGID_QUESTION_2"
-msgstr "Proč si mohu vybrat jen tři adresáty?"
-
-#. smarty/templates/faq.tpl
-#: locale/smarty.c:269
+#: www/locale/smarty.c:275
 msgid "MSGID_ANSWER_2"
 msgstr ""
 "<p>\n"
-"Aplikace %1 je vybudována s úmyslem podpořit osobní komunikaci občanů s politiky, nikoli sloužit jako brána pro masové uniformní kampaně, kdy se hromadně obešle celý parlament univerzální zprávou.\n"
+"Aplikace %1 je vybudována s úmyslem podpořit osobní komunikaci občanů "
+"s politiky, nikoli sloužit jako brána pro masové uniformní kampaně, kdy se "
+"hromadně obešle celý parlament univerzální zprávou.\n"
 "</p><p>\n"
-"Chceme podpořit komunikaci i v rámci kampaní neziskových organizací. Směle se inspirujte – třeba u <a href=\"http://www.nasipolitici.cz\">NašiPolitici.cz</a>, <a href=\"http://www.oziveni.cz\">Oživení</a>, <a href=\"http://www.transparency.cz\">Transparency International</a>, <a href=\"http://www.hnutiduha.cz\">Hnutí Duha</a>, <a href=\"http://www.podnety.cz\">Podněty.cz</a> a dalších – ale pište za sebe a piště osobně.\n"
+"Chceme podpořit komunikaci i v rámci kampaní neziskových organizací. Směle "
+"se inspirujte – třeba u <a href=\"http://www.nasipolitici.cz\">NašiPolitici."
+"cz</a>, <a href=\"http://www.oziveni.cz\">Oživení</a>, <a href=\"http://www."
+"transparency.cz\">Transparency International</a>, <a href=\"http://www."
+"hnutiduha.cz\">Hnutí Duha</a>, <a href=\"http://www.podnety.cz\">Podněty.cz</"
+"a> a dalších – ale pište za sebe a piště osobně.\n"
 "</p><p>\n"
-"Jakkoli v naší zemi neplatí, že by určitý poslanec měl zodpovědnost pouze a výlučně za konkrétní region, i v České republice volíme regionálně. Nejvíce vám tak budou pravděpodobně naslouchat ti politici, kteří kandidovali ve vašem volebním obvodě, protože budou chtít být zvoleni znovu. Navíc, jako zástupci tohoto obvodu v parlamentu pro něj pravděpodobně budou moci nejvíce udělat. Kdo ví, možná zjistíte, že „váš“ poslanec má kancelář přímo „za rohem“ :-)\n"
+"Jakkoli v naší zemi neplatí, že by určitý poslanec měl zodpovědnost pouze a "
+"výlučně za konkrétní region, i v České republice volíme regionálně. Nejvíce "
+"vám tak budou pravděpodobně naslouchat ti politici, kteří kandidovali ve "
+"vašem volebním obvodě, protože budou chtít být zvoleni znovu. Navíc, jako "
+"zástupci tohoto obvodu v parlamentu pro něj pravděpodobně budou moci nejvíce "
+"udělat. Kdo ví, možná zjistíte, že „váš“ poslanec má kancelář přímo „za "
+"rohem“ :-)\n"
 "</p>"
 
 #. smarty/templates/faq.tpl
-#: locale/smarty.c:212 locale/smarty.c:272
-msgid "MSGID_QUESTION_3"
-msgstr "Proč musím vyplňovat svou e-mailovu adresu?"
-
-#. smarty/templates/faq.tpl
-#: locale/smarty.c:275
+#: www/locale/smarty.c:281
 msgid "MSGID_ANSWER_3"
 msgstr ""
 "<p>\n"
 "Ze dvou důvodů:\n"
 "<ul>\n"
-"	<li>aby vám na váš e-mail mohla přijít odpověď od daného politika. Pokud zprávu označíte jako soukromou, odpověď přijde pouze Vám.</li>\n"
-"	<li>před odesláním e-mailu politikovi Vás požádáme o kliknutí na aktivační link, který pošleme na Vaši e-mailovou adresu (viz níže). Jde o prvek, který snižuje zneužití systému. Chceme mít jistotu, že zprávy odesílají lidé z masa a kostí a nikoli spamovací roboti.</li>\n"
-"</ul>	\n"
+"\t<li>aby vám na váš e-mail mohla přijít odpověď od daného politika. Pokud "
+"zprávu označíte jako soukromou, odpověď přijde pouze Vám.</li>\n"
+"\t<li>před odesláním e-mailu politikovi Vás požádáme o kliknutí na aktivační "
+"link, který pošleme na Vaši e-mailovou adresu (viz níže). Jde o prvek, který "
+"snižuje zneužití systému. Chceme mít jistotu, že zprávy odesílají lidé "
+"z masa a kostí a nikoli spamovací roboti.</li>\n"
+"</ul>\t\n"
 "</p>"
 
 #. smarty/templates/faq.tpl
-#: locale/smarty.c:215 locale/smarty.c:278
-msgid "MSGID_QUESTION_4"
-msgstr "Jak mu/jí napíšu zprávu?"
-
-#. smarty/templates/faq.tpl
-#: locale/smarty.c:281
+#: www/locale/smarty.c:287
 msgid "MSGID_ANSWER_4"
 msgstr ""
 "<p>\n"
-"Jakmile budete mít vybraného 1–3 politiky nebo političky, kterým chcete napsat, klikněte na <em>Napište jim!</em>. Budete přesměrováni na další stránku s jednoduchým textovým oknem, kde můžete formulovat svou zprávu. Když budete s textem spokojeni, klikněte na <em>Odeslat</em>.\n"
+"Jakmile budete mít vybraného 1–3 politiky nebo političky, kterým chcete "
+"napsat, klikněte na <em>Napište jim!</em>. Budete přesměrováni na další "
+"stránku s jednoduchým textovým oknem, kde můžete formulovat svou zprávu. "
+"Když budete s textem spokojeni, klikněte na <em>Odeslat</em>.\n"
 "</p><p>\n"
-"Zbývá jeden poslední krok. Na vaši e-mailovou adresu, kterou jste vyplnili v předchozích krocích bude odeslán automatický e-mail s potvrzujícím odkazem. Stačí na něj kliknout a vaše zpráva pro politika byla právě odeslána.\n"
+"Zbývá jeden poslední krok. Na vaši e-mailovou adresu, kterou jste vyplnili "
+"v předchozích krocích bude odeslán automatický e-mail s potvrzujícím "
+"odkazem. Stačí na něj kliknout a vaše zpráva pro politika byla právě "
+"odeslána.\n"
 "</p>"
 
 #. smarty/templates/faq.tpl
-#: locale/smarty.c:218 locale/smarty.c:284
-msgid "MSGID_QUESTION_5"
-msgstr "Proč vracíme zpátky e-maily s vulgárním obsahem?"
-
-#. smarty/templates/faq.tpl
-#: locale/smarty.c:287
+#: www/locale/smarty.c:293
 msgid "MSGID_ANSWER_5"
 msgstr ""
 "<p>\n"
-"I když o sobě uvádíte některé údaje, pořád je ještě odeslání zprávy politikovi prostřednictvím %1 poměrně anonymní záležitostí, kterou je možné zneužít odesíláním mnohem vulgárnějších sdělení než dopisem nebo dokonce tváří v tvář.\n"
+"I když o sobě uvádíte některé údaje, pořád je ještě odeslání zprávy "
+"politikovi prostřednictvím %1 poměrně anonymní záležitostí, kterou je možné "
+"zneužít odesíláním mnohem vulgárnějších sdělení než dopisem nebo dokonce "
+"tváří v tvář.\n"
 "</p><p>\n"
-"Abychom zabránili tomuto zneužívání, zabudovali jsme systém, který automaticky kontroluje zprávy z tohoto hlediska. Pokud vaše zpráva systémem neprojde, bude Vám vrácena zpátky. Máte následně možnost ji opravit a znovu odeslat. \n"
+"Abychom zabránili tomuto zneužívání, zabudovali jsme systém, který "
+"automaticky kontroluje zprávy z tohoto hlediska. Pokud vaše zpráva systémem "
+"neprojde, bude Vám vrácena zpátky. Máte následně možnost ji opravit a znovu "
+"odeslat. \n"
 "</p><p>\n"
-"Pokud se budete domnívat, že Vaše zpráva byla vrácena neprávem, můžete nás <a href=\"/contact\">kontaktovat</a> abychom ji posoudili ručne.\n"
+"Pokud se budete domnívat, že Vaše zpráva byla vrácena neprávem, můžete nás "
+"<a href=\"/contact\">kontaktovat</a> abychom ji posoudili ručne.\n"
 "</p>"
 
 #. smarty/templates/faq.tpl
-#: locale/smarty.c:221 locale/smarty.c:290
-msgid "MSGID_QUESTION_6"
-msgstr "Ochrana osobních dat"
-
-#. smarty/templates/faq.tpl
-#: locale/smarty.c:293
+#: www/locale/smarty.c:299
 msgid "MSGID_ANSWER_6"
 msgstr ""
 "<p>\n"
 "Aby aplikace mohla fungovat, musí uložit vaše jméno a e-mailovou adresu.\n"
 "</p><p>\n"
-"Pokud si zvolíte, že vaše zpráva bude veřejná, zobrazí se v přehledu odeslaných zpráv a u ní bude i vaše jméno.\n"
+"Pokud si zvolíte, že vaše zpráva bude veřejná, zobrazí se v přehledu "
+"odeslaných zpráv a u ní bude i vaše jméno.\n"
 "</p><p>\n"
-"Na rozdíl od jména vaši e-mailovou adresu zásadně zveřejňovat nebudeme, ani ji nikdy nepředáme dalším stranám. Jediný, kdo ji uvidí, je adresát vašeho \n"
+"Na rozdíl od jména vaši e-mailovou adresu zásadně zveřejňovat nebudeme, ani "
+"ji nikdy nepředáme dalším stranám. Jediný, kdo ji uvidí, je adresát vašeho \n"
 "e-mailu, aby vám mohl odpovědět.\n"
 "</p><p>\n"
 "Použitím aplikace souhlasíte s uložením výšeuvedeným osobních dat.\n"
 "</p>"
 
 #. smarty/templates/faq.tpl
-#: locale/smarty.c:224 locale/smarty.c:296
-msgid "MSGID_QUESTION_7"
-msgstr "Proč nemohu napsat třeba ministrovi, hejtmanovi nebo krajskému zastupiteli?"
-
-#. smarty/templates/faq.tpl
-#: locale/smarty.c:299
+#: www/locale/smarty.c:305
 msgid "MSGID_ANSWER_7"
 msgstr ""
 "<p>\n"
 "Rozšíření i na členy vlády a hejtmany připravujeme.\n"
 "</p><p>\n"
-"Není už v našich silách najít a vložit do aplikace kontakty na všechny regionální politiky. S vaší pomocí ale %1 může snadno zahrnovat i vaše městské či krajské zastupitelstvo. Stačí na místní politiky sesbírat kontakty a přidat je do aplikace podle <a href=\"http://community.kohovolit.eu/doku.php/napistejim:externi_kontakty\">návodu</a>. \n"
+"Není už v našich silách najít a vložit do aplikace kontakty na všechny "
+"regionální politiky. S vaší pomocí ale %1 může snadno zahrnovat i vaše "
+"městské či krajské zastupitelstvo. Stačí na místní politiky sesbírat "
+"kontakty a přidat je do aplikace podle <a href=\"http://community.kohovolit."
+"eu/doku.php/napistejim:externi_kontakty\">návodu</a>. \n"
 "</p><p>\n"
-"Představitelům obcí, měst a krajů můžete také posílat <a href=\"http://www.podnety.cz/podnet-cislo-20100805175814\">stručné podněty</a> k  nápravě stavu přes <a href=\"http://www.podnety.cz/vlozit-podnet\">formulář občanského sdružení Podněty.cz</a>.\n"
+"Představitelům obcí, měst a krajů můžete také posílat <a href=\"http://www."
+"podnety.cz/podnet-cislo-20100805175814\">stručné podněty</a> k  nápravě "
+"stavu přes <a href=\"http://www.podnety.cz/vlozit-podnet\">formulář "
+"občanského sdružení Podněty.cz</a>.\n"
 "</p>"
 
 #. smarty/templates/faq.tpl
-#: locale/smarty.c:227 locale/smarty.c:302
-msgid "MSGID_QUESTION_8"
-msgstr "Proč bráníme posílání předpřipravených e-mailů?"
-
-#. smarty/templates/faq.tpl
-#: locale/smarty.c:305
+#: www/locale/smarty.c:311
 msgid "MSGID_ANSWER_8"
 msgstr ""
 "<p>\n"
-"Aplikace %1 je vybudována s úmyslem podpořit osobní komunikaci občanů s politiky, nikoli sloužit jako brána pro masové uniformní kampaně, kdy se hromadně obešle celý parlament univerzální zprávou.\n"
+"Aplikace %1 je vybudována s úmyslem podpořit osobní komunikaci občanů "
+"s politiky, nikoli sloužit jako brána pro masové uniformní kampaně, kdy se "
+"hromadně obešle celý parlament univerzální zprávou.\n"
 "</p><p>\n"
-"Také od politiků samotných máme zprávy, že se spíše zamyslí nad 5 autentickými, reálně psanými zprávami, než nad 50 identickými.\n"
+"Také od politiků samotných máme zprávy, že se spíše zamyslí nad 5 "
+"autentickými, reálně psanými zprávami, než nad 50 identickými.\n"
 "</p><p>\n"
-"Navíc, i když politik má k ruce asistenty, kteří mu pomáhají vyřizovat poštu, zpráv chodí velké množství. Pokud si má vybrat komu odpovědět a tím s ním navázat určitý dialog, odpoví spíše lidem, které skutečně zajímá konkrétní oblast a dali si práci s formulací dopisu, než těm, co pouze překopírovali text a klikli na <em>odeslat</em>.\n"
+"Navíc, i když politik má k ruce asistenty, kteří mu pomáhají vyřizovat "
+"poštu, zpráv chodí velké množství. Pokud si má vybrat komu odpovědět a tím "
+"s ním navázat určitý dialog, odpoví spíše lidem, které skutečně zajímá "
+"konkrétní oblast a dali si práci s formulací dopisu, než těm, co pouze "
+"překopírovali text a klikli na <em>odeslat</em>.\n"
 "</p>"
 
 #. smarty/templates/faq.tpl
-#: locale/smarty.c:230 locale/smarty.c:308
-msgid "MSGID_QUESTION_9"
-msgstr "Co je cílem projektu a kdo je za tím?"
-
-#. smarty/templates/faq.tpl
-#: locale/smarty.c:311
+#: www/locale/smarty.c:317
 msgid "MSGID_ANSWER_9"
 msgstr ""
 "<p>\n"
-"Cílem této aplikace je vytvořit živou platformu pro elektronickou komunikaci mezi občany a politiky. \n"
+"Cílem této aplikace je vytvořit živou platformu pro elektronickou komunikaci "
+"mezi občany a politiky. \n"
 "</p><p>\n"
-"O tom, jak projekt vzniknul a o KohoVolit.eu – zastřešující organizaci, se více dočtete na stránce <a href=\"/about\">O projektu</a>.\n"
+"O tom, jak projekt vzniknul a o KohoVolit.eu – zastřešující organizaci, se "
+"více dočtete na stránce <a href=\"/about\">O projektu</a>.\n"
 "</p>"
 
 #. smarty/templates/faq.tpl
-#: locale/smarty.c:233 locale/smarty.c:314
-msgid "MSGID_QUESTION_10"
-msgstr "Mají politici povinnost mi odpovědět?"
-
-#. smarty/templates/faq.tpl
-#: locale/smarty.c:317
+#: www/locale/smarty.c:323
 msgid "MSGID_ANSWER_10"
 msgstr ""
 "<p>\n"
-"Ne, ze zákona (na rozdíl například od určených státních institucí) volení zastupitelé tuto povinnost nemají. Existují ale způsoby jak ocenit dobrou práci nebo naopak vyjádřit svou nespokojenost.\n"
+"Ne, ze zákona (na rozdíl například od určených státních institucí) volení "
+"zastupitelé tuto povinnost nemají. Existují ale způsoby jak ocenit dobrou "
+"práci nebo naopak vyjádřit svou nespokojenost.\n"
 "</p><p>\n"
-"Přímo na %1 pro to budeme využívat následující kanály: Pokud označíte svou zprávu jako veřejnou, bude na %1 zobrazena a bude u ní indikováno, zda adresát odpověděl či nikoli. Pokud odpověď nedorazí, budeme po dvou týdnech politika urgovat opakovaně odeslanou zprávou.\n"
+"Přímo na %1 pro to budeme využívat následující kanály: Pokud označíte svou "
+"zprávu jako veřejnou, bude na %1 zobrazena a bude u ní indikováno, zda "
+"adresát odpověděl či nikoli. Pokud odpověď nedorazí, budeme po dvou týdnech "
+"politika urgovat opakovaně odeslanou zprávou.\n"
 "</p><p>\n"
-"Pokud zprávu označíte jako soukromou, pouze vy budete vědět jestli vám adresát odpověděl. Po dvou týdnech vám proto pošleme e-mail, kde se vás zeptáme, jestli vám byla doručena odpověď. Stačí jednoduše kliknout na jeden ze dvou odkazů v těle e-mailu.\n"
+"Pokud zprávu označíte jako soukromou, pouze vy budete vědět jestli vám "
+"adresát odpověděl. Po dvou týdnech vám proto pošleme e-mail, kde se vás "
+"zeptáme, jestli vám byla doručena odpověď. Stačí jednoduše kliknout na jeden "
+"ze dvou odkazů v těle e-mailu.\n"
 "</p><p>\n"
-"Data z veřejného zobrazení e-mailů a získaná dotazovaním budeme využívat k sestavování tabulek poslanců, senátorů a stran podle toho, jak odpovídají na dotazy občanů a výsledky budeme medializovat.\n"
+"Data z veřejného zobrazení e-mailů a získaná dotazovaním budeme využívat "
+"k sestavování tabulek poslanců, senátorů a stran podle toho, jak odpovídají "
+"na dotazy občanů a výsledky budeme medializovat.\n"
 "</p><p>\n"
-"Obci a kraji můžete také podat podnět k nápravě stavu, na který, pokud je řádně podán, představitelé veřejné správy (podle zákona o obcích či krajích) odpovědět musí. Databázi občanských podnětů a žádostí o informace zřídilo <a href=\"http://www.podnety.cz/prezentace-projektu\">o.s. Podněty.cz</a>.\n"
+"Obci a kraji můžete také podat podnět k nápravě stavu, na který, pokud je "
+"řádně podán, představitelé veřejné správy (podle zákona o obcích či krajích) "
+"odpovědět musí. Databázi občanských podnětů a žádostí o informace zřídilo <a "
+"href=\"http://www.podnety.cz/prezentace-projektu\">o.s. Podněty.cz</a>.\n"
 "</p>"
 
 #. smarty/templates/faq.tpl
-#: locale/smarty.c:236 locale/smarty.c:320
-msgid "MSGID_QUESTION_11"
-msgstr "Co když mi neodpoví?"
-
-#. smarty/templates/faq.tpl
-#: locale/smarty.c:323
+#: www/locale/smarty.c:329
 msgid "MSGID_ANSWER_11"
 msgstr ""
 "<p>\n"
-"Ze zákona tak politici učinit nemusí (viz <a href=\"#q10\">otázka č. 10</a>). Jsou ale i jiné kanály, které můžete zkusit využít pro vyřešení svého problému:\n"
+"Ze zákona tak politici učinit nemusí (viz <a href=\"#q10\">otázka č. 10</"
+"a>). Jsou ale i jiné kanály, které můžete zkusit využít pro vyřešení svého "
+"problému:\n"
 "<ul>\n"
-"	<li>zkuste daného poslance kontaktovat v jeho regionální kanceláři, na webu poslanecké sněmovny naleznete adresu a často i telefonní číslo. V regionech bývají poslanci vždy v pondělí</li>\n"
-"	<li>zkuste kontaktovat jiného poslance ze svého regionu nebo svého senátora</li>\n"
-"	<li>kontaktujte místní pobočku jeho politické strany a žádejte odpověď přes ně</li>\n"
-"	<li>pokud jste zkusili předchozí kanály, napište místnímu deníku nebo regionálním mutacím deníků celostátních o vaší kauze</li>\n"
+"\t<li>zkuste daného poslance kontaktovat v jeho regionální kanceláři, na "
+"webu poslanecké sněmovny naleznete adresu a často i telefonní číslo. "
+"V regionech bývají poslanci vždy v pondělí</li>\n"
+"\t<li>zkuste kontaktovat jiného poslance ze svého regionu nebo svého "
+"senátora</li>\n"
+"\t<li>kontaktujte místní pobočku jeho politické strany a žádejte odpověď "
+"přes ně</li>\n"
+"\t<li>pokud jste zkusili předchozí kanály, napište místnímu deníku nebo "
+"regionálním mutacím deníků celostátních o vaší kauze</li>\n"
 "</ul>\n"
 "</p>"
 
 #. smarty/templates/faq.tpl
-#: locale/smarty.c:239 locale/smarty.c:326
-msgid "MSGID_QUESTION_12"
-msgstr "Mohu si zkontrolovat celou svou zprávu ještě před odesláním?"
-
-#. smarty/templates/faq.tpl
-#: locale/smarty.c:329
+#: www/locale/smarty.c:335
 msgid "MSGID_ANSWER_12"
 msgstr ""
 "<p>\n"
-"Ano, váš text bude zobrazen v e-mailu s aktivačním odkazem. Pokud si to rozmyslíte a nebudete chtít zprávu odeslat, na aktivační odkaz jednoduše nekliknete.\n"
+"Ano, váš text bude zobrazen v e-mailu s aktivačním odkazem. Pokud si to "
+"rozmyslíte a nebudete chtít zprávu odeslat, na aktivační odkaz jednoduše "
+"nekliknete.\n"
 "</p>"
 
 #. smarty/templates/faq.tpl
-#: locale/smarty.c:242 locale/smarty.c:332
-msgid "MSGID_QUESTION_13"
-msgstr "Na jaké adresy jsou e-maily posílány?"
-
-#. smarty/templates/faq.tpl
-#: locale/smarty.c:335
+#: www/locale/smarty.c:341
 msgid "MSGID_ANSWER_13"
 msgstr ""
 "<p>\n"
-"Využíváme kontaktní údaje z oficiálních webů <a href=\"http://www.psp.cz\">Poslanecké sněmovny</a> a <a href=\"http://www.senat.cz\">Senátu</a>. Případné změny tam učiněné se denně přenáší i k nám. Tímto způsobem můžeme garantovat, že e-mailové adresy jsou aktuální.\n"
+"Využíváme kontaktní údaje z oficiálních webů <a href=\"http://www.psp.cz"
+"\">Poslanecké sněmovny</a> a <a href=\"http://www.senat.cz\">Senátu</a>. "
+"Případné změny tam učiněné se denně přenáší i k nám. Tímto způsobem můžeme "
+"garantovat, že e-mailové adresy jsou aktuální.\n"
 "</p><p>\n"
-"U regionálních zastupitelských sborů se o správnost a aktuálnost kontaktních údajů stará vždý jejich správce.\n"
+"U regionálních zastupitelských sborů se o správnost a aktuálnost kontaktních "
+"údajů stará vždý jejich správce.\n"
 "</p>"
 
 #. smarty/templates/faq.tpl
-#: locale/smarty.c:245 locale/smarty.c:338
-msgid "MSGID_QUESTION_14"
-msgstr "Mohu se spolehnout, že zpráva byla odeslána?"
-
-#. smarty/templates/faq.tpl
-#: locale/smarty.c:341
+#: www/locale/smarty.c:347
 msgid "MSGID_ANSWER_14"
 msgstr ""
 "<p>\n"
-"Na 99%. Propojenost naší e-mailové databáze s databází Poslanecké sněmovny zaručuje, že e-maily poslanců a senátorů jsou aktuální. Náš systém nám navíc ohlásí naprostou většinu možných technických komplikací. 1% necháváme pro případ vpádu UFO nebo jiných nepředvídaných problémů.\n"
+"Na 99%. Propojenost naší e-mailové databáze s databází Poslanecké sněmovny "
+"zaručuje, že e-maily poslanců a senátorů jsou aktuální. Náš systém nám navíc "
+"ohlásí naprostou většinu možných technických komplikací. 1% necháváme pro "
+"případ vpádu UFO nebo jiných nepředvídaných problémů.\n"
 "</p>"
 
 #. smarty/templates/faq.tpl
-#: locale/smarty.c:248 locale/smarty.c:344
-msgid "MSGID_QUESTION_15"
-msgstr "Mohu stornovat svou zprávu?"
-
-#. smarty/templates/faq.tpl
-#: locale/smarty.c:347
+#: www/locale/smarty.c:353
 msgid "MSGID_ANSWER_15"
 msgstr ""
 "<p>\n"
-"Dokud je ve fázi textového okna, jednoduše neklikejte na <em>Odeslat</em> a zprávu upravte, nebo začněte úplně odznova.\n"
+"Dokud je ve fázi textového okna, jednoduše neklikejte na <em>Odeslat</em> a "
+"zprávu upravte, nebo začněte úplně odznova.\n"
 "</p><p>\n"
-"Další možnost odstoupení máte, když vám přijde automatický e-mail s aktivačním odkazem – jednoduše ho nepotvrďte.\n"
+"Další možnost odstoupení máte, když vám přijde automatický e-mail "
+"s aktivačním odkazem – jednoduše ho nepotvrďte.\n"
 "</p><p>\n"
-"Za tímto bodem jsou však již vaše šance na odchycení zprávy mizivé. Přesto nás můžete <a href=\"/contact\">kontaktovat</a>.\n"
+"Za tímto bodem jsou však již vaše šance na odchycení zprávy mizivé. Přesto "
+"nás můžete <a href=\"/contact\">kontaktovat</a>.\n"
 "</p>"
 
 #. smarty/templates/faq.tpl
-#: locale/smarty.c:251 locale/smarty.c:350
-msgid "MSGID_QUESTION_16"
-msgstr "Mám nápad na podobnou aplikaci jako je %1, můžete mi pomoci s jeho realizací? Mohu použít váš software?"
-
-#. smarty/templates/faq.tpl
-#: locale/smarty.c:353
+#: www/locale/smarty.c:359
 msgid "MSGID_ANSWER_16"
 msgstr ""
 "<p>\n"
-"Veškeré zdrojové kódy k %1, stejně tak jako databáze dat jsou volně přistupné široké veřejnosti a kdokoli může vytvářet aplikace, které využívají naše data nebo kódy.\n"
+"Veškeré zdrojové kódy k %1, stejně tak jako databáze dat jsou volně "
+"přistupné široké veřejnosti a kdokoli může vytvářet aplikace, které "
+"využívají naše data nebo kódy.\n"
 "</p><p>\n"
-"Každopádně, už ten fakt, že máte tenhle nápad, vás činí zajímavým – chcete-li, <a href=\"/contact\">kontaktujte nás</a> a možná se domluvíme na hlubší spolupráci!\n"
+"Každopádně, už ten fakt, že máte tenhle nápad, vás činí zajímavým – chcete-"
+"li, <a href=\"/contact\">kontaktujte nás</a> a možná se domluvíme na hlubší "
+"spolupráci!\n"
 "</p>"
 
 #. smarty/templates/faq.tpl
-#: locale/smarty.c:254 locale/smarty.c:356
-msgid "MSGID_QUESTION_17"
-msgstr "Chci pomáhat %1 jako dobrovolník."
-
-#. smarty/templates/faq.tpl
-#: locale/smarty.c:359
+#: www/locale/smarty.c:365
 msgid "MSGID_ANSWER_17"
 msgstr ""
 "<p>\n"
 "Super, ochotných lidí není nikdy dost! Základní možnosti spolupráce:\n"
 "<ul>\n"
-"	<li>zařazování dalších institucí a míst (hlavně zjišťování platných e-mailových kontaktů a jejich vkládání do databáze)</li>\n"
-"	<li>programování a vymýšlení dalších „vychytávek“ pro aplikaci</li>\n"
-"	<li>navazování spolupráce s místními neziskovými organizacemi pro docílení tlaku na konkrétní politiky</li>\n"
+"\t<li>zařazování dalších institucí a míst (hlavně zjišťování platných e-"
+"mailových kontaktů a jejich vkládání do databáze)</li>\n"
+"\t<li>programování a vymýšlení dalších „vychytávek“ pro aplikaci</li>\n"
+"\t<li>navazování spolupráce s místními neziskovými organizacemi pro docílení "
+"tlaku na konkrétní politiky</li>\n"
 "</ul>\n"
-"Zastřešující organizace <a href=\"http://KohoVolit.eu\">KohoVolit.eu</a> má na triku mnoho dalších zajímavých projektů, podívejte se na sekci <a href=\"/about\">O&nbsp;projektu</a>.\n"
+"Zastřešující organizace <a href=\"http://KohoVolit.eu\">KohoVolit.eu</a> má "
+"na triku mnoho dalších zajímavých projektů, podívejte se na sekci <a href=\"/"
+"about\">O&nbsp;projektu</a>.\n"
 "</p>"
 
 #. smarty/templates/faq.tpl
-#: locale/smarty.c:257 locale/smarty.c:362
-msgid "MSGID_QUESTION_18"
-msgstr "Chci sdělit komentář, kritiku nebo pochvalu."
-
-#. smarty/templates/faq.tpl
-#: locale/smarty.c:365
+#: www/locale/smarty.c:371
 msgid "MSGID_ANSWER_18"
 msgstr ""
 "<p>\n"
@@ -740,23 +931,33 @@ msgstr ""
 "</p>"
 
 #. smarty/templates/confirmation_result/already_sent.tpl
-#: locale/smarty.c:368 locale/smarty.c:371
+#: www/locale/smarty.c:374 www/locale/smarty.c:377
 msgid "You have already sent the same message"
 msgstr "Stejnou zprávu jste už odeslal(a)"
 
 #. smarty/templates/confirmation_result/already_sent.tpl
-#: locale/smarty.c:374
-msgid "You have already sent a message with this text to your representatives and the same message cannot be sent twice."
-msgstr "Zprávu s tímto textem jste už svým zastupitelům napsal(a) a není možné odeslat stejnou zprávu znovu."
+#: www/locale/smarty.c:380
+msgid ""
+"You have already sent a message with this text to your representatives and "
+"the same message cannot be sent twice."
+msgstr ""
+"Zprávu s tímto textem jste už svým zastupitelům napsal(a) a není možné "
+"odeslat stejnou zprávu znovu."
 
 #. smarty/templates/confirmation_result/already_sent.tpl
-#: locale/smarty.c:377
+#: www/locale/smarty.c:383
 msgid "MSGID_ALREADY_SENT_EXPLANATION"
 msgstr ""
 "<p>\n"
-"Záměrem projektu <em>%1</em> je podpořit komunikaci především s těmi politiky, kteří jsou Vám nejblíže regionálně nebo se jich nejvíce dotýká téma zprávy. Nikoli obesílání všech stejným textem.\n"
+"Záměrem projektu <em>%1</em> je podpořit komunikaci především s těmi "
+"politiky, kteří jsou Vám nejblíže regionálně nebo se jich nejvíce dotýká "
+"téma zprávy. Nikoli obesílání všech stejným textem.\n"
 "</p><p>\n"
-"Pokud je adresátů zprávy hodně, snižuje to u nich jak pocit odpovědnosti osobně se zprávou zabývat, tak i celkové vnímání tohoto způsobu komunikace. Omezení na tři adresáty jedné zprávy bylo zvoleno jako počet, kdy se ještě neztrácí osobní rozměr, zároveň však chrání před rizikem, že zrovna jediný oslovený politik nekomunikuje. <a href=\"faq#q2\">Více&hellip;</a>\n"
+"Pokud je adresátů zprávy hodně, snižuje to u nich jak pocit odpovědnosti "
+"osobně se zprávou zabývat, tak i celkové vnímání tohoto způsobu komunikace. "
+"Omezení na tři adresáty jedné zprávy bylo zvoleno jako počet, kdy se ještě "
+"neztrácí osobní rozměr, zároveň však chrání před rizikem, že zrovna jediný "
+"oslovený politik nekomunikuje. <a href=\"faq#q2\">Více&hellip;</a>\n"
 "</p>"
 
 #. smarty/templates/confirmation_result/already_sent.tpl
@@ -765,190 +966,216 @@ msgstr ""
 #. smarty/templates/confirmation_result/reviewer/already_approved.tpl
 #. smarty/templates/confirmation_result/reviewer/refused.tpl
 #. smarty/templates/confirmation_result/reviewer/approved.tpl
-#: locale/smarty.c:380 locale/smarty.c:392 locale/smarty.c:404
-#: locale/smarty.c:425 locale/smarty.c:437 locale/smarty.c:449
+#: www/locale/smarty.c:386 www/locale/smarty.c:398 www/locale/smarty.c:410
+#: www/locale/smarty.c:431 www/locale/smarty.c:443 www/locale/smarty.c:455
 msgid "You can close this window now."
 msgstr "Toto okno můžete nyní zavřít."
 
 #. smarty/templates/confirmation_result/processing.tpl
-#: locale/smarty.c:383 locale/smarty.c:386
+#: www/locale/smarty.c:389 www/locale/smarty.c:392
 msgid "Your message is beeing processed now"
 msgstr "Vaše zpráva se zpracovává"
 
 #. smarty/templates/confirmation_result/processing.tpl
-#: locale/smarty.c:389
-msgid "Your message has been queued up for sending and it is beeing processed in the system now. You will be informed soon about its sending by e-mail."
-msgstr "Vaše zpráva byla zařazena na odeslání a nyní se zpracovává v systému. O jejím odeslání budete brzo informováni e-mailem."
+#: www/locale/smarty.c:395
+msgid ""
+"Your message has been queued up for sending and it is beeing processed in "
+"the system now. You will be informed soon about its sending by e-mail."
+msgstr ""
+"Vaše zpráva byla zařazena na odeslání a nyní se zpracovává v systému. O "
+"jejím odeslání budete brzo informováni e-mailem."
 
 #. smarty/templates/confirmation_result/already_confirmed.tpl
-#: locale/smarty.c:395 locale/smarty.c:398
+#: www/locale/smarty.c:401 www/locale/smarty.c:404
 msgid "Already confirmed"
 msgstr "Již potvrzeno"
 
 #. smarty/templates/confirmation_result/already_confirmed.tpl
-#: locale/smarty.c:401
+#: www/locale/smarty.c:407
 msgid "Sending of this message has been already confirmed."
 msgstr "Odeslání této zprávy již bylo potvzeno."
 
 #. smarty/templates/confirmation_result/wrong_link.tpl
-#: locale/smarty.c:407 locale/smarty.c:410
+#: www/locale/smarty.c:413 www/locale/smarty.c:416
 msgid "Wrong link of confirmation"
 msgstr "Chybný odkaz pro potvrzení"
 
 #. smarty/templates/confirmation_result/wrong_link.tpl
-#: locale/smarty.c:413
-msgid "Wrong link to confirm sending of a message. Maybe you copy&pasted an incomplete link. Or the link might already expired."
-msgstr "Chybný odkaz pro potvrzení zprávy. Možné jste odkaz nezkopíroval(a) celý. Nebo platnost odkazu už vypršela."
+#: www/locale/smarty.c:419
+msgid ""
+"Wrong link to confirm sending of a message. Maybe you copy&pasted an "
+"incomplete link. Or the link might already expired."
+msgstr ""
+"Chybný odkaz pro potvrzení zprávy. Možné jste odkaz nezkopíroval(a) celý. "
+"Nebo platnost odkazu už vypršela."
 
 #. smarty/templates/confirmation_result/reviewer/already_approved.tpl
-#: locale/smarty.c:416 locale/smarty.c:419
+#: www/locale/smarty.c:422 www/locale/smarty.c:425
 msgid "Already approved or refused"
 msgstr "Již schváleno nebo zamítnuto"
 
 #. smarty/templates/confirmation_result/reviewer/already_approved.tpl
-#: locale/smarty.c:422
+#: www/locale/smarty.c:428
 msgid "Sending of this message has been already approved or refused."
 msgstr "Odeslání této zprávy již bylo schváleno nebo zamítnuto."
 
 #. smarty/templates/confirmation_result/reviewer/refused.tpl
-#: locale/smarty.c:428 locale/smarty.c:431
+#: www/locale/smarty.c:434 www/locale/smarty.c:437
 msgid "Refused"
 msgstr "Zamítnuto"
 
 #. smarty/templates/confirmation_result/reviewer/refused.tpl
-#: locale/smarty.c:434
-msgid "You refused sending of this message as an offensive or impolite one. The sender was informed with an explanation."
-msgstr "Zamítl(a) jste odeslání této zprávy jako urážející nebo neslušné. Odesílatel byl informován s vysvětlením."
+#: www/locale/smarty.c:440
+msgid ""
+"You refused sending of this message as an offensive or impolite one. The "
+"sender was informed with an explanation."
+msgstr ""
+"Zamítl(a) jste odeslání této zprávy jako urážející nebo neslušné. Odesílatel "
+"byl informován s vysvětlením."
 
 #. smarty/templates/confirmation_result/reviewer/approved.tpl
-#: locale/smarty.c:440 locale/smarty.c:443
+#: www/locale/smarty.c:446 www/locale/smarty.c:449
 msgid "Approved"
 msgstr "Schváleno"
 
 #. smarty/templates/confirmation_result/reviewer/approved.tpl
-#: locale/smarty.c:446
+#: www/locale/smarty.c:452
 msgid "You approved sending of this message. It was sent to addressees."
 msgstr "Schválil(a) jste odeslání této zprávy. Byla odeslána adresátům."
 
 #. smarty/templates/video.tpl
 #. smarty/templates/basic_layout.tpl
-#: locale/smarty.c:452 locale/smarty.c:455 locale/smarty.c:662
+#: www/locale/smarty.c:458 www/locale/smarty.c:461 www/locale/smarty.c:671
 msgid "Video"
 msgstr "Video"
 
 #. smarty/templates/video.tpl
-#: locale/smarty.c:458
+#: www/locale/smarty.c:464
 msgid "MSGID_VIDEO_SECTION"
 msgstr ""
 "<p>\n"
-"U příležitosti spuštění aplikace se sdružení KohoVolit.eu podařilo natočit propagační video, které podpořilo svou účastí více než 20 Čechů a Češek známých z kulturní scény.\n"
+"U příležitosti spuštění aplikace se sdružení KohoVolit.eu podařilo natočit "
+"propagační video, které podpořilo svou účastí více než 20 Čechů a Češek "
+"známých z kulturní scény.\n"
 "</p><p>\n"
 "Natáčení zúčastnily tyto osobnosti:\n"
-"Pavel Anděl, Jana Bernášková, Magda Borová, Nela Boudová, David Černý, Marek Dobeš, Bára Fišerová, Tomáš Hanák, Karel Janák, Kateřina Janečková, Tomáš Klus, Miloslav Konig, Upír Krejčí, Jan Kříž, Jiří Macháček, Štěpán Mareš, Václav Marhoul, Dana Morávková, Olga Sommerová, Jakub Štáfek a Milan Šteindler.\n"
+"Pavel Anděl, Jana Bernášková, Magda Borová, Nela Boudová, David Černý, Marek "
+"Dobeš, Bára Fišerová, Tomáš Hanák, Karel Janák, Kateřina Janečková, Tomáš "
+"Klus, Miloslav Konig, Upír Krejčí, Jan Kříž, Jiří Macháček, Štěpán Mareš, "
+"Václav Marhoul, Dana Morávková, Olga Sommerová, Jakub Štáfek a Milan "
+"Šteindler.\n"
 "</p><p>\n"
-"Video natočil a sestříhal tým z FAMO Písek vystupující pod Alcest.cz. DĚKUJEME!\n"
+"Video natočil a sestříhal tým z FAMO Písek vystupující pod Alcest.cz. "
+"DĚKUJEME!\n"
 "</p>"
 
 #. smarty/templates/video.tpl
-#: locale/smarty.c:461
+#: www/locale/smarty.c:467
 msgid "Watch the videos on <a href=\"%1\">%2</a>"
 msgstr "Na videa se podívejte na <a href=\"%1\">%2</a>"
 
 #. smarty/templates/ajax/parliament_groups.tpl
-#: locale/smarty.c:464
+#: www/locale/smarty.c:470
 msgid "Constituency:"
 msgstr "Volební obvod:"
 
 #. smarty/templates/ajax/parliament_groups.tpl
-#: locale/smarty.c:467 locale/smarty.c:470
+#: www/locale/smarty.c:473 www/locale/smarty.c:476
 msgid "any"
 msgstr "nezáleží"
 
 #. smarty/templates/ajax/parliament_groups.tpl
-#: locale/smarty.c:473
+#: www/locale/smarty.c:479
 msgid "Write to chosen politicians"
 msgstr "Napsat vybraným politikům"
 
 #. smarty/templates/ajax/parliament_groups.tpl
-#: locale/smarty.c:476
+#: www/locale/smarty.c:482
 msgid "Note. At least one criterion must be set within a parliament."
-msgstr "Pozn. Je třeba vybrat alespoň jedno kritérium uvnitř zastupitelského sboru."
+msgstr ""
+"Pozn. Je třeba vybrat alespoň jedno kritérium uvnitř zastupitelského sboru."
 
 #. smarty/templates/ajax/address_representatives.tpl
-#: locale/smarty.c:479
-msgid "Several constituencies has been found to your address. Choose the right one or try to specify your address more precisely."
-msgstr "Pro zadanou adresu bylo nalezeno více volebních obvodů. Vyberte z nich ten váš nebo zkuste napsat svou adresu přesněji."
+#: www/locale/smarty.c:485
+msgid ""
+"Several constituencies has been found to your address. Choose the right one "
+"or try to specify your address more precisely."
+msgstr ""
+"Pro zadanou adresu bylo nalezeno více volebních obvodů. Vyberte z nich ten "
+"váš nebo zkuste napsat svou adresu přesněji."
 
 #. smarty/templates/contact.tpl
 #. smarty/templates/basic_layout.tpl
-#: locale/smarty.c:482 locale/smarty.c:485 locale/smarty.c:677
+#: www/locale/smarty.c:488 www/locale/smarty.c:491 www/locale/smarty.c:686
 msgid "Contact"
 msgstr "Kontakt"
 
 #. smarty/templates/contact.tpl
-#: locale/smarty.c:488
+#: www/locale/smarty.c:494
 msgid "MSGID_CONTACT_SECTION"
 msgstr ""
-"<img src=\"http://cs.kohovolit.eu/drupal/sites/all/img/a2.png\" alt=\"info /zav./ kohovolit /tečka/ eu\" /><br/>\n"
+"<img src=\"http://cs.kohovolit.eu/drupal/sites/all/img/a2.png\" alt=\"info /"
+"zav./ kohovolit /tečka/ eu\" /><br/>\n"
 "Veronika Šumová +420 773 561 222"
 
 #. smarty/templates/message_private.tpl
-#: locale/smarty.c:491
+#: www/locale/smarty.c:497
 msgid "Private message"
 msgstr "Soukromá zpráva"
 
 #. smarty/templates/message_private.tpl
-#: locale/smarty.c:494
+#: www/locale/smarty.c:500
 msgid "This message was sent as a private one."
 msgstr "Táto zpráva byla zaslána ja soukromá."
 
 #. smarty/templates/email/initial_message.tpl
-#: locale/smarty.c:497
+#: www/locale/smarty.c:503
 msgid "Greetings,"
 msgstr "Dobrý den,"
 
 #. smarty/templates/email/initial_message.tpl
-#: locale/smarty.c:500
+#: www/locale/smarty.c:506
 msgid "Yours sincerely,"
 msgstr "S pozdravem,"
 
 #. smarty/templates/email/request_to_review.tpl
-#: locale/smarty.c:503
+#: www/locale/smarty.c:509
 msgid ""
 "A message written on %1 website seems to be offensive and it\n"
 "needs your review and approval to be sent to politicians. The message\n"
 "is attached below."
 msgstr ""
 "Zpráva napsaná přes web %1 se zdá jako urážející a aby mohla být\n"
-"odeslána, potřebuje tvoje posouzení a schválení. Napsaná zpráva je připojena\n"
+"odeslána, potřebuje tvoje posouzení a schválení. Napsaná zpráva je "
+"připojena\n"
 "níže."
 
 #. smarty/templates/email/request_to_review.tpl
-#: locale/smarty.c:506
+#: www/locale/smarty.c:512
 msgid ""
 "If the message is all right and it SHOULD BE sent to addressees,\n"
 "click on this link:"
 msgstr "Pokud je zpráva v pořádku a MÁ SE ODESLAT adresátům, klikni sem:"
 
 #. smarty/templates/email/request_to_review.tpl
-#: locale/smarty.c:509
+#: www/locale/smarty.c:515
 msgid ""
 "If the message is offensive and SHOULD NOT be sent to addressees,\n"
 "click on this link:"
 msgstr "Pokud je zpráva urážející a NEMÁ SE ODESLAT adresátům, klikni sem:"
 
 #. smarty/templates/email/request_to_review.tpl
-#: locale/smarty.c:512
+#: www/locale/smarty.c:518
 msgid "The message for politicians"
 msgstr "Zpráva pro politiky"
 
 #. smarty/templates/email/message_refused.tpl
-#: locale/smarty.c:518
+#: www/locale/smarty.c:524
 msgid "We are sorry, but your message for politicians"
 msgstr "Omlouváme se, ale Vaše zpráva pro politiky"
 
 #. smarty/templates/email/message_refused.tpl
-#: locale/smarty.c:521
+#: www/locale/smarty.c:527
 msgid ""
 "has been blocked by an automatic invectives-checking system and it\n"
 "has not been sent."
@@ -957,7 +1184,7 @@ msgstr ""
 "nebyla jim odeslána."
 
 #. smarty/templates/email/message_refused.tpl
-#: locale/smarty.c:524
+#: www/locale/smarty.c:530
 msgid ""
 "Although we are continually working on enhancing the checking system,\n"
 "it may block a completely correct message exceptionally."
@@ -966,7 +1193,7 @@ msgstr ""
 "zachytit i zcela nezávadnou zprávu."
 
 #. smarty/templates/email/message_refused.tpl
-#: locale/smarty.c:527
+#: www/locale/smarty.c:533
 msgid ""
 "If you believe, that your message has been blocked by mistake,\n"
 "please contact us by e-mail to %1."
@@ -975,17 +1202,17 @@ msgstr ""
 "kontaktujte nás, prosím, e-mailem na %1."
 
 #. smarty/templates/email/message_sent.tpl
-#: locale/smarty.c:536
+#: www/locale/smarty.c:542
 msgid "Your message has been sent to your representatives:"
 msgstr "Vaše zpráva byla odeslána Vašim zastupitelům"
 
 #. smarty/templates/email/message_sent.tpl
-#: locale/smarty.c:539
+#: www/locale/smarty.c:545
 msgid "Your message has not been sent to your representatives."
 msgstr "Vaše zpráva nebyla odeslána Vašim zastupitelům"
 
 #. smarty/templates/email/message_sent.tpl
-#: locale/smarty.c:542
+#: www/locale/smarty.c:548
 msgid ""
 "The following addressees already received the same message from another\n"
 "sender, thus this one has not been sent to them:"
@@ -994,17 +1221,17 @@ msgstr ""
 "a tato jim už nebyla odeslána."
 
 #. smarty/templates/email/message_sent.tpl
-#: locale/smarty.c:545
+#: www/locale/smarty.c:551
 msgid "see message"
 msgstr "zpráva viz."
 
 #. smarty/templates/email/message_sent.tpl
-#: locale/smarty.c:548
+#: www/locale/smarty.c:554
 msgid "the message was sent as a private one"
 msgstr "zpráva byla zaslána jako soukromá"
 
 #. smarty/templates/email/message_sent.tpl
-#: locale/smarty.c:551
+#: www/locale/smarty.c:557
 msgid ""
 "Intention of the project %1 is to strengthen personal\n"
 "communication between citizens and politicians. Even a few originally\n"
@@ -1016,12 +1243,12 @@ msgstr ""
 "než zaplavení politika jednou předpřipravenou zprávou. Více viz.:"
 
 #. smarty/templates/email/message_sent.tpl
-#: locale/smarty.c:554
+#: www/locale/smarty.c:560
 msgid "In case of addressees:"
 msgstr "U adresátů:"
 
 #. smarty/templates/email/message_sent.tpl
-#: locale/smarty.c:557
+#: www/locale/smarty.c:563
 msgid ""
 "we do not have an e-mail address to them hence your message cannot be\n"
 "sent to them."
@@ -1030,7 +1257,7 @@ msgstr ""
 "zprávu odeslat."
 
 #. smarty/templates/email/message_sent.tpl
-#: locale/smarty.c:560
+#: www/locale/smarty.c:566
 msgid ""
 "For the case you decide to contact the politicans also by another way,\n"
 "a copy of your message is attached below."
@@ -1039,7 +1266,7 @@ msgstr ""
 "připájíme dole kopii zprávy."
 
 #. smarty/templates/email/message_sent.tpl
-#: locale/smarty.c:563
+#: www/locale/smarty.c:569
 msgid ""
 "For the case you decide to contact the politicans by another way,\n"
 "a copy of your message is attached below."
@@ -1048,7 +1275,7 @@ msgstr ""
 "připájíme dole kopii zprávy."
 
 #. smarty/templates/email/message_sent.tpl
-#: locale/smarty.c:566
+#: www/locale/smarty.c:572
 msgid ""
 "You have sent a public message - it will be published on the %1\n"
 "website as well as as an eventual response of the contacted politicians."
@@ -1058,7 +1285,7 @@ msgstr ""
 "politiků."
 
 #. smarty/templates/email/message_sent.tpl
-#: locale/smarty.c:569
+#: www/locale/smarty.c:575
 msgid ""
 "You have chosen a private message - it will not be published on the\n"
 "%1 website and the contacted politicians will send their eventual response\n"
@@ -1069,7 +1296,7 @@ msgstr ""
 
 #. smarty/templates/email/message_sent.tpl
 #. smarty/templates/email/request_to_confirm.tpl
-#: locale/smarty.c:572 locale/smarty.c:635
+#: www/locale/smarty.c:578 www/locale/smarty.c:641
 msgid ""
 "Please do not reply to this e-mail. We will really appreciate\n"
 "your feedback on the project, suggestions or problems at %1"
@@ -1078,12 +1305,12 @@ msgstr ""
 "návrhy nebo problémy, na %1."
 
 #. smarty/templates/email/message_to_mp.tpl
-#: locale/smarty.c:581
+#: www/locale/smarty.c:587
 msgid "%2 sent this message to you using the %1 website."
 msgstr "%2 Vám poslal tuto zprávu přes web %1."
 
 #. smarty/templates/email/message_to_mp.tpl
-#: locale/smarty.c:584
+#: www/locale/smarty.c:590
 msgid ""
 "The message has been sent as a public one and it is published on\n"
 "%1 website. Your response will be published on the same place."
@@ -1092,7 +1319,7 @@ msgstr ""
 "Vaše odpoveď bude zveřejněna na stejném míste."
 
 #. smarty/templates/email/message_to_mp.tpl
-#: locale/smarty.c:587
+#: www/locale/smarty.c:593
 msgid ""
 "The message has been sent as a private one. Please send your response\n"
 "directly to the e-mail address of the sender: %1"
@@ -1101,12 +1328,12 @@ msgstr ""
 "e-mailovou adresu odesílatele: %1"
 
 #. smarty/templates/email/message_to_mp.tpl
-#: locale/smarty.c:590
+#: www/locale/smarty.c:596
 msgid "A message for you"
 msgstr "Zpráva pro Vás"
 
 #. smarty/templates/email/response_from_mp.tpl
-#: locale/smarty.c:599
+#: www/locale/smarty.c:605
 msgid ""
 "%2 %3 responded to your message sent through\n"
 "%1 website. You can find the response below."
@@ -1115,7 +1342,7 @@ msgstr ""
 "%1. Odpověď najdete níže."
 
 #. smarty/templates/email/response_from_mp.tpl
-#: locale/smarty.c:602
+#: www/locale/smarty.c:608
 msgid ""
 "Because your message was sent as a public one, the response is published\n"
 "on the %1 website as well. If you will go on in discussion by\n"
@@ -1128,12 +1355,12 @@ msgstr ""
 "webu %1."
 
 #. smarty/templates/email/response_from_mp.tpl
-#: locale/smarty.c:605
+#: www/locale/smarty.c:611
 msgid "Response to your message"
 msgstr "Odpověď na Vaši zprávu"
 
 #. smarty/templates/email/request_to_confirm.tpl
-#: locale/smarty.c:614
+#: www/locale/smarty.c:620
 msgid ""
 "You have written a message attached below using %1 website\n"
 "addressed to your representatives:"
@@ -1142,7 +1369,7 @@ msgstr ""
 "zastupitelům:"
 
 #. smarty/templates/email/request_to_confirm.tpl
-#: locale/smarty.c:617
+#: www/locale/smarty.c:623
 msgid ""
 "Please confirm that you want to send the message by clicking the\n"
 "following link."
@@ -1151,7 +1378,7 @@ msgstr ""
 "odeslána."
 
 #. smarty/templates/email/request_to_confirm.tpl
-#: locale/smarty.c:620
+#: www/locale/smarty.c:626
 msgid ""
 "If the link is not clickable, copy&paste it to the address bar of\n"
 "your web browser."
@@ -1160,7 +1387,7 @@ msgstr ""
 "webového prohlížeče."
 
 #. smarty/templates/email/request_to_confirm.tpl
-#: locale/smarty.c:623
+#: www/locale/smarty.c:629
 msgid ""
 "You have chosen a public message - it will be published on %1\n"
 "website after it is confirmed and sent to the representatives.\n"
@@ -1171,7 +1398,7 @@ msgstr ""
 "zveřejněna i jejich případná odpověď."
 
 #. smarty/templates/email/request_to_confirm.tpl
-#: locale/smarty.c:626
+#: www/locale/smarty.c:632
 msgid ""
 "You have chosen a private message - it will not be published anywhere\n"
 "and the addressed politicians will send their eventual anwser directly\n"
@@ -1182,7 +1409,7 @@ msgstr ""
 "případnou odpoveď přímo Vám."
 
 #. smarty/templates/email/request_to_confirm.tpl
-#: locale/smarty.c:629
+#: www/locale/smarty.c:635
 msgid ""
 "If you have changed your mind and you don't want to send the message,\n"
 "you don't need to do anything. Unless you click the confirmation link\n"
@@ -1194,7 +1421,7 @@ msgstr ""
 "zpráva bude po čase smazána bez odeslání."
 
 #. smarty/templates/email/request_to_confirm.tpl
-#: locale/smarty.c:632
+#: www/locale/smarty.c:638
 msgid ""
 "If you have not written this message, please let us know to\n"
 "%1"
@@ -1203,61 +1430,64 @@ msgstr ""
 "vědět na %1."
 
 #. smarty/templates/privacy.tpl
-#: locale/smarty.c:644 locale/smarty.c:647
+#: www/locale/smarty.c:650 www/locale/smarty.c:653
 msgid "Privacy of personal data"
 msgstr "Ochrana osobních údajů"
 
 #. smarty/templates/privacy.tpl
-#: locale/smarty.c:650
+#: www/locale/smarty.c:656
 msgid "MSGID_PRIVACY_SECTION"
 msgstr ""
 "<p>\n"
 "Aby aplikace mohla fungovat, musí uložit Vaše jméno a e-mailovou adresu.\n"
 "</p><p>\n"
-"Pokud si zvolíte, že Vaše zpráva bude veřejná, zobrazí se v přehledu odeslaných zpráv a u ní bude i Vaše jméno.\n"
+"Pokud si zvolíte, že Vaše zpráva bude veřejná, zobrazí se v přehledu "
+"odeslaných zpráv a u ní bude i Vaše jméno.\n"
 "</p><p>\n"
-"Na rozdíl od jména, Vaši e-mailovou adresu zásadně zveřejňovat nebudeme, ani ji nikdy nepředáme dalším osobám. Jediný, kdo ji uvidí, je adresát Vašeho e-mailu, aby Vám mohl odpovědět.\n"
+"Na rozdíl od jména, Vaši e-mailovou adresu zásadně zveřejňovat nebudeme, ani "
+"ji nikdy nepředáme dalším osobám. Jediný, kdo ji uvidí, je adresát Vašeho e-"
+"mailu, aby Vám mohl odpovědět.\n"
 "</p><p>\n"
 "Použitím aplikace souhlasíte s uložením výše uvedených osobních dat.\n"
 "</p><p>\n"
-"Občanské sdružení <a href=\"http://kohovolit.eu\">KohoVolit.eu</a>, autor aplikace, je registrováno u <a href=\"http://uoou.cz/regReport.aspx?job=2&id=83128\">Úřadu pro ochranu osobních údajů</a>.\n"
+"Občanské sdružení <a href=\"http://kohovolit.eu\">KohoVolit.eu</a>, autor "
+"aplikace, je registrováno u <a href=\"http://uoou.cz/regReport.aspx?"
+"job=2&id=83128\">Úřadu pro ochranu osobních údajů</a>.\n"
 "</p>"
 
 #. smarty/templates/basic_layout.tpl
-#: locale/smarty.c:653
+#: www/locale/smarty.c:659
 msgid "MSGID_HTML_HEAD_DESCRIPTION"
-msgstr "Napište svým zastupitelům. Najdete je snadno dle své adresy nebo v rozšířeném hledání. Co píši politikům jiní a co politici odpovídají?"
+msgstr ""
+"Napište svým zastupitelům. Najdete je snadno dle své adresy nebo v "
+"rozšířeném hledání. Co píši politikům jiní a co politici odpovídají?"
 
 #. smarty/templates/basic_layout.tpl
-#: locale/smarty.c:656
+#: www/locale/smarty.c:662
 msgid "Public messages"
 msgstr "Veřejné zprávy"
 
 #. smarty/templates/basic_layout.tpl
-#: locale/smarty.c:659
+#: www/locale/smarty.c:665
 msgid "About"
 msgstr "O projektu"
 
 #. smarty/templates/basic_layout.tpl
-#: locale/smarty.c:662
+#: www/locale/smarty.c:668
 msgid "FAQ"
 msgstr "Otázky a odpovědi"
 
 #. smarty/templates/basic_layout.tpl
-#: locale/smarty.c:671
+#: www/locale/smarty.c:677
 msgid "http://en.kohovolit.eu"
 msgstr "http://cs.kohovolit.eu"
 
 #. smarty/templates/basic_layout.tpl
-#: locale/smarty.c:674
+#: www/locale/smarty.c:680
 msgid "Licence"
 msgstr "Licence"
 
 #. smarty/templates/basic_layout.tpl
-#: locale/smarty.c:677
+#: www/locale/smarty.c:683
 msgid "Privacy"
 msgstr "Osobní údaje"
-
-#. smarty/templates/search.tpl
-msgid "or"
-msgstr "nebo"

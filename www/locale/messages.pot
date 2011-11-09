@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-10-17 15:46+0200\n"
+"POT-Creation-Date: 2011-11-08 14:09+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,139 +17,159 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: mail/receive_mail.php:30
-#, php-format
-msgid "An e-mail received to address %s"
-msgstr ""
-
-#: mail/receive_mail.php:31
-msgid "From:"
-msgstr ""
-
-#. smarty/templates/write.tpl
-#: mail/receive_mail.php:32 locale/smarty.c:80
-msgid "Subject:"
-msgstr ""
-
-#: mail/receive_mail.php:34
-msgid "Full e-mail data"
-msgstr ""
-
-#: mail/receive_mail.php:53
+#: mail/receive_mail.php:39
 #, php-format
 msgid "No corresponding message found to the received response with code %s"
 msgstr ""
 
-#: mail/receive_mail.php:54
+#: mail/receive_mail.php:40
 #, php-format
 msgid "The received response can be found in %s"
 msgstr ""
 
-#: mail/receive_mail.php:66
+#: mail/receive_mail.php:52
 #, php-format
 msgid "%s %s has responded to your message"
 msgstr ""
 
-#: mail/receive_mail.php:117 www/index.php:467
+#. notice admin about other mails than responses to sent messages
+#: mail/receive_mail.php:67
+#, php-format
+msgid "An e-mail received to address %s"
+msgstr ""
+
+#: mail/receive_mail.php:68
+msgid "From:"
+msgstr ""
+
+#. smarty/templates/write.tpl
+#: mail/receive_mail.php:69 www/locale/smarty.c:80
+msgid "Subject:"
+msgstr ""
+
+#: mail/receive_mail.php:71
+msgid "Full e-mail data"
+msgstr ""
+
+#: mail/receive_mail.php:114 www/index.php:482
 msgid "Sending of a mail failed"
 msgstr ""
 
-#: mail/receive_mail.php:117
+#: mail/receive_mail.php:114
 msgid "Check "
 msgstr ""
 
-#: www/index.php:168
+#: www/index.php:171
 #, php-format
 msgid "Please confirm that you want to send the message using %s"
 msgstr ""
 
-#: www/index.php:294
+#: www/index.php:306
 msgid "Your message has not been sent"
 msgstr ""
 
-#: www/index.php:296
+#: www/index.php:308
 msgid "Your message has been sent"
 msgstr ""
 
-#: www/index.php:297
+#: www/index.php:309
 msgid "Your message has been sent only to some of the addressees"
 msgstr ""
 
-#: www/index.php:322
+#: www/index.php:334
 msgid "A message to representatives needs your approval"
 msgstr ""
 
-#: www/index.php:340
+#: www/index.php:352
 msgid "Your message has been found unpolite and it has not been sent"
 msgstr ""
 
-#: www/index.php:467
+#: www/index.php:482
 msgid "Check"
 msgstr ""
 
-#: www/index.php:474
+#: www/index.php:489
 msgid "Newsletter order"
+msgstr ""
+
+#: www/ajax/address_representatives.php:102
+msgid "We don't know representatives of your town."
+msgstr ""
+
+#: www/ajax/address_representatives.php:103
+#: www/ajax/address_representatives.php:118
+msgid "You can simply add them and give the option to contact them to the public. See <a href=\"http://community.kohovolit.eu/doku.php/wtt:external-datasets\">how to do it</a>."
+msgstr ""
+
+#: www/ajax/address_representatives.php:115
+#, php-format
+msgid "Region %s"
+msgstr ""
+
+#: www/ajax/address_representatives.php:117
+msgid "We don't know representatives of your region."
 msgstr ""
 
 #. smarty/templates/choose.tpl
 #. smarty/templates/choose_advanced.tpl
-#: locale/smarty.c:2 locale/smarty.c:47
+#: www/locale/smarty.c:2 www/locale/smarty.c:47
 msgid "Choose your representatives"
 msgstr ""
 
 #. smarty/templates/choose.tpl
-#: locale/smarty.c:5
+#: www/locale/smarty.c:5
 msgid "Change address"
 msgstr ""
 
 #. smarty/templates/choose.tpl
 #. smarty/templates/choose_advanced.tpl
-#: locale/smarty.c:8 locale/smarty.c:50
+#: www/locale/smarty.c:8 www/locale/smarty.c:50
 msgid "Addressees"
 msgstr ""
 
 #. smarty/templates/choose.tpl
-#: locale/smarty.c:11
+#. smarty/templates/choose_advanced.tpl
+#: www/locale/smarty.c:11 www/locale/smarty.c:53
 msgid "Choose up to three addressees of your message from the found politicians by clicking on their name or using drag&drop into boxes. The same message then cannot be sent again to other politicians."
 msgstr ""
 
 #. smarty/templates/choose.tpl
 #. smarty/templates/choose_advanced.tpl
-#: locale/smarty.c:14 locale/smarty.c:56
+#: www/locale/smarty.c:14 www/locale/smarty.c:56
 msgid "Why?"
 msgstr ""
 
 #. smarty/templates/choose.tpl
 #. smarty/templates/choose_advanced.tpl
-#: locale/smarty.c:17 locale/smarty.c:59
+#: www/locale/smarty.c:17 www/locale/smarty.c:59
 msgid "Write to them!"
 msgstr ""
 
 #. smarty/templates/list.tpl
 #. smarty/templates/confirm.tpl
-#: locale/smarty.c:20 locale/smarty.c:197
+#: www/locale/smarty.c:20 www/locale/smarty.c:203
 msgid "List of public messages"
 msgstr ""
 
 #. smarty/templates/list.tpl
-#: locale/smarty.c:23
+#: www/locale/smarty.c:23
 msgid "Status"
 msgstr ""
 
 #. smarty/templates/list.tpl
 #. smarty/templates/message.tpl
-#: locale/smarty.c:26 locale/smarty.c:167
+#: www/locale/smarty.c:26 www/locale/smarty.c:173
 msgid "To"
 msgstr ""
 
 #. smarty/templates/list.tpl
-#: locale/smarty.c:29
+#: www/locale/smarty.c:29
 msgid "Message"
 msgstr ""
 
 #. smarty/templates/list.tpl
 #. smarty/templates/message.tpl
-#: locale/smarty.c:32 locale/smarty.c:173
+#: www/locale/smarty.c:32 www/locale/smarty.c:179
 msgid "Date"
 msgstr ""
 
@@ -157,33 +177,28 @@ msgstr ""
 #. smarty/templates/message.tpl
 #. smarty/templates/email/message_to_mp.tpl
 #. smarty/templates/email/response_from_mp.tpl
-#: locale/smarty.c:35 locale/smarty.c:164 locale/smarty.c:596
-#: locale/smarty.c:608
+#: www/locale/smarty.c:35 www/locale/smarty.c:170 www/locale/smarty.c:602
+#: www/locale/smarty.c:614
 msgid "From"
 msgstr ""
 
 #. smarty/templates/list.tpl
-#: locale/smarty.c:38
+#: www/locale/smarty.c:38
 msgid "Message answered"
 msgstr ""
 
 #. smarty/templates/list.tpl
-#: locale/smarty.c:41
+#: www/locale/smarty.c:41
 msgid "Message answered (more than %1 days)"
 msgstr ""
 
 #. smarty/templates/list.tpl
-#: locale/smarty.c:44
+#: www/locale/smarty.c:44
 msgid "Message answered (less than %1 days)"
 msgstr ""
 
-#. smarty/templates/choose_advanced.tpl
-#: locale/smarty.c:53
-msgid "Choose up to three addressees of your message from the found politicians by clicking on their name or using drag&amp;drop into boxes. The same message then cannot be sent again to other politicians."
-msgstr ""
-
 #. smarty/templates/write.tpl
-#: locale/smarty.c:62
+#: www/locale/smarty.c:62
 msgid "Write message"
 msgstr ""
 
@@ -191,134 +206,139 @@ msgstr ""
 #. smarty/templates/email/message_refused.tpl
 #. smarty/templates/email/message_sent.tpl
 #. smarty/templates/email/request_to_confirm.tpl
-#: locale/smarty.c:65 locale/smarty.c:530 locale/smarty.c:575
-#: locale/smarty.c:638
+#: www/locale/smarty.c:65 www/locale/smarty.c:536 www/locale/smarty.c:581
+#: www/locale/smarty.c:644
 msgid "Your message for politicians"
 msgstr ""
 
 #. smarty/templates/write.tpl
-#: locale/smarty.c:68
+#: www/locale/smarty.c:68
 msgid "Write your message for selected representatives. Please write personally, do not copy&paste a text prearranged by someone. If a politician already received the same message from someone else it will not be sent again."
 msgstr ""
 
 #. smarty/templates/write.tpl
-#: locale/smarty.c:71
+#: www/locale/smarty.c:71
 msgid "Your name:"
 msgstr ""
 
 #. smarty/templates/write.tpl
-#: locale/smarty.c:74
+#: www/locale/smarty.c:74
 msgid "Town:"
 msgstr ""
 
 #. smarty/templates/write.tpl
-#: locale/smarty.c:77
+#: www/locale/smarty.c:77
 msgid "E-mail:"
 msgstr ""
 
 #. smarty/templates/write.tpl
-#: locale/smarty.c:83
+#: www/locale/smarty.c:83
 msgid "The message is:"
 msgstr ""
 
 #. smarty/templates/write.tpl
-#: locale/smarty.c:86
-msgid "Public"
+#: www/locale/smarty.c:86
+msgid "public"
 msgstr ""
 
 #. smarty/templates/write.tpl
-#: locale/smarty.c:89
-msgid "Private"
+#: www/locale/smarty.c:89
+msgid "private"
 msgstr ""
 
 #. smarty/templates/write.tpl
-#: locale/smarty.c:92
+#: www/locale/smarty.c:92
 msgid "I want to receive news from %1"
 msgstr ""
 
 #. smarty/templates/about.tpl
-#: locale/smarty.c:95 locale/smarty.c:98
+#: www/locale/smarty.c:95 www/locale/smarty.c:98
 msgid "About project"
 msgstr ""
 
 #. smarty/templates/about.tpl
-#: locale/smarty.c:101
+#: www/locale/smarty.c:101
 msgid "MSGID_ABOUT_PROJECT_SECTION"
 msgstr ""
 
 #. smarty/templates/about.tpl
-#: locale/smarty.c:104
+#: www/locale/smarty.c:104
 msgid "Authors"
 msgstr ""
 
 #. smarty/templates/about.tpl
-#: locale/smarty.c:107
+#: www/locale/smarty.c:107
 msgid "MSGID_AUTHORS_SECTION"
 msgstr ""
 
 #. smarty/templates/about.tpl
-#: locale/smarty.c:110
+#: www/locale/smarty.c:110
 msgid "Published tools examples"
 msgstr ""
 
 #. smarty/templates/about.tpl
-#: locale/smarty.c:113
+#: www/locale/smarty.c:113
 msgid "MSGID_PUBLISHED_TOOLS_EXAMPLES_SECTION"
 msgstr ""
 
 #. smarty/templates/about.tpl
-#: locale/smarty.c:116
+#: www/locale/smarty.c:116
 msgid "If you like the application and you would like it to be further developed, <a href=\"/support\">support  it</a> please."
 msgstr ""
 
 #. smarty/templates/about.tpl
-#: locale/smarty.c:119
+#: www/locale/smarty.c:119
 msgid "The application was created with kind support of:"
 msgstr ""
 
 #. smarty/templates/support.tpl
 #. smarty/templates/basic_layout.tpl
-#: locale/smarty.c:122 locale/smarty.c:125 locale/smarty.c:668
+#: www/locale/smarty.c:122 www/locale/smarty.c:125 www/locale/smarty.c:674
 msgid "Support us"
 msgstr ""
 
 #. smarty/templates/support.tpl
-#: locale/smarty.c:128
+#: www/locale/smarty.c:128
 msgid "MSGID_SUPPORT_US_SECTION"
 msgstr ""
 
 #. smarty/templates/search.tpl
-#: locale/smarty.c:131 locale/smarty.c:161
+#: www/locale/smarty.c:131 www/locale/smarty.c:167
 msgid "Search your representatives"
 msgstr ""
 
 #. smarty/templates/search.tpl
-#: locale/smarty.c:134
+#: www/locale/smarty.c:134
 msgid "Your address"
 msgstr ""
 
 #. smarty/templates/search.tpl
-#: locale/smarty.c:137
+#: www/locale/smarty.c:137
 msgid "Advanced search"
 msgstr ""
 
 #. smarty/templates/search.tpl
-#: locale/smarty.c:140
+#: www/locale/smarty.c:140
 msgid "E.g."
 msgstr ""
 
 #. smarty/templates/search.tpl
-#: locale/smarty.c:143 locale/smarty.c:146
+#: www/locale/smarty.c:143 www/locale/smarty.c:146
 msgid "MSGID_ADDRESS_EXAMPLE_1"
 msgstr ""
 
 #. smarty/templates/search.tpl
-#: locale/smarty.c:149 locale/smarty.c:152
+#: www/locale/smarty.c:149 www/locale/smarty.c:158
+msgid "or"
+msgstr ""
+
+#. smarty/templates/search.tpl
+#: www/locale/smarty.c:152 www/locale/smarty.c:155
 msgid "MSGID_ADDRESS_EXAMPLE_2"
 msgstr ""
 
 #. smarty/templates/search.tpl
-#: locale/smarty.c:155 locale/smarty.c:158
+#: www/locale/smarty.c:161 www/locale/smarty.c:164
 msgid "MSGID_ADDRESS_EXAMPLE_3"
 msgstr ""
 
@@ -329,244 +349,244 @@ msgstr ""
 #. smarty/templates/email/message_to_mp.tpl
 #. smarty/templates/email/response_from_mp.tpl
 #. smarty/templates/email/request_to_confirm.tpl
-#: locale/smarty.c:170 locale/smarty.c:515 locale/smarty.c:533
-#: locale/smarty.c:578 locale/smarty.c:593 locale/smarty.c:611
-#: locale/smarty.c:641
+#: www/locale/smarty.c:176 www/locale/smarty.c:521 www/locale/smarty.c:539
+#: www/locale/smarty.c:584 www/locale/smarty.c:599 www/locale/smarty.c:617
+#: www/locale/smarty.c:647
 msgid "Subject"
 msgstr ""
 
 #. smarty/templates/message.tpl
-#: locale/smarty.c:176
+#: www/locale/smarty.c:182
 msgid "Not answered yet"
 msgstr ""
 
 #. smarty/templates/search_advanced.tpl
-#: locale/smarty.c:179
+#: www/locale/smarty.c:185
 msgid "Advanced search of your representatives"
 msgstr ""
 
 #. smarty/templates/search_advanced.tpl
-#: locale/smarty.c:182
+#: www/locale/smarty.c:188
 msgid "Choose a parliament:"
 msgstr ""
 
 #. smarty/templates/search_advanced.tpl
-#: locale/smarty.c:185
+#: www/locale/smarty.c:191
 msgid "Export e-mail addresses"
 msgstr ""
 
 #. smarty/templates/confirm.tpl
-#: locale/smarty.c:188
+#: www/locale/smarty.c:194
 msgid "Confirmation of sending of the message"
 msgstr ""
 
 #. smarty/templates/confirm.tpl
-#: locale/smarty.c:191
+#: www/locale/smarty.c:197
 msgid "Please confirm that you want to send the message"
 msgstr ""
 
 #. smarty/templates/confirm.tpl
-#: locale/smarty.c:194
+#: www/locale/smarty.c:200
 msgid "The message must be confirmed to send by clicking on the confirmation link sent to you by e-mail yet. Check your mailbox. Sometimes it can take a while to be delivered. If you still cannot find the e-mail check also a spam folder."
 msgstr ""
 
 #. smarty/templates/faq.tpl
-#: locale/smarty.c:200 locale/smarty.c:203
+#: www/locale/smarty.c:206 www/locale/smarty.c:209
 msgid "Frequently asked questions"
 msgstr ""
 
 #. smarty/templates/faq.tpl
-#: locale/smarty.c:206 locale/smarty.c:260
+#: www/locale/smarty.c:212 www/locale/smarty.c:266
 msgid "MSGID_QUESTION_1"
 msgstr ""
 
 #. smarty/templates/faq.tpl
-#: locale/smarty.c:263
-msgid "MSGID_ANSWER_1"
-msgstr ""
-
-#. smarty/templates/faq.tpl
-#: locale/smarty.c:209 locale/smarty.c:266
+#: www/locale/smarty.c:215 www/locale/smarty.c:272
 msgid "MSGID_QUESTION_2"
 msgstr ""
 
 #. smarty/templates/faq.tpl
-#: locale/smarty.c:269
-msgid "MSGID_ANSWER_2"
-msgstr ""
-
-#. smarty/templates/faq.tpl
-#: locale/smarty.c:212 locale/smarty.c:272
+#: www/locale/smarty.c:218 www/locale/smarty.c:278
 msgid "MSGID_QUESTION_3"
 msgstr ""
 
 #. smarty/templates/faq.tpl
-#: locale/smarty.c:275
-msgid "MSGID_ANSWER_3"
-msgstr ""
-
-#. smarty/templates/faq.tpl
-#: locale/smarty.c:215 locale/smarty.c:278
+#: www/locale/smarty.c:221 www/locale/smarty.c:284
 msgid "MSGID_QUESTION_4"
 msgstr ""
 
 #. smarty/templates/faq.tpl
-#: locale/smarty.c:281
-msgid "MSGID_ANSWER_4"
-msgstr ""
-
-#. smarty/templates/faq.tpl
-#: locale/smarty.c:218 locale/smarty.c:284
+#: www/locale/smarty.c:224 www/locale/smarty.c:290
 msgid "MSGID_QUESTION_5"
 msgstr ""
 
 #. smarty/templates/faq.tpl
-#: locale/smarty.c:287
-msgid "MSGID_ANSWER_5"
-msgstr ""
-
-#. smarty/templates/faq.tpl
-#: locale/smarty.c:221 locale/smarty.c:290
+#: www/locale/smarty.c:227 www/locale/smarty.c:296
 msgid "MSGID_QUESTION_6"
 msgstr ""
 
 #. smarty/templates/faq.tpl
-#: locale/smarty.c:293
-msgid "MSGID_ANSWER_6"
-msgstr ""
-
-#. smarty/templates/faq.tpl
-#: locale/smarty.c:224 locale/smarty.c:296
+#: www/locale/smarty.c:230 www/locale/smarty.c:302
 msgid "MSGID_QUESTION_7"
 msgstr ""
 
 #. smarty/templates/faq.tpl
-#: locale/smarty.c:299
-msgid "MSGID_ANSWER_7"
-msgstr ""
-
-#. smarty/templates/faq.tpl
-#: locale/smarty.c:227 locale/smarty.c:302
+#: www/locale/smarty.c:233 www/locale/smarty.c:308
 msgid "MSGID_QUESTION_8"
 msgstr ""
 
 #. smarty/templates/faq.tpl
-#: locale/smarty.c:305
-msgid "MSGID_ANSWER_8"
-msgstr ""
-
-#. smarty/templates/faq.tpl
-#: locale/smarty.c:230 locale/smarty.c:308
+#: www/locale/smarty.c:236 www/locale/smarty.c:314
 msgid "MSGID_QUESTION_9"
 msgstr ""
 
 #. smarty/templates/faq.tpl
-#: locale/smarty.c:311
-msgid "MSGID_ANSWER_9"
-msgstr ""
-
-#. smarty/templates/faq.tpl
-#: locale/smarty.c:233 locale/smarty.c:314
+#: www/locale/smarty.c:239 www/locale/smarty.c:320
 msgid "MSGID_QUESTION_10"
 msgstr ""
 
 #. smarty/templates/faq.tpl
-#: locale/smarty.c:317
-msgid "MSGID_ANSWER_10"
-msgstr ""
-
-#. smarty/templates/faq.tpl
-#: locale/smarty.c:236 locale/smarty.c:320
+#: www/locale/smarty.c:242 www/locale/smarty.c:326
 msgid "MSGID_QUESTION_11"
 msgstr ""
 
 #. smarty/templates/faq.tpl
-#: locale/smarty.c:323
-msgid "MSGID_ANSWER_11"
-msgstr ""
-
-#. smarty/templates/faq.tpl
-#: locale/smarty.c:239 locale/smarty.c:326
+#: www/locale/smarty.c:245 www/locale/smarty.c:332
 msgid "MSGID_QUESTION_12"
 msgstr ""
 
 #. smarty/templates/faq.tpl
-#: locale/smarty.c:329
-msgid "MSGID_ANSWER_12"
-msgstr ""
-
-#. smarty/templates/faq.tpl
-#: locale/smarty.c:242 locale/smarty.c:332
+#: www/locale/smarty.c:248 www/locale/smarty.c:338
 msgid "MSGID_QUESTION_13"
 msgstr ""
 
 #. smarty/templates/faq.tpl
-#: locale/smarty.c:335
-msgid "MSGID_ANSWER_13"
-msgstr ""
-
-#. smarty/templates/faq.tpl
-#: locale/smarty.c:245 locale/smarty.c:338
+#: www/locale/smarty.c:251 www/locale/smarty.c:344
 msgid "MSGID_QUESTION_14"
 msgstr ""
 
 #. smarty/templates/faq.tpl
-#: locale/smarty.c:341
-msgid "MSGID_ANSWER_14"
-msgstr ""
-
-#. smarty/templates/faq.tpl
-#: locale/smarty.c:248 locale/smarty.c:344
+#: www/locale/smarty.c:254 www/locale/smarty.c:350
 msgid "MSGID_QUESTION_15"
 msgstr ""
 
 #. smarty/templates/faq.tpl
-#: locale/smarty.c:347
-msgid "MSGID_ANSWER_15"
-msgstr ""
-
-#. smarty/templates/faq.tpl
-#: locale/smarty.c:251 locale/smarty.c:350
+#: www/locale/smarty.c:257 www/locale/smarty.c:356
 msgid "MSGID_QUESTION_16"
 msgstr ""
 
 #. smarty/templates/faq.tpl
-#: locale/smarty.c:353
-msgid "MSGID_ANSWER_16"
-msgstr ""
-
-#. smarty/templates/faq.tpl
-#: locale/smarty.c:254 locale/smarty.c:356
+#: www/locale/smarty.c:260 www/locale/smarty.c:362
 msgid "MSGID_QUESTION_17"
 msgstr ""
 
 #. smarty/templates/faq.tpl
-#: locale/smarty.c:359
-msgid "MSGID_ANSWER_17"
-msgstr ""
-
-#. smarty/templates/faq.tpl
-#: locale/smarty.c:257 locale/smarty.c:362
+#: www/locale/smarty.c:263 www/locale/smarty.c:368
 msgid "MSGID_QUESTION_18"
 msgstr ""
 
 #. smarty/templates/faq.tpl
-#: locale/smarty.c:365
+#: www/locale/smarty.c:269
+msgid "MSGID_ANSWER_1"
+msgstr ""
+
+#. smarty/templates/faq.tpl
+#: www/locale/smarty.c:275
+msgid "MSGID_ANSWER_2"
+msgstr ""
+
+#. smarty/templates/faq.tpl
+#: www/locale/smarty.c:281
+msgid "MSGID_ANSWER_3"
+msgstr ""
+
+#. smarty/templates/faq.tpl
+#: www/locale/smarty.c:287
+msgid "MSGID_ANSWER_4"
+msgstr ""
+
+#. smarty/templates/faq.tpl
+#: www/locale/smarty.c:293
+msgid "MSGID_ANSWER_5"
+msgstr ""
+
+#. smarty/templates/faq.tpl
+#: www/locale/smarty.c:299
+msgid "MSGID_ANSWER_6"
+msgstr ""
+
+#. smarty/templates/faq.tpl
+#: www/locale/smarty.c:305
+msgid "MSGID_ANSWER_7"
+msgstr ""
+
+#. smarty/templates/faq.tpl
+#: www/locale/smarty.c:311
+msgid "MSGID_ANSWER_8"
+msgstr ""
+
+#. smarty/templates/faq.tpl
+#: www/locale/smarty.c:317
+msgid "MSGID_ANSWER_9"
+msgstr ""
+
+#. smarty/templates/faq.tpl
+#: www/locale/smarty.c:323
+msgid "MSGID_ANSWER_10"
+msgstr ""
+
+#. smarty/templates/faq.tpl
+#: www/locale/smarty.c:329
+msgid "MSGID_ANSWER_11"
+msgstr ""
+
+#. smarty/templates/faq.tpl
+#: www/locale/smarty.c:335
+msgid "MSGID_ANSWER_12"
+msgstr ""
+
+#. smarty/templates/faq.tpl
+#: www/locale/smarty.c:341
+msgid "MSGID_ANSWER_13"
+msgstr ""
+
+#. smarty/templates/faq.tpl
+#: www/locale/smarty.c:347
+msgid "MSGID_ANSWER_14"
+msgstr ""
+
+#. smarty/templates/faq.tpl
+#: www/locale/smarty.c:353
+msgid "MSGID_ANSWER_15"
+msgstr ""
+
+#. smarty/templates/faq.tpl
+#: www/locale/smarty.c:359
+msgid "MSGID_ANSWER_16"
+msgstr ""
+
+#. smarty/templates/faq.tpl
+#: www/locale/smarty.c:365
+msgid "MSGID_ANSWER_17"
+msgstr ""
+
+#. smarty/templates/faq.tpl
+#: www/locale/smarty.c:371
 msgid "MSGID_ANSWER_18"
 msgstr ""
 
 #. smarty/templates/confirmation_result/already_sent.tpl
-#: locale/smarty.c:368 locale/smarty.c:371
-msgid "You already sent the same message"
+#: www/locale/smarty.c:374 www/locale/smarty.c:377
+msgid "You have already sent the same message"
 msgstr ""
 
 #. smarty/templates/confirmation_result/already_sent.tpl
-#: locale/smarty.c:374
+#: www/locale/smarty.c:380
 msgid "You have already sent a message with this text to your representatives and the same message cannot be sent twice."
 msgstr ""
 
 #. smarty/templates/confirmation_result/already_sent.tpl
-#: locale/smarty.c:377
+#: www/locale/smarty.c:383
 msgid "MSGID_ALREADY_SENT_EXPLANATION"
 msgstr ""
 
@@ -576,145 +596,145 @@ msgstr ""
 #. smarty/templates/confirmation_result/reviewer/already_approved.tpl
 #. smarty/templates/confirmation_result/reviewer/refused.tpl
 #. smarty/templates/confirmation_result/reviewer/approved.tpl
-#: locale/smarty.c:380 locale/smarty.c:392 locale/smarty.c:404
-#: locale/smarty.c:425 locale/smarty.c:437 locale/smarty.c:449
+#: www/locale/smarty.c:386 www/locale/smarty.c:398 www/locale/smarty.c:410
+#: www/locale/smarty.c:431 www/locale/smarty.c:443 www/locale/smarty.c:455
 msgid "You can close this window now."
 msgstr ""
 
 #. smarty/templates/confirmation_result/processing.tpl
-#: locale/smarty.c:383 locale/smarty.c:386
+#: www/locale/smarty.c:389 www/locale/smarty.c:392
 msgid "Your message is beeing processed now"
 msgstr ""
 
 #. smarty/templates/confirmation_result/processing.tpl
-#: locale/smarty.c:389
+#: www/locale/smarty.c:395
 msgid "Your message has been queued up for sending and it is beeing processed in the system now. You will be informed soon about its sending by e-mail."
 msgstr ""
 
 #. smarty/templates/confirmation_result/already_confirmed.tpl
-#: locale/smarty.c:395 locale/smarty.c:398
+#: www/locale/smarty.c:401 www/locale/smarty.c:404
 msgid "Already confirmed"
 msgstr ""
 
 #. smarty/templates/confirmation_result/already_confirmed.tpl
-#: locale/smarty.c:401
+#: www/locale/smarty.c:407
 msgid "Sending of this message has been already confirmed."
 msgstr ""
 
 #. smarty/templates/confirmation_result/wrong_link.tpl
-#: locale/smarty.c:407 locale/smarty.c:410
+#: www/locale/smarty.c:413 www/locale/smarty.c:416
 msgid "Wrong link of confirmation"
 msgstr ""
 
 #. smarty/templates/confirmation_result/wrong_link.tpl
-#: locale/smarty.c:413
+#: www/locale/smarty.c:419
 msgid "Wrong link to confirm sending of a message. Maybe you copy&pasted an incomplete link. Or the link might already expired."
 msgstr ""
 
 #. smarty/templates/confirmation_result/reviewer/already_approved.tpl
-#: locale/smarty.c:416 locale/smarty.c:419
+#: www/locale/smarty.c:422 www/locale/smarty.c:425
 msgid "Already approved or refused"
 msgstr ""
 
 #. smarty/templates/confirmation_result/reviewer/already_approved.tpl
-#: locale/smarty.c:422
+#: www/locale/smarty.c:428
 msgid "Sending of this message has been already approved or refused."
 msgstr ""
 
 #. smarty/templates/confirmation_result/reviewer/refused.tpl
-#: locale/smarty.c:428 locale/smarty.c:431
+#: www/locale/smarty.c:434 www/locale/smarty.c:437
 msgid "Refused"
 msgstr ""
 
 #. smarty/templates/confirmation_result/reviewer/refused.tpl
-#: locale/smarty.c:434
+#: www/locale/smarty.c:440
 msgid "You refused sending of this message as an offensive or impolite one. The sender was informed with an explanation."
 msgstr ""
 
 #. smarty/templates/confirmation_result/reviewer/approved.tpl
-#: locale/smarty.c:440 locale/smarty.c:443
+#: www/locale/smarty.c:446 www/locale/smarty.c:449
 msgid "Approved"
 msgstr ""
 
 #. smarty/templates/confirmation_result/reviewer/approved.tpl
-#: locale/smarty.c:446
+#: www/locale/smarty.c:452
 msgid "You approved sending of this message. It was sent to addressees."
 msgstr ""
 
 #. smarty/templates/video.tpl
 #. smarty/templates/basic_layout.tpl
-#: locale/smarty.c:452 locale/smarty.c:455 locale/smarty.c:665
+#: www/locale/smarty.c:458 www/locale/smarty.c:461 www/locale/smarty.c:671
 msgid "Video"
 msgstr ""
 
 #. smarty/templates/video.tpl
-#: locale/smarty.c:458
+#: www/locale/smarty.c:464
 msgid "MSGID_VIDEO_SECTION"
 msgstr ""
 
 #. smarty/templates/video.tpl
-#: locale/smarty.c:461
+#: www/locale/smarty.c:467
 msgid "Watch the videos on <a href=\"%1\">%2</a>"
 msgstr ""
 
 #. smarty/templates/ajax/parliament_groups.tpl
-#: locale/smarty.c:464
+#: www/locale/smarty.c:470
 msgid "Constituency:"
 msgstr ""
 
 #. smarty/templates/ajax/parliament_groups.tpl
-#: locale/smarty.c:467 locale/smarty.c:470
+#: www/locale/smarty.c:473 www/locale/smarty.c:476
 msgid "any"
 msgstr ""
 
 #. smarty/templates/ajax/parliament_groups.tpl
-#: locale/smarty.c:473
+#: www/locale/smarty.c:479
 msgid "Write to chosen politicians"
 msgstr ""
 
 #. smarty/templates/ajax/parliament_groups.tpl
-#: locale/smarty.c:476
+#: www/locale/smarty.c:482
 msgid "Note. At least one criterion must be set within a parliament."
 msgstr ""
 
 #. smarty/templates/ajax/address_representatives.tpl
-#: locale/smarty.c:479
+#: www/locale/smarty.c:485
 msgid "Several constituencies has been found to your address. Choose the right one or try to specify your address more precisely."
 msgstr ""
 
 #. smarty/templates/contact.tpl
 #. smarty/templates/basic_layout.tpl
-#: locale/smarty.c:482 locale/smarty.c:485 locale/smarty.c:680
+#: www/locale/smarty.c:488 www/locale/smarty.c:491 www/locale/smarty.c:686
 msgid "Contact"
 msgstr ""
 
 #. smarty/templates/contact.tpl
-#: locale/smarty.c:488
+#: www/locale/smarty.c:494
 msgid "MSGID_CONTACT_SECTION"
 msgstr ""
 
 #. smarty/templates/message_private.tpl
-#: locale/smarty.c:491
+#: www/locale/smarty.c:497
 msgid "Private message"
 msgstr ""
 
 #. smarty/templates/message_private.tpl
-#: locale/smarty.c:494
+#: www/locale/smarty.c:500
 msgid "This message was sent as a private one."
 msgstr ""
 
 #. smarty/templates/email/initial_message.tpl
-#: locale/smarty.c:497
+#: www/locale/smarty.c:503
 msgid "Greetings,"
 msgstr ""
 
 #. smarty/templates/email/initial_message.tpl
-#: locale/smarty.c:500
+#: www/locale/smarty.c:506
 msgid "Yours sincerely,"
 msgstr ""
 
 #. smarty/templates/email/request_to_review.tpl
-#: locale/smarty.c:503
+#: www/locale/smarty.c:509
 msgid ""
 "A message written on %1 website seems to be offensive and it\n"
 "needs your review and approval to be sent to politicians. The message\n"
@@ -722,79 +742,79 @@ msgid ""
 msgstr ""
 
 #. smarty/templates/email/request_to_review.tpl
-#: locale/smarty.c:506
+#: www/locale/smarty.c:512
 msgid ""
 "If the message is all right and it SHOULD BE sent to addressees,\n"
 "click on this link:"
 msgstr ""
 
 #. smarty/templates/email/request_to_review.tpl
-#: locale/smarty.c:509
+#: www/locale/smarty.c:515
 msgid ""
 "If the message is offensive and SHOULD NOT be sent to addressees,\n"
 "click on this link:"
 msgstr ""
 
 #. smarty/templates/email/request_to_review.tpl
-#: locale/smarty.c:512
+#: www/locale/smarty.c:518
 msgid "The message for politicians"
 msgstr ""
 
 #. smarty/templates/email/message_refused.tpl
-#: locale/smarty.c:518
+#: www/locale/smarty.c:524
 msgid "We are sorry, but your message for politicians"
 msgstr ""
 
 #. smarty/templates/email/message_refused.tpl
-#: locale/smarty.c:521
+#: www/locale/smarty.c:527
 msgid ""
 "has been blocked by an automatic invectives-checking system and it\n"
 "has not been sent."
 msgstr ""
 
 #. smarty/templates/email/message_refused.tpl
-#: locale/smarty.c:524
+#: www/locale/smarty.c:530
 msgid ""
 "Although we are continually working on enhancing the checking system,\n"
 "it may block a completely correct message exceptionally."
 msgstr ""
 
 #. smarty/templates/email/message_refused.tpl
-#: locale/smarty.c:527
+#: www/locale/smarty.c:533
 msgid ""
 "If you believe, that your message has been blocked by mistake,\n"
 "please contact us by e-mail to %1."
 msgstr ""
 
 #. smarty/templates/email/message_sent.tpl
-#: locale/smarty.c:536
+#: www/locale/smarty.c:542
 msgid "Your message has been sent to your representatives:"
 msgstr ""
 
 #. smarty/templates/email/message_sent.tpl
-#: locale/smarty.c:539
+#: www/locale/smarty.c:545
 msgid "Your message has not been sent to your representatives."
 msgstr ""
 
 #. smarty/templates/email/message_sent.tpl
-#: locale/smarty.c:542
+#: www/locale/smarty.c:548
 msgid ""
 "The following addressees already received the same message from another\n"
 "sender, thus this one has not been sent to them:"
 msgstr ""
 
 #. smarty/templates/email/message_sent.tpl
-#: locale/smarty.c:545
+#: www/locale/smarty.c:551
 msgid "see message"
 msgstr ""
 
 #. smarty/templates/email/message_sent.tpl
-#: locale/smarty.c:548
+#: www/locale/smarty.c:554
 msgid "the message was sent as a private one"
 msgstr ""
 
 #. smarty/templates/email/message_sent.tpl
-#: locale/smarty.c:551
+#: www/locale/smarty.c:557
 msgid ""
 "Intention of the project %1 is to strengthen personal\n"
 "communication between citizens and politicians. Even a few originally\n"
@@ -803,40 +823,40 @@ msgid ""
 msgstr ""
 
 #. smarty/templates/email/message_sent.tpl
-#: locale/smarty.c:554
-msgid "In case of addressees"
+#: www/locale/smarty.c:560
+msgid "In case of addressees:"
 msgstr ""
 
 #. smarty/templates/email/message_sent.tpl
-#: locale/smarty.c:557
+#: www/locale/smarty.c:563
 msgid ""
 "we do not have an e-mail address to them hence your message cannot be\n"
 "sent to them."
 msgstr ""
 
 #. smarty/templates/email/message_sent.tpl
-#: locale/smarty.c:560
+#: www/locale/smarty.c:566
 msgid ""
 "For the case you decide to contact the politicans also by another way,\n"
 "a copy of your message is attached below."
 msgstr ""
 
 #. smarty/templates/email/message_sent.tpl
-#: locale/smarty.c:563
+#: www/locale/smarty.c:569
 msgid ""
 "For the case you decide to contact the politicans by another way,\n"
 "a copy of your message is attached below."
 msgstr ""
 
 #. smarty/templates/email/message_sent.tpl
-#: locale/smarty.c:566
+#: www/locale/smarty.c:572
 msgid ""
 "You have sent a public message - it will be published on the %1\n"
 "website as well as as an eventual response of the contacted politicians."
 msgstr ""
 
 #. smarty/templates/email/message_sent.tpl
-#: locale/smarty.c:569
+#: www/locale/smarty.c:575
 msgid ""
 "You have chosen a private message - it will not be published on the\n"
 "%1 website and the contacted politicians will send their eventual response\n"
@@ -845,45 +865,45 @@ msgstr ""
 
 #. smarty/templates/email/message_sent.tpl
 #. smarty/templates/email/request_to_confirm.tpl
-#: locale/smarty.c:572 locale/smarty.c:635
+#: www/locale/smarty.c:578 www/locale/smarty.c:641
 msgid ""
 "Please do not reply to this e-mail. We will really appreciate\n"
 "your feedback on the project, suggestions or problems at %1"
 msgstr ""
 
 #. smarty/templates/email/message_to_mp.tpl
-#: locale/smarty.c:581
+#: www/locale/smarty.c:587
 msgid "%2 sent this message to you using the %1 website."
 msgstr ""
 
 #. smarty/templates/email/message_to_mp.tpl
-#: locale/smarty.c:584
+#: www/locale/smarty.c:590
 msgid ""
 "The message has been sent as a public one and it is published on\n"
 "%1 website. Your response will be published on the same place."
 msgstr ""
 
 #. smarty/templates/email/message_to_mp.tpl
-#: locale/smarty.c:587
+#: www/locale/smarty.c:593
 msgid ""
 "The message has been sent as a private one. Please send your response\n"
 "directly to the e-mail address of the sender: %1"
 msgstr ""
 
 #. smarty/templates/email/message_to_mp.tpl
-#: locale/smarty.c:590
+#: www/locale/smarty.c:596
 msgid "A message for you"
 msgstr ""
 
 #. smarty/templates/email/response_from_mp.tpl
-#: locale/smarty.c:599
+#: www/locale/smarty.c:605
 msgid ""
 "%2 %3 responded to your message sent through\n"
 "%1 website. You can find the response below."
 msgstr ""
 
 #. smarty/templates/email/response_from_mp.tpl
-#: locale/smarty.c:602
+#: www/locale/smarty.c:608
 msgid ""
 "Because your message was sent as a public one, the response is published\n"
 "on the %1 website as well. If you will go on in discussion by\n"
@@ -892,33 +912,33 @@ msgid ""
 msgstr ""
 
 #. smarty/templates/email/response_from_mp.tpl
-#: locale/smarty.c:605
+#: www/locale/smarty.c:611
 msgid "Response to your message"
 msgstr ""
 
 #. smarty/templates/email/request_to_confirm.tpl
-#: locale/smarty.c:614
+#: www/locale/smarty.c:620
 msgid ""
 "You have written a message attached below using %1 website\n"
 "addressed to your representatives:"
 msgstr ""
 
 #. smarty/templates/email/request_to_confirm.tpl
-#: locale/smarty.c:617
+#: www/locale/smarty.c:623
 msgid ""
 "Please confirm that you want to send the message by clicking the\n"
 "following link."
 msgstr ""
 
 #. smarty/templates/email/request_to_confirm.tpl
-#: locale/smarty.c:620
+#: www/locale/smarty.c:626
 msgid ""
 "If the link is not clickable, copy&paste it to the address bar of\n"
 "your web browser."
 msgstr ""
 
 #. smarty/templates/email/request_to_confirm.tpl
-#: locale/smarty.c:623
+#: www/locale/smarty.c:629
 msgid ""
 "You have chosen a public message - it will be published on %1\n"
 "website after it is confirmed and sent to the representatives.\n"
@@ -926,7 +946,7 @@ msgid ""
 msgstr ""
 
 #. smarty/templates/email/request_to_confirm.tpl
-#: locale/smarty.c:626
+#: www/locale/smarty.c:632
 msgid ""
 "You have chosen a private message - it will not be published anywhere\n"
 "and the addressed politicians will send their eventual anwser directly\n"
@@ -934,7 +954,7 @@ msgid ""
 msgstr ""
 
 #. smarty/templates/email/request_to_confirm.tpl
-#: locale/smarty.c:629
+#: www/locale/smarty.c:635
 msgid ""
 "If you have changed your mind and you don't want to send the message,\n"
 "you don't need to do anything. Unless you click the confirmation link\n"
@@ -943,57 +963,53 @@ msgid ""
 msgstr ""
 
 #. smarty/templates/email/request_to_confirm.tpl
-#: locale/smarty.c:632
+#: www/locale/smarty.c:638
 msgid ""
 "If you have not written this message, please let us know to\n"
 "%1"
 msgstr ""
 
 #. smarty/templates/privacy.tpl
-#: locale/smarty.c:644 locale/smarty.c:647
+#: www/locale/smarty.c:650 www/locale/smarty.c:653
 msgid "Privacy of personal data"
 msgstr ""
 
 #. smarty/templates/privacy.tpl
-#: locale/smarty.c:650
+#: www/locale/smarty.c:656
 msgid "MSGID_PRIVACY_SECTION"
 msgstr ""
 
 #. smarty/templates/basic_layout.tpl
-#: locale/smarty.c:653
+#: www/locale/smarty.c:659
 msgid "MSGID_HTML_HEAD_DESCRIPTION"
 msgstr ""
 
 #. smarty/templates/basic_layout.tpl
-#: locale/smarty.c:656
+#: www/locale/smarty.c:662
 msgid "Public messages"
 msgstr ""
 
 #. smarty/templates/basic_layout.tpl
-#: locale/smarty.c:659
+#: www/locale/smarty.c:665
 msgid "About"
 msgstr ""
 
 #. smarty/templates/basic_layout.tpl
-#: locale/smarty.c:662
+#: www/locale/smarty.c:668
 msgid "FAQ"
 msgstr ""
 
 #. smarty/templates/basic_layout.tpl
-#: locale/smarty.c:671
+#: www/locale/smarty.c:677
 msgid "http://en.kohovolit.eu"
 msgstr ""
 
 #. smarty/templates/basic_layout.tpl
-#: locale/smarty.c:674
+#: www/locale/smarty.c:680
 msgid "Licence"
 msgstr ""
 
 #. smarty/templates/basic_layout.tpl
-#: locale/smarty.c:677
+#: www/locale/smarty.c:683
 msgid "Privacy"
-msgstr ""
-
-#. smarty/templates/search.tpl
-msgid "or"
 msgstr ""
