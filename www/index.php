@@ -55,7 +55,7 @@ function static_page($page)
 
 function search_advanced_page()
 {
-	global $api_data, $api_wtt;
+	global $api_data, $api_wtt, $locale;
 	$smarty = new SmartyWtt;
 
 	// get all parliaments in this country
@@ -63,7 +63,7 @@ function search_advanced_page()
 	$parl_codes = array();
 	foreach ($parliaments as $p)
 		$parl_codes[] = $p['code'];
-	$parliament_details = $api_wtt->read('ParliamentDetails', Db::arrayOfStringsArgument($parl_codes));
+	$parliament_details = $api_wtt->read('ParliamentDetails', array('parliament' => implode('|', $parl_codes), 'lang' => $locale['lang']));
 	usort($parliament_details, 'cmp_by_weight_name');
 
 	$smarty->assign('parliaments', $parliament_details);
