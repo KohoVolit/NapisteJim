@@ -1,6 +1,6 @@
 {extends file="layout.tpl"}
 
-{block name=title}{$smarty.const.WTT_TITLE} – {t}Write message{/t}{/block}
+{block name=title}{$smarty.const.NJ_TITLE} – {t}Write message{/t}{/block}
 
 {block name=head}
 <script type="text/javascript" src="locale/{$locale.system_locale}/LC_MESSAGES/messages.js"></script>
@@ -42,7 +42,7 @@
       <textarea id="write-body" rows="15" cols="80" name="body" class="validate[required,minSize[90]] textarea">{include file="email/initial_message.tpl"}</textarea>
       <br/>
       <input type="checkbox" id="write-newsletter" name="newsletter" value="order-newsletter" />
-       {t 1=$smarty.const.WTT_TITLE}I want to receive news from %1{/t}<br/><br/>
+       {t 1=$smarty.const.NJ_TITLE}I want to receive news from %1{/t}<br/><br/>
       <input id="write-submit" class="submit" type="submit" value="Odeslat"/>
     </form>
 

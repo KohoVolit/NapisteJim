@@ -1,16 +1,16 @@
 <?php
 
 // instalation settings
-const WTT_DIR = '/home/shared/napistejim.cz';
+const NJ_DIR = '/home/shared/napistejim.cz';
 const API_DIR = '/home/shared/api.kohovolit.eu';
 const API_FILES_URL = 'http://api.kohovolit.eu/files';
 const SMARTY_DIR = '/usr/local/lib/php/Smarty/libs/';
 
-define("WTT_LOGS_DIR", WTT_DIR . '/logs');
+define("NJ_LOGS_DIR", NJ_DIR . '/logs');
 
 // domain and service e-mail addresses
-const WTT_TITLE = 'NapišteJim.cz';
-const WTT_HOST = 'napistejim.cz';
+const NJ_TITLE = 'NapišteJim.cz';
+const NJ_HOST = 'napistejim.cz';
 const CONTACT_EMAIL = 'info@kohovolit.eu';
 const FROM_EMAIL = 'neodpovidejte@napistejim.cz';
 const BCC_EMAIL = 'napistejim.cz@gmail.com';

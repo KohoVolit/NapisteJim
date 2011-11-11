@@ -1,6 +1,6 @@
 {extends file="layout.tpl"}
 
-{block name=title}{$smarty.const.WTT_TITLE} – {t}Advanced search of your representatives{/t}{/block}
+{block name=title}{$smarty.const.NJ_TITLE} – {t}Advanced search of your representatives{/t}{/block}
 
 {block name=head}
 <link rel="Stylesheet" href="css/ui.selectmenu.css" type="text/css" />

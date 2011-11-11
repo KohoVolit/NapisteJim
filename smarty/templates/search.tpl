@@ -1,6 +1,6 @@
 {extends file="basic_layout.tpl"}
 
-{block name=title}{$smarty.const.WTT_TITLE} – {t}Search your representatives{/t}{/block}
+{block name=title}{$smarty.const.NJ_TITLE} – {t}Search your representatives{/t}{/block}
 
 {block name=head}
 <script type="text/javascript" src="js/jquery.clearfield.packed.js"></script>
@@ -8,7 +8,7 @@
 {/block}
 {block name=logo}
   <div id="logo-center" class="logo">
-	    <a href="/"><img src="images/logo_project.png" title ="{$smarty.const.WTT_TITLE}" alt="{$smarty.const.WTT_TITLE}" width=314 height=166/></a>
+	    <a href="/"><img src="images/logo_project.png" title ="{$smarty.const.NJ_TITLE}" alt="{$smarty.const.NJ_TITLE}" width=314 height=166/></a>
   </div>
 {/block}
 {block name=basic_body}

@@ -1,6 +1,6 @@
 {extends file="layout.tpl"}
 
-{block name=title}{$smarty.const.WTT_TITLE} – {t}Choose your representatives{/t}{/block}
+{block name=title}{$smarty.const.NJ_TITLE} – {t}Choose your representatives{/t}{/block}
 {block name=head}
 <script type="text/javascript" src="locale/{$locale.system_locale}/LC_MESSAGES/messages.js"></script>
 <script type="text/javascript" src="js/i18n.js"></script>

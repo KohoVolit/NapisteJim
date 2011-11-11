@@ -9,7 +9,7 @@
 
 <p>{t}You have already sent a message with this text to your representatives and the same message cannot be sent twice.{/t}</p>
 
-{t escape=no 1=$smarty.const.WTT_TITLE}MSGID_ALREADY_SENT_EXPLANATION{/t}
+{t escape=no 1=$smarty.const.NJ_TITLE}MSGID_ALREADY_SENT_EXPLANATION{/t}
 
 <p class="small-text">{t}You can close this window now.{/t}</p>
 {/block}

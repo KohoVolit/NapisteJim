@@ -19,14 +19,14 @@ if (isset($params['groups']))
 	$params['groups'] = implode('|', $params['groups']);
 
 // find MPs with the given memberships
-$api_wtt = new ApiDirect('wtt');
-$mp_names = $api_wtt->read('FindMp', $params);
+$api_napistejim = new ApiDirect('napistejim');
+$mp_names = $api_napistejim->read('FindMp', $params);
 
 // get details of those MPs
 $mp_ids = array();
 foreach ($mp_names as $mp)
 	$mp_ids[] = $_GET['parliament_code'] . '/' . $mp['id'];
-$mps = $api_wtt->read('MpDetails', array('mp' => implode('|', $mp_ids)));
+$mps = $api_napistejim->read('MpDetails', array('mp' => implode('|', $mp_ids)));
 
 // print emails of the found MPs
 $emails = array();

@@ -4,7 +4,7 @@ require '../config/settings.php';
 require '../setup.php';
 
 $api_data = new ApiDirect('data');
-$api_wtt = new ApiDirect('wtt');
+$api_napistejim = new ApiDirect('napistejim');
 
 $page = isset($_GET['page']) ? $_GET['page'] : null;
 switch ($page)
@@ -48,22 +48,22 @@ switch ($page)
 
 function static_page($page)
 {
-	$smarty = new SmartyWtt;
+	$smarty = new SmartyNapisteJim;
 	//$smarty->setCaching(Smarty::CACHING_LIFETIME_CURRENT);
 	$smarty->display($page . '.tpl');
 }
 
 function search_advanced_page()
 {
-	global $api_data, $api_wtt, $locale;
-	$smarty = new SmartyWtt;
+	global $api_data, $api_napistejim, $locale;
+	$smarty = new SmartyNapisteJim;
 
 	// get all parliaments in this country
 	$parliaments = $api_data->read('Parliament', array('country_code' => COUNTRY_CODE));
 	$parl_codes = array();
 	foreach ($parliaments as $p)
 		$parl_codes[] = $p['code'];
-	$parliament_details = $api_wtt->read('ParliamentDetails', array('parliament' => implode('|', $parl_codes), 'lang' => $locale['lang']));
+	$parliament_details = $api_napistejim->read('ParliamentDetails', array('parliament' => implode('|', $parl_codes), 'lang' => $locale['lang']));
 	usort($parliament_details, 'cmp_by_weight_name');
 
 	$smarty->assign('parliaments', $parliament_details);
@@ -77,8 +77,8 @@ function cmp_by_weight_name($a, $b)
 
 function public_message_page($message_id)
 {
-	global $api_data, $api_wtt;
-	$smarty = new SmartyWtt;
+	global $api_data, $api_napistejim;
+	$smarty = new SmartyNapisteJim;
 
 	// get message
 	$message = $api_data->readOne('Message', array('id' => $message_id));
@@ -87,7 +87,7 @@ function public_message_page($message_id)
 	$smarty->assign('message', $message);
 
 	// get responses to the message
-	$responses = $api_wtt->read('ResponseToMessage', array('message_id' => $message_id));
+	$responses = $api_napistejim->read('ResponseToMessage', array('message_id' => $message_id));
 	$smarty->assign('responses', $responses);
 
 	$smarty->display('message.tpl');
@@ -95,8 +95,8 @@ function public_message_page($message_id)
 
 function choose_advanced_page()
 {
-	global $api_wtt;
-	$smarty = new SmartyWtt;
+	global $api_napistejim;
+	$smarty = new SmartyNapisteJim;
 
 	$params = array();
 	if (isset($_GET['groups']) && !empty($_GET['groups']))
@@ -105,7 +105,7 @@ function choose_advanced_page()
 		$params['constituency'] = $_GET['constituency'];
 	if (isset($_GET['_datetime']) && !empty($_GET['_datetime']))
 		$params['_datetime'] = $_GET['_datetime'];
-	$search_mps = $api_wtt->read('FindMp', $params);
+	$search_mps = $api_napistejim->read('FindMp', $params);
 
 	if (isset($_GET['parliament_code']))
 		$smarty->assign('parliament', array('code' => $_GET['parliament_code']));
@@ -115,19 +115,19 @@ function choose_advanced_page()
 
 function choose_page()
 {
-	$smarty = new SmartyWtt;
+	$smarty = new SmartyNapisteJim;
 	$smarty->assign('address', $_GET['address']);
 	$smarty->display('choose.tpl');
 }
 
 function write_page()
 {
-	global $api_wtt;
+	global $api_napistejim;
 	$mp_list = implode('|', array_slice(array_unique(explode('|', $_GET['mp'])), 0, 3));
-	$mp_details = $api_wtt->read('MpDetails', array('mp' => $mp_list));
+	$mp_details = $api_napistejim->read('MpDetails', array('mp' => $mp_list));
 	$locality = isset($_SESSION['locality']) ? $_SESSION['locality'] : '';
 
-	$smarty = new SmartyWtt;
+	$smarty = new SmartyNapisteJim;
 	$smarty->assign('mps', $mp_list);
 	$smarty->assign('mp_details', $mp_details);
 	$smarty->assign('locality', $locality);
@@ -136,8 +136,8 @@ function write_page()
 
 function send_page()
 {
-	global $api_data, $api_wtt;
-	$smarty = new SmartyWtt;
+	global $api_data, $api_napistejim;
+	$smarty = new SmartyNapisteJim;
 
 	// prevent mail header injection
 	$subject = escape_header_fields($_POST['subject']);
@@ -166,10 +166,10 @@ function send_page()
 	$api_data->create('Response', $responses);
 
 	// send confirmation mail to the sender
-	$from = compose_email_address(WTT_TITLE, FROM_EMAIL);
+	$from = compose_email_address(NJ_TITLE, FROM_EMAIL);
 	$to = compose_email_address($name, $email);
-	$confirmation_subject = mime_encode(sprintf(_('Please confirm that you want to send the message using %s'), WTT_TITLE));
-	$mp_details = $api_wtt->read('MpDetails', array('mp' => implode('|', $mps)));
+	$confirmation_subject = mime_encode(sprintf(_('Please confirm that you want to send the message using %s'), NJ_TITLE));
+	$mp_details = $api_napistejim->read('MpDetails', array('mp' => implode('|', $mps)));
 	$smarty->assign('addressee', $mp_details);
 	$smarty->assign('message', array('subject' => $subject, 'body' => $body, 'is_public' => $is_public, 'confirmation_code' => $confirmation_code));
 	$text = $smarty->fetch('email/request_to_confirm.tpl');
@@ -184,7 +184,7 @@ function send_page()
 
 function confirm_page()
 {
-	global $api_data, $api_wtt;
+	global $api_data, $api_napistejim;
 
 	$action = (isset($_GET['action'])) ? $_GET['action'] : null;
 	$confirmation_code = (isset($_GET['cc'])) ? $_GET['cc'] : null;
@@ -246,8 +246,8 @@ function confirm_page()
 
 function send_message($message)
 {
-	global $api_data, $api_wtt, $locales;
-	$smarty = new SmartyWtt;
+	global $api_data, $api_napistejim, $locales;
+	$smarty = new SmartyNapisteJim;
 
 	// send the message to all addressees one by one
 	$mps = addressees_of_message($message);
@@ -262,7 +262,7 @@ function send_message($message)
 		}
 
 		// prevent sending the same message to one MP multiple times
-		$messages_to_mp = $api_wtt->read('MessageToMp', array('mp_id' => $mp['id'], 'parliament_code' => $mp['parliament_code']));
+		$messages_to_mp = $api_napistejim->read('MessageToMp', array('mp_id' => $mp['id'], 'parliament_code' => $mp['parliament_code']));
 		if (($similar_message_id = similar_message($message, $messages_to_mp)) !== false)
 		{
 			$api_data->delete('Response', array('message_id' => $message['id'], 'mp_id' => $mp['id'], 'parliament_code' => $mp['parliament_code']));
@@ -280,7 +280,7 @@ function send_message($message)
 			$to = substr($to, 0, $p);
 		}
 		$to = compose_email_address($mp['first_name'] . (!empty($mp['middle_names']) ? ' ' . $mp['middle_names'] . ' ' : ' ') . $mp['last_name'], $to);
-		$from = compose_email_address($message['sender_name'], 'reply.' . $mp['reply_code'] . '@' . WTT_HOST);
+		$from = compose_email_address($message['sender_name'], 'reply.' . $mp['reply_code'] . '@' . NJ_HOST);
 		$reply_to = ($message['is_public'] == 'yes') ? $from : compose_email_address($message['sender_name'], $message['sender_email']);
 
 		$smarty->assign('message', array('sender_name' => $message['sender_name'], 'sender_email' => $message['sender_email'],
@@ -300,7 +300,7 @@ function send_message($message)
 	}
 
 	// send a copy to the sender
-	$from = compose_email_address(WTT_TITLE, FROM_EMAIL);
+	$from = compose_email_address(NJ_TITLE, FROM_EMAIL);
 	$to = compose_email_address($message['sender_name'], $message['sender_email']);
 	$subject = (!isset($addressees['sent'])) ?
 		mime_encode(_('Your message has not been sent')) : (
@@ -323,13 +323,13 @@ function send_message($message)
 function send_to_reviewer($message)
 {
 	global $api_data;
-	$smarty = new SmartyWtt;
+	$smarty = new SmartyNapisteJim;
 
 	// generate a random approval code for the message
 	$approval_code = random_code(10);
 
 	// send the message to a reviewer to approve
-	$from = compose_email_address(WTT_TITLE, FROM_EMAIL);
+	$from = compose_email_address(NJ_TITLE, FROM_EMAIL);
 	$to = REVIEWER_EMAIL;
 	$subject = mime_encode(_('A message to representatives needs your approval'));
 	$smarty->assign('addressee', addressees_of_message($message));
@@ -344,10 +344,10 @@ function send_to_reviewer($message)
 function refuse_message($message)
 {
 	global $api_data;
-	$smarty = new SmartyWtt;
+	$smarty = new SmartyNapisteJim;
 
 	// send explanation of the refusal to the sender
-	$from = compose_email_address(WTT_TITLE, FROM_EMAIL);
+	$from = compose_email_address(NJ_TITLE, FROM_EMAIL);
 	$to = compose_email_address($message['sender_name'], $message['sender_email']);
 	$subject = mime_encode(_('Your message has been found unpolite and it has not been sent'));
 	$smarty->assign('addressee', addressees_of_message($message));
@@ -361,7 +361,7 @@ function refuse_message($message)
 
 function addressees_of_message($message)
 {
-	global $api_data, $api_wtt;
+	global $api_data, $api_napistejim;
 
 	// get list of MPs' id-s the message is addressed to
 	$responses = $api_data->read('Response', array('message_id' => $message['id']));
@@ -371,7 +371,7 @@ function addressees_of_message($message)
 
 	// get details of those MPs
 	$mp_list = rtrim($mp_list, '|');
-	$mp_details = $api_wtt->read('MpDetails', array('mp' => $mp_list));
+	$mp_details = $api_napistejim->read('MpDetails', array('mp' => $mp_list));
 
 	// add a reply_code for each addressee to the returned details
 	$i = 0;
@@ -404,13 +404,13 @@ function text_is_profane($text, $profanities_list, $prefix_only)
 
 function public_messages_page()
 {
-	global $api_wtt;
-	$smarty = new SmartyWtt;
+	global $api_napistejim;
+	$smarty = new SmartyNapisteJim;
 
 	$params = array();
 	if (isset($_SESSION['parliament']) && !empty($_SESSION['parliament']))
 		$params['parliament'] = $_SESSION['parliament'];
-	$messages = $api_wtt->read('PublicMessagePreview', $params);
+	$messages = $api_napistejim->read('PublicMessagePreview', $params);
 
 	foreach ($messages as &$message)
 		$message['response_exists'] = explode(', ', $message['response_exists']);
@@ -454,7 +454,7 @@ function send_mail($from, $to, $subject, $message, $reply_to = null, $additional
 	// make standard headers
 	if (empty($reply_to))
 		$reply_to = $from;
-	if ($from == compose_email_address(WTT_TITLE, FROM_EMAIL))
+	if ($from == compose_email_address(NJ_TITLE, FROM_EMAIL))
 		$reply_to = CONTACT_EMAIL;
 	$headers = "From: $from\n" .
 		"Reply-To: $reply_to\n" .
@@ -470,21 +470,21 @@ function send_mail($from, $to, $subject, $message, $reply_to = null, $additional
 	if (mail($to, $subject, $message, $headers)) return;
 
 	// if sending of the mail failed, write to log
-	$log = new Log(WTT_LOGS_DIR . '/error.log', 'a');
+	$log = new Log(NJ_LOGS_DIR . '/error.log', 'a');
 	$log->write("Sending of a mail failed. Mail fields:\n" .
 		print_r(array('to' => $to, 'subject' => $subject, 'message' => $message, 'headers' => $headers), true), Log::ERROR);
 
 	// and inform admin
-	$headers = 'From: ' . compose_email_address(WTT_TITLE, FROM_EMAIL) . "\n" .
-	'Reply-To: ' . compose_email_address(WTT_TITLE, FROM_EMAIL) . "\n" .
+	$headers = 'From: ' . compose_email_address(NJ_TITLE, FROM_EMAIL) . "\n" .
+	'Reply-To: ' . compose_email_address(NJ_TITLE, FROM_EMAIL) . "\n" .
 	'Content-Type: text/plain; charset="UTF-8"' . "\n" .
 	'X-Mailer: PHP';
-	mail(ADMIN_EMAIL, mime_encode(_('Sending of a mail failed')), _('Check') . ' ' . WTT_LOGS_DIR . '/error.log', $headers);
+	mail(ADMIN_EMAIL, mime_encode(_('Sending of a mail failed')), _('Check') . ' ' . NJ_LOGS_DIR . '/error.log', $headers);
 }
 
 function order_newsletter($email)
 {
-	$from = compose_email_address(WTT_TITLE, FROM_EMAIL);
+	$from = compose_email_address(NJ_TITLE, FROM_EMAIL);
 	$to = ORDER_NEWSLETTER_EMAIL;
 	$subject = mime_encode(_('Newsletter order'));
 	$message = $email;

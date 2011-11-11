@@ -98,7 +98,7 @@ msgstr ""
 
 #: www/ajax/address_representatives.php:103
 #: www/ajax/address_representatives.php:118
-msgid "You can simply add them and give the option to contact them to the public. See <a href=\"http://community.kohovolit.eu/doku.php/wtt:external-datasets\" target=\"_blank\">how to do it</a>."
+msgid "You can simply add them and give the option to contact them to the public. See <a href=\"http://community.kohovolit.eu/doku.php/napistejim:external-datasets\" target=\"_blank\">how to do it</a>."
 msgstr ""
 
 #: www/ajax/address_representatives.php:115

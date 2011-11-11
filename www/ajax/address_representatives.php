@@ -7,8 +7,8 @@ $params = $_GET;
 $params['lang'] = $locale['lang'];
 if (isset($_SESSION['parliament']) && !empty($_SESSION['parliament']))
 	$params['parliament'] = $_SESSION['parliament'];
-$api_wtt = new ApiDirect('wtt');
-$representatives = $api_wtt->read('AddressRepresentative', $params);
+$api_napistejim = new ApiDirect('napistejim');
+$representatives = $api_napistejim->read('AddressRepresentative', $params);
 
 // fix parliaments where no representative has been found but there should be at least one
 fix_global_parliaments($representatives);
@@ -17,7 +17,7 @@ fix_global_parliaments($representatives);
 fix_local_parliaments($representatives, $params);
 
 // format the found representatives into HTML
-$smarty = new SmartyWtt;
+$smarty = new SmartyNapisteJim;
 $smarty->assign('representatives', $representatives['parliament']);
 $smarty->display('ajax/address_representatives.tpl');
 
@@ -35,7 +35,7 @@ if (isset($_GET['locality']))
  */
 function fix_global_parliaments(&$representatives)
 {
-	global $global_parliaments_to_fix, $api_wtt;
+	global $global_parliaments_to_fix, $api_napistejim;
 
 	$parliaments_restriction = isset($_SESSION['parliament']) ? explode('|', $_SESSION['parliament']) : array();
 
@@ -54,7 +54,7 @@ function fix_global_parliaments(&$representatives)
 			foreach ($remove_fields as $field)
 				unset($get[$field]);
 			$get['parliament'] = $parl_code;
-			$parl_reps = $api_wtt->read('AddressRepresentative', $get);
+			$parl_reps = $api_napistejim->read('AddressRepresentative', $get);
 			if (empty($parl_reps['parliament'])) continue;
 
 			// insert the parliament into the results
@@ -101,7 +101,7 @@ function fix_local_parliaments(&$representatives, $params)
 			'name' => $params['locality'],
 			'kind' => 'local',
 			'competence' => _("We don't know representatives of your town.") . ' ' .
-				_('You can simply add them and give the option to contact them to the public. See <a href="http://community.kohovolit.eu/doku.php/wtt:external-datasets" target="_blank">how to do it</a>.'),
+				_('You can simply add them and give the option to contact them to the public. See <a href="http://community.kohovolit.eu/doku.php/napistejim:external-datasets" target="_blank">how to do it</a>.'),
 			'weight' => $local_weight,
 			'constituency' => array()
 		);
@@ -116,7 +116,7 @@ function fix_local_parliaments(&$representatives, $params)
 			'name' => sprintf(_('Region %s'), $params['administrative_area_level_1']),
 			'kind' => 'regional',
 			'competence' => _("We don't know representatives of your region.") . ' ' .
-				_('You can simply add them and give the option to contact them to the public. See <a href="http://community.kohovolit.eu/doku.php/wtt:external-datasets" target="_blank">how to do it</a>.'),
+				_('You can simply add them and give the option to contact them to the public. See <a href="http://community.kohovolit.eu/doku.php/napistejim:external-datasets" target="_blank">how to do it</a>.'),
 			'weight' => $regional_weight,
 			'constituency' => array()
 		);

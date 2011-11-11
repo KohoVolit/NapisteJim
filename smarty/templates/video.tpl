@@ -1,10 +1,10 @@
 {extends file="layout.tpl"}
 
-{block name=title}{$smarty.const.WTT_TITLE} – {t}Video{/t}{/block}
+{block name=title}{$smarty.const.NJ_TITLE} – {t}Video{/t}{/block}
 
 {block name=body}
 <h1>{t}Video{/t}</h1>
-{t escape=no 1=$smarty.const.WTT_TITLE}MSGID_VIDEO_SECTION{/t}
+{t escape=no 1=$smarty.const.NJ_TITLE}MSGID_VIDEO_SECTION{/t}
 
 <p>
 {t 1='http://www.youtube.com/kohovolit' 2='Youtube'}Watch the videos on <a href="%1">%2</a>{/t}.

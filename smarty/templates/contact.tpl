@@ -1,6 +1,6 @@
 {extends file="layout.tpl"}
 
-{block name=title}{$smarty.const.WTT_TITLE} – {t}Contact{/t}{/block}
+{block name=title}{$smarty.const.NJ_TITLE} – {t}Contact{/t}{/block}
 
 {block name=body}
 <h1>{t}Contact{/t}</h1>
