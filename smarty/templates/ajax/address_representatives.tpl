@@ -19,24 +19,40 @@
 		{if $constituency@total > 1}
 		<div class="constituency-description"><span class="name">{$constituency.name}:</span> {$constituency.description}</div>
 		{/if}
-        {foreach $constituency.group as $gkey => $group}
-          <div id="group-{$gkey}" class="group">
-          	<div class="wrapper">
-          	  	<div class="group-logo left">
-		          {if !empty($group.logo)}<img src="{$smarty.const.API_FILES_URL}/{$group.logo}" class="party-logo" title="{$group.name}" alt="{$group.short_name}" />{else}{$group.short_name}{/if}
-		        </div>
-		        {foreach $group.mp as $mp}
-		          <div class="group-mps">
-		            <div id="mp-{$parliament.code}/{$mp.id}" class="mp">
-		              <span class="mp-name">
-		                <span id="mp-name-name-{$parliament.code}/{$mp.id}" class="mp-name-name mp-clicked-off mp-clicked-{$mp.id} draggable">{$mp.last_name}</span>&nbsp;<span	class="mp-name-info dimmed small-text">{$mp.additional_info}</span>
-		              </span>
-		            </div>
-		          </div>
-		        {/foreach}
-		    </div>
-          </div>
-        {/foreach}
+		{if isset($constituency.group)}
+			{foreach $constituency.group as $gkey => $group}
+			  <div id="group-{$gkey}" class="group">
+				<div class="wrapper">
+					<div class="group-logo left">
+					  {if !empty($group.logo)}<img src="{$smarty.const.API_FILES_URL}/{$group.logo}" class="party-logo" title="{$group.name}" alt="{$group.short_name}" />{else}{$group.short_name}{/if}
+					</div>
+					{foreach $group.mp as $mp}
+					  <div class="group-mps">
+						<div id="mp-{$parliament.code}/{$mp.id}" class="mp">
+						  <span class="mp-name">
+							<span id="mp-name-name-{$parliament.code}/{$mp.id}" class="mp-name-name mp-clicked-off mp-clicked-{$mp.id} draggable">{$mp.last_name}</span>&nbsp;<span	class="mp-name-info dimmed small-text">{$mp.additional_info}</span>
+						  </span>
+						</div>
+					  </div>
+					{/foreach}
+				</div>
+			  </div>
+			{/foreach}
+		{else}
+			<div id="group-0" class="group">
+				<div class="wrapper">
+					{foreach $constituency.mp as $mp}
+					  <div class="group-mps">
+						<div id="mp-{$parliament.code}/{$mp.id}" class="mp">
+						  <span class="mp-name">
+							<span id="mp-name-name-{$parliament.code}/{$mp.id}" class="mp-name-name mp-clicked-off mp-clicked-{$mp.id} draggable">{$mp.last_name}</span>&nbsp;<span	class="mp-name-info dimmed small-text">{$mp.additional_info}</span>
+						  </span>
+						</div>
+					  </div>
+					{/foreach}
+				</div>
+			</div>
+		{/if}
       </div>
     {/foreach}
   </div>
