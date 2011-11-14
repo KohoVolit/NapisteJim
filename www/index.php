@@ -86,9 +86,9 @@ function public_message_page($message_id)
 		return $smarty->display('message_private.tpl');
 	$smarty->assign('message', $message);
 
-	// get responses to the message
-	$responses = $api_napistejim->read('ResponseToMessage', array('message_id' => $message_id));
-	$smarty->assign('responses', $responses);
+	// get replies to the message
+	$replies = $api_napistejim->read('RepliesToMessage', array('message_id' => $message_id));
+	$smarty->assign('replies', $replies);
 
 	$smarty->display('message.tpl');
 }
@@ -105,7 +105,7 @@ function choose_advanced_page()
 		$params['constituency'] = $_GET['constituency'];
 	if (isset($_GET['_datetime']) && !empty($_GET['_datetime']))
 		$params['_datetime'] = $_GET['_datetime'];
-	$search_mps = $api_napistejim->read('FindMp', $params);
+	$search_mps = $api_napistejim->read('FindMps', $params);
 
 	if (isset($_GET['parliament_code']))
 		$smarty->assign('parliament', array('code' => $_GET['parliament_code']));
@@ -155,15 +155,15 @@ function send_page()
 	$message_pkey = $api_data->create('Message', array('subject' => $subject, 'body' => $body, 'sender_name' => $name, 'sender_address' => $address, 'sender_email' => $email, 'is_public' => $is_public, 'confirmation_code' => $confirmation_code));
 	$message_id = $message_pkey['id'];
 
-	// prepare records for responses from all addressees of the message
-	$responses = array();
+	// create relationship between the message and all its addressees
+	$relationships = array();
 	foreach ($mps as $mp)
 	{
-		$reply_code = unique_random_code(10, 'Response', 'reply_code');
+		$reply_code = unique_random_code(10, 'MessageToMp', 'reply_code');
 		$p = strrpos($mp, '/');
-		$responses[] = array('message_id' => $message_id, 'mp_id' => substr($mp, $p + 1), 'parliament_code' => substr($mp, 0, $p), 'reply_code' => $reply_code);
+		$relationships[] = array('message_id' => $message_id, 'mp_id' => substr($mp, $p + 1), 'parliament_code' => substr($mp, 0, $p), 'reply_code' => $reply_code);
 	}
-	$api_data->create('Response', $responses);
+	$api_data->create('MessageToMp', $relationships);
 
 	// send confirmation mail to the sender
 	$from = compose_email_address(NJ_TITLE, FROM_EMAIL);
@@ -262,10 +262,10 @@ function send_message($message)
 		}
 
 		// prevent sending the same message to one MP multiple times
-		$messages_to_mp = $api_napistejim->read('MessageToMp', array('mp_id' => $mp['id'], 'parliament_code' => $mp['parliament_code']));
+		$messages_to_mp = $api_napistejim->read('MessagesToMp', array('mp_id' => $mp['id'], 'parliament_code' => $mp['parliament_code']));
 		if (($similar_message_id = similar_message($message, $messages_to_mp)) !== false)
 		{
-			$api_data->delete('Response', array('message_id' => $message['id'], 'mp_id' => $mp['id'], 'parliament_code' => $mp['parliament_code']));
+			$api_data->delete('MessageToMp', array('message_id' => $message['id'], 'mp_id' => $mp['id'], 'parliament_code' => $mp['parliament_code']));
 			$former_message = $api_data->readOne('Message', array('id' => $similar_message_id));
 			$addressees['blocked'][] = $mp + array('former_message' => $former_message);
 			continue;
@@ -364,10 +364,10 @@ function addressees_of_message($message)
 	global $api_data, $api_napistejim;
 
 	// get list of MPs' id-s the message is addressed to
-	$responses = $api_data->read('Response', array('message_id' => $message['id']));
+	$relationships = $api_data->read('MessageToMp', array('message_id' => $message['id']));
 	$mp_list = '';
-	foreach($responses as $response)
-		$mp_list .= $response['parliament_code'] . '/' . $response['mp_id'] . '|';
+	foreach($relationships as $r)
+		$mp_list .= $r['parliament_code'] . '/' . $r['mp_id'] . '|';
 
 	// get details of those MPs
 	$mp_list = rtrim($mp_list, '|');
@@ -376,7 +376,7 @@ function addressees_of_message($message)
 	// add a reply_code for each addressee to the returned details
 	$i = 0;
 	foreach ($mp_details as &$mp)
-		$mp['reply_code'] = $responses[$i++]['reply_code'];
+		$mp['reply_code'] = $relationships[$i++]['reply_code'];
 	return $mp_details;
 }
 
@@ -410,10 +410,10 @@ function public_messages_page()
 	$params = array();
 	if (isset($_SESSION['parliament']) && !empty($_SESSION['parliament']))
 		$params['parliament'] = $_SESSION['parliament'];
-	$messages = $api_napistejim->read('PublicMessagePreview', $params);
+	$messages = $api_napistejim->read('PublicMessagesPreview', $params);
 
 	foreach ($messages as &$message)
-		$message['response_exists'] = explode(', ', $message['response_exists']);
+		$message['reply_exists'] = explode(', ', $message['reply_exists']);
 
 	$smarty->assign('messages', $messages);
 	$smarty->display('list.tpl');

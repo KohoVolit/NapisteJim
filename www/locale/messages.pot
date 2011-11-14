@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-11-08 14:09+0100\n"
+"POT-Creation-Date: 2011-11-14 22:04+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,22 +17,22 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#: mail/receive_mail.php:38
+#, php-format
+msgid "No corresponding message found to the received reply with code %s"
+msgstr ""
+
 #: mail/receive_mail.php:39
 #, php-format
-msgid "No corresponding message found to the received response with code %s"
+msgid "The received reply can be found in %s"
 msgstr ""
 
-#: mail/receive_mail.php:40
+#: mail/receive_mail.php:56
 #, php-format
-msgid "The received response can be found in %s"
+msgid "%s %s has replied to your message"
 msgstr ""
 
-#: mail/receive_mail.php:52
-#, php-format
-msgid "%s %s has responded to your message"
-msgstr ""
-
-#. notice admin about other mails than responses to sent messages
+#. notice admin about other mails than replies to sent messages
 #: mail/receive_mail.php:67
 #, php-format
 msgid "An e-mail received to address %s"
@@ -92,21 +92,21 @@ msgstr ""
 msgid "Newsletter order"
 msgstr ""
 
-#: www/ajax/address_representatives.php:102
+#: www/ajax/address_representatives.php:103
 msgid "We don't know representatives of your town."
 msgstr ""
 
-#: www/ajax/address_representatives.php:103
-#: www/ajax/address_representatives.php:118
+#: www/ajax/address_representatives.php:104
+#: www/ajax/address_representatives.php:119
 msgid "You can simply add them and give the option to contact them to the public. See <a href=\"http://community.kohovolit.eu/doku.php/napistejim:external-datasets\" target=\"_blank\">how to do it</a>."
 msgstr ""
 
-#: www/ajax/address_representatives.php:115
+#: www/ajax/address_representatives.php:116
 #, php-format
 msgid "Region %s"
 msgstr ""
 
-#: www/ajax/address_representatives.php:117
+#: www/ajax/address_representatives.php:118
 msgid "We don't know representatives of your region."
 msgstr ""
 
@@ -175,10 +175,10 @@ msgstr ""
 
 #. smarty/templates/list.tpl
 #. smarty/templates/message.tpl
+#. smarty/templates/email/reply_from_mp.tpl
 #. smarty/templates/email/message_to_mp.tpl
-#. smarty/templates/email/response_from_mp.tpl
-#: www/locale/smarty.c:35 www/locale/smarty.c:170 www/locale/smarty.c:602
-#: www/locale/smarty.c:614
+#: www/locale/smarty.c:35 www/locale/smarty.c:170 www/locale/smarty.c:512
+#: www/locale/smarty.c:617
 msgid "From"
 msgstr ""
 
@@ -206,7 +206,7 @@ msgstr ""
 #. smarty/templates/email/message_refused.tpl
 #. smarty/templates/email/message_sent.tpl
 #. smarty/templates/email/request_to_confirm.tpl
-#: www/locale/smarty.c:65 www/locale/smarty.c:536 www/locale/smarty.c:581
+#: www/locale/smarty.c:65 www/locale/smarty.c:551 www/locale/smarty.c:596
 #: www/locale/smarty.c:644
 msgid "Your message for politicians"
 msgstr ""
@@ -343,14 +343,14 @@ msgid "MSGID_ADDRESS_EXAMPLE_3"
 msgstr ""
 
 #. smarty/templates/message.tpl
+#. smarty/templates/email/reply_from_mp.tpl
 #. smarty/templates/email/request_to_review.tpl
 #. smarty/templates/email/message_refused.tpl
 #. smarty/templates/email/message_sent.tpl
 #. smarty/templates/email/message_to_mp.tpl
-#. smarty/templates/email/response_from_mp.tpl
 #. smarty/templates/email/request_to_confirm.tpl
-#: www/locale/smarty.c:176 www/locale/smarty.c:521 www/locale/smarty.c:539
-#: www/locale/smarty.c:584 www/locale/smarty.c:599 www/locale/smarty.c:617
+#: www/locale/smarty.c:176 www/locale/smarty.c:515 www/locale/smarty.c:536
+#: www/locale/smarty.c:554 www/locale/smarty.c:599 www/locale/smarty.c:614
 #: www/locale/smarty.c:647
 msgid "Subject"
 msgstr ""
@@ -723,18 +723,39 @@ msgstr ""
 msgid "This message was sent as a private one."
 msgstr ""
 
-#. smarty/templates/email/initial_message.tpl
+#. smarty/templates/email/reply_from_mp.tpl
 #: www/locale/smarty.c:503
+msgid ""
+"%2 %3 responded to your message sent through\n"
+"%1 website. You can find the reply below."
+msgstr ""
+
+#. smarty/templates/email/reply_from_mp.tpl
+#: www/locale/smarty.c:506
+msgid ""
+"Because your message was sent as a public one, the reply is published\n"
+"on the %1 website as well. If you will go on in discussion by\n"
+"replying to this e-mail, your reply will be sent to the addressee, aside\n"
+"from %1 website."
+msgstr ""
+
+#. smarty/templates/email/reply_from_mp.tpl
+#: www/locale/smarty.c:509
+msgid "Reply to your message"
+msgstr ""
+
+#. smarty/templates/email/initial_message.tpl
+#: www/locale/smarty.c:518
 msgid "Greetings,"
 msgstr ""
 
 #. smarty/templates/email/initial_message.tpl
-#: www/locale/smarty.c:506
+#: www/locale/smarty.c:521
 msgid "Yours sincerely,"
 msgstr ""
 
 #. smarty/templates/email/request_to_review.tpl
-#: www/locale/smarty.c:509
+#: www/locale/smarty.c:524
 msgid ""
 "A message written on %1 website seems to be offensive and it\n"
 "needs your review and approval to be sent to politicians. The message\n"
@@ -742,79 +763,79 @@ msgid ""
 msgstr ""
 
 #. smarty/templates/email/request_to_review.tpl
-#: www/locale/smarty.c:512
+#: www/locale/smarty.c:527
 msgid ""
 "If the message is all right and it SHOULD BE sent to addressees,\n"
 "click on this link:"
 msgstr ""
 
 #. smarty/templates/email/request_to_review.tpl
-#: www/locale/smarty.c:515
+#: www/locale/smarty.c:530
 msgid ""
 "If the message is offensive and SHOULD NOT be sent to addressees,\n"
 "click on this link:"
 msgstr ""
 
 #. smarty/templates/email/request_to_review.tpl
-#: www/locale/smarty.c:518
+#: www/locale/smarty.c:533
 msgid "The message for politicians"
 msgstr ""
 
 #. smarty/templates/email/message_refused.tpl
-#: www/locale/smarty.c:524
+#: www/locale/smarty.c:539
 msgid "We are sorry, but your message for politicians"
 msgstr ""
 
 #. smarty/templates/email/message_refused.tpl
-#: www/locale/smarty.c:527
+#: www/locale/smarty.c:542
 msgid ""
 "has been blocked by an automatic invectives-checking system and it\n"
 "has not been sent."
 msgstr ""
 
 #. smarty/templates/email/message_refused.tpl
-#: www/locale/smarty.c:530
+#: www/locale/smarty.c:545
 msgid ""
 "Although we are continually working on enhancing the checking system,\n"
 "it may block a completely correct message exceptionally."
 msgstr ""
 
 #. smarty/templates/email/message_refused.tpl
-#: www/locale/smarty.c:533
+#: www/locale/smarty.c:548
 msgid ""
 "If you believe, that your message has been blocked by mistake,\n"
 "please contact us by e-mail to %1."
 msgstr ""
 
 #. smarty/templates/email/message_sent.tpl
-#: www/locale/smarty.c:542
+#: www/locale/smarty.c:557
 msgid "Your message has been sent to your representatives:"
 msgstr ""
 
 #. smarty/templates/email/message_sent.tpl
-#: www/locale/smarty.c:545
+#: www/locale/smarty.c:560
 msgid "Your message has not been sent to your representatives."
 msgstr ""
 
 #. smarty/templates/email/message_sent.tpl
-#: www/locale/smarty.c:548
+#: www/locale/smarty.c:563
 msgid ""
 "The following addressees already received the same message from another\n"
 "sender, thus this one has not been sent to them:"
 msgstr ""
 
 #. smarty/templates/email/message_sent.tpl
-#: www/locale/smarty.c:551
+#: www/locale/smarty.c:566
 msgid "see message"
 msgstr ""
 
 #. smarty/templates/email/message_sent.tpl
-#: www/locale/smarty.c:554
+#: www/locale/smarty.c:569
 msgid "the message was sent as a private one"
 msgstr ""
 
 #. smarty/templates/email/message_sent.tpl
-#: www/locale/smarty.c:557
+#: www/locale/smarty.c:572
 msgid ""
 "Intention of the project %1 is to strengthen personal\n"
 "communication between citizens and politicians. Even a few originally\n"
@@ -823,97 +844,76 @@ msgid ""
 msgstr ""
 
 #. smarty/templates/email/message_sent.tpl
-#: www/locale/smarty.c:560
+#: www/locale/smarty.c:575
 msgid "In case of addressees:"
 msgstr ""
 
 #. smarty/templates/email/message_sent.tpl
-#: www/locale/smarty.c:563
+#: www/locale/smarty.c:578
 msgid ""
 "we do not have an e-mail address to them hence your message cannot be\n"
 "sent to them."
 msgstr ""
 
 #. smarty/templates/email/message_sent.tpl
-#: www/locale/smarty.c:566
+#: www/locale/smarty.c:581
 msgid ""
 "For the case you decide to contact the politicans also by another way,\n"
 "a copy of your message is attached below."
 msgstr ""
 
 #. smarty/templates/email/message_sent.tpl
-#: www/locale/smarty.c:569
+#: www/locale/smarty.c:584
 msgid ""
 "For the case you decide to contact the politicans by another way,\n"
 "a copy of your message is attached below."
 msgstr ""
 
 #. smarty/templates/email/message_sent.tpl
-#: www/locale/smarty.c:572
+#: www/locale/smarty.c:587
 msgid ""
 "You have sent a public message - it will be published on the %1\n"
-"website as well as as an eventual response of the contacted politicians."
+"website as well as as an eventual reply of the contacted politicians."
 msgstr ""
 
 #. smarty/templates/email/message_sent.tpl
-#: www/locale/smarty.c:575
+#: www/locale/smarty.c:590
 msgid ""
 "You have chosen a private message - it will not be published on the\n"
-"%1 website and the contacted politicians will send their eventual response\n"
+"%1 website and the contacted politicians will send their eventual reply\n"
 "directly to you."
 msgstr ""
 
 #. smarty/templates/email/message_sent.tpl
 #. smarty/templates/email/request_to_confirm.tpl
-#: www/locale/smarty.c:578 www/locale/smarty.c:641
+#: www/locale/smarty.c:593 www/locale/smarty.c:641
 msgid ""
 "Please do not reply to this e-mail. We will really appreciate\n"
 "your feedback on the project, suggestions or problems at %1"
 msgstr ""
 
 #. smarty/templates/email/message_to_mp.tpl
-#: www/locale/smarty.c:587
+#: www/locale/smarty.c:602
 msgid "%2 sent this message to you using the %1 website."
 msgstr ""
 
 #. smarty/templates/email/message_to_mp.tpl
-#: www/locale/smarty.c:590
+#: www/locale/smarty.c:605
 msgid ""
 "The message has been sent as a public one and it is published on\n"
-"%1 website. Your response will be published on the same place."
+"%1 website. Your reply will be published on the same place."
 msgstr ""
 
 #. smarty/templates/email/message_to_mp.tpl
-#: www/locale/smarty.c:593
+#: www/locale/smarty.c:608
 msgid ""
-"The message has been sent as a private one. Please send your response\n"
+"The message has been sent as a private one. Please send your reply\n"
 "directly to the e-mail address of the sender: %1"
 msgstr ""
 
 #. smarty/templates/email/message_to_mp.tpl
-#: www/locale/smarty.c:596
-msgid "A message for you"
-msgstr ""
-
-#. smarty/templates/email/response_from_mp.tpl
-#: www/locale/smarty.c:605
-msgid ""
-"%2 %3 responded to your message sent through\n"
-"%1 website. You can find the response below."
-msgstr ""
-
-#. smarty/templates/email/response_from_mp.tpl
-#: www/locale/smarty.c:608
-msgid ""
-"Because your message was sent as a public one, the response is published\n"
-"on the %1 website as well. If you will go on in discussion by\n"
-"replying to this e-mail, your reply will be sent to the addressee, aside\n"
-"from %1 website."
-msgstr ""
-
-#. smarty/templates/email/response_from_mp.tpl
 #: www/locale/smarty.c:611
-msgid "Response to your message"
+msgid "A message for you"
 msgstr ""
 
 #. smarty/templates/email/request_to_confirm.tpl

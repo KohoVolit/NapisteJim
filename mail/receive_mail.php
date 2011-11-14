@@ -20,50 +20,52 @@ if (strpos($mail, "\r\n") === false)
 	$mail = str_replace("\n", "\r\n", $mail);
 $parsed_mail = fMailbox::parseMessage($mail);
 
-// if the mail is a response, process its content
+// if the mail is a reply, process its content
 if (preg_match('/reply\.([a-z]{10})@/', $parsed_mail['headers']['x-original-to'], $recipient))
 {
-	// parse a response to a message sent to representatives
+	// parse a reply to a message sent to representatives
 	$reply_code = strtolower($recipient[1]);
 	$subject = $parsed_mail['headers']['subject'];
 	$body = (isset($parsed_mail['text'])) ? $parsed_mail['text'] : ((isset($parsed_mail['html'])) ? $parsed_mail['html'] : '');
 
-	// store the response
+	// check the reply code
 	$api_data = new ApiDirect('data');
-	$body = preg_replace('/reply\.[a-z]{10}@/', 'reply.**********@', $body);
-	$res = $api_data->update('Response', array('reply_code' => $reply_code), array('subject' => $subject, 'body' => $body, 'full_email_data' => $mail, 'received_on' => 'now'));
-
-	// notice admin about unrecognized responses
-	if (count($res) == 0)
+	$message_to_mp = $api_data->readOne('MessageToMp', array('reply_code' => $reply_code));
+	
+	// notice admin about unrecognized replies
+	if (empty($message_to_mp))
 	{
-		$subject = mime_encode(sprintf(_('No corresponding message found to the received response with code %s'), $reply_code));
-		$text = sprintf(_('The received response can be found in %s'), NJ_DIR . '/mail/backup/mails-' .  strftime('%Y-%m-%d'));
+		$subject = mime_encode(sprintf(_('No corresponding message found to the received reply with code %s'), $reply_code));
+		$text = sprintf(_('The received reply can be found in %s'), NJ_DIR . '/mail/backup/mails-' .  strftime('%Y-%m-%d'));
 		notice_admin($subject, $text);
-		continue;
+		return;
 	}
 
-	// send the response to sender of the message
-	$response = $api_data->readOne('Response', array('reply_code' => $reply_code));
-	$message = $api_data->readOne('Message', array('id' => $response['message_id']));
-	$mp = $api_data->readOne('Mp', array('id' => $response['mp_id']));
-
+	// store replies to public messages only
+	$message = $api_data->readOne('Message', array('id' => $message_to_mp['message_id']));
+	if ($message['is_public'] == 'yes')
+	{
+		$body = preg_replace('/reply\.[a-z]{10}@/', 'reply.**********@', $body);
+		$api_data->create('Reply', array('reply_code' => $reply_code, 'subject' => $subject, 'body' => $body, 'full_email_data' => $mail));
+	}
+	else
+		$api_data->update('MessageToMp', array('reply_code' => $reply_code), array('private_reply_received' => 'yes'));
+		
+	// send the reply to sender of the message
+	$mp = $api_data->readOne('Mp', array('id' => $message_to_mp['mp_id']));
 	$from = compose_email_address(NJ_TITLE, FROM_EMAIL);
 	$to = compose_email_address($message['sender_name'], $message['sender_email']);
-	$subject = mime_encode(sprintf(_('%s %s has responded to your message'), $mp['first_name'], $mp['last_name']));
+	$subject = mime_encode(sprintf(_('%s %s has replied to your message'), $mp['first_name'], $mp['last_name']));
 	$smarty = new SmartyNapisteJim;
 	$smarty->assign('mp', $mp);
-	$smarty->assign('message', array('subject' => $response['subject'], 'body' => $response['body'], 'is_public' => $message['is_public']));
-	$text = $smarty->fetch('email/response_from_mp.tpl');
+	$smarty->assign('reply', array('subject' => $subject, 'body' => $body, 'is_public' => $message['is_public']));
+	$text = $smarty->fetch('email/reply_from_mp.tpl');
 	$reply_to = compose_email_address($parsed_mail['headers']['from']['personal'], $parsed_mail['headers']['from']['mailbox'] . '@' . $parsed_mail['headers']['from']['host']);
 	send_mail($from, $to, $subject, $text, $reply_to);
-
-	// erase an accidental response to a private message
-	if ($message['is_public'] == 'no')
-		$api_data->update('Response', array('reply_code' => $reply_code), array('subject' => null, 'body' => null, 'full_email_data' => null));
 }
 else
 {
-	// notice admin about other mails than responses to sent messages
+	// notice admin about other mails than replies to sent messages
 	$subject = mime_encode(sprintf(_('An e-mail received to address %s'), $parsed_mail['headers']['x-original-to']));
 	$text = _('From:') . ' ' . $parsed_mail['headers']['from']['personal'] . ' <' . $parsed_mail['headers']['from']['mailbox'] . '@' . $parsed_mail['headers']['from']['host'] . ">\n";
 	$text .= _('Subject:') . ' ' . $parsed_mail['headers']['subject'] . "\n\n";

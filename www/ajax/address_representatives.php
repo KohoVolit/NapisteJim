@@ -8,7 +8,7 @@ $params['lang'] = $locale['lang'];
 if (isset($_SESSION['parliament']) && !empty($_SESSION['parliament']))
 	$params['parliament'] = $_SESSION['parliament'];
 $api_napistejim = new ApiDirect('napistejim');
-$representatives = $api_napistejim->read('AddressRepresentative', $params);
+$representatives = $api_napistejim->read('AddressRepresentatives', $params);
 
 // fix parliaments where no representative has been found but there should be at least one
 fix_global_parliaments($representatives);
@@ -54,7 +54,7 @@ function fix_global_parliaments(&$representatives)
 			foreach ($remove_fields as $field)
 				unset($get[$field]);
 			$get['parliament'] = $parl_code;
-			$parl_reps = $api_napistejim->read('AddressRepresentative', $get);
+			$parl_reps = $api_napistejim->read('AddressRepresentatives', $get);
 			if (empty($parl_reps['parliament'])) continue;
 
 			// insert the parliament into the results

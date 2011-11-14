@@ -20,7 +20,7 @@ if (isset($params['groups']))
 
 // find MPs with the given memberships
 $api_napistejim = new ApiDirect('napistejim');
-$mp_names = $api_napistejim->read('FindMp', $params);
+$mp_names = $api_napistejim->read('FindMps', $params);
 
 // get details of those MPs
 $mp_ids = array();

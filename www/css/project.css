@@ -475,21 +475,21 @@ min-width:220px;
 .list-body {
   color: #7F7F7F;
 }
-.list-td-response-status {
+.list-td-reply-status {
   width:45px;
   text-align:center;
 }
 .list-td-date {
   width:4em;
 }
-.list-td-responder{
+.list-td-replier{
   width:30%;
 }
 .list-td-sender{
   width:15%;
 }
 /*sprite- image*/
-.list-response-status {
+.list-reply-status {
     background: url(/images/points.png) no-repeat top left;
     width:15px;
 }
@@ -515,9 +515,9 @@ min-width:220px;
 #message-body {
   line-height:normal;
 }
-.message-response{
+.message-reply{
   padding:2em 0;
 }
-.message-response .message-left {
+.message-reply .message-left {
   font-weight: bold;
 }

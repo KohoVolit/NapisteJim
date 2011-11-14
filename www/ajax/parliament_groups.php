@@ -6,7 +6,7 @@ if (!isset($_GET['parliament_code']) || $_GET['parliament_code'] == '0') exit;
 
 // get groups of the given parliament
 $api_napistejim = new ApiDirect('napistejim');
-$groups = $api_napistejim->read('ParliamentGroup', $_GET + array('lang' => $locale['lang']));
+$groups = $api_napistejim->read('ParliamentGroups', $_GET + array('lang' => $locale['lang']));
 
 // get constituencies of the given parliament
 $api_data = new ApiDirect('data');
