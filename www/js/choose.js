@@ -59,7 +59,7 @@ function codeAddress() {
   var address = document.getElementById("choose-geocode-address").value + ', ' + country_name;
     
     geocoder = new google.maps.Geocoder();
-    geocoder.geocode({"address": address, "language": areas_language, "region": country_code}, function(results, status) {
+    geocoder.geocode({"address": address}, function(results, status) {
 	if (status == google.maps.GeocoderStatus.OK) {
 	  //clear previous marker
 	  clearOverlays();
@@ -148,7 +148,7 @@ function codeLatLng(lat, lng) {
     show_messages(_("Be more specific entering your address, please. This one has not been recognized."), "Anticycle check in reverse geocoding", 'error');
   } else {
     var latlng = new google.maps.LatLng(lat, lng);
-    geocoder.geocode({'latLng': latlng, "language": areas_language, "region": country_code}, function(results, status) {
+    geocoder.geocode({'latLng': latlng}, function(results, status) {
       if (status == google.maps.GeocoderStatus.OK) {
         //alert(dump(results));
         if (results[1]) {

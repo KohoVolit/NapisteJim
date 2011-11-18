@@ -3,17 +3,15 @@
 {block name=title}{$smarty.const.NJ_TITLE} – {t}Choose your representatives{/t}{/block}
 
 {block name=head}
-<script type="text/javascript" src="http://maps.google.com/maps/api/js?v=3.2&sensor=false"></script>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?v=3.2&sensor=false&language={$smarty.const.AREAS_LANGUAGE}&region={$smarty.const.COUNTRY_CODE}"></script>
 <script type="text/javascript">
 //define global variables from settings.php
 var country_name = "{$smarty.const.COUNTRY_NAME}";
-var country_code = "{$smarty.const.COUNTRY_CODE}";
+var address = "{$address}";
 var required_address_level = "{$smarty.const.REQUIRED_ADDRESS_LEVEL}";
 var map_center_lat = "{$smarty.const.MAP_CENTER_LAT}";
 var map_center_lng = "{$smarty.const.MAP_CENTER_LNG}";
 var map_zoom = "{$smarty.const.MAP_ZOOM}";
-var areas_language = "{$smarty.const.AREAS_LANGUAGE}"
-var address = "{$address}";
 </script>
 <script type="text/javascript" src="locale/{$locale.system_locale}/LC_MESSAGES/messages.js"></script>
 <script type="text/javascript" src="js/i18n.js"></script>
