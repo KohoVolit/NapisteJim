@@ -201,7 +201,7 @@ function confirm_page()
 				return static_page('confirmation_result/already_confirmed');
 
 			// prevent sending the same message more than once
-			$my_messages = $api_data->read('Message', array('sender_email' => $message['sender_email']));
+			$my_messages = $api_data->read('Message', array('sender_email' => $message['sender_email'], 'state' => 'sent'));
 			if (similar_message($message, $my_messages))
 			{
 				$api_data->update('Message', array('id' => $message['id']), array('state' => 'blocked'));
