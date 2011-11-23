@@ -1,6 +1,7 @@
 <?php
 require '../../config/settings.php';
 require '../../setup.php';
+require '../../utils.php';
 
 // get MP's details
 $api_napistejim = new ApiDirect('napistejim');

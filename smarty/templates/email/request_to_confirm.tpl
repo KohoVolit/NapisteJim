@@ -1,7 +1,8 @@
 {t escape=no 1=$smarty.const.NJ_TITLE}You have written a message attached below using %1 website
 addressed to your representatives:{/t}
 
-{foreach $addressee as $a}{$a.first_name} {$a.last_name}
+{foreach $addressees as $a}
+{assign "personal_name" format_personal_name($a)}{$personal_name}
 {/foreach}
 
 {t escape=no}Please confirm that you want to send the message by clicking the

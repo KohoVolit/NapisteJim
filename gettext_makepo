@@ -1,8 +1,0 @@
-#!/bin/bash
-
-php tsmarty2c.php smarty > www/locale/smarty.c
-xgettext -p www/locale --add-comments --no-wrap -o messages.pot -o messages.pot classes/*.php mail/*.php www/*.php www/ajax/*.php www/locale/smarty.c
-rm www/locale/smarty.c
-
-cd www/js
-xgettext -p ../locale --add-comments --no-wrap -L python -d messages-js -o messages-js.pot choose.js choose_advanced.js search.js search_advanced.js write.js

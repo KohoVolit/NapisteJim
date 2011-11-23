@@ -3,7 +3,7 @@
 use strict;
 use HTML::Entities;
 
-for (<www/locale/*.utf8/LC_MESSAGES/messages-js.po>) {
+for (<../www/locale/*.utf8/LC_MESSAGES/messages-js.po>) {
     print $_ . "\n";
     my ($lang) = /(.*?)\./;
     #print $lang . "\n";

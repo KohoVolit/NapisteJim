@@ -1,6 +1,7 @@
 {t escape=no}We are sorry, but your message for politicians{/t}
 
-{foreach $addressee as $a}{$a.first_name} {$a.last_name}
+{foreach $addressees as $a}
+{assign "personal_name" format_personal_name($a)}{$personal_name}
 {/foreach}
 
 {t escape=no}has been blocked by an automatic invectives-checking system and it

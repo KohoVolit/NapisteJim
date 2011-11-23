@@ -2,6 +2,7 @@
 
 require '../config/settings.php';
 require '../setup.php';
+require '../utils.php';
 
 $api_data = new ApiDirect('data');
 $api_napistejim = new ApiDirect('napistejim');
@@ -23,7 +24,7 @@ switch ($page)
 		break;
 
 	case 'list':
-		public_messages_page();
+		list_page();
 		break;
 
 	default:
@@ -40,7 +41,7 @@ switch ($page)
 			else if (isset($_GET['advanced']))
 				search_advanced_page();
 			else if (isset($_GET['message']))
-				public_message_page($_GET['message']);
+				message_page($_GET['message']);
 			else
 				static_page('search');
 		}
@@ -49,7 +50,6 @@ switch ($page)
 function static_page($page)
 {
 	$smarty = new SmartyNapisteJim;
-	//$smarty->setCaching(Smarty::CACHING_LIFETIME_CURRENT);
 	$smarty->display($page . '.tpl');
 }
 
@@ -63,6 +63,7 @@ function search_advanced_page()
 	$parl_codes = array();
 	foreach ($parliaments as $p)
 		$parl_codes[] = $p['code'];
+
 	$parliament_details = $api_napistejim->read('ParliamentDetails', array('parliament' => implode('|', $parl_codes), 'lang' => $locale['lang']));
 	usort($parliament_details, 'cmp_by_weight_name');
 
@@ -75,22 +76,11 @@ function cmp_by_weight_name($a, $b)
 	return ($a['weight'] < $b['weight']) ? -1 : (($a['weight'] > $b['weight']) ? 1 : strcoll($a['name'], $b['name']));
 }
 
-function public_message_page($message_id)
+function choose_page()
 {
-	global $api_data, $api_napistejim;
 	$smarty = new SmartyNapisteJim;
-
-	// get message
-	$message = $api_data->readOne('Message', array('id' => $message_id));
-	if ($message['is_public'] == 'no')
-		return $smarty->display('message_private.tpl');
-	$smarty->assign('message', $message);
-
-	// get replies to the message
-	$replies = $api_napistejim->read('RepliesToMessage', array('message_id' => $message_id));
-	$smarty->assign('replies', $replies);
-
-	$smarty->display('message.tpl');
+	$smarty->assign('address', $_GET['address']);
+	$smarty->display('choose.tpl');
 }
 
 function choose_advanced_page()
@@ -105,30 +95,24 @@ function choose_advanced_page()
 		$params['constituency'] = $_GET['constituency'];
 	if (isset($_GET['_datetime']) && !empty($_GET['_datetime']))
 		$params['_datetime'] = $_GET['_datetime'];
-	$search_mps = $api_napistejim->read('FindMps', $params);
+	$found_mps = $api_napistejim->read('FindMps', $params);
 
+	$smarty->assign('mps', $found_mps);
 	if (isset($_GET['parliament_code']))
 		$smarty->assign('parliament', array('code' => $_GET['parliament_code']));
-	$smarty->assign('mps', $search_mps);
 	$smarty->display('choose_advanced.tpl');
-}
-
-function choose_page()
-{
-	$smarty = new SmartyNapisteJim;
-	$smarty->assign('address', $_GET['address']);
-	$smarty->display('choose.tpl');
 }
 
 function write_page()
 {
 	global $api_napistejim;
+	$smarty = new SmartyNapisteJim;
+
 	$mp_list = implode('|', array_slice(array_unique(explode('|', $_GET['mp'])), 0, 3));
 	$mp_details = $api_napistejim->read('MpDetails', array('mp' => $mp_list));
 	$locality = isset($_SESSION['locality']) ? $_SESSION['locality'] : '';
 
-	$smarty = new SmartyNapisteJim;
-	$smarty->assign('mps', $mp_list);
+	$smarty->assign('mp_list', $mp_list);
 	$smarty->assign('mp_details', $mp_details);
 	$smarty->assign('locality', $locality);
 	$smarty->display('write.tpl');
@@ -168,12 +152,12 @@ function send_page()
 	// send confirmation mail to the sender
 	$from = compose_email_address(NJ_TITLE, FROM_EMAIL);
 	$to = compose_email_address($name, $email);
-	$confirmation_subject = mime_encode(sprintf(_('Please confirm that you want to send the message using %s'), NJ_TITLE));
-	$mp_details = $api_napistejim->read('MpDetails', array('mp' => implode('|', $mps)));
-	$smarty->assign('addressee', $mp_details);
+	$mail_subject = mime_encode(sprintf(_('Please confirm that you want to send the message using %s'), NJ_TITLE));
+	$addressees = $api_napistejim->read('MpDetails', array('mp' => implode('|', $mps)));
+	$smarty->assign('addressees', $addressees);
 	$smarty->assign('message', array('subject' => $subject, 'body' => $body, 'is_public' => $is_public, 'confirmation_code' => $confirmation_code));
-	$text = $smarty->fetch('email/request_to_confirm.tpl');
-	send_mail($from, $to, $confirmation_subject, $text);
+	$mail_body = $smarty->fetch('email/request_to_confirm.tpl');
+	send_mail($from, $to, $mail_subject, $mail_body);
 
 	// order newsletter if requested
 	if (isset($_POST['newsletter']))
@@ -202,7 +186,7 @@ function confirm_page()
 
 			// prevent sending the same message more than once
 			$my_messages = $api_data->read('Message', array('sender_email' => $message['sender_email'], 'state' => 'sent'));
-			if (similar_message($message, $my_messages))
+			if (similar_message_exists($message, $my_messages))
 			{
 				$api_data->update('Message', array('id' => $message['id']), array('state' => 'blocked'));
 				return static_page('confirmation_result/already_sent');
@@ -244,6 +228,38 @@ function confirm_page()
 	}
 }
 
+function list_page()
+{
+	global $api_napistejim;
+	$smarty = new SmartyNapisteJim;
+
+	$params = array();
+	if (isset($_SESSION['parliament']) && !empty($_SESSION['parliament']))
+		$params['parliament'] = $_SESSION['parliament'];
+	$messages = $api_napistejim->read('PublicMessagesPreview', $params);
+
+	foreach ($messages as &$message)
+		$message['reply_exists'] = explode(', ', $message['reply_exists']);
+
+	$smarty->assign('messages', $messages);
+	$smarty->display('list.tpl');
+}
+
+function message_page($message_id)
+{
+	global $api_data, $api_napistejim;
+	$smarty = new SmartyNapisteJim;
+
+	$message = $api_data->readOne('Message', array('id' => $message_id));
+	if ($message['is_public'] == 'no')
+		return $smarty->display('message_private.tpl');
+	$replies = $api_napistejim->read('RepliesToMessage', array('message_id' => $message_id));
+
+	$smarty->assign('message', $message);
+	$smarty->assign('replies', $replies);
+	$smarty->display('message.tpl');
+}
+
 function send_message($message)
 {
 	global $api_data, $api_napistejim, $locales;
@@ -261,9 +277,9 @@ function send_message($message)
 			continue;
 		}
 
-		// prevent sending the same message to one MP multiple times
+		// prevent sending the same message to a particular MP multiple times
 		$messages_to_mp = $api_napistejim->read('MessagesToMp', array('mp_id' => $mp['id'], 'parliament_code' => $mp['parliament_code']));
-		if (($similar_message_id = similar_message($message, $messages_to_mp)) !== false)
+		if (($similar_message_id = similar_message_exists($message, $messages_to_mp)) !== false)
 		{
 			$api_data->delete('MessageToMp', array('message_id' => $message['id'], 'mp_id' => $mp['id'], 'parliament_code' => $mp['parliament_code']));
 			$former_message = $api_data->readOne('Message', array('id' => $similar_message_id));
@@ -271,30 +287,30 @@ function send_message($message)
 			continue;
 		}
 
-		// process also To: addresses in the form common-mailbox@host?subject=addressee
+		// set mail headers
 		$subject = mime_encode($message['subject']);
 		$to = $mp['email'];
+		// process also To: addresses in the form common-mailbox@host?subject=addressee-name
 		if (($p = strpos($to, '?subject=')) !== false)
 		{
 			$subject = mime_encode(substr($to, $p + strlen('?subject=')) . ' – ') . $subject;
 			$to = substr($to, 0, $p);
 		}
-		$to = compose_email_address($mp['first_name'] . (!empty($mp['middle_names']) ? ' ' . $mp['middle_names'] . ' ' : ' ') . $mp['last_name'], $to);
+		$to = compose_email_address(format_personal_name($mp['first_name'], $mp['middle_names'], $mp['last_name']), $to);
 		$from = compose_email_address($message['sender_name'], 'reply.' . $mp['reply_code'] . '@' . NJ_HOST);
 		$reply_to = ($message['is_public'] == 'yes') ? $from : compose_email_address($message['sender_name'], $message['sender_email']);
-
-		$smarty->assign('message', array('sender_name' => $message['sender_name'], 'sender_email' => $message['sender_email'],
-			'subject' => $message['subject'], 'body' => $message['body'], 'is_public' => $message['is_public'], 'reply_to' => $reply_to));
 
 		// instructions in the e-mail for MPs are always in the primary language of the site
 		$old_locale = setlocale(LC_ALL, '0');
 		$locale = reset($locales);
 		putenv('LC_ALL=' . $locale['system_locale']);
 		setlocale(LC_ALL, $locale['system_locale']);
+		$smarty->assign('message', $message + array('reply_to' => $reply_to));
 		$text = $smarty->fetch('email/message_to_mp.tpl');
 		putenv('LC_ALL=' . $old_locale);
 		setlocale(LC_ALL, $old_locale);
 
+		// send message to the MP
 		send_mail($from, $to, $subject, $text, $reply_to);
 		$addressees['sent'][] = $mp;
 	}
@@ -308,7 +324,7 @@ function send_message($message)
 			mime_encode(_('Your message has been sent')) :
 			mime_encode(_('Your message has been sent only to some of the addressees'))
 		);
-	$smarty->assign('addressee', $addressees);
+	$smarty->assign('addressees', $addressees);
 	$smarty->assign('message', array('subject' => $message['subject'], 'body' => $message['body'], 'is_public' => $message['is_public']));
 	$text = $smarty->fetch('email/message_sent.tpl');
 	send_mail($from, $to, $subject, $text);
@@ -325,15 +341,11 @@ function send_to_reviewer($message)
 	global $api_data;
 	$smarty = new SmartyNapisteJim;
 
-	// generate a random approval code for the message
-	$approval_code = random_code(10);
-
 	// send the message to a reviewer to approve
 	$from = compose_email_address(NJ_TITLE, FROM_EMAIL);
 	$to = REVIEWER_EMAIL;
 	$subject = mime_encode(_('A message to representatives needs your approval'));
-	$smarty->assign('addressee', addressees_of_message($message));
-	$smarty->assign('message', array('subject' => $message['subject'], 'body' => $message['body'], 'is_public' => $message['is_public'], 'confirmation_code' => $message['confirmation_code'], 'approval_code' => $approval_code));
+	$smarty->assign('message', $message + array('approval_code' => random_code(10)));
 	$text = $smarty->fetch('email/request_to_review.tpl');
 	send_mail($from, $to, $subject, $text);
 
@@ -350,8 +362,8 @@ function refuse_message($message)
 	$from = compose_email_address(NJ_TITLE, FROM_EMAIL);
 	$to = compose_email_address($message['sender_name'], $message['sender_email']);
 	$subject = mime_encode(_('Your message has been found unpolite and it has not been sent'));
-	$smarty->assign('addressee', addressees_of_message($message));
-	$smarty->assign('message', array('subject' => $message['subject'], 'body' => $message['body'], 'is_public' => $message['is_public']));
+	$smarty->assign('addressees', addressees_of_message($message));
+	$smarty->assign('message', $message);
 	$text = $smarty->fetch('email/message_refused.tpl');
 	send_mail($from, $to, $subject, $text);
 
@@ -363,15 +375,12 @@ function addressees_of_message($message)
 {
 	global $api_data, $api_napistejim;
 
-	// get list of MPs' id-s the message is addressed to
+	// get MPs the message is addressed to
 	$relationships = $api_data->read('MessageToMp', array('message_id' => $message['id']));
-	$mp_list = '';
+	$mps = array();
 	foreach($relationships as $r)
-		$mp_list .= $r['parliament_code'] . '/' . $r['mp_id'] . '|';
-
-	// get details of those MPs
-	$mp_list = rtrim($mp_list, '|');
-	$mp_details = $api_napistejim->read('MpDetails', array('mp' => $mp_list));
+		$mps[] = $r['parliament_code'] . '/' . $r['mp_id'];
+	$mp_details = $api_napistejim->read('MpDetails', array('mp' => implode('|', $mps)));
 
 	// add a reply_code for each addressee to the returned details
 	$i = 0;
@@ -384,133 +393,12 @@ function message_is_profane($message)
 {
 	$file = ($message['is_public'] == 'yes') ? 'profanities_public.lst' : 'profanities_private.lst';
 	$profanities = file("../$file", FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
-	$prefix_only = !($message['is_public'] == 'yes');
-	return text_is_profane($message['subject'], $profanities, $prefix_only) || text_is_profane($message['body'], $profanities, $prefix_only);
+	$prefix_only = ($message['is_public'] == 'no');
+	return is_profane($message['subject'], $profanities, $prefix_only) ||
+		is_profane($message['body'], $profanities, $prefix_only);
 }
 
-function text_is_profane($text, $profanities_list, $prefix_only)
-{
-	$text = mb_strtolower($text);
-	$text = ' ' . strtr($text, ".,:;!?-'\"()\r\n", '              ');
-	foreach ($profanities_list as $p)
-	{
-		if ($prefix_only)
-			$p = ' ' . $p;
-		if (strpos($text, $p) !== false)
-			return true;
-	}
-	return false;
-}
-
-function public_messages_page()
-{
-	global $api_napistejim;
-	$smarty = new SmartyNapisteJim;
-
-	$params = array();
-	if (isset($_SESSION['parliament']) && !empty($_SESSION['parliament']))
-		$params['parliament'] = $_SESSION['parliament'];
-	$messages = $api_napistejim->read('PublicMessagesPreview', $params);
-
-	foreach ($messages as &$message)
-		$message['reply_exists'] = explode(', ', $message['reply_exists']);
-
-	$smarty->assign('messages', $messages);
-	$smarty->display('list.tpl');
-}
-
-function random_code($length)
-{
-	$code = '';
-	for ($i = 0; $i < $length; $i++)
-		$code .= chr(mt_rand(ord('a'), ord('z')));
-	return $code;
-}
-
-function unique_random_code($length, $resource, $field)
-{
-	global $api_data;
-	do
-	{
-		$code = random_code($length);
-		$res = $api_data->readOne($resource, array($field => $code));
-	}
-	while ($res);
-	return $code;
-}
-
-function escape_header_fields($text)
-{
-	$escape_tokens = array('To:', 'Cc:', 'Bcc:', 'From:', 'Sender:', 'Reply-To:', 'Subject:');
-	foreach($escape_tokens as $token)
-		$text = str_ireplace($token, strtr($token, ':', ';'), $text);
-	return $text;
-}
-
-
-// must use header lines separator \n instead of the correct one \r\n due to a bug in centrum.cz mail client
-function send_mail($from, $to, $subject, $message, $reply_to = null, $additional_headers = null)
-{
-	// make standard headers
-	if (empty($reply_to))
-		$reply_to = $from;
-	if ($from == compose_email_address(NJ_TITLE, FROM_EMAIL))
-		$reply_to = CONTACT_EMAIL;
-	$headers = "From: $from\n" .
-		"Reply-To: $reply_to\n" .
-		'Content-Type: text/plain; charset="UTF-8"' . "\n" .
-		'MIME-Version: 1.0' . "\n" .
-		'Content-Transfer-Encoding: 8bit' . "\n" .
-		'X-Mailer: PHP' . "\n" .
-		'Bcc: ' . BCC_EMAIL;
-	if (!empty($additional_headers))
-		$headers .= "\n" . $additional_headers;
-
-	// send a mail
-	if (mail($to, $subject, $message, $headers)) return;
-
-	// if sending of the mail failed, write to log
-	$log = new Log(NJ_LOGS_DIR . '/error.log', 'a');
-	$log->write("Sending of a mail failed. Mail fields:\n" .
-		print_r(array('to' => $to, 'subject' => $subject, 'message' => $message, 'headers' => $headers), true), Log::ERROR);
-
-	// and inform admin
-	$headers = 'From: ' . compose_email_address(NJ_TITLE, FROM_EMAIL) . "\n" .
-	'Reply-To: ' . compose_email_address(NJ_TITLE, FROM_EMAIL) . "\n" .
-	'Content-Type: text/plain; charset="UTF-8"' . "\n" .
-	'X-Mailer: PHP';
-	mail(ADMIN_EMAIL, mime_encode(_('Sending of a mail failed')), _('Check') . ' ' . NJ_LOGS_DIR . '/error.log', $headers);
-}
-
-function order_newsletter($email)
-{
-	$from = compose_email_address(NJ_TITLE, FROM_EMAIL);
-	$to = ORDER_NEWSLETTER_EMAIL;
-	$subject = mime_encode(_('Newsletter order'));
-	$message = $email;
-	send_mail($from, $to, $subject, $message);
-}
-
-function mime_encode($text)
-{
-	return mb_encode_mimeheader($text, 'UTF-8', 'Q');
-}
-
-function compose_email_address($display_name, $address)
-{
-	if (empty($display_name)) return $address;
-
-	$name = mime_encode(trim(trim($display_name), '"'));
-	if (strpos($name, ',') !== false)
-		$name = '"' . $name . '"';
-
-	$addresses = explode(',', $address);
-	foreach ($addresses as &$a)
-		$a = $name . ' <' . trim($a) . '>';
-	return implode(', ', $addresses);
-}
-
-function similar_message($sample_message, $messages)
+function similar_message_exists($sample_message, $messages)
 {
 	$sample_text = str_replace(array($sample_message['sender_name'], $sample_message['sender_address']), '', $sample_message['body']);
 	$sample_length = mb_strlen($sample_text);
@@ -531,42 +419,6 @@ function similar_message($sample_message, $messages)
 			return $message['id'];
 	}
 	return false;
-}
-
-function similarity($text1, $text2)
-{
-	// remove accents and convert to lowercase
-	$text1 = preg_replace('/[\'^"]/', '', strtolower(iconv('UTF-8', 'ASCII//TRANSLIT', $text1)));
-	$text2 = preg_replace('/[\'^"]/', '', strtolower(iconv('UTF-8', 'ASCII//TRANSLIT', $text2)));
-
-	// split texts to arrays of words
-	$words1 = preg_split('/[\W]+/', $text1, -1, PREG_SPLIT_NO_EMPTY);
-	$words2 = preg_split('/[\W]+/', $text2, -1, PREG_SPLIT_NO_EMPTY);
-
-	// sort the words alphabetically
-	sort($words1, SORT_STRING);
-	sort($words2, SORT_STRING);
-
-	// count number of common words in both arrays
-	$count = 0;
-	$word1 = reset($words1);
-	$word2 = reset($words2);
-	while ($word1 !== false && $word2 !== false)
-	{
-		if ($word1 == $word2)
-		{
-			$count++;
-			$word1 = next($words1);
-			$word2 = next($words2);
-		}
-		elseif ($word1 < $word2)
-			$word1 = next($words1);
-		else
-			$word2 = next($words2);
-	}
-
-	// return similarity of the texts
-	return $count / max(count($words1), count($words2));
 }
 
 ?>

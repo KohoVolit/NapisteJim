@@ -1,6 +1,7 @@
 <?php
 require '../../config/settings.php';
 require '../../setup.php';
+require '../../utils.php';
 
 if (!isset($_GET['parliament_code']) || $_GET['parliament_code'] == '0') exit;
 

@@ -22,8 +22,7 @@
 		            <div id="mp-{$parliament.code}/{$mp.id}" class="mp">
 <!-- &nbsp; needed by IE8 -->&nbsp;<span id="mp-toggle-{$parliament.code}/{$mp.id}" class="mp-toggle mp-clicked-off mp-clicked-{$mp.id} ui-icon ui-icon-check mp-{$mp.id}"></span>
 		              <span class="mp-name">
-		                <span id="mp-name-name-{$parliament.code}/{$mp.id}" class="mp-name-name mp-clicked-off mp-clicked-{$mp.id} draggable">{$mp.last_name}&nbsp;{$mp.first_name}</span>
-		                
+		                <span id="mp-name-name-{$parliament.code}/{$mp.id}" class="mp-name-name mp-clicked-off mp-clicked-{$mp.id} draggable">{assign "personal_name" format_personal_name($mp)}{$personal_name}</span>
 		              </span>
 		            </div>
 		         

@@ -1,6 +1,7 @@
 <?php
 require '../../config/settings.php';
 require '../../setup.php';
+require '../../utils.php';
 
 // get representatives for the given address and parliament(s)
 $params = $_GET;
