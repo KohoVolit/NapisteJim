@@ -2,7 +2,7 @@
 
 cd ..
 php gettext/tsmarty2c.php smarty > gettext/smarty.c
-xgettext --add-comments --no-wrap -p gettext -o messages.pot classes/*.php backend/*.php www/*.php www/ajax/*.php smarty.c
+xgettext --add-comments --no-wrap -p gettext -o messages.pot classes/*.php backend/*.php www/*.php www/ajax/*.php gettext/smarty.c
 rm gettext/smarty.c
 
 cd www/js
