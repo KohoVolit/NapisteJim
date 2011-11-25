@@ -91,8 +91,10 @@ function choose_advanced_page()
 	$params = array();
 	if (isset($_GET['groups']) && !empty($_GET['groups']))
 		$params['groups'] = $_GET['groups'];
-	if (isset($_GET['constituency']) && !empty($_GET['constituency']))
-		$params['constituency'] = $_GET['constituency'];
+	if (isset($_GET['constituency_id']) && !empty($_GET['constituency_id']))
+		$params['constituency_id'] = $_GET['constituency_id'];
+	if (isset($_GET['parliament_code']) && !empty($_GET['parliament_code']))
+		$params['parliament_code'] = $_GET['parliament_code'];
 	if (isset($_GET['_datetime']) && !empty($_GET['_datetime']))
 		$params['_datetime'] = $_GET['_datetime'];
 	$found_mps = $api_napistejim->read('FindMps', $params);
@@ -345,7 +347,8 @@ function send_to_reviewer($message)
 	$from = compose_email_address(NJ_TITLE, FROM_EMAIL);
 	$to = REVIEWER_EMAIL;
 	$subject = mime_encode(_('A message to representatives needs your approval'));
-	$smarty->assign('message', $message + array('approval_code' => random_code(10)));
+	$approval_code =  random_code(10);
+	$smarty->assign('message', $message + array('approval_code' => $approval_code));
 	$text = $smarty->fetch('email/request_to_review.tpl');
 	send_mail($from, $to, $subject, $text);
 

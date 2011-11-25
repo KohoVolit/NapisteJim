@@ -10,7 +10,7 @@ has not been sent.{/t}
 {t escape=no}Although we are continually working on enhancing the checking system,
 it may block a completely correct message exceptionally.{/t}
 
-{t escape=no 1='$smarty.const.CONTACT_EMAIL'}If you believe, that your message has been blocked by mistake,
+{t escape=no 1=$smarty.const.CONTACT_EMAIL}If you believe, that your message has been blocked by mistake,
 please contact us by e-mail to %1.{/t}
 
 

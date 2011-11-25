@@ -38,12 +38,13 @@ $(function(){
 
 function sendForm() {
   var str = "";
-  $( ".search_advanced-select-2" ).each( function() {
+  $(".search_advanced-select-2").each( function() {
      if ( $(this).val() != 0) {
        str += $( this ).val() + "|";
      }
   });
   if (str.length > 0) str = str.substring(0, str.length-1);
+  if (!str && $("#constituency").val() == 0) return;
   $("#search_advanced-hidden-groups").val(str);
   $("#search_advanced-hidden-constituency").val($("#constituency").val());
   $("#search_advanced-hidden-parliament").val($("#search_advanced-select-parliament").val());

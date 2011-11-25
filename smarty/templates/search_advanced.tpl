@@ -32,7 +32,7 @@ var lang = "{$locale.lang}";
   </form>
   <div id="search_advanced-export-result"></div>
  <form id="search_advanced-hidden" action="">
-  <input type="hidden" name="constituency" value='' id="search_advanced-hidden-constituency" />
+  <input type="hidden" name="constituency_id" value='' id="search_advanced-hidden-constituency" />
   <input type="hidden" name="groups" value='' id="search_advanced-hidden-groups" />
   <input type="hidden" name="parliament_code" value='' id="search_advanced-hidden-parliament" />
  </form>
