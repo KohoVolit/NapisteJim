@@ -64,11 +64,11 @@ $mp = $api_data->readOne('Mp', array('id' => $message_to_mp['mp_id']));
 $from = compose_email_address(NJ_TITLE, FROM_EMAIL);
 $reply_to = compose_email_address($parsed_mail['headers']['from']['personal'], $parsed_mail['headers']['from']['mailbox'] . '@' . $parsed_mail['headers']['from']['host']);
 $to = compose_email_address($message['sender_name'], $message['sender_email']);
-$subject = mime_encode(sprintf(_('%s has replied to your message'), format_personal_name($mp['first_name'], $mp['middle_names'], $mp['last_name'])));
+$mail_subject = mime_encode(sprintf(_('%s has replied to your message'), format_personal_name($mp)));
 $smarty = new SmartyNapisteJim;
 $smarty->assign('mp', $mp);
 $smarty->assign('reply', array('subject' => $subject, 'body' => $body, 'is_public' => $message['is_public']));
-$text = $smarty->fetch('email/reply_from_mp.tpl');
-send_mail($from, $to, $subject, $text, $reply_to);
+$mail_body = $smarty->fetch('email/reply_from_mp.tpl');
+send_mail($from, $to, $mail_subject, $mail_body, $reply_to);
 
 ?>
