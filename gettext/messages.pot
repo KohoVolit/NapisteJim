@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-11-23 22:16+0100\n"
+"POT-Creation-Date: 2011-11-29 16:18+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,6 +16,18 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#: utils.php:89
+msgid "Sending of a mail failed"
+msgstr ""
+
+#: utils.php:90
+msgid "Check"
+msgstr ""
+
+#: utils.php:175
+msgid "Newsletter order"
+msgstr ""
 
 #: backend/receive_mail.php:28
 #, php-format
@@ -45,33 +57,33 @@ msgstr ""
 msgid "The received reply can be found in %s"
 msgstr ""
 
-#: backend/receive_mail.php:67
+#: backend/receive_mail.php:71
 #, php-format
 msgid "%s has replied to your message"
 msgstr ""
 
-#: www/index.php:155
+#: www/index.php:160
 #, php-format
 msgid "Please confirm that you want to send the message using %s"
 msgstr ""
 
-#: www/index.php:322
+#: www/index.php:327
 msgid "Your message has not been sent"
 msgstr ""
 
-#: www/index.php:324
+#: www/index.php:329
 msgid "Your message has been sent"
 msgstr ""
 
-#: www/index.php:325
+#: www/index.php:330
 msgid "Your message has been sent only to some of the addressees"
 msgstr ""
 
-#: www/index.php:347
+#: www/index.php:352
 msgid "A message to representatives needs your approval"
 msgstr ""
 
-#: www/index.php:364
+#: www/index.php:370
 msgid "Your message has been found unpolite and it has not been sent"
 msgstr ""
 

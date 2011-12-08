@@ -51,6 +51,9 @@ body {
  float:left;
 }
 
+.clearfix {
+  clear: both;
+}
 
 /* header */
 .logo-wrapper {
@@ -101,6 +104,7 @@ body {
 
 /* footer */
 #page-footer {
+	clear: both;
 }
 #links {
   padding: 1em;
@@ -447,16 +451,41 @@ min-width:220px;
 }
 
 /**
+* public
+*/
+.ui-autocomplete-loading { background: white url('images/ui-anim_basic_16x16.gif') right center no-repeat; }
+.ui-autocomplete {
+	max-height: 150px;
+	overflow-y: auto;
+	/* prevent horizontal scrollbar */
+	overflow-x: hidden;
+	/* add padding to account for vertical scrollbar */
+	padding-right: 20px;
+}
+/* IE 6 doesn't support max-height
+ * we use height instead, but this forces the menu to always be this tall
+ */
+* html .ui-autocomplete {
+	height: 150px;
+}
+#list-filter-form #parliament { width: 150px }
+#list-filter-form #recipient { width: 150px }
+#list-filter-form #since { width: 90px }
+#list-filter-form #until { width: 90px }
+#list-filter-form #sender { width: 120px }
+
+/**
 * list
 */
 #list-table {
   width:100%;
   table-layout:fixed;
   border-width: 1px 1px 0;
+  font-size: 75%;
 }
-#list-table tbody{
-  font-size:75%;
-}
+#list-table thead {
+  font-weight: bold;
+ }
 #list-table tr:hover {
   background-color:#FBE09E;
   border-color: #F6F5F2;
@@ -475,12 +504,8 @@ min-width:220px;
 .list-body {
   color: #7F7F7F;
 }
-.list-td-reply-status {
-  width:45px;
-  text-align:center;
-}
 .list-td-date {
-  width:4em;
+  width:6em;
 }
 .list-td-replier{
   width:30%;
@@ -488,36 +513,98 @@ min-width:220px;
 .list-td-sender{
   width:15%;
 }
-/*sprite- image*/
-.list-reply-status {
-    background: url(/images/points.png) no-repeat top left;
-    width:15px;
-}
-.list-not-answered-short{ background-position: 0 0; width: 10px; height: 10px; } 
-.list-answered{ background-position: 0 -60px; width: 10px; height: 10px; } 
-.list-not-answered-long{ background-position: 0 -120px; width: 10px; height: 10px; } 
+#list-pager { width: 100%; }
 
 /**
 * message
 */
-.message-left {
-  width:200px;
+#message-title {
+	margin: 0;
 }
-.message-right{
-  margin-left:200px;
-}
-#message-message{
-  line-height:2em;
-}
-#message-subject{
-  font-weight:bold;
+#message-from, #message-date {
+	line-height: 120%;
 }
 #message-body {
-  line-height:normal;
+	margin-top: 1em;
 }
-.message-reply{
-  padding:2em 0;
+.message-mp-replies{
+  padding: 2em 0;
 }
-.message-reply .message-left {
+.message-mp {
+  float: left;
+  width:100px;
+  font-size: 75%;
+}
+.message-mp .name {
   font-weight: bold;
 }
+.message-mp img {
+  width: 100px;
+}
+.message-reply {
+  margin-left: 120px;
+}
+.message-reply .dimmed{
+	color: #aaa;
+}
+.message-reply-date {
+  float: right;
+  color: #aaa;
+  margin: 0 0 1em 2em;
+}
+
+/**
+* pager
+*/
+
+.pager-link { margin: .5em 0 1em; font-size: 75%; font-weight: bold; }
+.pager-prev { float: left; }
+.pager-next { float: right; }
+
+/**
+* statistics
+*/
+#statistics-table {
+  width: 500px;
+  table-layout: fixed;
+  border-width: 1px 1px 0;
+  font-size:75%;
+}
+#statistics-table thead{
+  font-weight: bold;
+ }
+#statistics-table tr:hover {
+  background-color:#FBE09E;
+  border-color: #F6F5F2;
+}
+#statistics-table td {
+ overflow:hidden;
+ padding: 3px 5px 2px;
+     border-style: solid;
+    border-width: 0 0 1px;
+    border-color: #F6F5F2;
+    white-space:nowrap;
+}
+.statistics-td-politician {
+  width: 34%;
+}
+.statistics-td-received {
+  width: 22%;
+  text-align: center;
+}
+.statistics-td-replied {
+  width: 22%;
+  text-align: center;
+}
+.statistics-td-ratio {
+  width: 22%;
+}
+.statistics-td-ratio .replied {
+  background: #3e8213;
+  display: inline-block;
+}
+.statistics-td-ratio .not-replied {
+  background: #dd2a2b;
+  display: inline-block;
+}
+#statistics-pager { width: 500px; }

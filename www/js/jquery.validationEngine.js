@@ -46,12 +46,12 @@
                 options = methods._saveOptions(form, userOptions);
             else
                 options = form.data('jqv');
-			
+
 			var validateAttribute = (form.find("[data-validation-engine*=validate]")) ? "data-validation-engine" : "class";
-			
+
             if (!options.binded) {
 					if (options.bindMethod == "bind"){
-						
+
 						// bind fields
                         form.find("[class*=validate]:not([type=checkbox])").bind(options.validationEventTrigger, methods._onFieldEvent);
                         form.find("[class*=validate][type=checkbox]").bind("click", methods._onFieldEvent);
@@ -84,14 +84,14 @@
                 form.find("[class*=validate][type=checkbox]").unbind("click", methods._onFieldEvent);
                 // unbind form.submit
                 form.unbind("submit", methods.onAjaxFormComplete);
-                
-               
+
+
                 // unbind live fields (kill)
                 form.find("[class*=validate]").not("[type=checkbox]").die(options.validationEventTrigger, methods._onFieldEvent);
                 form.find("[class*=validate][type=checkbox]").die("click", methods._onFieldEvent);
                 // unbind form.submit
                 form.die("submit", methods.onAjaxFormComplete);
-                
+
                 form.removeData('jqv');
             }
         },
@@ -195,10 +195,10 @@
         _onSubmitEvent: function() {
             var form = $(this);
  			var options = form.data('jqv');
-   
+
 			// validate each field (- skip field ajax validation, no necessary since we will perform an ajax form validation)
             var r=methods._validateFields(form, true);
-		
+
             if (r && options.ajaxFormValidation) {
                 methods._validateFormWithAjax(form, options);
                 return false;
@@ -242,7 +242,7 @@
 
             // this variable is set to true if an error is found
             var errorFound = false;
-			
+
 			// Trigger hook, start validation
 			form.trigger("jqv.form.validating");
             // first, evaluate status of non ajax fields
@@ -252,12 +252,12 @@
             });
             // second, check to see if all ajax calls completed ok
             // errorFound |= !methods._checkAjaxStatus(options);
-			
+
             // thrird, check status and scroll the container accordingly
 			form.trigger("jqv.form.result", [errorFound]);
-			
+
             if (errorFound) {
-				
+
                 if (options.scroll) {
 
                     // get the position of the first error, there should be at least one, no need to check this
@@ -339,13 +339,13 @@
                         var errorInForm=false;
                         for (var i = 0; i < json.length; i++) {
                             var value = json[i];
-						
+
                             var errorFieldId = value[0];
                             var errorField = $($("#" + errorFieldId)[0]);
-							
+
                             // make sure we found the element
                             if (errorField.length == 1) {
-								
+
                                 // promptText or selector
                                 var msg = value[2];
 								// if the field is valid
@@ -476,7 +476,7 @@
                 if (errorMsg !== undefined) {
                     promptText += errorMsg + "<br/>";
                     options.isError = true;
-					
+
                 }
 
             }
@@ -499,7 +499,7 @@
             }
 
             if (options.isError){
-				
+
                 methods._showPrompt(field, promptText, "", false, options);
             }else{
 				if (!isAjaxValidator) methods._closePrompt(field);
@@ -574,7 +574,7 @@
 				alert("jqv:custom rule not found "+customRule);
 				return;
 			}
-			
+
 			var ex=rule.regex;
 			if(!ex) {
 				alert("jqv:custom regex not found "+customRule);
@@ -829,8 +829,8 @@
          * @return nothing! the ajax validator handles the prompts itself
          */
         _ajax: function(field, rules, i, options) {
-			
-			
+
+
             var errorSelector = rules[i + 1];
             var rule = options.allrules[errorSelector];
             var extraData = rule.extraData;
@@ -852,9 +852,9 @@
               }
               extraDataDynamic = tmpData.join("&");
             } else {
-              extraDataDynamic = "";              
+              extraDataDynamic = "";
             }
-                                
+
             if (!options.isError) {
                 $.ajax({
                     type: "GET",
@@ -876,7 +876,7 @@
                         methods._ajaxError(data, transport);
                     },
                     success: function(json) {
-						
+
                         // asynchronously called on success, data is the json answer from the server
                         var errorFieldId = json[0];
                         var errorField = $($("#" + errorFieldId)[0]);
@@ -900,7 +900,7 @@
 								}
 								else
                                     msg = rule.alertText;
-                                
+
 								methods._showPrompt(errorField, msg, "", true, options);
                             } else {
                                 if (options.ajaxValidCache[errorFieldId] !== undefined)
@@ -915,7 +915,7 @@
 							        }
 								}
 								else
-							       	msg = rule.alertTextOk;                                
+							       	msg = rule.alertTextOk;
 
 								// see if we should display a green prompt
                                 if (msg)
@@ -1058,7 +1058,7 @@
          * @param {Map} options user options
          */
         _updatePrompt: function(field, prompt, promptText, type, ajaxed, options) {
-			
+
             if (prompt) {
                 if (type == "pass")
                     prompt.addClass("greenPopup");
@@ -1240,7 +1240,7 @@
             form.data('jqv', userOptions);
             return userOptions;
         },
-        
+
         /**
          * Removes forbidden characters from class name
          * @param {String} className
@@ -1263,13 +1263,13 @@
 
         var form = $(this);
 		  if(!form[0]) return false;  // stop here if the form does not exist
-		  
+
         if (typeof(method) == 'string' && method.charAt(0) != '_' && methods[method]) {
 
             // make sure init is called once
-            if(method != "showPrompt" && method != "hidePrompt" && method != "hide" && method != "hideAll") 
+            if(method != "showPrompt" && method != "hidePrompt" && method != "hide" && method != "hideAll")
             	methods.init.apply(form);
-             
+
             return methods[method].apply(form, Array.prototype.slice.call(arguments, 1));
         } else if (typeof method == 'object' || !method) {
             // default constructor with or without arguments

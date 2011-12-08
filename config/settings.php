@@ -42,8 +42,16 @@ $locales = array(
 	'en_US' => array('lang' => 'en', 'system_locale' => 'en_US.utf8', 'date_format' => '%Y-%m-%d', 'time_zone' => 'GMT')
 );
 
+// a fix of discrepancies between Google geocoding and official constituencies' areas in some parliaments
+// if no representative is found in these parliaments, remove the given field(s) from entered address and repeat the search again
 $global_parliaments_to_fix = array(
 	'cz/senat' => array('sublocality')
 );
+
+// number of items per page in paged listings
+const PAGER_SIZE = 20;
+
+// Google analytics account key
+const GOOGLE_ANALYTICS_KEY = 'set-yours-here';
 
 ?>

@@ -45,7 +45,7 @@ function initialize(lat, lng, zoom) {
 	  zoom: parseInt(zoom),
 	  center: latlng,
 	  mapTypeId: google.maps.MapTypeId.ROADMAP
-	};  
+	};
 	map = new google.maps.Map(document.getElementById("choose-map_canvas"), myOptions);
 	codeAddress();
 }
@@ -57,7 +57,7 @@ function codeAddress() {
   $('#choose-message').hide();
 
   var address = document.getElementById("choose-geocode-address").value + ', ' + country_name;
-    
+
     geocoder = new google.maps.Geocoder();
     geocoder.geocode({"address": address}, function(results, status) {
 	if (status == google.maps.GeocoderStatus.OK) {
@@ -67,7 +67,7 @@ function codeAddress() {
 	  map.setCenter(results[0].geometry.location);
 	    map.fitBounds(results[0].geometry.viewport);
         var marker = new google.maps.Marker({
-            map: map, 
+            map: map,
             position: results[0].geometry.location
         });
         markersArray.push(marker); //remember marker
@@ -84,16 +84,16 @@ function processAddress(results) {
   // set variables
   var found_regions_str;
   var regions = {"street_number":"long_name", "route":"long_name", "neighborhood":"long_name", "sublocality":"long_name", "locality":"short_name", "administrative_area_level_2":"long_name", "administrative_area_level_1":"long_name", "country":"long_name"};
-  
+
   //extract regions from address
   found_regions_str = extract_regions(results, regions);
-  
+
   //check if address in given region
   var check1 = check_in_region(results[0].address_components, "country", "long_name", country_name);
   if (!check1) {
     show_messages(sprintf(_("The address is not in country %s. Enter a new address, please."), country_name), "check1", 'error');
   } else {
-  
+
     //check if address geocoded enough
     var conditions = new Array(new Array(required_address_level, "long_name"));
     var check2 = check_address_enough(results[0].address_components, conditions);
@@ -105,8 +105,8 @@ function processAddress(results) {
       found_regions_str += '&formatted_address=' + encodeURIComponent(results[0].formatted_address);
       found_regions_str += '&latitude=' + results[0].geometry.location.lat();
       found_regions_str += '&longitude=' + results[0].geometry.location.lng();
-	  show_messages(_("Address found:") + " " + results[0].formatted_address, "", 'alert');	
-      ajaxForm('ajax/address_representatives.php', found_regions_str, '#choose-result');  
+	  show_messages(_("Address found:") + " " + results[0].formatted_address, "", 'alert');
+      ajaxForm('ajax/address_representatives.php', found_regions_str, '#choose-result');
       anticycle = 0;
       //clear boxes + previous draggable (C+B)
       for (i=1;i<=3;i++) {
@@ -121,7 +121,7 @@ function processAddress(results) {
       }
     }
   }
-  
+
 }
 
 //ajax call with decoded address
@@ -161,7 +161,7 @@ function codeLatLng(lat, lng) {
       anticycle++;
       processAddress(results);
     });
-  } 
+  }
 }
 
 //check if given address is good enough (e.g., contains important region names)
@@ -194,7 +194,7 @@ function extract_regions(results,regions) {
   return frs;
 }
 
-//finds value for 
+//finds value for
 
 function show_messages(str1,str2,type) {
     $('#choose-message').hide();
@@ -208,7 +208,7 @@ function show_messages(str1,str2,type) {
     $('#choose-message-debug').hide();
     $('#choose-message-debug').html(str2);
     //$('#choose-message-debug').fadeIn('slow'); //for debugging only!
-    
+
 }
 
 //finds given type in address; helper function
@@ -219,7 +219,7 @@ function g_find_type_in_results(ar,type,name_) {
       if (ar[item].types[subitem] == type) {
         out = ar[item][name_];
       }
-    } 
+    }
   }
   return out;
 }
@@ -234,9 +234,9 @@ $(document).ready(function() {
 			    var selectedIdAr = ui.draggable.attr('id').split('-');
 			    var selectedId = selectedIdAr[selectedIdAr.length-1]; //id of selected mp
 			    var prevId = box[thisId]; //id of previous mp in the box
-				//toggle off previous mp		    
+				//toggle off previous mp
 			    deselectAction(prevId);
-			    //disable selected for next selection + get html + insert id into form			
+			    //disable selected for next selection + get html + insert id into form
 				selectAction(selectedId,thisId);
 			}
 		});
@@ -278,9 +278,9 @@ $(document).ready(function() {
       //add selectedId into boxId (A)
       selectAction(selectedId,boxId);
     }
-    
+
   });
-});	
+});
 
 //ajax call with mp_id
 function ajaxMp(page,data,result_div){
@@ -290,7 +290,7 @@ function ajaxMp(page,data,result_div){
 	  success: function(data) {
 		$(result_div).html(data);
 	  }
-	});	  
+	});
 }
 
 //action deselecting previous MP / B
@@ -320,7 +320,7 @@ function selectAction(selectedId,boxId) {
     $(".mp-clicked-"+shortSelectedId).draggable({ disabled: true });
     //get html
 	ajaxMp('ajax/mp_details.php', 'id=' + selectedId, $("#choose-addressee-box-" + boxId));
-	//insert id into form			
+	//insert id into form
 	box[boxId] = selectedId;
 	$("#choose-input").val(setFormValue(box));
 }

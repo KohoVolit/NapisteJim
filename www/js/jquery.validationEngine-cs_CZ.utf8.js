@@ -35,7 +35,7 @@
                 "future": {
                     "regex": "none",
                     "alertText": "* Date past "
-                },	
+                },
                 "maxCheckbox": {
                     "regex": "none",
                     "alertText": "* Počet vybraných položek přesáhl limit"
@@ -135,7 +135,7 @@
                     "alertText": "* Prosím napište HELLO"
                 }
             };
-            
+
         }
     };
     $.validationEngineLanguage.newLang();

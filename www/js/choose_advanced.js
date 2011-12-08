@@ -24,21 +24,19 @@ var box = [];  //values in boxes
   box[2] = '';
   box[3] = '';
 
-
-
 //draggable - droppable
 $(document).ready(function() {
 		$( ".droppable" ).droppable({
 			hoverClass: "ui-state-active-border",
-			drop: function( event, ui ) { //(B+A) 				
+			drop: function( event, ui ) { //(B+A)
 			    var thisIdAr = $(this).attr('id').split('-');
 			    var thisId = thisIdAr[thisIdAr.length-1];  //id of box, from e.g. choose-addressee-box-2
 			    var selectedIdAr = ui.draggable.attr('id').split('-');
 			    var selectedId = selectedIdAr[selectedIdAr.length-1]; //id of selected mp
 			    var prevId = box[thisId]; //id of previous mp in the box
-				//toggle off previous mp		    
+				//toggle off previous mp
 			    deselectAction(prevId);
-			    //disable selected for next selection + get html + insert id into form			
+			    //disable selected for next selection + get html + insert id into form
 				selectAction(selectedId,thisId);
 			}
 		});
@@ -85,9 +83,9 @@ $(document).ready(function() {
       //add selectedId into boxId (A)
       selectAction(selectedId,boxId);
     }
-    
+
   });
-});	
+});
 
 //ajax call with mp_id
 function ajaxMp(page,data,result_div){
@@ -97,7 +95,7 @@ function ajaxMp(page,data,result_div){
 	  success: function(data) {
 		$(result_div).html(data);
 	  }
-	});	  
+	});
 }
 
 //action deselecting previous MP / B
@@ -127,7 +125,7 @@ function selectAction(selectedId,boxId) {
     $(".mp-clicked-"+shortSelectedId).draggable({ disabled: true });
     //get html
 	ajaxMp('ajax/mp_details.php', 'id=' + selectedId, $("#choose-addressee-box-" + boxId));
-	//insert id into form			
+	//insert id into form
 	box[boxId] = selectedId;
 	$("#choose-input").val(setFormValue(box));
 }
