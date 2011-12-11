@@ -2,6 +2,10 @@
 
 {block name=title}{$smarty.const.NJ_TITLE} – {t}Statistics of representatives{/t}{/block}
 
+{block name=head}
+<script type="text/javascript" src="js/statistics.js"></script>
+{/block}
+
 {block name=body}
 <form id="statistics-filter-form" action="statistics" method="GET">
 <table>

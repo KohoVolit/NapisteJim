@@ -16,6 +16,6 @@
 {t escape=no}If you like the application and you would like it to be further developed, <a href="/support">support  it</a> please.{/t}
 </p>
 <p>{t}The application was created with kind support of:{/t}<br/><br/>
-<a href="http://osi.hu"><img src="http://c0431992.cdn2.cloudfiles.rackspacecloud.com/osf-logo.gif" width='150' height='35' alt='OSI.hu' title='OSI.hu' /></a>
-<a href="http://osf.cz"><img src="http://www.osf.cz/images/stories/download/static/logo/osf_praha_cz.gif" width='150' height='32' alt='OSF.cz' title='OSF.cz' /></a><br/><br/>
+<a href="http://www.osi.hu"><img src="http://c0431992.cdn2.cloudfiles.rackspacecloud.com/osf-logo.gif" width='150' height='35' alt='OSI.hu' title='OSI.hu' /></a>
+<a href="http://www.osf.cz"><img src="http://www.osf.cz/images/stories/download/static/logo/osf_praha_cz.gif" width='150' height='32' alt='OSF.cz' title='OSF.cz' /></a><br/><br/>
 {/block}

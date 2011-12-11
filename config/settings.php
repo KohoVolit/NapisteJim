@@ -39,7 +39,7 @@ const MAP_ZOOM = 5;
 // available locales
 $locales = array(
 	'cs_CZ' => array('lang' => 'cs', 'system_locale' => 'cs_CZ.utf8', 'date_format' => '%-d. %-m. %Y', 'time_zone' => 'Europe/Prague'),
-	'sk_SK' => array('lang' => 'sk', 'system_locale' => 'sk_SK.utf8', 'date_format' => '%#d. %#m. %Y', 'time_zone' => 'Europe/Bratislava')
+	'sk_SK' => array('lang' => 'sk', 'system_locale' => 'sk_SK.utf8', 'date_format' => '%#d. %#m. %Y', 'time_zone' => 'Europe/Bratislava'),
 	'en_US' => array('lang' => 'en', 'system_locale' => 'en_US.utf8', 'date_format' => '%Y-%m-%d', 'time_zone' => 'GMT')
 );
 
