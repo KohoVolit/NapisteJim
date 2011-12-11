@@ -23,17 +23,17 @@ var nj_host = "{$smarty.const.NJ_HOST}"
 		<td class="list-td-replier">
 {foreach $message.recipients as $recipient}
 {assign "personal_name" format_personal_name($recipient, 'surname')}
-{if !empty($recipient.first_reply_on)}<a href="/?message={$message.id}#mp-{$recipient.mp_id}">{$personal_name}</a>{else}{$personal_name}{/if}{if !$recipient@last}, {/if}
+{if !empty($recipient.first_reply_on)}<a href="/?message={$message.id}#mp-{$recipient.mp_id}" title="{$recipient.reply_body|escape:html}">{$personal_name}</a>{else}{$personal_name}{/if}{if !$recipient@last}, {/if}
 {/foreach}
 		</td>
-		<td class="list-message"><a href="/?message={$message.id}"><span class="list-subject">{$message.subject}</span></a></td>
+		<td class="list-message"><a href="/?message={$message.id}" title="{$message.body|escape:html}"><span class="list-subject">{$message.subject}</span></a></td>
 		<td class="list-td-date">{$message.sent_on|date_format:$locale.date_format}</td>
 		<td class="list-td-sender">{$message.sender_name}</td>
 	</tr>
 {/foreach}
 </tbody>
 </table>
-<div class="pager"><div class="pager-link pager-next"><a href="list?{$message_set.next_params}">{t}next{/t}&nbsp;&raquo;</a></div></div>
+<div class="pager"><div class="pager-link pager-next"><a href="list?{$message_set.next_params}">{t}next messages{/t}&nbsp;&raquo;</a></div></div>
 {/foreach}
 
 <h3>{t}Search messages{/t}</h3>
@@ -71,6 +71,6 @@ var nj_host = "{$smarty.const.NJ_HOST}"
 {assign "personal_name" format_personal_name($mp, 'long')}
 <a href="list?mp_id={$mp.id}">{$personal_name}</a> {if $mp@first} {t count=$mp.received_public_messages 1=$mp.received_public_messages plural="%1 messages"}%1 message{/t}{else}{$mp.received_public_messages}{/if},
 {/foreach}
- <a href="statistics">{t}next{/t}&hellip;</a>
+ <a href="statistics">{t}next politicians{/t}&hellip;</a>
 </div>
 {/block}

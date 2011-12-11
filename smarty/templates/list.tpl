@@ -50,10 +50,10 @@ var lang = "{$locale.lang}";
 		<td class="list-td-replier">
 {foreach $message.recipients as $recipient}
 {assign "personal_name" format_personal_name($recipient, 'surname')}
-{if !empty($recipient.first_reply_on)}<a href="/?message={$message.id}#mp-{$recipient.mp_id}">{$personal_name}</a>{else}{$personal_name}{/if}{if !$recipient@last}, {/if}
+{if !empty($recipient.first_reply_on)}<a href="/?message={$message.id}#mp-{$recipient.mp_id}" title="{$recipient.reply_body|escape:html}">{$personal_name}</a>{else}{$personal_name}{/if}{if !$recipient@last}, {/if}
 {/foreach}
 		</td>
-		<td class="list-message"><a href="/?message={$message.id}"><span class="list-subject">{$message.subject}</span></a></td>
+		<td class="list-message"><a href="/?message={$message.id}" title="{$message.body|escape:html}"><span class="list-subject">{$message.subject}</span></a></td>
 		<td class="list-td-date">{$message.sent_on|date_format:$locale.date_format}</td>
 		<td class="list-td-sender">{$message.sender_name}</td>
 	</tr>
@@ -63,10 +63,10 @@ var lang = "{$locale.lang}";
 
 <div id="list-pager" class="pager">
 {if isset($pager.prev_url_query)}
-<div class="pager-link pager-prev"><a href="http://{$smarty.const.NJ_HOST}/list?{$pager.prev_url_query}">&laquo; {t}previous{/t}</a></div>
+<div class="pager-link pager-prev"><a href="http://{$smarty.const.NJ_HOST}/list?{$pager.prev_url_query}">&laquo; {t}previous messages{/t}</a></div>
 {/if}
 {if isset($pager.next_url_query)}
-<div class="pager-link pager-next"><a href="http://{$smarty.const.NJ_HOST}/list?{$pager.next_url_query}">{t}next{/t} &raquo;</a></div>
+<div class="pager-link pager-next"><a href="http://{$smarty.const.NJ_HOST}/list?{$pager.next_url_query}">{t}next messages{/t} &raquo;</a></div>
 {/if}
 </div>
 {/block}

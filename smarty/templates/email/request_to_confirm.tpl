@@ -13,9 +13,9 @@ following link.{/t}
 {t escape=no}If the link is not clickable, copy&paste it to the address bar of
 your web browser.{/t}
 
-{if $message.is_public == 'yes'}{t escape=no 1=$smarty.const.NJ_TITLE}You have chosen a public message - it will be published on %1
+{if $message.is_public == 'yes'}{t escape=no 1=$smarty.const.NJ_TITLE}You have chosen a public message – it will be published on %1
 website after it is confirmed and sent to the representatives.
-Their eventual answer will be published on the same place.{/t}{else}{t escape=no}You have chosen a private message - it will not be published anywhere
+Their eventual answer will be published on the same place.{/t}{else}{t escape=no}You have chosen a private message – it will not be published anywhere
 and the addressed politicians will send their eventual anwser directly
 to you.{/t}{/if}
 

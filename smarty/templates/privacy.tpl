@@ -4,5 +4,5 @@
 
 {block name=body}
 <h1>{t}Privacy of personal data{/t}</h1>
-{t}MSGID_PRIVACY_SECTION{/t}
+{t escape=no 1=$smarty.const.NJ_TITLE}MSGID_PRIVACY_SECTION{/t}
 {/block}

@@ -40,10 +40,10 @@
 </table>
 <div id="statistics-pager" class="pager">
 {if isset($pager.prev_url_query)}
-<div class="pager-link pager-prev"><a href="http://{$smarty.const.NJ_HOST}/statistics?{$pager.prev_url_query}">&laquo;&nbsp;{t}previous{/t}</a></div>
+<div class="pager-link pager-prev"><a href="http://{$smarty.const.NJ_HOST}/statistics?{$pager.prev_url_query}">&laquo;&nbsp;{t}previous politicians{/t}</a></div>
 {/if}
 {if isset($pager.next_url_query)}
-<div class="pager-link pager-next"><a href="http://{$smarty.const.NJ_HOST}/statistics?{$pager.next_url_query}">{t}next{/t}&nbsp;&raquo;</a></div>
+<div class="pager-link pager-next"><a href="http://{$smarty.const.NJ_HOST}/statistics?{$pager.next_url_query}">{t}next politicians{/t}&nbsp;&raquo;</a></div>
 {/if}
 </div>
 {/block}
