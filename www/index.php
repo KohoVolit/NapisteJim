@@ -504,6 +504,8 @@ function addressees_of_message($message)
 
 function message_is_profane($message)
 {
+	global $locale;
+
 	$filename = ($message['is_public'] == 'yes') ? 'public.lst' : 'private.lst';
 	$profanities = file("locale/{$locale['system_locale']}/profanities/$filename", FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 	$prefix_only = ($message['is_public'] == 'no');
