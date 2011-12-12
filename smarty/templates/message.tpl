@@ -17,7 +17,7 @@
 		{if !empty($mp.political_group)}<span>{$mp.political_group},</span><br />{/if}
 		<span>{$mp.parliament_name}</span>
 		<div><a href="list?mp_id={$mp.mp_id}">{t count=$mp.received_public_messages 1=$mp.received_public_messages plural="%1 messages"}%1 message{/t}</a></div>
-		<div><a href="write?mp={$mp.parliament_code}/{$mp.mp_id}">{t}Write to {if $mp.sex == 'f'}her{else}him{/if}{/t}</a></div>
+		<div><a href="write?mp={$mp.parliament_code}/{$mp.mp_id}">{if $mp.sex == 'f'}{t}Write to her{/t}{else}{t}Write to him{/t}{/if}</a></div>
 	</div>
 {foreach $mp.reply as $reply}
 {if !empty($reply.received_on)}<div class="message-reply-date">{$reply.received_on|date_format:$locale.date_format}</div>{/if}

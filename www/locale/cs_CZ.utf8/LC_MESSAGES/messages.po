@@ -1602,3 +1602,13 @@ msgstr "Podíl"
 #: gettext/smarty.c:788
 msgid "previous politicians"
 msgstr "předchozí politici"
+
+#. smarty/templates/message.tpl
+#: gettext/smarty.c:998
+msgid "Write to her"
+msgstr "Napsat jí"
+
+#. smarty/templates/message.tpl
+#: gettext/smarty.c:999
+msgid "Write to him"
+msgstr "Napsat mu"
