@@ -42,8 +42,8 @@
       <br/>
       <input type="checkbox" id="write-newsletter" name="newsletter" value="order-newsletter" />
        {t 1=$smarty.const.NJ_TITLE}I want to receive news from %1{/t}<br/><br/>
-      <input id="write-submit" class="submit" type="submit" value="Odeslat"/>
+      <input id="write-submit" class="submit" type="submit" value="{t}Send{/t}"/>
     </form>
-
+	
   </div>
 {/block}
