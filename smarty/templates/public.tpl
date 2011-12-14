@@ -5,7 +5,9 @@
 {block name=head}
 <script type="text/javascript">
 var nj_host = "{$smarty.const.NJ_HOST}"
+var lang = "{$locale.lang}";
 </script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/i18n/jquery.ui.datepicker-{$locale.lang}.js"></script>
 <script type="text/javascript" src="js/list.js"></script>
 {/block}
 

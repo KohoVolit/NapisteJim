@@ -63,7 +63,15 @@ body {
 .logo a img {
   border: none;
 }
-
+#links-top {
+  padding: 1em;
+  min-width: 800px;
+  text-align: right;
+  line-height: 1.4em;
+}
+#links-top a{
+  padding:0 .5em;
+}
 
 /*layout*/
 #logo-center {
@@ -71,46 +79,45 @@ body {
     margin-left: auto;
     margin-right: auto;
     max-width: 1000px;
-    padding-bottom: 3em;
-    padding-top: 10px;
+    padding-top: 60px;
     text-align: center;
     width: 90%;
 }
 
-
-#wrapper-page{
- 
+#wrapper-page-outer{
   width: 90%;
   max-width: 1000px;
   min-height: 180px;
+  margin: 0;
+  padding: 0;
+}
+#wrapper-page{
   margin: 0 auto;
   padding: 0 24px;
 }
-#logo-small{
- 
-  width: 90%;
-  max-width: 1000px;
-  margin: 0 auto;
-  
+#logo-small{ 
+  float: left;
+  margin-left: 32px;
 }
 #head {
     background: none repeat scroll 0 0 #FFFFFF;
     border-bottom: 1px solid #CCCCCC;
     box-shadow: 0 0 5px #888888;
- 
     margin-bottom: 40px;
-    padding: 10px 10px 15px;
+    padding: 10px 10px 10px;
 }
 
 /* footer */
 #page-footer {
 	clear: both;
+	margin-top: 1em;
 }
-#links {
+#links-bottom {
   padding: 1em;
   text-align: center;
+  margin-bottom: -1.5em;
 }
-#links a{
+#links-bottom a{
   padding:0 .5em;
 }
 #licence {
@@ -126,39 +133,36 @@ body {
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  padding-top: 25px;
+  padding-top: 5px;
   padding-bottom: 3em;
   max-width:1000px;
   width:90%;
 }
   
 input#search-address,input#search-submit-geocode{
-  font-size: 1.5em;
+  font-size: 1.2em;
 }
 
 
 #search-address{
-  width:65%;
+  width:70%;
   max-width:750px;
   display:inline;
 }
 
 #search-submit{
-  padding-top: 1.5em;
+  padding-top: 2em;
 }
 
 #search-advanced-search{
- display:inline;
- width: 50px;
+ margin-top: .6em;
 }
 
 #search-example{
   color: #666;
   font-style: italic;
   font-size:0.75em;
-  text-align:center;
-  display:block;
-
+  margin-top: 6px;
 }
 
 #search-submit-geocode {
@@ -273,43 +277,58 @@ fieldset.search {
 
 /* map */
 #choose-map_canvas {
-  height:250px;
-  width:250px;
-  float:right;
+  height:220px;
+  width:220px;
 }
 
 /* boxes */
 
 #choose-send{
-background: #fff url(/images/back-znacka.png) no-repeat;
+	background: #fff url(/images/back-znacka.png) no-repeat;
 }
 #choose-submit-mps{
-margin:65 100px;
+	margin: 65px 0px 65px 90px;
 }
 #choose-addressee {
-display:block;
-}
-#choose-addressee h2 {
-	margin-top: 100px;
+	display:block;
 }
 #choose-up-to {
-	clear: both;
 	margin-bottom: 10px;
 }
 #choose-search-wrapper {
 	margin-top: 20px;
-	margin-right: 300px;
 }
 #choose-message {
-	margin-right: 300px;
 }
 #choose-geocode-address {
-	width: 250px;
+	width: 220px;
 	font-size: 1em;
 }
 #choose-submit-geocode {
 	font-size: 1em;
 	padding: 2px 10px;
+}
+#choose-main-column{
+	margin-left: 244px;
+}
+#choose-result{
+	margin-left: 244px;
+}
+#choose-map-column {
+	width: 220px;
+	float: left;
+}
+#choose-map-column .ui-widget {
+	font-size: 1em;
+	margin-top: 5px;
+}
+#choose-map-column .ui-widget p{
+	font-size: .8em;
+}
+.constituencies-message {
+	font-size: .9em;
+	font-weight: bold;
+	margin-bottom: 1em;
 }
 
 .addressee-box{
@@ -366,6 +385,10 @@ min-width:220px;
 }
 
 /* mps */
+.found-mps {
+  margin-left: 120px;
+  margin-bottom: .5em;
+}
 .group-mps {
   display:inline;
 }
@@ -417,37 +440,48 @@ min-width:220px;
 /**
 * write
 */
+
+#write {
+	min-width: 870px;
+}
+
+#write-personal {
+	float: left;
+	width: 390px;
+background: #fff url(/images/back-znacka.png) 450px 17px;
+	
+}
 .write-input{
   margin-bottom: .65em;
 }
-
-.write-mp {
-	float: left;
-  margin: 0 120px 0px 0px;
+#write-mps {
+	display: inline;
 }
-#write-personal {
-	clear: both;
-	padding-top: 60px;
+.write-mp {
+  display: inline;
+  margin: 10px 15px;
 }
 .write-mp-photo {
   height:162px;
   width:120px;
 }
 .write-mp-first_name {
-	padding-top: 7px;
+	padding-top: 9px;
 }
 #write-name, #write-email, #write-subject, #write-address {
-	width: 300px;
+	width: 290px;
 }
 #write-privacy {
-	display: inline;
-	margin-left: 60px;
+	margin: 6px 0 12px;
 }
 #write-privacy input {
 	margin-left: 10px;
 }
-#write-newsletter {
-	margin-top: 15px;
+#write-body {
+	width: 855px;
+	height: 200px;
+	clear: both;
+	display: block;
 }
 
 /**

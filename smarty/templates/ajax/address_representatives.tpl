@@ -26,6 +26,7 @@
 					<div class="group-logo left">
 					  {if !empty($group.logo)}<img src="{$smarty.const.API_FILES_URL}/{$group.logo}" class="party-logo" title="{$group.name}" alt="{$group.short_name}" />{else}{$group.short_name}{/if}
 					</div>
+					<div class="found-mps">
 					{foreach $group.mp as $mp}
 					  <div class="group-mps">
 						<div id="mp-{$parliament.code}/{$mp.id}" class="mp">
@@ -35,6 +36,7 @@
 						</div>
 					  </div>
 					{/foreach}
+					</div>
 				</div>
 			  </div>
 			{/foreach}

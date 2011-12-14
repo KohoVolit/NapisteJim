@@ -112,7 +112,7 @@ msgstr ""
 #: www/ajax/address_representatives.php:117
 #, php-format
 msgid "Region %s"
-msgstr "Kraj %s"
+msgstr "%s"
 
 #: www/ajax/address_representatives.php:119
 msgid "We don't know representatives of your region."
@@ -1119,7 +1119,7 @@ msgstr ""
 "relácie Partička.\n"
 "</p><p>\n"
 "Natáčenia sa zúčastnili tieto osobnosti:\n"
-"Lukáš Latinák, Róbert Jakab, Marián Miezga, Roman Pomajbo, Petra Polnišová "
+"Lukáš Latinák, Róbert Jakab, Marián Miezga, Roman Pomajbo, Petra Polnišová, "
 "Juraj Kemka a Marián Čurko.\n"
 "</p><p>\n"
 "Video natočil a zostrihal team z FAMO Písek vystupujúci pod Alcest.cz. "

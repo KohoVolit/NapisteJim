@@ -22,29 +22,32 @@ var map_zoom = "{$smarty.const.MAP_ZOOM}";
 
 {block name=body}
   <div id="choose-content-top-wrapper">
-	<div id="choose-map_canvas"></div>
-	<div id="choose-message"></div>
-	<div id="choose-search-wrapper">
-	  <form name="choose-search" action="">
-	    <input id="choose-geocode-address" name="address" type="textbox" value="{$address}" />
-	    <input id="choose-submit-geocode" type="submit" value="{t}Change address{/t}"/>
-	  </form>
-	</div>
-	<div id="choose-formatted-address"></div>
-	<div id="choose-message-debug"></div>
-	<div id="choose-addressee">
-	  <h2>{t}Addressees{/t}</h2><div id="choose-up-to">{t}Choose up to three addressees of your message from the found politicians by clicking on their name or using drag&drop into boxes. The same message then cannot be sent again to other politicians.{/t} <a class="small-text" href="faq#q2" target="_blank">{t}Why?{/t}</a></div>
-	  <div id="choose-addressee-box-1" class="addressee-box rounded-corners droppable"></div>
-	  <div id="choose-addressee-box-2" class="addressee-box rounded-corners droppable"></div>
-	  <div id="choose-addressee-box-3" class="addressee-box rounded-corners droppable"></div>
-	  
-	  <form id="choose-send" action="" >
+	<div class="wrapper"><div id="choose-map-column">
+		<div id="choose-map_canvas"></div>
+		<div id="choose-message"></div>
+		<div id="choose-search-wrapper">
+		  <form name="choose-search" action="">
+			<input id="choose-geocode-address" name="address" type="textbox" value="{$address}" />
+			<input id="choose-submit-geocode" type="submit" value="{t}Change address{/t}"/>
+		  </form>
+		</div>
+		<div id="choose-formatted-address"></div>
+		<div id="choose-message-debug"></div>
+	</div></div>
+	<div id="choose-main-column">
+		<div id="choose-addressee">
+		  <h2>{t}Addressees{/t}</h2><div id="choose-up-to">{t}Choose up to three addressees of your message from the found politicians by clicking on their name or using drag&drop into boxes. The same message then cannot be sent again to other politicians.{/t} <a class="small-text" href="faq#q2" target="_blank">{t}Why?{/t}</a></div>
+		  <div id="choose-addressee-box-1" class="addressee-box rounded-corners droppable"></div>
+		  <div id="choose-addressee-box-2" class="addressee-box rounded-corners droppable"></div>
+		  <div id="choose-addressee-box-3" class="addressee-box rounded-corners droppable"></div>
+		  
+		  <form id="choose-send" action="" >
 
-	    <input type="hidden" name="mp" id="choose-input" value="" />
-	    <input id="choose-submit-mps" type="submit" value="{t}Write to them!{/t}"/>
-	  </form>
+			<input type="hidden" name="mp" id="choose-input" value="" />
+			<input id="choose-submit-mps" type="submit" value="{t}Write to them!{/t}"/>
+		  </form>
+		</div>
+	  </div>		
+		<div id="choose-result"></div>
 	</div>
-  </div>
-	
-<div id="choose-result"></div>
 {/block}

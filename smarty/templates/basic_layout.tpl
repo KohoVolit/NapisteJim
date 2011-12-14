@@ -18,15 +18,6 @@
 	{block name=logo}{/block}
 	{block name=basic_body}{/block}
 	<div id="page-footer">
-		<div id="links">
-		  <a href="/public">{t}Public messages{/t}</a>
-		  <a href="/statistics">{t}Statistics{/t}</a>
-		  <a href="/about">{t}About{/t}</a>
-		  <a href="/faq">{t}FAQ{/t}</a>
-		  <a href="/video">{t}Video{/t}</a>
-		  <a href="/support">{t}Support us{/t}</a>
-		  <a href="{t}http://en.kohovolit.eu{/t}">KohoVolit.eu</a>
-		</div>
 		<div id="licence">
 		  <a href="http://www.gnu.org/licenses/gpl.html">{t}Licence{/t}</a> – <a href="/privacy">{t}Privacy{/t}</a> – <a href="/contact">{t}Contact{/t}</a>
 		</div>

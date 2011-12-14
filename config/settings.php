@@ -55,4 +55,11 @@ const PAGER_SIZE = 20;
 // Google analytics account key
 const GOOGLE_ANALYTICS_KEY = 'set-yours-here';
 
+// images of the logo
+const LOGO_FILENAME = 'logo_cz.png';
+const SMALL_LOGO_FILENAME = 'logo_cz_small.png';
+
+// link to promotion video
+const PROMOTION_VIDEO = 'http://www.youtube.com/v/UKmMiNxd0xk?version=3';
+
 ?>
