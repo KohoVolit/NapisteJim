@@ -248,10 +248,6 @@ function public_page()
 	$params = array('country' => COUNTRY_CODE, '_limit' => 5, 'order' => 'sent');
 	if (isset($_SESSION['parliament']) && !empty($_SESSION['parliament']))
 		$params['parliament'] = $_SESSION['parliament'];
-	if (isset($params['since']) && !empty($params['since']))
-		$params['since'] = datetime_to_iso($params['since'], $locale['date_format']);
-	if (isset($params['until']) && !empty($params['until']))
-		$params['until'] = datetime_to_iso($params['until'], $locale['date_format']);
 	$recently_sent_messages = $api_napistejim->read('PublicMessagesPreview', $params);
 	$params['order'] = 'replied';
 	$recently_replied_messages = $api_napistejim->read('PublicMessagesPreview', $params);
@@ -291,7 +287,10 @@ function list_page()
 	if (isset($filter_params['since']) && !empty($filter_params['since']))
 		$iso_dates['since'] = datetime_to_iso($filter_params['since'], $locale['date_format']);
 	if (isset($filter_params['until']) && !empty($filter_params['until']))
+	{
 		$iso_dates['until'] = datetime_to_iso($filter_params['until'], $locale['date_format']);
+		$iso_dates['until'] = preg_replace('/[\d]+:[\d]+:[\d]+/', '23:59:59.99999', $$iso_dates['until']);
+	}
 	$messages = $api_napistejim->read('PublicMessagesPreview', $iso_dates + $filter_params);
 
 	// make pager links

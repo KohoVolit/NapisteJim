@@ -40,7 +40,7 @@ function format_personal_name($mp, $style = 'long')
 function datetime_to_iso($datetime, $format)
 {
 	$d = strptime($datetime, str_replace('%-', '%', $format));
-	return $d['tm_year'] + 1900 . '-' . $d['tm_mon'] . '-' . $d['tm_mday'] . ' ' . $d['tm_hour'] . ':' . $d['tm_min'] . ':' . $d['tm_sec'];
+	return ($d['tm_year'] + 1900) . '-' . ($d['tm_mon'] + 1) . '-' . $d['tm_mday'] . ' ' . $d['tm_hour'] . ':' . $d['tm_min'] . ':' . $d['tm_sec'];
 }
 
 function random_code($length)
