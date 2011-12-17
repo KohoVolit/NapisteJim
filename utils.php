@@ -39,8 +39,8 @@ function format_personal_name($mp, $style = 'long')
  */
 function datetime_to_iso($datetime, $format)
 {
-	$d = strptime($datetime, $format);
-	return $d['tm_year'] . '-' . $d['tm_mon'] . '-' . $d['tm_mday'] . ' ' . $d['tm_hour'] . ':' . $d['tm_min'] . ':' . $d['tm_sec'];
+	$d = strptime($datetime, str_replace('%-', '%', $format));
+	return $d['tm_year'] + 1900 . '-' . $d['tm_mon'] . '-' . $d['tm_mday'] . ' ' . $d['tm_hour'] . ':' . $d['tm_min'] . ':' . $d['tm_sec'];
 }
 
 function random_code($length)

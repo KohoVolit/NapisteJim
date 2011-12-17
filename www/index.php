@@ -287,11 +287,12 @@ function list_page()
 		$filter_params['parliament'] = $filter_params['parliament_code'];
 	else if (isset($_SESSION['parliament']) && !empty($_SESSION['parliament']))
 		$filter_params['parliament'] = $_SESSION['parliament'];
+	$iso_dates = array();
 	if (isset($filter_params['since']) && !empty($filter_params['since']))
-		$filter_params['since'] = datetime_to_iso($filter_params['since'], $locale['date_format']);
+		$iso_dates['since'] = datetime_to_iso($filter_params['since'], $locale['date_format']);
 	if (isset($filter_params['until']) && !empty($filter_params['until']))
-		$filter_params['until'] = datetime_to_iso($filter_params['until'], $locale['date_format']);
-	$messages = $api_napistejim->read('PublicMessagesPreview', $filter_params);
+		$iso_dates['until'] = datetime_to_iso($filter_params['until'], $locale['date_format']);
+	$messages = $api_napistejim->read('PublicMessagesPreview', $iso_dates + $filter_params);
 
 	// make pager links
 	$pager_params = $filter_params;
