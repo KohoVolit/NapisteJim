@@ -7,6 +7,8 @@
 {/block}
 
 {block name=body}
+<h3>{t}Statistics{/t}</h3>
+
 <form id="statistics-filter-form" action="statistics" method="GET">
 <table>
 <tr class="ui-widget">

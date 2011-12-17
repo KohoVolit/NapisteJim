@@ -16,6 +16,7 @@ switch ($page)
 	case 'video':
 	case 'support':
 	case 'contact':
+	case 'news':
 		static_page($page);
 		break;
 
@@ -240,19 +241,23 @@ function confirm_page()
 
 function public_page()
 {
-	global $api_data, $api_napistejim;
+	global $api_data, $api_napistejim, $locale;
 	$smarty = new SmartyNapisteJim;
 
 	// recently sent and recently replied to messages
-	$params = array('country' => COUNTRY_CODE, '_limit' => 5, 'order' => 'messages');
+	$params = array('country' => COUNTRY_CODE, '_limit' => 5, 'order' => 'sent');
 	if (isset($_SESSION['parliament']) && !empty($_SESSION['parliament']))
 		$params['parliament'] = $_SESSION['parliament'];
+	if (isset($params['since']) && !empty($params['since']))
+		$params['since'] = datetime_to_iso($params['since'], $locale['date_format']);
+	if (isset($params['until']) && !empty($params['until']))
+		$params['until'] = datetime_to_iso($params['until'], $locale['date_format']);
 	$recently_sent_messages = $api_napistejim->read('PublicMessagesPreview', $params);
-	$params['order'] = 'replies';
+	$params['order'] = 'replied';
 	$recently_replied_messages = $api_napistejim->read('PublicMessagesPreview', $params);
 	$smarty->assign('message_sets', array(
-		array('title' => _('Recently sent messages'), 'messages' => $recently_sent_messages, 'next_params' => 'order=messages'),
-		array('title' => _('Recently replied messages'), 'messages' => $recently_replied_messages, 'next_params' => 'order=replies')
+		array('title' => _('Recently sent messages'), 'messages' => $recently_sent_messages, 'next_params' => 'order=sent'),
+		array('title' => _('Recently replied messages'), 'messages' => $recently_replied_messages, 'next_params' => 'order=replied')
 	));
 
 	// parliaments for message filtering
@@ -271,7 +276,7 @@ function public_page()
 
 function list_page()
 {
-	global $api_data, $api_napistejim;
+	global $api_data, $api_napistejim, $locale;
 	$smarty = new SmartyNapisteJim;
 
 	// get the messages
@@ -282,6 +287,10 @@ function list_page()
 		$filter_params['parliament'] = $filter_params['parliament_code'];
 	else if (isset($_SESSION['parliament']) && !empty($_SESSION['parliament']))
 		$filter_params['parliament'] = $_SESSION['parliament'];
+	if (isset($filter_params['since']) && !empty($filter_params['since']))
+		$filter_params['since'] = datetime_to_iso($filter_params['since'], $locale['date_format']);
+	if (isset($filter_params['until']) && !empty($filter_params['until']))
+		$filter_params['until'] = datetime_to_iso($filter_params['until'], $locale['date_format']);
 	$messages = $api_napistejim->read('PublicMessagesPreview', $filter_params);
 
 	// make pager links
@@ -308,7 +317,7 @@ function list_page()
 		$form_params['recipient'] = format_personal_name($mp);
 	}
 	$smarty->assign('params', $form_params);
-	
+
 	$smarty->display('list.tpl');
 }
 
@@ -322,15 +331,15 @@ function message_page($message_id)
 
 	if ($message['is_public'] == 'no')
 		return $smarty->display('message_private.tpl');
-		
+
 	$replies = $api_napistejim->read('RepliesToMessage', array('message_id' => $message_id));
-	
+
 	// get statistics of the addressees
 	$mp_ids = array();
 	foreach ($replies['mp'] as $mp)
 		$mp_ids[] = $mp['mp_id'];
 	$mp_stats = $api_napistejim->read('MpStatistics', array('mp' => implode('|', $mp_ids)));
-	foreach ($replies['mp'] as &$mp)	
+	foreach ($replies['mp'] as &$mp)
 		foreach ($mp_stats as $stat)
 			if ($stat['id'] == $mp['mp_id'])
 			{

@@ -502,11 +502,14 @@ background: #fff url(/images/back-znacka.png) 450px 17px;
 * html .ui-autocomplete {
 	height: 150px;
 }
-#list-filter-form #parliament { width: 150px }
-#list-filter-form #recipient { width: 150px }
-#list-filter-form #since { width: 90px }
-#list-filter-form #until { width: 90px }
+#list-filter-form td { font-size: 80% }
+#list-filter-form #parliament { width: 140px }
+#list-filter-form #recipient { width: 140px }
+#list-filter-form #text { width: 150px }
+#list-filter-form #since { width: 70px }
+#list-filter-form #until { width: 70px }
 #list-filter-form #sender { width: 120px }
+#list-filter-form #order { width: 120px }
 
 /**
 * list
@@ -598,6 +601,7 @@ background: #fff url(/images/back-znacka.png) 450px 17px;
 /**
 * statistics
 */
+#statistics-filter-form td { font-size: 80% }
 #statistics-table {
   width: 500px;
   table-layout: fixed;

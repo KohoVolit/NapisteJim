@@ -34,6 +34,15 @@ function format_personal_name($mp, $style = 'long')
 	}
 }
 
+/* Converts date and time in specified format to ISO format (eg. 2011-12-16 21:34:56).
+ * Uses strptime() date format specification for the input format.
+ */
+function datetime_to_iso($datetime, $format)
+{
+	$d = strptime($datetime, $format);
+	return $d['tm_year'] . '-' . $d['tm_mon'] . '-' . $d['tm_mday'] . ' ' . $d['tm_hour'] . ':' . $d['tm_min'] . ':' . $d['tm_sec'];
+}
+
 function random_code($length)
 {
 	$code = '';
