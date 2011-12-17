@@ -289,7 +289,7 @@ function list_page()
 	if (isset($filter_params['until']) && !empty($filter_params['until']))
 	{
 		$iso_dates['until'] = datetime_to_iso($filter_params['until'], $locale['date_format']);
-		$iso_dates['until'] = preg_replace('/[\d]+:[\d]+:[\d]+/', '23:59:59.99999', $$iso_dates['until']);
+		$iso_dates['until'] = preg_replace('/[\d]+:[\d]+:[\d]+/', '23:59:59.99999', $iso_dates['until']);
 	}
 	$messages = $api_napistejim->read('PublicMessagesPreview', $iso_dates + $filter_params);
 
