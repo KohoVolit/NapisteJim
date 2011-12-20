@@ -33,10 +33,9 @@
 	
 </div>
 <div id="links-bottom">
-  <a href="/public">{t}Public messages{/t}</a>
+  <a href="/public">{t}Public messages and answers{/t}</a>
   <a href="/statistics">{t}Statistics{/t}</a>
   <a href="/about">{t}About{/t}</a>
-  <a href="/faq">{t}FAQ{/t}</a>
   <a href="/video">{t}Video{/t}</a>
   <a href="/support">{t}Support us{/t}</a>
   <a href="{t}http://en.kohovolit.eu{/t}">KohoVolit.eu</a>

@@ -6,10 +6,18 @@
 <h1>{t}About project{/t}</h1>
 {t escape=no 1=$smarty.const.NJ_TITLE}MSGID_ABOUT_PROJECT_SECTION{/t}
 
-<h2>{t}Authors{/t}</h2>
+<div>
+<a href="video">&rarr; {t}Video{/t}</a><br/>
+<a href="faq">&rarr; {t}Frequently asked questions{/t}</a><br/>
+<a href="#authors">&rarr; {t}Authors{/t}</a><br/>
+<a href="#tools">&rarr; {t}Published tools examples{/t}</a><br/>
+<a href="support">&rarr; {t}Support us{/t}</a>
+</div>
+
+<h2 id="authors">{t}Authors{/t}</h2>
 {t escape=no 1=$smarty.const.NJ_TITLE}MSGID_AUTHORS_SECTION{/t}
 
-<h2>{t}Published tools examples{/t}</h2>
+<h2 id="tools">{t}Published tools examples{/t}</h2>
 {t escape=no 1=$smarty.const.NJ_TITLE}MSGID_PUBLISHED_TOOLS_EXAMPLES_SECTION{/t}
 
 <p>

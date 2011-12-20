@@ -12,7 +12,7 @@ var lang = "{$locale.lang}";
 {/block}
 
 {block name=body}
-<h3>{t}Public messages{/t}</h3>
+<h3>{t}Public messages and answers{/t}</h3>
 {include './list_filter_form.tpl'}
 
 <table id="list-table">

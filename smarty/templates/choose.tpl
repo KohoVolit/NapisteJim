@@ -37,9 +37,9 @@ var map_zoom = "{$smarty.const.MAP_ZOOM}";
 	<div id="choose-main-column">
 		<div id="choose-addressee">
 		  <h2>{t}Addressees{/t}</h2><div id="choose-up-to">{t}Choose up to three addressees of your message from the found politicians by clicking on their name or using drag&drop into boxes. The same message then cannot be sent again to other politicians.{/t} <a class="small-text" href="faq#q2" target="_blank">{t}Why?{/t}</a></div>
-		  <div id="choose-addressee-box-1" class="addressee-box rounded-corners droppable"></div>
-		  <div id="choose-addressee-box-2" class="addressee-box rounded-corners droppable"></div>
-		  <div id="choose-addressee-box-3" class="addressee-box rounded-corners droppable"></div>
+		  <div class="addressee-box-wrapper rounded-corners"><div id="choose-addressee-box-1" class="addressee-box droppable"></div></div>
+		  <div class="addressee-box-wrapper rounded-corners"><div id="choose-addressee-box-2" class="addressee-box droppable"></div></div>
+		  <div class="addressee-box-wrapper rounded-corners"><div id="choose-addressee-box-3" class="addressee-box droppable"></div></div>
 		  
 		  <form id="choose-send" action="" >
 

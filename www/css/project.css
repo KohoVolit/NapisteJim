@@ -284,10 +284,10 @@ fieldset.search {
 /* boxes */
 
 #choose-send{
-	background: #fff url(/images/back-znacka.png) no-repeat;
+	background: #fff url(/images/back-znacka.png) no-repeat -35px 0px;
 }
 #choose-submit-mps{
-	margin: 65px 0px 65px 90px;
+	margin: 65px 0px 65px 100px;
 }
 #choose-addressee {
 	display:block;
@@ -310,6 +310,7 @@ fieldset.search {
 }
 #choose-main-column{
 	margin-left: 244px;
+	min-width: 700px;
 }
 #choose-result{
 	margin-left: 244px;
@@ -331,13 +332,14 @@ fieldset.search {
 	margin-bottom: 1em;
 }
 
-.addressee-box{
+.addressee-box-wrapper{
   border: 5px dashed #DDD;
+  float:left;
+  margin: 0 12px;
+}
+.addressee-box{
   height:162px;
   width:120px;
-  float:left;
-  margin: 0 20px;
-  display:block;
 }
 
 .choose-up-to{
@@ -346,7 +348,7 @@ min-width:220px;
 
 /*jQuery UI */
 .ui-state-active-border {
-  border: 5px dashed #F00;
+  background: #EEE;
 }
 
 .draggable{
@@ -447,8 +449,8 @@ min-width:220px;
 
 #write-personal {
 	float: left;
-	width: 390px;
-background: #fff url(/images/back-znacka.png) 450px 17px;
+	width: 404px;
+background: #fff url(/images/back-znacka.png) 455px 17px;
 	
 }
 .write-input{
@@ -459,7 +461,7 @@ background: #fff url(/images/back-znacka.png) 450px 17px;
 }
 .write-mp {
   display: inline;
-  margin: 10px 15px;
+  margin: 10px 12px;
 }
 .write-mp-photo {
   height:162px;
@@ -495,6 +497,8 @@ background: #fff url(/images/back-znacka.png) 450px 17px;
 	overflow-x: hidden;
 	/* add padding to account for vertical scrollbar */
 	padding-right: 20px;
+	font-size: 80%;
+	width: 150px;
 }
 /* IE 6 doesn't support max-height
  * we use height instead, but this forces the menu to always be this tall

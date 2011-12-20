@@ -11,10 +11,9 @@
 		<a href="/"><img height="79" alt="{$smarty.const.NJ_TITLE}" src="images/{$smarty.const.SMALL_LOGO_FILENAME}"></a>
 	  </div>
 		<div id="links-top">
-		  <a href="/public">{t}Public messages{/t}</a>
+		  <a href="/public">{t}Public messages and answers{/t}</a>
 		  <a href="/statistics">{t}Statistics{/t}</a>
 		  <a href="/about">{t}About{/t}</a>
-		  <a href="/faq">{t}FAQ{/t}</a>
 		  <a href="/video">{t}Video{/t}</a><br />
 		  <a href="/support">{t}Support us{/t}</a>
 		  <a href="{t}http://en.kohovolit.eu{/t}">KohoVolit.eu</a>
