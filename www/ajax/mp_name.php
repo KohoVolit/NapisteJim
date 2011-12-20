@@ -15,12 +15,7 @@ usort($names, 'cmp_by_name');
 // format the names
 $formated_names = array();
 foreach ($names as $name)
-{
-	$formated_name = format_personal_name($name);
-	if (!empty($name['disambiguation']))
-		$formated_name = $formated_name . ', ' . $name['disambiguation'];
-	$formated_names[] = $formated_name;
-}
+	$formated_names[] = array('name' => format_personal_name($name), 'disambiguation' => $name['disambiguation']);
 
 // return the result in JSON or JSONP format
 $result = json_encode($formated_names);

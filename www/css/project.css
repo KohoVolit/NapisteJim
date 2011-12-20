@@ -450,8 +450,7 @@ min-width:220px;
 #write-personal {
 	float: left;
 	width: 404px;
-background: #fff url(/images/back-znacka.png) 455px 17px;
-	
+	background: #fff url(/images/back-znacka.png) 455px 17px;	
 }
 .write-input{
   margin-bottom: .65em;
@@ -514,6 +513,7 @@ background: #fff url(/images/back-znacka.png) 455px 17px;
 #list-filter-form #until { width: 70px }
 #list-filter-form #sender { width: 120px }
 #list-filter-form #order { width: 120px }
+.disambiguation { color: #aaa; font-size: 80%; line-height: 100%; }
 
 /**
 * list
@@ -541,9 +541,6 @@ background: #fff url(/images/back-znacka.png) 455px 17px;
 }
 .list-subject {
   font-weight: bold;
-}
-.list-body {
-  color: #7F7F7F;
 }
 .list-td-date {
   width:6em;
