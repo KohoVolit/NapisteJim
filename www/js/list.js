@@ -10,7 +10,8 @@ $(function() {
 				success: function( data ) {
 					response( $.map( data, function( item ) {
 						return {
-							value: item.name,
+							value: item.name + (item.disambiguation ? ', ' + item.disambiguation : ''),
+							name: item.name,
 							disambiguation: item.disambiguation
 						}
 					}));
@@ -29,7 +30,7 @@ $(function() {
 	.data( "autocomplete" )._renderItem = function( ul, item ) {
 		return $( "<li></li>" )
 			.data( "item.autocomplete", item )
-			.append( "<a>" + item.value + (item.disambiguation ? '<span class="disambiguation">, ' + item.disambiguation + "</span>" : '') + "</a>" )
+			.append( "<a>" + item.name + (item.disambiguation ? '<span class="disambiguation">, ' + item.disambiguation + "</span>" : '') + "</a>" )
 			.appendTo( ul );
 	};
 });
