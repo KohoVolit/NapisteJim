@@ -11,6 +11,7 @@
 		<a href="/"><img height="79" alt="{$smarty.const.NJ_TITLE}" src="images/{$smarty.const.SMALL_LOGO_FILENAME}"></a>
 	  </div>
 		<div id="links-top">
+		  <a href="/search">{t}Write to them!{/t}</a>
 		  <a href="/public">{t}Public messages and answers{/t}</a>
 		  <a href="/statistics">{t}Statistics{/t}</a>
 		  <a href="/about">{t}About{/t}</a>

@@ -417,6 +417,8 @@ function send_message($message)
 			$subject = mime_encode(substr($to, $p + strlen('?subject=')) . ' – ') . $subject;
 			$to = substr($to, 0, $p);
 		}
+		if (isset($mp['private_email']) && !empty($mp['private_email']))
+			$to .= ', ' . $mp['private_email'];
 		$to = compose_email_address(format_personal_name($mp), $to);
 		$from = compose_email_address($message['sender_name'], 'reply.' . $mp['reply_code'] . '@' . NJ_HOST);
 		$reply_to = ($message['is_public'] == 'yes') ? $from : compose_email_address($message['sender_name'], $message['sender_email']);
