@@ -127,6 +127,7 @@ function write_page()
 	$smarty->assign('mp_list', $mp_list);
 	$smarty->assign('mp_details', $mp_details);
 	$smarty->assign('locality', $locality);
+	$smarty->assign('requested_at', $_SERVER['REQUEST_TIME']);
 	$smarty->display('write.tpl');
 }
 
@@ -143,12 +144,13 @@ function send_page()
 	$body = $_POST['body'];
 	$is_public = $_POST['is_public'];
 	$mps = array_slice(array_unique(explode('|', $_POST['mp'])), 0, 3);
+	$form_requested_at = isset($_POST['form_requested_at']) ? $_POST['form_requested_at'] : $_SERVER['REQUEST_TIME'];
 
 	// generate a random unique confirmation code
 	$confirmation_code = unique_random_code(10, 'Message', 'confirmation_code');
 
 	// store the message
-	$message_pkey = $api_data->create('Message', array('subject' => $subject, 'body' => $body, 'sender_name' => $name, 'sender_address' => $address, 'sender_email' => $email, 'is_public' => $is_public, 'confirmation_code' => $confirmation_code));
+	$message_pkey = $api_data->create('Message', array('subject' => $subject, 'body' => $body, 'sender_name' => $name, 'sender_address' => $address, 'sender_email' => $email, 'is_public' => $is_public, 'confirmation_code' => $confirmation_code, 'remote_addr' => $_SERVER['REMOTE_ADDR'], 'typing_duration' => $_SERVER['REQUEST_TIME'] - $form_requested_at));
 	$message_id = $message_pkey['id'];
 
 	// create relationship between the message and all its addressees
