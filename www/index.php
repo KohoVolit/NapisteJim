@@ -1,4 +1,5 @@
 <?php
+const USE_SESSION = true;
 
 require '../config/settings.php';
 require '../setup.php';
