@@ -150,7 +150,7 @@ function send_page()
 	$confirmation_code = unique_random_code(10, 'Message', 'confirmation_code');
 
 	// store the message
-	$message_pkey = $api_data->create('Message', array('subject' => $subject, 'body' => $body, 'sender_name' => $name, 'sender_address' => $address, 'sender_email' => $email, 'is_public' => $is_public, 'confirmation_code' => $confirmation_code, 'remote_addr' => $_SERVER['REMOTE_ADDR'], 'typing_duration' => $_SERVER['REQUEST_TIME'] - $form_requested_at));
+	$message_pkey = $api_data->create('Message', array('subject' => $subject, 'body' => $body, 'sender_name' => $name, 'sender_address' => $address, 'sender_email' => $email, 'is_public' => $is_public, 'confirmation_code' => $confirmation_code, 'remote_addr' => $_SERVER['REMOTE_ADDR'], 'typing_duration' => $_SERVER['REQUEST_TIME'] - $form_requested_at, 'mp_parameter' => $_POST['mp']));
 	$message_id = $message_pkey['id'];
 
 	// create relationship between the message and all its addressees
