@@ -124,6 +124,9 @@ function write_page()
 	$mp_details = $api_napistejim->read('MpDetails', array('mp' => $mp_list));
 	$locality = isset($_SESSION['locality']) ? $_SESSION['locality'] : '';
 
+	if (empty($mp_list))
+		return static_page('search');
+
 	$smarty->assign('mp_list', $mp_list);
 	$smarty->assign('mp_details', $mp_details);
 	$smarty->assign('locality', $locality);
