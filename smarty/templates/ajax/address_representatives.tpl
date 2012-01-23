@@ -28,6 +28,7 @@
 					</div>
 					<div class="found-mps">
 					{foreach $group.mp as $mp}
+					  {if !isset($mp.email)}{continue}{/if}
 					  <div class="group-mps">
 						<div id="mp-{$parliament.code}/{$mp.id}" class="mp">
 						  <span class="mp-name">
@@ -44,6 +45,7 @@
 			<div id="group-0" class="group">
 				<div class="wrapper">
 					{foreach $constituency.mp as $mp}
+					  {if !isset($mp.email)}{continue}{/if}
 					  <div class="group-mps">
 						<div id="mp-{$parliament.code}/{$mp.id}" class="mp">
 						  <span class="mp-name">
