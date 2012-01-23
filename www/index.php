@@ -120,6 +120,10 @@ function write_page()
 	global $api_napistejim;
 	$smarty = new SmartyNapisteJim;
 
+	// block writing of a message if IP address is on the blacklist
+	if (on_blacklist($_SERVER['REMOTE_ADDR'], 'ip'))
+		return static_page('blocked_ip');
+
 	$mp_list = implode('|', array_slice(array_unique(explode('|', $_GET['mp'])), 0, 3));
 	$mp_details = $api_napistejim->read('MpDetails', array('mp' => $mp_list));
 	$locality = isset($_SESSION['locality']) ? $_SESSION['locality'] : '';
@@ -138,6 +142,14 @@ function send_page()
 {
 	global $api_data, $api_napistejim;
 	$smarty = new SmartyNapisteJim;
+
+	// block sending of a message if IP address is on the blacklist
+	if (on_blacklist($_SERVER['REMOTE_ADDR'], 'ip'))
+		return static_page('blocked_ip');
+
+	// block sending of a message if sender's e-mail address is on the blacklist
+	if (on_blacklist($_POST['email'], 'sender'))
+		return static_page('blocked_sender');
 
 	// prevent mail header injection
 	$subject = escape_header_fields($_POST['subject']);
@@ -569,6 +581,15 @@ function make_pager_links($items, $params)
 		$pager['next_url_query'] = http_build_query($next_params);
 	}
 	return $pager;
+}
+
+function on_blacklist($item, $blacklist_name)
+{
+	$blacklist_filename = NJ_DIR . "/config/blacklists/$blacklist_name.lst";
+	if (!file_exists($blacklist_filename)) return false;
+	$blacklist = file($blacklist_filename, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+	$blacklist = array_map('trim', $blacklist);
+	return in_array($item, $blacklist);
 }
 
 ?>
