@@ -128,7 +128,13 @@ function write_page()
 	$mp_details = $api_napistejim->read('MpDetails', array('mp' => $mp_list));
 	$locality = isset($_SESSION['locality']) ? $_SESSION['locality'] : '';
 
-	if (empty($mp_list))
+	// remove MPs without an email address
+	if (!empty($mp_details))
+		foreach ($mp_details as $key => $mp)
+			if (!isset($mp['email']) || empty($mp['email']))
+				unset($mp_details[$key]);
+
+	if (empty($mp_details))
 		return static_page('search');
 
 	$smarty->assign('mp_list', $mp_list);
@@ -150,6 +156,14 @@ function send_page()
 	// block sending of a message if sender's e-mail address is on the blacklist
 	if (on_blacklist($_POST['email'], 'sender'))
 		return static_page('blocked_sender');
+
+	// check that all required fields are present
+	if (!isset($_POST['name']) || empty($_POST['name']) ||
+		!isset($_POST['email']) || empty($_POST['email']) ||
+		!isset($_POST['is_public']) || $_POST['is_public'] != 'yes' && $_POST['is_public'] != 'no' ||
+		!isset($_POST['subject']) || empty($_POST['subject']) ||
+		!isset($_POST['body']) || empty($_POST['body']))
+		return static_page('search');
 
 	// prevent mail header injection
 	$subject = escape_header_fields($_POST['subject']);

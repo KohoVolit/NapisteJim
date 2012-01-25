@@ -461,6 +461,7 @@ min-width:220px;
 .write-mp {
   display: inline;
   margin: 10px 12px;
+  float: left;
 }
 .write-mp-photo {
   height:162px;
