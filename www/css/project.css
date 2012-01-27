@@ -450,10 +450,17 @@ min-width:220px;
 #write-personal {
 	float: left;
 	width: 404px;
-	background: #fff url(/images/back-znacka.png) 455px 17px;	
+	background: #fff url(/images/back-znacka.png) no-repeat -191px 17px;
 }
-.write-input{
+.write-input {
   margin-bottom: .65em;
+}
+.write-privacy-explanation {
+	display: none;
+	position: absolute;
+	width: 220px;
+	padding: .4em;
+	font-size: 80%;
 }
 #write-mps {
 	display: inline;

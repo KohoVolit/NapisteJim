@@ -25,7 +25,12 @@
         {t}Town:{/t} <br/><input type="text" id="write-address" name="address" value="{$locality}" class="text-input write-input" /><br/>
         {t}E-mail:{/t} <br/><input type="text"  id="write-email" name="email" value="" class="validate[required,custom[email]] text-input write-input" /><br/>
         {t}Subject:{/t} <br/><input type="text" id="write-subject" name="subject" value=""  class="validate[required] text-input write-input" />
-        <div id="write-privacy">{t}The message is:{/t} <input type="radio" id="write-radio-1" name="is_public" value="yes" class="validate[required] radio write-input" />{t}public{/t} <input type="radio" id="write-radio-2" name="is_public" value="no" class="validate[required] radio" />{t}private{/t} </div>
+        <div id="write-privacy">{t}The message is:{/t}
+			<input type="radio" id="write-radio-public" name="is_public" value="yes" class="validate[required] radio write-input" />{t}public{/t}
+			<input type="radio" id="write-radio-private" name="is_public" value="no" class="validate[required] radio write-input" />{t}private{/t}
+		</div>
+		<div id="write-explanation-public" class="write-privacy-explanation ui-state-highlight ui-corner-all">{t escape=no}A <strong>public message</strong> will be published on this web together with beeing sent. So will be all eventual responses you receive from the addressed MPs.{/t}</div>
+		<div id="write-explanation-private" class="write-privacy-explanation ui-state-highlight ui-corner-all">{t escape=no}A <strong>private message</strong> will be sent to the addressees without publishing. They will send their eventual response directly and exclusively to you.{/t}</div>
       </div>
 
       <div id="write-mps">
