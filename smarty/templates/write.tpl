@@ -7,6 +7,7 @@
 <script type="text/javascript" src="js/i18n.js"></script>
 <script type="text/javascript" src="js/jquery.validationEngine-{$locale.system_locale}.js"></script>
 <script type="text/javascript" src="js/jquery.validationEngine.js"></script>
+<script type="text/javascript" src="js/jquery.caret.js"></script>
 <script type="text/javascript" src="js/write.js"></script>
 <link rel="stylesheet" href="css/validationEngine.jquery.css" type="text/css"/>
 {/block}
