@@ -95,7 +95,7 @@ body {
   margin: 0 auto;
   padding: 0 24px;
 }
-#logo-small{ 
+#logo-small{
   float: left;
   margin-left: 32px;
 }
@@ -138,7 +138,7 @@ body {
   max-width:1000px;
   width:90%;
 }
-  
+
 input#search-address,input#search-submit-geocode{
   font-size: 1.2em;
 }
@@ -180,80 +180,6 @@ fieldset.search {
 	padding-left: 242px;
     padding-right: 254px;*/
 }
-
-/**/
-
-
-/*input#search-address,input#search-submit-geocode{
-   display:inline;
-    color: #7e7e7e;
-	font-size: 1.2em;
-	width: 160px;
-	height: 40px;
-	padding: 1px 5px 0;
-	background: #fff url(napiste.gif) no-repeat;
-	margin-right: 5px;
-	border:none;
-}*/
-
-
-/*input#search-address,input#search-submit-geocode:focus {
-	background: #000 url(napiste.gif) no-repeat left -41px;
-	outline: none;
-	display:inline;
-}*/
-/*#search-right {
-  display:inline;
-}
-
-#search-address,#geocode-address-2{
-  width:65%;
-  max-width:750px;
-  display:inline;
-}
-
-#search-advanced-search{
- display:inline;
-}
-
-#search-example{
-  color: #666;
-  font-style: italic;
-  font-size:0.75em;
-  text-align:center;
-  display:block;
-}
-*//*
-fieldset.search {
-	border: none;
-	width: 600px;
-	margin: 0 auto;
-	background: #fff;
-	display:inline;
-	padding-left: 242px;
-    padding-right: 254px;
-}*/
-/*.search input, .search button {
-	border: none;
-	float: left;
-	display:inline;
-}
-
-.search input.clearField {
-	color: #7e7e7e;
-	font-size: 1.2em;
-	width: 508px;
-	height: 34px;
-	padding: 4px 5px 0;
-	background: #fff url(search_bg.gif) no-repeat;
-	margin-right: 5px;
-	display:inline;
-}
-.search input.clearField:focus {
-	background: #000 url(search_bg.gif) no-repeat left -34px;
-	outline: none;
-	display:inline;
-}*/
 
 /**
 * choose
@@ -359,20 +285,6 @@ min-width:220px;
   cursor:default;
 }
 
-/* toggle */
-/*.mp-toggle-off{
-  cursor:pointer;
-  background-position: 0 0;
-  width: 20px;
-  height: 20px;
-}
-
-.mp-toggle-on{
-  cursor:default;
-  background-position: 0 -30px;
-  width: 20px;
-  height: 20px;
-}*/
 .mp-clicked-on {
   cursor:default;
 }
@@ -403,13 +315,14 @@ min-width:220px;
 .mp-name-name{
   color: #006;
 }
-
-.mp-name-info{
+.mp-disabled .mp-name-name,
+.mp-disabled .mp-name-info {
+  color: #bbb;
 }
 
 /* debug geocoding */
 #choose-message-debug {
-  color: #888; 
+  color: #888;
   background-color: #BBB;
   display: none;
 }
