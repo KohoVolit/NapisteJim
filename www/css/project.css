@@ -480,6 +480,7 @@ min-width:220px;
 */
 #message-title {
 	margin: 0;
+	margin-bottom: 4px;
 }
 #message-from, #message-date {
 	line-height: 120%;
@@ -494,15 +495,18 @@ min-width:220px;
   float: left;
   width:100px;
   font-size: 75%;
+  line-height: 135%;
 }
 .message-mp .name {
   font-weight: bold;
 }
 .message-mp img {
   width: 100px;
+  margin-bottom: 4px;
 }
 .message-reply {
   margin-left: 120px;
+  margin-right: 130px;
 }
 .message-reply .dimmed{
 	color: #aaa;
@@ -524,9 +528,10 @@ min-width:220px;
 /**
 * statistics
 */
+#statistics-filter-form { margin-bottom: 0; }
 #statistics-filter-form td { font-size: 80% }
 #statistics-table {
-  width: 500px;
+  width: 570px;
   table-layout: fixed;
   border-width: 1px 1px 0;
   font-size:75%;
@@ -541,24 +546,31 @@ min-width:220px;
 #statistics-table td {
  overflow:hidden;
  padding: 3px 5px 2px;
-     border-style: solid;
+    border-style: solid;
     border-width: 0 0 1px;
     border-color: #F6F5F2;
-    white-space:nowrap;
+	vertical-align: bottom;
 }
 .statistics-td-politician {
-  width: 34%;
+  width: 29%;
 }
 .statistics-td-received {
-  width: 22%;
+  width: 18%;
   text-align: center;
 }
 .statistics-td-replied {
-  width: 22%;
+  width: 18%;
   text-align: center;
 }
 .statistics-td-ratio {
-  width: 22%;
+  width: 18%;
+}
+.statistics-td-average-days {
+  width: 17%;
+  text-align: right;
+}
+tbody .statistics-td-average-days {
+  color: #888;
 }
 .statistics-td-ratio .replied {
   background: #3e8213;
@@ -568,4 +580,4 @@ min-width:220px;
   background: #dd2a2b;
   display: inline-block;
 }
-#statistics-pager { width: 500px; }
+#statistics-pager { width: 570px; }

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: NapišteJim 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-01-27 16:18+0100\n"
-"PO-Revision-Date: 2012-01-27 16:30+0100\n"
+"POT-Creation-Date: 2012-01-28 23:29+0100\n"
+"PO-Revision-Date: 2012-01-28 23:30+0100\n"
 "Language-Team: Slovak <info@kohovolit.eu>\n"
 "Language: slovak\n"
 "MIME-Version: 1.0\n"
@@ -275,7 +275,9 @@ msgid ""
 "with beeing sent. So will be all eventual responses you receive from the "
 "addressed MPs."
 msgstr ""
-"<strong>Verejná správa</strong> sa spolu s odoslaním politikom zverejní na tomto webe. Rovnako sa zverejní aj každá prípadná odpoveď na ňu, ktorú od politikov obdržíte."
+"<strong>Verejná správa</strong> sa spolu s odoslaním politikom zverejní na "
+"tomto webe. Rovnako sa zverejní aj každá prípadná odpoveď na ňu, ktorú od "
+"politikov obdržíte."
 
 #. smarty/templates/write.tpl
 #: gettext/smarty.c:95
@@ -284,7 +286,8 @@ msgid ""
 "publishing. They will send their eventual response directly and exclusively "
 "to you."
 msgstr ""
-"<strong>Súkromná správa</strong> sa odošle adresátom bez jej zverejnenia. Politici svoju prípadnú odpoveď pošlú priamo a len Vám."
+"<strong>Súkromná správa</strong> sa odošle adresátom bez jej zverejnenia. "
+"Politici svoju prípadnú odpoveď pošlú priamo a len Vám."
 
 #. smarty/templates/write.tpl
 #: gettext/smarty.c:98
@@ -458,7 +461,7 @@ msgstr[2] "%1 správ"
 
 #. smarty/templates/public.tpl
 #. smarty/templates/statistics.tpl
-#: gettext/smarty.c:173 gettext/smarty.c:860
+#: gettext/smarty.c:173 gettext/smarty.c:872
 msgid "next politicians"
 msgstr "ďalší politici"
 
@@ -1677,5 +1680,34 @@ msgstr "Podiel"
 
 #. smarty/templates/statistics.tpl
 #: gettext/smarty.c:857
+msgid "Average replies in"
+msgstr "Priemerne odpovedá za"
+
+#. smarty/templates/statistics.tpl
+#: gettext/smarty.c:860
+msgid "%1 days"
+msgid_plural "%1 days"
+msgstr[0] "%1 deň"
+msgstr[1] "%1 dni"
+msgstr[2] "%1 dní"
+
+#. smarty/templates/statistics.tpl
+#: gettext/smarty.c:863
+msgid "%1 hours"
+msgid_plural "%1 hours"
+msgstr[0] "%1 hodina"
+msgstr[1] "%1 hodiny"
+msgstr[2] "%1 hodín"
+
+#. smarty/templates/statistics.tpl
+#: gettext/smarty.c:866
+msgid "%1 minutes"
+msgid_plural "%1 minutes"
+msgstr[0] "%1 minúta"
+msgstr[1] "%1 minúty"
+msgstr[2] "%1 minút"
+
+#. smarty/templates/statistics.tpl
+#: gettext/smarty.c:869
 msgid "previous politicians"
 msgstr "predchádzajúci politici"

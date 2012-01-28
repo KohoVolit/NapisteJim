@@ -29,7 +29,7 @@
 
 <table id="statistics-table">
 <thead>
-	<tr><td class="statistics-td-politician">{t}Politician{/t}</td><td class="statistics-td-received" >{t}Received{/t}</td><td class="statistics-td-replied" >{t}Replied{/t}</td><td class="statistics-td-ratio" >{t}Ratio{/t}</td><td class="statistics-td-graph"></td></tr>
+	<tr><td class="statistics-td-politician">{t}Politician{/t}</td><td class="statistics-td-received">{t}Received{/t}</td><td class="statistics-td-replied">{t}Replied{/t}</td><td class="statistics-td-ratio">{t}Ratio{/t}</td><td class="statistics-td-average-days">{t}Average replies in{/t}</td></tr>
 </thead>
 <tbody>
 {foreach $statistics as $mp}
@@ -40,6 +40,10 @@
 		{assign "ratio" round(100.0 * $mp.replied_public_messages / $mp.received_public_messages)}
 		{assign "ratio_compl" 100 - $ratio}
 		<td class="statistics-td-ratio" title="{$ratio} %"><div class="replied " style="width:{$ratio}%">&nbsp;</div><div class="not-replied" style="width:{$ratio_compl}%">&nbsp;</div></td>
+		{assign "days" round($mp.average_days_to_reply)}
+		{assign "hours" round($mp.average_days_to_reply * 24)}
+		{assign "minutes" round($mp.average_days_to_reply * 24 * 60)}
+		<td class="statistics-td-average-days">{if isset($mp.average_days_to_reply)}{if ($days > 0)}{t count=$days 1=$days plural="%1 days"}%1 days{/t}{else}{if ($hours > 0)}{t count=$hours 1=$hours plural="%1 hours"}%1 hours{/t}{else}{t count=$minutes 1=$minutes plural="%1 minutes"}%1 minutes{/t}{/if}{/if}{else}&nbsp;{/if}</td>
 	</tr>
 {/foreach}
 </tbody>
