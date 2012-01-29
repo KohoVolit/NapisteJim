@@ -15,8 +15,8 @@ const CONTACT_EMAIL = 'info@kohovolit.eu';
 const FROM_EMAIL = 'neodpovidejte@napistejim.cz';
 const BCC_EMAIL = 'napistejim.cz@gmail.com';
 const ADMIN_EMAIL = 'jaroslav_semancik@yahoo.com';
-const REVIEWER_EMAIL = 'marek@nasipolitici.cz';
-const ORDER_NEWSLETTER_EMAIL = 'marek@nasipolitici.cz';
+const REVIEWER_EMAIL = 'kamil.gregor@gmail.com';
+const ORDER_NEWSLETTER_EMAIL = 'kamil.gregor@gmail.com';
 
 // error reporting
 error_reporting(0);
