@@ -40,9 +40,7 @@ var map_zoom = "{$smarty.const.MAP_ZOOM}";
 		  <div class="addressee-box-wrapper rounded-corners"><div id="choose-addressee-box-1" class="addressee-box droppable"></div></div>
 		  <div class="addressee-box-wrapper rounded-corners"><div id="choose-addressee-box-2" class="addressee-box droppable"></div></div>
 		  <div class="addressee-box-wrapper rounded-corners"><div id="choose-addressee-box-3" class="addressee-box droppable"></div></div>
-		  
 		  <form id="choose-send" action="" >
-
 			<input type="hidden" name="mp" id="choose-input" value="" />
 			<input id="choose-submit-mps" type="submit" value="{t}Write to them!{/t}"/>
 		  </form>

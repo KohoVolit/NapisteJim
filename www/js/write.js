@@ -36,16 +36,16 @@ $(document).ready(function(){
 		at: "left bottom",
 		offset: "0 4px"
 	});
-	$("#write-radio-public").change(function () {
-		$('#write-explanation-public').toggle();
+	$("#write-radio-public").focusin(function () {
+		$('#write-explanation-public').show();
 	});
-	$("#write-radio-private").change(function () {
-		$('#write-explanation-private').toggle();
+	$("#write-radio-public").focusout(function () {
+		$('#write-explanation-public').hide();
 	});
-	$("input,textarea,#write-explanation-public").bind("click focusin", function () {
-		$("#write-explanation-public").hide();
+	$("#write-radio-private").focusin(function () {
+		$('#write-explanation-private').show();
 	});
-	$("input,textarea,#write-explanation-private").bind("click focusin", function () {
-		$("#write-explanation-private").hide();
+	$("#write-radio-private").focusout(function () {
+		$('#write-explanation-private').hide();
 	});
 });

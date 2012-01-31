@@ -376,9 +376,6 @@ min-width:220px;
 	width: 404px;
 	background: #fff url(/images/back-znacka.png) no-repeat -191px 10px;
 }
-.write-input {
-  margin-bottom: .65em;
-}
 .write-privacy-explanation {
 	display: none;
 	position: absolute;
@@ -406,12 +403,13 @@ min-width:220px;
 }
 #write-name, #write-email, #write-subject, #write-address {
 	width: 290px;
+	margin-bottom: .65em;
 }
 #write-email {
 	margin-bottom: 32px;
 }
 #write-privacy {
-	margin-bottom: 8px;
+	padding-bottom: 8px;
 }
 #write-privacy input {
 	margin-left: 10px;
