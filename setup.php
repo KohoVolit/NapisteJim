@@ -11,7 +11,9 @@ function napistejim_autoload($class_name)
 spl_autoload_register('napistejim_autoload');
 
 // set locale
-if (defined('USE_SESSION'))
+if (defined('NOT_USE_SESSION'))
+	$locale = reset($locales);
+else
 {
 	// store URL parameters that should be persistent to the session
 	session_start();
@@ -26,8 +28,6 @@ if (defined('USE_SESSION'))
 	else
 		$locale = reset($locales);
 }
-else
-	$locale = reset($locales);
 
 mb_internal_encoding('UTF-8');
 date_default_timezone_set($locale['time_zone']);

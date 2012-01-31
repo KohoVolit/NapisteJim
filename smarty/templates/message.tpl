@@ -14,8 +14,8 @@
 		{assign "personal_name" format_personal_name($mp)}
 		<img src="{if !empty($mp.mp_image)}{$smarty.const.API_FILES_URL}/{$mp.mp_image}{else}http://{$smarty.const.NJ_HOST}/images/head_{if $mp.sex == 'f'}female{else}male{/if}_small.png{/if}" title="{$personal_name}" alt="{$personal_name}"  />
 		<span class="name">{$personal_name},</span><br />
-		{if !empty($mp.political_group)}<span>{$mp.political_group},</span><br />{/if}
-		<span>{$mp.parliament_name}</span>
+		{if !empty($mp.political_group)}{$mp.political_group},<br />{/if}
+		{$mp.parliament}
 		<div><a href="list?mp_id={$mp.mp_id}">{t count=$mp.received_public_messages 1=$mp.received_public_messages plural="%1 messages"}%1 message{/t}</a></div>
 		<div><a href="write?mp={$mp.parliament_code}/{$mp.mp_id}">{if $mp.sex == 'f'}{t}Write to her{/t}{else}{t}Write to him{/t}{/if}</a></div>
 	</div>

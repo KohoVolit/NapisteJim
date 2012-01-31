@@ -213,7 +213,7 @@ fieldset.search {
 	background: #fff url(/images/back-znacka.png) no-repeat -35px 0px;
 }
 #choose-submit-mps{
-	margin: 65px 0px 65px 100px;
+	margin: 65px 0px 95px 100px;
 }
 #choose-addressee {
 	display:block;
@@ -236,7 +236,7 @@ fieldset.search {
 }
 #choose-main-column{
 	margin-left: 244px;
-	min-width: 700px;
+	min-width: 730px;
 }
 #choose-result{
 	margin-left: 244px;
@@ -258,16 +258,26 @@ fieldset.search {
 	margin-bottom: 1em;
 }
 
-.addressee-box-wrapper{
+.addressee-box-wrapper {
   border: 5px dashed #DDD;
-  float:left;
+  float: left;
   margin: 0 12px;
 }
-.addressee-box{
+.addressee-box {
   height:162px;
   width:120px;
 }
-
+.box-name {
+  font-size: 75%;
+  line-height: 135%;
+  font-weight: bold;
+  margin-top: -8px;
+}
+.box-x {
+	position: relative;
+	left: 102px;
+	top: -160px;
+}
 .choose-up-to{
 min-width:220px;
 }
@@ -364,7 +374,7 @@ min-width:220px;
 #write-personal {
 	float: left;
 	width: 404px;
-	background: #fff url(/images/back-znacka.png) no-repeat -191px 17px;
+	background: #fff url(/images/back-znacka.png) no-repeat -191px 10px;
 }
 .write-input {
   margin-bottom: .65em;
@@ -383,19 +393,25 @@ min-width:220px;
   display: inline;
   margin: 10px 12px;
   float: left;
+  font-size: 75%;
+  line-height: 135%;
 }
-.write-mp-photo {
-  height:162px;
-  width:120px;
+.write-mp img {
+	height:162px;
+	width:120px;
+	padding-bottom: 4px;
 }
-.write-mp-first_name {
-	padding-top: 9px;
+.write-mp .name {
+  font-weight: bold;
 }
 #write-name, #write-email, #write-subject, #write-address {
 	width: 290px;
 }
+#write-email {
+	margin-bottom: 32px;
+}
 #write-privacy {
-	margin: 6px 0 12px;
+	margin-bottom: 8px;
 }
 #write-privacy input {
 	margin-left: 10px;

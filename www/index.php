@@ -1,6 +1,4 @@
 <?php
-const USE_SESSION = true;
-
 require '../config/settings.php';
 require '../setup.php';
 require '../utils.php';
@@ -117,7 +115,7 @@ function choose_advanced_page()
 
 function write_page()
 {
-	global $api_napistejim;
+	global $api_napistejim, $locale;
 	$smarty = new SmartyNapisteJim;
 
 	// block writing of a message if IP address is on the blacklist
@@ -125,7 +123,7 @@ function write_page()
 		return static_page('blocked_ip');
 
 	$mp_list = implode('|', array_slice(array_unique(explode('|', $_GET['mp'])), 0, 3));
-	$mp_details = $api_napistejim->read('MpDetails', array('mp' => $mp_list));
+	$mp_details = $api_napistejim->read('MpDetails', array('mp' => $mp_list, 'lang' => $locale['lang']));
 	$locality = isset($_SESSION['locality']) ? $_SESSION['locality'] : '';
 
 	// remove MPs without an email address
@@ -355,7 +353,7 @@ function list_page()
 
 function message_page($message_id)
 {
-	global $api_data, $api_napistejim;
+	global $api_data, $api_napistejim, $locale;
 	$smarty = new SmartyNapisteJim;
 
 	$message = $api_data->readOne('Message', array('id' => $message_id));
@@ -364,7 +362,7 @@ function message_page($message_id)
 	if ($message['is_public'] == 'no')
 		return $smarty->display('message_private.tpl');
 
-	$replies = $api_napistejim->read('RepliesToMessage', array('message_id' => $message_id));
+	$replies = $api_napistejim->read('RepliesToMessage', array('message_id' => $message_id, 'lang' => $locale['lang']));
 
 	// get statistics of the addressees
 	$mp_ids = array();

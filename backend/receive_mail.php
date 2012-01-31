@@ -1,4 +1,5 @@
 <?php
+const NOT_USE_SESSION = true;
 
 require '/home/shared/napistejim.cz/config/settings.php';
 require '/home/shared/napistejim.cz/setup.php';

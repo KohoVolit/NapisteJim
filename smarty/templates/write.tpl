@@ -34,12 +34,13 @@
       </div>
 
       <div id="write-mps">
-        {foreach $mp_details as $key=>$mp}
-          <div id="write-mp-{$mp.id}" class="addressee-box rounded-corners write-mp">
-            <div id="write-mp-photo-{$mp.id}">
-				<img src="{if !empty($mp.image)}{$smarty.const.API_FILES_URL}/{$mp.image}{else}http://{$smarty.const.NJ_HOST}/images/head_{if $mp.sex == 'f'}female{else}male{/if}_small.png{/if}" title="{assign "personal_name" format_personal_name($mp, 'full')}{$personal_name}" alt="{$personal_name}" class="write-mp-photo" />
-            </div>
-            <div id="write-mp-first_name-{$mp.id}" class="write-mp-first_name">{assign "personal_name" format_personal_name($mp)}{$personal_name}</div>
+        {foreach $mp_details as $mp}
+          <div id="write-mp-{$mp.id}" class="addressee-box write-mp">
+			{assign "personal_name" format_personal_name($mp)}
+			<img src="{if !empty($mp.image)}{$smarty.const.API_FILES_URL}/{$mp.image}{else}http://{$smarty.const.NJ_HOST}/images/head_{if $mp.sex == 'f'}female{else}male{/if}_small.png{/if}" title="{$personal_name}" alt="{$personal_name}" />
+			<span class="name">{$personal_name}</span>,<br />
+			{if !empty($mp.political_group)}{$mp.political_group},<br />{/if}
+			{$mp.parliament}
           </div>
         {/foreach}
       </div>
