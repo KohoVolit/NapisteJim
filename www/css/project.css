@@ -100,7 +100,7 @@ body {
   margin-left: 32px;
 }
 #head {
-    background: none repeat scroll 0 0 #FFFFFF;
+    background: transparent repeat scroll 0 0 #FFFFFF;
     border-bottom: 1px solid #CCCCCC;
     box-shadow: 0 0 5px #888888;
     margin-bottom: 40px;
@@ -210,7 +210,7 @@ fieldset.search {
 /* boxes */
 
 #choose-send{
-	background: none url(/images/back-znacka.png) no-repeat -35px 0px;
+	background: transparent url(/images/back-znacka.png) no-repeat -35px 0px;
 }
 #choose-submit-mps{
 	margin: 65px 0px 95px 100px;
@@ -374,7 +374,7 @@ min-width:220px;
 #write-fields {
 	float: left;
 	width: 404px;
-	background: none url(/images/back-znacka.png) no-repeat -191px 10px;
+	background: transparent url(/images/back-znacka.png) no-repeat -191px 10px;
 }
 #write-name, #write-email, #write-subject, #write-address {
 	width: 290px;
