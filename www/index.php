@@ -35,13 +35,17 @@ switch ($page)
 		statistics_page();
 		break;
 
+	case 'write_iframe':
+		write_page('write_iframe');
+		break;
+		
 	default:
 		if (!empty($_POST))
 			send_page();
 		else
 		{
 			if (isset($_GET['mp']))
-				write_page();
+				write_page('write');
 			else if (isset($_GET['address']))
 			  	choose_page();
 			else if (isset($_GET['name']) || isset($_GET['constituency']) || isset($_GET['groups']))
@@ -113,7 +117,7 @@ function choose_advanced_page()
 	$smarty->display('choose_advanced.tpl');
 }
 
-function write_page()
+function write_page($template)
 {
 	global $api_napistejim, $locale;
 	$smarty = new SmartyNapisteJim;
@@ -135,11 +139,15 @@ function write_page()
 	if (empty($mp_details))
 		return static_page('search');
 
+	// if write form is used as an iframe a CSS to use can be specified among URL parameters
+	if ($template == 'write_iframe' && isset($_GET['css']) && !empty($_GET['css']))
+		$smarty->assign('css', $_GET['css']);
+
 	$smarty->assign('mp_list', $mp_list);
 	$smarty->assign('mp_details', $mp_details);
 	$smarty->assign('locality', $locality);
 	$smarty->assign('requested_at', $_SERVER['REQUEST_TIME']);
-	$smarty->display('write.tpl');
+	$smarty->display("$template.tpl");
 }
 
 function send_page()

@@ -11,7 +11,7 @@ var lang = "{$locale.lang}";
 <script type="text/javascript" src="js/list.js"></script>
 {/block}
 
-{block name=body}
+{block name=main}
 {foreach $message_sets as $message_set}
 
 <h3>{$message_set.title}</h3>
@@ -49,5 +49,4 @@ var lang = "{$locale.lang}";
 {/foreach}
  <a href="statistics">{t}next politicians{/t}&hellip;</a>
 </div>
-
 {/block}

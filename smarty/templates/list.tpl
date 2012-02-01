@@ -11,7 +11,7 @@ var lang = "{$locale.lang}";
 <script type="text/javascript" src="js/list.js"></script>
 {/block}
 
-{block name=body}
+{block name=main}
 <h3>{t}Public messages and answers{/t}</h3>
 {include './list_filter_form.tpl'}
 
@@ -44,5 +44,4 @@ var lang = "{$locale.lang}";
 <div class="pager-link pager-next"><a href="http://{$smarty.const.NJ_HOST}/list?{$pager.next_url_query}">{t}next messages{/t} &raquo;</a></div>
 {/if}
 </div>
-
 {/block}

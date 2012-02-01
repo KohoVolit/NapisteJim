@@ -6,7 +6,7 @@
 <script type="text/javascript" src="js/statistics.js"></script>
 {/block}
 
-{block name=body}
+{block name=main}
 <h3>{t}Statistics{/t}</h3>
 
 <form id="statistics-filter-form" action="statistics" method="GET">

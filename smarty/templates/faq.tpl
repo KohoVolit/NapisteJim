@@ -2,7 +2,7 @@
 
 {block name=title}{$smarty.const.NJ_TITLE} – {t}Frequently asked questions{/t}{/block}
 
-{block name=body}
+{block name=main}
 <h1>{t}Frequently asked questions{/t}</h1>
 
 <p>

@@ -1,4 +1,4 @@
-{extends file="layout.tpl"}
+{extends file="main_html.tpl"}
 
 {block name=title}{$smarty.const.NJ_TITLE} – {t}Write message{/t}{/block}
 
@@ -10,8 +10,9 @@
 <script type="text/javascript" src="js/jquery.caret.js"></script>
 <script type="text/javascript" src="js/write.js"></script>
 <link rel="stylesheet" href="css/validationEngine.jquery.css" type="text/css" />
+{if isset($css)}<link rel="stylesheet" href="{$css}" type="text/css" />{/if}
 {/block}
 
-{block name=main}
+{block name=content}
 {include file='./write_form.tpl'}
 {/block}

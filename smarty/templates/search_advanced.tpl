@@ -12,7 +12,8 @@ var lang = "{$locale.lang}";
 <script type="text/javascript" src="js/jquery.ui.highlight.js"></script>
 <script type="text/javascript" src="js/search_advanced.js"></script>	
 {/block}
-{block name=body}
+
+{block name=main}
 <div id="search_advanced-page-wrapper">
  <form id="search_advanced-form" action="javascript:sendForm()">
     <label for="search_advanced-select-parliament" class="left">{t}Choose a parliament:{/t} </label>
@@ -24,7 +25,6 @@ var lang = "{$locale.lang}";
     </select>
   <div id="search_advanced-selects"></div>
   <div id="search_advanced-note"></div>
-
   
  </form>
   <form id="advanced-search-export-form">

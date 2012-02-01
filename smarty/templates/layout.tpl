@@ -1,10 +1,10 @@
-{extends file="basic_layout.tpl"}
+{extends file="main_html.tpl"}
 
 {block name=title}{/block}
 
 {block name=head}{/block}
 
-{block name="logo"}
+{block name=top}
 <div id="head">
 	<div id="top-content">
 	  <div id="logo-small" class="logo">
@@ -23,9 +23,16 @@
 </div>
 {/block}
 
-{block name=basic_body}
+{block name=content}
 <div class="wrapper-page-outer"><div id="wrapper-page">
-{block name=body}
-{/block}
+	{block name=main}{/block}
 </div></div>
+{/block}
+
+{block name=bottom}
+<div id="page-footer">
+	<div id="licence">
+	  <a href="http://www.gnu.org/licenses/gpl.html">{t}Licence{/t}</a> – <a href="/privacy">{t}Privacy{/t}</a> – <a href="/contact">{t}Contact{/t}</a>
+	</div>
+</div>
 {/block}

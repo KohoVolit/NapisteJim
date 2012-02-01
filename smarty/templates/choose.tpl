@@ -5,7 +5,6 @@
 {block name=head}
 <script type="text/javascript" src="http://maps.google.com/maps/api/js?v=3.2&sensor=false&language={$smarty.const.AREAS_LANGUAGE}&region={$smarty.const.COUNTRY_CODE}"></script>
 <script type="text/javascript">
-//define global variables from settings.php
 var country_name = "{$smarty.const.COUNTRY_NAME}";
 var address = "{$address}";
 var required_address_level = "{$smarty.const.REQUIRED_ADDRESS_LEVEL}";
@@ -20,7 +19,7 @@ var map_zoom = "{$smarty.const.MAP_ZOOM}";
 <script type="text/javascript" src="js/choose.js"></script>
 {/block}
 
-{block name=body}
+{block name=main}
   <div id="choose-content-top-wrapper">
 	<div class="wrapper"><div id="choose-map-column">
 		<div id="choose-map_canvas"></div>

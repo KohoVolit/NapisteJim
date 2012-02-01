@@ -2,7 +2,7 @@
 
 {block name=title}{$smarty.const.NJ_TITLE} – {t}Video{/t}{/block}
 
-{block name=body}
+{block name=main}
 <h1>{t}Video{/t}</h1>
 {t escape=no 1=$smarty.const.NJ_TITLE}MSGID_VIDEO_SECTION{/t}
 

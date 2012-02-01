@@ -4,7 +4,7 @@
 {t}Approved{/t}
 {/block}
 
-{block name=body}
+{block name=main}
 <h3>{t}Approved{/t}</h3>
 
 <p>{t}You approved sending of this message. It was sent to addressees.{/t}</p>

@@ -2,7 +2,7 @@
 
 {block name=title}{$smarty.const.NJ_TITLE} – {$message.subject}{/block}
 
-{block name=body}
+{block name=main}
 <div class="wrapper">
 <h2 id="message-title">{$message.subject}</h2>
 <div id="message-from">{t}From{/t}: {$message.sender_name}{if !empty($message.sender_address)}, {$message.sender_address}{/if}</div>
@@ -17,7 +17,7 @@
 		{if !empty($mp.political_group)}{$mp.political_group},<br />{/if}
 		{$mp.parliament}
 		<div><a href="list?mp_id={$mp.mp_id}">{t count=$mp.received_public_messages 1=$mp.received_public_messages plural="%1 messages"}%1 message{/t}</a></div>
-		<div><a href="write?mp={$mp.parliament_code}/{$mp.mp_id}">{if $mp.sex == 'f'}{t}Write to her{/t}{else}{t}Write to him{/t}{/if}</a></div>
+		<div><a href="?mp={$mp.parliament_code}/{$mp.mp_id}">{if $mp.sex == 'f'}{t}Write to her{/t}{else}{t}Write to him{/t}{/if}</a></div>
 	</div>
 {foreach $mp.reply as $reply}
 {if !empty($reply.received_on)}<div class="message-reply-date">{$reply.received_on|date_format:$locale.date_format}</div>{/if}
