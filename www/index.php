@@ -1,5 +1,4 @@
 <?php
-
 require '../config/settings.php';
 require '../setup.php';
 require '../utils.php';
@@ -16,6 +15,7 @@ switch ($page)
 	case 'video':
 	case 'support':
 	case 'contact':
+	case 'news':
 		static_page($page);
 		break;
 
@@ -23,17 +23,29 @@ switch ($page)
 		confirm_page();
 		break;
 
+	case 'public':
+		public_page();
+		break;
+
 	case 'list':
 		list_page();
 		break;
 
+	case 'statistics':
+		statistics_page();
+		break;
+
+	case 'write_iframe':
+		write_page('write_iframe');
+		break;
+		
 	default:
 		if (!empty($_POST))
 			send_page();
 		else
 		{
 			if (isset($_GET['mp']))
-				write_page();
+				write_page('write');
 			else if (isset($_GET['address']))
 			  	choose_page();
 			else if (isset($_GET['name']) || isset($_GET['constituency']) || isset($_GET['groups']))
@@ -105,25 +117,59 @@ function choose_advanced_page()
 	$smarty->display('choose_advanced.tpl');
 }
 
-function write_page()
+function write_page($template)
 {
-	global $api_napistejim;
+	global $api_napistejim, $locale;
 	$smarty = new SmartyNapisteJim;
 
+	// block writing of a message if IP address is on the blacklist
+	if (on_blacklist($_SERVER['REMOTE_ADDR'], 'ip'))
+		return static_page('blocked_ip');
+
 	$mp_list = implode('|', array_slice(array_unique(explode('|', $_GET['mp'])), 0, 3));
-	$mp_details = $api_napistejim->read('MpDetails', array('mp' => $mp_list));
+	$mp_details = $api_napistejim->read('MpDetails', array('mp' => $mp_list, 'lang' => $locale['lang']));
 	$locality = isset($_SESSION['locality']) ? $_SESSION['locality'] : '';
+
+	// remove MPs without an email address
+	if (!empty($mp_details))
+		foreach ($mp_details as $key => $mp)
+			if (!isset($mp['email']) || empty($mp['email']))
+				unset($mp_details[$key]);
+
+	if (empty($mp_details))
+		return static_page('search');
+
+	// if write form is used as an iframe a CSS to use can be specified among URL parameters
+	if ($template == 'write_iframe' && isset($_GET['css']) && !empty($_GET['css']))
+		$smarty->assign('css', $_GET['css']);
 
 	$smarty->assign('mp_list', $mp_list);
 	$smarty->assign('mp_details', $mp_details);
 	$smarty->assign('locality', $locality);
-	$smarty->display('write.tpl');
+	$smarty->assign('requested_at', $_SERVER['REQUEST_TIME']);
+	$smarty->display("$template.tpl");
 }
 
 function send_page()
 {
 	global $api_data, $api_napistejim;
 	$smarty = new SmartyNapisteJim;
+
+	// block sending of a message if IP address is on the blacklist
+	if (on_blacklist($_SERVER['REMOTE_ADDR'], 'ip'))
+		return static_page('blocked_ip');
+
+	// block sending of a message if sender's e-mail address is on the blacklist
+	if (on_blacklist($_POST['email'], 'sender'))
+		return static_page('blocked_sender');
+
+	// check that all required fields are present
+	if (!isset($_POST['name']) || empty($_POST['name']) ||
+		!isset($_POST['email']) || empty($_POST['email']) ||
+		!isset($_POST['is_public']) || $_POST['is_public'] != 'yes' && $_POST['is_public'] != 'no' ||
+		!isset($_POST['subject']) || empty($_POST['subject']) ||
+		!isset($_POST['body']) || empty($_POST['body']))
+		return static_page('search');
 
 	// prevent mail header injection
 	$subject = escape_header_fields($_POST['subject']);
@@ -133,12 +179,13 @@ function send_page()
 	$body = $_POST['body'];
 	$is_public = $_POST['is_public'];
 	$mps = array_slice(array_unique(explode('|', $_POST['mp'])), 0, 3);
+	$form_requested_at = isset($_POST['form_requested_at']) ? $_POST['form_requested_at'] : $_SERVER['REQUEST_TIME'];
 
 	// generate a random unique confirmation code
 	$confirmation_code = unique_random_code(10, 'Message', 'confirmation_code');
 
 	// store the message
-	$message_pkey = $api_data->create('Message', array('subject' => $subject, 'body' => $body, 'sender_name' => $name, 'sender_address' => $address, 'sender_email' => $email, 'is_public' => $is_public, 'confirmation_code' => $confirmation_code));
+	$message_pkey = $api_data->create('Message', array('subject' => $subject, 'body' => $body, 'sender_name' => $name, 'sender_address' => $address, 'sender_email' => $email, 'is_public' => $is_public, 'confirmation_code' => $confirmation_code, 'remote_addr' => $_SERVER['REMOTE_ADDR'], 'typing_duration' => $_SERVER['REQUEST_TIME'] - $form_requested_at));
 	$message_id = $message_pkey['id'];
 
 	// create relationship between the message and all its addressees
@@ -230,36 +277,146 @@ function confirm_page()
 	}
 }
 
-function list_page()
+function public_page()
 {
-	global $api_napistejim;
+	global $api_data, $api_napistejim, $locale;
 	$smarty = new SmartyNapisteJim;
 
-	$params = array();
+	// recently sent and recently replied to messages
+	$params = array('country' => COUNTRY_CODE, '_limit' => 5, 'order' => 'sent');
 	if (isset($_SESSION['parliament']) && !empty($_SESSION['parliament']))
 		$params['parliament'] = $_SESSION['parliament'];
-	$messages = $api_napistejim->read('PublicMessagesPreview', $params);
+	$recently_sent_messages = $api_napistejim->read('PublicMessagesPreview', $params);
+	$params['order'] = 'replied';
+	$recently_replied_messages = $api_napistejim->read('PublicMessagesPreview', $params);
+	$smarty->assign('message_sets', array(
+		array('title' => _('Recently sent messages'), 'messages' => $recently_sent_messages, 'next_params' => 'order=sent'),
+		array('title' => _('Recently replied messages'), 'messages' => $recently_replied_messages, 'next_params' => 'order=replied')
+	));
 
-	foreach ($messages as &$message)
-		$message['reply_exists'] = explode(', ', $message['reply_exists']);
+	// parliaments for message filtering
+	$parliaments = $api_data->read('Parliament', array('country_code' => COUNTRY_CODE));
+	$smarty->assign('parliaments', $parliaments);
+
+	// MP statistics
+	$params = array('country' => COUNTRY_CODE, '_limit' => 10);
+	if (isset($_SESSION['parliament']) && !empty($_SESSION['parliament']))
+		$params['parliament'] = $_SESSION['parliament'];
+	$mp_statistics = $api_napistejim->read('MpStatistics', $params);
+	$smarty->assign('mp_statistics', $mp_statistics);
+
+	$smarty->display('public.tpl');
+}
+
+function list_page()
+{
+	global $api_data, $api_napistejim, $locale;
+	$smarty = new SmartyNapisteJim;
+
+	// get the messages
+	$filter_params = array('country' => COUNTRY_CODE, '_limit' => PAGER_SIZE + 1) + $_GET + array('_offset' => 0);
+	// parameter 'parliament_code' is used to restrict the shown messages
+	// while 'parliament' hold in session restricts the entire web to given parliament(s)
+	if (isset($filter_params['parliament_code']))
+		$filter_params['parliament'] = $filter_params['parliament_code'];
+	else if (isset($_SESSION['parliament']) && !empty($_SESSION['parliament']))
+		$filter_params['parliament'] = $_SESSION['parliament'];
+	$iso_dates = array();
+	if (isset($filter_params['since']) && !empty($filter_params['since']))
+		$iso_dates['since'] = datetime_to_iso($filter_params['since'], $locale['date_format']);
+	if (isset($filter_params['until']) && !empty($filter_params['until']))
+	{
+		$iso_dates['until'] = datetime_to_iso($filter_params['until'], $locale['date_format']);
+		$iso_dates['until'] = preg_replace('/[\d]+:[\d]+:[\d]+/', '23:59:59.99999', $iso_dates['until']);
+	}
+	$messages = $api_napistejim->read('PublicMessagesPreview', $iso_dates + $filter_params);
+
+	// make pager links
+	$pager_params = $filter_params;
+	if (isset($pager_params['parliament']))
+		$pager_params['parliament_code'] = $pager_params['parliament'];
+	unset($pager_params['parliament'], $pager_params['page'], $pager_params['country'], $pager_params['_limit']);
+	$smarty->assign('pager', make_pager_links($messages, $pager_params));
+	// and remove the last message afterwards - it served only as indicator of an existing next page
+	if (count($messages) > PAGER_SIZE)
+		unset($messages[PAGER_SIZE]);
 
 	$smarty->assign('messages', $messages);
+
+	// get parliaments for message filtering
+	$parliaments = $api_data->read('Parliament', array('country_code' => COUNTRY_CODE));
+	$smarty->assign('parliaments', $parliaments);
+
+	// show filter params in the form
+	$form_params = $pager_params;
+	if (isset($form_params['mp_id']) && !empty($form_params['mp_id']))
+	{
+		$mp = $api_data->readOne('Mp', array('id' => $form_params['mp_id']));
+		$form_params['recipient'] = format_personal_name($mp);
+	}
+	$smarty->assign('params', $form_params);
+
 	$smarty->display('list.tpl');
 }
 
 function message_page($message_id)
 {
-	global $api_data, $api_napistejim;
+	global $api_data, $api_napistejim, $locale;
 	$smarty = new SmartyNapisteJim;
 
 	$message = $api_data->readOne('Message', array('id' => $message_id));
+	$smarty->assign('message', $message);
+
 	if ($message['is_public'] == 'no')
 		return $smarty->display('message_private.tpl');
-	$replies = $api_napistejim->read('RepliesToMessage', array('message_id' => $message_id));
 
-	$smarty->assign('message', $message);
+	$replies = $api_napistejim->read('RepliesToMessage', array('message_id' => $message_id, 'lang' => $locale['lang']));
+
+	// get statistics of the addressees
+	$mp_ids = array();
+	foreach ($replies['mp'] as $mp)
+		$mp_ids[] = $mp['mp_id'];
+	$mp_stats = $api_napistejim->read('MpStatistics', array('mp' => implode('|', $mp_ids)));
+	foreach ($replies['mp'] as &$mp)
+		foreach ($mp_stats as $stat)
+			if ($stat['id'] == $mp['mp_id'])
+			{
+				$mp['received_public_messages'] = $stat['received_public_messages'];
+				break;
+			}
 	$smarty->assign('replies', $replies);
+
 	$smarty->display('message.tpl');
+}
+
+function statistics_page()
+{
+	global $api_data, $api_napistejim;
+	$smarty = new SmartyNapisteJim;
+
+	// get the statistics
+	$filter_params = array('country' => COUNTRY_CODE, '_limit' => PAGER_SIZE + 1) + $_GET + array('_offset' => 0);
+	// parameter 'parliament_code' is used to restrict the shown MPs
+	// while 'parliament' hold in session restricts the entire web to given parliament(s)
+	if (!isset($filter_params['parliament_code']) && isset($_SESSION['parliament']) && !empty($_SESSION['parliament']))
+		$filter_params['parliament_code'] = $_SESSION['parliament'];
+	$statistics = $api_napistejim->read('MpStatistics', $filter_params);
+
+	// make pager links
+	$pager_params = $filter_params;
+	unset($pager_params['page'], $pager_params['country'], $pager_params['_limit']);
+	$smarty->assign('pager', make_pager_links($statistics, $pager_params));
+	// and remove the last MP afterwards - it served only as indicator of an existing next page
+	unset($statistics[PAGER_SIZE]);
+
+	$smarty->assign('statistics', $statistics);
+
+	// get parliaments for filtering
+	$parliaments = $api_data->read('Parliament', array('country_code' => COUNTRY_CODE));
+	$smarty->assign('parliaments', $parliaments);
+
+	$smarty->assign('params', $pager_params);
+	$smarty->display('statistics.tpl');
 }
 
 function send_message($message)
@@ -285,7 +442,7 @@ function send_message($message)
 		{
 			$api_data->delete('MessageToMp', array('message_id' => $message['id'], 'mp_id' => $mp['id'], 'parliament_code' => $mp['parliament_code']));
 			$former_message = $api_data->readOne('Message', array('id' => $similar_message_id));
-			$addressees['blocked'][] = $mp + array('former_message' => $former_message);
+			$addressees['blocked'][] = array('former_message' => $former_message) + $mp;
 			continue;
 		}
 
@@ -298,6 +455,8 @@ function send_message($message)
 			$subject = mime_encode(substr($to, $p + strlen('?subject=')) . ' – ') . $subject;
 			$to = substr($to, 0, $p);
 		}
+		if (isset($mp['private_email']) && !empty($mp['private_email']))
+			$to .= ', ' . $mp['private_email'];
 		$to = compose_email_address(format_personal_name($mp), $to);
 		$from = compose_email_address($message['sender_name'], 'reply.' . $mp['reply_code'] . '@' . NJ_HOST);
 		$reply_to = ($message['is_public'] == 'yes') ? $from : compose_email_address($message['sender_name'], $message['sender_email']);
@@ -307,7 +466,7 @@ function send_message($message)
 		$locale = reset($locales);
 		putenv('LC_ALL=' . $locale['system_locale']);
 		setlocale(LC_ALL, $locale['system_locale']);
-		$smarty->assign('message', $message + array('reply_to' => $reply_to));
+		$smarty->assign('message', array('reply_to' => $reply_to) + $message);
 		$text = $smarty->fetch('email/message_to_mp.tpl');
 		putenv('LC_ALL=' . $old_locale);
 		setlocale(LC_ALL, $old_locale);
@@ -348,7 +507,7 @@ function send_to_reviewer($message)
 	$to = REVIEWER_EMAIL;
 	$subject = mime_encode(_('A message to representatives needs your approval'));
 	$approval_code =  random_code(10);
-	$smarty->assign('message', $message + array('approval_code' => $approval_code));
+	$smarty->assign('message', array('approval_code' => $approval_code) + $message);
 	$text = $smarty->fetch('email/request_to_review.tpl');
 	send_mail($from, $to, $subject, $text);
 
@@ -394,8 +553,10 @@ function addressees_of_message($message)
 
 function message_is_profane($message)
 {
+	global $locale;
+
 	$filename = ($message['is_public'] == 'yes') ? 'public.lst' : 'private.lst';
-	$profanities = file("../config/profanities/$filename", FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+	$profanities = file("locale/{$locale['system_locale']}/profanities/$filename", FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 	$prefix_only = ($message['is_public'] == 'no');
 	return is_profane($message['subject'], $profanities, $prefix_only) ||
 		is_profane($message['body'], $profanities, $prefix_only);
@@ -422,6 +583,33 @@ function similar_message_exists($sample_message, $messages)
 			return $message['id'];
 	}
 	return false;
+}
+
+function make_pager_links($items, $params)
+{
+	$pager = array();
+	if ($params['_offset'] > 0)
+	{
+		$prev_params = $params;
+		$prev_params['_offset'] = ($params['_offset'] >= PAGER_SIZE) ? $params['_offset'] - PAGER_SIZE : 0;
+		$pager['prev_url_query'] = http_build_query($prev_params);
+	}
+	if (count($items) > PAGER_SIZE)
+	{
+		$next_params = $params;
+		$next_params['_offset'] = $params['_offset'] + PAGER_SIZE;
+		$pager['next_url_query'] = http_build_query($next_params);
+	}
+	return $pager;
+}
+
+function on_blacklist($item, $blacklist_name)
+{
+	$blacklist_filename = NJ_DIR . "/config/blacklists/$blacklist_name.lst";
+	if (!file_exists($blacklist_filename)) return false;
+	$blacklist = file($blacklist_filename, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+	$blacklist = array_map('trim', $blacklist);
+	return in_array($item, $blacklist);
 }
 
 ?>

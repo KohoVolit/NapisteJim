@@ -5,8 +5,8 @@ use HTML::Entities;
 
 for (<../www/locale/*.utf8/LC_MESSAGES/messages-js.po>) {
     print $_ . "\n";
-    my ($lang) = /(.*?)\./;
-    #print $lang . "\n";
+    my ($lang) = /(.*?)\.utf8/;
+    print $lang . "\n";
     open(FP, $_) or die $!;
     my $out = '';
     while (<FP>) {

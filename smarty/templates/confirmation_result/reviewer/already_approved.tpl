@@ -4,7 +4,7 @@
 {t}Already approved or refused{/t}
 {/block}
 
-{block name=body}
+{block name=main}
 <h3>{t}Already approved or refused{/t}</h3>
 
 <p>{t}Sending of this message has been already approved or refused.{/t}</p>

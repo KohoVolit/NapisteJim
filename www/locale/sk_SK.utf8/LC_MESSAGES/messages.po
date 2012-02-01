@@ -1,0 +1,1713 @@
+# Slovak translation of NapisteJim
+# Copyright (C) 2011 KohoVolit.eu
+# This file is distributed under the same license as the NapisteJim package.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: NapišteJim 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-01-28 23:29+0100\n"
+"PO-Revision-Date: 2012-01-28 23:30+0100\n"
+"Language-Team: Slovak <info@kohovolit.eu>\n"
+"Language: slovak\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1)?(0):(((n>=2)&&(n<=4))?(1):2));\n"
+
+#: utils.php:98
+msgid "Sending of a mail failed"
+msgstr "Odoslanie mailu zlyhalo"
+
+#: utils.php:99
+msgid "Check"
+msgstr "Skontroluj"
+
+#: utils.php:184
+msgid "Newsletter order"
+msgstr "Objednanie newsletteru"
+
+#: backend/receive_mail.php:28
+#, php-format
+msgid "An e-mail received to address %s"
+msgstr "Prišiel e-mail na adresu %s"
+
+#: backend/receive_mail.php:29
+msgid "From:"
+msgstr "Od:"
+
+#. smarty/templates/write.tpl
+#: backend/receive_mail.php:30 gettext/smarty.c:80
+msgid "Subject:"
+msgstr "Predmet:"
+
+#: backend/receive_mail.php:32
+msgid "Full e-mail data"
+msgstr "Úplné dáta e-mailu"
+
+#: backend/receive_mail.php:46
+#, php-format
+msgid "No corresponding message found to the received reply with code %s"
+msgstr "K došlej odpovedi s kódom '%s' sa nenašla odpovedajúca správa"
+
+#: backend/receive_mail.php:47
+#, php-format
+msgid "The received reply can be found in %s"
+msgstr "Došlá odpoveď je v %s"
+
+#: backend/receive_mail.php:67
+#, php-format
+msgid "%s has replied to your message"
+msgstr "%s odpovedal(a) na Vašu správu"
+
+#: www/index.php:184
+#, php-format
+msgid "Please confirm that you want to send the message using %s"
+msgstr "Potvrďte prosím, že chcete odoslať správu cez %s"
+
+#: www/index.php:273
+msgid "Recently sent messages"
+msgstr "Najnovšie odoslané správy"
+
+#: www/index.php:274
+msgid "Recently replied messages"
+msgstr "Najnovšie zodpovedané správy"
+
+#: www/index.php:463
+msgid "Your message has not been sent"
+msgstr "Vaša správa nebola odoslaná"
+
+#: www/index.php:465
+msgid "Your message has been sent"
+msgstr "Vaša správa bola odoslaná"
+
+#: www/index.php:466
+msgid "Your message has been sent only to some of the addressees"
+msgstr "Vaša správa bola odoslaná len niektorým adresátom"
+
+#: www/index.php:488
+msgid "A message to representatives needs your approval"
+msgstr "Správa pre politikov potrebuje tvoje schválenie"
+
+#: www/index.php:506
+msgid "Your message has been found unpolite and it has not been sent"
+msgstr "Vaša správa bola vyhodnotená ako neslušná a nebola odoslaná"
+
+#: www/ajax/address_representatives.php:104
+msgid "We don't know representatives of your town."
+msgstr "Poslancov vo Vašom meste nepoznáme."
+
+#: www/ajax/address_representatives.php:105
+#: www/ajax/address_representatives.php:120
+msgid ""
+"You can simply add them and give the option to contact them to the public. "
+"See <a href=\"http://community.kohovolit.eu/doku.php/napistejim:external-"
+"datasets\" target=\"_blank\">how to do it</a>."
+msgstr ""
+"Môžete ich jednoducho pridať a dať tak ľuďom možnosť napísať im. Pozrite sa "
+"<a href=\"http://community.kohovolit.eu/doku.php/napistejim:externe_kontakty"
+"\" target=\"_blank\">ako na to</a>."
+
+#: www/ajax/address_representatives.php:117
+#, php-format
+msgid "Region %s"
+msgstr "%s"
+
+#: www/ajax/address_representatives.php:119
+msgid "We don't know representatives of your region."
+msgstr "Poslancov vo Vašom kraji nepoznáme."
+
+#. smarty/templates/choose.tpl
+#. smarty/templates/choose_advanced.tpl
+#: gettext/smarty.c:2 gettext/smarty.c:44
+msgid "Choose your representatives"
+msgstr "Vyberte politikov"
+
+#. smarty/templates/choose.tpl
+#: gettext/smarty.c:5
+msgid "Change address"
+msgstr "Zmeniť adresu"
+
+#. smarty/templates/choose.tpl
+#. smarty/templates/choose_advanced.tpl
+#: gettext/smarty.c:8 gettext/smarty.c:47
+msgid "Addressees"
+msgstr "Adresáti"
+
+#. smarty/templates/choose.tpl
+#. smarty/templates/choose_advanced.tpl
+#: gettext/smarty.c:11 gettext/smarty.c:50
+msgid ""
+"Choose up to three addressees of your message from the found politicians by "
+"clicking on their name or using drag&drop into boxes. The same message then "
+"cannot be sent again to other politicians."
+msgstr ""
+"Pretiahnutím mien do rámčekov alebo kliknutím na meno vyberte zo svojich "
+"politikov najviac troch adresátov Vašej správy. Ďalším politikom potom už "
+"rovnakú správu nebudete môcť odoslať."
+
+#. smarty/templates/choose.tpl
+#. smarty/templates/choose_advanced.tpl
+#. smarty/templates/write.tpl
+#: gettext/smarty.c:14 gettext/smarty.c:53 gettext/smarty.c:68
+msgid "Why?"
+msgstr "Prečo?"
+
+#. smarty/templates/choose.tpl
+#. smarty/templates/choose_advanced.tpl
+#. smarty/templates/layout.tpl
+#: gettext/smarty.c:17 gettext/smarty.c:56 gettext/smarty.c:305
+msgid "Write to them!"
+msgstr "Napíšte im!"
+
+#. smarty/templates/list.tpl
+#. smarty/templates/confirm.tpl
+#: gettext/smarty.c:20 gettext/smarty.c:347
+msgid "List of public messages"
+msgstr "Zoznam verejných správ"
+
+#. smarty/templates/list.tpl
+#. smarty/templates/search.tpl
+#. smarty/templates/layout.tpl
+#: gettext/smarty.c:23 gettext/smarty.c:224 gettext/smarty.c:308
+msgid "Public messages and answers"
+msgstr "Verejné správy a odpovede"
+
+#. smarty/templates/list.tpl
+#. smarty/templates/public.tpl
+#: gettext/smarty.c:26 gettext/smarty.c:149
+msgid "To"
+msgstr "Komu"
+
+#. smarty/templates/list.tpl
+#. smarty/templates/public.tpl
+#: gettext/smarty.c:29 gettext/smarty.c:152
+msgid "Message"
+msgstr "Správa"
+
+#. smarty/templates/list.tpl
+#. smarty/templates/public.tpl
+#: gettext/smarty.c:32 gettext/smarty.c:155
+msgid "Sent"
+msgstr "Odoslaná"
+
+#. smarty/templates/list.tpl
+#. smarty/templates/public.tpl
+#. smarty/templates/message.tpl
+#. smarty/templates/email/reply_from_mp.tpl
+#. smarty/templates/email/message_to_mp.tpl
+#: gettext/smarty.c:35 gettext/smarty.c:158 gettext/smarty.c:287
+#: gettext/smarty.c:671 gettext/smarty.c:776
+msgid "From"
+msgstr "Od"
+
+#. smarty/templates/list.tpl
+#: gettext/smarty.c:38
+msgid "previous messages"
+msgstr "predchádzajúce správy"
+
+#. smarty/templates/list.tpl
+#. smarty/templates/public.tpl
+#: gettext/smarty.c:41 gettext/smarty.c:161
+msgid "next messages"
+msgstr "ďalšie správy"
+
+#. smarty/templates/write.tpl
+#: gettext/smarty.c:59
+msgid "Write message"
+msgstr "Napísať správu"
+
+#. smarty/templates/write.tpl
+#. smarty/templates/email/message_refused.tpl
+#. smarty/templates/email/message_sent.tpl
+#. smarty/templates/email/request_to_confirm.tpl
+#: gettext/smarty.c:62 gettext/smarty.c:710 gettext/smarty.c:755
+#: gettext/smarty.c:803
+msgid "Your message for politicians"
+msgstr "Vaša správa pre politikov"
+
+#. smarty/templates/write.tpl
+#: gettext/smarty.c:65
+msgid ""
+"Write your message for selected representatives. Please write personally, do "
+"not copy&paste a text prearranged by someone. If a politician already "
+"received the same message from someone else it will not be sent again."
+msgstr ""
+"Napíšte svoju správu pre vybraných politikov. Píšte prosím osobne, "
+"nekopírujte text, ktorý niekto vopred pripravil. Pokiaľ politik už rovnakú "
+"správu dostal od niekoho iného, nebude mu odoslaná znova."
+
+#. smarty/templates/write.tpl
+#: gettext/smarty.c:71
+msgid "Your name:"
+msgstr "Vaše meno:"
+
+#. smarty/templates/write.tpl
+#: gettext/smarty.c:74
+msgid "Town:"
+msgstr "Obec:"
+
+#. smarty/templates/write.tpl
+#: gettext/smarty.c:77
+msgid "E-mail:"
+msgstr "E-mail:"
+
+#. smarty/templates/write.tpl
+#: gettext/smarty.c:83
+msgid "The message is:"
+msgstr "Správa je:"
+
+#. smarty/templates/write.tpl
+#: gettext/smarty.c:86
+msgid "public"
+msgstr "verejná"
+
+#. smarty/templates/write.tpl
+#: gettext/smarty.c:89
+msgid "private"
+msgstr "súkromná"
+
+#. smarty/templates/write.tpl
+#: gettext/smarty.c:92
+msgid ""
+"A <strong>public message</strong> will be published on this web together "
+"with beeing sent. So will be all eventual responses you receive from the "
+"addressed MPs."
+msgstr ""
+"<strong>Verejná správa</strong> sa spolu s odoslaním politikom zverejní na "
+"tomto webe. Rovnako sa zverejní aj každá prípadná odpoveď na ňu, ktorú od "
+"politikov obdržíte."
+
+#. smarty/templates/write.tpl
+#: gettext/smarty.c:95
+msgid ""
+"A <strong>private message</strong> will be sent to the addressees without "
+"publishing. They will send their eventual response directly and exclusively "
+"to you."
+msgstr ""
+"<strong>Súkromná správa</strong> sa odošle adresátom bez jej zverejnenia. "
+"Politici svoju prípadnú odpoveď pošlú priamo a len Vám."
+
+#. smarty/templates/write.tpl
+#: gettext/smarty.c:98
+msgid "I want to receive news from %1"
+msgstr "Chcem dostávať informácie z %1"
+
+#. smarty/templates/write.tpl
+#: gettext/smarty.c:101
+msgid "Send"
+msgstr "Odoslať"
+
+#. smarty/templates/about.tpl
+#: gettext/smarty.c:104 gettext/smarty.c:107
+msgid "About project"
+msgstr "O projekte"
+
+#. smarty/templates/about.tpl
+#: gettext/smarty.c:110
+msgid "MSGID_ABOUT_PROJECT_SECTION"
+msgstr ""
+"<p>\n"
+"Cieľom projektu %1 je fungovať ako živá brána e-mailovej komunikácie medzi "
+"občanmi a politikmi. \n"
+"</p>\n"
+"<p>\n"
+"Chceme znižovať súčasné bariéry medzi „obyčajnými ľuďmi“ a vysokými "
+"politickými predstaviteľmi a povzbudzovať verejnosť k vyjadreniu názoru a "
+"väčšiemu záujmu o politiku a správu štátu, bez ktorého je demokracia iba "
+"polovičná.\n"
+"</p>\n"
+"<p>\n"
+"Na %1 môžete:\n"
+"<ul>\n"
+"\t<li><strong>vyhľadať</strong> konkrétneho politika (napr. podľa regiónu, "
+"strany, alebo komisie, v ktorej zasadá)</li>\n"
+"\t<li><strong>napísať</strong> mu/jej</li>\n"
+"\t<li><strong>sledovať</strong>, na čo sa ľudia pýtajú a ako politici "
+"odpovedajú</li>\n"
+"</ul>\n"
+"</p><p>\n"
+"Inšpiráciou nám boli partnerské weby <a href=\"http://www.WriteToThem.com"
+"\">WriteToThem.com</a> a <a href=\"http://www.ParasykJiems.lt\">ParašykJiems."
+"lt</a>.\n"
+"</p>"
+
+#. smarty/templates/about.tpl
+#. smarty/templates/search.tpl
+#. smarty/templates/layout.tpl
+#. smarty/templates/video.tpl
+#: gettext/smarty.c:113 gettext/smarty.c:233 gettext/smarty.c:317
+#: gettext/smarty.c:602 gettext/smarty.c:605
+msgid "Video"
+msgstr "Video"
+
+#. smarty/templates/about.tpl
+#. smarty/templates/faq.tpl
+#: gettext/smarty.c:116 gettext/smarty.c:350 gettext/smarty.c:353
+msgid "Frequently asked questions"
+msgstr "Často kladené otázky"
+
+#. smarty/templates/about.tpl
+#: gettext/smarty.c:119 gettext/smarty.c:128
+msgid "Authors"
+msgstr "Autori"
+
+#. smarty/templates/about.tpl
+#: gettext/smarty.c:122 gettext/smarty.c:134
+msgid "Published tools examples"
+msgstr "Príklady publikovaných nástrojov"
+
+#. smarty/templates/about.tpl
+#. smarty/templates/support.tpl
+#. smarty/templates/search.tpl
+#. smarty/templates/layout.tpl
+#: gettext/smarty.c:125 gettext/smarty.c:176 gettext/smarty.c:179
+#: gettext/smarty.c:236 gettext/smarty.c:320
+msgid "Support us"
+msgstr "Podporte nás"
+
+#. smarty/templates/about.tpl
+#: gettext/smarty.c:131
+msgid "MSGID_AUTHORS_SECTION"
+msgstr ""
+"<p>\n"
+"V zastrešujúcom združení <a href=\"http://kohovolit.eu\">KohoVolit.eu</a> sa "
+"na práci na %1 podieľali Jaroslav Semančík, Michal Škop (programátorské a "
+"projektové práce), Veronika Šumová, Vojtěch Marek a Hana Urbanová "
+"(projektové práce, propagácia).\n"
+"</p><p>\n"
+"Propagačné <a href=\"/video\">video</a> k aplikácii natočil študentský team "
+"z FAMO Písek vystupujúci pod značkou <a href=\"http://www.alcest.cz\">Alcest."
+"cz</a>. Scenár napísal Jan Škop, réžie sa ujal Ladislav Plecitý.\n"
+"</p><p>\n"
+"<a href=\"http://kohovolit.eu\">KohoVolit.eu</a> je internetový server "
+"fungujúci od roku 2006 a rovnomenné občianske združenie (založené v roku "
+"2010). Jeho primárnym cieľom je analyzovať a zverejňovať merateľné "
+"ukazovatele skutočného správania politikov (hlasovania, aktivita, "
+"predkladanie návrhov ai.), ktoré majú slúžiť ako impulz na zvýšenie tlaku "
+"verejnosti na volených zástupcov. Až doposiaľ se autori sústredili na "
+"nástroje pomáhajúce pri volebnom rozhodovaní – okrem iného vyvinuli prvé "
+"tzv. VAA (Voting Advice Aplications) pre Slovensko a Českú republiku. Pred "
+"poslednými voľbami do Národnej rady si vyskúšali tieto tzv. „predvolebné "
+"kalkulačky“ desaťtisíce používateľov.\n"
+"</p><p>\n"
+"Postupne sa chcú stať plnohodnotným internetovým parlamentným watchdogom "
+"inšpirovaní britským <a href=\"http://TheyWorkForYou.com\">TheyWorkForYou."
+"com</a> či poľským <a href=\"http://sejmometr.pl\">Sejmometr.pl</a>.\n"
+"</p>"
+
+#. smarty/templates/about.tpl
+#: gettext/smarty.c:137
+msgid "MSGID_PUBLISHED_TOOLS_EXAMPLES_SECTION"
+msgstr ""
+"<h3>„Predvolebné kalkulačky“</h3>\n"
+"<ul>\n"
+"\t<li><a href=\"http://sk.kohovolit.eu/sk/nrsr/vote/1\">na základe "
+"skutočných hlasovaní</a></li>\n"
+"\t<li><a href=\"http://sk.kohovolit.eu/sk/nrsr/vote/3\">na základe názorov "
+"kandidátov</a></li>\n"
+"</ul>\n"
+"\n"
+"<h3>Analýzy hlasovaní</h3>\n"
+"<ul>\n"
+"\t<li><a href=\"http://sk.kohovolit.eu/sk/bratislava/analysis/analyza-"
+"hlasovani-2006-2010\">napríklad z bratislavského zastupiteľstva</a></li>\n"
+"</ul>\n"
+"\n"
+"<h3>Analýzy aktivity poslancov</h3>\n"
+"<ul>\n"
+"\t<li><a href=\"http://sk.kohovolit.eu/sk/nrsr/analysis/prehlad-aktivity-"
+"poslancov_2010\">za rok 2010</a></li>\n"
+"</ul>"
+
+#. smarty/templates/about.tpl
+#: gettext/smarty.c:140
+msgid ""
+"If you like the application and you would like it to be further developed, "
+"<a href=\"/support\">support  it</a> please."
+msgstr ""
+"Ak sa vám aplikácia páči a radi by ste, aby sa ďalej rozvíjala, <a href=\"/"
+"support\">podporte nás</a>."
+
+#. smarty/templates/about.tpl
+#: gettext/smarty.c:143
+msgid "The application was created with kind support of:"
+msgstr "Aplikácia vznikla s láskavou podporou:"
+
+#. smarty/templates/public.tpl
+#: gettext/smarty.c:146
+msgid "Public messages"
+msgstr "Verejné správy"
+
+#. smarty/templates/public.tpl
+#: gettext/smarty.c:164
+msgid "Search messages"
+msgstr "Vyhľadať správy"
+
+#. smarty/templates/public.tpl
+#: gettext/smarty.c:167
+msgid "Favorite recipients"
+msgstr "Najčastejší adresáti"
+
+#. smarty/templates/public.tpl
+#. smarty/templates/message.tpl
+#: gettext/smarty.c:170 gettext/smarty.c:293
+msgid "%1 message"
+msgid_plural "%1 messages"
+msgstr[0] "%1 správa"
+msgstr[1] "%1 správy"
+msgstr[2] "%1 správ"
+
+#. smarty/templates/public.tpl
+#. smarty/templates/statistics.tpl
+#: gettext/smarty.c:173 gettext/smarty.c:872
+msgid "next politicians"
+msgstr "ďalší politici"
+
+#. smarty/templates/support.tpl
+#: gettext/smarty.c:182
+msgid "MSGID_SUPPORT_US_SECTION"
+msgstr ""
+"<p>\n"
+"Projekty <a href=\"http://KohoVolit.eu\">KohoVolit.eu</a> vrátane %1 "
+"vznikajú čiastočne dobrovoľnou prácou. To im dáva ten správny étos "
+"občianskej spoločnosti, ale zároveň nám to občas bráni v realizácii ďalších "
+"skvelých nápadov a aplikácií.\n"
+"</p><p>\n"
+"V kontexte %1 to je napríklad\n"
+"<ul>\n"
+"\t<li>rozšírenie o ďalšie inštitúcie (vláda, úrady)</li>\n"
+"\t<li>rozšírenie regionálne (kraje, obce)</li>\n"
+"</ul>\n"
+"</p><p>\n"
+"Pre KohoVolit.eu všeobecne:\n"
+"<ul>\n"
+"\t<li>automatizované profily politikov (so záznamom hlasovaní, aktivity, "
+"vystúpení, interpelácií aj.)</li>\n"
+"\t<li>hlbšia analýza hlasovaní</li>\n"
+"</ul>\n"
+"</p><p>\n"
+"Páči sa vám niektorý z týchto nápadov? Alebo máte vlastný? <a href=\"/contact"
+"\">Kontaktujte nás!</a>\n"
+"</p>\n"
+"<h3>Podporte nás</h3>\n"
+"<ul>\n"
+"\t<li>povedzte o tejto možnosti svojim známym</li>\n"
+"\t<li>napíšte o nás (článok alebo na svoj blog)</li>\n"
+"\t<li>ako dobrovoľníci (krátkodobo i dlhodobo)</li>\n"
+"\t<li>finančne</li>\n"
+"</ul>\n"
+"<p>\n"
+"KohoVolit.eu hospodári <strong>transparentne</strong>.<br/>\n"
+"Všetky transakcie môžete vidieť online:\n"
+"<a href=\"https://www.fio.cz/scgi-bin/hermes/dz-transparent.cgi?"
+"ID_ucet=2400110179\">2400110179/2010</a>,\n"
+"<a href=\"https://www.fio.cz/scgi-bin/hermes/dz-transparent.cgi?"
+"ID_ucet=2500110176\">2500110176/2010</a>\n"
+"</p><p>\n"
+"ĎAKUJEME :-)\n"
+"</p>"
+
+#. smarty/templates/search.tpl
+#: gettext/smarty.c:185 gettext/smarty.c:218
+msgid "Search your representatives"
+msgstr "Nájsť svojich poslancov"
+
+#. smarty/templates/search.tpl
+#: gettext/smarty.c:188
+msgid "Your address"
+msgstr "Vaša adresa"
+
+#. smarty/templates/search.tpl
+#: gettext/smarty.c:191
+msgid "E.g."
+msgstr "Napr."
+
+#. smarty/templates/search.tpl
+#: gettext/smarty.c:194 gettext/smarty.c:197
+msgid "MSGID_ADDRESS_EXAMPLE_1"
+msgstr "Alejová 1, Košice"
+
+#. smarty/templates/search.tpl
+#: gettext/smarty.c:200 gettext/smarty.c:209
+msgid "or"
+msgstr "alebo"
+
+#. smarty/templates/search.tpl
+#: gettext/smarty.c:203 gettext/smarty.c:206
+msgid "MSGID_ADDRESS_EXAMPLE_2"
+msgstr "017 01"
+
+#. smarty/templates/search.tpl
+#: gettext/smarty.c:212 gettext/smarty.c:215
+msgid "MSGID_ADDRESS_EXAMPLE_3"
+msgstr "Detva"
+
+#. smarty/templates/search.tpl
+#: gettext/smarty.c:221
+msgid "Advanced search"
+msgstr "Rozšírené vyhľadávanie"
+
+#. smarty/templates/search.tpl
+#. smarty/templates/layout.tpl
+#. smarty/templates/statistics.tpl
+#: gettext/smarty.c:227 gettext/smarty.c:311 gettext/smarty.c:833
+msgid "Statistics"
+msgstr "Štatistiky"
+
+#. smarty/templates/search.tpl
+#. smarty/templates/layout.tpl
+#: gettext/smarty.c:230 gettext/smarty.c:314
+msgid "About"
+msgstr "O projekte"
+
+#. smarty/templates/search.tpl
+#. smarty/templates/layout.tpl
+#: gettext/smarty.c:239 gettext/smarty.c:323
+msgid "http://en.kohovolit.eu"
+msgstr "http://sk.kohovolit.eu"
+
+#. smarty/templates/list_filter_form.tpl
+#. smarty/templates/statistics.tpl
+#: gettext/smarty.c:242 gettext/smarty.c:836
+msgid "Parliament"
+msgstr "Zastupiteľský zbor"
+
+#. smarty/templates/list_filter_form.tpl
+#. smarty/templates/statistics.tpl
+#: gettext/smarty.c:245 gettext/smarty.c:845
+msgid "Politician"
+msgstr "Politik"
+
+#. smarty/templates/list_filter_form.tpl
+#: gettext/smarty.c:248
+msgid "Text"
+msgstr "Text"
+
+#. smarty/templates/list_filter_form.tpl
+#: gettext/smarty.c:251
+msgid "Since"
+msgstr "Od dátumu"
+
+#. smarty/templates/list_filter_form.tpl
+#: gettext/smarty.c:254
+msgid "Until"
+msgstr "Po dátum"
+
+#. smarty/templates/list_filter_form.tpl
+#: gettext/smarty.c:257
+msgid "Sender"
+msgstr "Odosielateľ"
+
+#. smarty/templates/list_filter_form.tpl
+#: gettext/smarty.c:260
+msgid "Order by"
+msgstr "Zoradiť podľa"
+
+#. smarty/templates/list_filter_form.tpl
+#. smarty/templates/ajax/parliament_groups.tpl
+#. smarty/templates/statistics.tpl
+#: gettext/smarty.c:263 gettext/smarty.c:629 gettext/smarty.c:632
+#: gettext/smarty.c:839
+msgid "any"
+msgstr "nezáleží"
+
+#. smarty/templates/list_filter_form.tpl
+#: gettext/smarty.c:266
+msgid "sent date"
+msgstr "dátum odoslania"
+
+#. smarty/templates/list_filter_form.tpl
+#: gettext/smarty.c:269
+msgid "replied date"
+msgstr "dátum odpovede"
+
+#. smarty/templates/list_filter_form.tpl
+#: gettext/smarty.c:272
+msgid "Search"
+msgstr "Vyhľadať"
+
+#. smarty/templates/blocked_sender.tpl
+#: gettext/smarty.c:275 gettext/smarty.c:278
+msgid "Your e-mail address is blocked"
+msgstr "Vaša e-mailová adresa je blokovaná"
+
+#. smarty/templates/blocked_sender.tpl
+#: gettext/smarty.c:281
+msgid ""
+"Your e-mail address has been blocked because of sending spam or obtrusive "
+"messages. The message has not been sent."
+msgstr ""
+"Vaša e-mailová adresa bola zablokovaná pretože sa z nej posielal spam alebo "
+"obťažujúce správy. Správa nebola odoslaná."
+
+#. smarty/templates/blocked_sender.tpl
+#. smarty/templates/blocked_ip.tpl
+#: gettext/smarty.c:284 gettext/smarty.c:623
+msgid ""
+"In case you feel that it must be a mistake, please <a href=\"/contact"
+"\">contact us</a>."
+msgstr ""
+"Ak si myslíte, že ide o omyl, <a href=\"/contact\">kontaktujte nás</a>."
+
+#. smarty/templates/message.tpl
+#: gettext/smarty.c:290
+msgid "Date"
+msgstr "Dátum"
+
+#. smarty/templates/message.tpl
+#: gettext/smarty.c:296
+msgid "Write to her"
+msgstr "Napísať jej"
+
+#. smarty/templates/message.tpl
+#: gettext/smarty.c:299
+msgid "Write to him"
+msgstr "Napísať mu"
+
+#. smarty/templates/message.tpl
+#: gettext/smarty.c:302
+msgid "Not answered yet"
+msgstr "Zatiaľ bez odpovede"
+
+#. smarty/templates/search_advanced.tpl
+#: gettext/smarty.c:326
+msgid "Advanced search of your representatives"
+msgstr "Rozšírené vyhľadávanie poslancov"
+
+#. smarty/templates/search_advanced.tpl
+#: gettext/smarty.c:329
+msgid "Choose a parliament:"
+msgstr "Zvoľte zastupiteľský zbor:"
+
+#. smarty/templates/search_advanced.tpl
+#: gettext/smarty.c:332
+msgid "Export e-mail addresses"
+msgstr "Zobraziť e-mailové adresy"
+
+#. smarty/templates/confirm.tpl
+#: gettext/smarty.c:335
+msgid "Confirmation of sending of the message"
+msgstr "Potvrdiť odoslanie správy"
+
+#. smarty/templates/confirm.tpl
+#: gettext/smarty.c:338
+msgid "Please confirm that you want to send the message"
+msgstr "Potvrďte prosím, že chcete odoslať správu"
+
+#. smarty/templates/confirm.tpl
+#: gettext/smarty.c:341
+msgid ""
+"The message must be confirmed to send by clicking on the confirmation link "
+"sent to you by e-mail yet. Check your mailbox. Sometimes it can take a while "
+"to be delivered. If you cannot find the e-mail, check also the spam folder."
+msgstr ""
+"Odoslanie správy musíte ešte potvrdiť kliknutím na odkaz, ktorý Vám bol "
+"zaslaný v e-maile. Skontrolujte si svoju schránku, jeho doručenie však môže "
+"chvíľu trvať. Ak potvrdzovací e-mail nemôžete nájsť, pozrite sa tiež, či "
+"nebol omylom zaradený medzi nevyžiadanú poštu."
+
+#. smarty/templates/confirm.tpl
+#: gettext/smarty.c:344
+msgid ""
+"In the case you cannot find that confirmation e-mail for more than 24 hours "
+"and you wish to confirm your message to be sent, please contact us on %1 "
+"from the same address as used in your message."
+msgstr ""
+"V prípade, že tento e-mail nenájdete ani po viac než 24 hodinách a chcete "
+"svoju správu potvrdiť, kontaktujte nás, prosím na %1 z rovnakej adresy, akú "
+"ste uviedol(a) vo svojej správe."
+
+#. smarty/templates/faq.tpl
+#: gettext/smarty.c:356 gettext/smarty.c:410
+msgid "MSGID_QUESTION_1"
+msgstr "Ako vyhľadám komu mám napísať?"
+
+#. smarty/templates/faq.tpl
+#: gettext/smarty.c:359 gettext/smarty.c:416
+msgid "MSGID_QUESTION_2"
+msgstr "Prečo si môžem vybrať len troch adresátov?"
+
+#. smarty/templates/faq.tpl
+#: gettext/smarty.c:362 gettext/smarty.c:422
+msgid "MSGID_QUESTION_3"
+msgstr "Prečo musím vyplňovať svoju e-mailovú adresu?"
+
+#. smarty/templates/faq.tpl
+#: gettext/smarty.c:365 gettext/smarty.c:428
+msgid "MSGID_QUESTION_4"
+msgstr "Ako mu/jej napíšem správu?"
+
+#. smarty/templates/faq.tpl
+#: gettext/smarty.c:368 gettext/smarty.c:434
+msgid "MSGID_QUESTION_5"
+msgstr "Prečo vraciame naspäť e-maily s vulgárnym obsahom?"
+
+#. smarty/templates/faq.tpl
+#: gettext/smarty.c:371 gettext/smarty.c:440
+msgid "MSGID_QUESTION_6"
+msgstr "Ochrana osobných dát"
+
+#. smarty/templates/faq.tpl
+#: gettext/smarty.c:374 gettext/smarty.c:446
+msgid "MSGID_QUESTION_7"
+msgstr ""
+"Prečo nemôžem napísať trebárs ministrovi, županovi alebo poslancovi "
+"krajského zastupiteľstva?"
+
+#. smarty/templates/faq.tpl
+#: gettext/smarty.c:377 gettext/smarty.c:452
+msgid "MSGID_QUESTION_8"
+msgstr "Prečo bránime v posielaní predpripravených e-mailov?"
+
+#. smarty/templates/faq.tpl
+#: gettext/smarty.c:380 gettext/smarty.c:458
+msgid "MSGID_QUESTION_9"
+msgstr "Čo je cieľom projektu a kto je za tým?"
+
+#. smarty/templates/faq.tpl
+#: gettext/smarty.c:383 gettext/smarty.c:464
+msgid "MSGID_QUESTION_10"
+msgstr "Majú politici povinnosť mi odpovedať?"
+
+#. smarty/templates/faq.tpl
+#: gettext/smarty.c:386 gettext/smarty.c:470
+msgid "MSGID_QUESTION_11"
+msgstr "Čo keď mi neodpovedia?"
+
+#. smarty/templates/faq.tpl
+#: gettext/smarty.c:389 gettext/smarty.c:476
+msgid "MSGID_QUESTION_12"
+msgstr "Môžem si skontrolovať celú svoju správu ešte pred odoslaním?"
+
+#. smarty/templates/faq.tpl
+#: gettext/smarty.c:392 gettext/smarty.c:482
+msgid "MSGID_QUESTION_13"
+msgstr "Na aké adresy sú e-maily posielané?"
+
+#. smarty/templates/faq.tpl
+#: gettext/smarty.c:395 gettext/smarty.c:488
+msgid "MSGID_QUESTION_14"
+msgstr "Môžem sa spoľahnúť, že správa bola odoslaná?"
+
+#. smarty/templates/faq.tpl
+#: gettext/smarty.c:398 gettext/smarty.c:494
+msgid "MSGID_QUESTION_15"
+msgstr "Môžem stornovať svoju správu?"
+
+#. smarty/templates/faq.tpl
+#: gettext/smarty.c:401 gettext/smarty.c:500
+msgid "MSGID_QUESTION_16"
+msgstr ""
+"Mám nápad na podobnú aplikáciu ako je %1, môžete mi pomôcť s jeho "
+"realizáciou? Môžem použiť váš software?"
+
+#. smarty/templates/faq.tpl
+#: gettext/smarty.c:404 gettext/smarty.c:506
+msgid "MSGID_QUESTION_17"
+msgstr "Chcem pomáhať %1 ako dobrovoľník."
+
+#. smarty/templates/faq.tpl
+#: gettext/smarty.c:407 gettext/smarty.c:512
+msgid "MSGID_QUESTION_18"
+msgstr "Chcem vyjadriť komentár, kritiku alebo pochvalu."
+
+#. smarty/templates/faq.tpl
+#: gettext/smarty.c:413
+msgid "MSGID_ANSWER_1"
+msgstr ""
+"<p>\n"
+"%1 ponúka dve rôzne možnosti ako nájsť „svojho“ politika:\n"
+"<ul>\n"
+"\t<li>podľa vašej adresy – stačí zadať do vyhľadávacieho políčka vašu adresu "
+"alebo jej časť a zobrazí sa vám zoznam poslancov, zoradených podľa klubov a "
+"vzdialenosti ich bydliska od zadaného miesta.</li>\n"
+"\t<li>podľa politickej strany, výboru či delegácie, v ktorých pôsobí – viete "
+"už dopredu, že chcete napísať poslancom z konkrétnej politickej strany a "
+"nezáleží vám na tom, odkiaľ sú? Alebo vás zaujíma konkrétna téma? Vtedy "
+"kliknite na odkaz <em>Rozšírené vyhľadávanie</em> pri vyhľadávacom políčku.\n"
+"</ul>\n"
+"</p>"
+
+#. smarty/templates/faq.tpl
+#: gettext/smarty.c:419
+msgid "MSGID_ANSWER_2"
+msgstr ""
+"<p>\n"
+"Aplikácia %1 je postavená s úmyslom podporiť osobnú komunikáciu občanov "
+"s politikmi, nie slúžiť ako brána pre masové uniformné kampane, kde sa "
+"hromadne obošle celý parlament univerzálnou správou.\n"
+"</p><p>\n"
+"Chceme podporiť komunikáciu i v rámci kampaní neziskových organizácií. "
+"Nechajte si od nich poradiť, čo bude najlepšie zmieniť vo svojej správe pre "
+"politikov, píšte ale za seba a píšte osobne. Takéto využitie odporúčame "
+"neziskovkám – napíšte pre svojich priaznivcov niekoľko bodov, čo spomenúť, "
+"ale samotný text už nechajte na nich.\n"
+"</p><p>\n"
+"Hoci v našej krajine nemá poslanec formálne danú zodpovednosť za určitý "
+"región a všetci volíme v jednom spoločnom obvode, najviac vás zrejme bude "
+"počúvať ten, ktorý býva vo Vašom okrese či niekde blízko Vás. Lepšie pozná "
+"pomery, než tí, čo bývajú na druhom konci Slovenska a tiež vie, že vo svojom "
+"okolí môže najviac osloviť ľudí vo voľbách. Má tak určitý pocit povinnosti "
+"pomôcť svojmu kraju.\n"
+"</p>"
+
+#. smarty/templates/faq.tpl
+#: gettext/smarty.c:425
+msgid "MSGID_ANSWER_3"
+msgstr ""
+"<p>\n"
+"Z dvoch dôvodov:\n"
+"<ul>\n"
+"\t<li>aby vám na váš e-mail mohla prísť odpoveď od daného politika. Ak "
+"správu označíte ako súkromnú, odpoveď príde iba Vám.</li>\n"
+"\t<li>pred odoslaním e-mailu politikovi Vás požiadame o kliknutie na "
+"aktivačný link, ktorý pošleme na Vašu e-mailovú adresu (viď. nižšie). Ide o "
+"prvok, ktorý bráni v zneužití systému. Chceme mať istotu, že správy "
+"odosielajú ľudia z mäsa a kostí a nie spamovací roboti.</li>\n"
+"</ul>\t\n"
+"</p>"
+
+#. smarty/templates/faq.tpl
+#: gettext/smarty.c:431
+msgid "MSGID_ANSWER_4"
+msgstr ""
+"<p>\n"
+"Keď budete mať vybraného 1–3 politikov alebo političiek, ktorým chcete "
+"napísať, kliknite na <em>Napíšte im!</em>. Budete presmerovaní na ďalšiu "
+"stránku s jednoduchým textovým oknom, kde môžete sformulovať svoju správu. "
+"Až budete s textom spokojní, kliknite na <em>Odoslať</em>.\n"
+"</p><p>\n"
+"Zostáva ešte posledný krok. Na vašu e-mailovú adresu, ktorú ste vyplnili "
+"bude odoslaný automatický e-mail s potvrzujúcim odkazom. Stačí na neho "
+"kliknúť a vaša správa pre politika bola práve odoslaná.\n"
+"</p>"
+
+#. smarty/templates/faq.tpl
+#: gettext/smarty.c:437
+msgid "MSGID_ANSWER_5"
+msgstr ""
+"<p>\n"
+"Aj keď o sebe uvádzate niektoré údaje, stále je ešte odoslanie správy "
+"politikovi prostredníctvom %1 pomerne anonymnou záležitosťou, ktorú je možné "
+"zneužiť odosielaním omnoho vulgárnejších vyjadrení než listom alebo dokonca "
+"tvárou v tvár.\n"
+"</p><p>\n"
+"Aby sme zabránili takémuto zneužívaniu, zabudovali sme systém, ktorý "
+"automaticky kontroluje správy z tohoto hľadiska. Pokiaľ vaša správa systémom "
+"neprejde, bude Vám vrátená naspäť. Máte následne možnosť ju opraviť a znovu "
+"odoslať. \n"
+"</p><p>\n"
+"Ak sa budete domnievať, že Vaša správa bola vrátená neprávom, môžete nás <a "
+"href=\"/contact\">kontaktovať</a> aby sme ju posúdili ručne.\n"
+"</p>"
+
+#. smarty/templates/faq.tpl
+#: gettext/smarty.c:443
+msgid "MSGID_ANSWER_6"
+msgstr ""
+"<p>\n"
+"Aby aplikácia mohla fungovať, musí uložiť vaše meno a e-mailovú adresu.\n"
+"</p><p>\n"
+"Pokiaľ si zvolíte, že vaša správa bude verejná, zobrazí sa v prehľade "
+"odoslaných správ a pri nej bude Vaše meno.\n"
+"</p><p>\n"
+"Na rozdiel od mena vašu e-mailovú adresu zásadne zverejňovať nebudeme, ani "
+"ju nikdy neodovzdáme ďalším stranám. Jediný, kto ju uvidí, je adresát "
+"vašej \n"
+"správy, aby vám mohol odpovedať.\n"
+"</p><p>\n"
+"Použitím aplikácie súhlasíte s uložením vyššieuvedených osobných údajov.\n"
+"</p>"
+
+#. smarty/templates/faq.tpl
+#: gettext/smarty.c:449
+msgid "MSGID_ANSWER_7"
+msgstr ""
+"<p>\n"
+"Rozšírenie i na členov vlády a krajské či obecné zastupiteľsvá plánujeme.\n"
+"</p><p>\n"
+"Nie je ale v našich silách nájsť a vložiť do aplikácie kontakty na všetkých "
+"regionálnych politikov. S vašou pomocou však %1 môže ľahko zahŕňať aj vaše "
+"mestské či krajské zastupiteľstvo. Stačí na miestnych politikov zozbierať "
+"kontakty a pridať ich do aplikácie podľa <a href=\"http://community."
+"kohovolit.eu/doku.php/napistejim:externe_kontakty\">návodu</a>.\n"
+"</p><p>\n"
+"Pre nahlásenie konkrétneho podnetu vo svojom meste, môžete využiť aj službu "
+"<a href=\"http://www.odkazprestarostu.sk\">Odkaz pre starostu</a>, kde sa dá "
+"priložiť aj fotodokumentácia či presná lokalizácia problému na mape.\n"
+"</p>"
+
+#. smarty/templates/faq.tpl
+#: gettext/smarty.c:455
+msgid "MSGID_ANSWER_8"
+msgstr ""
+"<p>\n"
+"Aplikácia %1 je postavená s úmyslom podporiť osobnú komunikáciu občanov "
+"s politikmi, nie slúžiť ako brána pre masové uniformné kampane, kde sa "
+"hromadne obošle celý parlament univerzálnou správou.\n"
+"</p><p>\n"
+"Aj od politikov samotných máme správy, že sa skôr zamyslia nad 5 "
+"autentickými, reálne písanými správami, než nad 50 identickými.\n"
+"</p><p>\n"
+"Navyše, aj keď politik má asistentov, ktorí mu pomáhajú vybavovať poštu, e-"
+"mailov chodí veľké množstvo. Ak si má vybrať komu odpovedať a tým s ním "
+"nadviazať určitý dialóg, odpovie skôr ľuďom, ktorých skutočne zaujíma "
+"konkrétna oblasť a dali si prácu s formuláciou listu, než tým, čo len "
+"prekopírovali text a klikli na <em>odoslať</em>.\n"
+"</p>"
+
+#. smarty/templates/faq.tpl
+#: gettext/smarty.c:461
+msgid "MSGID_ANSWER_9"
+msgstr ""
+"<p>\n"
+"Cieľom tejto aplikácie je vytvoriť živú platformu na elektronickú "
+"komunikáciu medzi občanmi a politikmi. \n"
+"</p><p>\n"
+"O tom, ako projekt vznikol a o KohoVolit.eu – zastrešujúcej organizácii, sa "
+"viac dočítate na stránke <a href=\"/about\">O projekte</a>.\n"
+"</p>"
+
+#. smarty/templates/faq.tpl
+#: gettext/smarty.c:467
+msgid "MSGID_ANSWER_10"
+msgstr ""
+"<p>\n"
+"Nie, zo zákona (na rozdiel napríklad od určených štátnych inštitúcií) volení "
+"zastupitelia túto povinnosť nemajú. Existujú ale spôsoby ako oceniť dobrú "
+"prácu alebo naopak vyjadriť svoju nespokojnosť.\n"
+"</p><p>\n"
+"Priamo na %1 na to budeme využívať nasledujúce kanály: Pokiaľ označíte svoju "
+"správu ako verejnú, bude na %1 zobrazená a bude pri nej indikované, či "
+"adresát odpovedal alebo nie. Ak odpoveď nedorazí, budeme po dvoch týždňoch "
+"politika urgovať opakovane odoslanou správou.\n"
+"</p><p>\n"
+"Ak správu označíte ako súkromnú, iba vy budete vedieť či vám adresát "
+"odpovedal. Po dvoch týždňoch vám preto pošleme e-mail, kde se vás spýtame, "
+"či vám bola doručená odpoveď. Stačí jednoducho kliknúť na jeden z dvoch "
+"odkazov v tele e-mailu.\n"
+"</p><p>\n"
+"Údaje z verejného zobrazenia e-mailov a získané dotazovaním budeme využívať "
+"na zostavovanie tabuliek poslancov a strán podľa toho, ako odpovedajú na "
+"otázky občanov a výsledky budeme medializovať.\n"
+"</p>"
+
+#. smarty/templates/faq.tpl
+#: gettext/smarty.c:473
+msgid "MSGID_ANSWER_11"
+msgstr ""
+"<p>\n"
+"Zo zákona to politici urobiť nemusia (viz <a href=\"#q10\">otázka č. 10</"
+"a>). Sú ale aj iné kanály, ktoré môžete skúsiť využiť na vyriešenie svojho "
+"problému:\n"
+"<ul>\n"
+"\t<li>skúste daného poslanca kontaktovať v jeho regionálnej kancelárii, na "
+"<a href=\"http://www.nrsr.sk/web/default.aspx?SectionId=60\">webe Národnej "
+"rady</a> nájdete adresu a často i telefónne číslo. </li>\n"
+"\t<li>skúste kontaktovať iného poslanca zo svoho regiónu </li>\n"
+"\t<li>kontaktujte miestnu pobočku jeho politickej strany a žiadajte odpoveď "
+"cez nich</li>\n"
+"\t<li>ak ste skúsili predchádzajúce kanály, napíšte miestnemu denníku alebo "
+"regionálnym mutáciám denníkov celoštátnych o vašej kauze</li>\n"
+"</ul>\n"
+"</p>"
+
+#. smarty/templates/faq.tpl
+#: gettext/smarty.c:479
+msgid "MSGID_ANSWER_12"
+msgstr ""
+"<p>\n"
+"Áno, váš text bude zobrazený v e-maile s aktivačným odkazom. Pokiaľ si to "
+"rozmyslíte a nebudete chcieť správu odoslať, na aktivačný odkaz jednoducho "
+"nekliknete.\n"
+"</p>"
+
+#. smarty/templates/faq.tpl
+#: gettext/smarty.c:485
+msgid "MSGID_ANSWER_13"
+msgstr ""
+"<p>\n"
+"Využívame kontaktné údaje z oficiálneho webu <a href=\"http://www.nrsr.sk"
+"\">Národnej rady</a>. Prípadné zmeny tam sa denne prenášajú i k nám. Týmto "
+"spôsobom môžeme garantovať, že e-mailové adresy sú aktuálne.\n"
+"</p><p>\n"
+"U regionálnych zastupiteľských zborov se o správnosť a aktuálnosť "
+"kontaktných údajov stará vždy ich správca.\n"
+"</p>"
+
+#. smarty/templates/faq.tpl
+#: gettext/smarty.c:491
+msgid "MSGID_ANSWER_14"
+msgstr ""
+"<p>\n"
+"Na 99%. Prepojenosť našej e-mailovej databázy s databázou Národnej rady "
+"zaručuje, že e-maily poslancov sú aktuálne. Náš systém nám navyše ohlási "
+"prevažnú väčšinu možných technických komplikácií. 1% nechávame na prípad "
+"vpádu UFO alebo iných nepredvídaných problémov.\n"
+"</p>"
+
+#. smarty/templates/faq.tpl
+#: gettext/smarty.c:497
+msgid "MSGID_ANSWER_15"
+msgstr ""
+"<p>\n"
+"Kým je vo fáze textového okna, jednoducho neklikajte na <em>Odoslať</em> a "
+"správu upravte, alebo začnite úplne odznova.\n"
+"</p><p>\n"
+"Ďalšiu možnosť odstúpenia máte, keď vám príde automatický e-mail "
+"s aktivačným odkazom – jednoducho ho nepotvrdíte.\n"
+"</p><p>\n"
+"Za týmto bodom sú však už vaše šance na odchytenie správy mizivé. Napriek "
+"tomu nás môžete <a href=\"/contact\">kontaktovať</a>.\n"
+"</p>"
+
+#. smarty/templates/faq.tpl
+#: gettext/smarty.c:503
+msgid "MSGID_ANSWER_16"
+msgstr ""
+"<p>\n"
+"Všetky zdrojové kódy k %1, rovnako ako databáza dát sú voľne prístupné "
+"širokej verejnosti a ktokoľvek môže vytvárať aplikácie, ktoré využívajú naše "
+"dáta alebo kód.\n"
+"</p><p>\n"
+"Každopádne, už ten fakt, že máte tento nápad, vás robí zaujímavým – ak "
+"chcete <a href=\"/contact\">kontaktujte nás</a> a možno se dohodneme na "
+"hlbšej spolupráci!\n"
+"</p>"
+
+#. smarty/templates/faq.tpl
+#: gettext/smarty.c:509
+msgid "MSGID_ANSWER_17"
+msgstr ""
+"<p>\n"
+"Super, ochotných ľudí nie je nikdy dosť! Základné možnosti spolupráce:\n"
+"<ul>\n"
+"\t<li>zaraďovanie ďalších inštitúcií a miest (hlavne zisťovanie platných e-"
+"mailových kontaktov a ich vkladanie do databázy)</li>\n"
+"\t<li>programovanie a vymýšľanie ďalších „vychytávok“ pre aplikáciu</li>\n"
+"\t<li>nadväzovanie spolupráce s miestnymi neziskovými organizáciami na "
+"docielenie tlaku na konkrétnych politikov</li>\n"
+"</ul>\n"
+"Zastrešujúca organizácia <a href=\"http://KohoVolit.eu\">KohoVolit.eu</a> má "
+"na svedomí mnoho ďalších zaujímavých projektov, pozrite sa na sekciu <a href="
+"\"/about\">O&nbsp;projekte</a>.\n"
+"</p>"
+
+#. smarty/templates/faq.tpl
+#: gettext/smarty.c:515
+msgid "MSGID_ANSWER_18"
+msgstr ""
+"<p>\n"
+"Tešíme sa na vaše názory – <a href=\"/contact\">kontakt</a>.\n"
+"</p>"
+
+#. smarty/templates/confirmation_result/already_sent.tpl
+#: gettext/smarty.c:518 gettext/smarty.c:521
+msgid "You have already sent the same message"
+msgstr "Rovnakú správu ste už odoslal(a)"
+
+#. smarty/templates/confirmation_result/already_sent.tpl
+#: gettext/smarty.c:524
+msgid ""
+"You have already sent a message with this text to your representatives and "
+"the same message cannot be sent twice."
+msgstr ""
+"Správu s týmto textom ste už svojim poslancom napísal(a) a nie je možné "
+"odoslať rovnakú správu znova."
+
+#. smarty/templates/confirmation_result/already_sent.tpl
+#: gettext/smarty.c:527
+msgid "MSGID_ALREADY_SENT_EXPLANATION"
+msgstr ""
+"<p>\n"
+"Zámerom projektu <em>%1</em> je podporiť komunikáciu predovšetkým s tými "
+"politikmi, ktorí sú Vám najbližší regionálne alebo se ich najviac dotýka "
+"téma správy. Nie obosielanie všetkých rovnakým textom.\n"
+"</p><p>\n"
+"Ak je adresátov správy veľa, znižuje to u nich jednak pocit zodpovednosti "
+"osobne sa správou zaoberať, a aj celkové vnímanie tohoto spôsobu "
+"komunikácie. Obmedzenie na troch adresátov jednej správy bolo zvolené ako "
+"počet, kedy sa ešte nestráca osobný rozmer, zároveň však chráni pred "
+"rizikom, že práve jediný oslovený politik nekomunikuje. <a href="
+"\"faq#q2\">Viac&hellip;</a>\n"
+"</p>"
+
+#. smarty/templates/confirmation_result/already_sent.tpl
+#. smarty/templates/confirmation_result/processing.tpl
+#. smarty/templates/confirmation_result/already_confirmed.tpl
+#. smarty/templates/confirmation_result/reviewer/already_approved.tpl
+#. smarty/templates/confirmation_result/reviewer/refused.tpl
+#. smarty/templates/confirmation_result/reviewer/approved.tpl
+#: gettext/smarty.c:530 gettext/smarty.c:542 gettext/smarty.c:554
+#: gettext/smarty.c:575 gettext/smarty.c:587 gettext/smarty.c:599
+msgid "You can close this window now."
+msgstr "Toto okno už môžete zavrieť."
+
+#. smarty/templates/confirmation_result/processing.tpl
+#: gettext/smarty.c:533 gettext/smarty.c:536
+msgid "Your message is beeing processed now"
+msgstr "Vaša správa sa spracováva"
+
+#. smarty/templates/confirmation_result/processing.tpl
+#: gettext/smarty.c:539
+msgid ""
+"Your message has been queued up for sending and it is beeing processed in "
+"the system now. You will be informed soon about its sending by e-mail."
+msgstr ""
+"Vaša správa bola zaradená na odoslanie a teraz sa spracováva v systéme. O "
+"jej odoslaní budete čoskoro informovaní e-mailom."
+
+#. smarty/templates/confirmation_result/already_confirmed.tpl
+#: gettext/smarty.c:545 gettext/smarty.c:548
+msgid "Already confirmed"
+msgstr "Už potvrdené"
+
+#. smarty/templates/confirmation_result/already_confirmed.tpl
+#: gettext/smarty.c:551
+msgid "Sending of this message has been already confirmed."
+msgstr "Odoslanie tejto správy už bolo potvrdené."
+
+#. smarty/templates/confirmation_result/wrong_link.tpl
+#: gettext/smarty.c:557 gettext/smarty.c:560
+msgid "Wrong link of confirmation"
+msgstr "Chybný odkaz na potvrdenie"
+
+#. smarty/templates/confirmation_result/wrong_link.tpl
+#: gettext/smarty.c:563
+msgid ""
+"Wrong link to confirm sending of a message. Maybe you copy&pasted an "
+"incomplete link. Or the link might already expired."
+msgstr ""
+"Chybný odkaz na potvrdenie správy. Možno ste odkaz neskopíroval(a) celý. "
+"Alebo platnosť odkazu už vypršala."
+
+#. smarty/templates/confirmation_result/reviewer/already_approved.tpl
+#: gettext/smarty.c:566 gettext/smarty.c:569
+msgid "Already approved or refused"
+msgstr "Už schválené alebo zamietnuté"
+
+#. smarty/templates/confirmation_result/reviewer/already_approved.tpl
+#: gettext/smarty.c:572
+msgid "Sending of this message has been already approved or refused."
+msgstr "Odoslanie tejto správy už bolo schvalené alebo zamietnuté."
+
+#. smarty/templates/confirmation_result/reviewer/refused.tpl
+#: gettext/smarty.c:578 gettext/smarty.c:581
+msgid "Refused"
+msgstr "Zamietnuté"
+
+#. smarty/templates/confirmation_result/reviewer/refused.tpl
+#: gettext/smarty.c:584
+msgid ""
+"You refused sending of this message as an offensive or impolite one. The "
+"sender was informed with an explanation."
+msgstr ""
+"Zamietol(a) ste odoslanie tejto správy ako správu urážajúcu alebo neslušnú. "
+"Odosielateľ bol informovaný s vysvetlením."
+
+#. smarty/templates/confirmation_result/reviewer/approved.tpl
+#: gettext/smarty.c:590 gettext/smarty.c:593
+msgid "Approved"
+msgstr "Schválené"
+
+#. smarty/templates/confirmation_result/reviewer/approved.tpl
+#: gettext/smarty.c:596
+msgid "You approved sending of this message. It was sent to addressees."
+msgstr "Schválil(a) ste odoslanie tejto správy. Bola odoslaná adresátom."
+
+#. smarty/templates/video.tpl
+#: gettext/smarty.c:608
+msgid "MSGID_VIDEO_SECTION"
+msgstr ""
+"<p>\n"
+"Pri príležitosti spustenia aplikácie sa združeniu KohoVolit.eu podarilo "
+"natočiť propagačné video, ktoré podporili svojou účasťou známi protagonisti "
+"relácie Partička.\n"
+"</p><p>\n"
+"Natáčenia sa zúčastnili tieto osobnosti:\n"
+"Lukáš Latinák, Róbert Jakab, Marián Miezga, Roman Pomajbo, Petra Polnišová, "
+"Juraj Kemka a Marián Čurko.\n"
+"</p><p>\n"
+"Video natočil a zostrihal team z FAMO Písek vystupujúci pod Alcest.cz. "
+"ĎAKUJEME!\n"
+"</p>"
+
+#. smarty/templates/video.tpl
+#: gettext/smarty.c:611
+msgid "Watch the videos on <a href=\"%1\">%2</a>"
+msgstr "Na videá sa pozrite na <a href=\"%1\">%2</a>"
+
+#. smarty/templates/blocked_ip.tpl
+#: gettext/smarty.c:614 gettext/smarty.c:617
+msgid "Your IP address is blocked"
+msgstr "Vaša IP adresa je blokovaná"
+
+#. smarty/templates/blocked_ip.tpl
+#: gettext/smarty.c:620
+msgid ""
+"IP address of your computer has been blocked because of sending spam or "
+"obtrusive messages."
+msgstr ""
+"IP adresa Vášho počítača bola zablokovaná, pretože sa z neho posielal spam "
+"alebo obťažujúce správy."
+
+#. smarty/templates/ajax/parliament_groups.tpl
+#: gettext/smarty.c:626
+msgid "Constituency:"
+msgstr "Volebný obvod:"
+
+#. smarty/templates/ajax/parliament_groups.tpl
+#: gettext/smarty.c:635
+msgid "Write to chosen politicians"
+msgstr "Napísať vybraným politikom"
+
+#. smarty/templates/ajax/parliament_groups.tpl
+#: gettext/smarty.c:638
+msgid "Note. At least one criterion must be set within a parliament."
+msgstr ""
+"Pozn. Je potrebné vybrať aspoň jedno kritérium v rámci zastupiteľského zboru."
+
+#. smarty/templates/ajax/address_representatives.tpl
+#: gettext/smarty.c:641
+msgid ""
+"Several constituencies has been found to your address. Choose the right one "
+"or try to specify your address more precisely."
+msgstr ""
+"Pre zadanú adresu bolo nájdených viac volebných obvodov. Vyberte z nich ten "
+"váš alebo skúste napísať svoju adresu presnejšie."
+
+#. smarty/templates/contact.tpl
+#. smarty/templates/basic_layout.tpl
+#: gettext/smarty.c:644 gettext/smarty.c:647 gettext/smarty.c:827
+msgid "Contact"
+msgstr "Kontakt"
+
+#. smarty/templates/contact.tpl
+#: gettext/smarty.c:650
+msgid "MSGID_CONTACT_SECTION"
+msgstr ""
+"<img src=\"http://cs.kohovolit.eu/drupal/sites/all/img/a2.png\" alt=\"info /"
+"zav./ kohovolit /tečka/ eu\" /><br/>\n"
+"Vojtěch Marek +420 773 561 222"
+
+#. smarty/templates/message_private.tpl
+#: gettext/smarty.c:653 gettext/smarty.c:656
+msgid "Private message"
+msgstr "Súkromná správa"
+
+#. smarty/templates/message_private.tpl
+#: gettext/smarty.c:659
+msgid "This message was sent as a private one."
+msgstr "Táto správa bola zaslaná ako súkromná."
+
+#. smarty/templates/email/reply_from_mp.tpl
+#: gettext/smarty.c:662
+msgid ""
+"%2 responded to your message sent through\n"
+"%1 website. You can find the reply below."
+msgstr ""
+"%2 odpovedal(a) na Vašu správu zaslanú cez web\n"
+"%1. Odpoveď nájdete nižšie."
+
+#. smarty/templates/email/reply_from_mp.tpl
+#: gettext/smarty.c:665
+msgid ""
+"Because your message was sent as a public one, the reply is published\n"
+"on the %1 website as well. If you will go on in discussion by\n"
+"replying to this e-mail, your reply will be sent to the addressee, aside\n"
+"from %1 website."
+msgstr ""
+"Pretože bola Vaša správa zaslaná ako verejná, je odpoveď zároveň\n"
+"zverejnená na webe %1. Ak však budete pokračovať v diskusii\n"
+"odpoveďou na tento e-mail, táto už bude odoslaná priamo adresátovi mimo\n"
+"webu %1."
+
+#. smarty/templates/email/reply_from_mp.tpl
+#: gettext/smarty.c:668
+msgid "Reply to your message"
+msgstr "Odpoveď na Vašu správu"
+
+#. smarty/templates/email/reply_from_mp.tpl
+#. smarty/templates/email/request_to_review.tpl
+#. smarty/templates/email/message_refused.tpl
+#. smarty/templates/email/message_sent.tpl
+#. smarty/templates/email/message_to_mp.tpl
+#. smarty/templates/email/request_to_confirm.tpl
+#: gettext/smarty.c:674 gettext/smarty.c:695 gettext/smarty.c:713
+#: gettext/smarty.c:758 gettext/smarty.c:773 gettext/smarty.c:806
+msgid "Subject"
+msgstr "Predmet"
+
+#. smarty/templates/email/initial_message.tpl
+#: gettext/smarty.c:677
+msgid "Greetings,"
+msgstr "Dobrý deň,"
+
+#. smarty/templates/email/initial_message.tpl
+#: gettext/smarty.c:680
+msgid "Yours sincerely,"
+msgstr "S pozdravom"
+
+#. smarty/templates/email/request_to_review.tpl
+#: gettext/smarty.c:683
+msgid ""
+"A message written on %1 website seems to be offensive and it\n"
+"needs your review and approval to be sent to politicians. The message\n"
+"is attached below."
+msgstr ""
+"Správa napísaná cez web %1 sa zdá ako urážajúca a aby mohla byť\n"
+"odoslaná, potrebuje tvoje posúdenie a schválenie. Správa je pripojená\n"
+"nižšie."
+
+#. smarty/templates/email/request_to_review.tpl
+#: gettext/smarty.c:686
+msgid ""
+"If the message is all right and it SHOULD BE sent to addressees,\n"
+"click on this link:"
+msgstr "Ak je správa v poriadku a MÁ SA ODOSLAŤ adresátom, klikni sem:"
+
+#. smarty/templates/email/request_to_review.tpl
+#: gettext/smarty.c:689
+msgid ""
+"If the message is offensive and SHOULD NOT be sent to addressees,\n"
+"click on this link:"
+msgstr "Ak je správa urážajúca a NEMÁ SA ODOSLAŤ adresátom, klikni sem:"
+
+#. smarty/templates/email/request_to_review.tpl
+#: gettext/smarty.c:692
+msgid "The message for politicians"
+msgstr "Správa pre politikov"
+
+#. smarty/templates/email/message_refused.tpl
+#: gettext/smarty.c:698
+msgid "We are sorry, but your message for politicians"
+msgstr "Ospravedlňujeme sa, ale Vaša správa pre politikov"
+
+#. smarty/templates/email/message_refused.tpl
+#: gettext/smarty.c:701
+msgid ""
+"has been blocked by an automatic invectives-checking system and it\n"
+"has not been sent."
+msgstr ""
+"bola zastavená automatickým systémom na kontrolu vulgárnych výrazov\n"
+"a nebola ním odoslaná."
+
+#. smarty/templates/email/message_refused.tpl
+#: gettext/smarty.c:704
+msgid ""
+"Although we are continually working on enhancing the checking system,\n"
+"it may block a completely correct message exceptionally."
+msgstr ""
+"Hoci na vylepšení systému priebežne pracujeme, výnimočne môže\n"
+"zachytiť aj úplne nezávadnú správu."
+
+#. smarty/templates/email/message_refused.tpl
+#: gettext/smarty.c:707
+msgid ""
+"If you believe, that your message has been blocked by mistake,\n"
+"please contact us by e-mail to %1."
+msgstr ""
+"Ak ste presvedčený(-á), že správa bola zastavená neprávom,\n"
+"kontaktujte nás, prosím, e-mailom na %1."
+
+#. smarty/templates/email/message_sent.tpl
+#: gettext/smarty.c:716
+msgid "Your message has been sent to your representatives:"
+msgstr "Vaša správa bola odoslaná Vašim poslancom"
+
+#. smarty/templates/email/message_sent.tpl
+#: gettext/smarty.c:719
+msgid "Your message has not been sent to your representatives."
+msgstr "Vaša správa nebola odoslaná Vašim poslancom"
+
+#. smarty/templates/email/message_sent.tpl
+#: gettext/smarty.c:722
+msgid ""
+"The following addressees already received the same message from another\n"
+"sender, thus this one has not been sent to them:"
+msgstr ""
+"Nasledujúci adresáti už rovnakú správu dostali od iného pisateľa\n"
+"a táto im už nebola odoslaná."
+
+#. smarty/templates/email/message_sent.tpl
+#: gettext/smarty.c:725
+msgid "see message"
+msgstr "správa viď."
+
+#. smarty/templates/email/message_sent.tpl
+#: gettext/smarty.c:728
+msgid "the message was sent as a private one"
+msgstr "správa bola zaslaná ako súkromná"
+
+#. smarty/templates/email/message_sent.tpl
+#: gettext/smarty.c:731
+msgid ""
+"Intention of the project %1 is to strengthen personal\n"
+"communication between citizens and politicians. Even a few originally\n"
+"written messages often have a greater impact than flooding of a politician\n"
+"by copies of one prearanged message. See more in:"
+msgstr ""
+"Zámerom projektu %1 je podporiť osobnú komunikáciu občanov\n"
+"s politikmi. Aj niekoľko málo originálnych správ má obvykle väčší efekt,\n"
+"než zaplavenie politika jednou predpripravenou správou. Viac viď.:"
+
+#. smarty/templates/email/message_sent.tpl
+#: gettext/smarty.c:734
+msgid "In case of addressees:"
+msgstr "U adresátov:"
+
+#. smarty/templates/email/message_sent.tpl
+#: gettext/smarty.c:737
+msgid ""
+"we do not have an e-mail address to them hence your message cannot be\n"
+"sent to them."
+msgstr ""
+"sa nám nepodarilo zistiť ich e-mailový kontakt a nie je možné im Vašu\n"
+"správu odoslať."
+
+#. smarty/templates/email/message_sent.tpl
+#: gettext/smarty.c:740
+msgid ""
+"For the case you decide to contact the politicans also by another way,\n"
+"a copy of your message is attached below."
+msgstr ""
+"Pre prípad, že se rozhodnete osloviť politikov aj iným spôsobom,\n"
+"pripájame dole kópiu správy."
+
+#. smarty/templates/email/message_sent.tpl
+#: gettext/smarty.c:743
+msgid ""
+"For the case you decide to contact the politicans by another way,\n"
+"a copy of your message is attached below."
+msgstr ""
+"Pre prípad, že sa rozhodnete osloviť politikov iným spôsobom,\n"
+"pripájame dole kópiu správy."
+
+#. smarty/templates/email/message_sent.tpl
+#: gettext/smarty.c:746
+msgid ""
+"You have sent a public message – it will be published on the %1\n"
+"website as well as as an eventual reply of the contacted politicians."
+msgstr ""
+"Odoslal(a) ste verejnú správu – bude zverejnená na webe %1\n"
+"a na rovnakom mieste bude zverejnená aj prípadná odpoveď oslovených\n"
+"politikov."
+
+#. smarty/templates/email/message_sent.tpl
+#: gettext/smarty.c:749
+msgid ""
+"You have chosen a private message – it will not be published on the\n"
+"%1 website and the contacted politicians will send their eventual reply\n"
+"directly to you."
+msgstr ""
+"Zvolil(a) ste súkromú správu – nebude zverejnená na webe %1\n"
+"a oslovení politici pošlú svoju prípadnú odpoveď priamo Vám."
+
+#. smarty/templates/email/message_sent.tpl
+#. smarty/templates/email/request_to_confirm.tpl
+#: gettext/smarty.c:752 gettext/smarty.c:800
+msgid ""
+"Please do not reply to this e-mail. We will really appreciate\n"
+"your feedback on the project, suggestions or problems at %1"
+msgstr ""
+"Na tento e-mail, prosím, neodpovedajte. Uvítame Váš názor na projekt,\n"
+"návrhy alebo problémy, na %1."
+
+#. smarty/templates/email/message_to_mp.tpl
+#: gettext/smarty.c:761
+msgid "%2 sent this message to you using the %1 website."
+msgstr "%2 Vám posiela túto správu cez web %1."
+
+#. smarty/templates/email/message_to_mp.tpl
+#: gettext/smarty.c:764
+msgid ""
+"The message has been sent as a public one and it is published on\n"
+"%1 website. Your reply will be published on the same place."
+msgstr ""
+"Správa bola odoslaná ako verejná a je zverejnená na webe %1.\n"
+"Vaša odpoveď bude zverejnená na rovnakom mieste."
+
+#. smarty/templates/email/message_to_mp.tpl
+#: gettext/smarty.c:767
+msgid ""
+"The message has been sent as a private one. Please send your reply\n"
+"directly to the e-mail address of the sender: %1"
+msgstr ""
+"Správa bola odoslaná ako súkromná. Odpovedajte, prosím, priamo na\n"
+"e-mailovú adresu odosielateľa: %1"
+
+#. smarty/templates/email/message_to_mp.tpl
+#: gettext/smarty.c:770
+msgid "A message for you"
+msgstr "Správa pre Vás"
+
+#. smarty/templates/email/request_to_confirm.tpl
+#: gettext/smarty.c:779
+msgid ""
+"You have written a message attached below using %1 website\n"
+"addressed to your representatives:"
+msgstr ""
+"Na webe %1 ste napísal(a) dole pripojenú správu svojim\n"
+"poslancom:"
+
+#. smarty/templates/email/request_to_confirm.tpl
+#: gettext/smarty.c:782
+msgid ""
+"Please confirm that you want to send the message by clicking the\n"
+"following link."
+msgstr ""
+"Potvrďte prosím kliknutím na odkaz nižšie, že chcete, aby im bola\n"
+"odoslaná."
+
+#. smarty/templates/email/request_to_confirm.tpl
+#: gettext/smarty.c:785
+msgid ""
+"If the link is not clickable, copy&paste it to the address bar of\n"
+"your web browser."
+msgstr ""
+"Ak na odkaz nejde kliknúť, označte ho a skopírujte ako adresu do\n"
+"webového prehliadača."
+
+#. smarty/templates/email/request_to_confirm.tpl
+#: gettext/smarty.c:788
+msgid ""
+"You have chosen a public message – it will be published on %1\n"
+"website after it is confirmed and sent to the representatives.\n"
+"Their eventual answer will be published on the same place."
+msgstr ""
+"Zvolil(a) ste verejnú správu – po jej potvrdení a odoslaní politikom\n"
+"bude zverejnená na webe %1. Na rovnakom mieste bude\n"
+"zverejnená aj ich prípadná odpoveď."
+
+#. smarty/templates/email/request_to_confirm.tpl
+#: gettext/smarty.c:791
+msgid ""
+"You have chosen a private message – it will not be published anywhere\n"
+"and the addressed politicians will send their eventual anwser directly\n"
+"to you."
+msgstr ""
+"Zvolil(a) ste súkromnú správu – po jej potvrdení a odoslaní\n"
+"politikom nebude nikde zverejnená a oslovení politici pošlú svoju\n"
+"prípadnú odpoveď priamo Vám."
+
+#. smarty/templates/email/request_to_confirm.tpl
+#: gettext/smarty.c:794
+msgid ""
+"If you have changed your mind and you don't want to send the message,\n"
+"you don't need to do anything. Unless you click the confirmation link\n"
+"above, the message will be deleted automatically some time later without\n"
+"sending."
+msgstr ""
+"Pokiaľ ste si to rozmyslel(a) a správu politikom odoslať nechcete,\n"
+"nemusíte robiť nič. Ak nekliknete na vyšieuvedený odkaz, pripravená\n"
+"správa bude po čase zmazaná bez odoslania."
+
+#. smarty/templates/email/request_to_confirm.tpl
+#: gettext/smarty.c:797
+msgid ""
+"If you have not written this message, please let us know to\n"
+"%1"
+msgstr ""
+"Ak ste túto správu politikom nepísal(a) Vy, dajte nám, prosím,\n"
+"vedieť na %1."
+
+#. smarty/templates/privacy.tpl
+#: gettext/smarty.c:809 gettext/smarty.c:812
+msgid "Privacy of personal data"
+msgstr "Ochrana osobných údajov"
+
+#. smarty/templates/privacy.tpl
+#: gettext/smarty.c:815
+msgid "MSGID_PRIVACY_SECTION"
+msgstr ""
+"<p>\n"
+"Aby aplikácia mohla fungovať, musí uložiť Vaše meno a e-mailovú adresu.\n"
+"</p><p>\n"
+"Pokiaľ si zvolíte, že Vaša správa bude verejná, zobrazí sa v prehľade "
+"odoslaných správ a pri nej bude aj Vaše meno.\n"
+"</p><p>\n"
+"Na rozdiel od mena vašu e-mailovú adresu zásadne zverejňovať nebudeme, ani "
+"ju nikdy neodovzdáme ďalším stranám. Jediný, kto ju uvidí, je adresát "
+"vašej \n"
+"správy, aby vám mohol odpovedať.\n"
+"</p><p>\n"
+"Použitím aplikácie súhlasíte s uložením vyššieuvedených osobných údajov.\n"
+"</p>"
+
+#. smarty/templates/basic_layout.tpl
+#: gettext/smarty.c:818
+msgid "MSGID_HTML_HEAD_DESCRIPTION"
+msgstr ""
+"Napíšte svojim poslancom. Nájdite ich ľahko podľa svojej adresy alebo v "
+"rozšírenom vyhľadávaní. Čo píšu politikom iní a čo politici odpovedajú?"
+
+#. smarty/templates/basic_layout.tpl
+#: gettext/smarty.c:821
+msgid "Licence"
+msgstr "Licencia"
+
+#. smarty/templates/basic_layout.tpl
+#: gettext/smarty.c:824
+msgid "Privacy"
+msgstr "Osobné údaje"
+
+#. smarty/templates/statistics.tpl
+#: gettext/smarty.c:830
+msgid "Statistics of representatives"
+msgstr "Štatistiky poslancov"
+
+#. smarty/templates/statistics.tpl
+#: gettext/smarty.c:842
+msgid "Filter"
+msgstr "Vybrať"
+
+#. smarty/templates/statistics.tpl
+#: gettext/smarty.c:848
+msgid "Received"
+msgstr "Dostal(a)"
+
+#. smarty/templates/statistics.tpl
+#: gettext/smarty.c:851
+msgid "Replied"
+msgstr "Odpovedal(a)"
+
+#. smarty/templates/statistics.tpl
+#: gettext/smarty.c:854
+msgid "Ratio"
+msgstr "Podiel"
+
+#. smarty/templates/statistics.tpl
+#: gettext/smarty.c:857
+msgid "Average replies in"
+msgstr "Priemerne odpovedá za"
+
+#. smarty/templates/statistics.tpl
+#: gettext/smarty.c:860
+msgid "%1 days"
+msgid_plural "%1 days"
+msgstr[0] "%1 deň"
+msgstr[1] "%1 dni"
+msgstr[2] "%1 dní"
+
+#. smarty/templates/statistics.tpl
+#: gettext/smarty.c:863
+msgid "%1 hours"
+msgid_plural "%1 hours"
+msgstr[0] "%1 hodina"
+msgstr[1] "%1 hodiny"
+msgstr[2] "%1 hodín"
+
+#. smarty/templates/statistics.tpl
+#: gettext/smarty.c:866
+msgid "%1 minutes"
+msgid_plural "%1 minutes"
+msgstr[0] "%1 minúta"
+msgstr[1] "%1 minúty"
+msgstr[2] "%1 minút"
+
+#. smarty/templates/statistics.tpl
+#: gettext/smarty.c:869
+msgid "previous politicians"
+msgstr "predchádzajúci politici"

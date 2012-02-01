@@ -51,6 +51,9 @@ body {
  float:left;
 }
 
+.clearfix {
+  clear: both;
+}
 
 /* header */
 .logo-wrapper {
@@ -60,7 +63,15 @@ body {
 .logo a img {
   border: none;
 }
-
+#links-top {
+  padding: 1em;
+  min-width: 800px;
+  text-align: right;
+  line-height: 1.4em;
+}
+#links-top a{
+  padding:0 .5em;
+}
 
 /*layout*/
 #logo-center {
@@ -68,45 +79,45 @@ body {
     margin-left: auto;
     margin-right: auto;
     max-width: 1000px;
-    padding-bottom: 3em;
-    padding-top: 10px;
+    padding-top: 60px;
     text-align: center;
     width: 90%;
 }
 
-
-#wrapper-page{
- 
+#wrapper-page-outer{
   width: 90%;
   max-width: 1000px;
   min-height: 180px;
+  margin: 0;
+  padding: 0;
+}
+#wrapper-page{
   margin: 0 auto;
   padding: 0 24px;
 }
 #logo-small{
- 
-  width: 90%;
-  max-width: 1000px;
-  margin: 0 auto;
-  
+  float: left;
+  margin-left: 32px;
 }
 #head {
-    background: none repeat scroll 0 0 #FFFFFF;
+    background: transparent repeat scroll 0 0 #FFFFFF;
     border-bottom: 1px solid #CCCCCC;
     box-shadow: 0 0 5px #888888;
- 
     margin-bottom: 40px;
-    padding: 10px 10px 15px;
+    padding: 10px 10px 10px;
 }
 
 /* footer */
 #page-footer {
+	clear: both;
+	margin-top: 1em;
 }
-#links {
+#links-bottom {
   padding: 1em;
   text-align: center;
+  margin-bottom: -1.5em;
 }
-#links a{
+#links-bottom a{
   padding:0 .5em;
 }
 #licence {
@@ -122,39 +133,36 @@ body {
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  padding-top: 25px;
+  padding-top: 5px;
   padding-bottom: 3em;
   max-width:1000px;
   width:90%;
 }
-  
+
 input#search-address,input#search-submit-geocode{
-  font-size: 1.5em;
+  font-size: 1.2em;
 }
 
 
 #search-address{
-  width:65%;
+  width:70%;
   max-width:750px;
   display:inline;
 }
 
 #search-submit{
-  padding-top: 1.5em;
+  padding-top: 2em;
 }
 
 #search-advanced-search{
- display:inline;
- width: 50px;
+ margin-top: .6em;
 }
 
 #search-example{
   color: #666;
   font-style: italic;
   font-size:0.75em;
-  text-align:center;
-  display:block;
-
+  margin-top: 6px;
 }
 
 #search-submit-geocode {
@@ -172,80 +180,6 @@ fieldset.search {
 	padding-left: 242px;
     padding-right: 254px;*/
 }
-
-/**/
-
-
-/*input#search-address,input#search-submit-geocode{
-   display:inline;
-    color: #7e7e7e;
-	font-size: 1.2em;
-	width: 160px;
-	height: 40px;
-	padding: 1px 5px 0;
-	background: #fff url(napiste.gif) no-repeat;
-	margin-right: 5px;
-	border:none;
-}*/
-
-
-/*input#search-address,input#search-submit-geocode:focus {
-	background: #000 url(napiste.gif) no-repeat left -41px;
-	outline: none;
-	display:inline;
-}*/
-/*#search-right {
-  display:inline;
-}
-
-#search-address,#geocode-address-2{
-  width:65%;
-  max-width:750px;
-  display:inline;
-}
-
-#search-advanced-search{
- display:inline;
-}
-
-#search-example{
-  color: #666;
-  font-style: italic;
-  font-size:0.75em;
-  text-align:center;
-  display:block;
-}
-*//*
-fieldset.search {
-	border: none;
-	width: 600px;
-	margin: 0 auto;
-	background: #fff;
-	display:inline;
-	padding-left: 242px;
-    padding-right: 254px;
-}*/
-/*.search input, .search button {
-	border: none;
-	float: left;
-	display:inline;
-}
-
-.search input.clearField {
-	color: #7e7e7e;
-	font-size: 1.2em;
-	width: 508px;
-	height: 34px;
-	padding: 4px 5px 0;
-	background: #fff url(search_bg.gif) no-repeat;
-	margin-right: 5px;
-	display:inline;
-}
-.search input.clearField:focus {
-	background: #000 url(search_bg.gif) no-repeat left -34px;
-	outline: none;
-	display:inline;
-}*/
 
 /**
 * choose
@@ -269,61 +203,88 @@ fieldset.search {
 
 /* map */
 #choose-map_canvas {
-  height:250px;
-  width:250px;
-  float:right;
+  height:220px;
+  width:220px;
 }
 
 /* boxes */
 
 #choose-send{
-background: #fff url(/images/back-znacka.png) no-repeat;
+	background: transparent url(/images/back-znacka.png) no-repeat -35px 0px;
 }
 #choose-submit-mps{
-margin:65 100px;
+	margin: 65px 0px 95px 100px;
 }
 #choose-addressee {
-display:block;
-}
-#choose-addressee h2 {
-	margin-top: 100px;
+	display:block;
 }
 #choose-up-to {
-	clear: both;
 	margin-bottom: 10px;
 }
 #choose-search-wrapper {
 	margin-top: 20px;
-	margin-right: 300px;
 }
 #choose-message {
-	margin-right: 300px;
 }
 #choose-geocode-address {
-	width: 250px;
+	width: 220px;
 	font-size: 1em;
 }
 #choose-submit-geocode {
 	font-size: 1em;
 	padding: 2px 10px;
 }
-
-.addressee-box{
-  border: 5px dashed #DDD;
-  height:162px;
-  width:120px;
-  float:left;
-  margin: 0 20px;
-  display:block;
+#choose-main-column{
+	margin-left: 244px;
+	min-width: 730px;
+}
+#choose-result{
+	margin-left: 244px;
+}
+#choose-map-column {
+	width: 220px;
+	float: left;
+}
+#choose-map-column .ui-widget {
+	font-size: 1em;
+	margin-top: 5px;
+}
+#choose-map-column .ui-widget p{
+	font-size: .8em;
+}
+.constituencies-message {
+	font-size: .9em;
+	font-weight: bold;
+	margin-bottom: 1em;
 }
 
+.addressee-box-wrapper {
+  border: 5px dashed #DDD;
+  float: left;
+  margin: 0 12px;
+}
+.addressee-box {
+  height:162px;
+  width:120px;
+}
+.box-name {
+  font-size: 75%;
+  line-height: 135%;
+  font-weight: bold;
+  margin-top: -8px;
+}
+.box-x {
+	position: relative;
+	left: 102px;
+	top: -160px;
+}
 .choose-up-to{
 min-width:220px;
 }
 
 /*jQuery UI */
 .ui-state-active-border {
-  border: 5px dashed #F00;
+  background: #EEE;
 }
 
 .draggable{
@@ -334,20 +295,6 @@ min-width:220px;
   cursor:default;
 }
 
-/* toggle */
-/*.mp-toggle-off{
-  cursor:pointer;
-  background-position: 0 0;
-  width: 20px;
-  height: 20px;
-}
-
-.mp-toggle-on{
-  cursor:default;
-  background-position: 0 -30px;
-  width: 20px;
-  height: 20px;
-}*/
 .mp-clicked-on {
   cursor:default;
 }
@@ -362,11 +309,16 @@ min-width:220px;
 }
 
 /* mps */
+.found-mps {
+  margin-left: 120px;
+  margin-bottom: .5em;
+}
 .group-mps {
   display:inline;
 }
 .mp {
   display:inline;
+  padding-right: .4em;
 }
 .mp-name-info {
   white-space:normal
@@ -374,13 +326,14 @@ min-width:220px;
 .mp-name-name{
   color: #006;
 }
-
-.mp-name-info{
+.mp-disabled .mp-name-name,
+.mp-disabled .mp-name-info {
+  color: #bbb;
 }
 
 /* debug geocoding */
 #choose-message-debug {
-  color: #888; 
+  color: #888;
   background-color: #BBB;
   display: none;
 }
@@ -413,38 +366,98 @@ min-width:220px;
 /**
 * write
 */
-.write-input{
-  margin-bottom: .65em;
+
+#write {
+	min-width: 870px;
 }
 
-.write-mp {
+#write-fields {
 	float: left;
-  margin: 0 120px 0px 0px;
-}
-#write-personal {
-	clear: both;
-	padding-top: 60px;
-}
-.write-mp-photo {
-  height:162px;
-  width:120px;
-}
-.write-mp-first_name {
-	padding-top: 7px;
+	width: 404px;
+	background: transparent url(/images/back-znacka.png) no-repeat -191px 10px;
 }
 #write-name, #write-email, #write-subject, #write-address {
-	width: 300px;
+	width: 290px;
+	margin-bottom: .65em;
 }
-#write-privacy {
+#write-email {
+	margin-bottom: 32px;
+}
+#write-privacy  {
+	padding-bottom: 8px;
+}
+#write-privacy  .caption {
 	display: inline;
-	margin-left: 60px;
 }
-#write-privacy input {
+#write-privacy .option {
+	display: inline;
 	margin-left: 10px;
 }
-#write-newsletter {
-	margin-top: 15px;
+#write-privacy .explanation {
+	display: none;
+	position: absolute;
+	width: 220px;
+	padding: .4em;
+	font-size: 80%;
 }
+#write-body {
+	width: 855px;
+	height: 200px;
+	clear: both;
+	display: block;
+}
+#write-mps {
+	display: inline;
+}
+#write-mps .mp {
+  display: inline;
+  margin: 10px 12px;
+  float: left;
+  font-size: 75%;
+  line-height: 135%;
+  width: 120px;
+}
+#write-mps img {
+	height: 162px;
+	width: 120px;
+	padding-bottom: 4px;
+}
+#write-mps .name {
+  font-weight: bold;
+}
+#write-newsletter {
+	margin-top: 1.2em;
+}
+
+/**
+* public
+*/
+.ui-autocomplete-loading { background: white url('images/ui-anim_basic_16x16.gif') right center no-repeat; }
+.ui-autocomplete {
+	max-height: 150px;
+	overflow-y: auto;
+	/* prevent horizontal scrollbar */
+	overflow-x: hidden;
+	/* add padding to account for vertical scrollbar */
+	padding-right: 20px;
+	font-size: 80%;
+	width: 150px;
+}
+/* IE 6 doesn't support max-height
+ * we use height instead, but this forces the menu to always be this tall
+ */
+* html .ui-autocomplete {
+	height: 150px;
+}
+#list-filter-form td { font-size: 80% }
+#list-filter-form #parliament { width: 140px }
+#list-filter-form #recipient { width: 140px }
+#list-filter-form #text { width: 150px }
+#list-filter-form #since { width: 70px }
+#list-filter-form #until { width: 70px }
+#list-filter-form #sender { width: 120px }
+#list-filter-form #order { width: 120px }
+.disambiguation { color: #aaa; font-size: 80%; line-height: 100%; }
 
 /**
 * list
@@ -453,10 +466,11 @@ min-width:220px;
   width:100%;
   table-layout:fixed;
   border-width: 1px 1px 0;
+  font-size: 75%;
 }
-#list-table tbody{
-  font-size:75%;
-}
+#list-table thead {
+  font-weight: bold;
+ }
 #list-table tr:hover {
   background-color:#FBE09E;
   border-color: #F6F5F2;
@@ -472,15 +486,8 @@ min-width:220px;
 .list-subject {
   font-weight: bold;
 }
-.list-body {
-  color: #7F7F7F;
-}
-.list-td-reply-status {
-  width:45px;
-  text-align:center;
-}
 .list-td-date {
-  width:4em;
+  width:6em;
 }
 .list-td-replier{
   width:30%;
@@ -488,36 +495,111 @@ min-width:220px;
 .list-td-sender{
   width:15%;
 }
-/*sprite- image*/
-.list-reply-status {
-    background: url(/images/points.png) no-repeat top left;
-    width:15px;
-}
-.list-not-answered-short{ background-position: 0 0; width: 10px; height: 10px; } 
-.list-answered{ background-position: 0 -60px; width: 10px; height: 10px; } 
-.list-not-answered-long{ background-position: 0 -120px; width: 10px; height: 10px; } 
+#list-pager { width: 100%; }
 
 /**
 * message
 */
-.message-left {
-  width:200px;
+#message-title {
+	margin: 0;
+	margin-bottom: 4px;
 }
-.message-right{
-  margin-left:200px;
-}
-#message-message{
-  line-height:2em;
-}
-#message-subject{
-  font-weight:bold;
+#message-from, #message-date {
+	line-height: 120%;
 }
 #message-body {
-  line-height:normal;
+	margin-top: 1em;
 }
-.message-reply{
-  padding:2em 0;
+.message-mp-replies{
+  padding: 2em 0;
 }
-.message-reply .message-left {
+.message-mp {
+  float: left;
+  width:100px;
+  font-size: 75%;
+  line-height: 135%;
+}
+.message-mp .name {
   font-weight: bold;
 }
+.message-mp img {
+  width: 100px;
+  margin-bottom: 4px;
+}
+.message-reply {
+  margin-left: 120px;
+  margin-right: 130px;
+}
+.message-reply .dimmed{
+	color: #aaa;
+}
+.message-reply-date {
+  float: right;
+  color: #aaa;
+  margin: 0 0 1em 2em;
+}
+
+/**
+* pager
+*/
+
+.pager-link { margin: .5em 0 1em; font-size: 75%; font-weight: bold; }
+.pager-prev { float: left; }
+.pager-next { float: right; }
+
+/**
+* statistics
+*/
+#statistics-filter-form { margin-bottom: 0; }
+#statistics-filter-form td { font-size: 80% }
+#statistics-table {
+  width: 570px;
+  table-layout: fixed;
+  border-width: 1px 1px 0;
+  font-size:75%;
+}
+#statistics-table thead{
+  font-weight: bold;
+ }
+#statistics-table tr:hover {
+  background-color:#FBE09E;
+  border-color: #F6F5F2;
+}
+#statistics-table td {
+ overflow:hidden;
+ padding: 3px 5px 2px;
+    border-style: solid;
+    border-width: 0 0 1px;
+    border-color: #F6F5F2;
+	vertical-align: bottom;
+}
+.statistics-td-politician {
+  width: 29%;
+}
+.statistics-td-received {
+  width: 18%;
+  text-align: center;
+}
+.statistics-td-replied {
+  width: 18%;
+  text-align: center;
+}
+.statistics-td-ratio {
+  width: 18%;
+}
+.statistics-td-average-days {
+  width: 17%;
+  text-align: right;
+}
+tbody .statistics-td-average-days {
+  color: #888;
+}
+.statistics-td-ratio .replied {
+  background: #3e8213;
+  display: inline-block;
+}
+.statistics-td-ratio .not-replied {
+  background: #dd2a2b;
+  display: inline-block;
+}
+#statistics-pager { width: 570px; }

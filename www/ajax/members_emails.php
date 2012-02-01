@@ -10,7 +10,7 @@ $params = array();
 foreach ($_GET as $key => $item)
 	if ($item != 0)
 	{
-		if ($key == 'constituency_id')
+		if ($key == 'constituency')
 			$params['constituency_id'] = $item;
 		else if ($key != 'parliament_code')
 			$params['groups'][] = $item;

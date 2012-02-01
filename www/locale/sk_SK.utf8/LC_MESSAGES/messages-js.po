@@ -1,0 +1,48 @@
+# Slovak translation of Javascript messages in NapisteJim
+# Copyright (C) 2011 KohoVolit.eu
+# This file is distributed under the same license as the NapisteJim package.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: NapišteJim 1.0\n"
+"Report-Msgid-Bugs-To: info@KohoVolit.eu\n"
+"POT-Creation-Date: 2011-10-17 11:02+0200\n"
+"PO-Revision-Date: 2011-11-09 17:41+0100\n"
+"Language-Team: Slovak <info@kohovolit.eu>\n"
+"Language: slovak\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1)?(0):(((n>=2)&&(n<=4))?(1):2));\n"
+
+#: choose.js:13 choose_advanced.js:13
+msgid "Choose at least one representative, please."
+msgstr "Vyberte, prosím, aspoň jedného poslanca."
+
+#: choose.js:77 choose.js:148 choose.js:156 choose.js:159
+msgid ""
+"Be more specific entering your address, please. This one has not been "
+"recognized."
+msgstr "Skúste, prosím, napísať adresu presnejšie. Táto nebola rozpoznaná."
+
+#: choose.js:94
+#, python-format
+msgid "The address is not in country %s. Enter a new address, please."
+msgstr "Adresa neleží v krajine %s. Zadajte, prosím, inú adresu."
+
+#: choose.js:108
+msgid "Address found:"
+msgstr "Nájdená adresa:"
+
+#: choose.js:273 choose_advanced.js:80
+msgid ""
+"Three representatives can be chosen at most. Remove one of the chosen "
+"representatives first to add another one or use drag and drop, please."
+msgstr ""
+"Môžete zvoliť najviac troch poslancov. Najprv niektorého odoberte alebo "
+"použite pretiahnutie myšou."
+
+#: dummy.js
+msgid "thousands_sep"
+msgstr ","

@@ -2,8 +2,8 @@
 
 cd ..
 php gettext/tsmarty2c.php smarty > gettext/smarty.c
-xgettext --add-comments --no-wrap -p gettext -o messages.pot classes/*.php backend/*.php www/*.php www/ajax/*.php gettext/smarty.c
+xgettext --from-code UTF-8 --add-comments --no-wrap -p gettext -o messages.pot *.php classes/*.php backend/*.php www/*.php www/ajax/*.php gettext/smarty.c
 rm gettext/smarty.c
 
 cd www/js
-xgettext --add-comments --no-wrap -L python -p ../../gettext -o messages-js.pot choose.js choose_advanced.js search.js search_advanced.js write.js
+xgettext --from-code UTF-8 --add-comments --no-wrap -L python -p ../../gettext -o messages-js.pot choose.js choose_advanced.js search.js search_advanced.js write.js

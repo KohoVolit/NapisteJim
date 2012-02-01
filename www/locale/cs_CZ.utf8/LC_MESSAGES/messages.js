@@ -1,5 +1,5 @@
 /*
- * www/locale/cs_CZ.utf8/LC_MESSAGES/messages.js
+ * ../www/locale/cs_CZ.utf8/LC_MESSAGES/messages.js
  * Translation of JS strings
  * Auto-generated from .po files by gettext-makejs
  *

@@ -34,6 +34,15 @@ function format_personal_name($mp, $style = 'long')
 	}
 }
 
+/* Converts date and time in specified format to ISO format (eg. 2011-12-16 21:34:56).
+ * Uses strptime() date format specification for the input format.
+ */
+function datetime_to_iso($datetime, $format)
+{
+	$d = strptime($datetime, str_replace('%-', '%', $format));
+	return ($d['tm_year'] + 1900) . '-' . ($d['tm_mon'] + 1) . '-' . $d['tm_mday'] . ' ' . $d['tm_hour'] . ':' . $d['tm_min'] . ':' . $d['tm_sec'];
+}
+
 function random_code($length)
 {
 	$code = '';
@@ -60,7 +69,7 @@ function send_mail($from, $to, $subject, $body, $reply_to = null, $additional_he
 	// make headers
 	if (empty($reply_to))
 		$reply_to = $from;
-	if ($from == compose_email_address(NJ_TITLE, FROM_EMAIL))
+	if ($reply_to == compose_email_address(NJ_TITLE, FROM_EMAIL))
 		$reply_to = CONTACT_EMAIL;
 	$headers = "From: $from\n" .
 		"Reply-To: $reply_to\n" .
@@ -135,8 +144,8 @@ function is_profane($text, $profanities_list, $prefix_only)
 function similarity($text1, $text2)
 {
 	// remove accents and convert to lowercase
-	$text1 = preg_replace('/[\'^"]/', '', strtolower(iconv('UTF-8', 'ASCII//TRANSLIT', $text1)));
-	$text2 = preg_replace('/[\'^"]/', '', strtolower(iconv('UTF-8', 'ASCII//TRANSLIT', $text2)));
+	$text1 = strtolower(preg_replace('/[\'^"]/', '', iconv('UTF-8', 'ASCII//TRANSLIT//IGNORE', $text1)));
+	$text2 = strtolower(preg_replace('/[\'^"]/', '', iconv('UTF-8', 'ASCII//TRANSLIT//IGNORE', $text2)));
 
 	// split texts to arrays of words
 	$words1 = preg_split('/[\W]+/', $text1, -1, PREG_SPLIT_NO_EMPTY);

@@ -15,8 +15,8 @@ const CONTACT_EMAIL = 'info@kohovolit.eu';
 const FROM_EMAIL = 'neodpovidejte@napistejim.cz';
 const BCC_EMAIL = 'napistejim.cz@gmail.com';
 const ADMIN_EMAIL = 'jaroslav_semancik@yahoo.com';
-const REVIEWER_EMAIL = 'marek@nasipolitici.cz';
-const ORDER_NEWSLETTER_EMAIL = 'marek@nasipolitici.cz';
+const REVIEWER_EMAIL = 'kamil.gregor@gmail.com';
+const ORDER_NEWSLETTER_EMAIL = 'kamil.gregor@gmail.com';
 
 // error reporting
 error_reporting(0);
@@ -39,11 +39,27 @@ const MAP_ZOOM = 5;
 // available locales
 $locales = array(
 	'cs_CZ' => array('lang' => 'cs', 'system_locale' => 'cs_CZ.utf8', 'date_format' => '%-d. %-m. %Y', 'time_zone' => 'Europe/Prague'),
+	'sk_SK' => array('lang' => 'sk', 'system_locale' => 'sk_SK.utf8', 'date_format' => '%-d. %-m. %Y', 'time_zone' => 'Europe/Bratislava'),
 	'en_US' => array('lang' => 'en', 'system_locale' => 'en_US.utf8', 'date_format' => '%Y-%m-%d', 'time_zone' => 'GMT')
 );
 
+// a fix of discrepancies between Google geocoding and official constituencies' areas in some parliaments
+// if no representative is found in these parliaments, remove the given field(s) from entered address and repeat the search again
 $global_parliaments_to_fix = array(
 	'cz/senat' => array('sublocality')
 );
+
+// number of items per page in paged listings
+const PAGER_SIZE = 20;
+
+// Google analytics account key
+const GOOGLE_ANALYTICS_KEY = 'set-yours-here';
+
+// images of the logo
+const LOGO_FILENAME = 'logo_cz.png';
+const SMALL_LOGO_FILENAME = 'logo_cz_small.png';
+
+// link to promotion video
+const PROMOTION_VIDEO = 'http://www.youtube.com/v/UKmMiNxd0xk?version=3';
 
 ?>

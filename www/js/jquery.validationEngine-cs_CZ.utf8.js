@@ -12,7 +12,7 @@
                 },
                 "minSize": {
                     "regex": "none",
-                    "alertText": "* Tato zpráva zpráva je příliš krátká (min. ",
+                    "alertText": "* Tato zpráva je příliš krátká (min. ",
                     "alertText2": " znaků)"
                 },
                 "maxSize": {
@@ -30,12 +30,12 @@
                 },
                 "past": {
                     "regex": "none",
-                    "alertText": "* Date prior to "
+                    "alertText": "* Datum před "
                 },
                 "future": {
                     "regex": "none",
-                    "alertText": "* Date past "
-                },	
+                    "alertText": "* Datum po "
+                },
                 "maxCheckbox": {
                     "regex": "none",
                     "alertText": "* Počet vybraných položek přesáhl limit"
@@ -135,7 +135,7 @@
                     "alertText": "* Prosím napište HELLO"
                 }
             };
-            
+
         }
     };
     $.validationEngineLanguage.newLang();

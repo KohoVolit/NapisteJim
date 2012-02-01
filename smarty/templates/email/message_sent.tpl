@@ -41,8 +41,8 @@ a copy of your message is attached below.{/t}
 {/if}
 {if isset($addressees.sent)}
 
-{if $message.is_public == 'yes'}{t escape=no 1=$smarty.const.NJ_TITLE}You have sent a public message - it will be published on the %1
-website as well as as an eventual reply of the contacted politicians.{/t}{else}{t escape=no 1=$smarty.const.NJ_TITLE}You have chosen a private message - it will not be published on the
+{if $message.is_public == 'yes'}{t escape=no 1=$smarty.const.NJ_TITLE}You have sent a public message – it will be published on the %1
+website as well as as an eventual reply of the contacted politicians.{/t}{else}{t escape=no 1=$smarty.const.NJ_TITLE}You have chosen a private message – it will not be published on the
 %1 website and the contacted politicians will send their eventual reply
 directly to you.{/t}{/if}{/if}
 

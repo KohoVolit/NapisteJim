@@ -1,11 +1,11 @@
-# Czech translation Javasript messages of NapisteJim.cz
+# Czech translation Javasript messages of NapisteJim
 # Copyright (C) 2011 KohoVolit.eu
-# This file is distributed under the same license as the NapisteJim.cz package.
+# This file is distributed under the same license as the NapisteJim package.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: NapišteJim.cz 1.0\n"
+"Project-Id-Version: NapišteJim 1.0\n"
 "Report-Msgid-Bugs-To: info@KohoVolit.eu\n"
 "POT-Creation-Date: 2011-10-17 11:02+0200\n"
 "PO-Revision-Date: 2011-11-08 14:18+0100\n"
@@ -14,6 +14,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1)?(0):(((n>=2)&&(n<=4))?(1):2));\n"
 
 #: choose.js:13 choose_advanced.js:13
 msgid "Choose at least one representative, please."

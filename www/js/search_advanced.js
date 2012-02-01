@@ -44,7 +44,7 @@ function sendForm() {
      }
   });
   if (str.length > 0) str = str.substring(0, str.length-1);
-  if (!str && $("#constituency").val() == 0) return;
+  if (str == '' && $("#constituency").val() == 0) return;
   $("#search_advanced-hidden-groups").val(str);
   $("#search_advanced-hidden-constituency").val($("#constituency").val());
   $("#search_advanced-hidden-parliament").val($("#search_advanced-select-parliament").val());
