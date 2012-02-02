@@ -48,7 +48,7 @@
 			fjs.parentNode.insertBefore(js, fjs);
 			}(document, 'script', 'facebook-jssdk'));{/literal}
 		</script>
-		<div class="fb-like" data-send="false" data-layout="button_count" data-width="115" data-show-faces="true"></div>
+		<div class="fb-like" data-send="false" data-layout="button_count" data-width="130" data-show-faces="true"></div>
 
 		<!--google+-->
 		<g:plusone annotation="inline" size="small" width="220"></g:plusone>
