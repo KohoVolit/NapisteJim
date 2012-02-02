@@ -111,6 +111,7 @@ body {
 #page-footer {
 	clear: both;
 	margin-top: 1em;
+	padding: 0 24px;
 }
 #links-bottom {
   padding: 1em;
