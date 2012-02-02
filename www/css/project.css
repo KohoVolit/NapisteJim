@@ -112,6 +112,14 @@ body {
 	clear: both;
 	margin-top: 1em;
 	padding: 0 24px;
+
+}
+#front-social {
+  height: 20px;
+  padding: .5em;
+  margin-left: auto;
+  margin-right: auto;
+  width: 430px;  
 }
 #links-bottom {
   padding: 1em;
