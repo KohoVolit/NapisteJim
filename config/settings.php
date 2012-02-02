@@ -53,7 +53,7 @@ $global_parliaments_to_fix = array(
 const PAGER_SIZE = 20;
 
 // Google analytics account key
-const GOOGLE_ANALYTICS_KEY = 'set-yours-here';
+const GOOGLE_ANALYTICS_KEY = 'UA-8592359-2';
 
 // images of the logo
 const LOGO_FILENAME = 'logo_cz.png';
