@@ -4,7 +4,7 @@
 const NJ_DIR = '/home/shared/napistejim.cz';
 const API_DIR = '/home/shared/api.kohovolit.eu';
 const API_FILES_URL = 'http://api.kohovolit.eu/files';
-const SMARTY_DIR = '/usr/local/lib/php/Smarty/';
+const SMARTY_DIR = '/usr/local/lib/php/Smarty/libs/';
 
 define("NJ_LOGS_DIR", NJ_DIR . '/logs');
 
