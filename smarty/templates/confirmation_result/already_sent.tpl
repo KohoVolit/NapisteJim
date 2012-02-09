@@ -4,7 +4,7 @@
 {t}You have already sent the same message{/t}
 {/block}
 
-{block name=body}
+{block name=main}
 <h3>{t}You have already sent the same message{/t}</h3>
 
 <p>{t}You have already sent a message with this text to your representatives and the same message cannot be sent twice.{/t}</p>
