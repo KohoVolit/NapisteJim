@@ -1,4 +1,4 @@
-{t escape=no 1=$smarty.const.NJ_TITLE}You have written a message attached below using %1 website
+{t escape=no 1=$smarty.const.NJ_TITLE}You have written a message attached below using %1
 addressed to your representatives:{/t}
 
 {foreach $addressees as $a}
