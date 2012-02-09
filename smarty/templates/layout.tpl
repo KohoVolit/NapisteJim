@@ -5,6 +5,7 @@
 {block name=head}{/block}
 
 {block name=top}
+{if !isset($css)}
 <div id="head">
 	<div id="top-content">
 		<div id="logo-small" class="logo">
@@ -21,15 +22,15 @@
 		</div>
 	</div>
 </div>
+{/if}
 {/block}
 
 {block name=content}
-<div class="wrapper-page-outer"><div id="wrapper-page">
-	{block name=main}{/block}
-</div></div>
+<div class="content-wrapper"><div id="content-inner-wrapper">{block name=main}{/block}</div></div>
 {/block}
 
 {block name=bottom}
+{if !isset($css)}
 <div id="page-footer">
 	<div id="social" class="social-bar">
 		<!--twitter-->
@@ -67,4 +68,5 @@
 		<a href="http://www.gnu.org/licenses/gpl.html">{t}Licence{/t}</a> – <a href="/privacy">{t}Privacy{/t}</a> – <a href="/contact">{t}Contact{/t}</a>
 	</div>
 </div>
+{/if}
 {/block}

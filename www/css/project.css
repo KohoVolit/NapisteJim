@@ -84,18 +84,18 @@ body {
 	width: 90%;
 }
 
-#wrapper-page-outer{
+#content-wrapper {
 	width: 90%;
 	max-width: 1000px;
 	min-height: 180px;
 	margin: 0;
 	padding: 0;
 }
-#wrapper-page{
+#content-inner-wrapper {
 	margin: 0 auto;
 	padding: 0 24px;
 }
-#logo-small{
+#logo-small {
 	float: left;
 	margin-left: 32px;
 }

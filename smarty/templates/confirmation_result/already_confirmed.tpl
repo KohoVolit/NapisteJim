@@ -4,7 +4,7 @@
 {t}Already confirmed{/t}
 {/block}
 
-{block name=body}
+{block name=main}
 <h3>{t}Already confirmed{/t}</h3>
 
 <p>{t}Sending of this message has been already confirmed.{/t}</p>
