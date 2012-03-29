@@ -29,9 +29,9 @@
 					<div class="found-mps">
 					{foreach $group.mp as $mp}
 					  <div class="group-mps">
-						<div id="mp-{$parliament.code}/{$mp.id}" class="mp">
+						<div id="mp_{$parliament.code}/{$mp.id}" class="mp">
 						  <span class="mp-name {if !isset($mp.email)}mp-disabled{/if}">
-							<span id="mp-name-name-{$parliament.code}/{$mp.id}" class="mp-name-name {if isset($mp.email)}mp-clicked-off mp-clicked-{$mp.id} draggable{/if}">{assign "personal_name" format_personal_name($mp, 'surname')}{$personal_name}{if isset($mp.additional_info)}<span class="mp-name-info dimmed small-text">&nbsp;({$mp.additional_info})</span>{/if}
+							<span id="mp-name-name_{$parliament.code}/{$mp.id}" class="mp-name-name {if isset($mp.email)}mp-clicked-off mp-clicked-{$mp.id} draggable{/if}">{assign "personal_name" format_personal_name($mp, 'surname')}{$personal_name}{if isset($mp.additional_info)}<span class="mp-name-info dimmed small-text">&nbsp;({$mp.additional_info})</span>{/if}
 						  </span>
 						</div>
 					  </div>
@@ -45,9 +45,9 @@
 				<div class="wrapper">
 					{foreach $constituency.mp as $mp}
 					  <div class="group-mps">
-						<div id="mp-{$parliament.code}/{$mp.id}" class="mp">
+						<div id="mp_{$parliament.code}/{$mp.id}" class="mp">
 						  <span class="mp-name {if !isset($mp.email)}mp-disabled{/if}">
-							<span id="mp-name-name-{$parliament.code}/{$mp.id}" class="mp-name-name {if isset($mp.email)}mp-clicked-off mp-clicked-{$mp.id} draggable{else}mp-disabled{/if}">{assign "personal_name" format_personal_name($mp, 'surname')}{$personal_name}</span>{if isset($mp.additional_info)}<span class="mp-name-info dimmed small-text">&nbsp;({$mp.additional_info})</span>{/if}
+							<span id="mp-name-name_{$parliament.code}/{$mp.id}" class="mp-name-name {if isset($mp.email)}mp-clicked-off mp-clicked-{$mp.id} draggable{else}mp-disabled{/if}">{assign "personal_name" format_personal_name($mp, 'surname')}{$personal_name}</span>{if isset($mp.additional_info)}<span class="mp-name-info dimmed small-text">&nbsp;({$mp.additional_info})</span>{/if}
 						  </span>
 						</div>
 					  </div>
