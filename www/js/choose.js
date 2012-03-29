@@ -273,7 +273,7 @@ $(document).ready(function() {
 		alert(_('Three representatives can be chosen at most. Remove one of the chosen representatives first to add another one or use drag and drop, please.'));
     } else {
       //get selectedId
-      var selectedIdAr = $(this).attr('id').split('-');
+      var selectedIdAr = $(this).attr('id').split('_');
       var selectedId = selectedIdAr[selectedIdAr.length-1];
       //add selectedId into boxId (A)
       selectAction(selectedId,boxId);
