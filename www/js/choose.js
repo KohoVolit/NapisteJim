@@ -231,7 +231,7 @@ $(document).ready(function() {
 			drop: function( event, ui ) {  //(B+A)
 			    var thisIdAr = $(this).attr('id').split('-');
 			    var thisId = thisIdAr[thisIdAr.length-1];  //id of box, from e.g. choose-addressee-box-2
-			    var selectedIdAr = ui.draggable.attr('id').split('-');
+			    var selectedIdAr = ui.draggable.attr('id').split('_');
 			    var selectedId = selectedIdAr[selectedIdAr.length-1]; //id of selected mp
 			    var prevId = box[thisId]; //id of previous mp in the box
 				//toggle off previous mp
