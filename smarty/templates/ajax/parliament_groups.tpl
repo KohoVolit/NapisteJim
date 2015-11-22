@@ -8,8 +8,8 @@
 </select>
 
 {foreach $groups as $group_kind}
-  <label for="{$group_kind.code}" class="left">{$group_kind.name}: </label>
-  <select name="{$group_kind.code}" id="{$group_kind.code}" class="search_advanced-select-2" >
+  <label for="{$group_kind.code|replace:' ':'-'}" class="left">{$group_kind.name}: </label>
+  <select name="{$group_kind.code|escape:'url'}" id="{$group_kind.code|replace:' ':'-'}" class="search_advanced-select-2" >
   <option value="0" selected="selected">{t}any{/t}</option>
   {foreach $group_kind.group as $group}
     <option value="{$group.id}">{$group.name} {if !empty($group.short_name)} ({$group.short_name}){/if}</option>
