@@ -1,0 +1,79 @@
+<link rel="Stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/ui-lightness/jquery-ui.css" type="text/css" />
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+<script type="text/javascript" src="http://napistejim.cz/js/jquery.clearfield.packed.js"></script>
+<script type="text/javascript" src="http://napistejim.cz/js/search.js"></script>
+<script type="text/javascript" src="http://napistejim.cz/js/google_analytics.js"></script>
+<style>
+/* clearField effect */
+.clearFieldBlurred { color: #888; font-style: italic; }
+.clearFieldActive { color: #000; }
+.wrapper {
+  margin:0;
+  padding:0;
+}
+#logo-center {
+  float: center;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+ }
+
+#search-content-wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width:95%;
+}
+
+fieldset.search {
+	border: none;
+	margin: 0 auto;
+	max-width: 900px;
+	width: 95%;
+}
+
+#search-address{
+  width:65%;
+  max-width:750px;
+  display:inline;
+}
+
+input#search-address{
+    font-size: 1em;
+}
+
+#search-address {
+    display: inline;
+    max-width: 750px;
+    width: 100%;
+}
+
+#search-submit-geocode {
+    border: 1px solid #FBCB09;
+}
+
+#napistejim-block {
+  width:190px;
+  height:170px;
+  border: 1px solid #FBCB09;
+}
+</style>
+<div id="napistejim-block">
+	<div id="logo-center" class="logo">
+			<a href="http://napistejim.cz"><img src="http://napistejim.cz/images/logo_cz_small.png" title="NapišteJim.cz" alt="NapišteJim.cz" height="90" width="171"></a>
+	  </div>
+	<div id="search-content-wrapper">
+		<div id="search-search-wrapper">
+		  <form name="search-search" action="http://napistejim.cz" method="get">
+			<fieldset class="search">
+			  <input rel="Vaše město, vesnice ..." id="search-address" name="address" class="clearField clearFieldBlurred" value="Vaše město, vesnice ..." type="text">
+			</fieldset>
+			<div id="search-submit">
+			  <input aria-disabled="false" role="button" class="ui-button ui-widget ui-state-default ui-corner-all" id="search-submit-geocode" value="Psát svým politikům" type="submit">
+
+			</div>
+		  </form>
+		</div>
+	</div>
+</div>
