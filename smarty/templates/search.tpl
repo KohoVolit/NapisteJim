@@ -73,6 +73,9 @@
 	<a href="/support">{t}Support us{/t}</a>
 	<a href="{t}http://en.kohovolit.eu{/t}">KohoVolit.eu</a>
 </div>
+
+{include file="closing_note.tpl"}
+
 {/block}
 
 {block name=bottom}
