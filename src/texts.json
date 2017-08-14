@@ -1,0 +1,27 @@
+{
+
+    "header_title": "NapišteJim.cz",
+    "header_subtitle": "komunikujme se svými volenými zástupci",
+    "selection": "Výběr",
+
+    "selected_mps": "Vybráno poslanců",
+    "write_email": "Napsat email",
+    "write_to_them": "Napište jim!",
+    "emails": "Emaily",
+    "to_copy": "ke zkopírování",
+    "to_email": "Do emailu",
+    "as_table": "Tabulka",
+
+    "regions": "Kraje",
+    "groups": "Poslanecké kluby",
+    "detailed_select": "Podrobný výběr: Výbory, komise, delegace",
+    "committees": "Výbory",
+    "commissions": "Komise",
+    "delegations": "Delegace",
+
+    "footer_motto": "Od autorů Volební kalkulačky",
+    "about": "O projektu",
+
+    "meta_description": "Aplikace na snazší komunikaci se svými poslanci.",
+    "meta_og_image": "https://napistejim.cz/statics/logo_cz.png"
+}

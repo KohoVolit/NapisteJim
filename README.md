@@ -1,13 +1,19 @@
-# NapišteJim.cz
+# Quasar App
 
-An application to write to Czech representatives.
+> A Quasar project
 
-## Reuse
-The application is built upon https://github.com/KohoVolit/KohoVolitAPI, see its documentation for more information.
+## Build Setup
 
-### Examples
-#### Direct link to a single or multiple representatives
-http://napistejim.cz/?mp=cz/psp/6413
+``` bash
+# install dependencies
+$ npm install
 
-#### Widget
-An example of a widget (to put on different websites) is here: https://github.com/KohoVolit/NapisteJim/tree/master/www/pages/widget.html
+# serve with hot reload at localhost:8080
+$ quasar dev
+
+# build for production with minification
+$ quasar build
+
+# lint code
+$ quasar lint
+```

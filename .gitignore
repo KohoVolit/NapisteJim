@@ -1,4 +1,7 @@
-logs/
-smarty/cache
-smarty/templates_c
-config/settings.php
+.DS_Store
+.thumbs.db
+node_modules/
+dist/
+npm-debug.log*
+cordova/platforms
+cordova/plugins

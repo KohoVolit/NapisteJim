@@ -1,0 +1,4 @@
+logs/
+smarty/cache
+smarty/templates_c
+config/settings.php
