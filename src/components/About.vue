@@ -9,6 +9,7 @@
         <q-toolbar slot="footer" color="tertiary">
             <component-footer v-bind:t="t"></component-footer>
         </q-toolbar>
+        <component-analytics></component-analytics>
     </q-layout>
 </template>
 
@@ -17,6 +18,7 @@ import textFile from '../texts.json'
 import aboutFile from '../statics/about.html'
 var Header = require('./Header.vue')
 import Footer from './Footer.vue'
+import Analytics from './Analytics.vue'
 import { QLayout, QToolbar } from 'quasar'
 
 export default {
@@ -29,6 +31,7 @@ export default {
     components: {
         'component-header': Header,
         'component-footer': Footer,
+        'component-analytics': Analytics,
         QLayout,
         QToolbar
     },
