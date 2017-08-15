@@ -115,8 +115,8 @@
         },
         methods: {
             containsSome: function (arr, vs) {
-                console.log(arr)
-                console.log(vs)
+                //console.log(arr)
+                //console.log(vs)
                 for (var i = 0; i < arr.length; i++) {
                     for (var j = 0; j < vs.length; j++) {
                         if (arr[i] === vs[j]) return true

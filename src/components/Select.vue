@@ -48,7 +48,7 @@
         },
         methods: {
             setValues: function () {
-                console.log(this.selected)
+                //console.log(this.selected)
                 this.$emit('setUp', this.selected)
             },
             setAll: function () {
