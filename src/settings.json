@@ -1,6 +1,7 @@
 {
     "api_path": "https://api.napistejim.cz/",
-    "psp_image": "http://www.psp.cz/eknih/cdrom/2013ps/eknih/2013ps/poslanci/i",
+    "api_path": "http://localhost/michal/project/napistejim.cz/api/",
+    "psp_image": "http://www.psp.cz/eknih/cdrom/2017ps/eknih/2017ps/poslanci/i",
 
     "google_analytics_code": "UA-8592359-2"
 

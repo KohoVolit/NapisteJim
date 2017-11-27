@@ -23,5 +23,8 @@
     "about": "O projektu",
 
     "meta_description": "Aplikace na snazší komunikaci se svými poslanci.",
-    "meta_og_image": "https://napistejim.cz/statics/logo_cz.png"
+    "meta_og_image": "https://napistejim.cz/statics/logo_cz.png",
+
+    "select_all": "Všechny",
+    "deselect_all": "Vymazat"
 }

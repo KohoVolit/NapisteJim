@@ -17,8 +17,8 @@
                 />
             </div>
             <div>
-                <q-btn @click="setAll" color="positive" big>Všechny</q-btn>
-                <q-btn @click="desetAll" color="warning" big>Vymazat</q-btn>
+                <q-btn @click="setAll" color="positive" big>{{ t['select_all'] }}</q-btn>
+                <q-btn @click="desetAll" color="warning" big>{{ t['deselect_all'] }}</q-btn>
             </div>
         </div>
     </div>
@@ -28,8 +28,10 @@
     import { QBtn, QCheckbox, QSelect } from 'quasar'
 
     export default {
-        props: ['items'],
+        props: ['items', 't'],
         data: function () {
+            // console.log('select data:')
+            // console.log(this.items)
             return {
                 selected: this.items
             }
@@ -48,7 +50,7 @@
         },
         methods: {
             setValues: function () {
-                //console.log(this.selected)
+                // console.log(this.selected)
                 this.$emit('setUp', this.selected)
             },
             setAll: function () {

@@ -12,7 +12,7 @@
                             <h4><q-icon name="ion-earth" /> {{ t['regions'] }}</h4>
                         </q-item-tile>
                         </q-item-tile>
-                            <component-select v-bind:items="regs" v-on:setUp="(...args)=>this.setAr('regions',...args)" v-on:desetUp="(...args)=>this.desetAr('regions',...args)"></component-select>
+                            <component-select v-bind:items="regs" :t="t" v-on:setUp="(...args)=>this.setAr('regions',...args)" v-on:desetUp="(...args)=>this.desetAr('regions',...args)"></component-select>
                         </q-item-tile>
                     </q-item-main>
                 </q-item>
@@ -23,7 +23,7 @@
                             <h4><q-icon name="ion-flag" /> {{ t['groups'] }}</h4>
                         </q-item-tile>
                         </q-item-tile>
-                            <component-select v-bind:items="grps" v-on:setUp="(...args)=>this.setAr('groups',...args)" v-on:desetUp="(...args)=>this.desetAr('groups',...args)"></component-select>
+                            <component-select v-bind:items="grps" :t="t" v-on:setUp="(...args)=>this.setAr('groups',...args)" v-on:desetUp="(...args)=>this.desetAr('groups',...args)"></component-select>
                         </q-item-tile>
                     </q-item-main>
                 </q-item>
@@ -36,7 +36,7 @@
                                 <h5><q-checkbox v-model="includes['committees']" @change="filterPeople"/> {{ t['committees'] }}</h5>
                             </q-item-tile>
                             </q-item-tile>
-                                <component-select v-bind:items="commits" v-on:setUp="(...args)=>this.setAr('committees',...args)" v-on:desetUp="(...args)=>this.desetAr('committees',...args)" v-on:checkCommitties ></component-select>
+                                <component-select v-bind:items="commits" :t="t" v-on:setUp="(...args)=>this.setAr('committees',...args)" v-on:desetUp="(...args)=>this.desetAr('committees',...args)" v-on:checkCommitties ></component-select>
                             </q-item-tile>
                         </q-item-main>
                     </q-item>
@@ -46,7 +46,7 @@
                                 <h5><q-checkbox v-model="includes['commissions']" @change="filterPeople"/> {{ t['commissions'] }}</h5>
                             </q-item-tile>
                             </q-item-tile>
-                                <component-select v-bind:items="commiss" v-on:setUp="(...args)=>this.setAr('commissions',...args)" v-on:desetUp="(...args)=>this.desetAr('commissions',...args)"></component-select>
+                                <component-select v-bind:items="commiss" :t="t" v-on:setUp="(...args)=>this.setAr('commissions',...args)" v-on:desetUp="(...args)=>this.desetAr('commissions',...args)"></component-select>
                             </q-item-tile>
                         </q-item-main>
                     </q-item>
@@ -56,7 +56,7 @@
                                 <h5><q-checkbox v-model="includes['delegations']" @change="filterPeople"/> {{ t['delegations'] }}</h5>
                             </q-item-tile>
                             </q-item-tile>
-                                <component-select v-bind:items="delegs" v-on:setUp="(...args)=>this.setAr('delegations',...args)" v-on:desetUp="(...args)=>this.desetAr('delegations',...args)"></component-select>
+                                <component-select v-bind:items="delegs" :t="t" v-on:setUp="(...args)=>this.setAr('delegations',...args)" v-on:desetUp="(...args)=>this.desetAr('delegations',...args)"></component-select>
                             </q-item-tile>
                         </q-item-main>
                     </q-item>
@@ -98,6 +98,8 @@
         },
         computed: {
             regs: function () {
+                // console.log('computed:')
+                // console.log(this.uniques(this.people, 'region'))
                 return this.uniques(this.people, 'region')
             },
             grps: function () {
@@ -115,8 +117,8 @@
         },
         methods: {
             containsSome: function (arr, vs) {
-                //console.log(arr)
-                //console.log(vs)
+                // console.log(arr)
+                // console.log(vs)
                 for (var i = 0; i < arr.length; i++) {
                     for (var j = 0; j < vs.length; j++) {
                         if (arr[i] === vs[j]) return true
@@ -190,6 +192,9 @@
             this.commissions = this.commiss
             this.delegations = this.delegs
             this.filtered_people = this.people
+            // console.log('mounted regs')
+            // this.regs = ['Plzeňský']
+            // console.log(this.regs)
         },
         components: {
             'component-select': Select,
