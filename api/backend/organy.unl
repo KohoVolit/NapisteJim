@@ -1070,7 +1070,7 @@
 1161|1128|4|POZPVP|Podvýbor pro oblast zdravotní péèe, vzdìlávání a prevenci|Subcommittee on Healthcare, Education and Prevention|14.01.2014|26.10.2017||0|
 1162|1128|4|PEZZPLP|Podvýbor pro ekonomiku ve zdravotnictví, zdravotní pojištìní a lékovou politiku|Subcommittee on Healthcare Economy, Health Insurance and Medicine Policy|14.01.2014|26.10.2017||0|
 1163|1122|4|PEFPS|Podvýbor pro evropské fondy a pøeshranièní spolupráci|Subcommittee on European Funds and Cross-boarder Cooperation|23.01.2014|26.10.2017||0|
-1164|0|5|VládaÈR|Vláda Èeské republiky|Government of the Czech Republic|29.01.2014|||1|
+1164|0|5|VládaÈR|Vláda Èeské republiky|Government of the Czech Republic|29.01.2014|13.12.2017||1|
 1165|171|1|Nezaøaz|Nezaøazení|Unclassified Deputies|04.02.2014|26.10.2017|200|0|
 1166|1140|13|PK|Pákistán|Islamic Republic of Pakistan|06.02.2014|26.10.2017||0|
 1167|1140|13|MA|Maroko|Kingdom of Morocco|06.02.2014|26.10.2017||0|
@@ -1188,7 +1188,7 @@
 1286|144|13|Èína|Èína|the People's Republic of China|04.02.1999|20.06.2002||0|
 1288|1140|13|BD|Bangladéš|People´s Republic of Bangladesh|25.05.2017|26.10.2017||0|
 1289||6|STAN|Starostove a nezavisli||21.10.2017||||
-1290||6|Pirati|Ceska piratska strana||21.10.2017||||
+1290||6|Piráti|Èeská pirátská strana||21.10.2017||||
 1291||6|SPD|Svoboda a prima demokracie - Tomio Okamura||21.10.2017||||
 172||11|PSP8|Poslanecká snìmovna||21.10.2017|||0|
 1292|172|1|ANO|Poslanecký klub ANO 2011||24.10.2017||100|0|
@@ -1209,7 +1209,7 @@
 1307|172|3|VOV|Volební výbor| |24.11.2017|||0|
 1308|172|3|VEZ|Výbor pro evropské záležitosti| |24.11.2017|||0|
 1309|172|3|HV|Hospodáøský výbor| |24.11.2017|||0|
-1310|172|3|UVP|Ústavnì právní výbor||24.11.2017|||0|
+1310|172|3|UPV|Ústavnì právní výbor||24.11.2017|||0|
 1311|172|3|VB|Výbor pro bezpeènost| |24.11.2017|||0|
 1312|172|3|VO|Výbor pro obranu| |24.11.2017|||0|
 1313|172|3|VSP|Výbor pro sociální politiku||24.11.2017|||0|
@@ -1218,4 +1218,31 @@
 1316|172|3|VZ|Výbor pro zdravotnictví| |24.11.2017|||0|
 1317|172|3|VZP|Výbor pro životní prostøedí| |24.11.2017|||0|
 1318|172|3|ZAV|Zahranièní výbor| |24.11.2017|||0|
-1319|172|3|ZEV|Zemìdìlský výbor.| |24.11.2017|||0|
+1319|172|3|ZEV|Zemìdìlský výbor||24.11.2017|||0|
+1320|172|2|SKPKPS|Stálá komise pro práci Kanceláøe Poslanecké snìmovny||28.11.2017|||0|
+1321|172|2|SKRRPM|Stálá komise pro rodinu, rovné pøíležitosti a národnostní menšiny||28.11.2017|||0|
+1322|172|2|SKÚÈR|Stálá komise pro Ústavu Èeské republiky| |28.11.2017|||0|
+1323|172|2|SKGIBS|Stálá komise pro kontrolu èinnosti Generální inspekce bezpeènostních sborù| |28.11.2017|||0|
+1324|172|2|SKKPO|Stálá komise pro kontrolu použití odposlechu a záznamu telekomunikaèního provozu, použití sledování osob a vìcí a rušení provozu elektronických komunikací| |28.11.2017|||0|
+1325|172|2|SKCEÚ|Stálá komise pro kontrolu poskytnutí údajù z centrální evidence úètù| |28.11.2017|||0|
+1326|172|2|SKBIS|Stálá komise pro kontrolu èinnosti Bezpeènostní informaèní služby| |28.11.2017|||0|
+1327|172|2|SKNBÚ|Stálá komise pro kontrolu èinnosti Národního bezpeènostního úøadu| |28.11.2017|||0|
+1328|172|2|SKVZ|Stálá komise pro kontrolu èinnosti Vojenského zpravodajství| |28.11.2017|||0|
+1329|172|2|SKFAÚ|Stálá komise pro kontrolu èinnosti Finanèního analytického úøadu| |28.11.2017|||0|
+1330|172|2|SKNÚKIB|Stálá komise pro kontrolu èinnosti Národního úøadu pro kybernetickou a informaèní bezpeènost| |28.11.2017|||0|
+1331|172|7|SDMPU|Stálá delegace Parlamentu do Meziparlamentní unie| |28.11.2017|||0|
+1332|172|7|SDNATO|Stálá delegace Parlamentu do Parlamentního shromáždìní NATO| |28.11.2017|||1|
+1333|172|7|SDOBSE|Stálá delegace Parlamentu do Parlamentního shromáždìní Organizace pro bezpeènost a spolupráci v Evropì| |28.11.2017|||1|
+1334|172|7|SDPSRE|Stálá delegace Parlamentu do Parlamentního shromáždìní Rady Evropy||28.11.2017|||1|
+1335|172|7|SDSEI|Stálá delegace Parlamentu do Støedoevropské iniciativy| |28.11.2017|||1|
+1336|1310|4|FP|Finanèní podvýbor| |29.11.2017|||0|
+1337|172|2|VKOKD|Vyšetøovací komise k OKD| |12.12.2017|||0|
+1338|0|5|VládaÈR|Vláda Èeské republiky| |13.12.2017|||1|
+1339|1306|4|PKHVS|Podvýbor pro kontrolu hospodaøení veøejného sektoru| |13.12.2017|||0|
+1340|1309|4|PD|Podvýbor pro dopravu| |13.12.2017|||0|
+1341|1309|4|PE|Podvýbor pro energetiku| |13.12.2017|||0|
+1342|1309|4|PPP|Podvýbor pro podnikatelské prostøedí| |13.12.2017|||0|
+1343|1309|4|POS|Podvýbor pro ochranu spotøebitele| |13.12.2017|||0|
+1344|1309|4|PIT|Podvýbor pro ICT, telekomunikace a digitální ekonomiku| |13.12.2017|||0|
+1345|1309|4|PLVP|Podvýbor letectví a vesmírný program| |13.12.2017|||0|
+1346|1309|4|PVVI|Podvýbor pro vìdu, výzkum a inovace| |13.12.2017|||0|

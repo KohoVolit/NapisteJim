@@ -6,7 +6,7 @@
 6|JUDr.|Bílý|Jiøí| |18.10.1952|M|||
 7| |Blažek|Ladislav| |23.02.1950|M|||
 8| |Bláha|Jan| |17.03.1955|M|07.12.1998||
-9| |Body|Ladislav| |02.05.1949|M|||
+9| |Body|Ladislav| |02.05.1949|M||25.11.2017|
 10|Ing.|Brodský|Petr| |29.09.1944|M|||
 11|Ing.|Broulík|Jaroslav| |25.06.1950|M|||
 12|Ing.|Brožík|František| |04.03.1955|M|07.12.1998||
@@ -55,7 +55,7 @@
 55|MUDr.|Jaroš|Emil| |21.11.1943|M|||
 56|JUDr. Ing.|Jegla|Jan| |17.12.1944|M|||
 57|RNDr.|Ježek|Josef| |25.11.1940|M|||
-58|Ing.|Ježek|Tomáš|CSc.|15.03.1940|M|||
+58|Ing.|Ježek|Tomáš|CSc.|15.03.1940|M||29.11.2017|
 59|JUDr.|Kaèenka|František| |04.04.1948|M|||
 60|MUDr.|Kadlecová|Milada| |19.11.1940|Ž|||
 61|PhDr.|Kalus|Jaromír| |27.12.1947|M|||
@@ -6113,7 +6113,7 @@
 6166|Ing.|Volný|Jan| |15.06.1959|M|||
 6167|MUDr.|Volèík|Pavel| |07.09.1950|M|||
 6168|prof. JUDr.|Válková|Helena|CSc.|07.01.1951|Ž|||
-6169|PhDr. Ing.|Valenta|Jiøí| |28.12.1965|M|||
+6169|PhDr. Ing. Mgr. et Mgr.|Valenta|Jiøí| |28.12.1965|M|||
 6170|Ing.|Uhlík|Josef| |27.02.1963|M|||
 6171|MUDr.|Plzák|Pavel| |18.08.1960|M|||
 6172| |Okleštìk|Ladislav| |10.03.1961|M|||
@@ -6223,7 +6223,7 @@
 6276| |Augustin|Miroslav| |01.01.1900|M|||
 6277| |Heikenwälder|Jakub| |01.01.1900|M|||
 6278|plk. PhDr.|Stehlík|Eduard| |01.01.1900|M|||
-6279|Ing.|Luzar|Leo| |06.12.1964|M|||
+6279|Ing. et Ing.|Luzar|Leo| |06.12.1964|M|||
 6280|Mgr.|Plíšek|Martin| |11.11.1974|M|||
 6281|Mgr.|Pokorný|Viktor| |01.01.1900|M|||
 6282| |Filip|Ondøej| |01.01.1900|M|||
@@ -6413,7 +6413,7 @@
 6470|doc. PaedDr.|Mauritzová|Ilona|Ph.D.|29.12.1959|Ž|||
 6471|Mgr.|Vildumetzová|Jana| |08.05.1973|Ž|||
 6472|MUDr.|Procházková|Vìra| |03.04.1954|Ž|||
-6473|PhDr.|Richterová|Olga| |21.01.1985|Ž|||
+6473|PhDr.|Richterová|Olga|Ph.D.|21.01.1985|Ž|||
 6474|Ing.|Ožanová|Zuzana| |25.09.1970|Ž|||
 6475|Ing.|Oborná|Monika| |02.04.1989|Ž|||
 6476| |Melková|Marcela| |24.01.1971|Ž|||
@@ -6431,7 +6431,7 @@
 6488|Mgr.|Peksa|Mikuláš| |18.06.1986|M|||
 6489| |Vymazal|Tomáš| |11.05.1990|M|||
 6490|Ing.|Vrána|Petr| |04.01.1975|M|||
-6491|Mgr.|Vojtìch|Adam| |02.10.1986|M|||
+6491|Mgr. et Mgr.|Vojtìch|Adam| |02.10.1986|M|||
 6492|prof. Ing.|Vondrák|Ivo|CSc.|15.04.1959|M|||
 6493|MUDr.|Ventruba|Jiøí|CSc.|02.02.1950|M|||
 6494|JUDr.|Veselý|Ondøej| |03.05.1976|M|||
@@ -6440,7 +6440,7 @@
 6497|Ing.|Kalous|Adam| |06.10.1979|M|||
 6498|Mgr.|Klaus|Václav| |10.09.1969|M|||
 6499| |Kopøiva|František| |30.11.1995|M|||
-6500|Mgr. Bc. et Bc. et B|Richter|Jan| |28.11.1967|M|||
+6500|Mgr. Bc. et Bc. et Bc.|Richter|Jan| |28.11.1967|M|||
 6501|Ing.|Stanìk|Pavel| |20.01.1967|M|||
 6502| |Levová|Jana| |17.06.1977|Ž|||
 6503|Mgr.|Kobza|Jiøí| |27.12.1955|M|||
@@ -6479,3 +6479,15 @@
 6536| |Mališ|Pøemysl| |28.01.1980|M|||
 6537| |Lipavský|Jan| |02.07.1985|M|||
 6538|Mgr.|Kupka|Martin| |28.10.1975|M|||
+6539|Ing.|Pour|Milan| |06.06.1965|M|||
+6540|MUDr.|Matyášová|Eva| |15.07.1959|Z|||
+6541|Ing.|Pávek|Petr| |13.05.1963|M|||
+6542| |Máslová|Monika| |01.01.1900|Z|||
+6543| |Morávek|Jan| |01.01.1900|M|||
+6544|Mgr.|Metnar|Lubomír| |06.10.1967|M|||
+6545|JUDr.|Schillerová|Alena|Ph.D.|01.03.1964|Ž|||
+6546|Ing.|Hüner|Tomáš| |26.06.1959|M|||
+6547|Ing.|Nìmcová|Jaroslava|MBA|27.04.1971|Ž|||
+6548|Ing.|Milek|Jiøí| |03.07.1963|M|||
+6549|Ing.|Plaga|Robert|Ph.D.|21.07.1978|M|||
+6550|PhDr.|Šmíd|Ilja| |14.02.1952|M|||
