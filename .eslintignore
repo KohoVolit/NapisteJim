@@ -2,3 +2,4 @@ build/*.js
 config/*.js
 dist/*.js
 src/components/Analytics.vue
+src/components/Darujme.vue

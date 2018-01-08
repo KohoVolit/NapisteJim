@@ -1,9 +1,28 @@
 # creates data.json from http://www.psp.cz/sqw/hp.sqw?k=1300
 
 import csv
+import io
 import json
 import locale
+import requests
+import zipfile
+import os
 
+# path
+try:
+    path = os.path.dirname(os.path.realpath(__file__))
+except Exception:
+    path = os.getcwd()
+
+# download
+
+url = "http://www.psp.cz/eknih/cdrom/opendata/poslanci.zip"
+r = requests.get(url)
+if r.ok:
+    z = zipfile.ZipFile(io.BytesIO(r.content))
+    z.extractall(path)
+
+# prepare data
 term = '172'
 locale.setlocale(locale.LC_ALL, 'cs_CZ.UTF-8')
 poslanec = {}
@@ -69,6 +88,7 @@ for k in data_obj:
     data_obj[k]['name'] = osoby[k][3] + " " + osoby[k][2]
     data_obj[k]['family_name'] = osoby[k][2]
     data_obj[k]['given_name'] = osoby[k][3]
+    data_obj[k]['mp_id'] = poslanec2[k][0]
 
 # other memberships
 memberships = {

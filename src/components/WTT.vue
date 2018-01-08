@@ -5,6 +5,7 @@
             <component-header v-bind:t="t" v-bind:settings="settings"></component-header>
         </q-toolbar>
         <component-selects v-bind:people="people" v-bind:t="t" v-bind:settings="settings" class="generic-margin"></component-selects>
+        <component-darujme></component-darujme>
         <q-toolbar slot="footer" color="tertiary">
             <component-footer v-bind:t="t"></component-footer>
         </q-toolbar>
@@ -20,6 +21,7 @@ import Selects from './Selects.vue'
 import Header from './Header.vue'
 import Footer from './Footer.vue'
 import Analytics from './Analytics.vue'
+import Darujme from './Darujme.vue'
 import { QLayout, QToolbar, QToolbarTitle, QIcon } from 'quasar'
 
 export default {
@@ -55,6 +57,7 @@ export default {
         'component-header': Header,
         'component-footer': Footer,
         'component-selects': Selects,
+        'component-darujme': Darujme,
         'component-analytics': Analytics,
         QLayout,
         QToolbar,
