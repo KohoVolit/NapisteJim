@@ -14,6 +14,8 @@ try:
 except Exception:
     path = os.getcwd()
 
+path = '/home/michal/project/napistejim.cz/api/backend/'
+
 # download
 
 url = "http://www.psp.cz/eknih/cdrom/opendata/poslanci.zip"
@@ -30,23 +32,25 @@ organy = {}
 osoby = {}
 zarazeni = []
 data_obj = {}
+data_all_obj = {}
 data = []
-with open("poslanec.unl", encoding="cp1250") as fin:
+data_all = []
+with open(path + "poslanec.unl", encoding="cp1250") as fin:
     csvr = csv.reader(fin, delimiter='|')
     for row in csvr:
         poslanec[row[0]] = row
 
-with open("organy.unl", encoding="cp1250") as fin:
+with open(path + "organy.unl", encoding="cp1250") as fin:
     csvr = csv.reader(fin, delimiter='|')
     for row in csvr:
         organy[row[0]] = row
 
-with open("osoby.unl", encoding="cp1250") as fin:
+with open(path + "osoby.unl", encoding="cp1250") as fin:
     csvr = csv.reader(fin, delimiter='|')
     for row in csvr:
         osoby[row[0]] = row
 
-with open("zarazeni.unl", encoding="cp1250") as fin:
+with open(path + "zarazeni.unl", encoding="cp1250") as fin:
     csvr = csv.reader(fin, delimiter='|')
     for row in csvr:
         zarazeni.append(row)
@@ -55,6 +59,13 @@ with open("zarazeni.unl", encoding="cp1250") as fin:
 for row in zarazeni:
     if row[1] == term and row[4] == '':
         data_obj[row[0]] = {
+            "id": row[0],
+            "committees": [],
+            "delegations": [],
+            "commissions": []
+        }
+    if row[1] == term:
+        data_all_obj[row[0]] = {
             "id": row[0],
             "committees": [],
             "delegations": [],
@@ -70,6 +81,7 @@ for k in organy:
 for row in zarazeni:
     if row[1] in groups and row[4] == '':
         data_obj[row[0]]['group'] = organy[row[1]][3]
+        data_all_obj[row[0]]['group'] = organy[row[1]][3]
 
 # regions, emails, names
 regions = []
@@ -90,6 +102,14 @@ for k in data_obj:
     data_obj[k]['given_name'] = osoby[k][3]
     data_obj[k]['mp_id'] = poslanec2[k][0]
 
+for k in data_all_obj:
+    data_all_obj[k]['region'] = organy[poslanec2[k][2]][4]
+    data_all_obj[k]['email'] = poslanec2[k][9]
+    data_all_obj[k]['name'] = osoby[k][3] + " " + osoby[k][2]
+    data_all_obj[k]['family_name'] = osoby[k][2]
+    data_all_obj[k]['given_name'] = osoby[k][3]
+    data_all_obj[k]['mp_id'] = poslanec2[k][0]
+
 # other memberships
 memberships = {
     'commissions': "2",
@@ -105,11 +125,20 @@ for m in memberships:
     for row in zarazeni:
         if row[1] in ids and row[4] == '':
             data_obj[row[0]][m].append(organy[row[1]][4])
+            data_all_obj[row[0]][m].append(organy[row[1]][4])
 
 for k in data_obj:
     data.append(data_obj[k])
 
-data = sorted(sorted(data, key=lambda x: locale.strxfrm(x['given_name'])), key=lambda x: locale.strxfrm(x['family_name']))
+for k in data_all_obj:
+    data_all.append(data_all_obj[k])
 
-with open("../data.json", "w") as fout:
+data = sorted(sorted(data, key=lambda x: locale.strxfrm(x['given_name'])), key=lambda x: locale.strxfrm(x['family_name']))
+data_all = sorted(sorted(data_all, key=lambda x: locale.strxfrm(x['given_name'])), key=lambda x: locale.strxfrm(x['family_name']))
+
+
+with open(path + "../data.json", "w") as fout:
     json.dump(data, fout, ensure_ascii=False)
+
+with open(path + "../data_all.json", "w") as fout:
+    json.dump(data_all, fout, ensure_ascii=False)

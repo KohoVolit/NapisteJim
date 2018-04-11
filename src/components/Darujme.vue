@@ -16,6 +16,7 @@
 <style scoped>
     .cont {
         min-height: 500px;
+        padding-top:42px;
     }
     .right {
         float: right;
