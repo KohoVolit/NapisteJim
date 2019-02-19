@@ -15,6 +15,14 @@ except Exception:
     path = os.getcwd()
 
 path = '/home/michal/project/napistejim.cz/api/backend/'
+term = '172'
+group_number = '1'
+region_number = '75'
+memberships = {
+    'commissions': "2",
+    "committees": "3",
+    "delegations": "7"
+}
 
 # download
 
@@ -25,7 +33,6 @@ if r.ok:
     z.extractall(path)
 
 # prepare data
-term = '172'
 locale.setlocale(locale.LC_ALL, 'cs_CZ.UTF-8')
 poslanec = {}
 organy = {}
@@ -75,8 +82,9 @@ for row in zarazeni:
 # kluby
 groups = []
 for k in organy:
-    if organy[k][1] == term and organy[k][2] == '1':
+    if organy[k][1] == term and organy[k][2] == group_number:
         groups.append(organy[k][0])
+
 
 for row in zarazeni:
     if row[1] in groups and row[4] == '':
@@ -86,7 +94,7 @@ for row in zarazeni:
 # regions, emails, names
 regions = []
 for k in organy:
-    if organy[k][2] == '75':
+    if organy[k][2] == region_number:
         regions.append(organy[k][0])
 
 poslanec2 = {}
@@ -111,11 +119,6 @@ for k in data_all_obj:
     data_all_obj[k]['mp_id'] = poslanec2[k][0]
 
 # other memberships
-memberships = {
-    'commissions': "2",
-    "committees": "3",
-    "delegations": "7"
-}
 for m in memberships:
     ids = []
     for k in organy:

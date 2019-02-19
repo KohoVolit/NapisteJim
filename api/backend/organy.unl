@@ -84,7 +84,7 @@
 616|168|3|PV|Petièní vıbor|Committee for Petitions|16.07.2002|15.06.2006||0|
 634|606|4|PDVDI|Podvıbor pro dopravu a vıstavbu dopravní infrastruktury|Subcommittee on Transportation|08.08.2002|15.06.2006||0|
 543|0|15|RÈT|Rada Èeské televize|The Czech Television Council|25.01.2001|||0|
-1097||79|SE09|Senát|Senate|21.11.2012||900|0|
+1097||79|SE09|Senát|Senate|21.11.2012|18.11.2014|900|0|
 50|167|1|KSÈM|Poslaneckı klub Komunistické strany Èech a Moravy|Political group Communist Party of Bohemia and Moravia|23.06.1998|20.06.2002|40|0|
 51|167|1|ODS|Poslaneckı klub Obèanské demokratické strany|Political group Civic Democratic Party|30.06.1998|20.06.2002|10|0|
 52|167|1|US|Poslaneckı klub Unie svobody|Political group Freedom Union|26.06.1998|20.06.2002|50|0|
@@ -1195,7 +1195,7 @@
 1293|172|1|KSÈM|Poslaneckı klub Komunistické strany Èech a Moravy|Political group Communist Party of Bohemia and Moravia|24.10.2017||600|0|
 1294|172|1|ÈSSD|Poslaneckı klub Èeské strany sociálnì demokratické|Political group Czech Social Democratic Party|27.10.2017||500|0|
 1295|172|1|ODS|Poslaneckı klub Obèanské demokratické strany|Political group Civic Democratic Party|24.10.2017||200|0|
-1296|172|1|STAN|Poslaneckı klub Starostové a nezávislí|Political group Mayors and Independets|23.10.2017||900|0|
+1296|172|1|STAN|Poslaneckı klub Starostové a nezávislí|Political group Mayors and Independents|23.10.2017||900|0|
 1297|172|1|KDU-ÈSL|Poslaneckı klub Køesanské a demokratické unie-Èeskoslovenské strany lidové|Political group Christian and Democratic Union - Czechoslovak People's Party|24.10.2017||700|0|
 1298|172|1|SPD|Poslaneckı klub Svoboda a pøímá demokracie - Tomio Okamura|Political group Freedom and Direct Democracy - Tomio Okamura|26.10.2017||400|0|
 1299|172|1|TOP09|Poslaneckı klub TOP 09|Political group TOP 09|31.10.2017||800|0|
@@ -1237,7 +1237,7 @@
 1335|172|7|SDSEI|Stálá delegace Parlamentu do Støedoevropské iniciativy|Permanent Delegation to the Central European Initiative|28.11.2017|||1|
 1336|1310|4|FP|Finanèní podvıbor|Subcommittee on Finance|29.11.2017|||0|
 1337|172|2|VKOKD|Vyšetøovací komise k OKD|Investigatory Commission on OKD|12.12.2017|||0|
-1338|0|5|VládaÈR|Vláda Èeské republiky|Government of Czech Republic|13.12.2017|||1|
+1338|0|5|VládaÈR|Vláda Èeské republiky|Government of Czech Republic|13.12.2017|27.06.2018||1|
 1339|1306|4|PKHVS|Podvıbor pro kontrolu hospodaøení veøejného sektoru|Subcommittee on Public Sector Audit|13.12.2017|||0|
 1340|1309|4|PD|Podvıbor pro dopravu|Subcommittee on Transportation|13.12.2017|||0|
 1341|1309|4|PE|Podvıbor pro energetiku|Subcommittee on Power Engineering|13.12.2017|||0|
@@ -1294,8 +1294,8 @@
 1393|1311|4|PPÈR|Podvıbor pro Policii Èeské republiky, obecní policii a soukromé bezpeènostní sluby|Subcommittee on Police of the Czech Republic,  Municipal Police and Private Security Services|14.02.2018|||0|
 1394|1311|4|PHZS|Podvıbor pro Hasièskı záchrannı sbor Èeské republiky|Subcommittee on Fire Rescue Service of the Czech Republic|14.02.2018|||0|
 1395|1311|4|PV|Podvıbor pro vìzeòství|Subcommittee on Penology|14.02.2018|||0|
-1396|1311|4|VZZS|Podvıbor pro zdravotnické záchranné sluby|Subcommittee on Ambulance Services|14.02.2018|||0|
-1397|1317|4|PUR|Podvıbor pro udritelnı rozvoj|Subcommittee on Sustainable Develipment|14.02.2018|||0|
+1396|1311|4|PZZS|Podvıbor pro zdravotnické záchranné sluby|Subcommittee on Ambulance Services|14.02.2018|||0|
+1397|1317|4|PUR|Podvıbor pro udritelnı rozvoj|Subcommittee on Sustainable Development|14.02.2018|||0|
 1413|0|87|PSSE08|Spoleèné schùze Poslanecké snìmovny a Senátu| |21.10.2017|||0|
 1414|1308|4|PEFPS|Podvıbor pro evropské fondy a pøeshranièní spolupráci|Subcommittee on European Funds and Cross-boarder Cooperation|15.02.2018|||0|
 1415|1308|4|PMAP|Podvıbor pro migraci a azylovou politiku|Subcommittee on Migration and Asylum Policy|15.02.2018|||0|
@@ -1328,3 +1328,53 @@
 1442|1331|13|PL|Polsko|Poland|21.03.2018|||0|
 1443|1331|13|SK|Slovensko|Slovakia|21.03.2018|||0|
 1444|1331|13|CH|Švıcarsko|Switzerland|09.03.2018|||0|
+1445|1331|13|USA|Spojené státy americké|United States of America|10.04.2018|||0|
+1446|1331|13|ARE|Spojené arabské emiráty|United Arab Emirates|10.04.2018|||0|
+1447|1331|13|ISR|Izrael|State of Israel|10.04.2018|||0|
+1448|1331|13|OMN|Sultanát Omán|Sultanate of Oman|10.04.2018|||0|
+1453|1331|13|CN|Èína|China|11.04.2018|||0|
+1454|1331|13|CL|Chile|Chile|11.04.2018|||0|
+1455|1331|13|PT|Portugalsko|Portugal|13.04.2018|||0|
+1456|1331|13|NPL|Nepál|Federal Democratic Republic of Nepal|11.04.2018|||0|
+1457|1331|13|GBR|Velká Británie|Great Britain|13.04.2018|||0|
+1458|1331|13|SVN|Slovinsko|Republic of Slovenia|09.03.2018|||0|
+1459|1331|13|HRV|Chorvatsko|Republic of Croatia|18.04.2018|||0|
+1460|1331|13|XJA|státy Jiní Ameriky|States of South America|18.04.2018|||0|
+1461|1331|13|THA|Thajské království|Kingdom of Thailand|16.04.2018|||0|
+1462|1331|13|AZE|Ázerbajdán|Republic of Azerbaijan|17.04.2018|||0|
+1463|1313|4|PKSR|Podvıbor pro krizové situace v rodinách| |10.05.2018|||0|
+1464|1331|13|KW|Kuvajt|Kuwait|22.05.2018|||0|
+1465|1331|13|SA|Saudská Arábie|Kingdom of Saudi Arabia|25.04.2018|||0|
+1466|1331|13|IR|Íránská islámská republika|Islamic Republic of Iran|23.05.2018|||0|
+1467|1331|13|TN|Tunisko|Tunisia|25.05.2018|||0|
+1468|1331|13|JM|Jamajka|Jamaica|12.06.2018|||0|
+1469|1331|13|JO|Jordánské hášimovské království|Hashemite Kingdom of Jordan|14.06.2018|||0|
+1470|1331|13|PK|Pákistánská islámská republika|Islamic Republic of Pakistan|14.06.2018|||0|
+1471|1402|114|OL|Oddìlení legislativní| |01.01.1993|||0|
+1472|1402|114|OP|Oddìlení právní| |01.01.1993|||0|
+1473|1403|114|OSC|Oddìlení snìmovní èinnosti| |01.01.1993|||0|
+1474|1403|114|OSS|Oddìlení stenografické sluby| |01.01.1993|||0|
+1475|1404|114|ODS|Oddìlení datovıch slueb| |01.01.1993|||0|
+1476|1404|114|OIS|Oddìlení informaèního systému| |01.01.1993|||0|
+1477|1405|114|OAV|Oddìlení audiovizuální techniky| |01.01.1993|||0|
+1478|1406|114|OZ|Oddìlení zahranièní| |01.01.1993|||0|
+1479|1406|114|OR|Oddìlení realizace zahranièních cest a návštìv| |01.01.1993|||0|
+1480|1407|114|EO|Ekonomické oddìlení| |01.01.1993|||0|
+1481|1407|114|OSS|Oddìlení spisové sluby| |01.01.1993|||0|
+1482|1407|114|OHP|Oddìlení hospodáøského provozu| |01.01.1993|||0|
+1483|1407|114|OG|Oddìlení gastronomie| |01.01.1993|||0|
+1484|1407|114|OA|Oddìlení autodopravy| |01.01.1993|||0|
+1485|1408|112|OPK|Oddìlení Parlamentní knihovny| |01.01.1993|||0|
+1486|1408|112|OA|Oddìlení Archivu Poslanecké snìmovny| |01.01.1993|||0|
+1487|1409|112|OVS|Oddìlení pro všeobecné studie| |01.01.1993|||0|
+1488|1409|112|OEU|Oddìlení pro záleitosti Evropské unie| |01.01.1993|||0|
+1489|1409|112|OKV|Oddìlení komunikace a vzdìlávání| |01.01.1993|||0|
+1490|1398|115|OSPPS|Oddìlení sekretariátu pøedsedy PS| |01.01.1993|||0|
+1491|1398|115|OÚPPS|Odbornı útvar pøedsedy PS| |01.01.1993|||0|
+1492|1398|115|OP|Oddìlení protokolu| |01.01.1993|||0|
+1493|1398|115|DO|Dopisové oddìlení| |01.01.1993|||0|
+1494|0|5|VládaÈR|Vláda Èeské republiky| |27.06.2018|||1|
+1495|0|116|Test|Test| |01.01.1993|||0|
+1496|1331|13|RS|Srbská republika|Republic of Serbia|16.07.2018|||0|
+1497||79|SE12|Senát|Senate|06.10.2018||1200||
+1498|1331|13|MN|Mongolsko|Mongolia|27.11.2018|||0|
