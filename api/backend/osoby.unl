@@ -97,7 +97,7 @@
 97|Ing.|Macháèek|Jiøí| |27.08.1958|M|||
 98|Ing.|Mandelík|Richard| |17.04.1953|M|||
 99|Ing.|Mandík|Josef| |04.12.1945|M|08.12.1998|22.10.2016|
-100|JUDr.|Marvanová|Hana| |26.11.1962|Ž|||
+100|JUDr.|Kordová Marvanová|Hana| |26.11.1962|Ž|||
 101|Ing.|Maryt|Jiøí| |13.02.1964|M|||
 102|Ing.|Mašek|Ivan| |28.07.1948|M||07.01.2019|
 103| |Matìjka|Jaroslav| |17.12.1940|M|||
@@ -4720,7 +4720,7 @@
 4745| |Novák|František| |01.01.1900|M|||
 4746| |Andìl|Daniel| |01.01.1900|M|||
 4747| |Beranová|Vìra| |01.01.1900|Ž|||
-4748| |Horanský|Miloš| |01.01.1900|M|||
+4748|prof.|Horanský|Miloš| |01.01.1900|M|||
 4749| |Klíma|Ivan| |01.01.1900|M|||
 4750| |Mahler|Zdenìk| |01.01.1900|M|||
 4751| |Paul|Jan| |01.01.1900|M|||
@@ -5181,7 +5181,7 @@
 5209|MUDr. Mgr.|Plaèek|Vladimír| |29.05.1965|M|||
 5210|JUDr.|Foltán|Pavel| |01.01.1900|M|||
 5211| |Žák|Daniel| |01.01.1900|M|||
-5212| |Novák|Daniel| |01.01.1900|M|||
+5212|doc. JUDr. Ing.|Novák|Daniel|CSc.|01.01.1900|M|||
 5213|Mgr.|Fajmon|Hynek| |17.05.1968|M|||
 5214| |Kocianová|Jitka| |05.12.1954|Ž|||
 5215|Ing.|Adámek|Jiøí| |05.10.1953|M|||
@@ -5315,7 +5315,7 @@
 5344| |Cundrla|František| |01.01.1900|M|||
 5345| |Richter|Vít| |01.01.1900|M|||
 5346| |Hložek|Stanislav| |01.01.1900|M|||
-5347| |Dohnal|Lubor| |01.01.1900|M|||
+5347|prof.|Dohnal|Lubor| |01.01.1900|M|||
 5348| |Jakobec|Milan| |01.01.1900|M|||
 5349| |Pospíchal|Petr| |01.01.1900|M|||
 5350| |Šenkýø|Jiøí| |01.01.1900|M|||
@@ -5387,14 +5387,14 @@
 5417| |Satrapa|Ivan| |01.01.1900|M|||
 5418| |Kalvodová|Vìra| |01.01.1900|Ž|||
 5419| |Bartošová-Benèièová|Katarína| |01.01.1900|Ž|||
-5420| |Bendová|Helena| |01.01.1900|Ž|||
+5420|Mgr.|Bendová|Helena| |01.01.1900|Ž|||
 5421| |Blažek|Jiøí| |01.01.1900|M|||
 5422| |Fišárek|Alois| |01.01.1900|M|||
 5423| |Hanuš|Josef| |01.01.1900|M|||
 5424| |Masník|Boris| |01.01.1900|M|||
 5425| |Ondøíèek|Miroslav| |01.01.1900|M|||
 5426| |Zelinský|Miroslav| |01.01.1900|M|||
-5427| |Jaklová|Dana| |01.01.1900|Ž|||
+5427|Mgr., MgA.|Jaklová|Dana| |01.01.1900|Ž|||
 5428| |Mouèková|Miroslava| |01.01.1900|Ž|||
 5429| |Èernohorská|Silva| |31.01.1938|Ž|||
 5430|Mgr.|Domesová|Zuzana| |29.11.1948|Ž|||
@@ -5781,11 +5781,11 @@
 5832|Ing.|Holeèek|Milan| |01.01.1900|M|||
 5833|Ing. Mgr.|Kratochvíl|Josef| |01.01.1900|M|||
 5834|JUDr. PhDr.|Kuba|Jaroslav|CSc.|24.03.1951|M|||
-5835| |Bezouška|Martin| |01.01.1900|M|||
+5835|Mgr.|Bezouška|Martin| |01.01.1900|M|||
 5836| |Kalistová|Kateøina| |01.01.1900|Ž|||
-5837| |Krejèí|Ivan| |01.01.1900|M|||
+5837|Bc.|Krejèí|Ivan| |01.01.1900|M|||
 5838| |Bouška|Milan| |01.01.1900|M|||
-5839| |Dìdiè|Jaroslav| |01.01.1900|M|||
+5839|Mgr.|Dìdiè|Jaroslav| |01.01.1900|M|||
 5840| |Koutný|Petr| |01.01.1900|M|||
 5841|JUDr.|Kymlièka|Petr| |01.01.1900|M|||
 5842|Mgr.|Juranková|Radana| |01.01.1900|M|||
@@ -6032,7 +6032,7 @@
 6084| |Legnerová|Sylvie| |01.01.1900|M|||
 6085| |Škopková|Jana| |01.01.1900|M|||
 6086| |Štìpánková|Zdena| |01.01.1900|M|||
-6087| |Vítek|Petr| |01.01.1900|M|||
+6087|Bc.|Vítek|Petr| |01.01.1900|M|||
 6088| |Richterová|Milada| |01.01.1900|Ž|||
 6089|RNDr. PaeDr.|Rux|Jaromír|CSc.|01.01.1900|M|||
 6090| |Hozdecký|Aleš| |01.01.1900|M|||
@@ -6066,7 +6066,7 @@
 6119|Ing. Mgr.|Novák|Jaromír| |12.12.1979|M|||
 6120|Bc.|Meèíø|Martin| |01.01.1900|M|||
 6121| |Mrázek|Tomáš| |01.01.1900|M|||
-6122| |Kòourek|Tomáš| |01.01.1900|M|||
+6122|Bc.|Kòourek|Tomáš| |01.01.1900|M|||
 6123| |Geršlová|Jana| |01.01.1900|M|||
 6124|Ing.|Benda|Petr| |20.01.1971|M|||
 6125|plk. Mgr. Ing.|Bílek|Ivan| |01.01.1900|M|||
@@ -6203,13 +6203,13 @@
 6256|MUDr.|Dernerová|Alena| |01.01.1900|Ž|||
 6257|MUDr.|Zimmermann|Petr| |01.01.1900|M|||
 6258|Mgr.|Augustin|Radek| |01.01.1900|M|||
-6259| |Bednáø|Jan| |01.01.1900|M|||
+6259|Ing.|Bednáø|Jan| |01.01.1900|M|||
 6260| |Beniak|Luboš| |01.01.1900|M|||
-6261| |Hauser|Michal| |01.01.1900|M|||
+6261|Doc. Mgr.|Hauser|Michal|PhD.|01.01.1900|M|||
 6262|prof. Ing.|Hindls|Richard|CSc.|01.01.1900|M|||
 6263| |Dostál|Vratislav| |01.01.1900|M|||
-6264| |Dohnálková|Hana| |01.01.1900|Ž|||
-6265| |Vejvoda|Jiøí| |01.01.1900|M|||
+6264|Mgr.|Dohnálková|Hana|dipl. um.|01.01.1900|Ž|||
+6265|PhDr.|Vejvoda|Jiøí| |01.01.1900|M|||
 6266| |Grmela|Milan| |01.01.1900|M|||
 6267|RNDr.|Hudeèek|Tomáš|Ph.D.|10.05.1979|M|||
 6268|Ing.|Gabrhel|Vlastimil| |26.04.1978|M|||
@@ -6219,7 +6219,7 @@
 6272| |Vodochodský|Ivan| |26.06.1963|M|||
 6273|Ing.|Manhart|Lukáš| |01.01.1900|M|||
 6274| |Štern|Pavel| |01.01.1900|M|||
-6275| |Kasalová|Jana| |01.01.1900|Ž|||
+6275|PhDr.|Kasalová|Jana| |01.01.1900|Ž|||
 6276|JUDr.|Augustin|Miroslav| |01.01.1900|M|||
 6277|Ing.|Heikenwälder|Jakub| |01.01.1900|M|||
 6278|plk. PhDr.|Stehlík|Eduard| |01.01.1900|M|||
@@ -6263,9 +6263,9 @@
 6316|Ing.|Volaøík|Miroslav| |01.01.1900|M|||
 6317| |Martinek|Pøemysl| |01.01.1900|M|||
 6318|JUDr.|Pelikán|Robert|Ph.D.|18.10.1979|M|||
-6319| |Beneš|Ludìk| |01.01.1900|M|||
-6320| |Doubrava|Stanislav| |01.01.1900|M|||
-6321| |Giebisch|Roman| |01.01.1900|M|||
+6319|PhDr.|Beneš|Ludìk| |01.01.1900|M|||
+6320|MgA.|Doubrava|Stanislav| |01.01.1900|M|||
+6321|Mgr.|Giebisch|Roman| |01.01.1900|M|||
 6322| |Chovanèíková|Irena| |01.01.1900|Ž|||
 6323| |Král|Karel| |01.01.1900|M|||
 6324| |Mertinová|Jana| |01.01.1900|Ž|||
@@ -6275,17 +6275,17 @@
 6328| |Hejlíèková|Iva| |01.01.1900|Ž|||
 6329|prof. Ing.|Režòáková|Mária|CSc.|01.01.1900|Ž|||
 6330|Prof. Mgr.|Jan|Libor|Ph.D.|01.01.1900|M|||
-6331|prof. Ing.|Drochytka|Rostislav|CSc., MBA|01.01.1900|M|||
-6332| |Konvalinka|Petr| |01.01.1900|M|||
+6331|prof. Ing.|Drochytka|Rostislav|CSc., MBA, FEng.|01.01.1900|M|||
+6332|prof. Ing.|Konvalinka|Petr|CSc., FEng.|01.01.1900|M|||
 6333| |Frolík|Zbynìk| |01.01.1900|M|||
 6334| |Vochozka|Marek| |01.01.1900|M|||
 6335|Mgr.|Havlík|Daniel| |01.01.1900|M|||
 6336|Ing.|Stárek|Jan| |06.11.1960|M|||
 6337|Mgr.|Valachová|Kateøina|Ph.D.|15.09.1976|Ž|||
-6338| |Kašparù|Jaroslav Maxmilián| |01.01.1900|M|||
-6339| |Váòa|Daniel| |01.01.1900|M|||
-6340| |Poledníèek|Marek| |01.01.1900|M|||
-6342| |Nastoupilová Burketová|Radka| |01.01.1900|Ž|||
+6338|Doc. ThDr. PhDr. MUDr.|Kašparù|Jaroslav Maxmilián|PhD Dr. h.c. m. prof|01.01.1900|M|||
+6339|PhDr. Ing.|Váòa|Daniel|Ph.D.|01.01.1900|M|||
+6340|Ing.|Poledníèek|Marek| |01.01.1900|M|||
+6342|Mgr. Bc.|Nastoupilová Burketová|Radka| |01.01.1900|Ž|||
 6343| |Matoušek|Josef| |01.01.1900|M|||
 6344| |Matoušek|Josef| |01.01.1900|M|||
 6345| |Svoboda|Karel| |07.06.1877|M||01.01.1951|
@@ -6316,7 +6316,7 @@
 6371| |Kubíèek|František| |01.01.1900|M|||
 6372| |Marek|Josef| |01.01.1900|M|||
 6373| |Nìmec|Miroslav| |01.01.1900|M|||
-6374| |Šarapatka|Zdenìk| |01.01.1900|M|||
+6374|PaeDr.|Šarapatka|Zdenìk|Ph.D.|01.01.1900|M|||
 6375|Ing.|Elkán|Martin| |01.01.1900|M|||
 6376| |Závodský|Rostislav| |01.01.1900|M|||
 6377| |Havlíèek|Václav| |01.01.1900|M|||
@@ -6326,7 +6326,7 @@
 6381|Ing.|Štemberka|Martin| |01.01.1900|M|||
 6382|RNDr.|Peterka|Jiøí| |01.01.1900|M|||
 6383|plk. JUDr.|Murín|Michal| |01.01.1900|M|||
-6384| |Nìmec|Richard| |01.01.1900|M|||
+6384|Mgr. et MgA.|Nìmec|Richard| |01.01.1900|M|||
 6385|Ing.|Málek|Jan| |29.05.1960|M|||
 6386|Ing|Benda|Vojtìch| |01.01.1900|M|||
 6387|Ing.|Tomáš|Nidetzke| |01.01.1900|M|||
@@ -6498,7 +6498,7 @@
 6555| |Philipp|Tom| |01.01.1900|M|||
 6556| |Zácha|Michal| |01.01.1900|M|||
 6557| |Zitterbart|Karel| |01.01.1900|M|||
-6558| |Arenberger|Petr| |01.01.1900|M|||
+6558|prof. MUDr.|Arenberger|Petr|DrSC., MBA|01.01.1900|M|||
 6559| |Polák|Ferdinand| |01.01.1900|M|||
 6560| |Paris|Marek| |01.01.1900|M|||
 6561| |Janek|Adam| |01.01.1900|M|||
@@ -6506,24 +6506,24 @@
 6563|JUDr.|Netolický|Martin|Ph.D.|01.01.1900|M|||
 6564| |Štrof|Jan| |01.01.1900|M|||
 6565| |Ryan|Paul| |01.01.1900|M|||
-6566| |Holásek|Bøetislav| |01.01.1900|M|||
-6567| |Králík|Jiøí| |01.01.1900|M|||
-6568| |Krejèù|Aleš| |01.01.1900|M|||
+6566|Ing.|Holásek|Bøetislav| |01.01.1900|M|||
+6567|Ing.|Králík|Jiøí| |01.01.1900|M|||
+6568|Ing.|Krejèù|Aleš| |01.01.1900|M|||
 6569| |Køižanovský|Radek| |01.01.1900|M|||
-6570| |Levínský|René| |01.01.1900|M|||
+6570|Ing.|Levínský|René|Ph.D.|01.01.1900|M|||
 6571| |Muchow|Jan P.| |01.01.1900|M|||
-6572| |Nekvindová|Jana| |01.01.1900|Ž|||
-6573| |Vièar|Jan| |01.01.1900|M|||
+6572|PhDr.|Nekvindová|Jana|Ph.D.|01.01.1900|Ž|||
+6573|Prof. PhDr. MgA.|Vièar|Jan|CSc.|01.01.1900|M|||
 6574| |Tauš|Viktor| |01.01.1900|M|||
 6575| |Švecová|Marta| |01.01.1900|Ž|||
 6576| |Fencl|Ivan| |01.01.1900|M|||
-6577| |Venclík|Vlastimil| |01.01.1900|M|||
-6578| |Mahdal|Zdenìk| |01.01.1900|M|||
+6577|Mgr.|Venclík|Vlastimil| |01.01.1900|M|||
+6578|Mgr.|Mahdal|Zdenìk| |01.01.1900|M|||
 6579|Mgr.|Gáborová|Jana| |01.01.1900|Ž|||
 6580|Ing.|Èervíèková|Monika| |09.02.1967|Ž|||
 6581|Ing.|Nováková|Marta| |04.11.1954|Ž|||
 6582|Mgr. Bc.|Krèál|Petr| |20.08.1964|M|||
-6583| |Karmazín|Vladimír| |01.01.1900|M|||
+6583|Mgr.|Karmazín|Vladimír| |01.01.1900|M|||
 6584| |Vìková|Jitka| |01.01.1900|Ž|||
 6585|JUDr.|Knìžínek|Jan|Ph.D.|08.05.1979|M|||
 6586|Dipl.-Pol.|Maláèová|Jana|MSc.|24.06.1981|Ž|||
@@ -6550,3 +6550,15 @@
 6608|Ing.|Wagenknecht|Lukáš| |01.01.1900|M|||
 6609| |Žáková|Hana| |01.01.1900|Ž|||
 6610| |Danko|Andrej| |01.01.1900|M|||
+6611|Ing.|Východský|Pavel|Ph.D.|01.01.1900|M|||
+6612| |Petrov|Vadim| |01.01.1900|M|||
+6613| |Krùta|Jan| |01.01.1900|M|||
+6614|prof. Ing.|Hrdlièka|František|CSc., FEng.|01.01.1900|M|||
+6615|prof. PhDr.|Vykopalová|Hana|CSc.|01.01.1900|Ž|||
+6616|prof. Ing.|Grmela|Lubomír|CSc.|01.01.1900|M|||
+6617|doc. Ing.|Putnová|Anna|CSc.|01.01.1900|Ž|||
+6618|Mgr.|Wichterle|Martin| |01.01.1900|M|||
+6619|Bc.|Kalátová|Iva| |17.11.1962|Ž|||
+6620|Ing.|Palíšek|Eduard|PhD., MBA|01.01.1900|M|||
+6621|Ing.|Havlíèek|Karel|Ph.D., MBA|16.08.1969|M|||
+6622|JUDr.|Kremlík|Vladimír| |09.12.1972|M|||
