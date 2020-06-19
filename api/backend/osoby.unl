@@ -43,7 +43,7 @@
 43|JUDr.|Hájek|Jiøí| |30.07.1951|M|||
 44|Ing.|Hájek|Josef| |07.01.1945|M|||
 45|Dr. Ing.|Hirš|Pavel|CSc.|11.01.1942|M|||
-46|RNDr.|Hofhanzl|Èestmír| |09.10.1941|M|||
+46|RNDr.|Hofhanzl|Èestmír| |09.10.1941|M||05.01.2020|
 47|Ing.|Holub|Josef| |12.09.1951|M|||
 48|Mgr.|Honajzer|Jiøí| |18.09.1955|M|||
 49|JUDr.|Hrazdíra|Antonín| |03.07.1940|M|||
@@ -149,7 +149,7 @@
 149|MUDr.|Stadler|Jiøí| |09.07.1932|M|||
 150|Doc. RNDr.|Stiborová|Marie|CSc.|02.02.1950||||
 151|JUDr.|Stodùlka|Zbyšek| |19.06.1947|M|||
-152|PhDr.|Stráskı|Jan| |24.12.1940|M|||
+152|PhDr.|Stráskı|Jan| |24.12.1940|M||06.11.2019|
 153| |Svoboda|Tomáš| |20.05.1966|M|||
 154|MUDr.|Syka|Martin| |19.03.1949|M|||
 155|Ing.|Sıkora|Jaroslav| |13.04.1932|M|||
@@ -192,7 +192,7 @@
 192|JUDr.|Vyvadil|Jiøí| |02.08.1954|M|||
 193|JUDr.|Vıbornı|Miloslav| |19.02.1952|M|09.12.1998||
 194| |Wagner|Jozef| |30.08.1940|M|||
-195| |Zahradníèek|Jan| |31.05.1948|M|||
+195| |Zahradníèek|Jan| |31.05.1948|M||16.12.2019|
 196|Mgr.|Zeman|Eduard| |11.04.1948|M|09.12.1998|25.06.2017|
 197|JUDr.|Zemina|Ondøej| |13.10.1963|M|||
 198|Ing.|Zima|Anton| |07.10.1946|M|||
@@ -215,7 +215,7 @@
 215|Ing.|Hojdar|Josef| |16.10.1946|M|07.12.1998||
 216|JUDr.|Hulinskı|Petr|Ph.D.|25.08.1967|M|||
 217| |Chobot|František| |19.02.1939|M|07.12.1998||
-218|prof.JUDr.|Jièínskı|Zdenìk|DrSc.|26.02.1929|M|07.12.1998||
+218|prof.JUDr.|Jièínskı|Zdenìk|DrSc.|26.02.1929|M|07.12.1998|09.04.2020|
 219| |Kapoun|Miroslav| |03.08.1945|M|07.12.1998||
 220| |Kopeckı|Robert| |18.04.1952|M|07.12.1998|25.03.2010|
 221|Ing.|Koøínková|Kvìtoslava|CSc.|10.07.1940||||
@@ -1690,7 +1690,7 @@
 1699| |Husnaj|Julius| |11.10.1893|M|||
 1700|Ing.|Huspeninová|ofia| |21.04.1948||||
 1701| |Hvìzda|Miloslav| |22.06.1929|M|||
-1702| |Hviezdoslav|Pavel| |02.02.1849|M||08.11.1921|
+1702| |Hviezdoslav|Pavel Országh| |02.02.1849|M||08.11.1921|
 1703| |Hvizdák|Andrej| |28.10.1882|M||03.05.1948|
 1704| |Hvozdzík|Ján| |31.03.1886|M|||
 1705| |Hybeš|Josef| |29.01.1850|M||19.07.1921|
@@ -5293,7 +5293,7 @@
 5322|RSDr.|Opálka|Miroslav| |09.10.1952|M|||
 5323|MVDr.|Bielesz|Marian| |14.11.1963|M|||
 5324| |Vícha|Josef| |22.10.1949|M|||
-5325| |Fischerová|Taána| |06.06.1947||||
+5325| |Fischerová|Taána| |06.06.1947|||25.12.2019|
 5326|Ing.|Šimonovskı|Milan| |17.02.1949|M|||
 5327|MUDr.|Souèková|Marie| |31.07.1953||||
 5328| |Maršíèek|Zdenìk| |30.06.1956|M|||
@@ -5600,7 +5600,7 @@
 5638|RNDr.|Doèekal|Oldøich| |01.01.1900|M|||
 5639|RNDr.|Zahradníèek|Ludìk| |01.01.1900|M|||
 5640|JUDr.|Salzmann|Richard| |01.01.1900|M|||
-5641| |Zahradníèek|Jan| |01.01.1900|M|||
+5641| |Zahradníèek|Jan| |31.05.1948|M||16.12.2019|
 5642|Prof. PhDr.|Jaøab|Josef|CSc.|01.01.1900|M|||
 5644|RNDr.|Seitlová|Jitka| |01.01.1900|Z|||
 5645|Ing.|Babka|Zdenìk| |01.01.1900|M|||
@@ -5640,7 +5640,7 @@
 5683|Doc. Ing.|Zieleniec|Josef|CSc.|01.01.1900|M|||
 5684|Ing. arch.|Filipiová|Daniela| |09.08.1957|Z|||
 5685|Mgr.|Bárta|Zdenìk| |01.01.1900|M|||
-5686| |Kubera|Jaroslav| |01.01.1900|M|||
+5686| |Kubera|Jaroslav| |16.02.1947|M||20.01.2020|
 5687|Mgr.|Paukrtová|Soòa| |01.01.1900|Z|||
 5688|MUDr.|Mitlener|Jaroslav| |01.01.1900|M|||
 5689|Ing.|Rögnerová|Helena| |01.01.1900|Z|||
@@ -5974,7 +5974,7 @@
 6026| |Mikl|Jiøí| |01.01.1900|M|||
 6027| |Janout|Vladimír| |01.01.1900|M|||
 6028| |kasík|Václav| |01.01.1900|M|||
-6029| |Labík|Stanislav| |01.01.1900|M|||
+6029|prof. Ing.|Labík|Stanislav|CSc.|01.01.1900|M|||
 6030| |Masopust|Jiøí| |01.01.1900|M|||
 6031| |Šucman|Emanuel| |01.01.1900|M|||
 6032| |Wildmannová|Mirka| |01.01.1900||||
@@ -6222,7 +6222,7 @@
 6275|PhDr.|Kasalová|Jana| |01.01.1900||||
 6276|JUDr.|Augustin|Miroslav| |01.01.1900|M|||
 6277|Ing.|Heikenwälder|Jakub| |01.01.1900|M|||
-6278|plk. PhDr.|Stehlík|Eduard| |01.01.1900|M|||
+6278|plk. gšt. PhDr.|Stehlík|Eduard|Ph.D., MBA|01.01.1900|M|||
 6279|Ing. et Ing.|Luzar|Leo| |06.12.1964|M|||
 6280|Mgr.|Plíšek|Martin| |11.11.1974|M|||
 6281|Mgr.|Pokornı|Viktor| |01.01.1900|M|||
@@ -6377,7 +6377,7 @@
 6434| |Brzobohatá|Andrea| |09.06.1971||||
 6435|Mgr.|Baxa|Martin| |16.09.1975|M|||
 6436|Ing.|Beitl|Petr| |05.12.1966|M|||
-6437|Bc.|Bìlica|Josef| |16.07.1978|M|||
+6437|Ing.|Bìlica|Josef| |16.07.1978|M|||
 6438|Ing.|Blaha|Stanislav| |13.12.1969|M|||
 6439| |Bláha|Jiøí| |26.08.1961|M|||
 6440| |Bojko|Marian| |25.12.1962|M|||
@@ -6386,7 +6386,7 @@
 6443|Mgr.|Èiinskı|Jan| |22.04.1978|M|||
 6444| |Dolínek|Petr| |27.03.1981|M|||
 6445|MUDr.|Dvoøák|Jaroslav| |04.11.1957|M|||
-6446| |Elfmark|František| |19.10.1978|M|||
+6446|Bc.|Elfmark|František|DiS|19.10.1978|M|||
 6447|MUDr.|Farhan|Kamal| |29.01.1969|M|||
 6448|Mgr.|Feranec|Milan| |18.01.1964|M|||
 6449| |Feri|Dominik| |11.07.1996|M|||
@@ -6473,7 +6473,7 @@
 6530| |Podal|Zdenìk| |12.04.1953|M|||
 6531|Bc.|Pikal|Vojtìch| |19.02.1987|M|||
 6532|Bc.|Onderka|Roman|MBA|11.11.1965|M|||
-6533| |Novák|Marek| |02.08.1976|M|||
+6533| |Novák|Marek|MBA|02.08.1976|M|||
 6534|MUDr.|Mašek|Jiøí| |16.07.1958|M|||
 6535|Ing.|Martínek|Tomáš| |23.01.1986|M|||
 6536| |Mališ|Pøemysl| |28.01.1980|M|||
@@ -6568,3 +6568,32 @@
 6626|Ing.|Ptáèek|Petr| |01.01.1900|M|||
 6627|prof. Ing.|Smejkal|Vladimír|CS., LL.M., DrSc.|01.01.1900|M|||
 6628| |Zach|Ondøej| |01.01.1900|M|||
+6629| |Bublan|František| |01.01.1900|M|||
+6630|prof. Ing.|Èep|Robert|Ph.D.|01.01.1900|M|||
+6631|Bc.|Soukup|David| |01.01.1900|M|||
+6632| |Smoljak|David| |08.02.1959|M|||
+6633|JUDr., Mgr.|Nestìrová|Jaroslava| |24.05.1970||||
+6634|Ing.|Bazalová|Angelika| |18.09.1969||||
+6635| |Charanzová|Dita| |01.01.1900||||
+6636| |Dlabajová|Martina| |01.01.1900||||
+6637| |Hlaváèek|Martin| |01.01.1900|M|||
+6638| |Knotek|Ondøej| |01.01.1900|M|||
+6639| |Kovaøík|Ondøej| |01.01.1900|M|||
+6640| |Kolaja|Marcel| |01.01.1900|M|||
+6641| |Gregorová|Markéta| |01.01.1900||||
+6642| |Blaško|Hynek| |01.01.1900|M|||
+6643| |Zdechovskı|Tomáš| |01.01.1900|M|||
+6644|Mgr.|Šimùnková|Monika| |25.12.1972|M|||
+6645|Ing.|Rojíèek|Marek|Ph.D.|01.01.1900|M|||
+6646|JUDr.|Kobert|Martin| |19.09.1983|M|||
+6647| |Frková|Michaela| |01.01.1900||||
+6648|doc. Ing.|Sixta|Jaroslav|Ph.D.|01.01.1900|M|||
+6649|Mgr.|Bradáè|Roman| |01.01.1900|M|||
+6650|Mgr.|Pokornı|Marek| |01.01.1900|M|||
+6651|Mgr.|Matocha|Pavel| |01.01.1900|M|||
+6652|Ing.|Lipovská|Hana| |01.01.1900|M|||
+6653|Bc.|Veselı|Lubomír| |01.01.1900|M|||
+6654| |Kopeckı|Èestmír| |01.01.1900|M|||
+6655|Ing.|Šmucr|Michal| |18.08.1963|M|||
+6656|Ing.|Šmucr|Michal| |18.08.1963|M|||
+6657|Bc.|Hanza|Hynek| |14.10.1977|M|||
