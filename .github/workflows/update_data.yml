@@ -18,3 +18,7 @@ jobs:
 
     - name: Install dependencies
       run: pip install -r api/backend/requirements.txt --upgrade pip
+    
+    - name: Update data
+      run: python api/backend/create.py
+    

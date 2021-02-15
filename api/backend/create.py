@@ -9,12 +9,12 @@ import zipfile
 import os
 
 # path
-try:
-    path = os.path.dirname(os.path.realpath(__file__))
-except Exception:
-    path = os.getcwd()
+# try:
+#     path = os.path.dirname(os.path.realpath(__file__))
+# except Exception:
+#     path = os.getcwd()
 
-path = '/home/michal/project/napistejim.cz/api/backend/'
+path = 'api/backend/'
 term = '172'
 group_number = '1'
 region_number = '75'
@@ -26,7 +26,7 @@ memberships = {
 
 # download
 
-url = "http://www.psp.cz/eknih/cdrom/opendata/poslanci.zip"
+url = "https://www.psp.cz/eknih/cdrom/opendata/poslanci.zip"
 r = requests.get(url)
 if r.ok:
     z = zipfile.ZipFile(io.BytesIO(r.content))
@@ -127,8 +127,11 @@ for m in memberships:
 
     for row in zarazeni:
         if row[1] in ids and row[4] == '':
-            data_obj[row[0]][m].append(organy[row[1]][4])
-            data_all_obj[row[0]][m].append(organy[row[1]][4])
+            try:
+                data_obj[row[0]][m].append(organy[row[1]][4])
+                data_all_obj[row[0]][m].append(organy[row[1]][4])
+            except Exception as e:
+                print(e)
 
 for k in data_obj:
     data.append(data_obj[k])
