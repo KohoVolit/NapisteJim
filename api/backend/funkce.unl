@@ -425,6 +425,9 @@
 2563|1518|5|Pøedseda|1|
 2564|1518|3|Místopøedseda|2|
 2565|1518|4|Ovìøovatel komise|5|
+2566|1520|5|Pøedseda|1|
+2567|1520|3|Místopøedseda|2|
+2568|1520|4|Ovìøovatel komise|5|
 62|27|6|Místopøedseda vıboru BBV|2|
 63|27|7|Ovìøovatel vıboru BBV|5|
 64|27|8|Pøedseda vıboru BBV|1|
@@ -1502,6 +1505,8 @@
 2461|1415|11|Pøedseda|2|
 2462|1415|10|Místopøedseda|3|
 2463|1415|112|Ovìøovatel|40|
+2569|1530|11|Pøedseda|1|
+2570|1530|10|Místopøedseda|2|
 406|147|15|Pøedseda vlády VládaÈR|1|
 407|148|15|Pøedseda vlády VládaÈR|1|
 1032|148|96|Ministr|201|
@@ -1881,11 +1886,6 @@
 2207|172|16|3. místopøedseda|13|
 2208|172|16|4. místopøedseda|14|
 2209|172|16|5. místopøedseda|15|
-421|173|19|Pøedseda Parlamentní skupiny pøátel ÈR - Bulharsko|1|
-420|174|19|Pøedseda Parlamentní skupiny pøátel ÈR - BENELUX|1|
-447|174|20|Místopøedseda Parlamentní skupiny pøátel ÈR - BENELUX|2|
-419|175|19|Pøedseda Parlamentní skupiny pøátel ÈR - zemì ASEANu|1|
-446|175|20|Místopøedseda Parlamentní skupiny pøátel ÈR - zemì ASEANu|2|
 424|176|19|Pøedseda Parlamentní skupiny pøátel ÈR - Island|1|
 425|177|19|Pøedsedkynì Parlamentní skupiny pøátel ÈR - Izrael|1|
 462|178|19|Pøedseda Parlamentní skupiny pøátel ÈR - Francie|1|
@@ -1935,6 +1935,11 @@
 470|225|19|Pøedseda Parlamentní skupiny pøátel ÈR - Kazachstán|1|
 472|226|19|Pøedseda Parlamentní skupiny pøátel ÈR - Vietnam|1|
 471|227|19|Pøedseda Parlamentní skupiny pøátel ÈR - KLDR|1|
+421|233|19|Pøedseda Parlamentní skupiny pøátel ÈR - Bulharsko|1|
+420|234|19|Pøedseda Parlamentní skupiny pøátel ÈR - BENELUX|1|
+447|234|20|Místopøedseda Parlamentní skupiny pøátel ÈR - BENELUX|2|
+419|235|19|Pøedseda Parlamentní skupiny pøátel ÈR - zemì ASEANu|1|
+446|235|20|Místopøedseda Parlamentní skupiny pøátel ÈR - zemì ASEANu|2|
 477|301|19|Pøedsedkynì Parlamentní skupiny pøátel ÈR - Frankofonie|1|
 696|542|19|Pøedseda Parlamentní skupiny pøátel ÈR - Írán|1|
 699|573|19|Pøedsedkynì Parlamentní skupiny pøátel ÈR - Nizozemsko|1|

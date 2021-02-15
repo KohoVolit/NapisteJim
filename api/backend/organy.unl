@@ -295,8 +295,8 @@
 690|649|13|KYPR|Kypr|Czech Republic - Cyprus Inter-Parliamentary Group|11.12.2002|15.06.2006||0|
 691|649|13|MONGOL|Mongolsko|Czech Republic - Mongolia Inter-Parliamentary Group|11.12.2002|15.06.2006||0|
 692|649|13|BALT|Pobaltské státy|Czech Republic Baltic states Inter-Parliamentary Group|11.12.2002|15.06.2006||0|
-173|144|13|Bulhar|Bulharsko|Bulgaria|09.02.1999|20.06.2002||0|
-174|144|13|BNL|BENELUX|countries of BENELUX|09.02.1999|20.06.2002||0|
+1521||79|SE13|Senát|Senate|03.10.2020||1300|0|
+1522||118|GA ÈR|Grantová agentura Èeské republiky||01.01.1997||1200||
 176|144|13|ISL|Island|Iceland|09.02.1999|20.06.2002||0|
 177|144|13|IZR|Izrael| Israel|04.02.1999|20.06.2002||0|
 693|649|13|S-AFRIK|severní Afrika|Czech Republic - North Africa Inter-Parliamentary Group|17.12.2002|15.06.2006||0|
@@ -563,7 +563,7 @@
 163|0|8|VC|Vıchodoèeskı|Eastern Bohemia|01.01.1990||50|0|
 749|0|6|SZ|Strana zelenıch|Green Party|01.01.2006|||0|
 169|0|11|PSP5|Poslanecká snìmovna|Chamber of Deputies|03.06.2006|03.06.2010||0|
-175|144|13|ASEAN|ASEAN|countries of ASEAN|04.02.1999|20.06.2002||0|
+1523||118|ÈNB|Èeská národní banka||01.01.1993||||
 181|144|13|KYPR|Kypr| Cyprus|11.02.1999|20.06.2002||0|
 187|144|13|PORT|Portugalsko| Portugal|10.02.1999|20.06.2002||0|
 193|144|13|ŠVÉD|Švédsko| Sweden|10.02.1999|20.06.2002||0|
@@ -635,7 +635,7 @@
 1138|171|2|SKVZ|Stálá komise pro kontrolu èinnosti Vojenského zpravodajství|Permanent Commission on Oversight over the work of Military Intelligence|10.12.2013|26.10.2017||0|
 1139|171|2|SKKPO|Stálá komise pro kontrolu pouití odposlechu a záznamu telekomunikaèního provozu, pouití sledování osob a vìcí a rušení provozu elektronickıch komunikací|Standing Commission on Telecommunication Interception and Access, Spying and Interference to Electronic communication|10.12.2013|26.10.2017||0|
 476|0|42|DRSFDI|Dozorèí rada Státního fondu dopravní infrastruktury| The Supervisory Board of the State Fund of Transport Infrastructure|27.06.2000|||0|
-481|0|42|DR SFRB|Dozorèí rada Státního fondu rozvoje bydlení|The Supervisory Board of the State Fund for Housing Development|21.07.2000|||0|
+481|0|42|DR SFRB|Dozorèí rada Státního fondu podpory investic|The Supervisory Board of the State Fund for Support of Investments|21.07.2000|||0|
 478|167|2|VK IPB|Vyšetøovací komise pro objasnìní rozhodování státu v IPB|Commission of Enquiry on the State-made decisions on IPB|04.07.2000|30.06.2001||0|
 479|0|2|SKBA|Stálá komise pro bankovnictví|Permanent Commission for Banking|04.07.2000|20.06.2002||0|
 480|0|42|DR SZIF|Dozorèí rada Státního zemìdìlského intervenèního fondu|The Supervisory Board of the State Agricultural Intervention Fund|19.07.2000|||1|
@@ -1157,7 +1157,7 @@
 1254|1140|13|LV|Lotyšsko|Latvia|20.06.2014|26.10.2017||0|
 1255|1140|13|EE|Estonsko|Estonia|20.06.2014|26.10.2017||0|
 1256|0|15|RSFK|Rada Státního fondu kinematografie| |01.01.2013|||0|
-1257||79|SE10|Senát|Senate|19.11.2014||1000|0|
+1257||79|SE10|Senát|Senate|19.11.2014|15.11.2016|1000|0|
 1258|171|2|VKD47|Vyšetøovací komise pro vyšetøení závanıch pochybení, která se stala pøi pøípravì a realizaci stavby dálnice D47|Commission of Enquiry on Potential Misconduct in Relation to D47 Highway Construction|23.10.2014|26.10.2017||0|
 1259|1124|4|FP|Finanèní podvıbor|Subcommittee on Finance|31.10.2014|26.10.2017||0|
 1260|1140|13|RO, MD|Rumunsko, Moldavská republika|Romania, Republic Moldova|26.11.2014|26.10.2017||0|
@@ -1395,4 +1395,15 @@
 1516|1331|13|PE|Peruánská rapublika|Republic of Peru|24.02.2020|||0|
 1517|1331|13|AFG|Afghánská islámská republika|Islamic Republic of Afghanistan|09.03.2020|||0|
 1518|172|2|DKCOVID|Doèasná komise pro hodnocení úèinnosti vládní pomoci v rámci COVID| |03.06.2020|||0|
-1519||117|OO|Odborova organizace||01.01.2018|||0|
+1519||117|OO|Odborová organizace||01.01.2018|||0|
+1520|172|2|SKHH|Stálá komise pro hybridní hrozby| |16.06.2020|||0|
+233|144|13|Bulhar|Bulharsko|Bulgaria|09.02.1999|20.06.2002||0|
+234|144|13|BNL|BENELUX|countries of BENELUX|09.02.1999|20.06.2002||0|
+235|144|13|ASEAN|ASEAN|countries of ASEAN|04.02.1999|20.06.2002||0|
+1524||118|EGAP|Exportní garanèní a pojišovací spoleènost, a.s.||01.06.1992||||
+1525||118|ÈEB|Èeská exportní banka||01.01.1993||||
+1526||118|ÚPDI|Úøad pro pøístup k dopravní infrastruktuøe||01.01.1993||||
+1527||118|ÈTÚ|Èeskı telekomunikaèní úøad ||01.01.1993||||
+1528||118|FA|Finanèní arbitr ||01.01.1993||||
+1529||118|VOP|Veøejnı ochránce práv||01.01.1993||||
+1530|1315|4|PRT|Podvıbor pro regiony v transformaci| |10.12.2020|||0|
