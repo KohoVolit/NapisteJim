@@ -14,7 +14,7 @@ jobs:
       uses: actions/checkout@v2
 
     - name: install CS locale
-      uses: sudo locale-gen cs_CZ.UTF-8
+      run: sudo locale-gen cs_CZ.UTF-8
 
     - name: Install python version
       # use the pyenv-action version 7
