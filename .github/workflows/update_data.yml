@@ -16,11 +16,17 @@ jobs:
     - name: install CS locale
       run: sudo locale-gen cs_CZ.UTF-8
 
-    - name: Install dependencies
+    - name: Install python dependencies
       run: pip3 install -r api/backend/requirements.txt --upgrade pip
     
     - name: Update data
       run: python3 api/backend/create.py
+
+    - name: Install npm dependencies
+      run: npm install
+    
+    - name: Run new build
+      run: npm run build
     
     - name: Commit and push if it changed
       run: |-
