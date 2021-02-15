@@ -22,11 +22,11 @@ jobs:
     - name: Update data
       run: python3 api/backend/create.py
 
-    - name: Install npm dependencies
-      run: npm install
+    # - name: Install npm dependencies
+    #   run: npm install
     
-    - name: Run new build
-      run: npm run build
+    # - name: Run new build
+    #   run: npm run build
     
     - name: Commit and push if it changed
       run: |-
