@@ -17,8 +17,8 @@ jobs:
       run: sudo locale-gen cs_CZ.UTF-8
 
     - name: Install dependencies
-      run: pip install -r api/backend/requirements.txt --upgrade pip
+      run: pip3 install -r api/backend/requirements.txt --upgrade pip
     
     - name: Update data
-      run: python api/backend/create.py
+      run: python3 api/backend/create.py
     
