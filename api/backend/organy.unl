@@ -38,16 +38,16 @@
 595|0|6|K|Koalice|Coalition|15.06.2002|||0|
 596|168|1|KSÈM|Poslaneckı klub Komunistické strany Èech a Moravy|Political group Communist Party of Bohemia and Moravia|19.06.2002|15.06.2006|1003|0|
 597|168|1|KDU-ÈSL|Poslaneckı klub Køesanské a demokratické unie-Èeskoslovenské strany lidové|Political group Christian Democratic Union - Czechoslovak People's Party|19.06.2002|15.06.2006|1004|0|
-20|0|2|SKDP|Stálá komise pro sdìlovací prostøedky|Permanent Commission for the Media|22.04.1993|06.06.1996||0|
+20|165|2|SKDP|Stálá komise pro sdìlovací prostøedky|Permanent Commission for the Media|22.04.1993|06.06.1996||0|
 21|0|2|SKPKPS|Stálá komise pro práci Kanceláøe Poslanecké snìmovny|Perm. Comm. for the work of the Office of the Chamber of Deputies|27.01.1993|06.06.1996||0|
 22|0|2|SKPO|Stálá komise pro kontrolu pouití operativní techniky Policie ÈR|Permanent Commission for oversight of the employment of Operational Technique|01.07.1993|06.06.1996||0|
-23|0|2|SKRV|Stálá komise pro reformu veøejné správy|Permanent Commission for the Reform of Public Administration|29.09.1994|06.06.1996||0|
+23|165|2|SKRV|Stálá komise pro reformu veøejné správy|Permanent Commission for the Reform of Public Administration|29.09.1994|06.06.1996||0|
 598|168|1|US-DEU|Poslaneckı klub Unie svobody-Demokratické unie|Political group Freedom Union-Democratic Union|18.06.2002|15.06.2006|1005|0|
 599|168|1|ÈSSD|Poslaneckı klub Èeské strany sociálnì demokratické|Political group Czech Social Democratic Party|21.06.2002|15.06.2006|1001|0|
 600|168|1|ODS|Poslaneckı klub Obèanské demokratické strany|Political group Civic Democratic Party|25.06.2002|15.06.2006|1002|0|
-24|0|2|SKVY|Stálá komise pro státní vyznamenání|Standing Commission on State Decorations|07.02.1995|06.06.1996||0|
+24|165|2|SKVY|Stálá komise pro státní vyznamenání|Standing Commission on State Decorations|07.02.1995|06.06.1996||0|
 26|0|2|VK|Volební komise Poslanecké snìmovny|Electoral Comm. of the Chamber of Deputies|27.09.1995|06.06.1996||0|
-27|0|3|BBV|Brannı a bezpeènostní vıbor|Committee for Defence and Security|06.06.1992|06.06.1996||0|
+27|165|3|BBV|Brannı a bezpeènostní vıbor|Committee for Defence and Security|06.06.1992|06.06.1996||0|
 28|0|3|HV|Hospodáøskı vıbor|Committee for Economics|06.06.1992|06.06.1996||0|
 601|168|2|VK|Volební komise Poslanecké snìmovny|Electoral Commission of the Chamber of Deputies|08.07.2002|15.06.2006||0|
 602|168|3|MIV|Mandátovı a imunitní vıbor|Mandate and Immunity Committee|11.07.2002|15.06.2006||0|
@@ -57,7 +57,7 @@
 29|0|3|MIV|Mandátovı a imunitní vıbor|Mandate and Immunity Committee|06.06.1992|06.06.1996||0|
 30|0|3|ORGV|Organizaèní vıbor|Organisational Committee|06.06.1992|06.06.1996||0|
 32|0|3|UPV|Ústavnì právní vıbor|Constitution and Legal Committee|06.06.1992|06.06.1996||0|
-33|0|3|VPLP|Vıbor petièní, pro lidská práva a národnosti|Committee for Petitions, Human Rights and Minorities|06.06.1992|06.06.1996||0|
+33|165|3|VPLP|Vıbor petièní, pro lidská práva a národnosti|Committee for Petitions, Human Rights and Minorities|06.06.1992|06.06.1996||0|
 606|168|3|HV|Hospodáøskı vıbor|Committee for Economics|16.07.2002|15.06.2006||0|
 607|168|3|ZEV|Zemìdìlskı vıbor|Agricultural Committee|16.07.2002|15.06.2006||0|
 608|168|3|ZAV|Zahranièní vıbor|Committee for Foreign Affairs|16.07.2002|15.06.2006||0|
@@ -88,12 +88,12 @@
 50|167|1|KSÈM|Poslaneckı klub Komunistické strany Èech a Moravy|Political group Communist Party of Bohemia and Moravia|23.06.1998|20.06.2002|40|0|
 51|167|1|ODS|Poslaneckı klub Obèanské demokratické strany|Political group Civic Democratic Party|30.06.1998|20.06.2002|10|0|
 52|167|1|US|Poslaneckı klub Unie svobody|Political group Freedom Union|26.06.1998|20.06.2002|50|0|
-53|0|2|KVOZ|Stálá komise pro kontrolu èinnosti Vojenského obranného zpravodajství|Perm. Comm. for oversight of the Military Intelligence activities|28.02.1997|19.06.1998||0|
+53|166|2|KVOZ|Stálá komise pro kontrolu èinnosti Vojenského obranného zpravodajství|Perm. Comm. for oversight of the Military Intelligence activities|28.02.1997|19.06.1998||0|
 635|606|4|PSO|Podvıbor pro síová odvìtví (energetika, telekomunikace, informaèní systémy a pošta)|Subcommittee on the Network Industries|08.08.2002|15.06.2006||0|
 1098|166|87|PSSE02|Spoleèné schùze Poslanecké snìmovny a Senátu||20.01.1998|02.02.1998|20|0|
 1099|168|87|PSSE04|Spolecne schuze Poslanecké snìmovny a Senátu||15.01.2003|07.03.2003||0|
 54|0|2|SKBA|Stálá komise pro bankovnictví|Permanent Commission for Banking|04.07.1996|19.06.1998||0|
-56|0|2|SKDP|Stálá komise pro sdìlovací prostøedky|Permanent Commission for the Media|04.07.1996|19.06.1998||0|
+56|166|2|SKDP|Stálá komise pro sdìlovací prostøedky|Permanent Commission for the Media|04.07.1996|19.06.1998||0|
 636|606|4|PP|Podvıbor pro prùmysl a stavebnictví|Subcommittee for Industry and Construction|08.08.2002|15.06.2006||0|
 620|168|2|SKBA|Stálá komise pro bankovnictví|Permanent Commission for Banking|18.07.2002|15.06.2006||0|
 621|168|2|SKPKPS|Stálá komise pro práci Kanceláøe Poslanecké snìmovny|Permanent Commission for the work of the Office of the Chamber of Deputies|18.07.2002|15.06.2006||0|
@@ -103,14 +103,14 @@
 637|606|4|POOSOT|Podvıbor pro obchod, ochranu spotøebitele a ochranu trhu|Subcommittee on Trade, Consumer Protection and Trade Protection|08.08.2002|15.06.2006||0|
 57|0|2|SKPKPS|Stálá komise pro práci Kanceláøe Poslanecké snìmovny|Permanent Commission for the work of the Office of the Chamber of Deputies|04.07.1996|19.06.1998||0|
 58|0|2|SKPO|Stálá komise pro kontrolu pouití operativní techniky Policie ÈR|Perm. Comm. for oversight of the employment of Operational Technique|25.07.1996|19.06.1998||0|
-59|0|2|VKKB|Vyšetøovací komise KrB a.s. Plzeò|Commission of Enquiry on KrB a.s. Pilsen|08.10.1996|19.06.1998||0|
-60|0|2|VKOK|Vyšetøovací komise pro objasnìní vztahu org. zloèinu a státní správy v|Commission of Enquiry on the Organised Crime Profusion to the Public Sphere|02.04.1998|19.06.1998||0|
+59|166|2|VKKB|Vyšetøovací komise KrB a.s. Plzeò|Commission of Enquiry on KrB a.s. Pilsen|08.10.1996|19.06.1998||0|
+60|166|2|VKOK|Vyšetøovací komise pro objasnìní vztahu org. zloèinu a státní správy v|Commission of Enquiry on the Organised Crime Profusion to the Public Sphere|02.04.1998|19.06.1998||0|
 625|168|2|SKVO|Stálá komise pro kontrolu èinnosti Vojenského obranného zpravodajství|Permanent Commission for oversight of the Military Intelligence activities|18.07.2002|15.06.2006||0|
 626|168|2|SKRRP|Stálá komise pro rodinu a rovné pøíleitosti|Permanent Commission on Family Issues and on Equal Opportunities|18.07.2002|15.06.2006||0|
 627|611|4|PpHV|Podvıbor pro heraldiku a vexilologii|Subcommittee for Heraldy and Vexillology|06.08.2002|15.06.2006||0|
 628|611|4|PpVaVS|Podvıbor pro vìdu a vysoké školy|Subcommittee for Science and Higher Education Schools|06.08.2002|15.06.2006||0|
 62|0|2|VK|Volební komise Poslanecké snìmovny|Electoral Comm. of the Chamber of Deputies|25.06.1996|19.06.1998||0|
-63|0|2|SKVOZ|Stálá komise pro kontrolu èinnosti Vojenského obranného zpravodajství|Perm. Comm. for oversight of the Military Intelligence activities|24.07.1998|20.06.2002||0|
+63|167|2|SKVOZ|Stálá komise pro kontrolu èinnosti Vojenského obranného zpravodajství|Perm. Comm. for oversight of the Military Intelligence activities|24.07.1998|20.06.2002||0|
 64|0|2|SKBIS|Stálá komise pro kontrolu èinnosti Bezpeènostní informaèní sluby|Permanent Commission for oversight of the Security Information Service activities|24.07.1998|20.06.2002||0|
 629|611|4|PpS|Podvıbor pro školství|Subcommittee for Education|06.08.2002|15.06.2006||0|
 630|611|4|PpK|Podvıbor pro kulturu|Subcommittee for Culture|06.08.2002|15.06.2006||0|
@@ -369,7 +369,7 @@
 216|144|13|EG|Egypt|Egypt|21.05.1999|20.06.2002||0|
 218|144|13|PAK|Pákistán|Pakistan|21.05.1999|20.06.2002||0|
 219|144|13|MAROK|Maroko|Morocco|20.05.1999|20.06.2002||0|
-220|0|2|VKTC|Vyšetøovací komise pro vyšetøení èinnosti regionálního transplantaèního centra FN Ostrava|Commission of Enquiry on the Activities of the Regional Transplantation Center in Ostrava Hospital|08.06.1999|30.06.2001||0|
+220|167|2|VKTC|Vyšetøovací komise pro vyšetøení èinnosti regionálního transplantaèního centra FN Ostrava|Commission of Enquiry on the Activities of the Regional Transplantation Center in Ostrava Hospital|08.06.1999|30.06.2001||0|
 221|144|13|Arab|arabské zemì|Arabic Countries|30.06.1999|20.06.2002||0|
 222|144|13|Armen|Arménie|Armenia|30.06.1999|20.06.2002||0|
 224|144|13|FRJ|Jugoslávie|Yugoslavia|01.07.1999|20.06.2002||0|
@@ -537,13 +537,13 @@
 7|165|1|KDS1|Poslaneckı klub Køesansko demokratické strany I.|Christian Democratic Party I.|03.05.1995|11.09.1995||0|
 13|165|1|Nezaøaz|Nezaøazení|Unclassified Deputies|19.01.1993|06.06.1996||0|
 19|0|2|SKBIS|Stálá komise pro kontrolu èinnosti BIS|Perm. Comm. for oversight of the Security Information Service activiti|08.07.1993|06.06.1996||0|
-25|0|2|VKNZ|Vyš. komise Norbert, Zásah a Vlna|Commission of Enquiry Norbert, Zásah (Strike) a Vlna (Wave)|24.03.1993|06.06.1996||0|
+25|165|2|VKNZ|Vyš. komise Norbert, Zásah a Vlna|Commission of Enquiry Norbert, Zásah (Strike) a Vlna (Wave)|24.03.1993|06.06.1996||0|
 31|0|3|RV|Rozpoètovı vıbor|Budget Committee|06.06.1992|06.06.1996||0|
 37|0|3|ZAV|Zahranièní vıbor|Committee for Foreign Affairs|06.06.1992|06.06.1996||0|
 43|166|1|Nezaøaz|Nezaøazení|Unclassified Deputies|19.12.1996|19.06.1998||0|
 49|167|1|KDU-ÈSL|Poslaneckı klub Køesanské a demokratické unie - Èeskoslovenské strany lidové|Political group Christian Democratic Union - Czechoslovak People's Party|25.06.1998|20.06.2002|20|0|
 55|0|2|SKBIS|Stálá komise pro kontrolu èinnosti BIS|Perm. Comm. for oversight of the Security Information Service activities|25.07.1996|19.06.1998||0|
-61|0|2|VKPK|Vyšetøovací komise POLDI Kladno|Investigative Commission for Poldi Kladno|08.10.1996|19.06.1998||0|
+61|166|2|VKPK|Vyšetøovací komise POLDI Kladno|Investigative Commission for Poldi Kladno|08.10.1996|19.06.1998||0|
 67|0|2|SKPO|Stálá komise pro kontrolu pouití operativní techniky Policie ÈR|Permanent Commission for oversight of the employment of Operational Technique of Police of CR|24.07.1998|20.06.2002||0|
 73|0|3|RV|Rozpoètovı vıbor|Budget Committee|02.07.1996|19.06.1998||0|
 79|0|3|ZAV|Zahranièní vıbor|Committee for Foreign Affairs|02.07.1996|19.06.1998||0|
@@ -608,7 +608,7 @@
 446||57|PFS|Pøedsednictvo Federálního shromádìní| |07.06.1990|04.06.1992|20|0|
 1112|171|1|TOP09-S|Poslaneckı klub TOP 09 a Starostové|Political group TOP 09 a Starostové|31.10.2013|26.10.2017|50|0|
 1113|0|15|RUSTR|Rada Ústavu pro studium totalitních reimù| |01.08.2007|||1|
-449|0|2|DKDR|Doèasná komise pro dùchodovou reformu|Temporary commission for pensionary reformation|30.05.2000|31.12.2001||0|
+449|167|2|DKDR|Doèasná komise pro dùchodovou reformu|Temporary commission for pensionary reformation|30.05.2000|31.12.2001||0|
 1115|171|3|MIV|Mandátovı a imunitní vıbor|	Mandate and Immunity Committee|25.11.2013|26.10.2017||0|
 1116|171|2|VK|Volební komise|	Electoral Commission of the Chamber of Deputies|21.11.2013|26.10.2017||0|
 1117|171|3|PV|Petièní vıbor|	Committee on Petitions|27.11.2013|26.10.2017||0|
@@ -678,7 +678,7 @@
 519||68|SD¼|Strana demokratickej ¾avice| |07.06.1990|04.06.1992|290||
 520||68|VPN|Verejnost proti násiliu| |07.06.1990|04.06.1992|300||
 521||68|SKDH|SKDH| |07.06.1990|04.06.1992|310||
-522|0|2|DK OVT|Doèasná komise pro otázky vnitøního trhu|Temporary commission for internal market matters|24.10.2000|20.06.2002||0|
+522|167|2|DKOVT|Doèasná komise pro otázky vnitøního trhu|Temporary commission for internal market matters|24.10.2000|20.06.2002||0|
 523||68|ODÚ|Obèianska demokratická únia| |07.06.1990|04.06.1992|320||
 524||68|ASD|ASD| |07.06.1990|04.06.1992|330||
 525||68|MLS|MLS| |07.06.1990|04.06.1992|340||
@@ -715,7 +715,7 @@
 745|649|13|BULHAR|Bulharsko|Czech Republic Bulgary Inter-Parliamentary Group|15.12.2005|15.06.2006||0|
 746|168|2|VKVZP|Vyšetøovací komise Poslanecké snìmovny k prošetøení hospodaøení Všeobecné zdravotní pojišovny Èeské republiky|Commission of Enquiry on General Health Insurance of the Czech Republic management|09.12.2005|15.06.2006||0|
 747|168|2|SKNBU|Stálá komise pro kontrolu èinnosti NBÚ|Permanent Commission on Oversight over the work of the National Security Office|01.02.2006|15.06.2006||0|
-748||2|VKTEL|Vyšetøovací komise pro vyšetøení pochyb. v kauze TELECOM|Investigative Commission for TELECOM|15.01.1999|30.04.2000|||
+748|167|2|VKTEL|Vyšetøovací komise pro vyšetøení pochyb. v kauze TELECOM|Investigative Commission for TELECOM|15.01.1999|30.04.2000|||
 752|169|1|KSÈM|Poslaneckı klub Komunistické strany Èech a Moravy|Political Group of the Communist Party of Bohemia and Moravia|08.06.2006|03.06.2010|1003|0|
 751|169|1|KDU-ÈSL|Poslaneckı klub Køesanské a demokratické unie-Èeskoslovenské strany lidové|Political Group of the Christian and Democratic Union - Czechoslovak People's Party|16.06.2006|03.06.2010|1004|0|
 754|169|1|Nez.-SZ|Nezaøazení - Strana zelenıch|Unclassified Deputies - Green Party|03.06.2006|09.01.2007|1005|0|
@@ -940,12 +940,12 @@
 985|965|4|PVSIS|Podvıbor pro veøejnou správu a informaèní systémy|Subcommittee on Public Administration and Information Systems|08.09.2010|28.08.2013||0|
 986|965|4|PURFVS|Podvıbor pro územní rozvoj a financování veøejné správy|Subcommittee on Territorial Development and Financial Management of Public Administration|08.09.2010|28.08.2013||0|
 987|965|4|PCR|Podvıbor pro cestovní ruch|Subcommittee on Tourism|08.09.2010|28.08.2013||0|
-988|0|4|POPSBS|Podvıbor pro obecní policie a soukromé bezpeènostní sluby|Subcommittee on Municipal Police Forces and Private Security Services|09.09.2010|06.12.2011||0|
-989|0|4|PV|Podvıbor pro vìzeòství|Subcommittee for Penology|09.09.2010|06.12.2011||0|
-990|0|4|PIZS|Podvıbor pro integrovanı záchrannı systém|Subcommittee on the Integrated Rescue System|09.09.2010|06.12.2011||0|
-991|0|4|PRPÈR|Podvıbor pro reformu Policie ÈR|Subcommittee on the Refrom of the Police of the Czech Republic|09.09.2010|06.12.2011||0|
-992|0|4|PAÈR|Podvıbor pro strategické koncepce a reformu AÈR|Subcommittee on Strategic Targets and Reform of the Army|09.09.2010|06.12.2011||0|
-993|0|4|PAMO|Podvıbor pro kontrolu akvizic Ministerstva obrany a obchodu s vojenskım materiálem|Subcommittee on the Ministry of Defence Acquisitions and Arms Trade|09.09.2010|06.12.2011||0|
+988|961|4|POPSBS|Podvıbor pro obecní policie a soukromé bezpeènostní sluby|Subcommittee on Municipal Police Forces and Private Security Services|09.09.2010|06.12.2011||0|
+989|961|4|PV|Podvıbor pro vìzeòství|Subcommittee for Penology|09.09.2010|06.12.2011||0|
+990|961|4|PIZS|Podvıbor pro integrovanı záchrannı systém|Subcommittee on the Integrated Rescue System|09.09.2010|06.12.2011||0|
+991|961|4|PRPÈR|Podvıbor pro reformu Policie ÈR|Subcommittee on the Refrom of the Police of the Czech Republic|09.09.2010|06.12.2011||0|
+992|961|4|PAÈR|Podvıbor pro strategické koncepce a reformu AÈR|Subcommittee on Strategic Targets and Reform of the Army|09.09.2010|06.12.2011||0|
+993|961|4|PAMO|Podvıbor pro kontrolu akvizic Ministerstva obrany a obchodu s vojenskım materiálem|Subcommittee on the Ministry of Defence Acquisitions and Arms Trade|09.09.2010|06.12.2011||0|
 994|959|4|PD|Podvıbor pro dopravu|	Subcommittee on Transportation|09.09.2010|28.08.2013||0|
 995|959|4|PE|Podvıbor pro energetiku|	Subcommittee on Power Engineering|09.09.2010|28.08.2013||0|
 996|959|4|PPP|Podvıbor pro podnikatelské prostøedí|Subcommittee on the Business Environment|09.09.2010|28.08.2013||0|
@@ -1038,7 +1038,7 @@
 1084|960|4|FP|Finanèní podvıbor|Subcommittee on Finance|02.03.2012|28.08.2013||0|
 1085|1079|4|OPSBS|Podvıbor pro obecní policie a soukromé bezpeènostní sluby|Subcommittee on Municipal Police Forces and Private Security Services|18.01.2012|28.08.2013||0|
 1086|1079|4|IZS|Podvıbor pro integrovanı záchrannı systém|Subcommittee on the Integrated Rescue System|18.01.2012|28.08.2013||0|
-1087|1079|4|RPÈR|Podvıbor pro Policii Èeské republiky|Subcommittee on Police of the Czech Republic|18.01.2012|28.08.2013||0|
+1087|1079|4|PPÈR|Podvıbor pro Policii Èeské republiky|Subcommittee on Police of the Czech Republic|18.01.2012|28.08.2013||0|
 1088|975|13|CPV|Kapverdská republika|the Republic of Cape Verde|21.03.2012|28.08.2013||0|
 1089|975|13|ZAF|Jihoafrická republika|the Republic of South Africa|21.03.2012|28.08.2013||0|
 1090|975|13|XSBSA|státy subsaharské Afriky|Sub-Saharan Africa|21.03.2012|28.08.2013||0|
