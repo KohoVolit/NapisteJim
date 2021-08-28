@@ -1,0 +1,129 @@
+1|1|Místopøedseda|Vice-chairman|2|2|
+2|1|Pøedseda|Chairman|1|1|
+4|2|Ovìøovatel komise|Verifier of commission|5|3|
+7|3|Ovìøovatel výboru|Verifier of committee|20|3|
+9|3|Tajemník - ovìøovatel výboru|Secretary - verifier of committee|10|3|
+12|7|Náhradník delegace|Alternate of delegation|6|0|
+14|7|Vedoucí delegace|Head of delegation|2|1|
+17|11|Ovìøovatel|Verifier|5|3|
+19|13|Pøedseda|Chairperson|1|1|
+20|13|Místopøedseda|Vice-chairperson|2|2|
+22|29|Místopøedseda|Vice-chairperson|2|2|
+23|29|Pøedseda|Chairperson|1|1|
+24|29|Zapisovatel výboru| |5|0|
+25|27|Pøedseda|Chairperson|1|1|
+26|27|Místopøedseda|Vice-chairperson|2|2|
+27|27|Zapisovatel| |40|0|
+28|27|Poøadatel| |50|0|
+29|24|Pøedseda| |1|1|
+30|24|Místopøedseda| |2|2|
+31|24|Zapisovatel| |10|0|
+32|24|Poøadatel| |15|0|
+33|33|Pøedseda|Chairperson|1|1|
+34|33|Místopøedseda|Vice-chairperson|2|2|
+35|33|Zapisovatel|Secretary|10|0|
+37|15|Prezident| |1|0|
+38|15|Viceprezident| |2|0|
+90|74|Delegát| |10||
+42|15|Øeditel| |1|1|
+89|42|Èlen| |5|0|
+91|74|Náhradník| |20||
+92|1|Èlen vedení klubu| |10||
+96|5|Ministr| |201|0|
+54|5|Ministr zahranièních vìcí| |114|0|
+57|5|Ministr zemìdìlství| |116|0|
+61|5|Ministr životního prostøedí| |117|0|
+63|5|Ministr dopravy a spojù| |102|0|
+66|40|Pøedseda|Chairperson|1|1|
+67|40|První místopøedseda| |2|2|
+68|41|Místopøedseda|Vice-chairperson|2|2|
+69|5|Èlen vlády| |200|0|
+71|45|Èlen|Member|10|0|
+72|45|Náhradník| |10|0|
+98|7|Náhradník| |7||
+74|42|Náhradník| |10|0|
+99|4|Garanèní pøedseda| |1|1|
+76|41|Èlen|Member|100|0|
+77|20|Pøedseda|Chairperson|1||
+78|20|Místopøedseda|Vice-chairperson|2||
+79|23|Pøedseda|Chairperson|1|1|
+80|23|Místopøedseda|Vice-chairperson|2|2|
+81|26|Pøedseda|Chairperson|1|1|
+82|26|Místopøedseda|Vice-chairperson|2|2|
+83|25|Pøedseda|Chairperson|1|1|
+84|25|Místopøedseda|Vice-chairperson|2|2|
+85|57|Pøedseda|Chairperson|1||
+86|57|Místopøedseda|Vice-chairperson|2||
+87|15|Pøedseda|Chairperson|1|1|
+88|15|Èlen|Member|100|0|
+100|15|Finanèní arbitr| |111|1|
+102|13|Èlen|Member|30||
+103|13|Pozorovatel|Observer|50||
+105|5|Ministr informatiky| |105|0|
+106|77|Pozorovatel|Observer|20||
+107|77|Náhradník| |30|0|
+108|78|Pøedseda|Chairman|1|1|
+109|77|Poslanec|Member|10||
+110|1|Revizor| |500||
+113|5|Ministr hospodáøství| |105|0|
+115|3|1. místopøedseda| |2|2|
+116|3|2. místopøedseda| |3|2|
+117|82|Èlen| |50||
+118|82|Øeditel| |30||
+119|82|Pøedseda| |31||
+121|82|Vrchní øeditel| |41||
+122|82|Viceguvernér| |29||
+123|82|Vedoucí| |44||
+124|82|Èlen bankovní rady| |42||
+125|84|Interní auditor|Internal Auditor|1000|0|
+126|82|Inspektor| |48||
+127|5|Ministr pro evropské záležitosti| |170||
+128|15|Místopøedseda| |10|2|
+129|1|Èlen pøedsednictva| |20|0|
+130|3|3. místopøedseda| |4|2|
+131|3|4. místopøedseda| |5|2|
+132|3|5. místopøedseda| |6|2|
+133|3|6. místopøedseda| |7|2|
+134|3|7. místopøedseda| |8|2|
+8|3|Pøedseda|Chairman|1|1|
+11|4|Pøedseda|Chairman|2|1|
+10|4|Místopøedseda|Vice-chairman|3|2|
+112|4|Ovìøovatel| |40|3|
+6|3|Místopøedseda|Vice-chairman|9|2|
+5|2|Pøedseda|Chairman|1|1|
+3|2|Místopøedseda|Vice-chairman|2|2|
+21|7|Místopøedseda|Vice-chairman|3|2|
+13|7|Pøedseda|Chairman|1|1|
+97|7|Èlen| |5|0|
+135|84|Místopøedseda|Vice-chairman|10|2|
+15|5|Pøedseda vlády|Chairperson|1|1|
+36|5|Místopøedseda vlády|Vice-chairperson|2|2|
+64|5|Ministr obrany| |107|0|
+52|5|Ministr práce a sociálních vìcí| |108|0|
+65|5|Ministr školství, mládeže a tìlovýchovy| |111|0|
+62|5|Ministr spravedlnosti| |112|0|
+60|5|Ministr vnitra| |113|0|
+104|5|Ministr dopravy| |103|0|
+53|5|Ministr financí| |104|0|
+56|5|Ministr kultury| |106|0|
+55|5|Ministr pro místní rozvoj| |109|0|
+59|5|Ministr prùmyslu a obchodu| |110|0|
+58|5|Ministr zdravotnictví| |115|0|
+120|82|Guvernér| |21|0|
+70|18|Prezident| |1|0|
+40|15|Veøejný ochránce práv| |101|0|
+101|15|Zástupce finanèního arbitra| |112|0|
+41|15|Zástupce veøejného ochránce práv| |102|0|
+16|11|Místopøedseda|Vicepresident|2|2|
+18|11|Pøedseda|President (Speaker)|1|1|
+138|15|Èlen z kandidátù Poslanecké snìmovny| |511|0|
+139|15|Èlen z kandidátù Senátu| |512|0|
+140|15|Èlen z kandidátù NKÚ| |513|0|
+93|1|1. místopøedseda| |4|2|
+94|1|2. místopøedseda| |5|2|
+95|1|3. místopøedseda| |6|2|
+111|1|4. místopøedseda| |7|2|
+114|1|5. místopøedseda| |8|2|
+141|15|Pøedseda navržený pøedsedou vlády ÈR| |521|1|
+142|15|Èlen navržený Senátem| |522|0|
+143|15|Èlen navržený ÈNB| |523|0|
