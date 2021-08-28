@@ -1,0 +1,1 @@
+webpackJsonp([8],{30:function(e,n,t){var r=t(2)(t(46),t(47),null,null,null);e.exports=r.exports},46:function(e,n){},47:function(e,n){e.exports={render:function(){var e=this,n=e.$createElement,t=e._self._c||n;return t("div",[t("iframe",{attrs:{src:"https://volebnikalkulacka.cz/session/",width:"0",height:"0",frameborder:"0"}})],1)},staticRenderFns:[]}}});
