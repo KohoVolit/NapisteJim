@@ -5300,7 +5300,7 @@
 5329| |Èerný|Václav| |01.01.1900|M|||
 5330| |Hrubý|Zdenìk| |01.01.1900|M|||
 5331| |Hartmann|Ivo| |01.01.1900|M|||
-5332|Ing.|Tesaøík|Antonín| |01.01.1900|M|||
+5332|Ing.|Tesaøík|Antonín| |15.07.1960|M|||
 5333| |Václavek|Miroslav| |01.01.1900|M|||
 5334| |Srba|Václav| |01.01.1900|M|||
 5335| |Hofírek|Radek| |01.01.1900|M|||
@@ -6494,7 +6494,7 @@
 6552| |Høib|Zdenìk| |01.01.1900|M|||
 6553| |Novák|Jaroslav| |01.01.1900|M|||
 6554| |Páral|Jiøí| |01.01.1900|M|||
-6555|MUDr.|Philipp|Tom|Ph.D., MBA|01.01.1900|M|||
+6555|MUDr.|Philipp|Tom|Ph.D., MBA|26.12.1968|M|||
 6556| |Zácha|Michal| |01.01.1900|M|||
 6557|MUDr.|Zitterbart|Karel|Ph.D.|08.10.1978|M|||
 6558|prof. MUDr.|Arenberger|Petr|DrSC., MBA|04.12.1958|M|||
@@ -6656,75 +6656,89 @@
 6716|Mgr.|Köppl|Daniel| |01.01.1900|M|||
 6717|Mgr.|Vágner|Lukáš| |26.11.1980|M|||
 6718|Ing.|Geuss|Erik|Ph.D.|01.01.1900|M|||
-6719|Ing.|Baèíková|Jana|MBA|01.01.1900|Ž|||
-6720|MUDr.|Bìlohlávková|Romana| |01.01.1900|Ž|||
-6721|Ing.|Bìlor|Roman| |01.01.1900|M|||
-6722|Mgr.|Berki|Jan|Ph.D.|01.01.1900|M|||
-6723|Mgr.|Berkovcová|Jana| |01.01.1900|Ž|||
-6724|Ing.|Bernard|Josef| |01.01.1900|M|||
-6725|Ing.|Brož|Lubomír| |01.01.1900|M|||
-6726| |Èerný|Oldøich| |01.01.1900|M|||
-6727| |Decroix|Eva|MBA|01.01.1900|Ž|||
-6728| |Dubský|Tomáš| |01.01.1900|M|||
-6729|Mgr.|Dufek|Aleš| |01.01.1900|M|||
-6730|Mgr. Ing.|Wenzl|Lubomír| |01.01.1900|M|||
-6731| |Wenzl|Milan| |01.01.1900|M|||
-6732|PhDr.|Mádlová|Ivana|Ph.D., MBA|01.01.1900|Ž|||
-6733|JUDr.|Major|Martin|MBA|01.01.1900|M|||
-6734|Ing.|Liška|Petr| |01.01.1900|M|||
-6735| |Kuchaø|Jan| |01.01.1900|M|||
-6736|Ing.|Kukla|Martin| |01.01.1900|M|||
-6737|Mgr.|Lacina|Jan| |01.01.1900|M|||
-6738|Mgr. Bc.|Lang|Hubert| |01.01.1900|M|||
-6739| |Letocha|Petr| |01.01.1900|M|||
-6740|Mgr.|Sládeèek|Karel| |01.01.1900|M|||
-6741| |Slavík|Jiøí| |01.01.1900|M|||
-6742|Ing.|Smetana|Karel| |01.01.1900|M|||
-6743|Mgr.|Stržínek|Robert| |01.01.1900|M|||
-6744|Mgr.|Salvetr|Rudolf| |01.01.1900|M|||
-6745|Ing.|Pošarová|Marie| |01.01.1900|Ž|||
-6746|Mgr.|Potùèková|Lucie| |01.01.1900|Ž|||
-6747| |Exner|Martin| |01.01.1900|M|||
-6748|PharmDr.|Fifka|Petr| |01.01.1900|M|||
-6749| |Fischerová|Romana| |01.01.1900|Ž|||
-6750|Mgr.|Flek|Josef| |01.01.1900|M|||
-6751|Mgr.|Haas|Karel| |01.01.1900|M|||
-6752|Mgr.|Hájek|Martin| |01.01.1900|M|||
-6753|Mgr.|Hanzlíková|Jana| |01.01.1900|Ž|||
-6754|Mgr.|Havel|Matìj Ondøej|Ph.D.|01.01.1900|M|||
-6755|Ing.|Havránek|Jiøí| |01.01.1900|M|||
-6756|Mgr.|Helebrant|Tomáš| |01.01.1900|M|||
-6757|Mgr.|Heller|Šimon| |01.01.1900|M|||
-6758|PhDr.|Hendrych|Igor|Ph.D.|01.01.1900|M|||
-6759| |Hofmann|Jan| |01.01.1900|M|||
-6760|Ing.|Holiš|Radim| |01.01.1900|M|||
-6761|Bc.|Quittová|Petra| |01.01.1900|Ž|||
-6762|Mgr. Ing.|Pivoòka Vaòková|Pavla| |01.01.1900|M|||
-6763|Mgr.|Šebelová|Michaela| |01.01.1900|Ž|||
-6764|Mgr.|Jílková|Marie| |01.01.1900|Ž|||
-6765|JUDr.|Kašník|Pavel| |01.01.1900|M|||
-6766|Mgr.|Olšáková|Eliška| |01.01.1900|Ž|||
-6767|Ing.|Opltová|Michaela| |01.01.1900|Ž|||
-6768|Ing. et Ing.|Nový|Miloš| |01.01.1900|M|||
-6769|Mgr.|Okamura|Hayato| |01.01.1900|M|||
-6770| |Oulehlová|Renata| |01.01.1900|Ž|||
-6771|Ing.|Naiclerová|Hana|MBA|01.01.1900|Ž|||
-6772|Ing.|Müller|Tomáš| |01.01.1900|M|||
-6773|Mgr.|Kettner|Zdenìk| |01.01.1900|M|||
-6774|Mgr.|Klíma|Pavel| |01.01.1900|M|||
-6775| |Knechtová|Lenka| |01.01.1900|Ž|||
-6776| |Kocmanová|Klára| |01.01.1900|Ž|||
-6777|doc. JUDr.|Kohajda|Michael|Ph.D.|01.01.1900|M|||
-6778|Mgr.|Lisová|Martina| |01.01.1900|Ž|||
-6779|Mgr.|Lochman|Ondøej|Ph.D.|01.01.1900|M|||
-6780|Ing.|Peštová|Berenika|Ph.D.|01.01.1900|Ž|||
-6781|PhDr.|Rataj|Michael|Ph.D.|01.01.1900|M|||
-6782|Ing.|Ryba|Drahoslav| |01.01.1900|M|||
-6783|MUDr.|Síla|Jan| |01.01.1900|M|||
-6784|Mgr. Bc.|Šimek|David|MBA|01.01.1900|M|||
-6785|MUDr.|Štefanová|Iveta| |01.01.1900|Ž|||
-6786|MUDr.|Teleky|Róbert| |01.01.1900|M|||
-6787|Ing.|Turek|Libor|Ph.D.|01.01.1900|M|||
-6788|Ing.|Urbanová|Barbora| |01.01.1900|Ž|||
-6789|Ing.|Vlèek|Lukáš| |01.01.1900|M|||
-6790|Mgr.|Voborská|Milada| |01.01.1900|Ž|||
+6719|Ing.|Baèíková|Jana|MBA|07.08.1969|Ž|||
+6720|MUDr.|Bìlohlávková|Romana| |26.01.1965|Ž|||
+6721|Ing.|Bìlor|Roman| |09.08.1958|M|||
+6722|Mgr.|Berki|Jan|Ph.D.|20.09.1981|M|||
+6723|Mgr.|Berkovcová|Jana| |24.10.1969|Ž|||
+6724|Ing.|Bernard|Josef| |30.05.1965|M|||
+6725|Ing.|Brož|Lubomír| |12.05.1966|M|||
+6726| |Èerný|Oldøich| |10.09.1965|M|||
+6727| |Decroix|Eva|MBA|26.05.1982|Ž|||
+6728| |Dubský|Tomáš| |21.07.1973|M|||
+6729|Mgr.|Dufek|Aleš| |17.11.1973|M|||
+6730|Mgr. Ing.|Wenzl|Lubomír| |23.09.1968|M|||
+6731| |Wenzl|Milan| |12.05.1959|M|||
+6732|PhDr.|Mádlová|Ivana|Ph.D., MBA|31.03.1966|Ž|||
+6733|JUDr.|Major|Martin|MBA|26.09.1979|M|||
+6734|Ing.|Liška|Petr| |16.03.1970|M|||
+6735| |Kuchaø|Jan| |18.05.1974|M|||
+6736|Ing.|Kukla|Martin| |31.10.1982|M|||
+6737|Mgr.|Lacina|Jan| |25.01.1970|M|||
+6738|Mgr. Bc.|Lang|Hubert| |29.09.1969|M|||
+6739| |Letocha|Petr| |20.02.1984|M|||
+6740|Mgr.|Sládeèek|Karel| |30.05.1963|M|||
+6741| |Slavík|Jiøí| |13.09.1968|M|||
+6742|Ing.|Smetana|Karel| |25.09.1988|M|||
+6743|Mgr.|Stržínek|Robert| |23.11.1968|M|||
+6744|Mgr.|Salvetr|Rudolf| |23.04.1964|M|||
+6745|Ing.|Pošarová|Marie| |05.01.1980|Ž|||
+6746|Mgr.|Potùèková|Lucie| |01.09.1975|Ž|||
+6747| |Exner|Martin| |20.12.1963|M|||
+6748|PharmDr.|Fifka|Petr| |27.01.1967|M|||
+6749| |Fischerová|Romana| |18.03.1969|Ž|||
+6750|Mgr.|Flek|Josef| |12.03.1988|M|||
+6751|Mgr.|Haas|Karel| |14.09.1973|M|||
+6752|Mgr.|Hájek|Martin| |22.04.1970|M|||
+6753|Mgr.|Hanzlíková|Jana| |07.10.1966|Ž|||
+6754|Mgr.|Havel|Matìj Ondøej|Ph.D.|12.02.1987|M|||
+6755|Ing.|Havránek|Jiøí| |23.12.1992|M|||
+6756|Mgr.|Helebrant|Tomáš| |02.01.1974|M|||
+6757|Mgr.|Heller|Šimon| |16.01.1988|M|||
+6758|PhDr.|Hendrych|Igor|Ph.D.|19.11.1967|M|||
+6759| |Hofmann|Jan| |20.08.1985|M|||
+6760|Ing.|Holiš|Radim| |12.08.1975|M|||
+6761|Bc.|Quittová|Petra| |02.09.1972|Ž|||
+6762|Mgr. Ing.|Pivoòka Vaòková|Pavla| |31.10.1976|M|||
+6763|Mgr.|Šebelová|Michaela| |16.06.1982|Ž|||
+6764|Mgr.|Jílková|Marie| |09.06.1977|Ž|||
+6765|JUDr.|Kašník|Pavel| |06.08.1964|M|||
+6766|Mgr.|Olšáková|Eliška| |29.06.1968|Ž|||
+6767|Ing.|Opltová|Michaela| |01.10.1985|Ž|||
+6768|Ing. et Ing.|Nový|Miloš| |18.01.1960|M|||
+6769|Mgr.|Okamura|Hayato| |28.11.1966|M|||
+6770| |Oulehlová|Renata| |31.03.1968|Ž|||
+6771|Ing.|Naiclerová|Hana|MBA|19.06.1972|Ž|||
+6772|Ing.|Müller|Tomáš| |28.04.1966|M|||
+6773|Mgr.|Kettner|Zdenìk| |04.02.1974|M|||
+6774|Mgr.|Klíma|Pavel| |26.05.1971|M|||
+6775| |Knechtová|Lenka| |01.06.1975|Ž|||
+6776| |Kocmanová|Klára| |05.11.1992|Ž|||
+6777|doc. JUDr.|Kohajda|Michael|Ph.D.|23.01.1981|M|||
+6778|Mgr.|Lisová|Martina| |19.12.1983|Ž|||
+6779|Mgr.|Lochman|Ondøej|Ph.D.|30.10.1980|M|||
+6780|Ing.|Peštová|Berenika|Ph.D.|19.09.1971|Ž|||
+6781|PhDr.|Rataj|Michael|Ph.D.|28.09.1969|M|||
+6782|Ing.|Ryba|Drahoslav| |02.12.1962|M|||
+6783|MUDr.|Síla|Jan| |01.03.1950|M|||
+6784|Mgr. Bc.|Šimek|David|MBA|21.03.1977|M|||
+6785|MUDr.|Štefanová|Iveta| |27.11.1983|Ž|||
+6786|MUDr.|Teleky|Róbert| |30.06.1967|M|||
+6787|Ing.|Turek|Libor|Ph.D.|05.02.1971|M|||
+6788|Ing.|Urbanová|Barbora| |26.09.1991|Ž|||
+6789|Ing.|Vlèek|Lukáš| |27.02.1982|M|||
+6790|Mgr.|Voborská|Milada| |25.07.1972|Ž|||
+6791|Ing.|Vojtko|Viktor|Ph.D.|01.09.1978|M|||
+6792|Ing.|Vomáèka|Vít|MBA|17.01.1960|M|||
+6793|Mgr.|Zajíèková|Renáta| |17.08.1967|Ž|||
+6794|Ing.|Zborovský|Miroslav| |13.04.1980|M|||
+6795|MUDr.|Zlínský|Vladimír| |29.05.1964|M|||
+6796| |Zuna|Michal| |09.01.1982|M|||
+6797|doc. JUDr.|Balaš|Vladimír|CSc.|20.04.1959|M|||
+6798|Ing.|Hájek|Jiøí| |16.09.1961|M|||
+6799|Mgr.|Koláø|Ondøej| |13.03.1984|M|||
+6800|Ing.|Král|Václav| |25.03.1980|M|||
+6801|Bc.|Navrátil|Jiøí|MBA|13.06.1977|M|||
+6802|MgA.|Svoboda|Pavel|Ph.D.|26.10.1987|M|||
+6803|PhDr.|Horák|Jiøí|Ph.D.|24.07.1984|M|||
+6804|MUDr.|Nìmeèková Crkvenjaš|Zdenka|MBA|14.09.1976|Ž|||
