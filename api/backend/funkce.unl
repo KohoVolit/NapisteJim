@@ -471,6 +471,10 @@
 2611|1542|5|Pøedseda|1|
 2612|1542|3|Místopøedseda|10|
 2613|1542|4|Ovìøovatel|100|
+2683|1570|5|Pøedseda|1|
+2684|1571|5|Pøedseda|1|
+2682|1572|5|Pøedseda|1|
+2681|1573|5|Pøedseda|1|
 62|27|6|Místopøedseda výboru BBV|2|
 63|27|7|Ovìøovatel výboru BBV|5|
 64|27|8|Pøedseda výboru BBV|1|
@@ -886,9 +890,16 @@
 2614|1543|8|Pøedseda|1|
 2623|1543|6|1. místopøedseda|11|
 2624|1543|6|2. místopøedseda|12|
+2659|1543|7|Ovìøovatel výboru|20|
 2629|1544|8|Pøedseda|1|
+2665|1544|6|Místopøedseda|11|
+2666|1544|7|Ovìøovatel výboru|20|
 2630|1545|8|Pøedseda|1|
 2648|1545|6|Místopøedseda|11|
+2667|1545|7|Ovìøovatel výboru|20|
+2661|1546|7|Ovìøovatel výboru|20|
+2662|1546|8|Pøedseda|1|
+2663|1546|6|Místopøedseda|11|
 2626|1547|8|Pøedseda|1|
 2627|1547|6|1. místopøedseda|2|
 2628|1547|6|2. místopøedseda|12|
@@ -896,30 +907,45 @@
 2652|1547|6|4. místopøedseda|14|
 2653|1547|6|5. místopøedseda|15|
 2654|1547|6|6. místopøedseda|16|
+2664|1547|7|Ovìøovatel výboru|20|
 2632|1548|8|Pøedseda|1|
 2655|1548|6|Místopøedseda|11|
+2669|1548|7|Ovìøovatel výboru|20|
 2634|1549|8|Pøedseda|1|
 2650|1549|6|Místopøedseda|11|
 2625|1550|8|Pøedseda|1|
 2658|1550|6|Místopøedseda|11|
+2660|1550|7|Ovìøovatel výboru|20|
 2631|1551|8|Pøedseda|1|
 2645|1551|6|Místopøedseda|11|
+2668|1551|7|Ovìøovatel výboru|20|
 2633|1552|8|Pøedseda|1|
 2643|1552|6|Místopøedseda|11|
+2670|1552|7|Ovìøovatel výboru|20|
 2635|1553|8|Pøedseda|1|
+2671|1553|7|Ovìøovatel výboru|20|
+2672|1553|6|Místopøedseda|11|
 2636|1554|8|Pøedseda|1|
 2646|1554|6|Místopøedseda|11|
+2673|1554|7|Ovìøovatel výboru|20|
 2637|1555|8|Pøedseda|1|
 2656|1555|6|Místopøedseda|11|
+2674|1555|7|Ovìøovatel výboru|20|
 2638|1556|8|Pøedseda|1|
 2657|1556|6|Místopøedseda|11|
+2675|1556|7|Ovìøovatel výboru|20|
 2639|1557|8|Pøedseda|1|
+2676|1557|6|Místopøedseda|9|
+2677|1557|7|Ovìøovatel výboru|20|
 2640|1558|8|Pøedseda|1|
 2644|1558|6|Místopøedseda|2|
+2678|1558|7|Ovìøovatel výboru|20|
 2641|1559|8|Pøedseda|1|
 2649|1559|6|Místopøedseda|11|
+2679|1559|7|Ovìøovatel výboru|20|
 2642|1560|8|Pøedseda|1|
 2647|1560|6|Místopøedseda|11|
+2680|1560|7|Ovìøovatel výboru|20|
 110|39|10|Místopøedseda podvýboru KONT|2|
 111|39|11|Pøedseda podvýboru KONT|1|
 286|94|10|Místopøedseda podvýboru ZS|2|
