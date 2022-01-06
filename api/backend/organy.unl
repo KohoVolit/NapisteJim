@@ -1379,7 +1379,7 @@
 1497||79|SE12|Senát|Senate|06.10.2018||1200||
 1498|1331|13|MN|Mongolsko|Mongolia|27.11.2018|21.10.2021||0|
 1499|1331|13|CY|Kypr|Republic of Cyprus|13.03.2019|21.10.2021||0|
-1500|172|1|Nezaøaz|Nezaøazení||15.03.2019|21.10.2021|10000|0|
+1500|172|1|Nezaøaz|Nezaøazení|Unaffiliated Deputies|15.03.2019|21.10.2021|10000|0|
 1501|1331|13|AO|Angola|Republic of Angola|15.03.2019|21.10.2021||0|
 1502|1331|13|BR|Brazílie|Federative Republic of Brasil|18.03.2019|21.10.2021||0|
 1503|1331|13|NL|Nizozemské království|Kingdom of the Netherlands|25.03.2019|21.10.2021||0|
@@ -1412,32 +1412,32 @@
 173||11|PSP9|Poslanecká snìmovna|Chamber of Deputies|09.10.2021|||0|
 1533|0|6|SPOLU|Spolu| |09.10.2021|||0|
 1534|0|6|PirSTAN|Pirati+STAN| |09.10.2021|||0|
-1535|173|1|Piráti|Poslanecký klub Èeské pirátské strany| |10.10.2021|||0|
-1536|173|1|STAN|Poslanecký klub Starostové a nezávislí| |15.10.2021|||0|
-1537|173|1|ANO|Poslanecký klub ANO 2011| |12.10.2021|||0|
-1538|173|1|ODS|Poslanecký klub Obèanské demokratické strany| |12.10.2021|||0|
-1539|173|1|KDU-ÈSL|Poslanecký klub KDU-ÈSL| |12.10.2021|||0|
-1540|173|1|SPD|Poslanecký klub Svoboda a pøímá demokracie| |12.10.2021|||0|
-1541|173|1|TOP09|Poslanecký klub TOP 09| |12.10.2021|||0|
+1535|173|1|Piráti|Poslanecký klub Èeské pirátské strany|Political group Czech Pirate Party|10.10.2021|||0|
+1536|173|1|STAN|Poslanecký klub Starostové a nezávislí|Political group Mayors and Independents|15.10.2021|||0|
+1537|173|1|ANO|Poslanecký klub ANO 2011|Political group ANO 2011|12.10.2021|||0|
+1538|173|1|ODS|Poslanecký klub Obèanské demokratické strany|Political group Civic Democratic Party|12.10.2021|||0|
+1539|173|1|KDU-ÈSL|Poslanecký klub KDU-ÈSL|Political Group of the Christian and Democratic Union - Czechoslovak People's Party|12.10.2021|||0|
+1540|173|1|SPD|Poslanecký klub Svoboda a pøímá demokracie|Political group Freedom and Direct Democracy|12.10.2021|||0|
+1541|173|1|TOP09|Poslanecký klub TOP 09|Political group TOP 09|12.10.2021|||0|
 1542|173|2|VK|Volební komise| |02.11.2021|||0|
-1543|173|3|MIV|Mandátový a imunitní výbor| |08.11.2021|||0|
-1544|173|3|PV|Petièní výbor| |10.11.2021|||0|
-1545|173|3|RV|Rozpoètový výbor| |10.11.2021|||0|
-1546|173|3|KV|Kontrolní výbor| |10.11.2021|||0|
-1547|173|3|ORGV|Organizaèní výbor| |10.11.2021|||0|
-1548|173|3|VOV|Volební výbor| |10.11.2021|||0|
-1549|173|3|VEZ|Výbor pro evropské záležitosti| |10.11.2021|||0|
-1550|173|3|HV|Hospodáøský výbor| |10.11.2021|||0|
-1551|173|3|ÚPV|Ústavnì-právní výbor| |10.11.2021|||0|
-1552|173|3|VB|Výbor pro bezpeènost| |10.11.2021|||0|
-1553|173|3|VO|Výbor pro obranu| |10.11.2021|||0|
-1554|173|3|VSP|Výbor pro sociální politiku| |10.11.2021|||0|
-1555|173|3|VVVKM|Výbor pro vìdu, vzdìlání, kulturu, mládež a tìlovýchovu| |10.11.2021|||0|
-1556|173|3|VSR|Výbor pro veøejnou správu a regionální rozvoj| |10.11.2021|||0|
-1557|173|3|VZ|Výbor pro zdravotnictví| |10.11.2021|||0|
-1558|173|3|VŽP|Výbor pro životní prostøedí| |10.11.2021|||0|
-1559|173|3|ZAV|Zahranièní výbor| |10.11.2021|||0|
-1560|173|3|ZEV|Zemìdìlský výbor| |10.11.2021|||0|
+1543|173|3|MIV|Mandátový a imunitní výbor|Mandate and Immunity Committee|08.11.2021|||0|
+1544|173|3|PV|Petièní výbor|Committee on Petitions|10.11.2021|||0|
+1545|173|3|RV|Rozpoètový výbor|Committee on the Budget|10.11.2021|||0|
+1546|173|3|KV|Kontrolní výbor|Committee on Budgetary Control|10.11.2021|||0|
+1547|173|3|ORGV|Organizaèní výbor|Steering Committee|10.11.2021|||0|
+1548|173|3|VOV|Volební výbor|Electoral Committee|10.11.2021|||0|
+1549|173|3|VEZ|Výbor pro evropské záležitosti|Committee on European Affairs|10.11.2021|||0|
+1550|173|3|HV|Hospodáøský výbor|Committee on Economic Affairs|10.11.2021|||0|
+1551|173|3|ÚPV|Ústavnì-právní výbor|Committee on Constitutional and Legal Affairs|10.11.2021|||0|
+1552|173|3|VB|Výbor pro bezpeènost|Committee on Security|10.11.2021|||0|
+1553|173|3|VO|Výbor pro obranu|Committee on Defence|10.11.2021|||0|
+1554|173|3|VSP|Výbor pro sociální politiku|Committee on Social Policy|10.11.2021|||0|
+1555|173|3|VVVKM|Výbor pro vìdu, vzdìlání, kulturu, mládež a tìlovýchovu|Committee on Science, Education, Culture, Youth and Sport|10.11.2021|||0|
+1556|173|3|VSR|Výbor pro veøejnou správu a regionální rozvoj|Committee on Public Administration and Regional Development|10.11.2021|||0|
+1557|173|3|VZ|Výbor pro zdravotnictví|Committee on Health Care|10.11.2021|||0|
+1558|173|3|VŽP|Výbor pro životní prostøedí|Committee on Environment|10.11.2021|||0|
+1559|173|3|ZAV|Zahranièní výbor|Committee on Foreign Affairs|10.11.2021|||0|
+1560|173|3|ZEV|Zemìdìlský výbor|Committee on Agriculture|10.11.2021|||0|
 1561|173|2|SKKPO|Stálá komise pro kontrolu použití odposlechu a záznamu telekomunikaèního provozu, použití sledování osob a vìcí a rušení provozu elektronických komunikací| |23.11.2021|||0|
 1562|173|2|SKCEÚ|Stálá komise pro kontrolu poskytnutí údajù z centrální evidence úètù| |23.11.2021|||0|
 1563|173|2|SKBIS|Stálá komise pro kontrolu èinnosti Bezpeènostní informaèní služby| |23.11.2021|||0|
