@@ -212,10 +212,11 @@
 2575|1535|1|Místopøedseda|10|
 2605|1536|2|Pøedseda|1|
 2606|1536|93|1. místopøedseda|4|
-2607|1536|1|2. místopøedseda|11|
-2608|1536|1|3. místopøedseda|12|
+2607|1536|94|2. místopøedseda|11|
+2608|1536|95|3. místopøedseda|12|
 2609|1536|1|4. místopøedseda|13|
 2610|1536|1|5. místopøedseda|14|
+2796|1536|1|6. místopøedseda|26|
 2576|1537|2|Pøedseda|1|
 2577|1537|93|1. místopøedseda|4|
 2578|1537|1|2. místopøedseda|11|
@@ -473,6 +474,7 @@
 2613|1542|4|Ovìøovatel|100|
 2693|1561|5|Pøedseda|1|
 2692|1562|5|Pøedseda|1|
+2797|1562|3|Místopøedseda|11|
 2685|1563|5|Pøedseda|1|
 2688|1564|5|Pøedseda|1|
 2691|1565|5|Pøedseda|1|
