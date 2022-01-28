@@ -473,20 +473,31 @@
 2612|1542|3|Místopøedseda|10|
 2613|1542|4|Ovìøovatel|100|
 2693|1561|5|Pøedseda|1|
+2821|1561|3|Místopøedseda|2|
 2692|1562|5|Pøedseda|1|
 2797|1562|3|Místopøedseda|11|
 2685|1563|5|Pøedseda|1|
+2828|1563|3|Místopøedseda|2|
 2688|1564|5|Pøedseda|1|
+2825|1564|3|Místopøedseda|2|
 2691|1565|5|Pøedseda|1|
+2822|1565|3|Místopøedseda|2|
 2686|1566|5|Pøedseda|1|
+2827|1566|3|Místopøedseda|2|
 2689|1567|5|Pøedseda|1|
+2824|1567|3|Místopøedseda|2|
 2690|1568|5|Pøedseda|1|
+2823|1568|3|Místopøedseda|2|
 2687|1569|5|Pøedseda|1|
+2826|1569|3|Místopøedseda|2|
 2683|1570|5|Pøedseda|1|
 2800|1570|3|Místopøedseda|3|
 2684|1571|5|Pøedseda|1|
+2819|1571|3|Místopøedseda|2|
 2682|1572|5|Pøedseda|1|
+2820|1572|3|Místopøedseda|2|
 2681|1573|5|Pøedseda|1|
+2829|1573|3|Místopøedseda|2|
 62|27|6|Místopøedseda výboru BBV|2|
 63|27|7|Ovìøovatel výboru BBV|5|
 64|27|8|Pøedseda výboru BBV|1|
@@ -1673,12 +1684,19 @@
 2752|1611|11|Pøedseda|2|
 2751|1612|11|Pøedseda|2|
 2755|1613|11|pøedseda|1|
+2816|1613|10|Místopøedseda|3|
 2754|1614|11|pøedseda|1|
+2817|1614|10|Místopøedseda|3|
 2758|1615|11|pøedseda|1|
+2813|1615|10|Místopøedseda|3|
 2756|1616|11|pøedseda|1|
+2815|1616|10|Místopøedseda|3|
 2757|1617|11|pøedseda|1|
+2814|1617|10|Místopøedseda|3|
 2762|1618|11|pøedseda|1|
+2801|1618|10|Místopøedseda|11|
 2765|1619|11|pøedseda|1|
+2818|1619|10|Místopøedseda|3|
 2763|1620|11|pøedseda|1|
 2759|1622|11|pøedseda|1|
 2760|1623|11|pøedseda|1|
@@ -1694,6 +1712,17 @@
 2794|1632|11|Pøedseda|1|
 2795|1632|10|Místopøedseda|11|
 2799|1633|11|Pøedseda|2|
+2812|1633|10|Místopøedseda|3|
+2802|1635|11|Pøedseda|2|
+2803|1635|10|Místopøedseda|3|
+2804|1636|11|Pøedseda|2|
+2805|1636|10|Místopøedseda|3|
+2806|1637|11|Pøedseda|2|
+2807|1637|10|Místopøedseda|3|
+2808|1638|11|Pøedseda|2|
+2809|1638|10|Místopøedseda|3|
+2810|1639|11|Pøedseda|2|
+2811|1639|10|Místopøedseda|3|
 406|147|15|Pøedseda vlády VládaÈR|1|
 407|148|15|Pøedseda vlády VládaÈR|1|
 1032|148|96|Ministr|201|
