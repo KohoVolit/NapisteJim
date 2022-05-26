@@ -1463,10 +1463,10 @@
 1583|1555|4|PHV|Podvıbor pro heraldiku a vexilologii| |01.12.2021|||0|
 1584|1555|4|PMVA|Podvıbor pro mláde a volnoèasové aktivity| |01.12.2021|||0|
 1585|1555|4|PS|Podvıbor pro sport| |01.12.2021|||0|
-1586|1551|4|PPEI|Podvıbor pro problematiku exekucí a insolvencí| |01.12.2021|||0|
-1587|1551|4|PJ|Podvıbor pro justici| |01.12.2021|||0|
-1588|1551|4|PDSN|Podvıbor pro problematiku domácího a sexuálního násilí| |01.12.2021|||0|
-1589|1551|4|PF|Finanèní podvıbor| |01.12.2021|||0|
+1586|1551|4|PPEI|Podvıbor pro problematiku exekucí a insolvencí| Subcommittee on Executions and Insolvency|01.12.2021|||0|
+1587|1551|4|PJ|Podvıbor pro justici|Subcommittee on Judicial System|01.12.2021|||0|
+1588|1551|4|PDSN|Podvıbor pro problematiku domácího a sexuálního násilí| Subcommittee on Domestic and Sexual Violence|01.12.2021|||0|
+1589|1551|4|PF|Finanèní podvıbor|Subcommittee on Finance|01.12.2021|||0|
 1590|1559|4|PSK|Podvıbor pro styky s krajany| |02.12.2021|||0|
 1591|1559|4|PRS|Podvıbor pro rozvojovou spolupráci| |02.12.2021|||0|
 1592|1559|4|PVEV|Podvıbor pro vnìjší ekonomické vztahy| |02.12.2021|||0|
@@ -1474,22 +1474,22 @@
 1594|1558|4|POPK|Podvıbor pro ochranu pøírody a krajiny| |08.12.2021|||0|
 1595|1558|4|PTOP|Podvıbor pro technickou ochranu ivotního prostøedí| |08.12.2021|||0|
 1596|1558|4|PEL|Podvıbor pro environmentální legislativu EU| |08.12.2021|||0|
-1597|1550|4|PD|Podvıbor pro dopravu| |14.12.2021|||0|
-1598|1550|4|PE|Podvıbor pro energetiku| |14.12.2021|||0|
-1599|1550|4|PP|Podvıbor pro podnikatelské prostøedí| |14.12.2021|||0|
-1600|1550|4|POS|Podvıbor pro ochranu spotøebitele| |14.12.2021|||0|
-1601|1550|4|PITDE|Podvıbor pro ICT, telekomunikace a digitální ekonomiku| |14.12.2021|||0|
-1602|1550|4|PLVP|Podvıbor pro letectví a vesmírnı program| |14.12.2021|||0|
-1603|1550|4|PVVI|Podvıbor pro vìdu, vızkum a inovace| |14.12.2021|||0|
+1597|1550|4|PD|Podvıbor pro dopravu| Subcommittee on Transportation|14.12.2021|||0|
+1598|1550|4|PE|Podvıbor pro energetiku| Subcommittee on Power Engineering|14.12.2021|||0|
+1599|1550|4|PP|Podvıbor pro podnikatelské prostøedí| Subcommittee on Business Environment|14.12.2021|||0|
+1600|1550|4|POS|Podvıbor pro ochranu spotøebitele| Subcommittee on Consumer Protection|14.12.2021|||0|
+1601|1550|4|PITDE|Podvıbor pro ICT, telekomunikace a digitální ekonomiku| Subcommittee on ICT, Telecommunication and Digital Economy|14.12.2021|||0|
+1602|1550|4|PLVP|Podvıbor pro letectví a vesmírnı program| Subcommittee on Aviation and Space Program|14.12.2021|||0|
+1603|1550|4|PVVI|Podvıbor pro vìdu, vızkum a inovace|Subcommittee on Science, Research and Innovations|14.12.2021|||0|
 1604|1552|4|PPÈR|Podvıbor pro Policii Èeské republiky, obecní policii a soukromé bezpeènostní sluby| |14.12.2021|||0|
 1605|1552|4|PHZS|Podvıbor pro Hasièskı záchrannı sbor Èeské republiky| |14.12.2021|||0|
 1606|1552|4|PV|Podvıbor pro vìzeòství| |14.12.2021|||0|
 1607|1552|4|PZZS|Podvıbor pro zdravotnické záchranné sluby| |14.12.2021|||0|
-1608|1549|4|PEFPSZT|Podvıbor pro evropské fondy, pøeshranièní spolupráci a zelenou transformaci| |15.12.2021|||0|
-1609|1549|4|PMAP|Podvıbor pro migraci a azylovou politiku| |15.12.2021|||0|
-1610|1545|4|PBPFT|Podvıbor pro bankovnictví, pojišovnictví a finanèní trhy| |15.12.2021|||0|
-1611|1545|4|PDCL|Podvıbor pro danì, cla a loterie| |15.12.2021|||0|
-1612|1545|4|PFMSPEU|Podvıbor pro financování územních samospráv a vyuívání prostøedkù Evropské  unie| |15.12.2021|||0|
+1608|1549|4|PEFPSZT|Podvıbor pro evropské fondy, pøeshranièní spolupráci a zelenou transformaci| Subcommittee on EU Funds, Cross-border Cooperation and Green Transition|15.12.2021|||0|
+1609|1549|4|PMAP|Podvıbor pro migraci a azylovou politiku| Subcommittee on Migration and Asylum Policy|15.12.2021|||0|
+1610|1545|4|PBPFT|Podvıbor pro bankovnictví, pojišovnictví a finanèní trhy| Subcommittee on Banking, Insurance and Capital Markets|15.12.2021|||0|
+1611|1545|4|PDCL|Podvıbor pro danì, cla a loterie| Subcommittee on Taxation, Customs and Lotteries|15.12.2021|||0|
+1612|1545|4|PFMSPEU|Podvıbor pro financování územních samospráv a vyuívání prostøedkù Evropské unie| Subcommittee on Financial Management of Teritorial Self-governing Units and European Funding Use|15.12.2021|||0|
 1613|1560|4|PMRVZC|Podvıbor pro myslivost, rybáøství, vèelaøství, zahrádkáøství a chovatelství| |15.12.2021|||0|
 1614|1560|4|PLH|Podvıbor pro lesní hospodáøství| |15.12.2021|||0|
 1615|1560|4|PVH|Podvıbor pro vodní hospodáøství| |15.12.2021|||0|
@@ -1501,8 +1501,8 @@
 1625|1557|4|POSPVVV|Podvıbor pro oblast specializaèního a profesního vzdìlávání, vìdu a vızkum| |14.12.2021|||0|
 1622|1557|4|PEZEZL|Podvıbor pro elektronizaci ve zdravotnictví a evropskou zdravotní legislativu| |14.12.2021|||0|
 1623|1557|4|PLPPTZP|Podvıbor pro lékovou politiku, pøístrojovou techniku a zdravotnické prostøedky| |14.12.2021|||0|
-1626|1544|4|POPOS|Podvıbor pro ochranu práv osob omezenıch na svobodì| |14.12.2021|||0|
-1627|1544|4|PNM|Podvıbor pro národnostní menšiny| |14.12.2021|||0|
+1626|1544|4|POPOS|Podvıbor pro ochranu práv osob omezenıch na svobodì| Subcommittee on National Minorities|14.12.2021|||0|
+1627|1544|4|PNM|Podvıbor pro národnostní menšiny| Subcommittee on the Protection of Rights of Persons Deprived of Liberty|14.12.2021|||0|
 1628|0|5|VládaÈR|Vláda Èeské republiky| |17.12.2021|||1|
 1629|1554|4|PSSOZP|Podvıbor pro sociální sluby a osoby zdravotnì postiené| |11.01.2022|||0|
 1630|1554|4|PSZP|Podvıbor pro sociálnì zdravotní pomezí| |11.01.2022|||0|
@@ -1514,8 +1514,8 @@
 1637|1556|4|PEG|Podvıbor pro e – Government| |27.01.2022|||0|
 1638|1556|4|PPRT|Podvıbor pro regiony v transformaci| |27.01.2022|||0|
 1639|1556|4|PVS|Podvıbor pro veøejnou správu| |27.01.2022|||0|
-1640|1546|4|KHVS|Podvıbor pro kontrolu hospodaøení veøejného sektoru| |20.01.2022|||0|
-1641|1548|4|PMSS|Podvıbor pro média a svobodu slova| |20.01.2022|||0|
+1640|1546|4|KHVS|Podvıbor pro kontrolu hospodaøení veøejného sektoru| Subcommittee on Public Sector Audit|20.01.2022|||0|
+1641|1548|4|PMSS|Podvıbor pro média a svobodu slova| Subcommittee on Media and Freedom of Speech|20.01.2022|||0|
 1643|1574|13|AM|Arménie|Republic of Armenia|21.02.2022|||0|
 1644|1574|13|AU, NZ|Austrálie, Novı Zéland|the Commonwealth of Australia, New Zeland|21.02.2022|||0|
 1645|1574|13|AZE|Ázerbajdán|Republic of Azerbaijan|21.02.2022|||0|
