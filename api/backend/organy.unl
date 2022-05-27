@@ -1456,13 +1456,13 @@
 1576|173|7|SDOBSE|Stálá delegace Parlamentu do Parlamentního shromádìní Organizace pro bezpeènost a spolupráci v Evropì| Permanent Delegation to the Parliamentary Assembly of the OSCE|23.11.2021|||1|
 1577|173|7|SDPSRE|Stálá delegace Parlamentu do Parlamentního shromádìní Rady Evropy| Permanent Delegation to the Parliamentary Assembly of the Council of Europe|23.11.2021|||1|
 1578|173|7|SDSEI|Stálá delegace Parlamentu do Støedoevropské iniciativy| Permanent Delegation to the Central European Initiative|23.11.2021|||1|
-1579|1555|4|PVVS|Podvıbor pro vìdu a vysoké školy| |01.12.2021|||0|
-1580|1555|4|PRSCV|Podvıbor pro regionální školství a celoivotní uèení| |01.12.2021|||0|
-1581|1555|4|PNVP|Podvıbor pro náhradní vıchovnou péèi| |01.12.2021|||0|
-1582|1555|4|PK|Podvıbor pro kulturu| |01.12.2021|||0|
-1583|1555|4|PHV|Podvıbor pro heraldiku a vexilologii| |01.12.2021|||0|
-1584|1555|4|PMVA|Podvıbor pro mláde a volnoèasové aktivity| |01.12.2021|||0|
-1585|1555|4|PS|Podvıbor pro sport| |01.12.2021|||0|
+1579|1555|4|PVVS|Podvıbor pro vìdu a vysoké školy| Subcommittee on Science and Post-Secondary Educational Institutions|01.12.2021|||0|
+1580|1555|4|PRSCV|Podvıbor pro regionální školství a celoivotní uèení| Subcommitte on Regional Education and Lifelong Learning|01.12.2021|||0|
+1581|1555|4|PNVP|Podvıbor pro náhradní vıchovnou péèi| Subcommittee on Substitute Care|01.12.2021|||0|
+1582|1555|4|PK|Podvıbor pro kulturu| Subcommittee on Culture|01.12.2021|||0|
+1583|1555|4|PHV|Podvıbor pro heraldiku a vexilologii| Subcommittee on Heraldy and Vexillology|01.12.2021|||0|
+1584|1555|4|PMVA|Podvıbor pro mláde a volnoèasové aktivity| Subcommittee on Youth and Leisure Activities|01.12.2021|||0|
+1585|1555|4|PS|Podvıbor pro sport| Subcommittee on Sport|01.12.2021|||0|
 1586|1551|4|PPEI|Podvıbor pro problematiku exekucí a insolvencí| Subcommittee on Executions and Insolvency|01.12.2021|||0|
 1587|1551|4|PJ|Podvıbor pro justici|Subcommittee on Judicial System|01.12.2021|||0|
 1588|1551|4|PDSN|Podvıbor pro problematiku domácího a sexuálního násilí| Subcommittee on Domestic and Sexual Violence|01.12.2021|||0|
@@ -1481,10 +1481,10 @@
 1601|1550|4|PITDE|Podvıbor pro ICT, telekomunikace a digitální ekonomiku| Subcommittee on ICT, Telecommunication and Digital Economy|14.12.2021|||0|
 1602|1550|4|PLVP|Podvıbor pro letectví a vesmírnı program| Subcommittee on Aviation and Space Program|14.12.2021|||0|
 1603|1550|4|PVVI|Podvıbor pro vìdu, vızkum a inovace|Subcommittee on Science, Research and Innovations|14.12.2021|||0|
-1604|1552|4|PPÈR|Podvıbor pro Policii Èeské republiky, obecní policii a soukromé bezpeènostní sluby| |14.12.2021|||0|
-1605|1552|4|PHZS|Podvıbor pro Hasièskı záchrannı sbor Èeské republiky| |14.12.2021|||0|
-1606|1552|4|PV|Podvıbor pro vìzeòství| |14.12.2021|||0|
-1607|1552|4|PZZS|Podvıbor pro zdravotnické záchranné sluby| |14.12.2021|||0|
+1604|1552|4|PPÈR|Podvıbor pro Policii Èeské republiky, obecní policii a soukromé bezpeènostní sluby| Subcommittee on Police of the Czech Republic, Municipal Police and Private Security Services|14.12.2021|||0|
+1605|1552|4|PHZS|Podvıbor pro Hasièskı záchrannı sbor Èeské republiky| Subcommittee on Fire Rescue Service of the Czech Republic|14.12.2021|||0|
+1606|1552|4|PV|Podvıbor pro vìzeòství| Subcommittee on Penology|14.12.2021|||0|
+1607|1552|4|PZZS|Podvıbor pro zdravotnické záchranné sluby| Subcommittee on Ambulance Services|14.12.2021|||0|
 1608|1549|4|PEFPSZT|Podvıbor pro evropské fondy, pøeshranièní spolupráci a zelenou transformaci| Subcommittee on EU Funds, Cross-border Cooperation and Green Transition|15.12.2021|||0|
 1609|1549|4|PMAP|Podvıbor pro migraci a azylovou politiku| Subcommittee on Migration and Asylum Policy|15.12.2021|||0|
 1610|1545|4|PBPFT|Podvıbor pro bankovnictví, pojišovnictví a finanèní trhy| Subcommittee on Banking, Insurance and Capital Markets|15.12.2021|||0|
@@ -1504,13 +1504,13 @@
 1626|1544|4|POPOS|Podvıbor pro ochranu práv osob omezenıch na svobodì| Subcommittee on National Minorities|14.12.2021|||0|
 1627|1544|4|PNM|Podvıbor pro národnostní menšiny| Subcommittee on the Protection of Rights of Persons Deprived of Liberty|14.12.2021|||0|
 1628|0|5|VládaÈR|Vláda Èeské republiky| |17.12.2021|||1|
-1629|1554|4|PSSOZP|Podvıbor pro sociální sluby a osoby zdravotnì postiené| |11.01.2022|||0|
-1630|1554|4|PSZP|Podvıbor pro sociálnì zdravotní pomezí| |11.01.2022|||0|
-1631|1554|4|PITDSPU|Podvıbor pro informaèní technologie, dávkové systémy a problematiku Úøadu práce| |11.01.2022|||0|
+1629|1554|4|PSSOZP|Podvıbor pro sociální sluby a osoby zdravotnì postiené| Subcommittee on Social Services and Physically Disabled Persons|11.01.2022|||0|
+1630|1554|4|PSZP|Podvıbor pro sociálnì zdravotní pomezí| Subcommittee on Common Issues of Social and Health Areas|11.01.2022|||0|
+1631|1554|4|PITDSPU|Podvıbor pro informaèní technologie, dávkové systémy a problematiku Úøadu práce| Subcommittee on Information Technologies, Social Benefit Systems  and Employment Administration|11.01.2022|||0|
 1632|1547|4|PNPUSV|Podvıbor pro pøípravu návrhù na propùjèení nebo udìlení státních vyznamenání|Subcommittee on Preparation of Recommendations for Conferring or Awarding State Decorations|14.12.2021|||0|
-1633|1554|4|SVLZLVT|Podvıbor pro sociálnì vylouèené lokality a zaèleòování lidí po vıkonu trestu| |19.01.2022|||0|
-1635|1556|4|PBPV|Podvıbor pro bytovou politiku a vıstavbu| |27.01.2022|||0|
-1636|1556|4|PCR|Podvıbor pro cestovní ruch| |27.01.2022|||0|
+1633|1554|4|SVLZLVT|Podvıbor pro sociálnì vylouèené lokality a zaèleòování lidí po vıkonu trestu| Subcommittee on Socially Excluded Localities and Integration of Former Inmates|19.01.2022|||0|
+1635|1556|4|PBPV|Podvıbor pro bytovou politiku a vıstavbu| Subcommittee on Housing Policy and Construction|27.01.2022|||0|
+1636|1556|4|PCR|Podvıbor pro cestovní ruch| Subcommittee on Tourism|27.01.2022|||0|
 1637|1556|4|PEG|Podvıbor pro e – Government| |27.01.2022|||0|
 1638|1556|4|PPRT|Podvıbor pro regiony v transformaci| |27.01.2022|||0|
 1639|1556|4|PVS|Podvıbor pro veøejnou správu| |27.01.2022|||0|
@@ -1572,9 +1572,9 @@
 1696|1574|13|ME|Èerná Hora|Montenegro|21.02.2022|||0|
 1697|1574|13|RW|Rwandská republika|Republic of Rwanda|21.02.2022|||0|
 1698|1574|13|BH|Bosna a Hercegovina| |21.02.2022|||0|
-1699|1553|4|PAMO|Podvıbor pro akvizice Ministerstva obrany, obchod s vojenskım materiálem a inovace AÈR| |08.03.2022|||0|
-1700|1553|4|POKBP|Podvıbor pro obrannou, kybernetickou a bezpeènostní politiku a strategické koncepce ÈR| |08.03.2022|||0|
-1701|1553|4|PVV|Podvıbor pro váleèné veterány| |08.03.2022|||0|
+1699|1553|4|PAMO|Podvıbor pro akvizice Ministerstva obrany, obchod s vojenskım materiálem a inovace AÈR| Subcommittee on Defence Acquisitions, Military Equipment Trade and Innovation of the Army of the Czech Republic|08.03.2022|||0|
+1700|1553|4|POKBP|Podvıbor pro obrannou, kybernetickou a bezpeènostní politiku a strategické koncepce ÈR| Subcommittee on Defence, Cybernetic and Security Policy and Strategic Conceptions for CR|08.03.2022|||0|
+1701|1553|4|PVV|Podvıbor pro váleèné veterány| Subcommittee on War Veterans|08.03.2022|||0|
 1702|1574|13|MD|Moldavsko|Moldova|08.04.2022|||0|
 1703|1574|13|RO|Rumunsko|Romania|08.04.2022|||0|
 1705|1574|13|TZ|Tanzanie|Tanzania|16.05.2022|||0|
