@@ -1350,20 +1350,18 @@
 1468|1331|13|JM|Jamajka|Jamaica|12.06.2018|21.10.2021||0|
 1469|1331|13|JO|Jordánské hášimovské království|Hashemite Kingdom of Jordan|14.06.2018|21.10.2021||0|
 1470|1331|13|PK|Pákistánská islámská republika|Islamic Republic of Pakistan|14.06.2018|21.10.2021||0|
-1471|1402|114|OL|Oddìlení legislativní| |01.01.1993|||0|
-1472|1402|114|OP|Oddìlení právní| |01.01.1993|||0|
+1471|1402|114|I_OL|I. oddìlení legislativní| |01.01.1993|||0|
 1473|1403|114|OSC|Oddìlení snìmovní èinnosti| |01.01.1993|||0|
 1474|1403|114|OSS|Oddìlení stenografické služby| |01.01.1993|||0|
-1475|1404|114|ODS|Oddìlení datových služeb| |01.01.1993|||0|
-1476|1404|114|OIS|Oddìlení informaèního systému| |01.01.1993|||0|
+1475|1404|114|ODS|Oddìlení sítí a infrastruktury| |01.01.1993|||0|
+1476|1404|114|OIS|Oddìlení vývoje a aplikaèních služeb | |01.01.1993|||0|
 1477|1405|114|OAV|Oddìlení audiovizuální techniky| |01.01.1993|||0|
 1478|1406|114|OZ|Oddìlení zahranièní| |01.01.1993|||0|
 1479|1406|114|OR|Oddìlení realizace zahranièních cest a návštìv| |01.01.1993|||0|
-1480|1407|114|EO|Ekonomické oddìlení| |01.01.1993|||0|
-1481|1407|114|OSS|Oddìlení spisové služby| |01.01.1993|||0|
+1480|1407|114|EO|Oddìlení ekonomické | |01.01.1993|||0|
+1481|1408|112|OSS|Oddìlení spisové služby| |01.01.1993|||0|
 1482|1407|114|OHP|Oddìlení hospodáøského provozu| |01.01.1993|||0|
 1483|1407|114|OG|Oddìlení gastronomie| |01.01.1993|||0|
-1484|1407|114|OA|Oddìlení autodopravy| |01.01.1993|||0|
 1485|1408|112|OPK|Oddìlení Parlamentní knihovny| |01.01.1993|||0|
 1486|1408|112|OA|Oddìlení Archivu Poslanecké snìmovny| |01.01.1993|||0|
 1487|1409|112|OVS|Oddìlení pro všeobecné studie| |01.01.1993|||0|
@@ -1582,3 +1580,8 @@
 1711|1574|13|BENELUX|Benelux| |27.10.2022|||0|
 1708|1574|13|GH|Ghana|Republic of Ghana|08.07.2022|||0|
 1709|1574|13|BE, LU|Belgie, Lucembursko|Belgium, Luxembourg|23.05.2022|27.10.2022||0|
+1712|1402|114|II_OL|II. oddìlení legislativní| |01.11.2022|||0|
+1713|1405|114|TISK|Oddìlení tiskové| |01.11.2022|||0|
+1714|1406|114|OMO|Oddìlení meziparlamentních organizací| |01.11.2022|||0|
+1715|1408|112|OD|Oddìlení digitalizace a ochrany archivních a knihovních fondù| |01.11.2022|||0|
+1716|1409|112|OREA|Oddìlení rozpoètových a ekonomických analýz| |01.11.2022|||0|
